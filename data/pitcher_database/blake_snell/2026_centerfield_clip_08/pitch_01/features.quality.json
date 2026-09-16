@@ -1,0 +1,158 @@
+{
+  "schema_version": "feature-quality-v0.3",
+  "input_frames_detected": 156,
+  "timeline_frames": 196,
+  "timeline_start_frame": 1050,
+  "timeline_end_frame": 1245,
+  "timeline_contract": "capture_requested_range",
+  "missing_source_frames": [
+    1050,
+    1051,
+    1052,
+    1053,
+    1054,
+    1055,
+    1056,
+    1057,
+    1190,
+    1191,
+    1192,
+    1193,
+    1194,
+    1196,
+    1197,
+    1198,
+    1199,
+    1200,
+    1201,
+    1202,
+    1203,
+    1204,
+    1205,
+    1206,
+    1207,
+    1208,
+    1223,
+    1224,
+    1225,
+    1226,
+    1227,
+    1228,
+    1229,
+    1230,
+    1232,
+    1233,
+    1234,
+    1235,
+    1236,
+    1237
+  ],
+  "missing_source_frame_count": 40,
+  "max_consecutive_missing_source_frames": 13,
+  "invalid_feature_frames": {
+    "throwing_knee_angle": 41,
+    "lead_knee_angle": 41,
+    "shoulder_line_angle": 40,
+    "throwing_elbow_angle": 106,
+    "hip_line_angle": 40,
+    "lateral_foot_separation": 41
+  },
+  "raw_invalid_feature_frames": {
+    "throwing_knee_angle": 45,
+    "lead_knee_angle": 41,
+    "shoulder_line_angle": 40,
+    "throwing_elbow_angle": 106,
+    "hip_line_angle": 40,
+    "lateral_foot_separation": 41
+  },
+  "coordinate_imputed_feature_frames": {
+    "throwing_knee_angle": 4,
+    "lead_knee_angle": 0,
+    "shoulder_line_angle": 0,
+    "throwing_elbow_angle": 0,
+    "hip_line_angle": 0,
+    "lateral_foot_separation": 0
+  },
+  "feature_coverage": {
+    "throwing_knee_angle": 0.7908163265306123,
+    "lead_knee_angle": 0.7908163265306123,
+    "shoulder_line_angle": 0.7959183673469388,
+    "throwing_elbow_angle": 0.45918367346938777,
+    "hip_line_angle": 0.7959183673469388,
+    "lateral_foot_separation": 0.7908163265306123
+  },
+  "raw_feature_coverage": {
+    "throwing_knee_angle": 0.7704081632653061,
+    "lead_knee_angle": 0.7908163265306123,
+    "shoulder_line_angle": 0.7959183673469388,
+    "throwing_elbow_angle": 0.45918367346938777,
+    "hip_line_angle": 0.7959183673469388,
+    "lateral_foot_separation": 0.7908163265306123
+  },
+  "coordinate_imputed_feature_fraction": {
+    "throwing_knee_angle": 0.02040816326530612,
+    "lead_knee_angle": 0.0,
+    "shoulder_line_angle": 0.0,
+    "throwing_elbow_angle": 0.0,
+    "hip_line_angle": 0.0,
+    "lateral_foot_separation": 0.0
+  },
+  "throwing_side": "LEFT",
+  "min_visibility": 0.5,
+  "min_presence": 0.5,
+  "coordinate_x_scale": 0.6984615384615385,
+  "coordinate_contract": "height-normalized image plane: x_normalized * (width / height), y_normalized",
+  "capture_context": {
+    "width": 454,
+    "height": 650,
+    "fps": 30.0,
+    "_context_path": "data\\pitcher_database\\blake_snell\\2026_centerfield_clip_08\\pitch_01\\pose_clean.clean.json"
+  },
+  "smoothing": {
+    "coordinate": "none",
+    "feature_method": "median; doubled-angle circular mean for unoriented shoulder/hip lines",
+    "radius_frames": 2,
+    "radius_seconds": 0.06666666666666667,
+    "max_interpolation_gap_frames": 2,
+    "max_interpolation_seconds": 0.06666666666666667
+  },
+  "motion_window_proxy": {
+    "start_frame": 1069,
+    "end_frame": 1245,
+    "peak_separation_frame": 1160,
+    "confidence": 0.5439681681821212,
+    "method": "lateral-foot-separation-proxy"
+  },
+  "motion_candidates": {
+    "status": "review_required",
+    "method": "multi-feature-velocity-proxy",
+    "candidate_count": 3,
+    "candidates": [
+      {
+        "start_frame": 1089,
+        "end_frame": 1133,
+        "peak_separation_frame": 1107,
+        "confidence": 1.0,
+        "method": "multi-feature-velocity-proxy"
+      },
+      {
+        "start_frame": 1113,
+        "end_frame": 1198,
+        "peak_separation_frame": 1132,
+        "confidence": 1.0,
+        "method": "multi-feature-velocity-proxy"
+      },
+      {
+        "start_frame": 1191,
+        "end_frame": 1245,
+        "peak_separation_frame": 1206,
+        "confidence": 1.0,
+        "method": "multi-feature-velocity-proxy"
+      }
+    ],
+    "limitations": [
+      "Broadcast cuts and pose-tracking errors may create false positives.",
+      "Candidates are not biomechanical event labels and require visual review."
+    ]
+  }
+}

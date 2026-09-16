@@ -1,0 +1,11 @@
+{
+  "video": "data\\pitcher_database\\yamamoto_2024_spring_training_centerfield_02.mp4",
+  "model": "models\\pose_landmarker_full.task",
+  "fps": 30.029691519317524,
+  "start_frame": 556,
+  "end_frame": 646,
+  "requested_frames": 91,
+  "detected_frames": 91,
+  "width": 252,
+  "height": 354
+}

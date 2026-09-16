@@ -1,0 +1,62 @@
+{
+  "schema_version": "pitch-phase-v0.3-provisional",
+  "method": "reference-z-score",
+  "scalers": {
+    "throwing_knee_angle_smoothed": {
+      "feature": "throwing_knee_angle_smoothed",
+      "mean": 146.55097358478824,
+      "standard_deviation": 22.816903455939464,
+      "sample_count": 400
+    },
+    "lead_knee_angle_smoothed": {
+      "feature": "lead_knee_angle_smoothed",
+      "mean": 137.67126225640476,
+      "standard_deviation": 42.78006848621249,
+      "sample_count": 388
+    },
+    "shoulder_line_angle_smoothed": {
+      "feature": "shoulder_line_angle_smoothed",
+      "mean": -6.582946460591634,
+      "standard_deviation": 16.204355172046093,
+      "sample_count": 400
+    },
+    "throwing_elbow_angle_smoothed": {
+      "feature": "throwing_elbow_angle_smoothed",
+      "mean": 94.0682021855648,
+      "standard_deviation": 35.287901901460984,
+      "sample_count": 298
+    },
+    "hip_line_angle_smoothed": {
+      "feature": "hip_line_angle_smoothed",
+      "mean": -10.268781118635339,
+      "standard_deviation": 15.69226602229299,
+      "sample_count": 400
+    }
+  },
+  "reference_scope": {
+    "throws": "RIGHT"
+  },
+  "provenance": {
+    "reference_sequences": [
+      {
+        "phase_sequence": "data\\pitcher_database\\shohei_ohtani\\2026_centerfield_clip_02\\pitch_02\\phase_sequence.csv",
+        "row_count": 100
+      },
+      {
+        "phase_sequence": "data\\pitcher_database\\shohei_ohtani\\2026_centerfield_clip_02\\pitch_05\\phase_sequence.csv",
+        "row_count": 100
+      },
+      {
+        "phase_sequence": "data\\pitcher_database\\yu_darvish\\2013_regular_season_centerfield_01\\pitch_01\\phase_sequence.csv",
+        "row_count": 100
+      },
+      {
+        "phase_sequence": "data\\pitcher_database\\yu_darvish\\2025_centerfield_clip_09\\pitch_02\\phase_sequence.csv",
+        "row_count": 100
+      }
+    ],
+    "reference_sequence_count": 4,
+    "reference_rows": 400,
+    "warning": "Rows are phase-resampled. Use a balanced reference set by throwing side and camera protocol before treating scores as production-quality."
+  }
+}

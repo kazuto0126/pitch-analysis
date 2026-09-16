@@ -1,0 +1,11 @@
+{
+  "video": "data\\pitcher_database\\darvish_2013_regular_season_centerfield_01.mp4",
+  "model": "models\\pose_landmarker_full.task",
+  "fps": 30.0,
+  "start_frame": 1572,
+  "end_frame": 1692,
+  "requested_frames": 121,
+  "detected_frames": 121,
+  "width": 438,
+  "height": 468
+}

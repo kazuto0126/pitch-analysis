@@ -1,0 +1,113 @@
+{
+  "schema_version": "feature-quality-v0.3",
+  "input_frames_detected": 253,
+  "timeline_frames": 255,
+  "timeline_start_frame": 0,
+  "timeline_end_frame": 254,
+  "timeline_contract": "capture_requested_range",
+  "missing_source_frames": [
+    21,
+    137
+  ],
+  "missing_source_frame_count": 2,
+  "max_consecutive_missing_source_frames": 1,
+  "invalid_feature_frames": {
+    "throwing_knee_angle": 0,
+    "lead_knee_angle": 0,
+    "shoulder_line_angle": 0,
+    "throwing_elbow_angle": 159,
+    "hip_line_angle": 0,
+    "lateral_foot_separation": 0
+  },
+  "raw_invalid_feature_frames": {
+    "throwing_knee_angle": 2,
+    "lead_knee_angle": 2,
+    "shoulder_line_angle": 2,
+    "throwing_elbow_angle": 159,
+    "hip_line_angle": 2,
+    "lateral_foot_separation": 2
+  },
+  "coordinate_imputed_feature_frames": {
+    "throwing_knee_angle": 2,
+    "lead_knee_angle": 2,
+    "shoulder_line_angle": 2,
+    "throwing_elbow_angle": 0,
+    "hip_line_angle": 2,
+    "lateral_foot_separation": 2
+  },
+  "feature_coverage": {
+    "throwing_knee_angle": 1.0,
+    "lead_knee_angle": 1.0,
+    "shoulder_line_angle": 1.0,
+    "throwing_elbow_angle": 0.3764705882352941,
+    "hip_line_angle": 1.0,
+    "lateral_foot_separation": 1.0
+  },
+  "raw_feature_coverage": {
+    "throwing_knee_angle": 0.9921568627450981,
+    "lead_knee_angle": 0.9921568627450981,
+    "shoulder_line_angle": 0.9921568627450981,
+    "throwing_elbow_angle": 0.3764705882352941,
+    "hip_line_angle": 0.9921568627450981,
+    "lateral_foot_separation": 0.9921568627450981
+  },
+  "coordinate_imputed_feature_fraction": {
+    "throwing_knee_angle": 0.00784313725490196,
+    "lead_knee_angle": 0.00784313725490196,
+    "shoulder_line_angle": 0.00784313725490196,
+    "throwing_elbow_angle": 0.0,
+    "hip_line_angle": 0.00784313725490196,
+    "lateral_foot_separation": 0.00784313725490196
+  },
+  "throwing_side": "RIGHT",
+  "min_visibility": 0.5,
+  "min_presence": 0.5,
+  "coordinate_x_scale": 0.459375,
+  "coordinate_contract": "height-normalized image plane: x_normalized * (width / height), y_normalized",
+  "capture_context": {
+    "width": 588,
+    "height": 1280,
+    "fps": 30.0,
+    "_context_path": "data\\pose_data\\test_pitch_pose_clean_v0.3.clean.json"
+  },
+  "smoothing": {
+    "coordinate": "none",
+    "feature_method": "median; doubled-angle circular mean for unoriented shoulder/hip lines",
+    "radius_frames": 2,
+    "radius_seconds": 0.06666666666666667,
+    "max_interpolation_gap_frames": 2,
+    "max_interpolation_seconds": 0.06666666666666667
+  },
+  "motion_window_proxy": {
+    "start_frame": 0,
+    "end_frame": 188,
+    "peak_separation_frame": 64,
+    "confidence": 0.0977033676815593,
+    "method": "lateral-foot-separation-proxy"
+  },
+  "motion_candidates": {
+    "status": "review_required",
+    "method": "multi-feature-velocity-proxy",
+    "candidate_count": 2,
+    "candidates": [
+      {
+        "start_frame": 33,
+        "end_frame": 116,
+        "peak_separation_frame": 86,
+        "confidence": 1.0,
+        "method": "multi-feature-velocity-proxy"
+      },
+      {
+        "start_frame": 153,
+        "end_frame": 230,
+        "peak_separation_frame": 171,
+        "confidence": 1.0,
+        "method": "multi-feature-velocity-proxy"
+      }
+    ],
+    "limitations": [
+      "Broadcast cuts and pose-tracking errors may create false positives.",
+      "Candidates are not biomechanical event labels and require visual review."
+    ]
+  }
+}

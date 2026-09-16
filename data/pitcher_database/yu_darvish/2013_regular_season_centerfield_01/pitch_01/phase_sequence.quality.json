@@ -1,0 +1,135 @@
+{
+  "schema_version": "phase-quality-v0.1",
+  "source_features_csv": "data\\pitcher_database\\yu_darvish\\2013_regular_season_centerfield_01\\pitch_01\\features.csv",
+  "source_video_id": "darvish_2013_regular_season_centerfield_01_pitch_01",
+  "event_review_status": "provisional_candidates_accepted",
+  "event_frame_range": [
+    1578,
+    1686
+  ],
+  "event_window": {
+    "source_frames": 109,
+    "source_detection_coverage": 1.0,
+    "max_consecutive_missing_source_frames": 0,
+    "feature_coverage": {
+      "throwing_knee_angle_smoothed": 1.0,
+      "lead_knee_angle_smoothed": 1.0,
+      "shoulder_line_angle_smoothed": 1.0,
+      "throwing_elbow_angle_smoothed": 0.5321100917431193,
+      "hip_line_angle_smoothed": 1.0,
+      "lateral_foot_separation_smoothed": 1.0
+    },
+    "raw_feature_coverage": {
+      "throwing_knee_angle_smoothed": 1.0,
+      "lead_knee_angle_smoothed": 0.981651376146789,
+      "shoulder_line_angle_smoothed": 1.0,
+      "throwing_elbow_angle_smoothed": 0.5137614678899083,
+      "hip_line_angle_smoothed": 1.0,
+      "lateral_foot_separation_smoothed": 1.0
+    }
+  },
+  "phases": {
+    "windup": {
+      "frame_range": [
+        1578,
+        1608
+      ],
+      "source_frames": 31,
+      "source_detection_coverage": 1.0,
+      "max_consecutive_missing_source_frames": 0,
+      "feature_coverage": {
+        "throwing_knee_angle_smoothed": 1.0,
+        "lead_knee_angle_smoothed": 1.0,
+        "shoulder_line_angle_smoothed": 1.0,
+        "throwing_elbow_angle_smoothed": 1.0,
+        "hip_line_angle_smoothed": 1.0,
+        "lateral_foot_separation_smoothed": 1.0
+      },
+      "raw_feature_coverage": {
+        "throwing_knee_angle_smoothed": 1.0,
+        "lead_knee_angle_smoothed": 0.9354838709677419,
+        "shoulder_line_angle_smoothed": 1.0,
+        "throwing_elbow_angle_smoothed": 1.0,
+        "hip_line_angle_smoothed": 1.0,
+        "lateral_foot_separation_smoothed": 1.0
+      }
+    },
+    "stride": {
+      "frame_range": [
+        1608,
+        1632
+      ],
+      "source_frames": 25,
+      "source_detection_coverage": 1.0,
+      "max_consecutive_missing_source_frames": 0,
+      "feature_coverage": {
+        "throwing_knee_angle_smoothed": 1.0,
+        "lead_knee_angle_smoothed": 1.0,
+        "shoulder_line_angle_smoothed": 1.0,
+        "throwing_elbow_angle_smoothed": 1.0,
+        "hip_line_angle_smoothed": 1.0,
+        "lateral_foot_separation_smoothed": 1.0
+      },
+      "raw_feature_coverage": {
+        "throwing_knee_angle_smoothed": 1.0,
+        "lead_knee_angle_smoothed": 1.0,
+        "shoulder_line_angle_smoothed": 1.0,
+        "throwing_elbow_angle_smoothed": 1.0,
+        "hip_line_angle_smoothed": 1.0,
+        "lateral_foot_separation_smoothed": 1.0
+      }
+    },
+    "arm_acceleration": {
+      "frame_range": [
+        1632,
+        1644
+      ],
+      "source_frames": 13,
+      "source_detection_coverage": 1.0,
+      "max_consecutive_missing_source_frames": 0,
+      "feature_coverage": {
+        "throwing_knee_angle_smoothed": 1.0,
+        "lead_knee_angle_smoothed": 1.0,
+        "shoulder_line_angle_smoothed": 1.0,
+        "throwing_elbow_angle_smoothed": 0.3076923076923077,
+        "hip_line_angle_smoothed": 1.0,
+        "lateral_foot_separation_smoothed": 1.0
+      },
+      "raw_feature_coverage": {
+        "throwing_knee_angle_smoothed": 1.0,
+        "lead_knee_angle_smoothed": 1.0,
+        "shoulder_line_angle_smoothed": 1.0,
+        "throwing_elbow_angle_smoothed": 0.15384615384615385,
+        "hip_line_angle_smoothed": 1.0,
+        "lateral_foot_separation_smoothed": 1.0
+      }
+    },
+    "follow_through": {
+      "frame_range": [
+        1644,
+        1686
+      ],
+      "source_frames": 43,
+      "source_detection_coverage": 1.0,
+      "max_consecutive_missing_source_frames": 0,
+      "feature_coverage": {
+        "throwing_knee_angle_smoothed": 1.0,
+        "lead_knee_angle_smoothed": 1.0,
+        "shoulder_line_angle_smoothed": 1.0,
+        "throwing_elbow_angle_smoothed": 0.0,
+        "hip_line_angle_smoothed": 1.0,
+        "lateral_foot_separation_smoothed": 1.0
+      },
+      "raw_feature_coverage": {
+        "throwing_knee_angle_smoothed": 1.0,
+        "lead_knee_angle_smoothed": 1.0,
+        "shoulder_line_angle_smoothed": 1.0,
+        "throwing_elbow_angle_smoothed": 0.0,
+        "hip_line_angle_smoothed": 1.0,
+        "lateral_foot_separation_smoothed": 1.0
+      }
+    }
+  },
+  "points_per_phase": 25,
+  "note": "Event-window coverage, not full-video coverage, describes the frames used for comparison."
+}

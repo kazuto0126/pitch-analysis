@@ -1,0 +1,11 @@
+{
+  "video": "data\\pitcher_database\\raw\\yoshinobu_yamamoto\\2026\\yoshinobu_yamamoto_2026_centerfield_clip_08_01.mp4",
+  "model": "models\\pose_landmarker_full.task",
+  "fps": 30.0,
+  "start_frame": 1035,
+  "end_frame": 1230,
+  "requested_frames": 196,
+  "detected_frames": 191,
+  "width": 450,
+  "height": 630
+}

@@ -1,0 +1,149 @@
+{
+  "schema_version": "0.1",
+  "purpose": "candidate video visual intake; source media is unmodified",
+  "records": [
+    {
+      "source_path": "C:\\Users\\lingz\\Videos\\螢幕錄製內容\\Blake Snell 2025.10.mp4",
+      "filename": "Blake Snell 2025.10.mp4",
+      "fps": 30.0,
+      "frame_count": 2430,
+      "duration_seconds": 81.0,
+      "width": 554,
+      "height": 706,
+      "contact_sheet": "data\\pitcher_database\\intake_review\\Blake Snell 2025.10_contact_sheet.jpg",
+      "audit_status": "needs_visual_review"
+    },
+    {
+      "source_path": "C:\\Users\\lingz\\Videos\\螢幕錄製內容\\Blake Snell 2026.8.mp4",
+      "filename": "Blake Snell 2026.8.mp4",
+      "fps": 30.0,
+      "frame_count": 4264,
+      "duration_seconds": 142.13333333333333,
+      "width": 454,
+      "height": 650,
+      "contact_sheet": "data\\pitcher_database\\intake_review\\Blake Snell 2026.8_contact_sheet.jpg",
+      "audit_status": "needs_visual_review"
+    },
+    {
+      "source_path": "C:\\Users\\lingz\\Videos\\螢幕錄製內容\\May 28, 2026.1.mp4",
+      "filename": "May 28, 2026.1.mp4",
+      "fps": 30.0,
+      "frame_count": 4602,
+      "duration_seconds": 153.4,
+      "width": 616,
+      "height": 792,
+      "contact_sheet": "data\\pitcher_database\\intake_review\\May 28, 2026.1_contact_sheet.jpg",
+      "audit_status": "needs_visual_review"
+    },
+    {
+      "source_path": "C:\\Users\\lingz\\Videos\\螢幕錄製內容\\May 28, 2026.2.mp4",
+      "filename": "May 28, 2026.2.mp4",
+      "fps": 30.0,
+      "frame_count": 5825,
+      "duration_seconds": 194.16666666666666,
+      "width": 624,
+      "height": 694,
+      "contact_sheet": "data\\pitcher_database\\intake_review\\May 28, 2026.2_contact_sheet.jpg",
+      "audit_status": "needs_visual_review"
+    },
+    {
+      "source_path": "C:\\Users\\lingz\\Videos\\螢幕錄製內容\\May 28, 2026.3.mp4",
+      "filename": "May 28, 2026.3.mp4",
+      "fps": 30.0,
+      "frame_count": 2279,
+      "duration_seconds": 75.96666666666667,
+      "width": 498,
+      "height": 658,
+      "contact_sheet": "data\\pitcher_database\\intake_review\\May 28, 2026.3_contact_sheet.jpg",
+      "audit_status": "needs_visual_review"
+    },
+    {
+      "source_path": "C:\\Users\\lingz\\Videos\\螢幕錄製內容\\Tarik Skubal2026.8.mp4",
+      "filename": "Tarik Skubal2026.8.mp4",
+      "fps": 30.0,
+      "frame_count": 13658,
+      "duration_seconds": 455.26666666666665,
+      "width": 520,
+      "height": 658,
+      "contact_sheet": "data\\pitcher_database\\intake_review\\Tarik Skubal2026.8_contact_sheet.jpg",
+      "audit_status": "needs_visual_review"
+    },
+    {
+      "source_path": "C:\\Users\\lingz\\Videos\\螢幕錄製內容\\Tarik Skubal2026.9.1.mp4",
+      "filename": "Tarik Skubal2026.9.1.mp4",
+      "fps": 30.0,
+      "frame_count": 1859,
+      "duration_seconds": 61.96666666666667,
+      "width": 442,
+      "height": 540,
+      "contact_sheet": "data\\pitcher_database\\intake_review\\Tarik Skubal2026.9.1_contact_sheet.jpg",
+      "audit_status": "needs_visual_review"
+    },
+    {
+      "source_path": "C:\\Users\\lingz\\Videos\\螢幕錄製內容\\Tarik Skubal2026.9.2.mp4",
+      "filename": "Tarik Skubal2026.9.2.mp4",
+      "fps": 30.0,
+      "frame_count": 2275,
+      "duration_seconds": 75.83333333333333,
+      "width": 464,
+      "height": 586,
+      "contact_sheet": "data\\pitcher_database\\intake_review\\Tarik Skubal2026.9.2_contact_sheet.jpg",
+      "audit_status": "needs_visual_review"
+    },
+    {
+      "source_path": "C:\\Users\\lingz\\Videos\\螢幕錄製內容\\Yamamoto2026..1.mp4",
+      "filename": "Yamamoto2026..1.mp4",
+      "fps": 30.0,
+      "frame_count": 1909,
+      "duration_seconds": 63.63333333333333,
+      "width": 532,
+      "height": 610,
+      "contact_sheet": "data\\pitcher_database\\intake_review\\Yamamoto2026..1_contact_sheet.jpg",
+      "audit_status": "needs_visual_review"
+    },
+    {
+      "source_path": "C:\\Users\\lingz\\Videos\\螢幕錄製內容\\Yamamoto2026.7.2.mp4",
+      "filename": "Yamamoto2026.7.2.mp4",
+      "fps": 30.0,
+      "frame_count": 5006,
+      "duration_seconds": 166.86666666666667,
+      "width": 488,
+      "height": 600,
+      "contact_sheet": "data\\pitcher_database\\intake_review\\Yamamoto2026.7.2_contact_sheet.jpg",
+      "audit_status": "needs_visual_review"
+    },
+    {
+      "source_path": "C:\\Users\\lingz\\Videos\\螢幕錄製內容\\Yamamoto2026.8.1.mp4",
+      "filename": "Yamamoto2026.8.1.mp4",
+      "fps": 30.0,
+      "frame_count": 2461,
+      "duration_seconds": 82.03333333333333,
+      "width": 450,
+      "height": 630,
+      "contact_sheet": "data\\pitcher_database\\intake_review\\Yamamoto2026.8.1_contact_sheet.jpg",
+      "audit_status": "needs_visual_review"
+    },
+    {
+      "source_path": "C:\\Users\\lingz\\Videos\\螢幕錄製內容\\Yu Darvish 2025.7.mp4",
+      "filename": "Yu Darvish 2025.7.mp4",
+      "fps": 30.0,
+      "frame_count": 2767,
+      "duration_seconds": 92.23333333333333,
+      "width": 618,
+      "height": 602,
+      "contact_sheet": "data\\pitcher_database\\intake_review\\Yu Darvish 2025.7_contact_sheet.jpg",
+      "audit_status": "needs_visual_review"
+    },
+    {
+      "source_path": "C:\\Users\\lingz\\Videos\\螢幕錄製內容\\Yu Darvish2025.9.mp4",
+      "filename": "Yu Darvish2025.9.mp4",
+      "fps": 30.0,
+      "frame_count": 6036,
+      "duration_seconds": 201.2,
+      "width": 474,
+      "height": 768,
+      "contact_sheet": "data\\pitcher_database\\intake_review\\Yu Darvish2025.9_contact_sheet.jpg",
+      "audit_status": "needs_visual_review"
+    }
+  ]
+}

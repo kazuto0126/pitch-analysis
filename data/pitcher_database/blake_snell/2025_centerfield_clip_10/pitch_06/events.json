@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "video_id": "snell_2025_clip_10_pitch_06",
+  "throws": "LEFT",
+  "reference_context": {
+    "season": "2025",
+    "team": "Los Angeles Dodgers",
+    "view": "rear_centerfield_broadcast"
+  },
+  "review_status": "provisional_candidates_accepted",
+  "events": {
+    "pitch_start": 875,
+    "peak_leg_lift": 895,
+    "foot_strike": 906,
+    "release": 915,
+    "follow_through_end": 950
+  },
+  "automatic_candidates": {
+    "motion_start_proxy": 872,
+    "peak_lateral_foot_separation_proxy": 932,
+    "motion_end_proxy": 960
+  },
+  "notes": "Passed quality gate and dense visual review. Complete delivery begins at the first stable set frame after the previous pitch; labels remain provisional pending frame-by-frame confirmation."
+}

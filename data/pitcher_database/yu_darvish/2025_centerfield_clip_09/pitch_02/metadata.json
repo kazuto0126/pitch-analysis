@@ -1,0 +1,192 @@
+{
+  "schema_version": "0.2-quality-aware",
+  "status": "revalidated_reference_candidate",
+  "source_video": "data\\pitcher_database\\raw\\yu_darvish\\2025\\yu_darvish_2025_centerfield_clip_09.mp4",
+  "segment_seconds": {
+    "start": 87.5,
+    "end": 94.0
+  },
+  "capture": {
+    "video": "data\\pitcher_database\\raw\\yu_darvish\\2025\\yu_darvish_2025_centerfield_clip_09.mp4",
+    "model": "models\\pose_landmarker_full.task",
+    "fps": 30.0,
+    "start_frame": 2625,
+    "end_frame": 2820,
+    "requested_frames": 196,
+    "detected_frames": 196,
+    "width": 474,
+    "height": 768
+  },
+  "cleaning": {
+    "frame_range": [
+      2625,
+      2820
+    ],
+    "landmarks": 33,
+    "rows": 6468,
+    "min_visibility": 0.5,
+    "min_presence": 0.5,
+    "coordinate_x_scale": 0.6171875,
+    "context": "data\\pitcher_database\\yu_darvish\\2025_centerfield_clip_09\\pitch_02\\pose_clean.clean.json"
+  },
+  "feature_quality": {
+    "schema_version": "feature-quality-v0.3",
+    "input_frames_detected": 196,
+    "timeline_frames": 196,
+    "timeline_start_frame": 2625,
+    "timeline_end_frame": 2820,
+    "timeline_contract": "capture_requested_range",
+    "missing_source_frames": [],
+    "missing_source_frame_count": 0,
+    "max_consecutive_missing_source_frames": 0,
+    "invalid_feature_frames": {
+      "throwing_knee_angle": 4,
+      "lead_knee_angle": 34,
+      "shoulder_line_angle": 0,
+      "throwing_elbow_angle": 63,
+      "hip_line_angle": 0,
+      "lateral_foot_separation": 30
+    },
+    "raw_invalid_feature_frames": {
+      "throwing_knee_angle": 6,
+      "lead_knee_angle": 35,
+      "shoulder_line_angle": 0,
+      "throwing_elbow_angle": 63,
+      "hip_line_angle": 0,
+      "lateral_foot_separation": 32
+    },
+    "coordinate_imputed_feature_frames": {
+      "throwing_knee_angle": 2,
+      "lead_knee_angle": 1,
+      "shoulder_line_angle": 0,
+      "throwing_elbow_angle": 0,
+      "hip_line_angle": 0,
+      "lateral_foot_separation": 2
+    },
+    "feature_coverage": {
+      "throwing_knee_angle": 0.9795918367346939,
+      "lead_knee_angle": 0.826530612244898,
+      "shoulder_line_angle": 1.0,
+      "throwing_elbow_angle": 0.6785714285714286,
+      "hip_line_angle": 1.0,
+      "lateral_foot_separation": 0.8469387755102041
+    },
+    "raw_feature_coverage": {
+      "throwing_knee_angle": 0.9693877551020408,
+      "lead_knee_angle": 0.8214285714285714,
+      "shoulder_line_angle": 1.0,
+      "throwing_elbow_angle": 0.6785714285714286,
+      "hip_line_angle": 1.0,
+      "lateral_foot_separation": 0.8367346938775511
+    },
+    "coordinate_imputed_feature_fraction": {
+      "throwing_knee_angle": 0.01020408163265306,
+      "lead_knee_angle": 0.00510204081632653,
+      "shoulder_line_angle": 0.0,
+      "throwing_elbow_angle": 0.0,
+      "hip_line_angle": 0.0,
+      "lateral_foot_separation": 0.01020408163265306
+    },
+    "throwing_side": "RIGHT",
+    "min_visibility": 0.5,
+    "min_presence": 0.5,
+    "coordinate_x_scale": 0.6171875,
+    "coordinate_contract": "height-normalized image plane: x_normalized * (width / height), y_normalized",
+    "capture_context": {
+      "width": 474,
+      "height": 768,
+      "fps": 30.0,
+      "_context_path": "data\\pitcher_database\\yu_darvish\\2025_centerfield_clip_09\\pitch_02\\pose_clean.clean.json"
+    },
+    "smoothing": {
+      "coordinate": "none",
+      "feature_method": "median; doubled-angle circular mean for unoriented shoulder/hip lines",
+      "radius_frames": 2,
+      "radius_seconds": 0.06666666666666667,
+      "max_interpolation_gap_frames": 2,
+      "max_interpolation_seconds": 0.06666666666666667
+    },
+    "motion_window_proxy": {
+      "start_frame": 2675,
+      "end_frame": 2820,
+      "peak_separation_frame": 2744,
+      "confidence": 0.652524268898823,
+      "method": "lateral-foot-separation-proxy"
+    },
+    "motion_candidates": {
+      "status": "review_required",
+      "method": "multi-feature-velocity-proxy",
+      "candidate_count": 3,
+      "candidates": [
+        {
+          "start_frame": 2635,
+          "end_frame": 2674,
+          "peak_separation_frame": 2652,
+          "confidence": 0.8485571581696949,
+          "method": "multi-feature-velocity-proxy"
+        },
+        {
+          "start_frame": 2680,
+          "end_frame": 2767,
+          "peak_separation_frame": 2712,
+          "confidence": 0.9616567697245452,
+          "method": "multi-feature-velocity-proxy"
+        },
+        {
+          "start_frame": 2786,
+          "end_frame": 2820,
+          "peak_separation_frame": 2820,
+          "confidence": 0.8540190148119143,
+          "method": "multi-feature-velocity-proxy"
+        }
+      ],
+      "limitations": [
+        "Broadcast cuts and pose-tracking errors may create false positives.",
+        "Candidates are not biomechanical event labels and require visual review."
+      ]
+    }
+  },
+  "quality_gate": {
+    "passed": true,
+    "feature_coverage": {
+      "throwing_knee_angle": 0.9693877551020408,
+      "lead_knee_angle": 0.8214285714285714,
+      "shoulder_line_angle": 1.0,
+      "throwing_elbow_angle": 0.6785714285714286,
+      "hip_line_angle": 1.0,
+      "lateral_foot_separation": 0.8367346938775511
+    },
+    "usable_feature_coverage": {
+      "throwing_knee_angle": 0.9795918367346939,
+      "lead_knee_angle": 0.826530612244898,
+      "shoulder_line_angle": 1.0,
+      "throwing_elbow_angle": 0.6785714285714286,
+      "hip_line_angle": 1.0,
+      "lateral_foot_separation": 0.8469387755102041
+    },
+    "coordinate_imputed_feature_fraction": {
+      "throwing_knee_angle": 0.01020408163265306,
+      "lead_knee_angle": 0.00510204081632653,
+      "shoulder_line_angle": 0.0,
+      "throwing_elbow_angle": 0.0,
+      "hip_line_angle": 0.0,
+      "lateral_foot_separation": 0.01020408163265306
+    },
+    "detection_coverage": 1.0,
+    "max_consecutive_missing_source_frames": 0,
+    "failures": []
+  },
+  "reference_context": {
+    "season": "2025",
+    "team": "San Diego Padres",
+    "view": "rear_centerfield_broadcast"
+  },
+  "revalidation": {
+    "method": "rebuild-derived-artifacts-from-existing-pose-raw",
+    "phase_sequence": {
+      "attempted": true,
+      "rebuilt": true,
+      "quality_report": "data\\pitcher_database\\yu_darvish\\2025_centerfield_clip_09\\pitch_02\\phase_sequence.quality.json"
+    }
+  }
+}

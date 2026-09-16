@@ -1,0 +1,29 @@
+{
+  "schema_version": "0.1-provisional",
+  "aggregation": "median per-reference phase-DTW distance",
+  "reference_count": 2,
+  "pitcher_distance": 1.0148023444553906,
+  "reference_comparisons": [
+    {
+      "reference_sequence": "data\\pitcher_database\\yu_darvish\\2013_regular_season_centerfield_01\\pitch_01\\phase_sequence.csv",
+      "distance": 1.047581998994418,
+      "phase_distances": {
+        "windup": 1.152342593237246,
+        "stride": 1.0130863915342487,
+        "arm_acceleration": 0.9776628232044352,
+        "follow_through": 1.0472361880017416
+      }
+    },
+    {
+      "reference_sequence": "data\\pitcher_database\\yu_darvish\\2013_regular_season_centerfield_01\\pitch_02\\phase_sequence.csv",
+      "distance": 0.9820226899163633,
+      "phase_distances": {
+        "windup": 1.5400140624471774,
+        "stride": 0.8482332733527623,
+        "arm_acceleration": 0.7539790007345613,
+        "follow_through": 0.7858644231309521
+      }
+    }
+  ],
+  "warning": "Diagnostic only: references share one pitcher and the sample is too small for pitcher ranking."
+}

@@ -1,0 +1,59 @@
+{
+  "schema_version": "0.3-provisional-camera-aware",
+  "result_status": "no_compatible_references",
+  "query_throws": "RIGHT",
+  "query_context": {
+    "schema_version": "query-context-v0.2",
+    "video_id": "test_pitch",
+    "throws": "RIGHT",
+    "review_status": "camera_incompatible_with_reference_library",
+    "reference_context": {
+      "view": "side_oblique_mobile",
+      "horizontal_mirror": null,
+      "subject_framing": "full_body"
+    },
+    "notes": "Native-aspect visual review shows a vertical side/oblique mobile view, not a rear-centerfield broadcast view. Do not issue an MLB similarity ranking against the current registry."
+  },
+  "ranking_method": "median of phase-aware DTW distances; references and scaler restricted to matching throwing side",
+  "camera_compatibility_mode": "exploratory",
+  "reference_root": "data\\pitcher_database",
+  "registry": "data\\pitcher_database\\registry_v0.4.json",
+  "registry_schema_version": "0.3-provisional",
+  "scaler": "data\\pitcher_database\\reference_scaler_right_v0.4.json",
+  "rankings": [],
+  "excluded_references": [
+    {
+      "pitcher_id": "shohei_ohtani",
+      "video_id": "shohei_ohtani_2026_clip_02_pitch_02",
+      "phase_sequence": "data\\pitcher_database\\shohei_ohtani\\2026_centerfield_clip_02\\pitch_02\\phase_sequence.csv",
+      "reasons": [
+        "camera_view_mismatch"
+      ]
+    },
+    {
+      "pitcher_id": "shohei_ohtani",
+      "video_id": "shohei_ohtani_2026_clip_02_pitch_05",
+      "phase_sequence": "data\\pitcher_database\\shohei_ohtani\\2026_centerfield_clip_02\\pitch_05\\phase_sequence.csv",
+      "reasons": [
+        "camera_view_mismatch"
+      ]
+    },
+    {
+      "pitcher_id": "yu_darvish",
+      "video_id": "darvish_2013_regular_season_centerfield_01_pitch_01",
+      "phase_sequence": "data\\pitcher_database\\yu_darvish\\2013_regular_season_centerfield_01\\pitch_01\\phase_sequence.csv",
+      "reasons": [
+        "camera_view_mismatch"
+      ]
+    },
+    {
+      "pitcher_id": "yu_darvish",
+      "video_id": "darvish_2025_clip_09_pitch_02",
+      "phase_sequence": "data\\pitcher_database\\yu_darvish\\2025_centerfield_clip_09\\pitch_02\\phase_sequence.csv",
+      "reasons": [
+        "camera_view_mismatch"
+      ]
+    }
+  ],
+  "warning": "No ranking was issued because no eligible reference passed the throwing-side and camera-compatibility gates."
+}

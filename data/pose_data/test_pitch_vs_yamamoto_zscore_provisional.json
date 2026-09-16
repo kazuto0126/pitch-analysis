@@ -1,0 +1,55 @@
+{
+  "schema_version": "0.1-provisional",
+  "normalization": "reference-z-score",
+  "excluded_features": [
+    "lateral_foot_separation_smoothed"
+  ],
+  "overall_mean_phase_distance": 1.0621299973360585,
+  "phases": {
+    "windup": {
+      "distance": 0.8952475294335445,
+      "path_length": 29,
+      "query_coverage": {
+        "throwing_knee_angle_smoothed": 1.0,
+        "lead_knee_angle_smoothed": 1.0,
+        "shoulder_line_angle_smoothed": 1.0,
+        "throwing_elbow_angle_smoothed": 0.72,
+        "hip_line_angle_smoothed": 1.0
+      }
+    },
+    "stride": {
+      "distance": 1.311722171591722,
+      "path_length": 25,
+      "query_coverage": {
+        "throwing_knee_angle_smoothed": 1.0,
+        "lead_knee_angle_smoothed": 1.0,
+        "shoulder_line_angle_smoothed": 1.0,
+        "throwing_elbow_angle_smoothed": 1.0,
+        "hip_line_angle_smoothed": 1.0
+      }
+    },
+    "arm_acceleration": {
+      "distance": 1.123244113863145,
+      "path_length": 25,
+      "query_coverage": {
+        "throwing_knee_angle_smoothed": 1.0,
+        "lead_knee_angle_smoothed": 1.0,
+        "shoulder_line_angle_smoothed": 1.0,
+        "throwing_elbow_angle_smoothed": 1.0,
+        "hip_line_angle_smoothed": 1.0
+      }
+    },
+    "follow_through": {
+      "distance": 0.9183061744558227,
+      "path_length": 29,
+      "query_coverage": {
+        "throwing_knee_angle_smoothed": 1.0,
+        "lead_knee_angle_smoothed": 1.0,
+        "shoulder_line_angle_smoothed": 1.0,
+        "throwing_elbow_angle_smoothed": 0.24,
+        "hip_line_angle_smoothed": 1.0
+      }
+    }
+  },
+  "warning": "Diagnostic cross-camera comparison only; the current reference set is too small for pitcher ranking."
+}

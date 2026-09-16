@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "video_id": "snell_2026_clip_08_pitch_01",
+  "throws": "LEFT",
+  "reference_context": {
+    "season": "2026",
+    "team": "Los Angeles Dodgers",
+    "view": "rear_centerfield_broadcast"
+  },
+  "review_status": "rejected",
+  "events": {
+    "pitch_start": null,
+    "peak_leg_lift": null,
+    "foot_strike": null,
+    "release": null,
+    "follow_through_end": null
+  },
+  "automatic_candidates": {
+    "motion_start_proxy": 1114,
+    "peak_lateral_foot_separation_proxy": 1160,
+    "motion_end_proxy": 1245
+  },
+  "notes": "Rejected by automatic quality gate because the selected window extends into a broadcast transition after frame 1190. A shorter pre-transition candidate is prepared separately."
+}

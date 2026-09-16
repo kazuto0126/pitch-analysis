@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "video_id": "yamamoto_2026_clip_08_01_pitch_01",
+  "throws": "RIGHT",
+  "reference_context": {
+    "season": "2026",
+    "team": "Los Angeles Dodgers",
+    "view": "rear_centerfield_broadcast"
+  },
+  "review_status": "rejected",
+  "events": {
+    "pitch_start": null,
+    "peak_leg_lift": null,
+    "foot_strike": null,
+    "release": null,
+    "follow_through_end": null
+  },
+  "automatic_candidates": {
+    "motion_start_proxy": 1049,
+    "peak_lateral_foot_separation_proxy": 1138,
+    "motion_end_proxy": 1230
+  },
+  "notes": "Rejected after dense review: the camera cuts during the delivery and crops the upper body before the rear-view shot. Right-elbow feature is invalid in 111 of 196 timeline frames. Do not build phase sequence or use as reference."
+}

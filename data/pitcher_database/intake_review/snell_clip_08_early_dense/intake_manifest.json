@@ -1,0 +1,21 @@
+{
+  "schema_version": "0.1",
+  "purpose": "candidate video visual intake; source media is unmodified",
+  "records": [
+    {
+      "source_path": "data\\pitcher_database\\raw\\blake_snell\\2026\\blake_snell_2026_centerfield_clip_08.mp4",
+      "filename": "blake_snell_2026_centerfield_clip_08.mp4",
+      "fps": 30.0,
+      "frame_count": 4264,
+      "duration_seconds": 142.13333333333333,
+      "sampled_range_seconds": {
+        "start": 0.0,
+        "end": 50.0
+      },
+      "width": 454,
+      "height": 650,
+      "contact_sheet": "data\\pitcher_database\\intake_review\\snell_clip_08_early_dense\\blake_snell_2026_centerfield_clip_08_contact_sheet.jpg",
+      "audit_status": "needs_visual_review"
+    }
+  ]
+}

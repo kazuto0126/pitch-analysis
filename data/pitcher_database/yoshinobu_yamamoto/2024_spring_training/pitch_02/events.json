@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "video_id": "yamamoto_2024_spring_training_pitch_02",
+  "throws": "RIGHT",
+  "reference_context": {"season": "2024", "team": "Los Angeles Dodgers", "view": "rear_centerfield_broadcast"},
+  "review_status": "provisional_candidates_accepted",
+  "events": {
+  "pitch_start": 732,
+"peak_leg_lift": 750,
+"foot_strike": 756,
+"release": 762,
+"follow_through_end": 792
+  },
+  "automatic_candidates": {
+    "motion_start_proxy": 742,
+    "peak_lateral_foot_separation_proxy": 769,
+    "motion_end_proxy": 775,
+    "pitch_start_candidate": 732,
+    "peak_leg_lift_candidate": 750,
+    "foot_strike_candidate": 756,
+    "release_candidate": 762,
+    "follow_through_end_candidate": 792
+  },
+  "notes": "Fill event frames after reviewing the video. Proxy values are not biomechanical labels."
+}

@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "video_id": "darvish_2025_clip_09_pitch_02",
+  "throws": "RIGHT",
+  "reference_context": {
+    "season": "2025",
+    "team": "San Diego Padres",
+    "view": "rear_centerfield_broadcast"
+  },
+  "review_status": "provisional_candidates_accepted",
+  "events": {
+    "pitch_start": 2625,
+    "peak_leg_lift": 2692,
+    "foot_strike": 2709,
+    "release": 2723,
+    "follow_through_end": 2760
+  },
+  "automatic_candidates": {
+    "motion_start_proxy": 2663,
+    "peak_lateral_foot_separation_proxy": 2743,
+    "motion_end_proxy": 2820
+  },
+  "notes": "Passed feature-coverage gate and dense visual review. Event labels are provisional (not frame-accurate biomechanical ground truth); confirm against frame-by-frame playback before promoting to human_reviewed."
+}

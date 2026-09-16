@@ -1,0 +1,12 @@
+{
+  "schema_version": "query-context-v0.2",
+  "video_id": "test_pitch",
+  "throws": "RIGHT",
+  "review_status": "camera_incompatible_with_reference_library",
+  "reference_context": {
+    "view": "side_oblique_mobile",
+    "horizontal_mirror": null,
+    "subject_framing": "full_body"
+  },
+  "notes": "Native-aspect visual review shows a vertical side/oblique mobile view, not a rear-centerfield broadcast view. Do not issue an MLB similarity ranking against the current registry."
+}

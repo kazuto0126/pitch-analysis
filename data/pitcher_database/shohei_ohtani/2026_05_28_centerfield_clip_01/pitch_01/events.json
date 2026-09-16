@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "video_id": "ohtani_2026_05_28_clip_01_pitch_01",
+  "throws": "RIGHT",
+  "reference_context": {
+    "season": "2026",
+    "team": "Los Angeles Dodgers",
+    "view": "rear_centerfield_broadcast"
+  },
+  "review_status": "rejected",
+  "events": {
+    "pitch_start": null,
+    "peak_leg_lift": null,
+    "foot_strike": null,
+    "release": null,
+    "follow_through_end": null
+  },
+  "automatic_candidates": {
+    "motion_start_proxy": 402,
+    "peak_lateral_foot_separation_proxy": 472,
+    "motion_end_proxy": 505
+  },
+  "notes": "Rejected by minimum coverage triage: throwing-elbow angle is invalid in 70 of 127 frames (44.9% usable), below the 50% floor for reference use."
+}

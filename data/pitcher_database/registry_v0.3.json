@@ -1,0 +1,356 @@
+{
+  "schema_version": "0.3-provisional",
+  "reference_root": "data\\pitcher_database",
+  "pitchers": {
+    "blake_snell": [
+      {
+        "phase_sequence": "data\\pitcher_database\\blake_snell\\2025_centerfield_clip_10\\pitch_02\\phase_sequence.csv",
+        "video_id": "snell_2025_clip_10_pitch_02",
+        "throws": "LEFT",
+        "review_status": "provisional_candidates_accepted",
+        "context": {
+          "season": "2025",
+          "team": "Los Angeles Dodgers",
+          "view": "rear_centerfield_broadcast",
+          "collection": "2025_centerfield_clip_10"
+        },
+        "camera_context": {
+          "view": "rear_centerfield_broadcast",
+          "horizontal_mirror": null,
+          "subject_framing": "unknown"
+        },
+        "validation": {
+          "quality_gate": "passed",
+          "capture_range": [
+            360,
+            474
+          ],
+          "phase_schema": "validated"
+        }
+      },
+      {
+        "phase_sequence": "data\\pitcher_database\\blake_snell\\2025_centerfield_clip_10\\pitch_03\\phase_sequence.csv",
+        "video_id": "snell_2025_clip_10_pitch_03",
+        "throws": "LEFT",
+        "review_status": "provisional_candidates_accepted",
+        "context": {
+          "season": "2025",
+          "team": "Los Angeles Dodgers",
+          "view": "rear_centerfield_broadcast",
+          "collection": "2025_centerfield_clip_10"
+        },
+        "camera_context": {
+          "view": "rear_centerfield_broadcast",
+          "horizontal_mirror": null,
+          "subject_framing": "unknown"
+        },
+        "validation": {
+          "quality_gate": "passed",
+          "capture_range": [
+            504,
+            645
+          ],
+          "phase_schema": "validated"
+        }
+      },
+      {
+        "phase_sequence": "data\\pitcher_database\\blake_snell\\2025_centerfield_clip_10\\pitch_06\\phase_sequence.csv",
+        "video_id": "snell_2025_clip_10_pitch_06",
+        "throws": "LEFT",
+        "review_status": "provisional_candidates_accepted",
+        "context": {
+          "season": "2025",
+          "team": "Los Angeles Dodgers",
+          "view": "rear_centerfield_broadcast",
+          "collection": "2025_centerfield_clip_10"
+        },
+        "camera_context": {
+          "view": "rear_centerfield_broadcast",
+          "horizontal_mirror": null,
+          "subject_framing": "unknown"
+        },
+        "validation": {
+          "quality_gate": "passed",
+          "capture_range": [
+            855,
+            960
+          ],
+          "phase_schema": "validated"
+        }
+      },
+      {
+        "phase_sequence": "data\\pitcher_database\\blake_snell\\2025_centerfield_clip_10\\pitch_07\\phase_sequence.csv",
+        "video_id": "snell_2025_clip_10_pitch_07",
+        "throws": "LEFT",
+        "review_status": "provisional_candidates_accepted",
+        "context": {
+          "season": "2025",
+          "team": "Los Angeles Dodgers",
+          "view": "rear_centerfield_broadcast",
+          "collection": "2025_centerfield_clip_10"
+        },
+        "camera_context": {
+          "view": "rear_centerfield_broadcast",
+          "horizontal_mirror": null,
+          "subject_framing": "unknown"
+        },
+        "validation": {
+          "quality_gate": "passed",
+          "capture_range": [
+            960,
+            1050
+          ],
+          "phase_schema": "validated"
+        }
+      }
+    ],
+    "shohei_ohtani": [
+      {
+        "phase_sequence": "data\\pitcher_database\\shohei_ohtani\\2026_centerfield_clip_02\\pitch_02\\phase_sequence.csv",
+        "video_id": "shohei_ohtani_2026_clip_02_pitch_02",
+        "throws": "RIGHT",
+        "review_status": "provisional_candidates_accepted",
+        "context": {
+          "season": "2026",
+          "team": "Los Angeles Dodgers",
+          "view": "rear_centerfield_broadcast",
+          "collection": "2026_centerfield_clip_02"
+        },
+        "camera_context": {
+          "view": "rear_centerfield_broadcast",
+          "horizontal_mirror": null,
+          "subject_framing": "unknown"
+        },
+        "validation": {
+          "quality_gate": "passed",
+          "capture_range": [
+            2154,
+            2226
+          ],
+          "phase_schema": "validated"
+        }
+      },
+      {
+        "phase_sequence": "data\\pitcher_database\\shohei_ohtani\\2026_centerfield_clip_02\\pitch_05\\phase_sequence.csv",
+        "video_id": "shohei_ohtani_2026_clip_02_pitch_05",
+        "throws": "RIGHT",
+        "review_status": "provisional_candidates_accepted",
+        "context": {
+          "season": "2026",
+          "team": "Los Angeles Dodgers",
+          "view": "rear_centerfield_broadcast",
+          "collection": "2026_centerfield_clip_02"
+        },
+        "camera_context": {
+          "view": "rear_centerfield_broadcast",
+          "horizontal_mirror": null,
+          "subject_framing": "unknown"
+        },
+        "validation": {
+          "quality_gate": "passed",
+          "capture_range": [
+            1182,
+            1248
+          ],
+          "phase_schema": "validated"
+        }
+      }
+    ],
+    "tarik_skubal": [
+      {
+        "phase_sequence": "data\\pitcher_database\\tarik_skubal\\2026_centerfield_clip_08\\pitch_02\\phase_sequence.csv",
+        "video_id": "tarik_skubal_2026_clip_08_pitch_02",
+        "throws": "LEFT",
+        "review_status": "provisional_candidates_accepted",
+        "context": {
+          "season": "2026",
+          "team": "Detroit Tigers",
+          "view": "rear_centerfield_broadcast",
+          "collection": "2026_centerfield_clip_08"
+        },
+        "camera_context": {
+          "view": "rear_centerfield_broadcast",
+          "horizontal_mirror": null,
+          "subject_framing": "unknown"
+        },
+        "validation": {
+          "quality_gate": "passed",
+          "capture_range": [
+            6062,
+            6168
+          ],
+          "phase_schema": "validated"
+        }
+      },
+      {
+        "phase_sequence": "data\\pitcher_database\\tarik_skubal\\2026_centerfield_clip_08\\pitch_05\\phase_sequence.csv",
+        "video_id": "tarik_skubal_2026_clip_08_pitch_05",
+        "throws": "LEFT",
+        "review_status": "provisional_candidates_accepted",
+        "context": {
+          "season": "2026",
+          "team": "Detroit Tigers",
+          "view": "rear_centerfield_broadcast",
+          "collection": "2026_centerfield_clip_08"
+        },
+        "camera_context": {
+          "view": "rear_centerfield_broadcast",
+          "horizontal_mirror": null,
+          "subject_framing": "unknown"
+        },
+        "validation": {
+          "quality_gate": "passed",
+          "capture_range": [
+            12744,
+            12856
+          ],
+          "phase_schema": "validated"
+        }
+      }
+    ],
+    "yu_darvish": [
+      {
+        "phase_sequence": "data\\pitcher_database\\yu_darvish\\2013_regular_season_centerfield_01\\pitch_01\\phase_sequence.csv",
+        "video_id": "darvish_2013_regular_season_centerfield_01_pitch_01",
+        "throws": "RIGHT",
+        "review_status": "provisional_candidates_accepted",
+        "context": {
+          "season": "2013",
+          "team": "Texas Rangers",
+          "view": "rear_centerfield_broadcast",
+          "collection": "2013_regular_season_centerfield_01"
+        },
+        "camera_context": {
+          "view": "rear_centerfield_broadcast",
+          "horizontal_mirror": null,
+          "subject_framing": "unknown"
+        },
+        "validation": {
+          "quality_gate": "passed",
+          "capture_range": [
+            1572,
+            1692
+          ],
+          "phase_schema": "validated"
+        }
+      },
+      {
+        "phase_sequence": "data\\pitcher_database\\yu_darvish\\2025_centerfield_clip_09\\pitch_02\\phase_sequence.csv",
+        "video_id": "darvish_2025_clip_09_pitch_02",
+        "throws": "RIGHT",
+        "review_status": "provisional_candidates_accepted",
+        "context": {
+          "season": "2025",
+          "team": "San Diego Padres",
+          "view": "rear_centerfield_broadcast",
+          "collection": "2025_centerfield_clip_09"
+        },
+        "camera_context": {
+          "view": "rear_centerfield_broadcast",
+          "horizontal_mirror": null,
+          "subject_framing": "unknown"
+        },
+        "validation": {
+          "quality_gate": "passed",
+          "capture_range": [
+            2625,
+            2820
+          ],
+          "phase_schema": "validated"
+        }
+      }
+    ]
+  },
+  "season_counts": {
+    "blake_snell": {
+      "2025": 4
+    },
+    "shohei_ohtani": {
+      "2026": 2
+    },
+    "tarik_skubal": {
+      "2026": 2
+    },
+    "yu_darvish": {
+      "2013": 1,
+      "2025": 1
+    }
+  },
+  "accepted_reference_count": 10,
+  "excluded_reference_count": 6,
+  "warnings": {
+    "blake_snell": "below recommended 5 reference pitches",
+    "shohei_ohtani": "below recommended 5 reference pitches",
+    "tarik_skubal": "below recommended 5 reference pitches",
+    "yu_darvish": "below recommended 5 reference pitches"
+  },
+  "exclusions": [
+    {
+      "phase_sequence": "data\\pitcher_database\\blake_snell\\2026_centerfield_clip_08\\pitch_02\\phase_sequence.csv",
+      "relative_path": "blake_snell\\2026_centerfield_clip_08\\pitch_02\\phase_sequence.csv",
+      "pitcher_id": "blake_snell",
+      "reasons": [
+        "quality_gate_not_passed"
+      ],
+      "action": "not_eligible"
+    },
+    {
+      "phase_sequence": "data\\pitcher_database\\yoshinobu_yamamoto\\2024_spring_training\\pitch_01\\phase_sequence.csv",
+      "relative_path": "yoshinobu_yamamoto\\2024_spring_training\\pitch_01\\phase_sequence.csv",
+      "pitcher_id": "yoshinobu_yamamoto",
+      "reasons": [
+        "quality_gate_not_passed"
+      ],
+      "action": "not_eligible"
+    },
+    {
+      "phase_sequence": "data\\pitcher_database\\yoshinobu_yamamoto\\2024_spring_training\\pitch_02\\phase_sequence.csv",
+      "relative_path": "yoshinobu_yamamoto\\2024_spring_training\\pitch_02\\phase_sequence.csv",
+      "pitcher_id": "yoshinobu_yamamoto",
+      "reasons": [
+        "quality_gate_not_passed"
+      ],
+      "action": "not_eligible"
+    },
+    {
+      "phase_sequence": "data\\pitcher_database\\yoshinobu_yamamoto\\2024_spring_training\\pitch_03\\phase_sequence.csv",
+      "relative_path": "yoshinobu_yamamoto\\2024_spring_training\\pitch_03\\phase_sequence.csv",
+      "pitcher_id": "yoshinobu_yamamoto",
+      "reasons": [
+        "quality_gate_not_passed"
+      ],
+      "action": "not_eligible"
+    },
+    {
+      "phase_sequence": "data\\pitcher_database\\yoshinobu_yamamoto\\2024_spring_training_centerfield_02\\pitch_01\\phase_sequence.csv",
+      "relative_path": "yoshinobu_yamamoto\\2024_spring_training_centerfield_02\\pitch_01\\phase_sequence.csv",
+      "pitcher_id": "yoshinobu_yamamoto",
+      "reasons": [
+        "quality_gate_not_passed"
+      ],
+      "action": "not_eligible"
+    },
+    {
+      "phase_sequence": "data\\pitcher_database\\yu_darvish\\2013_regular_season_centerfield_01\\pitch_02\\phase_sequence.csv",
+      "relative_path": "yu_darvish\\2013_regular_season_centerfield_01\\pitch_02\\phase_sequence.csv",
+      "pitcher_id": "yu_darvish",
+      "reasons": [
+        "quality_gate_not_passed"
+      ],
+      "action": "not_eligible"
+    }
+  ],
+  "revalidation_warnings": [],
+  "eligibility_policy": {
+    "accepted_event_statuses": [
+      "human_reviewed",
+      "provisional_candidates_accepted"
+    ],
+    "requires": [
+      "passed quality_gate in metadata.json",
+      "complete capture metadata and in-range event boundaries",
+      "expected phase sequence schema"
+    ],
+    "legacy_behavior": "missing metadata is excluded and retained for revalidation; no artefacts are deleted"
+  }
+}

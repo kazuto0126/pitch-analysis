@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "video_id": "tarik_skubal_2026_clip_08_pitch_02",
+  "throws": "LEFT",
+  "reference_context": {
+    "season": "2026",
+    "team": "Detroit Tigers",
+    "view": "rear_centerfield_broadcast"
+  },
+  "review_status": "provisional_candidates_accepted",
+  "annotation": {
+    "source": "visual review of 30 fps rear-view contact sheet",
+    "confidence": "provisional",
+    "notes": "Complete stable rear-center-field delivery. Frame labels are visual approximations and remain eligible only for exploratory reference use."
+  },
+  "events": {
+    "pitch_start": 6066,
+    "peak_leg_lift": 6094,
+    "foot_strike": 6113,
+    "release": 6119,
+    "follow_through_end": 6148
+  },
+  "automatic_candidates": {
+    "motion_start_proxy": 6084,
+    "peak_lateral_foot_separation_proxy": 6086,
+    "motion_end_proxy": 6136
+  },
+  "notes": "Fill event frames after reviewing the video. Proxy values are not biomechanical labels."
+}

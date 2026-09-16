@@ -1,0 +1,39 @@
+{
+  "schema_version": "pitch-phase-v0.2-provisional",
+  "method": "reference-z-score",
+  "scalers": {
+    "throwing_knee_angle_smoothed": {
+      "feature": "throwing_knee_angle_smoothed",
+      "mean": 139.6984939846949,
+      "standard_deviation": 25.708613057918956,
+      "sample_count": 700
+    },
+    "lead_knee_angle_smoothed": {
+      "feature": "lead_knee_angle_smoothed",
+      "mean": 138.49557253343988,
+      "standard_deviation": 38.31241384496894,
+      "sample_count": 656
+    },
+    "shoulder_line_angle_smoothed": {
+      "feature": "shoulder_line_angle_smoothed",
+      "mean": -5.262958805529461,
+      "standard_deviation": 10.603377055737687,
+      "sample_count": 700
+    },
+    "throwing_elbow_angle_smoothed": {
+      "feature": "throwing_elbow_angle_smoothed",
+      "mean": 106.70966978124684,
+      "standard_deviation": 38.44951214464496,
+      "sample_count": 525
+    },
+    "hip_line_angle_smoothed": {
+      "feature": "hip_line_angle_smoothed",
+      "mean": -7.410326976472556,
+      "standard_deviation": 13.45126322476397,
+      "sample_count": 700
+    }
+  },
+  "reference_scope": {
+    "throws": "RIGHT"
+  }
+}

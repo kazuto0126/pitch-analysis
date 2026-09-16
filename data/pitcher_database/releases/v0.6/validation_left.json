@@ -1,0 +1,194 @@
+{
+  "schema_version": "leave-one-reference-out-v0.1",
+  "registry": "data\\pitcher_database\\releases\\v0.6\\registry.json",
+  "registry_schema_version": "0.5-reviewed-event-window-provisional",
+  "throws": "LEFT",
+  "camera_compatibility_mode": "exploratory",
+  "reference_count": 7,
+  "scored_fold_count": 7,
+  "unscored_fold_count": 0,
+  "validation_coverage": 1.0,
+  "top1_correct_count": 7,
+  "top1_accuracy": 1.0,
+  "mean_reciprocal_rank": 1.0,
+  "per_pitcher": {
+    "blake_snell": {
+      "reference_count": 5,
+      "scored_fold_count": 5,
+      "unscored_fold_count": 0,
+      "top1_correct_count": 5,
+      "top1_accuracy": 1.0
+    },
+    "tarik_skubal": {
+      "reference_count": 2,
+      "scored_fold_count": 2,
+      "unscored_fold_count": 0,
+      "top1_correct_count": 2,
+      "top1_accuracy": 1.0
+    }
+  },
+  "folds": [
+    {
+      "query_video_id": "snell_2025_clip_10_pitch_02",
+      "query_phase_sequence": "data\\pitcher_database\\blake_snell\\2025_centerfield_clip_10\\pitch_02\\phase_sequence.csv",
+      "expected_pitcher_id": "blake_snell",
+      "status": "scored",
+      "expected_rank": 1,
+      "top1_correct": true,
+      "ranking": [
+        {
+          "rank": 1,
+          "pitcher_id": "blake_snell",
+          "distance": 0.5323801032618499,
+          "reference_count": 4
+        },
+        {
+          "rank": 2,
+          "pitcher_id": "tarik_skubal",
+          "distance": 0.5724812624466921,
+          "reference_count": 2
+        }
+      ],
+      "excluded_references": []
+    },
+    {
+      "query_video_id": "snell_2025_clip_10_pitch_03",
+      "query_phase_sequence": "data\\pitcher_database\\blake_snell\\2025_centerfield_clip_10\\pitch_03\\phase_sequence.csv",
+      "expected_pitcher_id": "blake_snell",
+      "status": "scored",
+      "expected_rank": 1,
+      "top1_correct": true,
+      "ranking": [
+        {
+          "rank": 1,
+          "pitcher_id": "blake_snell",
+          "distance": 0.30630112168950807,
+          "reference_count": 4
+        },
+        {
+          "rank": 2,
+          "pitcher_id": "tarik_skubal",
+          "distance": 0.671544747164823,
+          "reference_count": 2
+        }
+      ],
+      "excluded_references": []
+    },
+    {
+      "query_video_id": "snell_2025_clip_10_pitch_06",
+      "query_phase_sequence": "data\\pitcher_database\\blake_snell\\2025_centerfield_clip_10\\pitch_06\\phase_sequence.csv",
+      "expected_pitcher_id": "blake_snell",
+      "status": "scored",
+      "expected_rank": 1,
+      "top1_correct": true,
+      "ranking": [
+        {
+          "rank": 1,
+          "pitcher_id": "blake_snell",
+          "distance": 0.3311962225406241,
+          "reference_count": 4
+        },
+        {
+          "rank": 2,
+          "pitcher_id": "tarik_skubal",
+          "distance": 0.7057243012791262,
+          "reference_count": 2
+        }
+      ],
+      "excluded_references": []
+    },
+    {
+      "query_video_id": "snell_2025_clip_10_pitch_07",
+      "query_phase_sequence": "data\\pitcher_database\\blake_snell\\2025_centerfield_clip_10\\pitch_07\\phase_sequence.csv",
+      "expected_pitcher_id": "blake_snell",
+      "status": "scored",
+      "expected_rank": 1,
+      "top1_correct": true,
+      "ranking": [
+        {
+          "rank": 1,
+          "pitcher_id": "blake_snell",
+          "distance": 0.31084901102116597,
+          "reference_count": 4
+        },
+        {
+          "rank": 2,
+          "pitcher_id": "tarik_skubal",
+          "distance": 0.5980848203069007,
+          "reference_count": 2
+        }
+      ],
+      "excluded_references": []
+    },
+    {
+      "query_video_id": "snell_2026_clip_08_pitch_02",
+      "query_phase_sequence": "data\\pitcher_database\\blake_snell\\2026_centerfield_clip_08\\pitch_02\\phase_sequence.csv",
+      "expected_pitcher_id": "blake_snell",
+      "status": "scored",
+      "expected_rank": 1,
+      "top1_correct": true,
+      "ranking": [
+        {
+          "rank": 1,
+          "pitcher_id": "blake_snell",
+          "distance": 0.3608671670081496,
+          "reference_count": 4
+        },
+        {
+          "rank": 2,
+          "pitcher_id": "tarik_skubal",
+          "distance": 0.6881382061987538,
+          "reference_count": 2
+        }
+      ],
+      "excluded_references": []
+    },
+    {
+      "query_video_id": "tarik_skubal_2026_clip_08_pitch_02",
+      "query_phase_sequence": "data\\pitcher_database\\tarik_skubal\\2026_centerfield_clip_08\\pitch_02\\phase_sequence.csv",
+      "expected_pitcher_id": "tarik_skubal",
+      "status": "scored",
+      "expected_rank": 1,
+      "top1_correct": true,
+      "ranking": [
+        {
+          "rank": 1,
+          "pitcher_id": "tarik_skubal",
+          "distance": 0.45559085438046765,
+          "reference_count": 1
+        },
+        {
+          "rank": 2,
+          "pitcher_id": "blake_snell",
+          "distance": 0.675404019537128,
+          "reference_count": 5
+        }
+      ],
+      "excluded_references": []
+    },
+    {
+      "query_video_id": "tarik_skubal_2026_clip_08_pitch_05",
+      "query_phase_sequence": "data\\pitcher_database\\tarik_skubal\\2026_centerfield_clip_08\\pitch_05\\phase_sequence.csv",
+      "expected_pitcher_id": "tarik_skubal",
+      "status": "scored",
+      "expected_rank": 1,
+      "top1_correct": true,
+      "ranking": [
+        {
+          "rank": 1,
+          "pitcher_id": "tarik_skubal",
+          "distance": 0.44591434426717486,
+          "reference_count": 1
+        },
+        {
+          "rank": 2,
+          "pitcher_id": "blake_snell",
+          "distance": 0.6820706562563602,
+          "reference_count": 5
+        }
+      ],
+      "excluded_references": []
+    }
+  ],
+  "warning": "Small-sample diagnostic only; each fold fits its scaler without the held-out pitch. Pitchers with only one reference are reported but cannot be scored."
+}

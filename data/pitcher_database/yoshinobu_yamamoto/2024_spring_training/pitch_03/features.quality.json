@@ -1,0 +1,117 @@
+{
+  "schema_version": "feature-quality-v0.3",
+  "input_frames_detected": 61,
+  "timeline_frames": 61,
+  "timeline_start_frame": 1089,
+  "timeline_end_frame": 1149,
+  "timeline_contract": "capture_requested_range",
+  "missing_source_frames": [],
+  "missing_source_frame_count": 0,
+  "max_consecutive_missing_source_frames": 0,
+  "invalid_feature_frames": {
+    "throwing_knee_angle": 0,
+    "lead_knee_angle": 13,
+    "shoulder_line_angle": 0,
+    "throwing_elbow_angle": 25,
+    "hip_line_angle": 0,
+    "lateral_foot_separation": 8
+  },
+  "raw_invalid_feature_frames": {
+    "throwing_knee_angle": 0,
+    "lead_knee_angle": 13,
+    "shoulder_line_angle": 0,
+    "throwing_elbow_angle": 25,
+    "hip_line_angle": 0,
+    "lateral_foot_separation": 8
+  },
+  "coordinate_imputed_feature_frames": {
+    "throwing_knee_angle": 0,
+    "lead_knee_angle": 0,
+    "shoulder_line_angle": 0,
+    "throwing_elbow_angle": 0,
+    "hip_line_angle": 0,
+    "lateral_foot_separation": 0
+  },
+  "feature_coverage": {
+    "throwing_knee_angle": 1.0,
+    "lead_knee_angle": 0.7868852459016393,
+    "shoulder_line_angle": 1.0,
+    "throwing_elbow_angle": 0.5901639344262295,
+    "hip_line_angle": 1.0,
+    "lateral_foot_separation": 0.8688524590163934
+  },
+  "raw_feature_coverage": {
+    "throwing_knee_angle": 1.0,
+    "lead_knee_angle": 0.7868852459016393,
+    "shoulder_line_angle": 1.0,
+    "throwing_elbow_angle": 0.5901639344262295,
+    "hip_line_angle": 1.0,
+    "lateral_foot_separation": 0.8688524590163934
+  },
+  "coordinate_imputed_feature_fraction": {
+    "throwing_knee_angle": 0.0,
+    "lead_knee_angle": 0.0,
+    "shoulder_line_angle": 0.0,
+    "throwing_elbow_angle": 0.0,
+    "hip_line_angle": 0.0,
+    "lateral_foot_separation": 0.0
+  },
+  "throwing_side": "RIGHT",
+  "min_visibility": 0.5,
+  "min_presence": 0.5,
+  "coordinate_x_scale": 0.8021390374331551,
+  "coordinate_contract": "height-normalized image plane: x_normalized * (width / height), y_normalized",
+  "capture_context": {
+    "width": 300,
+    "height": 374,
+    "fps": 30.003076607527433,
+    "_context_path": "data\\pitcher_database\\yoshinobu_yamamoto\\2024_spring_training\\pitch_03\\pose_clean.clean.json"
+  },
+  "smoothing": {
+    "coordinate": "none",
+    "feature_method": "median; doubled-angle circular mean for unoriented shoulder/hip lines",
+    "radius_frames": 2,
+    "radius_seconds": 0.06666666666666667,
+    "max_interpolation_gap_frames": 2,
+    "max_interpolation_seconds": 0.06666666666666667
+  },
+  "motion_window_proxy": {
+    "start_frame": 1103,
+    "end_frame": 1149,
+    "peak_separation_frame": 1134,
+    "confidence": 0.5730381701632815,
+    "method": "lateral-foot-separation-proxy"
+  },
+  "motion_candidates": {
+    "status": "review_required",
+    "method": "multi-feature-velocity-proxy",
+    "candidate_count": 3,
+    "candidates": [
+      {
+        "start_frame": 1089,
+        "end_frame": 1117,
+        "peak_separation_frame": 1095,
+        "confidence": 0.7143298129453289,
+        "method": "multi-feature-velocity-proxy"
+      },
+      {
+        "start_frame": 1097,
+        "end_frame": 1147,
+        "peak_separation_frame": 1116,
+        "confidence": 0.6791321311746037,
+        "method": "multi-feature-velocity-proxy"
+      },
+      {
+        "start_frame": 1132,
+        "end_frame": 1149,
+        "peak_separation_frame": 1148,
+        "confidence": 0.5376289814401158,
+        "method": "multi-feature-velocity-proxy"
+      }
+    ],
+    "limitations": [
+      "Broadcast cuts and pose-tracking errors may create false positives.",
+      "Candidates are not biomechanical event labels and require visual review."
+    ]
+  }
+}

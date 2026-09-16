@@ -1,0 +1,11 @@
+{
+  "video": "data\\pitcher_database\\raw\\yu_darvish\\2025\\yu_darvish_2025_centerfield_clip_09.mp4",
+  "model": "models\\pose_landmarker_full.task",
+  "fps": 30.0,
+  "start_frame": 2625,
+  "end_frame": 2820,
+  "requested_frames": 196,
+  "detected_frames": 196,
+  "width": 474,
+  "height": 768
+}

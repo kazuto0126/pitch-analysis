@@ -1,0 +1,21 @@
+{
+  "schema_version": "0.1",
+  "purpose": "candidate video visual intake; source media is unmodified",
+  "records": [
+    {
+      "source_path": "data\\pitcher_database\\raw\\yoshinobu_yamamoto\\2026\\yoshinobu_yamamoto_2026_centerfield_clip_07_02.mp4",
+      "filename": "yoshinobu_yamamoto_2026_centerfield_clip_07_02.mp4",
+      "fps": 30.0,
+      "frame_count": 5006,
+      "duration_seconds": 166.86666666666667,
+      "sampled_range_seconds": {
+        "start": 30.0,
+        "end": 48.0
+      },
+      "width": 488,
+      "height": 600,
+      "contact_sheet": "data\\pitcher_database\\intake_review\\yamamoto_clip_07_02_30_48\\yoshinobu_yamamoto_2026_centerfield_clip_07_02_contact_sheet.jpg",
+      "audit_status": "needs_visual_review"
+    }
+  ]
+}

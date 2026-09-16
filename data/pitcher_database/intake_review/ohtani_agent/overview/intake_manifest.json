@@ -1,0 +1,51 @@
+{
+  "schema_version": "0.1",
+  "purpose": "candidate video visual intake; source media is unmodified",
+  "records": [
+    {
+      "source_path": "data\\pitcher_database\\raw\\shohei_ohtani\\2026\\shohei_ohtani_2026_05_28_centerfield_clip_01.mp4",
+      "filename": "shohei_ohtani_2026_05_28_centerfield_clip_01.mp4",
+      "fps": 30.0,
+      "frame_count": 4602,
+      "duration_seconds": 153.4,
+      "sampled_range_seconds": {
+        "start": 0.0,
+        "end": 153.36666666666667
+      },
+      "width": 616,
+      "height": 792,
+      "contact_sheet": "data\\pitcher_database\\intake_review\\ohtani_agent\\overview\\shohei_ohtani_2026_05_28_centerfield_clip_01_contact_sheet.jpg",
+      "audit_status": "needs_visual_review"
+    },
+    {
+      "source_path": "data\\pitcher_database\\raw\\shohei_ohtani\\2026\\shohei_ohtani_2026_05_28_centerfield_clip_02.mp4",
+      "filename": "shohei_ohtani_2026_05_28_centerfield_clip_02.mp4",
+      "fps": 30.0,
+      "frame_count": 5825,
+      "duration_seconds": 194.16666666666666,
+      "sampled_range_seconds": {
+        "start": 0.0,
+        "end": 194.13333333333333
+      },
+      "width": 624,
+      "height": 694,
+      "contact_sheet": "data\\pitcher_database\\intake_review\\ohtani_agent\\overview\\shohei_ohtani_2026_05_28_centerfield_clip_02_contact_sheet.jpg",
+      "audit_status": "needs_visual_review"
+    },
+    {
+      "source_path": "data\\pitcher_database\\raw\\shohei_ohtani\\2026\\shohei_ohtani_2026_05_28_centerfield_clip_03.mp4",
+      "filename": "shohei_ohtani_2026_05_28_centerfield_clip_03.mp4",
+      "fps": 30.0,
+      "frame_count": 2279,
+      "duration_seconds": 75.96666666666667,
+      "sampled_range_seconds": {
+        "start": 0.0,
+        "end": 75.93333333333334
+      },
+      "width": 498,
+      "height": 658,
+      "contact_sheet": "data\\pitcher_database\\intake_review\\ohtani_agent\\overview\\shohei_ohtani_2026_05_28_centerfield_clip_03_contact_sheet.jpg",
+      "audit_status": "needs_visual_review"
+    }
+  ]
+}

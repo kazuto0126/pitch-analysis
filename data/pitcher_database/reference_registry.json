@@ -1,0 +1,50 @@
+{
+  "schema_version": "0.1-provisional",
+  "reference_root": "data\\pitcher_database",
+  "pitchers": {
+    "yoshinobu_yamamoto": [
+      {
+        "phase_sequence": "data\\pitcher_database\\yoshinobu_yamamoto\\2024_spring_training\\pitch_01\\phase_sequence.csv",
+        "video_id": "yamamoto_2024_spring_training_pitch_01",
+        "throws": "RIGHT",
+        "review_status": "provisional_candidates_accepted"
+      },
+      {
+        "phase_sequence": "data\\pitcher_database\\yoshinobu_yamamoto\\2024_spring_training\\pitch_02\\phase_sequence.csv",
+        "video_id": "yamamoto_2024_spring_training_pitch_02",
+        "throws": "RIGHT",
+        "review_status": "provisional_candidates_accepted"
+      },
+      {
+        "phase_sequence": "data\\pitcher_database\\yoshinobu_yamamoto\\2024_spring_training\\pitch_03\\phase_sequence.csv",
+        "video_id": "yamamoto_2024_spring_training_pitch_03",
+        "throws": "RIGHT",
+        "review_status": "provisional_candidates_accepted"
+      },
+      {
+        "phase_sequence": "data\\pitcher_database\\yoshinobu_yamamoto\\2024_spring_training_centerfield_02\\pitch_01\\phase_sequence.csv",
+        "video_id": "yamamoto_2024_spring_training_centerfield_02_pitch_01",
+        "throws": "RIGHT",
+        "review_status": "provisional_candidates_accepted"
+      }
+    ],
+    "yu_darvish": [
+      {
+        "phase_sequence": "data\\pitcher_database\\yu_darvish\\2013_regular_season_centerfield_01\\pitch_01\\phase_sequence.csv",
+        "video_id": "darvish_2013_regular_season_centerfield_01_pitch_01",
+        "throws": "RIGHT",
+        "review_status": "provisional_candidates_accepted"
+      },
+      {
+        "phase_sequence": "data\\pitcher_database\\yu_darvish\\2013_regular_season_centerfield_01\\pitch_02\\phase_sequence.csv",
+        "video_id": "darvish_2013_regular_season_centerfield_01_pitch_02",
+        "throws": "RIGHT",
+        "review_status": "provisional_candidates_accepted"
+      }
+    ]
+  },
+  "warnings": {
+    "yoshinobu_yamamoto": "below recommended 5 reference pitches",
+    "yu_darvish": "below recommended 5 reference pitches"
+  }
+}

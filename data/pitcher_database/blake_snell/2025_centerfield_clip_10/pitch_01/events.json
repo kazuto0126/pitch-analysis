@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "video_id": "snell_2025_clip_10_pitch_01",
+  "throws": "LEFT",
+  "reference_context": {
+    "season": "2025",
+    "team": "Los Angeles Dodgers",
+    "view": "rear_centerfield_broadcast"
+  },
+  "review_status": "rejected",
+  "events": {
+    "pitch_start": null,
+    "peak_leg_lift": null,
+    "foot_strike": null,
+    "release": null,
+    "follow_through_end": null
+  },
+  "automatic_candidates": {
+    "motion_start_proxy": 191,
+    "peak_lateral_foot_separation_proxy": 235,
+    "motion_end_proxy": 286
+  },
+  "notes": "Rejected after dense review: the segment begins in a previous pitch/cut and has inadequate lower-body landmark coverage for a complete delivery."
+}

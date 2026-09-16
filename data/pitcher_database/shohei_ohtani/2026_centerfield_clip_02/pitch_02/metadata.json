@@ -1,0 +1,178 @@
+{
+  "schema_version": "0.2-quality-aware",
+  "status": "revalidated_reference_candidate",
+  "source_video": "data\\pitcher_database\\raw\\shohei_ohtani\\2026\\shohei_ohtani_2026_05_28_centerfield_clip_02.mp4",
+  "segment_seconds": {
+    "start": 71.8,
+    "end": 74.2
+  },
+  "capture": {
+    "video": "data\\pitcher_database\\raw\\shohei_ohtani\\2026\\shohei_ohtani_2026_05_28_centerfield_clip_02.mp4",
+    "model": "models\\pose_landmarker_full.task",
+    "fps": 30.0,
+    "start_frame": 2154,
+    "end_frame": 2226,
+    "requested_frames": 73,
+    "detected_frames": 73,
+    "width": 624,
+    "height": 694
+  },
+  "cleaning": {
+    "frame_range": [
+      2154,
+      2226
+    ],
+    "landmarks": 33,
+    "rows": 2409,
+    "min_visibility": 0.5,
+    "min_presence": 0.5,
+    "coordinate_x_scale": 0.899135446685879,
+    "context": "data\\pitcher_database\\shohei_ohtani\\2026_centerfield_clip_02\\pitch_02\\pose_clean.clean.json"
+  },
+  "feature_quality": {
+    "schema_version": "feature-quality-v0.3",
+    "input_frames_detected": 73,
+    "timeline_frames": 73,
+    "timeline_start_frame": 2154,
+    "timeline_end_frame": 2226,
+    "timeline_contract": "capture_requested_range",
+    "missing_source_frames": [],
+    "missing_source_frame_count": 0,
+    "max_consecutive_missing_source_frames": 0,
+    "invalid_feature_frames": {
+      "throwing_knee_angle": 0,
+      "lead_knee_angle": 0,
+      "shoulder_line_angle": 0,
+      "throwing_elbow_angle": 23,
+      "hip_line_angle": 0,
+      "lateral_foot_separation": 0
+    },
+    "raw_invalid_feature_frames": {
+      "throwing_knee_angle": 0,
+      "lead_knee_angle": 0,
+      "shoulder_line_angle": 0,
+      "throwing_elbow_angle": 23,
+      "hip_line_angle": 0,
+      "lateral_foot_separation": 0
+    },
+    "coordinate_imputed_feature_frames": {
+      "throwing_knee_angle": 0,
+      "lead_knee_angle": 0,
+      "shoulder_line_angle": 0,
+      "throwing_elbow_angle": 0,
+      "hip_line_angle": 0,
+      "lateral_foot_separation": 0
+    },
+    "feature_coverage": {
+      "throwing_knee_angle": 1.0,
+      "lead_knee_angle": 1.0,
+      "shoulder_line_angle": 1.0,
+      "throwing_elbow_angle": 0.684931506849315,
+      "hip_line_angle": 1.0,
+      "lateral_foot_separation": 1.0
+    },
+    "raw_feature_coverage": {
+      "throwing_knee_angle": 1.0,
+      "lead_knee_angle": 1.0,
+      "shoulder_line_angle": 1.0,
+      "throwing_elbow_angle": 0.684931506849315,
+      "hip_line_angle": 1.0,
+      "lateral_foot_separation": 1.0
+    },
+    "coordinate_imputed_feature_fraction": {
+      "throwing_knee_angle": 0.0,
+      "lead_knee_angle": 0.0,
+      "shoulder_line_angle": 0.0,
+      "throwing_elbow_angle": 0.0,
+      "hip_line_angle": 0.0,
+      "lateral_foot_separation": 0.0
+    },
+    "throwing_side": "RIGHT",
+    "min_visibility": 0.5,
+    "min_presence": 0.5,
+    "coordinate_x_scale": 0.899135446685879,
+    "coordinate_contract": "height-normalized image plane: x_normalized * (width / height), y_normalized",
+    "capture_context": {
+      "width": 624,
+      "height": 694,
+      "fps": 30.0,
+      "_context_path": "data\\pitcher_database\\shohei_ohtani\\2026_centerfield_clip_02\\pitch_02\\pose_clean.clean.json"
+    },
+    "smoothing": {
+      "coordinate": "none",
+      "feature_method": "median; doubled-angle circular mean for unoriented shoulder/hip lines",
+      "radius_frames": 2,
+      "radius_seconds": 0.06666666666666667,
+      "max_interpolation_gap_frames": 2,
+      "max_interpolation_seconds": 0.06666666666666667
+    },
+    "motion_window_proxy": {
+      "start_frame": 2219,
+      "end_frame": 2226,
+      "peak_separation_frame": 2221,
+      "confidence": 0.4943118999746128,
+      "method": "lateral-foot-separation-proxy"
+    },
+    "motion_candidates": {
+      "status": "review_required",
+      "method": "multi-feature-velocity-proxy",
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "start_frame": 2178,
+          "end_frame": 2226,
+          "peak_separation_frame": 2211,
+          "confidence": 1.0,
+          "method": "multi-feature-velocity-proxy"
+        }
+      ],
+      "limitations": [
+        "Broadcast cuts and pose-tracking errors may create false positives.",
+        "Candidates are not biomechanical event labels and require visual review."
+      ]
+    }
+  },
+  "quality_gate": {
+    "passed": true,
+    "feature_coverage": {
+      "throwing_knee_angle": 1.0,
+      "lead_knee_angle": 1.0,
+      "shoulder_line_angle": 1.0,
+      "throwing_elbow_angle": 0.684931506849315,
+      "hip_line_angle": 1.0,
+      "lateral_foot_separation": 1.0
+    },
+    "usable_feature_coverage": {
+      "throwing_knee_angle": 1.0,
+      "lead_knee_angle": 1.0,
+      "shoulder_line_angle": 1.0,
+      "throwing_elbow_angle": 0.684931506849315,
+      "hip_line_angle": 1.0,
+      "lateral_foot_separation": 1.0
+    },
+    "coordinate_imputed_feature_fraction": {
+      "throwing_knee_angle": 0.0,
+      "lead_knee_angle": 0.0,
+      "shoulder_line_angle": 0.0,
+      "throwing_elbow_angle": 0.0,
+      "hip_line_angle": 0.0,
+      "lateral_foot_separation": 0.0
+    },
+    "detection_coverage": 1.0,
+    "max_consecutive_missing_source_frames": 0,
+    "failures": []
+  },
+  "reference_context": {
+    "season": "2026",
+    "team": "Los Angeles Dodgers",
+    "view": "rear_centerfield_broadcast"
+  },
+  "revalidation": {
+    "method": "rebuild-derived-artifacts-from-existing-pose-raw",
+    "phase_sequence": {
+      "attempted": true,
+      "rebuilt": true,
+      "quality_report": "data\\pitcher_database\\shohei_ohtani\\2026_centerfield_clip_02\\pitch_02\\phase_sequence.quality.json"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "video_id": "snell_2026_clip_08_pitch_02",
+  "throws": "LEFT",
+  "reference_context": {
+    "season": "2026",
+    "team": "Los Angeles Dodgers",
+    "view": "rear_centerfield_broadcast"
+  },
+  "review_status": "provisional_candidates_accepted",
+  "events": {
+    "pitch_start": 1058,
+    "peak_leg_lift": 1120,
+    "foot_strike": 1137,
+    "release": 1144,
+    "follow_through_end": 1179
+  },
+  "automatic_candidates": {
+    "motion_start_proxy": 1114,
+    "peak_lateral_foot_separation_proxy": 1160,
+    "motion_end_proxy": 1177
+  },
+  "notes": "Passed quality gate and dense visual review. Event labels are provisional; confirm frame-by-frame before promotion to human_reviewed. The segment begins after a pre-pitch camera cut, at the first full-body stable frame (1058)."
+}

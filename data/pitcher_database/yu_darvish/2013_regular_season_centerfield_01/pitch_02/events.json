@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "video_id": "darvish_2013_regular_season_centerfield_01_pitch_02",
+  "throws": "RIGHT",
+  "reference_context": {"season": "2013", "team": "Texas Rangers", "view": "rear_centerfield_broadcast"},
+  "review_status": "provisional_candidates_accepted",
+  "events": {
+    "pitch_start": 1740,
+    "peak_leg_lift": 1752,
+    "foot_strike": 1776,
+    "release": 1782,
+    "follow_through_end": 1845
+  },
+  "automatic_candidates": {
+    "motion_start_proxy": 1738,
+    "peak_lateral_foot_separation_proxy": 1793,
+    "motion_end_proxy": 1832,
+    "pitch_start_candidate": 1740,
+    "peak_leg_lift_candidate": 1752,
+    "foot_strike_candidate": 1776,
+    "release_candidate": 1782,
+    "follow_through_end_candidate": 1845
+  },
+  "notes": "Fill event frames after reviewing the video. Proxy values are not biomechanical labels."
+}

@@ -1,0 +1,11 @@
+{
+  "video": "data\\pitcher_database\\raw\\blake_snell\\2025\\blake_snell_2025_centerfield_clip_10.mp4",
+  "model": "models\\pose_landmarker_full.task",
+  "fps": 30.0,
+  "start_frame": 975,
+  "end_frame": 1065,
+  "requested_frames": 91,
+  "detected_frames": 90,
+  "width": 554,
+  "height": 706
+}

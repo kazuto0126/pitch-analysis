@@ -1,0 +1,230 @@
+{
+  "schema_version": "revalidation-v0.1",
+  "reference_root": "data\\pitcher_database",
+  "segment_count": 22,
+  "passed_quality_gate_count": 8,
+  "failed_or_rejected_count": 14,
+  "results": [
+    {
+      "segment": "data\\pitcher_database\\blake_snell\\2025_centerfield_clip_10\\pitch_01",
+      "quality_gate_passed": false,
+      "throwing_side": "LEFT",
+      "phase_sequence": {
+        "attempted": false,
+        "rebuilt": false
+      },
+      "status": "revalidated_quality_gate_failed"
+    },
+    {
+      "segment": "data\\pitcher_database\\blake_snell\\2025_centerfield_clip_10\\pitch_02",
+      "quality_gate_passed": true,
+      "throwing_side": "LEFT",
+      "phase_sequence": {
+        "attempted": true,
+        "rebuilt": true
+      },
+      "status": "revalidated_reference_candidate"
+    },
+    {
+      "segment": "data\\pitcher_database\\blake_snell\\2025_centerfield_clip_10\\pitch_03",
+      "quality_gate_passed": true,
+      "throwing_side": "LEFT",
+      "phase_sequence": {
+        "attempted": true,
+        "rebuilt": true
+      },
+      "status": "revalidated_reference_candidate"
+    },
+    {
+      "segment": "data\\pitcher_database\\blake_snell\\2025_centerfield_clip_10\\pitch_04",
+      "quality_gate_passed": true,
+      "throwing_side": "LEFT",
+      "phase_sequence": {
+        "attempted": false,
+        "rebuilt": false
+      },
+      "status": "revalidated_reference_candidate"
+    },
+    {
+      "segment": "data\\pitcher_database\\blake_snell\\2025_centerfield_clip_10\\pitch_05",
+      "quality_gate_passed": true,
+      "throwing_side": "LEFT",
+      "phase_sequence": {
+        "attempted": false,
+        "rebuilt": false
+      },
+      "status": "revalidated_reference_candidate"
+    },
+    {
+      "segment": "data\\pitcher_database\\blake_snell\\2025_centerfield_clip_10\\pitch_06",
+      "quality_gate_passed": true,
+      "throwing_side": "LEFT",
+      "phase_sequence": {
+        "attempted": true,
+        "rebuilt": true
+      },
+      "status": "revalidated_reference_candidate"
+    },
+    {
+      "segment": "data\\pitcher_database\\blake_snell\\2025_centerfield_clip_10\\pitch_07",
+      "quality_gate_passed": true,
+      "throwing_side": "LEFT",
+      "phase_sequence": {
+        "attempted": true,
+        "rebuilt": true
+      },
+      "status": "revalidated_reference_candidate"
+    },
+    {
+      "segment": "data\\pitcher_database\\blake_snell\\2026_centerfield_clip_08\\pitch_01",
+      "quality_gate_passed": false,
+      "throwing_side": "LEFT",
+      "phase_sequence": {
+        "attempted": false,
+        "rebuilt": false
+      },
+      "status": "revalidated_quality_gate_failed"
+    },
+    {
+      "segment": "data\\pitcher_database\\blake_snell\\2026_centerfield_clip_08\\pitch_02",
+      "quality_gate_passed": false,
+      "throwing_side": "LEFT",
+      "phase_sequence": {
+        "attempted": true,
+        "rebuilt": true
+      },
+      "status": "revalidated_quality_gate_failed"
+    },
+    {
+      "segment": "data\\pitcher_database\\shohei_ohtani\\2026_05_28_centerfield_clip_01\\pitch_01",
+      "quality_gate_passed": false,
+      "throwing_side": "RIGHT",
+      "phase_sequence": {
+        "attempted": false,
+        "rebuilt": false
+      },
+      "status": "revalidated_quality_gate_failed"
+    },
+    {
+      "segment": "data\\pitcher_database\\shohei_ohtani\\2026_05_28_centerfield_clip_03\\pitch_01",
+      "quality_gate_passed": false,
+      "throwing_side": "RIGHT",
+      "phase_sequence": {
+        "attempted": false,
+        "rebuilt": false
+      },
+      "status": "revalidated_quality_gate_failed"
+    },
+    {
+      "segment": "data\\pitcher_database\\tarik_skubal\\2026_centerfield_clip_09_01\\pitch_01",
+      "quality_gate_passed": false,
+      "throwing_side": "LEFT",
+      "phase_sequence": {
+        "attempted": false,
+        "rebuilt": false
+      },
+      "status": "revalidated_quality_gate_failed"
+    },
+    {
+      "segment": "data\\pitcher_database\\tarik_skubal\\2026_centerfield_clip_09_02\\pitch_01",
+      "quality_gate_passed": false,
+      "throwing_side": "LEFT",
+      "phase_sequence": {
+        "attempted": false,
+        "rebuilt": false
+      },
+      "status": "revalidated_quality_gate_failed"
+    },
+    {
+      "segment": "data\\pitcher_database\\yoshinobu_yamamoto\\2024_spring_training\\pitch_01",
+      "quality_gate_passed": false,
+      "throwing_side": "RIGHT",
+      "phase_sequence": {
+        "attempted": true,
+        "rebuilt": true
+      },
+      "status": "revalidated_quality_gate_failed"
+    },
+    {
+      "segment": "data\\pitcher_database\\yoshinobu_yamamoto\\2024_spring_training\\pitch_02",
+      "quality_gate_passed": false,
+      "throwing_side": "RIGHT",
+      "phase_sequence": {
+        "attempted": true,
+        "rebuilt": true
+      },
+      "status": "revalidated_quality_gate_failed"
+    },
+    {
+      "segment": "data\\pitcher_database\\yoshinobu_yamamoto\\2024_spring_training\\pitch_03",
+      "quality_gate_passed": false,
+      "throwing_side": "RIGHT",
+      "phase_sequence": {
+        "attempted": true,
+        "rebuilt": true
+      },
+      "status": "revalidated_quality_gate_failed"
+    },
+    {
+      "segment": "data\\pitcher_database\\yoshinobu_yamamoto\\2024_spring_training_centerfield_02\\pitch_01",
+      "quality_gate_passed": false,
+      "throwing_side": "RIGHT",
+      "phase_sequence": {
+        "attempted": true,
+        "rebuilt": true
+      },
+      "status": "revalidated_quality_gate_failed"
+    },
+    {
+      "segment": "data\\pitcher_database\\yoshinobu_yamamoto\\2026_centerfield_clip_08_01\\pitch_01",
+      "quality_gate_passed": false,
+      "throwing_side": "RIGHT",
+      "phase_sequence": {
+        "attempted": false,
+        "rebuilt": false
+      },
+      "status": "revalidated_quality_gate_failed"
+    },
+    {
+      "segment": "data\\pitcher_database\\yu_darvish\\2013_regular_season_centerfield_01\\pitch_01",
+      "quality_gate_passed": true,
+      "throwing_side": "RIGHT",
+      "phase_sequence": {
+        "attempted": true,
+        "rebuilt": true
+      },
+      "status": "revalidated_reference_candidate"
+    },
+    {
+      "segment": "data\\pitcher_database\\yu_darvish\\2013_regular_season_centerfield_01\\pitch_02",
+      "quality_gate_passed": false,
+      "throwing_side": "RIGHT",
+      "phase_sequence": {
+        "attempted": true,
+        "rebuilt": true
+      },
+      "status": "revalidated_quality_gate_failed"
+    },
+    {
+      "segment": "data\\pitcher_database\\yu_darvish\\2025_centerfield_clip_09\\pitch_01",
+      "quality_gate_passed": false,
+      "throwing_side": "RIGHT",
+      "phase_sequence": {
+        "attempted": false,
+        "rebuilt": false
+      },
+      "status": "revalidated_quality_gate_failed"
+    },
+    {
+      "segment": "data\\pitcher_database\\yu_darvish\\2025_centerfield_clip_09\\pitch_02",
+      "quality_gate_passed": true,
+      "throwing_side": "RIGHT",
+      "phase_sequence": {
+        "attempted": true,
+        "rebuilt": true
+      },
+      "status": "revalidated_reference_candidate"
+    }
+  ],
+  "note": "Raw pose and event annotations were preserved. Derived clean/features/phases were rebuilt under the current quality contract."
+}

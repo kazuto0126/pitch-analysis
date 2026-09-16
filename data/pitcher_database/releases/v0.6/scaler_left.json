@@ -1,0 +1,95 @@
+{
+  "schema_version": "pitch-phase-v0.4-balanced-provisional",
+  "method": "reference-z-score-equal-pitcher-weight",
+  "scalers": {
+    "throwing_knee_angle_smoothed": {
+      "feature": "throwing_knee_angle_smoothed",
+      "mean": 144.10746529255806,
+      "standard_deviation": 21.501513306562188,
+      "sample_count": 700
+    },
+    "lead_knee_angle_smoothed": {
+      "feature": "lead_knee_angle_smoothed",
+      "mean": 145.98290242953223,
+      "standard_deviation": 33.528974474440275,
+      "sample_count": 700
+    },
+    "shoulder_line_angle_smoothed": {
+      "feature": "shoulder_line_angle_smoothed",
+      "mean": 9.79126505992481,
+      "standard_deviation": 16.871973255165145,
+      "sample_count": 700
+    },
+    "throwing_elbow_angle_smoothed": {
+      "feature": "throwing_elbow_angle_smoothed",
+      "mean": 117.07064509534437,
+      "standard_deviation": 36.91227862589771,
+      "sample_count": 588
+    },
+    "hip_line_angle_smoothed": {
+      "feature": "hip_line_angle_smoothed",
+      "mean": 14.611688295711572,
+      "standard_deviation": 14.193427805338347,
+      "sample_count": 700
+    }
+  },
+  "reference_scope": {
+    "throws": "LEFT"
+  },
+  "provenance": {
+    "reference_sequences": [
+      {
+        "pitcher_id": "blake_snell",
+        "phase_sequence": "data\\pitcher_database\\blake_snell\\2025_centerfield_clip_10\\pitch_02\\phase_sequence.csv",
+        "row_count": 100,
+        "row_weight": 0.002
+      },
+      {
+        "pitcher_id": "blake_snell",
+        "phase_sequence": "data\\pitcher_database\\blake_snell\\2025_centerfield_clip_10\\pitch_03\\phase_sequence.csv",
+        "row_count": 100,
+        "row_weight": 0.002
+      },
+      {
+        "pitcher_id": "blake_snell",
+        "phase_sequence": "data\\pitcher_database\\blake_snell\\2025_centerfield_clip_10\\pitch_06\\phase_sequence.csv",
+        "row_count": 100,
+        "row_weight": 0.002
+      },
+      {
+        "pitcher_id": "blake_snell",
+        "phase_sequence": "data\\pitcher_database\\blake_snell\\2025_centerfield_clip_10\\pitch_07\\phase_sequence.csv",
+        "row_count": 100,
+        "row_weight": 0.002
+      },
+      {
+        "pitcher_id": "blake_snell",
+        "phase_sequence": "data\\pitcher_database\\blake_snell\\2026_centerfield_clip_08\\pitch_02\\phase_sequence.csv",
+        "row_count": 100,
+        "row_weight": 0.002
+      },
+      {
+        "pitcher_id": "tarik_skubal",
+        "phase_sequence": "data\\pitcher_database\\tarik_skubal\\2026_centerfield_clip_08\\pitch_02\\phase_sequence.csv",
+        "row_count": 100,
+        "row_weight": 0.005
+      },
+      {
+        "pitcher_id": "tarik_skubal",
+        "phase_sequence": "data\\pitcher_database\\tarik_skubal\\2026_centerfield_clip_08\\pitch_05\\phase_sequence.csv",
+        "row_count": 100,
+        "row_weight": 0.005
+      }
+    ],
+    "reference_sequence_count": 7,
+    "reference_rows": 700,
+    "registry": "data\\pitcher_database\\releases\\v0.6\\registry.json",
+    "registry_schema_version": "0.5-reviewed-event-window-provisional",
+    "selection": "all eligible registry entries matching throwing side",
+    "pitcher_sequence_counts": {
+      "blake_snell": 5,
+      "tarik_skubal": 2
+    },
+    "pitcher_balancing": "each pitcher has equal total scaler weight; each pitch and resampled row divide that pitcher's weight equally"
+  }
+}

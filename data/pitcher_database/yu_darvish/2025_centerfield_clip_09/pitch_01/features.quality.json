@@ -1,0 +1,177 @@
+{
+  "schema_version": "feature-quality-v0.3",
+  "input_frames_detected": 212,
+  "timeline_frames": 271,
+  "timeline_start_frame": 2550,
+  "timeline_end_frame": 2820,
+  "timeline_contract": "capture_requested_range",
+  "missing_source_frames": [
+    2550,
+    2552,
+    2553,
+    2554,
+    2555,
+    2556,
+    2557,
+    2558,
+    2559,
+    2560,
+    2561,
+    2562,
+    2563,
+    2564,
+    2565,
+    2566,
+    2567,
+    2568,
+    2569,
+    2570,
+    2571,
+    2572,
+    2573,
+    2574,
+    2575,
+    2576,
+    2577,
+    2578,
+    2579,
+    2580,
+    2581,
+    2582,
+    2583,
+    2589,
+    2590,
+    2591,
+    2592,
+    2593,
+    2595,
+    2596,
+    2597,
+    2598,
+    2599,
+    2600,
+    2601,
+    2602,
+    2603,
+    2604,
+    2605,
+    2606,
+    2607,
+    2608,
+    2609,
+    2610,
+    2611,
+    2612,
+    2613,
+    2614,
+    2618
+  ],
+  "missing_source_frame_count": 59,
+  "max_consecutive_missing_source_frames": 32,
+  "invalid_feature_frames": {
+    "throwing_knee_angle": 78,
+    "lead_knee_angle": 109,
+    "shoulder_line_angle": 70,
+    "throwing_elbow_angle": 137,
+    "hip_line_angle": 75,
+    "lateral_foot_separation": 105
+  },
+  "raw_invalid_feature_frames": {
+    "throwing_knee_angle": 80,
+    "lead_knee_angle": 109,
+    "shoulder_line_angle": 70,
+    "throwing_elbow_angle": 137,
+    "hip_line_angle": 75,
+    "lateral_foot_separation": 106
+  },
+  "coordinate_imputed_feature_frames": {
+    "throwing_knee_angle": 2,
+    "lead_knee_angle": 0,
+    "shoulder_line_angle": 0,
+    "throwing_elbow_angle": 0,
+    "hip_line_angle": 0,
+    "lateral_foot_separation": 1
+  },
+  "feature_coverage": {
+    "throwing_knee_angle": 0.7121771217712177,
+    "lead_knee_angle": 0.5977859778597786,
+    "shoulder_line_angle": 0.7416974169741697,
+    "throwing_elbow_angle": 0.4944649446494465,
+    "hip_line_angle": 0.7232472324723247,
+    "lateral_foot_separation": 0.6125461254612546
+  },
+  "raw_feature_coverage": {
+    "throwing_knee_angle": 0.7047970479704797,
+    "lead_knee_angle": 0.5977859778597786,
+    "shoulder_line_angle": 0.7416974169741697,
+    "throwing_elbow_angle": 0.4944649446494465,
+    "hip_line_angle": 0.7232472324723247,
+    "lateral_foot_separation": 0.6088560885608856
+  },
+  "coordinate_imputed_feature_fraction": {
+    "throwing_knee_angle": 0.007380073800738007,
+    "lead_knee_angle": 0.0,
+    "shoulder_line_angle": 0.0,
+    "throwing_elbow_angle": 0.0,
+    "hip_line_angle": 0.0,
+    "lateral_foot_separation": 0.0036900369003690036
+  },
+  "throwing_side": "RIGHT",
+  "min_visibility": 0.5,
+  "min_presence": 0.5,
+  "coordinate_x_scale": 0.6171875,
+  "coordinate_contract": "height-normalized image plane: x_normalized * (width / height), y_normalized",
+  "capture_context": {
+    "width": 474,
+    "height": 768,
+    "fps": 30.0,
+    "_context_path": "data\\pitcher_database\\yu_darvish\\2025_centerfield_clip_09\\pitch_01\\pose_clean.clean.json"
+  },
+  "smoothing": {
+    "coordinate": "none",
+    "feature_method": "median; doubled-angle circular mean for unoriented shoulder/hip lines",
+    "radius_frames": 2,
+    "radius_seconds": 0.06666666666666667,
+    "max_interpolation_gap_frames": 2,
+    "max_interpolation_seconds": 0.06666666666666667
+  },
+  "motion_window_proxy": {
+    "start_frame": 2666,
+    "end_frame": 2820,
+    "peak_separation_frame": 2744,
+    "confidence": 0.6650635707646527,
+    "method": "lateral-foot-separation-proxy"
+  },
+  "motion_candidates": {
+    "status": "review_required",
+    "method": "multi-feature-velocity-proxy",
+    "candidate_count": 3,
+    "candidates": [
+      {
+        "start_frame": 2635,
+        "end_frame": 2674,
+        "peak_separation_frame": 2652,
+        "confidence": 0.7842287211149566,
+        "method": "multi-feature-velocity-proxy"
+      },
+      {
+        "start_frame": 2680,
+        "end_frame": 2767,
+        "peak_separation_frame": 2712,
+        "confidence": 0.9130330938064299,
+        "method": "multi-feature-velocity-proxy"
+      },
+      {
+        "start_frame": 2785,
+        "end_frame": 2820,
+        "peak_separation_frame": 2819,
+        "confidence": 0.6994463969987668,
+        "method": "multi-feature-velocity-proxy"
+      }
+    ],
+    "limitations": [
+      "Broadcast cuts and pose-tracking errors may create false positives.",
+      "Candidates are not biomechanical event labels and require visual review."
+    ]
+  }
+}

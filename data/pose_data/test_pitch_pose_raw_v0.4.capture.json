@@ -1,0 +1,11 @@
+{
+  "video": "data\\raw_videos\\test_pitch.mp4",
+  "model": "models\\pose_landmarker_full.task",
+  "fps": 30.0,
+  "start_frame": 0,
+  "end_frame": 274,
+  "requested_frames": 275,
+  "detected_frames": 253,
+  "width": 588,
+  "height": 1280
+}

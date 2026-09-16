@@ -1,0 +1,11 @@
+{
+  "video": "data\\pitcher_database\\raw\\shohei_ohtani\\2026\\shohei_ohtani_2026_05_28_centerfield_clip_02.mp4",
+  "model": "models\\pose_landmarker_full.task",
+  "fps": 30.0,
+  "start_frame": 3720,
+  "end_frame": 3930,
+  "requested_frames": 211,
+  "detected_frames": 211,
+  "width": 624,
+  "height": 694
+}

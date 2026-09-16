@@ -1,0 +1,30 @@
+{
+  "input_frames_detected": 253,
+  "timeline_frames": 255,
+  "missing_source_frames": [
+    21,
+    137
+  ],
+  "invalid_feature_frames": {
+    "throwing_knee_angle": 2,
+    "lead_knee_angle": 2,
+    "shoulder_line_angle": 2,
+    "throwing_elbow_angle": 159,
+    "hip_line_angle": 2,
+    "lateral_foot_separation": 2
+  },
+  "throwing_side": "RIGHT",
+  "min_visibility": 0.5,
+  "smoothing": {
+    "method": "median",
+    "radius_frames": 2,
+    "max_interpolation_gap": 2
+  },
+  "motion_window_proxy": {
+    "start_frame": 0,
+    "end_frame": 188,
+    "peak_separation_frame": 95,
+    "confidence": 0.09436132803628447,
+    "method": "lateral-foot-separation-proxy"
+  }
+}

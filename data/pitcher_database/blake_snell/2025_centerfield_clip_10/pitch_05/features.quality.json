@@ -1,0 +1,112 @@
+{
+  "schema_version": "feature-quality-v0.3",
+  "input_frames_detected": 90,
+  "timeline_frames": 91,
+  "timeline_start_frame": 975,
+  "timeline_end_frame": 1065,
+  "timeline_contract": "capture_requested_range",
+  "missing_source_frames": [
+    1054
+  ],
+  "missing_source_frame_count": 1,
+  "max_consecutive_missing_source_frames": 1,
+  "invalid_feature_frames": {
+    "throwing_knee_angle": 0,
+    "lead_knee_angle": 0,
+    "shoulder_line_angle": 0,
+    "throwing_elbow_angle": 41,
+    "hip_line_angle": 0,
+    "lateral_foot_separation": 0
+  },
+  "raw_invalid_feature_frames": {
+    "throwing_knee_angle": 1,
+    "lead_knee_angle": 1,
+    "shoulder_line_angle": 1,
+    "throwing_elbow_angle": 41,
+    "hip_line_angle": 1,
+    "lateral_foot_separation": 1
+  },
+  "coordinate_imputed_feature_frames": {
+    "throwing_knee_angle": 1,
+    "lead_knee_angle": 1,
+    "shoulder_line_angle": 1,
+    "throwing_elbow_angle": 0,
+    "hip_line_angle": 1,
+    "lateral_foot_separation": 1
+  },
+  "feature_coverage": {
+    "throwing_knee_angle": 1.0,
+    "lead_knee_angle": 1.0,
+    "shoulder_line_angle": 1.0,
+    "throwing_elbow_angle": 0.5494505494505495,
+    "hip_line_angle": 1.0,
+    "lateral_foot_separation": 1.0
+  },
+  "raw_feature_coverage": {
+    "throwing_knee_angle": 0.989010989010989,
+    "lead_knee_angle": 0.989010989010989,
+    "shoulder_line_angle": 0.989010989010989,
+    "throwing_elbow_angle": 0.5494505494505495,
+    "hip_line_angle": 0.989010989010989,
+    "lateral_foot_separation": 0.989010989010989
+  },
+  "coordinate_imputed_feature_fraction": {
+    "throwing_knee_angle": 0.01098901098901099,
+    "lead_knee_angle": 0.01098901098901099,
+    "shoulder_line_angle": 0.01098901098901099,
+    "throwing_elbow_angle": 0.0,
+    "hip_line_angle": 0.01098901098901099,
+    "lateral_foot_separation": 0.01098901098901099
+  },
+  "throwing_side": "LEFT",
+  "min_visibility": 0.5,
+  "min_presence": 0.5,
+  "coordinate_x_scale": 0.7847025495750708,
+  "coordinate_contract": "height-normalized image plane: x_normalized * (width / height), y_normalized",
+  "capture_context": {
+    "width": 554,
+    "height": 706,
+    "fps": 30.0,
+    "_context_path": "data\\pitcher_database\\blake_snell\\2025_centerfield_clip_10\\pitch_05\\pose_clean.clean.json"
+  },
+  "smoothing": {
+    "coordinate": "none",
+    "feature_method": "median; doubled-angle circular mean for unoriented shoulder/hip lines",
+    "radius_frames": 2,
+    "radius_seconds": 0.06666666666666667,
+    "max_interpolation_gap_frames": 2,
+    "max_interpolation_seconds": 0.06666666666666667
+  },
+  "motion_window_proxy": {
+    "start_frame": 975,
+    "end_frame": 1050,
+    "peak_separation_frame": 1017,
+    "confidence": 0.4577214292420966,
+    "method": "lateral-foot-separation-proxy"
+  },
+  "motion_candidates": {
+    "status": "review_required",
+    "method": "multi-feature-velocity-proxy",
+    "candidate_count": 2,
+    "candidates": [
+      {
+        "start_frame": 975,
+        "end_frame": 1031,
+        "peak_separation_frame": 990,
+        "confidence": 0.9431984477282978,
+        "method": "multi-feature-velocity-proxy"
+      },
+      {
+        "start_frame": 1021,
+        "end_frame": 1065,
+        "peak_separation_frame": 1053,
+        "confidence": 0.7918425590587934,
+        "method": "multi-feature-velocity-proxy"
+      }
+    ],
+    "limitations": [
+      "Broadcast cuts and pose-tracking errors may create false positives.",
+      "Candidates are not biomechanical event labels and require visual review."
+    ]
+  }
+}

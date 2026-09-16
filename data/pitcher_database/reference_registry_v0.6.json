@@ -1,0 +1,137 @@
+{
+  "schema_version": "0.2-provisional",
+  "reference_root": "data\\pitcher_database",
+  "pitchers": {
+    "blake_snell": [
+      {
+        "phase_sequence": "data\\pitcher_database\\blake_snell\\2025_centerfield_clip_10\\pitch_02\\phase_sequence.csv",
+        "video_id": "snell_2025_clip_10_pitch_02",
+        "throws": "LEFT",
+        "review_status": "provisional_candidates_accepted",
+        "context": {
+          "season": "2025",
+          "team": "Los Angeles Dodgers",
+          "view": "rear_centerfield_broadcast",
+          "collection": "2025_centerfield_clip_10"
+        }
+      },
+      {
+        "phase_sequence": "data\\pitcher_database\\blake_snell\\2025_centerfield_clip_10\\pitch_03\\phase_sequence.csv",
+        "video_id": "snell_2025_clip_10_pitch_03",
+        "throws": "LEFT",
+        "review_status": "provisional_candidates_accepted",
+        "context": {
+          "season": "2025",
+          "team": "Los Angeles Dodgers",
+          "view": "rear_centerfield_broadcast",
+          "collection": "2025_centerfield_clip_10"
+        }
+      }
+    ],
+    "yoshinobu_yamamoto": [
+      {
+        "phase_sequence": "data\\pitcher_database\\yoshinobu_yamamoto\\2024_spring_training\\pitch_01\\phase_sequence.csv",
+        "video_id": "yamamoto_2024_spring_training_pitch_01",
+        "throws": "RIGHT",
+        "review_status": "provisional_candidates_accepted",
+        "context": {
+          "season": "2024",
+          "team": "Los Angeles Dodgers",
+          "view": "rear_centerfield_broadcast",
+          "collection": "2024_spring_training"
+        }
+      },
+      {
+        "phase_sequence": "data\\pitcher_database\\yoshinobu_yamamoto\\2024_spring_training\\pitch_02\\phase_sequence.csv",
+        "video_id": "yamamoto_2024_spring_training_pitch_02",
+        "throws": "RIGHT",
+        "review_status": "provisional_candidates_accepted",
+        "context": {
+          "season": "2024",
+          "team": "Los Angeles Dodgers",
+          "view": "rear_centerfield_broadcast",
+          "collection": "2024_spring_training"
+        }
+      },
+      {
+        "phase_sequence": "data\\pitcher_database\\yoshinobu_yamamoto\\2024_spring_training\\pitch_03\\phase_sequence.csv",
+        "video_id": "yamamoto_2024_spring_training_pitch_03",
+        "throws": "RIGHT",
+        "review_status": "provisional_candidates_accepted",
+        "context": {
+          "season": "2024",
+          "team": "Los Angeles Dodgers",
+          "view": "rear_centerfield_broadcast",
+          "collection": "2024_spring_training"
+        }
+      },
+      {
+        "phase_sequence": "data\\pitcher_database\\yoshinobu_yamamoto\\2024_spring_training_centerfield_02\\pitch_01\\phase_sequence.csv",
+        "video_id": "yamamoto_2024_spring_training_centerfield_02_pitch_01",
+        "throws": "RIGHT",
+        "review_status": "provisional_candidates_accepted",
+        "context": {
+          "season": "2024",
+          "team": "Los Angeles Dodgers",
+          "view": "rear_centerfield_broadcast",
+          "collection": "2024_spring_training_centerfield_02"
+        }
+      }
+    ],
+    "yu_darvish": [
+      {
+        "phase_sequence": "data\\pitcher_database\\yu_darvish\\2013_regular_season_centerfield_01\\pitch_01\\phase_sequence.csv",
+        "video_id": "darvish_2013_regular_season_centerfield_01_pitch_01",
+        "throws": "RIGHT",
+        "review_status": "provisional_candidates_accepted",
+        "context": {
+          "season": "2013",
+          "team": "Texas Rangers",
+          "view": "rear_centerfield_broadcast",
+          "collection": "2013_regular_season_centerfield_01"
+        }
+      },
+      {
+        "phase_sequence": "data\\pitcher_database\\yu_darvish\\2013_regular_season_centerfield_01\\pitch_02\\phase_sequence.csv",
+        "video_id": "darvish_2013_regular_season_centerfield_01_pitch_02",
+        "throws": "RIGHT",
+        "review_status": "provisional_candidates_accepted",
+        "context": {
+          "season": "2013",
+          "team": "Texas Rangers",
+          "view": "rear_centerfield_broadcast",
+          "collection": "2013_regular_season_centerfield_01"
+        }
+      },
+      {
+        "phase_sequence": "data\\pitcher_database\\yu_darvish\\2025_centerfield_clip_09\\pitch_02\\phase_sequence.csv",
+        "video_id": "darvish_2025_clip_09_pitch_02",
+        "throws": "RIGHT",
+        "review_status": "provisional_candidates_accepted",
+        "context": {
+          "season": "2025",
+          "team": "San Diego Padres",
+          "view": "rear_centerfield_broadcast",
+          "collection": "2025_centerfield_clip_09"
+        }
+      }
+    ]
+  },
+  "season_counts": {
+    "blake_snell": {
+      "2025": 2
+    },
+    "yoshinobu_yamamoto": {
+      "2024": 4
+    },
+    "yu_darvish": {
+      "2013": 2,
+      "2025": 1
+    }
+  },
+  "warnings": {
+    "blake_snell": "below recommended 5 reference pitches",
+    "yoshinobu_yamamoto": "below recommended 5 reference pitches",
+    "yu_darvish": "below recommended 5 reference pitches"
+  }
+}

@@ -1,0 +1,287 @@
+{
+  "schema_version": "0.2-quality-aware",
+  "status": "revalidated_quality_gate_failed",
+  "source_video": "data\\pitcher_database\\raw\\tarik_skubal\\2026\\tarik_skubal_2026_centerfield_clip_09_01.mp4",
+  "segment_seconds": {
+    "start": 33.5,
+    "end": 42.0
+  },
+  "capture": {
+    "video": "data\\pitcher_database\\raw\\tarik_skubal\\2026\\tarik_skubal_2026_centerfield_clip_09_01.mp4",
+    "model": "models\\pose_landmarker_full.task",
+    "fps": 30.0,
+    "start_frame": 1005,
+    "end_frame": 1260,
+    "requested_frames": 256,
+    "detected_frames": 183,
+    "width": 442,
+    "height": 540
+  },
+  "cleaning": {
+    "frame_range": [
+      1005,
+      1260
+    ],
+    "landmarks": 33,
+    "rows": 8448,
+    "min_visibility": 0.5,
+    "min_presence": 0.5,
+    "coordinate_x_scale": 0.8185185185185185,
+    "context": "data\\pitcher_database\\tarik_skubal\\2026_centerfield_clip_09_01\\pitch_01\\pose_clean.clean.json"
+  },
+  "feature_quality": {
+    "schema_version": "feature-quality-v0.3",
+    "input_frames_detected": 183,
+    "timeline_frames": 256,
+    "timeline_start_frame": 1005,
+    "timeline_end_frame": 1260,
+    "timeline_contract": "capture_requested_range",
+    "missing_source_frames": [
+      1109,
+      1115,
+      1116,
+      1117,
+      1118,
+      1119,
+      1120,
+      1121,
+      1122,
+      1123,
+      1124,
+      1125,
+      1126,
+      1127,
+      1128,
+      1129,
+      1130,
+      1131,
+      1132,
+      1133,
+      1134,
+      1135,
+      1136,
+      1137,
+      1138,
+      1139,
+      1140,
+      1141,
+      1142,
+      1143,
+      1144,
+      1145,
+      1146,
+      1151,
+      1169,
+      1218,
+      1219,
+      1220,
+      1221,
+      1222,
+      1223,
+      1224,
+      1225,
+      1226,
+      1227,
+      1228,
+      1229,
+      1230,
+      1231,
+      1236,
+      1237,
+      1238,
+      1239,
+      1240,
+      1241,
+      1242,
+      1243,
+      1244,
+      1245,
+      1246,
+      1247,
+      1248,
+      1249,
+      1250,
+      1251,
+      1252,
+      1253,
+      1254,
+      1255,
+      1256,
+      1257,
+      1259,
+      1260
+    ],
+    "missing_source_frame_count": 73,
+    "max_consecutive_missing_source_frames": 32,
+    "invalid_feature_frames": {
+      "throwing_knee_angle": 82,
+      "lead_knee_angle": 93,
+      "shoulder_line_angle": 75,
+      "throwing_elbow_angle": 236,
+      "hip_line_angle": 75,
+      "lateral_foot_separation": 86
+    },
+    "raw_invalid_feature_frames": {
+      "throwing_knee_angle": 84,
+      "lead_knee_angle": 95,
+      "shoulder_line_angle": 77,
+      "throwing_elbow_angle": 237,
+      "hip_line_angle": 77,
+      "lateral_foot_separation": 88
+    },
+    "coordinate_imputed_feature_frames": {
+      "throwing_knee_angle": 2,
+      "lead_knee_angle": 2,
+      "shoulder_line_angle": 2,
+      "throwing_elbow_angle": 1,
+      "hip_line_angle": 2,
+      "lateral_foot_separation": 2
+    },
+    "feature_coverage": {
+      "throwing_knee_angle": 0.6796875,
+      "lead_knee_angle": 0.63671875,
+      "shoulder_line_angle": 0.70703125,
+      "throwing_elbow_angle": 0.078125,
+      "hip_line_angle": 0.70703125,
+      "lateral_foot_separation": 0.6640625
+    },
+    "raw_feature_coverage": {
+      "throwing_knee_angle": 0.671875,
+      "lead_knee_angle": 0.62890625,
+      "shoulder_line_angle": 0.69921875,
+      "throwing_elbow_angle": 0.07421875,
+      "hip_line_angle": 0.69921875,
+      "lateral_foot_separation": 0.65625
+    },
+    "coordinate_imputed_feature_fraction": {
+      "throwing_knee_angle": 0.0078125,
+      "lead_knee_angle": 0.0078125,
+      "shoulder_line_angle": 0.0078125,
+      "throwing_elbow_angle": 0.00390625,
+      "hip_line_angle": 0.0078125,
+      "lateral_foot_separation": 0.0078125
+    },
+    "throwing_side": "LEFT",
+    "min_visibility": 0.5,
+    "min_presence": 0.5,
+    "coordinate_x_scale": 0.8185185185185185,
+    "coordinate_contract": "height-normalized image plane: x_normalized * (width / height), y_normalized",
+    "capture_context": {
+      "width": 442,
+      "height": 540,
+      "fps": 30.0,
+      "_context_path": "data\\pitcher_database\\tarik_skubal\\2026_centerfield_clip_09_01\\pitch_01\\pose_clean.clean.json"
+    },
+    "smoothing": {
+      "coordinate": "none",
+      "feature_method": "median; doubled-angle circular mean for unoriented shoulder/hip lines",
+      "radius_frames": 2,
+      "radius_seconds": 0.06666666666666667,
+      "max_interpolation_gap_frames": 2,
+      "max_interpolation_seconds": 0.06666666666666667
+    },
+    "motion_window_proxy": {
+      "start_frame": 1008,
+      "end_frame": 1016,
+      "peak_separation_frame": 1012,
+      "confidence": 0.09888132597779109,
+      "method": "lateral-foot-separation-proxy"
+    },
+    "motion_candidates": {
+      "status": "review_required",
+      "method": "multi-feature-velocity-proxy",
+      "candidate_count": 5,
+      "candidates": [
+        {
+          "start_frame": 1005,
+          "end_frame": 1029,
+          "peak_separation_frame": 1005,
+          "confidence": 0.7798380344139324,
+          "method": "multi-feature-velocity-proxy"
+        },
+        {
+          "start_frame": 1090,
+          "end_frame": 1138,
+          "peak_separation_frame": 1111,
+          "confidence": 0.8366310832042971,
+          "method": "multi-feature-velocity-proxy"
+        },
+        {
+          "start_frame": 1148,
+          "end_frame": 1211,
+          "peak_separation_frame": 1184,
+          "confidence": 0.8859830075050743,
+          "method": "multi-feature-velocity-proxy"
+        },
+        {
+          "start_frame": 1191,
+          "end_frame": 1234,
+          "peak_separation_frame": 1210,
+          "confidence": 0.7633904463903077,
+          "method": "multi-feature-velocity-proxy"
+        },
+        {
+          "start_frame": 1214,
+          "end_frame": 1257,
+          "peak_separation_frame": 1230,
+          "confidence": 1.0,
+          "method": "multi-feature-velocity-proxy"
+        }
+      ],
+      "limitations": [
+        "Broadcast cuts and pose-tracking errors may create false positives.",
+        "Candidates are not biomechanical event labels and require visual review."
+      ]
+    }
+  },
+  "quality_gate": {
+    "passed": false,
+    "feature_coverage": {
+      "throwing_knee_angle": 0.671875,
+      "lead_knee_angle": 0.62890625,
+      "shoulder_line_angle": 0.69921875,
+      "throwing_elbow_angle": 0.07421875,
+      "hip_line_angle": 0.69921875,
+      "lateral_foot_separation": 0.65625
+    },
+    "usable_feature_coverage": {
+      "throwing_knee_angle": 0.6796875,
+      "lead_knee_angle": 0.63671875,
+      "shoulder_line_angle": 0.70703125,
+      "throwing_elbow_angle": 0.078125,
+      "hip_line_angle": 0.70703125,
+      "lateral_foot_separation": 0.6640625
+    },
+    "coordinate_imputed_feature_fraction": {
+      "throwing_knee_angle": 0.0078125,
+      "lead_knee_angle": 0.0078125,
+      "shoulder_line_angle": 0.0078125,
+      "throwing_elbow_angle": 0.00390625,
+      "hip_line_angle": 0.0078125,
+      "lateral_foot_separation": 0.0078125
+    },
+    "detection_coverage": 0.71484375,
+    "max_consecutive_missing_source_frames": 32,
+    "failures": [
+      "pose detection below 90% of segment timeline",
+      "more than 2 consecutive frames have no source pose",
+      "throwing_knee_angle raw coverage below 80%",
+      "lead_knee_angle raw coverage below 80%",
+      "shoulder_line_angle raw coverage below 80%",
+      "hip_line_angle raw coverage below 80%",
+      "throwing_elbow_angle raw coverage below 50%"
+    ]
+  },
+  "reference_context": {
+    "season": "2026",
+    "team": "Detroit Tigers",
+    "view": "rear_centerfield_broadcast"
+  },
+  "revalidation": {
+    "method": "rebuild-derived-artifacts-from-existing-pose-raw",
+    "phase_sequence": {
+      "attempted": false,
+      "rebuilt": false
+    }
+  }
+}

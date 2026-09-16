@@ -1,0 +1,49 @@
+{
+  "schema_version": "0.1-provisional",
+  "aggregation": "median per-reference phase-DTW distance",
+  "reference_count": 4,
+  "pitcher_distance": 1.1012606849846875,
+  "reference_comparisons": [
+    {
+      "reference_sequence": "data\\pitcher_database\\yoshinobu_yamamoto\\2024_spring_training\\pitch_01\\phase_sequence.csv",
+      "distance": 1.0204683178305876,
+      "phase_distances": {
+        "windup": 1.0079547689327002,
+        "stride": 0.9348298121471023,
+        "arm_acceleration": 1.1314401777931702,
+        "follow_through": 1.007648512449378
+      }
+    },
+    {
+      "reference_sequence": "data\\pitcher_database\\yoshinobu_yamamoto\\2024_spring_training\\pitch_02\\phase_sequence.csv",
+      "distance": 0.8920063142438487,
+      "phase_distances": {
+        "windup": 0.7623036973907863,
+        "stride": 1.1087890390293773,
+        "arm_acceleration": 0.9399079195751338,
+        "follow_through": 0.7570246009800973
+      }
+    },
+    {
+      "reference_sequence": "data\\pitcher_database\\yoshinobu_yamamoto\\2024_spring_training\\pitch_03\\phase_sequence.csv",
+      "distance": 1.378302831792523,
+      "phase_distances": {
+        "windup": 1.5703986167858495,
+        "stride": 1.3167425443245508,
+        "arm_acceleration": 1.5352452101991592,
+        "follow_through": 1.0908249558605325
+      }
+    },
+    {
+      "reference_sequence": "data\\pitcher_database\\yoshinobu_yamamoto\\2024_spring_training_centerfield_02\\pitch_01\\phase_sequence.csv",
+      "distance": 1.1820530521387878,
+      "phase_distances": {
+        "windup": 1.150794422559692,
+        "stride": 0.9630150003779904,
+        "arm_acceleration": 1.8483961971096605,
+        "follow_through": 0.7660065885078078
+      }
+    }
+  ],
+  "warning": "Diagnostic only: references share one pitcher and the sample is too small for pitcher ranking."
+}

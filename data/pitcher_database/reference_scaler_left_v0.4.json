@@ -1,0 +1,73 @@
+{
+  "schema_version": "pitch-phase-v0.3-provisional",
+  "method": "reference-z-score",
+  "scalers": {
+    "throwing_knee_angle_smoothed": {
+      "feature": "throwing_knee_angle_smoothed",
+      "mean": 143.64821130645035,
+      "standard_deviation": 21.295801153755875,
+      "sample_count": 600
+    },
+    "lead_knee_angle_smoothed": {
+      "feature": "lead_knee_angle_smoothed",
+      "mean": 143.9323832538521,
+      "standard_deviation": 35.89965243168214,
+      "sample_count": 600
+    },
+    "shoulder_line_angle_smoothed": {
+      "feature": "shoulder_line_angle_smoothed",
+      "mean": 9.8069099127163,
+      "standard_deviation": 14.5543079214184,
+      "sample_count": 600
+    },
+    "throwing_elbow_angle_smoothed": {
+      "feature": "throwing_elbow_angle_smoothed",
+      "mean": 115.077604228395,
+      "standard_deviation": 36.98538811418973,
+      "sample_count": 506
+    },
+    "hip_line_angle_smoothed": {
+      "feature": "hip_line_angle_smoothed",
+      "mean": 14.704688121993646,
+      "standard_deviation": 12.626342599568403,
+      "sample_count": 600
+    }
+  },
+  "reference_scope": {
+    "throws": "LEFT"
+  },
+  "provenance": {
+    "reference_sequences": [
+      {
+        "phase_sequence": "data\\pitcher_database\\blake_snell\\2025_centerfield_clip_10\\pitch_02\\phase_sequence.csv",
+        "row_count": 100
+      },
+      {
+        "phase_sequence": "data\\pitcher_database\\blake_snell\\2025_centerfield_clip_10\\pitch_03\\phase_sequence.csv",
+        "row_count": 100
+      },
+      {
+        "phase_sequence": "data\\pitcher_database\\blake_snell\\2025_centerfield_clip_10\\pitch_06\\phase_sequence.csv",
+        "row_count": 100
+      },
+      {
+        "phase_sequence": "data\\pitcher_database\\blake_snell\\2025_centerfield_clip_10\\pitch_07\\phase_sequence.csv",
+        "row_count": 100
+      },
+      {
+        "phase_sequence": "data\\pitcher_database\\tarik_skubal\\2026_centerfield_clip_08\\pitch_02\\phase_sequence.csv",
+        "row_count": 100
+      },
+      {
+        "phase_sequence": "data\\pitcher_database\\tarik_skubal\\2026_centerfield_clip_08\\pitch_05\\phase_sequence.csv",
+        "row_count": 100
+      }
+    ],
+    "reference_sequence_count": 6,
+    "reference_rows": 600,
+    "warning": "Rows are phase-resampled. Use a balanced reference set by throwing side and camera protocol before treating scores as production-quality.",
+    "registry": "data\\pitcher_database\\registry_v0.4.json",
+    "registry_schema_version": "0.4-event-quality-provisional",
+    "selection": "all eligible registry entries matching throwing side"
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "schema_version": "pitch-phase-v0.3-provisional",
+  "method": "reference-z-score",
+  "scalers": {
+    "throwing_knee_angle_smoothed": {
+      "feature": "throwing_knee_angle_smoothed",
+      "mean": 145.29134464944795,
+      "standard_deviation": 24.03041535713668,
+      "sample_count": 500
+    },
+    "lead_knee_angle_smoothed": {
+      "feature": "lead_knee_angle_smoothed",
+      "mean": 136.2978685413679,
+      "standard_deviation": 40.710168332311746,
+      "sample_count": 488
+    },
+    "shoulder_line_angle_smoothed": {
+      "feature": "shoulder_line_angle_smoothed",
+      "mean": -5.2115042783102625,
+      "standard_deviation": 16.767898847500796,
+      "sample_count": 500
+    },
+    "throwing_elbow_angle_smoothed": {
+      "feature": "throwing_elbow_angle_smoothed",
+      "mean": 100.23055177749335,
+      "standard_deviation": 38.514292690680634,
+      "sample_count": 382
+    },
+    "hip_line_angle_smoothed": {
+      "feature": "hip_line_angle_smoothed",
+      "mean": -9.102629860386303,
+      "standard_deviation": 14.901446852030974,
+      "sample_count": 500
+    }
+  },
+  "reference_scope": {
+    "throws": "RIGHT"
+  },
+  "provenance": {
+    "reference_sequences": [
+      {
+        "phase_sequence": "data\\pitcher_database\\shohei_ohtani\\2026_centerfield_clip_02\\pitch_02\\phase_sequence.csv",
+        "row_count": 100
+      },
+      {
+        "phase_sequence": "data\\pitcher_database\\shohei_ohtani\\2026_centerfield_clip_02\\pitch_05\\phase_sequence.csv",
+        "row_count": 100
+      },
+      {
+        "phase_sequence": "data\\pitcher_database\\yoshinobu_yamamoto\\2024_spring_training_centerfield_02\\pitch_01\\phase_sequence.csv",
+        "row_count": 100
+      },
+      {
+        "phase_sequence": "data\\pitcher_database\\yu_darvish\\2013_regular_season_centerfield_01\\pitch_01\\phase_sequence.csv",
+        "row_count": 100
+      },
+      {
+        "phase_sequence": "data\\pitcher_database\\yu_darvish\\2025_centerfield_clip_09\\pitch_02\\phase_sequence.csv",
+        "row_count": 100
+      }
+    ],
+    "reference_sequence_count": 5,
+    "reference_rows": 500,
+    "warning": "Rows are phase-resampled. Use a balanced reference set by throwing side and camera protocol before treating scores as production-quality.",
+    "registry": "data\\pitcher_database\\registry_v0.5.json",
+    "registry_schema_version": "0.5-reviewed-event-window-provisional",
+    "selection": "all eligible registry entries matching throwing side"
+  }
+}

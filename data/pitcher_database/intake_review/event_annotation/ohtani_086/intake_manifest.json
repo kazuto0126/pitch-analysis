@@ -1,0 +1,21 @@
+{
+  "schema_version": "0.1",
+  "purpose": "candidate video visual intake; source media is unmodified",
+  "records": [
+    {
+      "source_path": "data\\pitcher_database\\raw\\shohei_ohtani\\2026\\shohei_ohtani_2026_05_28_centerfield_clip_02.mp4",
+      "filename": "shohei_ohtani_2026_05_28_centerfield_clip_02.mp4",
+      "fps": 30.0,
+      "frame_count": 5825,
+      "duration_seconds": 194.16666666666666,
+      "sampled_range_seconds": {
+        "start": 86.8,
+        "end": 90.3
+      },
+      "width": 624,
+      "height": 694,
+      "contact_sheet": "data\\pitcher_database\\intake_review\\event_annotation\\ohtani_086\\shohei_ohtani_2026_05_28_centerfield_clip_02_contact_sheet.jpg",
+      "audit_status": "needs_visual_review"
+    }
+  ]
+}

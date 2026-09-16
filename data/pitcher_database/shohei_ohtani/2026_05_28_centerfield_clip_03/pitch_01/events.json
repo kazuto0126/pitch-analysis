@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "video_id": "ohtani_2026_05_28_clip_03_pitch_01",
+  "throws": "RIGHT",
+  "reference_context": {
+    "season": "2026",
+    "team": "Los Angeles Dodgers",
+    "view": "rear_centerfield_broadcast"
+  },
+  "review_status": "rejected",
+  "events": {
+    "pitch_start": null,
+    "peak_leg_lift": null,
+    "foot_strike": null,
+    "release": null,
+    "follow_through_end": null
+  },
+  "automatic_candidates": {
+    "motion_start_proxy": 758,
+    "peak_lateral_foot_separation_proxy": 760,
+    "motion_end_proxy": 798
+  },
+  "notes": "Rejected by automatic quality gate: the window contains a broadcast transition and has only 63.7% pose-detection coverage; throwing-elbow feature coverage is 9.3%."
+}

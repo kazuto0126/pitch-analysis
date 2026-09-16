@@ -1,0 +1,34 @@
+{
+  "schema_version": "library-release-v0.1",
+  "status": "provisional",
+  "reference_root": "data\\pitcher_database",
+  "release_dir": "data\\pitcher_database\\releases\\v0.5",
+  "registry": "data\\pitcher_database\\releases\\v0.5\\registry.json",
+  "registry_schema_version": "0.5-reviewed-event-window-provisional",
+  "accepted_reference_count": 12,
+  "excluded_reference_count": 4,
+  "pitcher_count": 5,
+  "revalidation": {
+    "report": "data\\pitcher_database\\releases\\v0.5\\revalidation.json",
+    "segment_count": 36
+  },
+  "throwing_sides": {
+    "LEFT": {
+      "scaler": "data\\pitcher_database\\releases\\v0.5\\scaler_left.json",
+      "reference_sequences": 7,
+      "validation": "data\\pitcher_database\\releases\\v0.5\\validation_left.json",
+      "scored_fold_count": 7,
+      "unscored_fold_count": 0,
+      "top1_accuracy": 1.0
+    },
+    "RIGHT": {
+      "scaler": "data\\pitcher_database\\releases\\v0.5\\scaler_right.json",
+      "reference_sequences": 5,
+      "validation": "data\\pitcher_database\\releases\\v0.5\\validation_right.json",
+      "scored_fold_count": 4,
+      "unscored_fold_count": 1,
+      "top1_accuracy": 1.0
+    }
+  },
+  "warning": "Provisional until camera metadata is explicit and each pitcher has sufficient reviewed references."
+}

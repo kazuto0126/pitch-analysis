@@ -1,0 +1,182 @@
+{
+  "schema_version": "0.2-quality-aware",
+  "status": "revalidated_quality_gate_failed",
+  "source_video": "data\\pitcher_database\\raw\\shohei_ohtani\\2026\\shohei_ohtani_2026_05_28_centerfield_clip_02.mp4",
+  "segment_seconds": {
+    "start": 164.4,
+    "end": 167.2
+  },
+  "capture": {
+    "video": "data\\pitcher_database\\raw\\shohei_ohtani\\2026\\shohei_ohtani_2026_05_28_centerfield_clip_02.mp4",
+    "model": "models\\pose_landmarker_full.task",
+    "fps": 30.0,
+    "start_frame": 4932,
+    "end_frame": 5016,
+    "requested_frames": 85,
+    "detected_frames": 83,
+    "width": 624,
+    "height": 694
+  },
+  "cleaning": {
+    "frame_range": [
+      4932,
+      5016
+    ],
+    "landmarks": 33,
+    "rows": 2805,
+    "min_visibility": 0.5,
+    "min_presence": 0.5,
+    "coordinate_x_scale": 0.899135446685879,
+    "context": "data\\pitcher_database\\shohei_ohtani\\2026_centerfield_clip_02\\pitch_07\\pose_clean.clean.json"
+  },
+  "feature_quality": {
+    "schema_version": "feature-quality-v0.3",
+    "input_frames_detected": 83,
+    "timeline_frames": 85,
+    "timeline_start_frame": 4932,
+    "timeline_end_frame": 5016,
+    "timeline_contract": "capture_requested_range",
+    "missing_source_frames": [
+      4989,
+      5009
+    ],
+    "missing_source_frame_count": 2,
+    "max_consecutive_missing_source_frames": 1,
+    "invalid_feature_frames": {
+      "throwing_knee_angle": 3,
+      "lead_knee_angle": 13,
+      "shoulder_line_angle": 0,
+      "throwing_elbow_angle": 45,
+      "hip_line_angle": 1,
+      "lateral_foot_separation": 3
+    },
+    "raw_invalid_feature_frames": {
+      "throwing_knee_angle": 5,
+      "lead_knee_angle": 15,
+      "shoulder_line_angle": 2,
+      "throwing_elbow_angle": 45,
+      "hip_line_angle": 3,
+      "lateral_foot_separation": 5
+    },
+    "coordinate_imputed_feature_frames": {
+      "throwing_knee_angle": 2,
+      "lead_knee_angle": 2,
+      "shoulder_line_angle": 2,
+      "throwing_elbow_angle": 0,
+      "hip_line_angle": 2,
+      "lateral_foot_separation": 2
+    },
+    "feature_coverage": {
+      "throwing_knee_angle": 0.9647058823529412,
+      "lead_knee_angle": 0.8470588235294118,
+      "shoulder_line_angle": 1.0,
+      "throwing_elbow_angle": 0.47058823529411764,
+      "hip_line_angle": 0.9882352941176471,
+      "lateral_foot_separation": 0.9647058823529412
+    },
+    "raw_feature_coverage": {
+      "throwing_knee_angle": 0.9411764705882353,
+      "lead_knee_angle": 0.8235294117647058,
+      "shoulder_line_angle": 0.9764705882352941,
+      "throwing_elbow_angle": 0.47058823529411764,
+      "hip_line_angle": 0.9647058823529412,
+      "lateral_foot_separation": 0.9411764705882353
+    },
+    "coordinate_imputed_feature_fraction": {
+      "throwing_knee_angle": 0.023529411764705882,
+      "lead_knee_angle": 0.023529411764705882,
+      "shoulder_line_angle": 0.023529411764705882,
+      "throwing_elbow_angle": 0.0,
+      "hip_line_angle": 0.023529411764705882,
+      "lateral_foot_separation": 0.023529411764705882
+    },
+    "throwing_side": "RIGHT",
+    "min_visibility": 0.5,
+    "min_presence": 0.5,
+    "coordinate_x_scale": 0.899135446685879,
+    "coordinate_contract": "height-normalized image plane: x_normalized * (width / height), y_normalized",
+    "capture_context": {
+      "width": 624,
+      "height": 694,
+      "fps": 30.0,
+      "_context_path": "data\\pitcher_database\\shohei_ohtani\\2026_centerfield_clip_02\\pitch_07\\pose_clean.clean.json"
+    },
+    "smoothing": {
+      "coordinate": "none",
+      "feature_method": "median; doubled-angle circular mean for unoriented shoulder/hip lines",
+      "radius_frames": 2,
+      "radius_seconds": 0.06666666666666667,
+      "max_interpolation_gap_frames": 2,
+      "max_interpolation_seconds": 0.06666666666666667
+    },
+    "motion_window_proxy": {
+      "start_frame": 4946,
+      "end_frame": 5008,
+      "peak_separation_frame": 4976,
+      "confidence": 0.8930628174949556,
+      "method": "lateral-foot-separation-proxy"
+    },
+    "motion_candidates": {
+      "status": "review_required",
+      "method": "multi-feature-velocity-proxy",
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "start_frame": 4944,
+          "end_frame": 5016,
+          "peak_separation_frame": 4973,
+          "confidence": 0.9897035385872253,
+          "method": "multi-feature-velocity-proxy"
+        }
+      ],
+      "limitations": [
+        "Broadcast cuts and pose-tracking errors may create false positives.",
+        "Candidates are not biomechanical event labels and require visual review."
+      ]
+    }
+  },
+  "quality_gate": {
+    "passed": false,
+    "feature_coverage": {
+      "throwing_knee_angle": 0.9411764705882353,
+      "lead_knee_angle": 0.8235294117647058,
+      "shoulder_line_angle": 0.9764705882352941,
+      "throwing_elbow_angle": 0.47058823529411764,
+      "hip_line_angle": 0.9647058823529412,
+      "lateral_foot_separation": 0.9411764705882353
+    },
+    "usable_feature_coverage": {
+      "throwing_knee_angle": 0.9647058823529412,
+      "lead_knee_angle": 0.8470588235294118,
+      "shoulder_line_angle": 1.0,
+      "throwing_elbow_angle": 0.47058823529411764,
+      "hip_line_angle": 0.9882352941176471,
+      "lateral_foot_separation": 0.9647058823529412
+    },
+    "coordinate_imputed_feature_fraction": {
+      "throwing_knee_angle": 0.023529411764705882,
+      "lead_knee_angle": 0.023529411764705882,
+      "shoulder_line_angle": 0.023529411764705882,
+      "throwing_elbow_angle": 0.0,
+      "hip_line_angle": 0.023529411764705882,
+      "lateral_foot_separation": 0.023529411764705882
+    },
+    "detection_coverage": 0.9764705882352941,
+    "max_consecutive_missing_source_frames": 1,
+    "failures": [
+      "throwing_elbow_angle raw coverage below 50%"
+    ]
+  },
+  "reference_context": {
+    "season": "2026",
+    "team": "Los Angeles Dodgers",
+    "view": "rear_centerfield_broadcast"
+  },
+  "revalidation": {
+    "method": "rebuild-derived-artifacts-from-existing-pose-raw",
+    "phase_sequence": {
+      "attempted": false,
+      "rebuilt": false
+    }
+  }
+}

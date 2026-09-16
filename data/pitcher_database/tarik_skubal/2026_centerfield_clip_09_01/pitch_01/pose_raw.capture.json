@@ -1,0 +1,11 @@
+{
+  "video": "data\\pitcher_database\\raw\\tarik_skubal\\2026\\tarik_skubal_2026_centerfield_clip_09_01.mp4",
+  "model": "models\\pose_landmarker_full.task",
+  "fps": 30.0,
+  "start_frame": 1005,
+  "end_frame": 1260,
+  "requested_frames": 256,
+  "detected_frames": 183,
+  "width": 442,
+  "height": 540
+}

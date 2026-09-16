@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "video_id": "skubal_2026_clip_09_02_pitch_01",
+  "throws": "LEFT",
+  "reference_context": {
+    "season": "2026",
+    "team": "Detroit Tigers",
+    "view": "rear_centerfield_broadcast"
+  },
+  "review_status": "rejected",
+  "events": {
+    "pitch_start": null,
+    "peak_leg_lift": null,
+    "foot_strike": null,
+    "release": null,
+    "follow_through_end": null
+  },
+  "automatic_candidates": {
+    "motion_start_proxy": 429,
+    "peak_lateral_foot_separation_proxy": 452,
+    "motion_end_proxy": 517
+  },
+  "notes": "Rejected by automatic quality gate: no required biomechanical feature reaches the coverage threshold; throwing-elbow feature coverage is 27.3%."
+}

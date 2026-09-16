@@ -1,0 +1,124 @@
+{
+  "schema_version": "0.2-quality-aware",
+  "normalization": "reference-z-score for joint angles; fixed circular scale for shoulder/hip line orientation",
+  "excluded_features": [
+    "lateral_foot_separation_smoothed"
+  ],
+  "circular_line_orientation": "shoulder/hip use a 180-degree wrap-aware difference, so +89 and -89 degrees are close",
+  "minimum_shared_features": 3,
+  "overall_mean_phase_distance": 0.6116314744143075,
+  "phases": {
+    "windup": {
+      "distance": 0.5494036037454384,
+      "path_length": 29,
+      "query_coverage": {
+        "throwing_knee_angle_smoothed": 1.0,
+        "lead_knee_angle_smoothed": 1.0,
+        "shoulder_line_angle_smoothed": 1.0,
+        "throwing_elbow_angle_smoothed": 0.72,
+        "hip_line_angle_smoothed": 1.0
+      },
+      "reference_coverage": {
+        "throwing_knee_angle_smoothed": 1.0,
+        "lead_knee_angle_smoothed": 1.0,
+        "shoulder_line_angle_smoothed": 1.0,
+        "throwing_elbow_angle_smoothed": 1.0,
+        "hip_line_angle_smoothed": 1.0
+      },
+      "shared_key_features": [
+        "throwing_knee_angle_smoothed",
+        "lead_knee_angle_smoothed",
+        "shoulder_line_angle_smoothed",
+        "throwing_elbow_angle_smoothed",
+        "hip_line_angle_smoothed"
+      ],
+      "eligibility_failures": [],
+      "reason": null
+    },
+    "stride": {
+      "distance": 0.6738593450831767,
+      "path_length": 28,
+      "query_coverage": {
+        "throwing_knee_angle_smoothed": 1.0,
+        "lead_knee_angle_smoothed": 1.0,
+        "shoulder_line_angle_smoothed": 1.0,
+        "throwing_elbow_angle_smoothed": 1.0,
+        "hip_line_angle_smoothed": 1.0
+      },
+      "reference_coverage": {
+        "throwing_knee_angle_smoothed": 1.0,
+        "lead_knee_angle_smoothed": 1.0,
+        "shoulder_line_angle_smoothed": 1.0,
+        "throwing_elbow_angle_smoothed": 1.0,
+        "hip_line_angle_smoothed": 1.0
+      },
+      "shared_key_features": [
+        "throwing_knee_angle_smoothed",
+        "lead_knee_angle_smoothed",
+        "shoulder_line_angle_smoothed",
+        "throwing_elbow_angle_smoothed",
+        "hip_line_angle_smoothed"
+      ],
+      "eligibility_failures": [],
+      "reason": null
+    },
+    "arm_acceleration": {
+      "distance": null,
+      "path_length": 0,
+      "query_coverage": {
+        "throwing_knee_angle_smoothed": 1.0,
+        "lead_knee_angle_smoothed": 1.0,
+        "shoulder_line_angle_smoothed": 1.0,
+        "throwing_elbow_angle_smoothed": 1.0,
+        "hip_line_angle_smoothed": 1.0
+      },
+      "reference_coverage": {
+        "throwing_knee_angle_smoothed": 1.0,
+        "lead_knee_angle_smoothed": 1.0,
+        "shoulder_line_angle_smoothed": 1.0,
+        "throwing_elbow_angle_smoothed": 0.24,
+        "hip_line_angle_smoothed": 1.0
+      },
+      "shared_key_features": [
+        "throwing_knee_angle_smoothed",
+        "lead_knee_angle_smoothed",
+        "shoulder_line_angle_smoothed",
+        "hip_line_angle_smoothed"
+      ],
+      "eligibility_failures": [
+        "reference throwing_elbow_angle_smoothed coverage below 35%"
+      ],
+      "reason": "coverage gate failed"
+    },
+    "follow_through": {
+      "distance": null,
+      "path_length": 0,
+      "query_coverage": {
+        "throwing_knee_angle_smoothed": 1.0,
+        "lead_knee_angle_smoothed": 1.0,
+        "shoulder_line_angle_smoothed": 1.0,
+        "throwing_elbow_angle_smoothed": 0.24,
+        "hip_line_angle_smoothed": 1.0
+      },
+      "reference_coverage": {
+        "throwing_knee_angle_smoothed": 1.0,
+        "lead_knee_angle_smoothed": 1.0,
+        "shoulder_line_angle_smoothed": 1.0,
+        "throwing_elbow_angle_smoothed": 0.0,
+        "hip_line_angle_smoothed": 1.0
+      },
+      "shared_key_features": [
+        "throwing_knee_angle_smoothed",
+        "lead_knee_angle_smoothed",
+        "shoulder_line_angle_smoothed",
+        "hip_line_angle_smoothed"
+      ],
+      "eligibility_failures": [
+        "query throwing_elbow_angle_smoothed coverage below 35%",
+        "reference throwing_elbow_angle_smoothed coverage below 35%"
+      ],
+      "reason": "coverage gate failed"
+    }
+  },
+  "warning": "Diagnostic cross-camera comparison only; a phase with inadequate raw feature coverage is not scored."
+}

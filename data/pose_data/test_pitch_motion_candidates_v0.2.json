@@ -1,0 +1,41 @@
+{
+  "schema": "motion-candidates-v0.1",
+  "status": "review_required",
+  "source_features_csv": "data\\pose_data\\test_pitch_features_v0.3.csv",
+  "method": "multi-feature-velocity",
+  "feature_column": "lateral_foot_separation_smoothed",
+  "parameters": {
+    "baseline_frames": 15,
+    "threshold_ratio": 0.2,
+    "merge_gap_frames": 12,
+    "min_window_frames": 3,
+    "pre_roll_frames": 15,
+    "post_roll_frames": 20,
+    "activity_quantile": 0.7,
+    "smoothing_radius": 2
+  },
+  "candidate_count": 2,
+  "candidates": [
+    {
+      "start_frame": 33,
+      "end_frame": 116,
+      "peak_separation_frame": 86,
+      "confidence": 1.0,
+      "method": "multi-feature-velocity-proxy",
+      "peak_activity_frame": 86
+    },
+    {
+      "start_frame": 153,
+      "end_frame": 230,
+      "peak_separation_frame": 171,
+      "confidence": 1.0,
+      "method": "multi-feature-velocity-proxy",
+      "peak_activity_frame": 171
+    }
+  ],
+  "limitations": [
+    "Candidates use normalized velocity from multiple 2-D pose features.",
+    "Broadcast cuts and pose-tracking errors may create false positives.",
+    "Each candidate must be visually reviewed before event annotation."
+  ]
+}

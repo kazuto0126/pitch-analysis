@@ -1,0 +1,12 @@
+{
+  "schema_version": "query-context-v0.1",
+  "video_id": "test_pitch",
+  "throws": "RIGHT",
+  "review_status": "needs_human_review",
+  "reference_context": {
+    "view": "rear_centerfield_broadcast",
+    "horizontal_mirror": null,
+    "subject_framing": "unknown"
+  },
+  "notes": "Exploratory query context. Event labels and camera framing still need human confirmation before production-style ranking."
+}

@@ -1,0 +1,21 @@
+{
+  "schema_version": "0.1",
+  "purpose": "candidate video visual intake; source media is unmodified",
+  "records": [
+    {
+      "source_path": "data\\pitcher_database\\raw\\blake_snell\\2025\\blake_snell_2025_centerfield_clip_10.mp4",
+      "filename": "blake_snell_2025_centerfield_clip_10.mp4",
+      "fps": 30.0,
+      "frame_count": 2430,
+      "duration_seconds": 81.0,
+      "sampled_range_seconds": {
+        "start": 28.5,
+        "end": 32.0
+      },
+      "width": 554,
+      "height": 706,
+      "contact_sheet": "data\\pitcher_database\\blake_snell\\2025_centerfield_clip_10\\pitch_06\\review\\blake_snell_2025_centerfield_clip_10_contact_sheet.jpg",
+      "audit_status": "needs_visual_review"
+    }
+  ]
+}

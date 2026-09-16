@@ -1,0 +1,196 @@
+{
+  "schema_version": "0.2-quality-aware",
+  "status": "revalidated_quality_gate_failed",
+  "source_video": "data\\pitcher_database\\raw\\blake_snell\\2026\\blake_snell_2026_centerfield_clip_08.mp4",
+  "segment_seconds": {
+    "start": 35.0,
+    "end": 39.5
+  },
+  "capture": {
+    "video": "data\\pitcher_database\\raw\\blake_snell\\2026\\blake_snell_2026_centerfield_clip_08.mp4",
+    "model": "models\\pose_landmarker_full.task",
+    "fps": 30.0,
+    "start_frame": 1050,
+    "end_frame": 1185,
+    "requested_frames": 136,
+    "detected_frames": 128,
+    "width": 454,
+    "height": 650
+  },
+  "cleaning": {
+    "frame_range": [
+      1050,
+      1185
+    ],
+    "landmarks": 33,
+    "rows": 4488,
+    "min_visibility": 0.5,
+    "min_presence": 0.5,
+    "coordinate_x_scale": 0.6984615384615385,
+    "context": "data\\pitcher_database\\blake_snell\\2026_centerfield_clip_08\\pitch_02\\pose_clean.clean.json"
+  },
+  "feature_quality": {
+    "schema_version": "feature-quality-v0.3",
+    "input_frames_detected": 128,
+    "timeline_frames": 136,
+    "timeline_start_frame": 1050,
+    "timeline_end_frame": 1185,
+    "timeline_contract": "capture_requested_range",
+    "missing_source_frames": [
+      1050,
+      1051,
+      1052,
+      1053,
+      1054,
+      1055,
+      1056,
+      1057
+    ],
+    "missing_source_frame_count": 8,
+    "max_consecutive_missing_source_frames": 8,
+    "invalid_feature_frames": {
+      "throwing_knee_angle": 8,
+      "lead_knee_angle": 8,
+      "shoulder_line_angle": 8,
+      "throwing_elbow_angle": 52,
+      "hip_line_angle": 8,
+      "lateral_foot_separation": 8
+    },
+    "raw_invalid_feature_frames": {
+      "throwing_knee_angle": 8,
+      "lead_knee_angle": 8,
+      "shoulder_line_angle": 8,
+      "throwing_elbow_angle": 52,
+      "hip_line_angle": 8,
+      "lateral_foot_separation": 8
+    },
+    "coordinate_imputed_feature_frames": {
+      "throwing_knee_angle": 0,
+      "lead_knee_angle": 0,
+      "shoulder_line_angle": 0,
+      "throwing_elbow_angle": 0,
+      "hip_line_angle": 0,
+      "lateral_foot_separation": 0
+    },
+    "feature_coverage": {
+      "throwing_knee_angle": 0.9411764705882353,
+      "lead_knee_angle": 0.9411764705882353,
+      "shoulder_line_angle": 0.9411764705882353,
+      "throwing_elbow_angle": 0.6176470588235294,
+      "hip_line_angle": 0.9411764705882353,
+      "lateral_foot_separation": 0.9411764705882353
+    },
+    "raw_feature_coverage": {
+      "throwing_knee_angle": 0.9411764705882353,
+      "lead_knee_angle": 0.9411764705882353,
+      "shoulder_line_angle": 0.9411764705882353,
+      "throwing_elbow_angle": 0.6176470588235294,
+      "hip_line_angle": 0.9411764705882353,
+      "lateral_foot_separation": 0.9411764705882353
+    },
+    "coordinate_imputed_feature_fraction": {
+      "throwing_knee_angle": 0.0,
+      "lead_knee_angle": 0.0,
+      "shoulder_line_angle": 0.0,
+      "throwing_elbow_angle": 0.0,
+      "hip_line_angle": 0.0,
+      "lateral_foot_separation": 0.0
+    },
+    "throwing_side": "LEFT",
+    "min_visibility": 0.5,
+    "min_presence": 0.5,
+    "coordinate_x_scale": 0.6984615384615385,
+    "coordinate_contract": "height-normalized image plane: x_normalized * (width / height), y_normalized",
+    "capture_context": {
+      "width": 454,
+      "height": 650,
+      "fps": 30.0,
+      "_context_path": "data\\pitcher_database\\blake_snell\\2026_centerfield_clip_08\\pitch_02\\pose_clean.clean.json"
+    },
+    "smoothing": {
+      "coordinate": "none",
+      "feature_method": "median; doubled-angle circular mean for unoriented shoulder/hip lines",
+      "radius_frames": 2,
+      "radius_seconds": 0.06666666666666667,
+      "max_interpolation_gap_frames": 2,
+      "max_interpolation_seconds": 0.06666666666666667
+    },
+    "motion_window_proxy": {
+      "start_frame": 1069,
+      "end_frame": 1177,
+      "peak_separation_frame": 1160,
+      "confidence": 0.5439681681821212,
+      "method": "lateral-foot-separation-proxy"
+    },
+    "motion_candidates": {
+      "status": "review_required",
+      "method": "multi-feature-velocity-proxy",
+      "candidate_count": 2,
+      "candidates": [
+        {
+          "start_frame": 1089,
+          "end_frame": 1133,
+          "peak_separation_frame": 1107,
+          "confidence": 0.997563615969966,
+          "method": "multi-feature-velocity-proxy"
+        },
+        {
+          "start_frame": 1113,
+          "end_frame": 1185,
+          "peak_separation_frame": 1132,
+          "confidence": 1.0,
+          "method": "multi-feature-velocity-proxy"
+        }
+      ],
+      "limitations": [
+        "Broadcast cuts and pose-tracking errors may create false positives.",
+        "Candidates are not biomechanical event labels and require visual review."
+      ]
+    }
+  },
+  "quality_gate": {
+    "passed": false,
+    "feature_coverage": {
+      "throwing_knee_angle": 0.9411764705882353,
+      "lead_knee_angle": 0.9411764705882353,
+      "shoulder_line_angle": 0.9411764705882353,
+      "throwing_elbow_angle": 0.6176470588235294,
+      "hip_line_angle": 0.9411764705882353,
+      "lateral_foot_separation": 0.9411764705882353
+    },
+    "usable_feature_coverage": {
+      "throwing_knee_angle": 0.9411764705882353,
+      "lead_knee_angle": 0.9411764705882353,
+      "shoulder_line_angle": 0.9411764705882353,
+      "throwing_elbow_angle": 0.6176470588235294,
+      "hip_line_angle": 0.9411764705882353,
+      "lateral_foot_separation": 0.9411764705882353
+    },
+    "coordinate_imputed_feature_fraction": {
+      "throwing_knee_angle": 0.0,
+      "lead_knee_angle": 0.0,
+      "shoulder_line_angle": 0.0,
+      "throwing_elbow_angle": 0.0,
+      "hip_line_angle": 0.0,
+      "lateral_foot_separation": 0.0
+    },
+    "detection_coverage": 0.9411764705882353,
+    "max_consecutive_missing_source_frames": 8,
+    "failures": [
+      "more than 2 consecutive frames have no source pose"
+    ]
+  },
+  "reference_context": {
+    "season": "2026",
+    "team": "Los Angeles Dodgers",
+    "view": "rear_centerfield_broadcast"
+  },
+  "revalidation": {
+    "method": "rebuild-derived-artifacts-from-existing-pose-raw",
+    "phase_sequence": {
+      "attempted": true,
+      "rebuilt": true,
+      "quality_report": "data\\pitcher_database\\blake_snell\\2026_centerfield_clip_08\\pitch_02\\phase_sequence.quality.json"
+    }
+  }
+}

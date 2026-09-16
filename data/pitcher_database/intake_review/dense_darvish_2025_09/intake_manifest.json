@@ -1,0 +1,21 @@
+{
+  "schema_version": "0.1",
+  "purpose": "candidate video visual intake; source media is unmodified",
+  "records": [
+    {
+      "source_path": "data\\pitcher_database\\raw\\yu_darvish\\2025\\yu_darvish_2025_centerfield_clip_09.mp4",
+      "filename": "yu_darvish_2025_centerfield_clip_09.mp4",
+      "fps": 30.0,
+      "frame_count": 6036,
+      "duration_seconds": 201.2,
+      "sampled_range_seconds": {
+        "start": 45.0,
+        "end": 115.0
+      },
+      "width": 474,
+      "height": 768,
+      "contact_sheet": "data\\pitcher_database\\intake_review\\dense_darvish_2025_09\\yu_darvish_2025_centerfield_clip_09_contact_sheet.jpg",
+      "audit_status": "needs_visual_review"
+    }
+  ]
+}

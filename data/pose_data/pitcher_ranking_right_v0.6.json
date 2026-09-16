@@ -1,0 +1,39 @@
+{
+  "schema_version": "0.2-provisional",
+  "query_throws": "RIGHT",
+  "ranking_method": "median of phase-aware DTW distances; references and scaler restricted to matching throwing side",
+  "scaler": "data\\pitcher_database\\reference_scaler_right_v0.6.json",
+  "rankings": [
+    {
+      "rank": 1,
+      "pitcher_id": "yu_darvish",
+      "distance": 1.0299730409794052,
+      "reference_count": 3,
+      "season_contributions": {
+        "2013": {
+          "reference_count": 2,
+          "distance": 0.9987203344144503
+        },
+        "2025": {
+          "reference_count": 1,
+          "distance": 1.0525446409644588
+        }
+      },
+      "confidence": "provisional"
+    },
+    {
+      "rank": 2,
+      "pitcher_id": "yoshinobu_yamamoto",
+      "distance": 1.0808807463728698,
+      "reference_count": 4,
+      "season_contributions": {
+        "2024": {
+          "reference_count": 4,
+          "distance": 1.0808807463728698
+        }
+      },
+      "confidence": "provisional"
+    }
+  ],
+  "warning": "Ranking is diagnostic only until every pitcher has at least 5 reviewed, camera-compatible reference pitches."
+}

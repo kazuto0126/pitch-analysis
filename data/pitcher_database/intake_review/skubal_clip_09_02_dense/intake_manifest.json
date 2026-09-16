@@ -1,0 +1,21 @@
+{
+  "schema_version": "0.1",
+  "purpose": "candidate video visual intake; source media is unmodified",
+  "records": [
+    {
+      "source_path": "data\\pitcher_database\\raw\\tarik_skubal\\2026\\tarik_skubal_2026_centerfield_clip_09_02.mp4",
+      "filename": "tarik_skubal_2026_centerfield_clip_09_02.mp4",
+      "fps": 30.0,
+      "frame_count": 2275,
+      "duration_seconds": 75.83333333333333,
+      "sampled_range_seconds": {
+        "start": 0.0,
+        "end": 75.8
+      },
+      "width": 464,
+      "height": 586,
+      "contact_sheet": "data\\pitcher_database\\intake_review\\skubal_clip_09_02_dense\\tarik_skubal_2026_centerfield_clip_09_02_contact_sheet.jpg",
+      "audit_status": "needs_visual_review"
+    }
+  ]
+}

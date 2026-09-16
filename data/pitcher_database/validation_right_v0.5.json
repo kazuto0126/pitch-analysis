@@ -1,0 +1,162 @@
+{
+  "schema_version": "leave-one-reference-out-v0.1",
+  "registry": "data\\pitcher_database\\registry_v0.5.json",
+  "registry_schema_version": "0.5-reviewed-event-window-provisional",
+  "throws": "RIGHT",
+  "camera_compatibility_mode": "exploratory",
+  "reference_count": 5,
+  "scored_fold_count": 4,
+  "unscored_fold_count": 1,
+  "validation_coverage": 0.8,
+  "top1_correct_count": 4,
+  "top1_accuracy": 1.0,
+  "mean_reciprocal_rank": 1.0,
+  "per_pitcher": {
+    "shohei_ohtani": {
+      "reference_count": 2,
+      "scored_fold_count": 2,
+      "unscored_fold_count": 0,
+      "top1_correct_count": 2,
+      "top1_accuracy": 1.0
+    },
+    "yoshinobu_yamamoto": {
+      "reference_count": 1,
+      "scored_fold_count": 0,
+      "unscored_fold_count": 1,
+      "top1_correct_count": 0,
+      "top1_accuracy": null
+    },
+    "yu_darvish": {
+      "reference_count": 2,
+      "scored_fold_count": 2,
+      "unscored_fold_count": 0,
+      "top1_correct_count": 2,
+      "top1_accuracy": 1.0
+    }
+  },
+  "folds": [
+    {
+      "query_video_id": "shohei_ohtani_2026_clip_02_pitch_02",
+      "query_phase_sequence": "data\\pitcher_database\\shohei_ohtani\\2026_centerfield_clip_02\\pitch_02\\phase_sequence.csv",
+      "expected_pitcher_id": "shohei_ohtani",
+      "status": "scored",
+      "expected_rank": 1,
+      "top1_correct": true,
+      "ranking": [
+        {
+          "rank": 1,
+          "pitcher_id": "shohei_ohtani",
+          "distance": 0.22637098145297374,
+          "reference_count": 1
+        },
+        {
+          "rank": 2,
+          "pitcher_id": "yu_darvish",
+          "distance": 0.6173322930644167,
+          "reference_count": 2
+        },
+        {
+          "rank": 3,
+          "pitcher_id": "yoshinobu_yamamoto",
+          "distance": 0.6193275313030491,
+          "reference_count": 1
+        }
+      ],
+      "excluded_references": []
+    },
+    {
+      "query_video_id": "shohei_ohtani_2026_clip_02_pitch_05",
+      "query_phase_sequence": "data\\pitcher_database\\shohei_ohtani\\2026_centerfield_clip_02\\pitch_05\\phase_sequence.csv",
+      "expected_pitcher_id": "shohei_ohtani",
+      "status": "scored",
+      "expected_rank": 1,
+      "top1_correct": true,
+      "ranking": [
+        {
+          "rank": 1,
+          "pitcher_id": "shohei_ohtani",
+          "distance": 0.22984083901732016,
+          "reference_count": 1
+        },
+        {
+          "rank": 2,
+          "pitcher_id": "yoshinobu_yamamoto",
+          "distance": 0.5901736950829808,
+          "reference_count": 1
+        },
+        {
+          "rank": 3,
+          "pitcher_id": "yu_darvish",
+          "distance": 0.5912458207982566,
+          "reference_count": 2
+        }
+      ],
+      "excluded_references": []
+    },
+    {
+      "query_video_id": "yamamoto_2024_spring_training_centerfield_02_pitch_01",
+      "expected_pitcher_id": "yoshinobu_yamamoto",
+      "status": "not_scored",
+      "reason": "held-out pitcher has no remaining reference"
+    },
+    {
+      "query_video_id": "darvish_2013_regular_season_centerfield_01_pitch_01",
+      "query_phase_sequence": "data\\pitcher_database\\yu_darvish\\2013_regular_season_centerfield_01\\pitch_01\\phase_sequence.csv",
+      "expected_pitcher_id": "yu_darvish",
+      "status": "scored",
+      "expected_rank": 1,
+      "top1_correct": true,
+      "ranking": [
+        {
+          "rank": 1,
+          "pitcher_id": "yu_darvish",
+          "distance": 0.4898311383826924,
+          "reference_count": 1
+        },
+        {
+          "rank": 2,
+          "pitcher_id": "shohei_ohtani",
+          "distance": 0.5993863111254518,
+          "reference_count": 2
+        },
+        {
+          "rank": 3,
+          "pitcher_id": "yoshinobu_yamamoto",
+          "distance": 0.8752651323302825,
+          "reference_count": 1
+        }
+      ],
+      "excluded_references": []
+    },
+    {
+      "query_video_id": "darvish_2025_clip_09_pitch_02",
+      "query_phase_sequence": "data\\pitcher_database\\yu_darvish\\2025_centerfield_clip_09\\pitch_02\\phase_sequence.csv",
+      "expected_pitcher_id": "yu_darvish",
+      "status": "scored",
+      "expected_rank": 1,
+      "top1_correct": true,
+      "ranking": [
+        {
+          "rank": 1,
+          "pitcher_id": "yu_darvish",
+          "distance": 0.48283203903497607,
+          "reference_count": 1
+        },
+        {
+          "rank": 2,
+          "pitcher_id": "shohei_ohtani",
+          "distance": 0.6035561480171403,
+          "reference_count": 2
+        },
+        {
+          "rank": 3,
+          "pitcher_id": "yoshinobu_yamamoto",
+          "distance": 0.7794065618851318,
+          "reference_count": 1
+        }
+      ],
+      "excluded_references": []
+    }
+  ],
+  "warning": "Small-sample diagnostic only; each fold fits its scaler without the held-out pitch. Pitchers with only one reference are reported but cannot be scored."
+}

@@ -1,0 +1,28 @@
+{
+  "schema": "motion-candidates-v0.1",
+  "status": "review_required",
+  "source_features_csv": "data\\pose_data\\test_pitch_features_v0.3.csv",
+  "feature_column": "lateral_foot_separation_smoothed",
+  "parameters": {
+    "baseline_frames": 15,
+    "threshold_ratio": 0.2,
+    "merge_gap_frames": 3,
+    "min_window_frames": 8,
+    "pre_roll_frames": 6,
+    "post_roll_frames": 9
+  },
+  "candidate_count": 1,
+  "candidates": [
+    {
+      "start_frame": 0,
+      "end_frame": 16,
+      "peak_separation_frame": 0,
+      "confidence": 0.05701399245031493,
+      "method": "lateral-foot-separation-proxy-multi"
+    }
+  ],
+  "limitations": [
+    "Candidates are based on rear-view lateral foot separation only.",
+    "Each candidate must be visually reviewed before event annotation."
+  ]
+}

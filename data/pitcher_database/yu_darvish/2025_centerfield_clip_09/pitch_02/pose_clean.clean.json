@@ -1,0 +1,18 @@
+{
+  "schema_version": "pose-clean-v0.2",
+  "source_pose_csv": "data\\pitcher_database\\yu_darvish\\2025_centerfield_clip_09\\pitch_02\\pose_raw.csv",
+  "source_context": "data\\pitcher_database\\yu_darvish\\2025_centerfield_clip_09\\pitch_02\\pose_raw.capture.json",
+  "timeline_start_frame": 2625,
+  "timeline_end_frame": 2820,
+  "requested_frames": 196,
+  "width": 474,
+  "height": 768,
+  "fps": 30.0,
+  "coordinate_x_scale": 0.6171875,
+  "coordinate_contract": "height-normalized image plane: x_normalized * (width / height), y_normalized",
+  "min_visibility": 0.5,
+  "min_presence": 0.5,
+  "max_interpolation_gap_frames": 2,
+  "max_interpolation_seconds": 0.06666666666666667,
+  "coordinate_smoothing": "none; feature-level smoothing is applied once downstream"
+}

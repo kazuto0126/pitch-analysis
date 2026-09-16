@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "video_id": "shohei_ohtani_2026_clip_02_pitch_02",
+  "throws": "RIGHT",
+  "reference_context": {
+    "season": "2026",
+    "team": "Los Angeles Dodgers",
+    "view": "rear_centerfield_broadcast"
+  },
+  "review_status": "provisional_candidates_accepted",
+  "annotation": {
+    "source": "visual review of 30 fps rear-view contact sheet",
+    "confidence": "provisional",
+    "notes": "Complete stable rear-center-field delivery. Frame labels are visual approximations and remain eligible only for exploratory reference use."
+  },
+  "events": {
+    "pitch_start": 2158,
+    "peak_leg_lift": 2186,
+    "foot_strike": 2196,
+    "release": 2210,
+    "follow_through_end": 2226
+  },
+  "automatic_candidates": {
+    "motion_start_proxy": 2219,
+    "peak_lateral_foot_separation_proxy": 2221,
+    "motion_end_proxy": 2226
+  },
+  "notes": "Fill event frames after reviewing the video. Proxy values are not biomechanical labels."
+}

@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "video_id": "shohei_ohtani_2026_clip_02_pitch_08",
+  "throws": "RIGHT",
+  "reference_context": {
+    "season": "2026",
+    "team": "Los Angeles Dodgers",
+    "view": "rear_centerfield_broadcast"
+  },
+  "review_status": "rejected",
+  "annotation": {
+    "source": "visual_review_contact_sheet",
+    "confidence": "high",
+    "notes": "Rejected as a reference pitch because the clip starts after pitch_start, around mid leg lift."
+  },
+  "events": {
+    "pitch_start": null,
+    "peak_leg_lift": null,
+    "foot_strike": null,
+    "release": null,
+    "follow_through_end": null
+  },
+  "automatic_candidates": {
+    "motion_start_proxy": 2604,
+    "peak_lateral_foot_separation_proxy": 2662,
+    "motion_end_proxy": 2672
+  },
+  "notes": "Rejected after visual review. The delivery is not complete enough for a reference pitch even though pose quality is acceptable."
+}

@@ -1,0 +1,96 @@
+{
+  "schema_version": "0.3-provisional-camera-aware",
+  "query_throws": "RIGHT",
+  "query_context": {
+    "schema_version": "query-context-v0.1",
+    "video_id": "test_pitch",
+    "throws": "RIGHT",
+    "review_status": "needs_human_review",
+    "reference_context": {
+      "view": "rear_centerfield_broadcast",
+      "horizontal_mirror": null,
+      "subject_framing": "unknown"
+    },
+    "notes": "Exploratory query context. Event labels and camera framing still need human confirmation before production-style ranking."
+  },
+  "ranking_method": "median of phase-aware DTW distances; references and scaler restricted to matching throwing side",
+  "camera_compatibility_mode": "exploratory",
+  "reference_root": "data\\pitcher_database",
+  "registry": "data\\pitcher_database\\registry_v0.3.json",
+  "registry_schema_version": "0.3-provisional",
+  "scaler": "data\\pitcher_database\\reference_scaler_right_v0.3.json",
+  "rankings": [
+    {
+      "rank": 1,
+      "pitcher_id": "yu_darvish",
+      "distance": 0.6823139162386245,
+      "reference_count": 2,
+      "season_contributions": {
+        "2013": {
+          "reference_count": 1,
+          "distance": 0.6970595517711389
+        },
+        "2025": {
+          "reference_count": 1,
+          "distance": 0.6675682807061102
+        }
+      },
+      "confidence": "provisional",
+      "references": [
+        {
+          "video_id": "darvish_2013_regular_season_centerfield_01_pitch_01",
+          "phase_sequence": "data\\pitcher_database\\yu_darvish\\2013_regular_season_centerfield_01\\pitch_01\\phase_sequence.csv",
+          "distance": 0.6970595517711389,
+          "camera_warnings": [
+            "horizontal_mirror_unknown",
+            "subject_framing_not_confirmed_full_body"
+          ]
+        },
+        {
+          "video_id": "darvish_2025_clip_09_pitch_02",
+          "phase_sequence": "data\\pitcher_database\\yu_darvish\\2025_centerfield_clip_09\\pitch_02\\phase_sequence.csv",
+          "distance": 0.6675682807061102,
+          "camera_warnings": [
+            "horizontal_mirror_unknown",
+            "subject_framing_not_confirmed_full_body"
+          ]
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "pitcher_id": "shohei_ohtani",
+      "distance": 0.8631380991170354,
+      "reference_count": 2,
+      "season_contributions": {
+        "2026": {
+          "reference_count": 2,
+          "distance": 0.8631380991170354
+        }
+      },
+      "confidence": "provisional",
+      "references": [
+        {
+          "video_id": "shohei_ohtani_2026_clip_02_pitch_02",
+          "phase_sequence": "data\\pitcher_database\\shohei_ohtani\\2026_centerfield_clip_02\\pitch_02\\phase_sequence.csv",
+          "distance": 0.8287459385209927,
+          "camera_warnings": [
+            "horizontal_mirror_unknown",
+            "subject_framing_not_confirmed_full_body"
+          ]
+        },
+        {
+          "video_id": "shohei_ohtani_2026_clip_02_pitch_05",
+          "phase_sequence": "data\\pitcher_database\\shohei_ohtani\\2026_centerfield_clip_02\\pitch_05\\phase_sequence.csv",
+          "distance": 0.8975302597130781,
+          "camera_warnings": [
+            "horizontal_mirror_unknown",
+            "subject_framing_not_confirmed_full_body"
+          ]
+        }
+      ]
+    }
+  ],
+  "excluded_references": [],
+  "warning": "Ranking is diagnostic only until every pitcher has at least 5 reviewed, camera-compatible reference pitches."
+}

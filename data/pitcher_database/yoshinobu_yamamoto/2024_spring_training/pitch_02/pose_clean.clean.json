@@ -1,0 +1,18 @@
+{
+  "schema_version": "pose-clean-v0.2",
+  "source_pose_csv": "data\\pitcher_database\\yoshinobu_yamamoto\\2024_spring_training\\pitch_02\\pose_raw.csv",
+  "source_context": "data\\pitcher_database\\yoshinobu_yamamoto\\2024_spring_training\\pitch_02\\pose_raw.capture.json",
+  "timeline_start_frame": 729,
+  "timeline_end_frame": 804,
+  "requested_frames": 76,
+  "width": 300,
+  "height": 374,
+  "fps": 30.003076607527433,
+  "coordinate_x_scale": 0.8021390374331551,
+  "coordinate_contract": "height-normalized image plane: x_normalized * (width / height), y_normalized",
+  "min_visibility": 0.5,
+  "min_presence": 0.5,
+  "max_interpolation_gap_frames": 2,
+  "max_interpolation_seconds": 0.06666666666666667,
+  "coordinate_smoothing": "none; feature-level smoothing is applied once downstream"
+}

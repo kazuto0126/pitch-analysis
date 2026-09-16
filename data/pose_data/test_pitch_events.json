@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "video_id": "test_pitch",
+  "throws": "RIGHT",
+  "review_status": "human_reviewed",
+  "annotation": {
+    "source": "user_review",
+    "confidence": "provisional",
+    "notes": "User confirmed and saved the event frames during interactive review."
+  },
+  "events": {
+    "pitch_start": 160,
+    "peak_leg_lift": 175,
+    "foot_strike": 195,
+    "release": 205,
+    "follow_through_end": 225
+  },
+  "automatic_candidates": {
+    "motion_start_proxy": 0,
+    "peak_lateral_foot_separation_proxy": 95,
+    "motion_end_proxy": 188
+  },
+  "notes": "Fill event frames after reviewing the video. Proxy values are not biomechanical labels."
+}

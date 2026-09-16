@@ -1,0 +1,21 @@
+LANDMARK_NAMES = {
+    0: "NOSE",
+
+    11: "LEFT_SHOULDER",
+    12: "RIGHT_SHOULDER",
+
+    13: "LEFT_ELBOW",
+    14: "RIGHT_ELBOW",
+
+    15: "LEFT_WRIST",
+    16: "RIGHT_WRIST",
+
+    23: "LEFT_HIP",
+    24: "RIGHT_HIP",
+
+    25: "LEFT_KNEE",
+    26: "RIGHT_KNEE",
+
+    27: "LEFT_ANKLE",
+    28: "RIGHT_ANKLE",
+}
