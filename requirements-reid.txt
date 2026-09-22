@@ -1,0 +1,4 @@
+-r requirements.txt
+open-clip-torch
+torch
+pillow

@@ -108,6 +108,34 @@ pitch-analysis/
 `src/pitch_analysis/`，先提供**品質感知**的特徵輸出：低於 visibility
 threshold 的 landmark 不會被誤當成有效座標，也不會把遺失 frame 靜默移除。
 
+### 從影片連結直接準備投球 MP4
+
+`preprocess-video` 接受 HTTP(S) 影片連結或本機路徑，先下載／讀取來源，轉成 30 fps、
+H.264、`yuv420p` MP4，再依指定時間輸出互不覆寫的候選投球 clips。每個工作目錄均有
+`manifest.json` 保存來源、checksum、轉檔設定與原始時間邊界：
+
+```powershell
+$env:PYTHONPATH = "src"
+python -m pitch_analysis.cli preprocess-video "VIDEO_URL" data/intake/darvish_job_01 --pitcher-id yu_darvish --season 2025 --throws RIGHT --view rear_centerfield_broadcast --clip 00:11-00:16 --clip 00:24-00:29
+```
+
+若尚未知道投球時間，可讓系統先依畫面運動產生待審核候選：
+
+```powershell
+python -m pitch_analysis.cli preprocess-video "VIDEO_URL" data/intake/darvish_job_02 --pitcher-id yu_darvish --season 2025 --throws RIGHT --view rear_centerfield_broadcast --auto-detect
+```
+
+自動模式不會在偵測失敗時硬切固定長度影片，也不會把候選直接視為有效投球。
+
+若有目標投手照片，可加上一次或多次 `--reference-photo PATH`。系統會對多張照片等權建立
+CLIP prototype，並以 clip 多幀中位數回報 `matched`、`ambiguous` 或 `unknown`；結果只作為
+人工審核證據。此選配功能需先安裝 `requirements-reid.txt`。
+
+clips 會出現在 `data/intake/darvish_job_01/candidates/`。它們的狀態是
+`needs_human_review`，確認內容後再交給既有 `prepare-segment`；下載或剪輯不會自動把素材
+加入 reference registry。網址下載需要 `yt-dlp`，FFmpeg 由 `imageio-ffmpeg` 提供或以
+`--ffmpeg PATH` 指定。
+
 在修復 Python 環境後，可由專案根目錄執行：
 
 ```powershell

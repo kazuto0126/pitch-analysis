@@ -17,6 +17,8 @@ from .segmentation import write_motion_candidates
 from .validation import leave_one_reference_out
 from .release import build_library_release
 from .workflow import prepare_segment, rebuild_library, rebuild_segment
+from .preprocessing.naming import parse_clip_range
+from .preprocessing.workflow import preprocess_video
 
 
 def _emit(value: object) -> None:
@@ -132,6 +134,42 @@ def main() -> None:
     release = commands.add_parser("build-library-release")
     release.add_argument("reference_root")
     release.add_argument("release_dir")
+    preprocess = commands.add_parser(
+        "preprocess-video",
+        help="Download/localize, standardize, and cut reviewable pitch MP4 samples",
+    )
+    preprocess.add_argument("source", help="HTTP(S) video URL or local video path")
+    preprocess.add_argument("output_dir")
+    preprocess.add_argument("--pitcher-id", required=True)
+    preprocess.add_argument("--season", required=True)
+    preprocess.add_argument("--throws", required=True, choices=("LEFT", "RIGHT"))
+    preprocess.add_argument("--view", required=True)
+    clip_selection = preprocess.add_mutually_exclusive_group(required=True)
+    clip_selection.add_argument(
+        "--clip",
+        action="append",
+        metavar="START-END",
+        help="Repeatable range using seconds, MM:SS, or HH:MM:SS",
+    )
+    clip_selection.add_argument(
+        "--auto-detect",
+        action="store_true",
+        help="Generate broad motion-based candidate clips for human review",
+    )
+    preprocess.add_argument("--target-fps", type=float, default=30.0)
+    preprocess.add_argument("--motion-sample-fps", type=float, default=6.0)
+    preprocess.add_argument("--pre-seconds", type=float, default=4.0)
+    preprocess.add_argument("--post-seconds", type=float, default=3.0)
+    preprocess.add_argument("--min-peak-interval", type=float, default=4.0)
+    preprocess.add_argument("--max-candidates", type=int, default=30)
+    preprocess.add_argument(
+        "--reference-photo",
+        action="append",
+        help="Optional reference photo of the intended pitcher; repeat for robustness",
+    )
+    preprocess.add_argument("--reid-threshold", type=float, default=0.30)
+    preprocess.add_argument("--reid-samples", type=int, default=8)
+    preprocess.add_argument("--ffmpeg", help="Optional FFmpeg executable path")
     for command in (clean, features):
         command.add_argument("--min-visibility", type=float, default=0.5)
         command.add_argument("--min-presence", type=float, default=0.5)
@@ -140,6 +178,31 @@ def main() -> None:
         candidates = {name.replace("-", "_"): value for name, value in vars(args).items() if name.endswith("_candidate") and value is not None}
         context = {key: value for key, value in {"season": args.season, "team": args.team, "view": args.view}.items() if value}
         _emit(write_template(args.quality_report, args.output_json, args.video_id, candidates, context))
+        return
+    if args.command == "preprocess-video":
+        ranges = [parse_clip_range(value) for value in (args.clip or [])]
+        _emit(
+            preprocess_video(
+                args.source,
+                args.output_dir,
+                pitcher_id=args.pitcher_id,
+                season=args.season,
+                throws=args.throws,
+                view=args.view,
+                clip_ranges=ranges,
+                auto_detect=args.auto_detect,
+                motion_sample_fps=args.motion_sample_fps,
+                pre_seconds=args.pre_seconds,
+                post_seconds=args.post_seconds,
+                min_peak_interval_seconds=args.min_peak_interval,
+                max_candidates=args.max_candidates,
+                reference_photos=args.reference_photo,
+                reid_threshold=args.reid_threshold,
+                reid_samples=args.reid_samples,
+                target_fps=args.target_fps,
+                ffmpeg=args.ffmpeg,
+            )
+        )
         return
     if args.command == "build-phases":
         annotation = json.loads(open(args.events_json, encoding="utf-8").read())

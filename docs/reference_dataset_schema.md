@@ -2,6 +2,20 @@
 
 本資料庫以「一次投球（pitch instance）」為最小可比較單位，而不是以單一投手的平均值取代所有投球。
 
+URL 或長影片的自動前處理先寫入 staging，不會直接成為 reference：
+
+```text
+data/intake/<job_id>/
+  manifest.json
+  source/downloaded.<ext>       # URL 輸入時保存
+  standardized/source.mp4      # CFR H.264/yuv420p
+  candidates/<normalized_pitch_name>.mp4
+```
+
+`manifest.json` 記錄來源、checksum、轉檔參數、候選起訖時間、motion evidence、選配的
+CLIP ReID evidence，以及每個 clip 的 `prepare-segment` handoff。所有 candidate 初始狀態均為
+`needs_human_review`；只有人工接受後才能放入 `raw/`，再經既有 pose quality 與事件審核流程。
+
 ```text
 data/pitcher_database/
   raw/<pitcher_id>/<season>/<clean_video_name>.mp4
