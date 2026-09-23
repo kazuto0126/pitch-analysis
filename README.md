@@ -19,9 +19,9 @@ registry 與 validation 演算法保留。現在的結果仍是 2D 投影分析�
 目前 `analyze-pitch` 僅接受 `rear_centerfield_broadcast`。它會在多人體姿態中以
 畫面位置、身體尺度與時間連續性保守選取投手，並輸出逐幀原始／處理後 keypoints、
 品質摘要、2D 投手手腕軌跡、`overlay.mp4` 與獨立人工檢查表。這不是球員身分 ReID；
-視角與完整投球仍須人工核對。五支山本由伸真實素材已完成 Phase 1 驗證，其中
-`pitch_002` 是目前唯一完整通過技術品質閘門的 baseline；其餘暴露出切鏡、
-主體追蹤或動作不完整問題，不能宣稱 Phase 1 全數通過。詳細流程見
+視角與完整投球仍須目視核對。2026-09-24 完成正式五支山本由伸素材的 Phase 1
+finalization，五支均通過現有 clip-level acceptance 條件；正式狀態與輸出見
+[Current status](docs/current_status.md)。先前失敗素材的歷史紀錄見
 [Phase 1 baseline](docs/phase1_baseline.md)。
 
 `validate-input-quality <mp4> <metadata.json>` 先做影片層的保守檢查；

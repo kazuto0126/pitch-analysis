@@ -1,5 +1,8 @@
 # Phase 1 — single-pitch real MLB baseline
 
+This page retains the 2026-09-23 baseline history. The final five-pitch
+acceptance state is recorded in [Current status](current_status.md).
+
 Phase 1 supports only `rear_centerfield_broadcast`, normal-speed, unmirrored,
 continuous, full-body single-pitch MP4 input. The metadata declaration cannot
 prove the camera view or the pitcher identity; the reviewer must check both.
