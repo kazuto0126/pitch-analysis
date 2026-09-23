@@ -14,14 +14,23 @@ clean pose、2D feature 與 quality gate，輸出待人工覆核的單球結果�
 Phase 0 沒有新增自動事件偵測、投手追蹤、profile 或 overlay；既有 phase、DTW、normalization、
 registry 與 validation 演算法保留。現在的結果仍是 2D 投影分析，不能解讀為真實 3D biomechanical loading。
 
-## Phase 1：真實單球 baseline 進行中
+## Phase 1.1：單球 input quality gate
 
 目前 `analyze-pitch` 僅接受 `rear_centerfield_broadcast`。它會在多人體姿態中以
 畫面位置、身體尺度與時間連續性保守選取投手，並輸出逐幀原始／處理後 keypoints、
 品質摘要、2D 投手手腕軌跡、`overlay.mp4` 與獨立人工檢查表。這不是球員身分 ReID；
-視角與完整投球仍須人工核對。目前 repository 尚無 3–5 支已剪好的真實 MLB 單球
-MP4，因此正向驗收尚未完成，不能宣稱 Phase 1 完成。詳細流程與限制見
+視角與完整投球仍須人工核對。五支山本由伸真實素材已完成 Phase 1 驗證，其中
+`pitch_002` 是目前唯一完整通過技術品質閘門的 baseline；其餘暴露出切鏡、
+主體追蹤或動作不完整問題，不能宣稱 Phase 1 全數通過。詳細流程見
 [Phase 1 baseline](docs/phase1_baseline.md)。
+
+`validate-input-quality <mp4> <metadata.json>` 先做影片層的保守檢查；
+`analyze-pitch` 會在姿態推論前執行同樣 preflight。明顯切鏡標記 `rejected`，
+不執行後續 pose；其他素材執行原有 pipeline 後，將主體遺失、疑似 identity switch、
+準備／follow-through 完整性與現有 pose quality gate 更新至 `input_quality.json`。
+`accepted` 仍需人工確認視角、投手身分及是否為正常速度單球；`degraded` 不可
+直接納入 reference。規則、證據限制與人工檢查項目見
+[Input Quality Gate](docs/phase1_1_input_quality.md)。
 
 ## 安裝（Windows x64 / Python 3.12）
 
@@ -59,6 +68,7 @@ input/
 
 ```powershell
 .\.venv-analysis\Scripts\pitch-analysis.exe validate-pitch input/shohei_ohtani/pitch_001.mp4 input/shohei_ohtani/pitch_001.json
+.\.venv-analysis\Scripts\pitch-analysis.exe validate-input-quality input/shohei_ohtani/pitch_001.mp4 input/shohei_ohtani/pitch_001.json --output analysis_results/input_quality_review.json
 .\.venv-analysis\Scripts\pitch-analysis.exe analyze-pitch input/shohei_ohtani/pitch_001.mp4 input/shohei_ohtani/pitch_001.json
 ```
 
@@ -73,6 +83,8 @@ analysis_results/<pitcher_id>/<pitch_id>/
   analysis.json             # 執行狀態、版本、hash、輸出索引
   input_manifest.json       # 原始 input metadata 快照
   video_metadata.json       # 整支 decode/probe/時間軸
+  input_quality_preflight.json # pose 前的影片品質判定
+  input_quality.json        # 最終 input 品質；明顯切鏡時與 preflight 相同
   keypoints.json            # 每幀位置、confidence、presence
   metrics.json              # 既有 2D 特徵摘要與原始 coverage
   phases.json               # Phase 0 待覆核事件快照，沒有偽造事件
@@ -86,7 +98,9 @@ analysis_results/<pitcher_id>/<pitch_id>/
   metadata.json             # 舊分析流程 metadata，與 input metadata 不同
 ```
 
-無 pose 時保留 raw capture、keypoints、metrics 與失敗狀態，不建立事件檔。
+若 preflight 已拒絕，保留 input manifest、video metadata、品質報告與
+`analysis.json`，不執行 pose、不產生 keypoints/overlay。無 pose 時保留 raw capture、
+keypoints、metrics 與失敗狀態，不建立事件檔。
 輸出目錄存在時拒絕覆寫。品質不足會回報 `quality_gate_failed`；不會自動成為 reference。
 
 ## 事件覆核與既有分析 handoff

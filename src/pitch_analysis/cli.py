@@ -36,6 +36,10 @@ def main() -> None:
     validate = commands.add_parser("validate-pitch", help="Validate metadata and decode a prepared MP4 without pose inference")
     validate.add_argument("mp4")
     validate.add_argument("metadata_json")
+    input_quality = commands.add_parser("validate-input-quality", help="Run conservative video-only input preflight before pose analysis")
+    input_quality.add_argument("mp4")
+    input_quality.add_argument("metadata_json")
+    input_quality.add_argument("--output", help="Optional new input-quality JSON report path")
     clean = commands.add_parser("clean-pose")
     clean.add_argument("pose_csv")
     clean.add_argument("output_csv")
@@ -145,16 +149,29 @@ def main() -> None:
         command.add_argument("--min-visibility", type=float, default=0.5)
         command.add_argument("--min-presence", type=float, default=0.5)
     args = parser.parse_args()
-    if args.command in {"analyze-pitch", "validate-pitch"}:
+    if args.command in {"analyze-pitch", "validate-pitch", "validate-input-quality"}:
         try:
             if args.command == "analyze-pitch":
                 from .analysis.pitch import analyze_pitch
                 result = analyze_pitch(args.mp4, args.metadata_json, output_root=args.output_root, model_path=args.model, standardize=args.standardize)
-            else:
+            elif args.command == "validate-pitch":
                 from .contracts import load_input
                 from .video.validation import validate_mp4
                 load_input(args.mp4, args.metadata_json)
                 result = validate_mp4(args.mp4)
+            else:
+                from pathlib import Path
+                from .contracts import load_input, write_contract
+                from .video.validation import validate_mp4
+                from .video.input_quality import scan_input_quality
+                load_input(args.mp4, args.metadata_json)
+                result = scan_input_quality(validate_mp4(args.mp4))
+                if args.output:
+                    target = Path(args.output)
+                    if target.exists():
+                        raise FileExistsError(f"Input-quality report already exists: {target}")
+                    target.parent.mkdir(parents=True, exist_ok=True)
+                    write_contract(target, result, "input-quality-v1")
             _emit(result)
         except (ValueError, OSError, RuntimeError) as error:
             parser.exit(2, f"{type(error).__name__}: {error}\n")

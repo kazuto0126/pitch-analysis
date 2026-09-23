@@ -146,6 +146,20 @@ class RegistryValidationTests(unittest.TestCase):
             self.assertEqual(entry["phase_sequence"], str(candidate))
             self.assertEqual(entry["validation"]["quality_gate"], "reviewed_event_window_quality_gate")
 
+    def test_new_input_quality_report_blocks_degraded_or_rejected_references(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            accepted = self._write_candidate(root, "pitch_accepted")
+            degraded = self._write_candidate(root, "pitch_degraded")
+            rejected = self._write_candidate(root, "pitch_rejected")
+            for candidate, status in ((accepted, "accepted"), (degraded, "degraded"), (rejected, "rejected")):
+                candidate.with_name("input_quality.json").write_text(
+                    json.dumps({"schema_version": "input-quality-v1", "stage": "post_pose", "status": status}),
+                    encoding="utf-8")
+            pitchers, exclusions = audit_references(root)
+            self.assertEqual([entry["phase_sequence"] for entry in pitchers["example_pitcher"]], [str(accepted)])
+            self.assertTrue(all("input_quality_not_accepted" in item["reasons"] for item in exclusions))
+
     def test_registry_records_invalid_event_range_without_deleting_candidate(self):
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)

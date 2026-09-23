@@ -5,7 +5,7 @@
   "properties": {
     "schema_version": {"const": "pitch-analysis-v1"},
     "pitch_id": {"type": "string"}, "pitcher_id": {"type": "string"},
-    "status": {"enum": ["running", "needs_event_review", "quality_gate_failed", "no_pose", "failed"]},
+    "status": {"enum": ["running", "needs_event_review", "quality_gate_failed", "no_pose", "input_rejected", "failed"]},
     "artifacts": {"type": "object", "additionalProperties": {"type": "string"}},
     "provenance": {
       "type": "object", "additionalProperties": false,

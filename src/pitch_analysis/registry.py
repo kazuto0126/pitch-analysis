@@ -238,10 +238,21 @@ def validate_reference(sequence: str | Path) -> dict:
     events_path = sequence.with_name("events.json")
     metadata_path = sequence.with_name("metadata.json")
     phase_quality_path = sequence.with_suffix(".quality.json")
+    input_quality_path = sequence.with_name("input_quality.json")
     events, events_error = _read_json(events_path)
     metadata, metadata_error = _read_json(metadata_path)
     phase_quality, phase_quality_error = _read_json(phase_quality_path)
+    input_quality, input_quality_error = _read_json(input_quality_path)
     reasons: list[str] = []
+
+    # Legacy references have no input-quality report. New analyses must not
+    # enter the registry when their input remains degraded or rejected.
+    if input_quality_error and input_quality_error != "missing":
+        reasons.append("input_quality_json_invalid")
+    elif input_quality is not None and (input_quality.get("schema_version") != "input-quality-v1"
+                                        or input_quality.get("stage") != "post_pose"
+                                        or input_quality.get("status") != "accepted"):
+        reasons.append("input_quality_not_accepted")
 
     if events_error:
         reasons.append(f"events_json_{events_error}")

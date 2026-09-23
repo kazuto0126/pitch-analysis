@@ -62,12 +62,16 @@ Event boundaries still require the existing manual workflow.
 
 ## Current acceptance state
 
-As of 2026-09-23, the repository has no 3–5 prepared single-pitch MLB MP4/JSON
-pairs. The opt-in real E2E test therefore **skips**, and no genuine per-video
-validation summary or positive acceptance claim is possible yet. Existing raw
-clips are 29–455 seconds and/or contain multiple deliveries or other camera
-views. Phase 1 cannot be marked complete until genuine prepared material is
-provided and the overlay/human-review results are examined.
+As of 2026-09-23, five prepared Yoshinobu Yamamoto MP4/JSON pairs are present
+locally under `input/yoshinobu_yamamoto/`; the MP4 files are ignored from Git.
+Phase 1 real E2E found `pitch_002` to be the only technically passing baseline.
+`pitch_001` loses the pitching view after delivery, `pitch_003` mixes in other
+shots, `pitch_004` has a camera cut and observed identity switch in the earlier
+overlay review, and `pitch_005` begins after preparation. These are genuine
+failure results, not reasons to loosen the existing confidence threshold.
+The opt-in *positive* test is for 3–5 known-good clips and is not suitable for
+this mixed-quality set. Phase 1.1 now writes separate input-quality evidence;
+see [Input Quality Gate](phase1_1_input_quality.md).
 
 A diagnostic (not acceptance) run on frames 0–150 of the existing 29.6-second
 Yamamoto spring-training clip selected 104/151 frames. The broadcast cuts

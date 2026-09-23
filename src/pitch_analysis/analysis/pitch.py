@@ -14,6 +14,7 @@ from ..events import EVENTS
 from ..io import read_pose_csv
 from ..video.standardization import standardize_mp4
 from ..video.validation import sha256_file, validate_mp4
+from ..video.input_quality import scan_input_quality, refine_input_quality
 from ..workflow import prepare_segment
 from .debug import write_pose_debug
 
@@ -54,7 +55,7 @@ def _metrics(core: Path, ids: dict, status: str, passed: bool) -> dict:
             "limitations": ["No calibrated 3D angles, torque, ball velocity or release-position estimate is produced.",
                             "Shoulder/hip lines are image-plane orientations, not axial rotations; circular summaries deferred.",
                             "Lateral foot separation uses image height, not body size; excluded from cross-pitch distance.",
-                            "Phase 0 uses MediaPipe's single-person selection; visually verify the detected subject."]}
+                            "The rear-view subject selector is heuristic; visually verify pitcher identity and any occluded joints."]}
 
 
 def analyze_pitch(video_path: str | Path, metadata_path: str | Path, *, output_root: str | Path = "analysis_results",
@@ -86,7 +87,16 @@ def analyze_pitch(video_path: str | Path, metadata_path: str | Path, *, output_r
     try:
         save("input_manifest.json", payload, "pitch-input-v1")
         save("video_metadata.json", video, "video-validation-v1")
+        preflight = scan_input_quality(video)
+        save("input_quality_preflight.json", preflight, "input-quality-v1")
+        save("input_quality.json", preflight, "input-quality-v1")
         write_contract(output / "analysis.json", manifest, "pitch-analysis-v1")
+        if preflight["status"] == "rejected":
+            manifest["status"] = "input_rejected"
+            write_contract(output / "analysis.json", manifest, "pitch-analysis-v1")
+            return {"status": manifest["status"], "input_quality_status": "rejected",
+                    "output_dir": str(output), "manifest": str(output / "analysis.json"),
+                    "quality_gate_passed": False, "review_required": True}
         analysis_video = source
         if standardize:
             analysis_video = output / "working.mp4"
@@ -135,14 +145,21 @@ def analyze_pitch(video_path: str | Path, metadata_path: str | Path, *, output_r
             manifest["artifacts"][artifact.name] = artifact.name
         core.rmdir()
         write_pose_debug(output, video, capture, payload["pitcher"]["throws"], prepared["quality_gate_passed"])
+        final_quality = refine_input_quality(preflight, capture, read_pose_csv(output / "pose_raw.csv"),
+                                             throwing_side=payload["pitcher"]["throws"],
+                                             quality_gate_passed=prepared["quality_gate_passed"])
+        save("input_quality.json", final_quality, "input-quality-v1")
         for name in ("keypoints.jsonl", "processed_keypoints.jsonl", "keypoint_quality.json", "wrist_trajectory.json", "overlay.mp4",
                      "review/human_validation_template.json"):
             manifest["artifacts"][name] = name
+        # Preserve established post-pose analysis statuses for existing callers.
+        # Input eligibility is the separate, authoritative input_quality_status.
         manifest["status"] = status
         write_contract(output / "analysis.json", manifest, "pitch-analysis-v1")
     except Exception as error:
         manifest["status"], manifest["failure"] = "failed", f"{type(error).__name__}: {error}"
         write_contract(output / "analysis.json", manifest, "pitch-analysis-v1")
         raise
-    return {"status": manifest["status"], "output_dir": str(output), "manifest": str(output / "analysis.json"),
+    return {"status": manifest["status"], "input_quality_status": final_quality["status"],
+            "output_dir": str(output), "manifest": str(output / "analysis.json"),
             "quality_gate_passed": prepared["quality_gate_passed"], "review_required": True}

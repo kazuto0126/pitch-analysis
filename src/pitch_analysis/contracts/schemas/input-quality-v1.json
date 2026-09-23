@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "stage", "status", "video_sha256", "frame_count", "fps", "detected_shot_boundaries", "camera_continuity", "camera_view_consistency", "longest_invalid_span_frames", "pose_selection_ratio", "possible_identity_switch", "identity_transitions", "start_completeness", "followthrough_completeness", "slow_motion_replay", "longest_near_duplicate_run_frames", "reasons", "confidence", "uncertainties"],
+  "properties": {
+    "schema_version": {"const": "input-quality-v1"},
+    "stage": {"enum": ["video_preflight", "post_pose"]},
+    "status": {"enum": ["accepted", "degraded", "rejected"]},
+    "video_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "frame_count": {"type": "integer", "minimum": 2},
+    "fps": {"type": "number", "exclusiveMinimum": 0},
+    "detected_shot_boundaries": {
+      "type": "array", "items": {"type": "object", "additionalProperties": false,
+        "required": ["frame_index", "timestamp_ms", "pixel_change", "color_histogram_change", "strength"],
+        "properties": {
+          "frame_index": {"type": "integer", "minimum": 1},
+          "timestamp_ms": {"type": "number", "minimum": 0},
+          "pixel_change": {"type": "number", "minimum": 0},
+          "color_histogram_change": {"type": "number", "minimum": 0},
+          "strength": {"enum": ["high", "medium"]}
+        }
+      }
+    },
+    "camera_continuity": {"enum": ["no_cut_detected", "suspect", "discontinuous"]},
+    "camera_view_consistency": {"enum": ["declared_unverified", "suspected_mixed_shots"]},
+    "longest_invalid_span_frames": {"type": ["integer", "null"], "minimum": 0},
+    "pose_selection_ratio": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+    "possible_identity_switch": {"type": ["boolean", "null"]},
+    "identity_transitions": {"type": "array", "items": {"type": "object"}},
+    "start_completeness": {"enum": ["unknown", "plausible", "incomplete"]},
+    "followthrough_completeness": {"enum": ["unknown", "plausible", "incomplete"]},
+    "slow_motion_replay": {"enum": ["not_detected_not_excluded", "freeze_or_replay_suspected"]},
+    "longest_near_duplicate_run_frames": {"type": "integer", "minimum": 0},
+    "reasons": {"type": "array", "items": {"type": "string"}},
+    "confidence": {"type": "object", "additionalProperties": false,
+      "required": ["level", "calibrated", "basis"],
+      "properties": {"level": {"enum": ["low", "moderate", "high"]}, "calibrated": {"const": false}, "basis": {"type": "string"}}},
+    "uncertainties": {"type": "array", "items": {"type": "string"}}
+  }
+}

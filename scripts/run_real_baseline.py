@@ -32,12 +32,22 @@ def main() -> None:
     for video, metadata in pairs:
         try:
             analysis = analyze_pitch(video, metadata, output_root=args.output_root, model_path=args.model)
-            quality = json.loads((Path(analysis["output_dir"]) / "keypoint_quality.json").read_text(encoding="utf-8"))
-            results.append({"video": str(video), "analysis_dir": analysis["output_dir"],
-                            "analysis_status": analysis["status"], **{key: quality[key] for key in (
-                                "status", "failure_reason", "total_frames", "frames_with_valid_pitcher_pose",
-                                "valid_pose_ratio", "interpolated_frame_count", "rejected_frame_count",
-                                "mean_landmark_confidence", "longest_missing_pose_gap")}})
+            analysis_dir = Path(analysis["output_dir"])
+            input_quality = json.loads((analysis_dir / "input_quality.json").read_text(encoding="utf-8"))
+            entry = {"video": str(video), "analysis_dir": str(analysis_dir),
+                     "analysis_status": analysis["status"], "input_quality_status": input_quality["status"],
+                     "input_quality_reasons": input_quality["reasons"],
+                     "status": "rejected" if input_quality["status"] == "rejected" else "degraded"}
+            quality_path = analysis_dir / "keypoint_quality.json"
+            if quality_path.exists():
+                quality = json.loads(quality_path.read_text(encoding="utf-8"))
+                entry.update({key: quality[key] for key in (
+                    "failure_reason", "total_frames", "frames_with_valid_pitcher_pose",
+                    "valid_pose_ratio", "interpolated_frame_count", "rejected_frame_count",
+                    "mean_landmark_confidence", "longest_missing_pose_gap")})
+                if input_quality["status"] != "rejected":
+                    entry["status"] = quality["status"]
+            results.append(entry)
         except Exception as error:
             results.append({"video": str(video), "status": "failed", "failure_reason": f"{type(error).__name__}: {error}"})
     args.output_root.mkdir(parents=True, exist_ok=True)
