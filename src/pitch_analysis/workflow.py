@@ -78,7 +78,7 @@ def prepare_segment(
     throwing_side: str,
     model_path: str | Path,
     start_second: float,
-    end_second: float,
+    end_second: float | None,
     reference_context: Mapping[str, str] | None = None,
     quality: QualityConfig = QualityConfig(),
 ) -> dict:

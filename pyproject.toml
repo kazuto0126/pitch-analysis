@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools==80.9.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pitch-analysis"
+version = "0.2.0"
+description = "Quality-aware analysis of prepared pitching MP4 files"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "mediapipe==1.0.1",
+  "opencv-contrib-python==5.0.0.93",
+  "numpy==2.5.3",
+  "matplotlib==3.11.2",
+  "imageio-ffmpeg==0.6.0",
+  "jsonschema==4.26.0",
+]
+
+[project.scripts]
+pitch-analysis = "pitch_analysis.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["pitch_analysis*"]
+
+[tool.setuptools.package-data]
+"pitch_analysis.contracts" = ["schemas/*.json"]

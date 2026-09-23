@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "pitch_id", "pitcher_id", "status", "events", "legacy_annotation"],
+  "properties": {
+    "schema_version": {"const": "pitch-events-v1"},
+    "pitch_id": {"type": "string"}, "pitcher_id": {"type": "string"},
+    "status": {"const": "needs_human_review"},
+    "legacy_annotation": {"const": "events.json"},
+    "events": {
+      "type": "object", "additionalProperties": false,
+      "required": ["pitch_start", "peak_leg_lift", "foot_strike", "release", "follow_through_end"],
+      "properties": {
+        "pitch_start": {"$ref": "#/$defs/event"}, "peak_leg_lift": {"$ref": "#/$defs/event"},
+        "foot_strike": {"$ref": "#/$defs/event"}, "release": {"$ref": "#/$defs/event"},
+        "follow_through_end": {"$ref": "#/$defs/event"}
+      }
+    }
+  },
+  "$defs": {
+    "event": {
+      "type": "object", "additionalProperties": false,
+      "required": ["frame_index", "timestamp_ms", "confidence", "source", "uncertainty_frames"],
+      "properties": {
+        "frame_index": {"const": null}, "timestamp_ms": {"const": null}, "confidence": {"const": null},
+        "source": {"const": "not_detected_phase0"}, "uncertainty_frames": {"const": null}
+      }
+    }
+  }
+}

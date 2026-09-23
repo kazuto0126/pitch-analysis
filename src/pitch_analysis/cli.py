@@ -27,6 +27,15 @@ def _emit(value: object) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser(description="Quality-aware 2-D pitching analysis.")
     commands = parser.add_subparsers(dest="command", required=True)
+    analyze = commands.add_parser("analyze-pitch", help="Analyze one prepared local MP4 plus pitch-input-v1 metadata")
+    analyze.add_argument("mp4")
+    analyze.add_argument("metadata_json")
+    analyze.add_argument("--output-root", default="analysis_results")
+    analyze.add_argument("--model", default="models/pose_landmarker_full.task")
+    analyze.add_argument("--standardize", action="store_true", help="Create H.264/yuv420p working copy at native FPS")
+    validate = commands.add_parser("validate-pitch", help="Validate metadata and decode a prepared MP4 without pose inference")
+    validate.add_argument("mp4")
+    validate.add_argument("metadata_json")
     clean = commands.add_parser("clean-pose")
     clean.add_argument("pose_csv")
     clean.add_argument("output_csv")
@@ -136,6 +145,20 @@ def main() -> None:
         command.add_argument("--min-visibility", type=float, default=0.5)
         command.add_argument("--min-presence", type=float, default=0.5)
     args = parser.parse_args()
+    if args.command in {"analyze-pitch", "validate-pitch"}:
+        try:
+            if args.command == "analyze-pitch":
+                from .analysis.pitch import analyze_pitch
+                result = analyze_pitch(args.mp4, args.metadata_json, output_root=args.output_root, model_path=args.model, standardize=args.standardize)
+            else:
+                from .contracts import load_input
+                from .video.validation import validate_mp4
+                load_input(args.mp4, args.metadata_json)
+                result = validate_mp4(args.mp4)
+            _emit(result)
+        except (ValueError, OSError, RuntimeError) as error:
+            parser.exit(2, f"{type(error).__name__}: {error}\n")
+        return
     if args.command == "event-template":
         candidates = {name.replace("-", "_"): value for name, value in vars(args).items() if name.endswith("_candidate") and value is not None}
         context = {key: value for key, value in {"season": args.season, "team": args.team, "view": args.view}.items() if value}

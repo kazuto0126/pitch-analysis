@@ -1,5 +1,2 @@
-mediapipe==1.0.1
-opencv-python
-numpy
-matplotlib
-
+# Windows x64 / Python 3.12 reproducible runtime and build dependencies.
+-r requirements-lock.txt

@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Prepared single-pitch input",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "pitch_id", "pitcher", "video"],
+  "properties": {
+    "schema_version": {"const": "pitch-input-v1"},
+    "pitch_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9_]{0,79}$"},
+    "pitcher": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "throws"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9_]{0,79}$"},
+        "display_name": {"type": "string", "minLength": 1},
+        "throws": {"enum": ["LEFT", "RIGHT"]}
+      }
+    },
+    "video": {
+      "type": "object", "additionalProperties": false,
+      "required": ["file", "camera_view", "horizontal_mirror", "playback_speed", "contains_single_pitch", "continuous_shot", "subject_framing"],
+      "properties": {
+        "file": {"type": "string", "pattern": "^[^/\\\\:]+\\.[mM][pP]4$"},
+        "camera_view": {"enum": ["rear_centerfield_broadcast", "rear_bullpen", "side", "side_oblique_mobile", "front", "other"]},
+        "horizontal_mirror": {"const": false},
+        "playback_speed": {"const": 1.0},
+        "contains_single_pitch": {"const": true},
+        "continuous_shot": {"const": true},
+        "subject_framing": {"const": "full_body"}
+      }
+    },
+    "context": {
+      "type": "object", "additionalProperties": false,
+      "properties": {
+        "season": {"type": ["integer", "null"], "minimum": 1876, "maximum": 2200},
+        "team": {"type": ["string", "null"]},
+        "pitch_type": {"type": ["string", "null"]},
+        "session_id": {"type": ["string", "null"]}
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "status", "path", "sha256", "fps", "frame_count", "width", "height", "codec_fourcc", "duration_seconds", "timestamps_ms", "warnings", "content_validation"],
+  "properties": {
+    "schema_version": {"const": "video-validation-v1"},
+    "status": {"const": "validated"},
+    "path": {"type": "string"},
+    "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "fps": {"type": "number", "exclusiveMinimum": 0},
+    "header_fps": {"type": "number", "exclusiveMinimum": 0},
+    "frame_count": {"type": "integer", "minimum": 2},
+    "width": {"type": "integer", "minimum": 1},
+    "height": {"type": "integer", "minimum": 1},
+    "codec_fourcc": {"type": "string"},
+    "duration_seconds": {"type": "number", "exclusiveMinimum": 0},
+    "timestamps_ms": {"type": "array", "minItems": 2, "items": {"type": "number", "minimum": 0}},
+    "warnings": {"type": "array", "items": {"type": "string"}},
+    "content_validation": {"const": "single pitch, continuous shot, full body and playback speed are caller declarations; visual review required"}
+  }
+}

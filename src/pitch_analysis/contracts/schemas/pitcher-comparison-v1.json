@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Future cross-pitcher temporal comparison; not emitted in Phase 0",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "pitcher_ids", "status", "input_profile_versions", "camera_compatibility", "alignment", "phase_distances", "aligned_curves", "limitations"],
+  "properties": {
+    "schema_version": {"const": "pitcher-comparison-v1"},
+    "pitcher_ids": {"type": "array", "minItems": 2, "maxItems": 2, "uniqueItems": true, "items": {"type": "string"}},
+    "status": {"enum": ["comparable", "incompatible_camera", "insufficient_quality", "provisional"]},
+    "input_profile_versions": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "string"}},
+    "camera_compatibility": {"type": "object", "required": ["compatible", "reasons"],
+      "properties": {"compatible": {"type": "boolean"}, "reasons": {"type": "array", "items": {"type": "string"}}}},
+    "alignment": {"type": "object", "required": ["method", "event_anchors", "points_per_phase"],
+      "properties": {"method": {"type": "string"}, "event_anchors": {"type": "array", "items": {"type": "string"}},
+                     "points_per_phase": {"type": "integer", "minimum": 2}}},
+    "phase_distances": {"type": "object", "additionalProperties": {"type": ["number", "null"]}},
+    "aligned_curves": {"type": "object", "additionalProperties": {"type": "object", "required": ["unit", "observability", "pitcher_a", "pitcher_b"],
+      "properties": {"unit": {"type": "string"}, "observability": {"type": "string"},
+                     "pitcher_a": {"type": "array", "items": {"type": ["number", "null"]}},
+                     "pitcher_b": {"type": "array", "items": {"type": ["number", "null"]}}}}},
+    "limitations": {"type": "array", "items": {"type": "string"}}
+  }
+}

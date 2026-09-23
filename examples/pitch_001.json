@@ -1,0 +1,15 @@
+{
+  "schema_version": "pitch-input-v1",
+  "pitch_id": "pitch_001",
+  "pitcher": {"id": "shohei_ohtani", "display_name": "Shohei Ohtani", "throws": "RIGHT"},
+  "video": {
+    "file": "pitch_001.mp4",
+    "camera_view": "rear_centerfield_broadcast",
+    "horizontal_mirror": false,
+    "playback_speed": 1.0,
+    "contains_single_pitch": true,
+    "continuous_shot": true,
+    "subject_framing": "full_body"
+  },
+  "context": {"season": 2026, "team": "Los Angeles Dodgers", "pitch_type": null, "session_id": null}
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "pitch_id", "pitcher_id", "status", "artifacts", "provenance", "failure"],
+  "properties": {
+    "schema_version": {"const": "pitch-analysis-v1"},
+    "pitch_id": {"type": "string"}, "pitcher_id": {"type": "string"},
+    "status": {"enum": ["running", "needs_event_review", "quality_gate_failed", "no_pose", "failed"]},
+    "artifacts": {"type": "object", "additionalProperties": {"type": "string"}},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["input_sha256", "analysis_video_sha256", "model_sha256", "model_path", "packages", "standardization", "timebase", "quality_config"],
+      "properties": {
+        "input_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "analysis_video_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "model_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "model_path": {"type": "string"},
+        "packages": {"type": "object", "additionalProperties": {"type": "string"}},
+        "standardization": {"enum": ["none", "h264_yuv420p_native_fps"]},
+        "timebase": {"const": "zero-based clip frames; CFR checked against decoded presentation timestamps"},
+        "quality_config": {"type": "object"}
+      }
+    },
+    "failure": {"type": ["string", "null"]}
+  }
+}

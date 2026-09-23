@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "pitch_id", "pitcher_id", "status", "quality_gate_passed", "scope", "metrics", "limitations"],
+  "properties": {
+    "schema_version": {"const": "pitch-metrics-v1"},
+    "pitch_id": {"type": "string"}, "pitcher_id": {"type": "string"},
+    "status": {"enum": ["needs_event_review", "quality_gate_failed", "no_pose"]},
+    "quality_gate_passed": {"type": "boolean"},
+    "scope": {"const": "full prepared clip; raw observed features only; not event-specific biomechanics"},
+    "metrics": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object", "additionalProperties": false,
+        "required": ["unit", "observability", "raw_coverage", "observed_frames", "min", "max", "median"],
+        "properties": {
+          "unit": {"enum": ["degree", "image_height"]},
+          "observability": {"enum": ["direct_2d_projection", "estimated_stride_proxy"]},
+          "raw_coverage": {"type": "number", "minimum": 0, "maximum": 1},
+          "observed_frames": {"type": "integer", "minimum": 0},
+          "min": {"type": ["number", "null"]}, "max": {"type": ["number", "null"]}, "median": {"type": ["number", "null"]}
+        }
+      }
+    },
+    "limitations": {"type": "array", "items": {"type": "string"}}
+  }
+}

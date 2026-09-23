@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "pitch_id", "pitcher_id", "coordinate_system", "confidence_semantics", "frames"],
+  "properties": {
+    "schema_version": {"const": "keypoints-v1"},
+    "pitch_id": {"type": "string"}, "pitcher_id": {"type": "string"},
+    "coordinate_system": {"const": "normalized_image_xy; z is model-estimated relative depth, not calibrated 3D"},
+    "confidence_semantics": {"const": "confidence equals MediaPipe visibility, not calibrated coordinate accuracy; presence is separate"},
+    "frames": {
+      "type": "array", "minItems": 2,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["frame_index", "timestamp_ms", "detected", "landmarks"],
+        "properties": {
+          "frame_index": {"type": "integer", "minimum": 0},
+          "timestamp_ms": {"type": "number", "minimum": 0},
+          "detected": {"type": "boolean"},
+          "landmarks": {
+            "type": "array", "maxItems": 33,
+            "items": {
+              "type": "object", "additionalProperties": false,
+              "required": ["name", "x", "y", "z", "confidence", "visibility", "presence"],
+              "properties": {
+                "name": {"type": "string"},
+                "x": {"type": "number"}, "y": {"type": "number"}, "z": {"type": ["number", "null"]},
+                "confidence": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+                "visibility": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+                "presence": {"type": ["number", "null"], "minimum": 0, "maximum": 1}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

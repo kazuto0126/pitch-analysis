@@ -1,11 +1,14 @@
 # Pitch Analysis 開發現況
 
-更新日期：2026-09-16
+更新日期：2026-09-23（Phase 0 邊界調整）
+
+新入口為 prepared MP4 + pitch-input-v1；見 phase0_contracts.md。以下是既有分析
+library 的歷史基線；素材取得、長影片切段與來源管理已 deprecated，後續交由獨立專案。
 
 ## 目前可用成果
 
 - 原始素材庫包含 5 位投手、13 支影片：Blake Snell、Shohei Ohtani、Tarik Skubal、Yoshinobu Yamamoto、Yu Darvish。
-- 目前 canonical release 是 `data/pitcher_database/releases/v0.5/`；manifest 將 registry、scaler、驗證結果與重建紀錄綁定在同一版本。
+- 目前 canonical release 是 `data/pitcher_database/releases/v0.6/`；manifest 將 registry、scaler、驗證結果與重建紀錄綁定在同一版本。
 - 嚴格 registry 目前收錄 5 位投手、12 次投球：Snell 5、Skubal 2、Ohtani 2、Darvish 2、Yamamoto 1。
 - 切段品質 gate 與人工覆核後的 event-window gate 使用相同門檻。後者安全取回 2 球只在投球窗外品質不佳的素材；仍有 4 球因投球窗內覆蓋率不足而排除。
 - 左投與右投分開建立 reference scaler，也只會與相同慣用手的投手比較。

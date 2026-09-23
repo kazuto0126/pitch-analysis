@@ -1,55 +1,61 @@
-# MLB reference dataset schema
+# Analysis dataset and legacy reference schema
 
-本資料庫以「一次投球（pitch instance）」為最小可比較單位，而不是以單一投手的平均值取代所有投球。
+新輸入只接受已整理 MP4 與 `pitch-input-v1`。必要 metadata、輸出 JSON Schemas、
+frame/timebase 與人工 review handoff 以 [Phase 0 contracts](phase0_contracts.md) 為準。
+不再要求 URL、license、原始完整比賽位置或下載資訊。
 
 ```text
-data/pitcher_database/
-  raw/<pitcher_id>/<season>/<clean_video_name>.mp4
-  raw/source_catalog.json       # original file name, asserted identity, hand, season, view
-  <pitcher_id>/<session_id>/<pitch_id>/
-    source.mp4                 # 僅在授權允許時保存
-    pose_raw.csv
-    pose_raw.capture.json
-    pose_clean.csv
-    pose_clean.clean.json
-    features.csv
-    features.quality.json
-    events.json
-    phase_sequence.csv
-    phase_sequence.quality.json
-    metadata.json
-  releases/<version>/
-    manifest.json
-    registry.json
-    scaler_left.json
-    scaler_right.json
-    validation_left.json
-    validation_right.json
-    revalidation.json
+input/<pitcher_id>/<pitch_id>.mp4
+input/<pitcher_id>/<pitch_id>.json
+
+analysis_results/<pitcher_id>/<pitch_id>/
+  input_manifest.json
+  analysis.json
+  video_metadata.json
+  keypoints.json
+  metrics.json
+  phases.json
+  pose_raw.csv
+  pose_raw.capture.json
+  pose_clean.csv
+  pose_clean.clean.json
+  features.csv
+  features.quality.json
+  metadata.json
+  events.json
+  phase_sequence.csv           # 人工事件審核並 revalidate 後產生
+  phase_sequence.quality.json
 ```
 
-`raw/source_catalog.json` 的 `accepted_for_segmentation` 只代表影片含有值得切段的後方鏡頭；
-它不是 reference。每一個準備中的 pitch folder 都以 `metadata.json` 記錄來源秒數、MediaPipe
-模型、feature coverage 與 quality gate，並以 `events.json.review_status` 區分
-`needs_human_review`、`provisional_candidates_accepted`、`human_reviewed` 和 `rejected`。
+Registry root 必須指向投手資料夾的共同父目錄（例如 analysis_results），使 pitcher ID
+仍由第一層資料夾辨識。pitch ID 在投手內唯一；不同投手可各有 pitch_001。
+新 video ID 使用 `<pitcher_id>__<pitch_id>`，既有 video ID 保持不變。
 
-`prepare-segment` 先對整個候選片段套用品質 gate。人工確認事件後，registry 會再對真正的
-pitch start 到 follow-through end 套用同一組門檻：pose 偵測率至少 90%、連續缺失來源姿態
-至多 2 幀、核心特徵原始覆蓋率至少 80%、投球手肘原始覆蓋率至少 50%。只有 event window
-本身通過時，才能取代因片段前後 padding 導致的全片失敗；人工標註不能放寬門檻。
+現有 legacy library `data/pitcher_database/<pitcher_id>/<session_id>/<pitch_id>/` 原樣保留。
+其中 raw/source_catalog.json 和 intake_review 僅為歷史來源記錄；新 analysis 不讀取它們。
+舊資料 frame index 可能來自長影片，不能直接當成新 MP4 從 0 開始的 frame index。
+由外部專案交付逐球 MP4 後，應建立新 metadata 並重新分析，避免錯用事件時間。
 
-`manifest.csv` 至少包含：`pitch_id`, `pitcher_id`, `pitcher_name`, `throws`, `pitch_type`, `video_view`, `camera_side`, `fps`, `width`, `height`, `source_url`, `license`, `pose_model`, `feature_schema_version`, `event_annotation_version`。
+現有核心 gate 不變：raw pose detection 至少 90%、主要特徵 raw coverage 至少 80%、
+投球手肘至少 50%、連續缺失來源姿態至多 2 幀。人工事件覆核不會放寬門檻。
+這些是當前原型政策，不是已校準的生物力學準確度。
 
-比較前必須篩選相同的 `video_view`、相容的 camera protocol，並依 `throws` canonicalize 成 throwing/lead/trail 側。每個 `events.json` 都應保存人工或自動偵測的 pitch start、foot-strike candidate、release candidate、follow-through end，以及各事件 confidence 和 annotation source。
+比較前須檢查 view、mirror、full-body framing 與 throws。目前跨左右投不比較；
+scaler 由同手 reference 擬合，query 不自行 Min-Max。留一驗證每折排除 held-out query。
+Strict camera mode 要求完整鏡頭資訊；exploratory 允許未知資訊但列出警告。
 
-scaler 必須依投球慣用手分開擬合，並將 `reference_scope.throws` 寫進 scaler JSON。建議用
-`fit-registry-scaler` 從合格 registry 自動選取資料。scaler 亦保存來源 registry 的路徑與
-schema；ranking 會拒絕慣用手不符或 registry provenance 不一致的 scaler，也不會比較另一手的 reference。
+目前 canonical release 是 `data/pitcher_database/releases/v0.6/`：
 
-scaler 只能由 reference/training split 擬合；query pitch 不得自行 Min-Max。留一投球驗證的每一折
-都必須排除 held-out query 後重新擬合 scaler。若某投手只有一個 reference，該折應標記為
-`unscored`，不可算錯也不可灌入 accuracy。任何 ranking result 都要寫入它使用的 schema、scaler、
-feature weights、DTW band、camera compatibility 與 reference pitch ids。
+```text
+manifest.json
+registry.json
+scaler_left.json
+scaler_right.json
+validation_left.json
+validation_right.json
+revalidation.json
+```
 
-`build-library-release` 會在全新空目錄內一次建立上述 bundle，並拒絕覆寫既有 release。
-release manifest 是後續重現排名的入口；不要任意混用不同 release 的 registry 與 scaler。
+不要覆寫已存在 release，也不要混用不同 release 的 registry/scaler。
+registry schema 的 `0.5-reviewed-event-window-provisional` 是獨立 schema version，
+不是 canonical release v0.5；不應因 release 升至 v0.6 而改寫 schema 字串。

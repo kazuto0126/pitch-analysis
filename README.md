@@ -1,210 +1,120 @@
-# 基於人體姿態估計與動作特徵分析之棒球投球姿勢相似度分析系統
+# pitch-analysis
 
-## 1. 專題簡介
+接收已整理好的 **單次投球 MP4 + metadata**，分析 MLB 投手的姿勢、動作時序與特徵。
+長期目標包括單一投手 motion profile，以及不同投手的完整時序比較。
 
-本專題旨在建立一套棒球投球姿勢分析系統。
+專案不負責影片搜尋、YouTube、下載、yt-dlp、來源管理、從長影片建立素材或指定球員 ReID。
+這些能力由獨立 preprocessing 專案負責。本機 MP4 probe / validation / working-copy
+standardization 屬於分析輸入品質控制，仍保留在本專案。
 
-使用者輸入一段棒球投球影片後，系統透過人體姿態估計取得人體關節位置，再進一步計算投球動作中的姿勢與動作特徵。
+## Phase 0 已完成的入口
 
-最後將使用者的投球動作與 MLB 投手資料進行比較，找出動作較為相似的投手。
+`analyze-pitch <mp4> <metadata.json>` 驗證整支影片，沿用現有 MediaPipe、confidence gate、
+clean pose、2D feature 與 quality gate，輸出待人工覆核的單球結果。
+Phase 0 沒有新增自動事件偵測、投手追蹤、profile 或 overlay；既有 phase、DTW、normalization、
+registry 與 validation 演算法保留。現在的結果仍是 2D 投影分析，不能解讀為真實 3D biomechanical loading。
 
-## 2. 專題目標
+## 安裝（Windows x64 / Python 3.12）
 
-本專題主要完成以下功能：
+從專案根目錄執行：
 
-1. 讀取棒球投球影片
-2. 使用人體姿態估計取得人體關節座標
-3. 擷取肩膀、手肘、髖部與膝蓋等關節資訊
-4. 計算投球動作特徵
-5. 將投球動作分成不同階段
-6. 建立 MLB 投手動作特徵資料
-7. 計算投球動作之間的相似度
-8. 將分析結果視覺化
+```powershell
+.\scripts\setup.ps1
+```
 
-## 3. 系統流程
+預設用 `py -3.12` 建立 `.venv-analysis`。若沒有 Python launcher，指定可用的 Python 3.12：
 
-影片輸入
+```powershell
+.\scripts\setup.ps1 -PythonExe "C:\path\to\Python312\python.exe"
+```
 
-↓
+腳本安裝 `requirements-lock.txt` 的全部固定版本，再以 editable mode 安裝本專案。
+不需要手動設定 PYTHONPATH，也不需要啟用環境。舊 `.venv` 保留作歷史資料，不再作執行入口。
+只安裝 `opencv-contrib-python`，避免兩個套件同時提供 cv2。FFmpeg 由 imageio-ffmpeg 提供。
 
-影片處理
-
-↓
-
-人體姿態估計
-
-↓
-
-關節資料擷取
-
-↓
-
-動作特徵計算
-
-↓
-
-投球動作分期
-
-↓
-
-MLB 投手資料庫
-
-↓
-
-相似度分析
-
-↓
-
-結果視覺化
-
-## 4. 主要分析部位
-
-目前主要分析以下身體部位：
-
-- 肩膀
-- 手肘
-- 髖部
-- 膝蓋
-
-手腕等其他部位將視實作進度決定是否加入。
-
-## 5. 專題範圍
-
-本專題第一階段以二維人體姿態分析為主。
-
-暫不包含：
-
-- 3D 人體重建
-- 多攝影機同步分析
-- 即時攝影機分析
-- 大型深度學習模型訓練
-- 手機 App
-
-## 6. 專案資料夾
+## 輸入與使用
 
 ```text
-pitch-analysis/
-│
-├─ src/
-│  └─ Python 程式
-│
-├─ data/
-│  ├─ raw_videos/
-│  ├─ pose_data/
-│  └─ pitcher_database/
-│
-├─ tests/
-│  └─ 測試程式
-│
-├─ docs/
-│  └─ 專題文件與設計紀錄
-│
-└─ README.md
+input/
+  shohei_ohtani/
+    pitch_001.mp4
+    pitch_001.json
+  yoshinobu_yamamoto/
+    pitch_001.mp4
+    pitch_001.json
 ```
 
-## 開發中的新版 pipeline
-
-舊有 `src/*.py` 腳本與既有 CSV 均保留不動。新的程式碼位於
-`src/pitch_analysis/`，先提供**品質感知**的特徵輸出：低於 visibility
-threshold 的 landmark 不會被誤當成有效座標，也不會把遺失 frame 靜默移除。
-
-在修復 Python 環境後，可由專案根目錄執行：
+複製 [metadata 範例](examples/pitch_001.json) 到 MP4 旁，再填寫真實投手與影片資訊。
+每支檔案應是一個正常速度、未鏡像、連續鏡頭、全身入鏡的投球。
+這些內容宣告仍需人工確認；驗證器不會辨識球員身分或計算影片內投球次數。
 
 ```powershell
-$env:PYTHONPATH = "src"
-python -m pitch_analysis.cli clean-pose data/pose_data/test_pitch_pose_named.csv data/pose_data/test_pitch_pose_clean.csv
-python -m pitch_analysis.cli build-features data/pose_data/test_pitch_pose_clean.csv data/pose_data/test_pitch_features_v3.csv --throwing-side RIGHT
+.\.venv-analysis\Scripts\pitch-analysis.exe validate-pitch input/shohei_ohtani/pitch_001.mp4 input/shohei_ohtani/pitch_001.json
+.\.venv-analysis\Scripts\pitch-analysis.exe analyze-pitch input/shohei_ohtani/pitch_001.mp4 input/shohei_ohtani/pitch_001.json
 ```
 
-這會額外產生對應的 `.quality.json`，記錄缺失 frame、每項特徵
-無效的 frame 數與使用的品質閾值。`throwing-side` 必須依已人工確認的投手慣用手設定；
-不能由畫面左右直接推論。
+可加 `--output-root PATH` 選擇新輸出位置，或 `--model PATH` 指定本機 Pose Landmarker 模型。
+預設模型為專案根目錄下 `models/pose_landmarker_full.task`。
+`--standardize` 可建立 H.264/yuv420p 工作副本，保留原始 FPS、解析度與 frame count。
+不會降為固定 30 FPS、不會切段、不會修改原始 MP4。Phase 0 接受 CFR；不支援 VFR、
+帶 rotation metadata 或非正方形像素的影片。完整規則見 [contracts](docs/phase0_contracts.md)。
 
-新 pipeline 不會對單支 query 影片做 Min-Max。跨投手比較應使用 canonical release 內、
-由合格 reference set 擬合的 z-score scaler；資料庫結構見
-[`docs/reference_dataset_schema.md`](docs/reference_dataset_schema.md)。
+```text
+analysis_results/<pitcher_id>/<pitch_id>/
+  analysis.json             # 執行狀態、版本、hash、輸出索引
+  input_manifest.json       # 原始 input metadata 快照
+  video_metadata.json       # 整支 decode/probe/時間軸
+  keypoints.json            # 每幀位置、confidence、presence
+  metrics.json              # 既有 2D 特徵摘要與原始 coverage
+  phases.json               # Phase 0 待覆核事件快照，沒有偽造事件
+  events.json               # 現有流程的人工標註入口
+  pose_raw.csv
+  pose_raw.capture.json
+  pose_clean.csv
+  pose_clean.clean.json
+  features.csv
+  features.quality.json
+  metadata.json             # 舊分析流程 metadata，與 input metadata 不同
+```
 
-在使用 phase-aware DTW 前，先產生並人工填寫事件標註（frame number）：
+無 pose 時保留 raw capture、keypoints、metrics 與失敗狀態，不建立事件檔。
+輸出目錄存在時拒絕覆寫。品質不足會回報 `quality_gate_failed`；不會自動成為 reference。
+
+## 事件覆核與既有分析 handoff
+
+人工檢查姿態與五個事件，在 `events.json` 填入從 0 開始的 clip frame index，
+確認後設 `review_status=human_reviewed`，再執行：
 
 ```powershell
-python -m pitch_analysis.cli event-template data/pose_data/test_pitch_features_v3.quality.json data/pose_data/test_pitch_events.json --video-id test_pitch
-# 人工覆核後，將 events 的五個 frame 值填入 JSON
-python -m pitch_analysis.cli build-phases data/pose_data/test_pitch_features_v3.csv data/pose_data/test_pitch_events.json data/pose_data/test_pitch_phase_sequence.csv
+.\.venv-analysis\Scripts\pitch-analysis.exe revalidate-segment analysis_results/shohei_ohtani/pitch_001
+.\.venv-analysis\Scripts\pitch-analysis.exe build-registry analysis_results analysis_results/registry.json
 ```
 
-`events.json` 未經人工覆核的 reference 不會進入排名。資料庫應以不可覆寫的 release
-為單位建立；下列命令會依序重建衍生檔、產生 registry、左右投 scaler、留一投球驗證與
-manifest。目標資料夾必須是全新空目錄，避免意外混用不同版本：
+以上保留事件順序、原始 coverage、event-window quality gate 與 registry 設計。
+`phases.json` 等新契約檔是首次 preparation 快照；舊 revalidate 指令不會更新這些快照，
+實際核准狀態由 events.json 與 registry 決定。詳見 [契約與限制](docs/phase0_contracts.md)。
+
+## 現有資料與 legacy
+
+目前 canonical library 是 `data/pitcher_database/releases/v0.6/`，包含 5 位投手、12 個
+provisional references。左投/右投 scaler、camera gate、phase DTW 及留一驗證仍可使用。
+舊 v0.5 release 保留，但不是目前的使用範例。小樣本驗證不是跨影片泛化能力的證明。
+
+preprocessing 完整保存於 `integration/opencode-preprocessing` 的 `4a65c32`，
+尚未合併到新的 `codex/analysis-phase-0`。舊單用途 scripts 和長影片收件命令已列入
+[deprecated 清單](docs/legacy.md)，檔案仍保留。既有 Git 已追蹤的環境、模型和素材仍未清除。
+
+## 測試
 
 ```powershell
-python -m pitch_analysis.cli build-library-release data/pitcher_database data/pitcher_database/releases/v0.6
+.\.venv-analysis\Scripts\python.exe -B -m unittest discover -s tests -v
+.\.venv-analysis\Scripts\python.exe -m pip check
 ```
 
-目前完成的 canonical bundle 是 `releases/v0.5/`。使用該 bundle 執行右投 query：
+自動測試使用本機合成 MP4 與確定性的 pose fixture，不依賴網路下載。
+實際 MediaPipe 推論另由本機 smoke test 驗證，測試報告見 [Phase 0 狀態](docs/phase0_status.md)。
 
-```powershell
-python -m pitch_analysis.cli rank-pitchers data/pose_data/test_pitch_phase_sequence_v0.4.csv data/pitcher_database data/pitcher_database/releases/v0.5/scaler_right.json data/pose_data/pitcher_ranking_right_v1.5_camera_gated.json --query-throws RIGHT --registry data/pitcher_database/releases/v0.5/registry.json --query-context data/pose_data/test_pitch_query_context_v0.4.json --camera-mode exploratory
-```
+## 接續開發
 
-長影片可先用多項姿態特徵的逐幀變化找出候選動作窗。輸出只是供目視審核的提示，
-不會自動宣稱某段一定是投球，也不會自動加入 reference registry：
-
-```powershell
-python -m pitch_analysis.cli detect-motion-windows data/pose_data/test_pitch_features_v0.3.csv data/pose_data/test_pitch_motion_candidates_v0.2.json
-```
-
-可用留一投球驗證檢查資料庫內部辨識能力；每一折都會排除 query 後重新擬合 scaler：
-
-```powershell
-python -m pitch_analysis.cli validate-ranking data/pitcher_database/releases/v0.5/registry.json data/pitcher_database/validation_right_check.json --throws RIGHT
-python -m pitch_analysis.cli validate-ranking data/pitcher_database/releases/v0.5/registry.json data/pitcher_database/validation_left_check.json --throws LEFT
-```
-
-For cross-season references, supply season, team, and view with the event template. Rankings
-retain per-season contribution rather than silently mixing every career phase sequence:
-
-```powershell
-python -m pitch_analysis.cli event-template FEATURES_QUALITY.json EVENTS.json --video-id yamamoto_orix_bullpen_01 --season unknown --team "Orix Buffaloes" --view rear_bullpen
-```
-
-從任何已授權的 reference MP4 擷取姿態時，可指定影片秒數區段；輸出的 `frame` 仍保留來源影片的原始 frame 編號：
-
-```powershell
-python -m pitch_analysis.cli extract-pose data/pitcher_database/yamamoto_2024_spring_training.mp4 data/pitcher_database/yamamoto_11_30_pose.csv --start-second 11 --end-second 30
-```
-
-## 素材收件與命名
-
-原始影片先放在 `data/pitcher_database/raw/<pitcher_id>/<season>/`，並由
-`data/pitcher_database/raw/source_catalog.json` 記錄來源檔名、投球慣用手、賽季與
-鏡頭類型。這一層的 `accepted_for_segmentation` **不是**可直接比較的 reference；
-仍必須逐球切出完整投球、擷取姿態、人工檢查事件後，才會出現在 registry。
-
-收件時可先建立不會改動原影片的聯絡表：
-
-```powershell
-python -m pitch_analysis.cli audit-media data/pitcher_database/intake_review C:\path\to\candidate.mp4 --samples 12
-# 可加 --start-second 與 --end-second，密集審核一段已選中的投球
-```
-
-將某個確認可能完整的片段準備成待審核資料夾時，使用單一工作流程（它不會自動把資料列入 ranking）：
-
-```powershell
-python -m pitch_analysis.cli prepare-segment data/pitcher_database/raw/yoshinobu_yamamoto/2026/yoshinobu_yamamoto_2026_centerfield_clip_08_01.mp4 data/pitcher_database/yoshinobu_yamamoto/2026_centerfield_clip_08_01/pitch_01 --video-id yamamoto_2026_clip_08_01_pitch_01 --throwing-side RIGHT --start-second 35.5 --end-second 39.5 --season 2026 --team "Los Angeles Dodgers" --view rear_centerfield_broadcast
-```
-
-這會產生 raw pose、clean pose、features、品質報告、`metadata.json` 和尚待人工填寫的
-`events.json`。輸出資料夾若已有資料會拒絕覆寫，保護既有人工事件標註。
-它還會以 landmark feature coverage 做切段前的初步 gate（主要下肢／軀幹至少 80%、投球手肘至少
-50%、pose 偵測至少 90%、連續缺失至多 2 幀）；通過者仍需視覺與事件審查。若只有投球前後的
-padding 造成全片未達標，人工覆核事件後可改以真正的 event window 套用完全相同門檻；門檻本身
-不會因人工覆核而放寬。
-
-reference scaler 必須一手一份。建議由 registry 自動擬合
-（`fit-registry-scaler ... --throws RIGHT` 或 `LEFT`），避免漏列或誤列 reference；
-排名會強制只取與 query 相同慣用手的 reference，並拒絕使用另一手的 scaler。鏡頭視角仍需以 `events.json` 的
-`reference_context.view` 記錄並在報告中審核；scaler 內的 registry 路徑與 schema provenance
-也必須與排名使用的 registry 一致，否則流程會停止。目前的 2-D 結果不可被解讀為 3-D 生物力學量測。
-
-目前可比較資料量、品質限制與下一個驗收門檻見
-[`docs/development_status.md`](docs/development_status.md)。
+Phase 0 到此停止。下一階段的 subject tracking、pose backend interface、事件偵測、
+biomechanics 擴充、body-relative normalization、profile 與視覺化，須在確認後才執行。

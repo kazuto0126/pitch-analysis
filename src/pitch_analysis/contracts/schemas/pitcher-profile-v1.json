@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Future reviewed multi-pitch profile; not emitted in Phase 0",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "pitcher_id", "throws", "pitch_ids", "profile_status", "normalization", "curves", "consistency", "outlier_pitch_ids", "limitations"],
+  "properties": {
+    "schema_version": {"const": "pitcher-profile-v1"},
+    "pitcher_id": {"type": "string"}, "throws": {"enum": ["LEFT", "RIGHT"]},
+    "pitch_ids": {"type": "array", "minItems": 2, "uniqueItems": true, "items": {"type": "string"}},
+    "profile_status": {"enum": ["provisional", "reviewed"]},
+    "normalization": {"type": "object", "required": ["spatial", "temporal", "handedness"], "properties": {
+      "spatial": {"type": "string"}, "temporal": {"type": "string"}, "handedness": {"type": "string"}}},
+    "curves": {"type": "object", "additionalProperties": {"type": "object", "required": ["phase", "unit", "observability", "median", "lower", "upper"],
+      "properties": {
+        "phase": {"type": "string"}, "unit": {"type": "string"}, "observability": {"type": "string"},
+        "median": {"type": "array", "items": {"type": ["number", "null"]}},
+        "lower": {"type": "array", "items": {"type": ["number", "null"]}},
+        "upper": {"type": "array", "items": {"type": ["number", "null"]}}}}},
+    "consistency": {"type": "object", "additionalProperties": {"type": "object", "required": ["unit", "value", "method"],
+      "properties": {"unit": {"type": "string"}, "value": {"type": ["number", "null"]}, "method": {"type": "string"}}}},
+    "outlier_pitch_ids": {"type": "array", "items": {"type": "string"}},
+    "limitations": {"type": "array", "items": {"type": "string"}}
+  }
+}
