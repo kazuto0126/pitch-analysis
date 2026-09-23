@@ -15,6 +15,7 @@ from ..io import read_pose_csv
 from ..video.standardization import standardize_mp4
 from ..video.validation import sha256_file, validate_mp4
 from ..workflow import prepare_segment
+from .debug import write_pose_debug
 
 
 def _keypoints(raw_csv: Path, video: dict, ids: dict) -> dict:
@@ -74,6 +75,7 @@ def analyze_pitch(video_path: str | Path, metadata_path: str | Path, *, output_r
             "model_path": str(model), "model_sha256": sha256_file(model),
             "packages": {name: version(name) for name in ("mediapipe", "opencv-contrib-python", "numpy", "jsonschema", "imageio-ffmpeg")},
             "standardization": "h264_yuv420p_native_fps" if standardize else "none",
+            "subject_selection": "rear_centerfield_v1",
             "timebase": "zero-based clip frames; CFR checked against decoded presentation timestamps", "quality_config": asdict(quality),
         },
     }
@@ -99,10 +101,13 @@ def analyze_pitch(video_path: str | Path, metadata_path: str | Path, *, output_r
         prepared = prepare_segment(analysis_video, core, video_id=ids["pitcher_id"] + "__" + ids["pitch_id"],
                                    throwing_side=payload["pitcher"]["throws"], model_path=model,
                                    start_second=0.0, end_second=None,
-                                   reference_context=context, quality=quality)
+                                   reference_context=context, quality=quality,
+                                   subject_selection="rear_centerfield_broadcast")
         capture = json.loads((core / "pose_raw.capture.json").read_text(encoding="utf-8"))
         if capture["requested_frames"] != video["frame_count"]:
             raise ValueError("Pose capture timeline disagrees with validated input")
+        if capture["processed_frames"] != video["frame_count"]:
+            raise ValueError("Pose capture did not process every validated video frame")
         status = "no_pose" if prepared["detected_frames"] == 0 else "needs_event_review" if prepared["quality_gate_passed"] else "quality_gate_failed"
         save("keypoints.json", _keypoints(core / "pose_raw.csv", video, ids), "keypoints-v1")
         save("metrics.json", _metrics(core, ids, status, prepared["quality_gate_passed"]), "pitch-metrics-v1")
@@ -129,6 +134,10 @@ def analyze_pitch(video_path: str | Path, metadata_path: str | Path, *, output_r
                 artifact.rename(output / artifact.name)
             manifest["artifacts"][artifact.name] = artifact.name
         core.rmdir()
+        write_pose_debug(output, video, capture, payload["pitcher"]["throws"], prepared["quality_gate_passed"])
+        for name in ("keypoints.jsonl", "processed_keypoints.jsonl", "keypoint_quality.json", "wrist_trajectory.json", "overlay.mp4",
+                     "review/human_validation_template.json"):
+            manifest["artifacts"][name] = name
         manifest["status"] = status
         write_contract(output / "analysis.json", manifest, "pitch-analysis-v1")
     except Exception as error:

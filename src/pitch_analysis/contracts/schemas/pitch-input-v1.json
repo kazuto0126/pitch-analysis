@@ -20,7 +20,7 @@
       "required": ["file", "camera_view", "horizontal_mirror", "playback_speed", "contains_single_pitch", "continuous_shot", "subject_framing"],
       "properties": {
         "file": {"type": "string", "pattern": "^[^/\\\\:]+\\.[mM][pP]4$"},
-        "camera_view": {"enum": ["rear_centerfield_broadcast", "rear_bullpen", "side", "side_oblique_mobile", "front", "other"]},
+        "camera_view": {"const": "rear_centerfield_broadcast"},
         "horizontal_mirror": {"const": false},
         "playback_speed": {"const": 1.0},
         "contains_single_pitch": {"const": true},

@@ -38,7 +38,7 @@ def make_video(path: Path, fps: float = 30.0) -> None:
     writer.release()
 
 
-def fake_prepare(video, output_dir, *, video_id, throwing_side, model_path, start_second, end_second, reference_context, quality):
+def fake_prepare(video, output_dir, *, video_id, throwing_side, model_path, start_second, end_second, reference_context, quality, subject_selection=None):
     """Same artifact contract as prepare_segment, with deterministic pose observations."""
     target = Path(output_dir)
     target.mkdir()
@@ -51,8 +51,10 @@ def fake_prepare(video, output_dir, *, video_id, throwing_side, model_path, star
         writer.writeheader()
         writer.writerows(rows)
     (target / "pose_raw.capture.json").write_text(json.dumps({"fps": 30, "start_frame": 0, "end_frame": 11,
-                                                                     "requested_frames": 12, "detected_frames": 2,
-                                                                     "video": str(video), "width": 96, "height": 128}), encoding="utf-8")
+                                                                     "requested_frames": 12, "processed_frames": 12, "detected_frames": 2,
+                                                                     "video": str(video), "width": 96, "height": 128,
+                                                                     "subject_selection": subject_selection,
+                                                                     "selection_frames": [{"frame_index": frame, "status": "selected" if frame in (0, 2) else "rejected", "candidate_count": 1 if frame in (0, 2) else 0} for frame in range(12)]}), encoding="utf-8")
     (target / "events.json").write_text(json.dumps({"video_id": video_id, "throws": throwing_side,
                                                      "review_status": "needs_human_review", "events": {}}), encoding="utf-8")
     (target / "metadata.json").write_text(json.dumps({"capture": {"video": str(video)},
@@ -125,6 +127,7 @@ class Phase0InputTests(unittest.TestCase):
         value = metadata("pitcher_a", "pitch_001", self.video.name)
         for alteration in (lambda p: p.update(source_url="https://example.com/video"),
                            lambda p: p["video"].update(horizontal_mirror=True),
+                           lambda p: p["video"].update(camera_view="side"),
                            lambda p: p["video"].update(playback_speed=.5),
                            lambda p: p["video"].update(continuous_shot=False)):
             changed = json.loads(json.dumps(value))
@@ -185,6 +188,13 @@ class Phase0InputTests(unittest.TestCase):
             metrics = json.loads((target / "metrics.json").read_text(encoding="utf-8"))
             self.assertEqual(metrics["metrics"]["throwing_knee_angle"]["observed_frames"], 1)
             self.assertEqual(metrics["metrics"]["throwing_knee_angle"]["median"], 90)
+            quality = json.loads((target / "keypoint_quality.json").read_text(encoding="utf-8"))
+            self.assertEqual(quality["frames_with_valid_pitcher_pose"], 2)
+            self.assertEqual(quality["rejected_frame_count"], 10)
+            import cv2
+            overlay = cv2.VideoCapture(str(target / "overlay.mp4"))
+            self.assertEqual(int(overlay.get(cv2.CAP_PROP_FRAME_COUNT)), 12)
+            overlay.release()
             with self.assertRaises(FileExistsError):
                 analyze_pitch(self.video, self.meta, output_root=out, model_path=model)
             # Same pitch_id under a different pitcher is an independent analysis.
@@ -202,6 +212,14 @@ class Phase0InputTests(unittest.TestCase):
         self.assertFalse((output / "events.json").exists())
         self.assertEqual(len(json.loads((output / "keypoints.json").read_text(encoding="utf-8"))["frames"]), 12)
         self.assertEqual(json.loads((output / "metrics.json").read_text(encoding="utf-8"))["metrics"], {})
+        self.assertEqual(len((output / "keypoints.jsonl").read_text(encoding="utf-8").splitlines()), 12)
+        self.assertEqual(len((output / "processed_keypoints.jsonl").read_text(encoding="utf-8").splitlines()), 12)
+        quality = json.loads((output / "keypoint_quality.json").read_text(encoding="utf-8"))
+        self.assertEqual(quality["status"], "failed")
+        self.assertEqual(quality["frames_with_valid_pitcher_pose"], 0)
+        self.assertEqual(quality["longest_missing_pose_gap"], 12)
+        self.assertEqual(json.loads((output / "review" / "human_validation_template.json").read_text(encoding="utf-8"))["review_status"], "pending")
+        self.assertTrue((output / "overlay.mp4").exists())
 
 
 if __name__ == "__main__":

@@ -17,6 +17,7 @@
         "model_path": {"type": "string"},
         "packages": {"type": "object", "additionalProperties": {"type": "string"}},
         "standardization": {"enum": ["none", "h264_yuv420p_native_fps"]},
+        "subject_selection": {"const": "rear_centerfield_v1"},
         "timebase": {"const": "zero-based clip frames; CFR checked against decoded presentation timestamps"},
         "quality_config": {"type": "object"}
       }

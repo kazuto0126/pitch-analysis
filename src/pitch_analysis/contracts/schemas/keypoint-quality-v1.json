@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "status", "failure_reason", "total_frames", "frames_with_valid_pitcher_pose", "valid_pose_ratio", "interpolated_frame_count", "rejected_frame_count", "mean_landmark_confidence", "longest_missing_pose_gap", "existing_quality_gate_passed", "selection_protocol", "selection_frames", "notes"],
+  "properties": {
+    "schema_version": {"const": "keypoint-quality-v1"},
+    "status": {"enum": ["success", "degraded", "failed"]},
+    "failure_reason": {"type": ["string", "null"]},
+    "total_frames": {"type": "integer", "minimum": 2},
+    "frames_with_valid_pitcher_pose": {"type": "integer", "minimum": 0},
+    "valid_pose_ratio": {"type": "number", "minimum": 0, "maximum": 1},
+    "interpolated_frame_count": {"type": "integer", "minimum": 0},
+    "rejected_frame_count": {"type": "integer", "minimum": 0},
+    "mean_landmark_confidence": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+    "longest_missing_pose_gap": {"type": "integer", "minimum": 0},
+    "existing_quality_gate_passed": {"type": "boolean"},
+    "selection_protocol": {"const": "rear_centerfield_broadcast"},
+    "selection_frames": {"type": "array", "items": {"type": "object"}},
+    "notes": {"type": "array", "items": {"type": "string"}}
+  }
+}

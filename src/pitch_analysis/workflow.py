@@ -81,6 +81,7 @@ def prepare_segment(
     end_second: float | None,
     reference_context: Mapping[str, str] | None = None,
     quality: QualityConfig = QualityConfig(),
+    subject_selection: str | None = None,
 ) -> dict:
     """Extract, clean and featurize one bounded delivery without overwriting review.
 
@@ -94,7 +95,7 @@ def prepare_segment(
     raw = output / "pose_raw.csv"
     clean = output / "pose_clean.csv"
     features = output / "features.csv"
-    capture = extract_pose(video_path, model_path, raw, start_second=start_second, end_second=end_second)
+    capture = extract_pose(video_path, model_path, raw, start_second=start_second, end_second=end_second, subject_selection=subject_selection)
     if capture["detected_frames"] == 0:
         metadata = {
             "schema_version": "0.2",

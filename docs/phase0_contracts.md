@@ -15,7 +15,8 @@ Required fields: `schema_version`, `pitch_id`, `pitcher.id`, `pitcher.throws`, a
 Optional: pitcher display name and `context.season/team/pitch_type/session_id`.
 Unknown fields, including URL/source-download metadata, are rejected.
 
-Phase 0 supports declared unmirrored, real-time, continuous, full-body single pitches.
+The Phase 1 camera protocol now accepts only declared `rear_centerfield_broadcast`
+in addition to unmirrored, real-time, continuous, full-body single pitches.
 Mirrored/slow-motion/partial-body clips are rejected because the existing analysis core
 does not correct these inputs. These are **caller declarations**; passing the validator
 does not prove the clip contains one pitch or the correct person. Visual pose/event

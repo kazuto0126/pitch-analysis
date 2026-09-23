@@ -14,6 +14,15 @@ clean pose、2D feature 與 quality gate，輸出待人工覆核的單球結果�
 Phase 0 沒有新增自動事件偵測、投手追蹤、profile 或 overlay；既有 phase、DTW、normalization、
 registry 與 validation 演算法保留。現在的結果仍是 2D 投影分析，不能解讀為真實 3D biomechanical loading。
 
+## Phase 1：真實單球 baseline 進行中
+
+目前 `analyze-pitch` 僅接受 `rear_centerfield_broadcast`。它會在多人體姿態中以
+畫面位置、身體尺度與時間連續性保守選取投手，並輸出逐幀原始／處理後 keypoints、
+品質摘要、2D 投手手腕軌跡、`overlay.mp4` 與獨立人工檢查表。這不是球員身分 ReID；
+視角與完整投球仍須人工核對。目前 repository 尚無 3–5 支已剪好的真實 MLB 單球
+MP4，因此正向驗收尚未完成，不能宣稱 Phase 1 完成。詳細流程與限制見
+[Phase 1 baseline](docs/phase1_baseline.md)。
+
 ## 安裝（Windows x64 / Python 3.12）
 
 從專案根目錄執行：
@@ -116,5 +125,6 @@ preprocessing 完整保存於 `integration/opencode-preprocessing` 的 `4a65c32`
 
 ## 接續開發
 
-Phase 0 到此停止。下一階段的 subject tracking、pose backend interface、事件偵測、
-biomechanics 擴充、body-relative normalization、profile 與視覺化，須在確認後才執行。
+Phase 0 已封存。Phase 1 先完成真實單球的姿態主體選擇、debug overlay 與品質驗證；
+待 3–5 支已準備好的 MLB 單球素材完成正向測試和人工覆核後，才能結案。更完整的
+事件偵測、pose backend interface、biomechanics、profile 與多投手比較屬後續階段。
