@@ -1,6 +1,6 @@
 # Current status — Phase 1 finalization
 
-Updated: 2026-09-24
+Updated: 2026-09-25
 
 **Phase 1 = PASSED**
 
@@ -32,31 +32,36 @@ files were checked against their original SHA-256 hashes; see
 
 ## Final Phase 1 validation
 
-The five-pair E2E run wrote
-`analysis_results/phase1_final_validation_20260924_01/`, with
-`validation_summary.json`, `final_acceptance.json`,
-`visual_inspection.json`, `test_suite.log`, and one analysis directory per
-formal pitch under `yoshinobu_yamamoto/`. Every input-quality result is
-`accepted`; every keypoint-quality result is `success`. The analysis
+The fresh five-pair E2E run wrote
+`analysis_results/phase1_final_yamamoto_20260925_01/`, with
+`validation_summary.json`, `artifact_audit.json`, `final_acceptance.json`,
+`visual_inspection.json`, `test_suite.log`, five overlay contact sheets, and
+one analysis directory per formal pitch under `yoshinobu_yamamoto/`. Every
+input-quality result is `accepted`; every MP4 technical result is `validated`;
+every keypoint-quality result is `success`.
+All five output directories contain raw and processed keypoints, quality files,
+metrics, and decodable overlays with one frame per input frame. The analysis
 manifests remain `needs_event_review` because event labels are not inferred
 automatically.
 
-| Pitch | Valid pose | Mean visibility | Longest pose gap | Throwing elbow raw coverage | Lead knee raw coverage |
-|---|---:|---:|---:|---:|---:|
-| `pitch_001` | 87/87 (100%) | 0.814 | 0 frames | 51.72% | 93.10% |
-| `pitch_002` | 175/175 (100%) | 0.816 | 0 frames | 65.14% | 98.86% |
-| `pitch_003` | 115/115 (100%) | 0.823 | 0 frames | 53.04% | 90.43% |
-| `pitch_004` | 112/114 (98.25%) | 0.812 | 2 frames | 50.88% | 90.35% |
-| `pitch_005` | 100/101 (99.01%) | 0.827 | 1 frame | 71.29% | 86.14% |
+| Pitch | Total | Valid pose | Rejected | Interpolated | Mean visibility | Longest pose gap | Throwing elbow raw coverage | Lead knee raw coverage | Status |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---|
+| `pitch_001` | 87 | 87 (100%) | 0 | 16 | 0.814 | 0 frames | 51.72% | 93.10% | success |
+| `pitch_002` | 175 | 175 (100%) | 0 | 25 | 0.816 | 0 frames | 65.14% | 98.86% | success |
+| `pitch_003` | 115 | 115 (100%) | 0 | 32 | 0.823 | 0 frames | 53.04% | 90.43% | success |
+| `pitch_004` | 114 | 112 (98.25%) | 2 | 22 | 0.812 | 2 frames | 50.88% | 90.35% | success |
+| `pitch_005` | 101 | 100 (99.01%) | 1 | 19 | 0.827 | 1 frame | 71.29% | 86.14% | success |
 
 All five exceed the unchanged 50% throwing-elbow raw-coverage requirement.
 The other core raw feature coverages are at least 80%, and valid pose
-coverage is at least 90%.
+coverage is at least 90%. None has a degradation or failure reason.
 
 ## Overlay inspection
 
-The five final overlays were viewed directly. They are byte-identical to
-the corresponding overlays from earlier all-frame reviews. All five show
+The five final overlays were reviewed visually using contact sheets that span
+each clip. The freshly rendered overlay MP4s are byte-identical to the
+corresponding overlays from the earlier all-frame review, and the contact
+sheets are retained in the new output directory. All five show
 a continuous, plausible rear-centerfield view, preparation through leg lift,
 delivery, and follow-through. The selected skeleton remains on pitcher #18;
 no whole-subject identity switch or camera cut was observed. No replay or
@@ -85,7 +90,15 @@ Phase 1 acceptance result.
 
 The full unittest suite ran with
 `PITCH_ANALYSIS_REAL_BASELINE_DIR=input/yoshinobu_yamamoto/phase1_final`:
-**62 tests, OK, 0 skipped**. This includes the opt-in real five-pitch E2E
+**62 passed, 0 failed, 0 skipped**. This includes the opt-in real five-pitch E2E
 test. `input/` and `analysis_results/` are intentionally Git-ignored;
-the finalization commit records this status document and documentation
-updates, while the videos, archive, and run outputs remain local.
+Git records this status update, while the videos, archive, and run outputs
+remain local.
+
+## Next step recommendation
+
+Keep the five formal clips and the superseded archive unchanged. Have a human
+reviewer confirm pitcher identity, throwing-arm and lead-leg landmarks, and
+event boundaries using the retained overlays and review templates. Record that
+approval separately before adding these pitches to any registry. This
+recommendation does not begin Phase 2.
