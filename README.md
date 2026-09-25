@@ -24,6 +24,16 @@ finalization，五支均通過現有 clip-level acceptance 條件；正式狀態
 [Current status](docs/current_status.md)。先前失敗素材的歷史紀錄見
 [Phase 1 baseline](docs/phase1_baseline.md)。
 
+## Phase 2：投手追蹤與姿態可靠度
+
+正式五支山本由伸單球作為第一個 baseline dataset。Phase 2 在獨立分支上新增
+逐關節 observed／interpolated／missing 狀態、關節覆蓋率與跳動檢查，以及
+投手骨架的 ROI、中心、尺度、動作連續性和 track-break 警示。原有 MediaPipe
+推論經共用 `PoseEstimator` 介面執行，未更換模型或修改選取門檻。
+目前人工 ground truth 尚未完成，Phase 2 可靠度結果是待驗證的診斷；
+詳見 [Phase 2 reliability](docs/phase2_reliability.md) 與
+[manual ground truth](docs/phase2_ground_truth.md)。
+
 `validate-input-quality <mp4> <metadata.json>` 先做影片層的保守檢查；
 `analyze-pitch` 會在姿態推論前執行同樣 preflight。明顯切鏡標記 `rejected`，
 不執行後續 pose；其他素材執行原有 pipeline 後，將主體遺失、疑似 identity switch、
@@ -139,6 +149,6 @@ preprocessing 完整保存於 `integration/opencode-preprocessing` 的 `4a65c32`
 
 ## 接續開發
 
-Phase 0 已封存。Phase 1 先完成真實單球的姿態主體選擇、debug overlay 與品質驗證；
-待 3–5 支已準備好的 MLB 單球素材完成正向測試和人工覆核後，才能結案。更完整的
-事件偵測、pose backend interface、biomechanics、profile 與多投手比較屬後續階段。
+Phase 0 已封存，Phase 1 已通過五支正式單球的 clip-level 驗收。Phase 2
+目前聚焦於同五支影片的追蹤與關節可靠度，等待獨立人工標註來衡量實際
+準確性；尚不擴充多投手或跨投手比較。

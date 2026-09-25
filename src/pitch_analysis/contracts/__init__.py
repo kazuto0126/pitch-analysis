@@ -8,7 +8,7 @@ from pathlib import Path
 from jsonschema import Draft202012Validator
 
 
-SCHEMAS = {"pitch-input-v1", "video-validation-v1", "input-quality-v1", "keypoints-v1", "keypoint-quality-v1", "pitch-events-v1", "pitch-metrics-v1", "pitch-analysis-v1", "pitcher-profile-v1", "pitcher-comparison-v1"}
+SCHEMAS = {"pitch-input-v1", "video-validation-v1", "input-quality-v1", "keypoints-v1", "keypoint-quality-v1", "pitch-events-v1", "pitch-metrics-v1", "pitch-analysis-v1", "pitcher-profile-v1", "pitcher-comparison-v1", "ground-truth-v1"}
 
 
 def validate_contract(payload: dict, schema_name: str) -> None:

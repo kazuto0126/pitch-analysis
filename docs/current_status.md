@@ -1,12 +1,46 @@
-# Current status — Phase 1 finalization
+# Current status — Phase 1 accepted; Phase 2 reliability baseline
 
 Updated: 2026-09-25
 
 **Phase 1 = PASSED**
 
 The five formal Yoshinobu Yamamoto single-pitch inputs passed the existing
-Phase 1 clip-level acceptance checks. No threshold, PitcherSelector, pose
-algorithm or analysis logic was changed. Phase 2 has not started.
+Phase 1 clip-level acceptance checks. Phase 2 now evaluates tracking and
+per-joint pose reliability on those same five clips. No Phase 1 threshold,
+PitcherSelector rule, pose algorithm, interpolation, or smoothing policy was
+changed.
+
+**Phase 2 = IN PROGRESS — human ground truth pending.** The baseline runner,
+reports, and annotation workflow are available; program execution is not a
+Phase 2 acceptance result.
+
+## Phase 2 baseline
+
+Latest output: `analysis_results/phase2_yamamoto_20260925_01/`. It contains
+fresh five-pitch predictions and overlays, per-pitch `pose_reliability.json`
+and `tracking_reliability.json`, separate blank `ground_truth.json` templates,
+and `evaluation_summary.json`. Fresh raw pose CSV and overlay MP4 hashes match
+the Phase 1 final run for all five clips after introducing the `PoseEstimator`
+interface. MediaPipe remains the backend.
+
+| Pitch | Tracking reliability | Track break | Pose signal reliability | Throwing elbow joint raw | Throwing elbow angle raw | Throwing wrist raw / longest missing |
+|---|---|---:|---|---:|---:|---:|
+| `pitch_001` | reliable | 0 | unreliable | 66.7% | 51.72% | 51.7% / 32 frames |
+| `pitch_002` | reliable | 0 | unreliable | 88.6% | 65.14% | 65.1% / 31 frames |
+| `pitch_003` | reliable | 0 | unreliable | 84.3% | 53.04% | 53.9% / 18 frames |
+| `pitch_004` | partially_reliable | frames 75–76 | unreliable | 72.8% | 50.88% | 51.8% / 18 frames |
+| `pitch_005` | partially_reliable | frame 54 | unreliable | 88.1% | 71.29% | 71.3% / 13 frames |
+
+The tracking audit found no raw-continuity identity-switch warning. A warning
+cannot confirm identity, and its absence cannot prove correct pitcher
+selection. The provisional pose policy conservatively marks all five clip
+signals unreliable because of long throwing-wrist missing spans. This does
+not change the Phase 1 clip acceptance outcome. All five ground-truth files
+remain `unreviewed`; actual tracking and keypoint accuracy are unmeasured.
+See [Phase 2 reliability](phase2_reliability.md) and
+[manual ground truth](phase2_ground_truth.md).
+The full suite, including the real five-pitch E2E test, reports **84 passed,
+0 failed, 0 skipped** on this Phase 2 branch.
 
 ## Formal inputs and preservation
 
@@ -98,7 +132,9 @@ remain local.
 ## Next step recommendation
 
 Keep the five formal clips and the superseded archive unchanged. Have a human
-reviewer confirm pitcher identity, throwing-arm and lead-leg landmarks, and
-event boundaries using the retained overlays and review templates. Record that
-approval separately before adding these pitches to any registry. This
-recommendation does not begin Phase 2.
+reviewer annotate the five separate Phase 2 ground-truth templates against
+each source video and overlay. Then run the comparison workflow and inspect
+false negative switch warnings, observed but unreliable joints, and event
+visibility. Calibrate reliability labels only after that evidence exists;
+do not treat the current heuristic labels as ground-truth accuracy. Do not
+begin Phase 3 or add more pitchers yet.

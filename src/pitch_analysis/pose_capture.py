@@ -1,8 +1,11 @@
-"""MediaPipe Pose Landmarker extraction with reusable video/segment parameters."""
+"""Pose extraction through the shared backend contract."""
 from __future__ import annotations
 import csv
 import json
 from pathlib import Path
+from typing import Callable
+
+from .pose_estimator import MediaPipePoseEstimator, PoseEstimator
 
 
 LANDMARK_NAMES = (
@@ -10,9 +13,8 @@ LANDMARK_NAMES = (
 )
 
 
-def extract_pose(video_path: str | Path, model_path: str | Path, output_csv: str | Path, *, start_second: float = 0.0, end_second: float | None = None, subject_selection: str | None = None) -> dict:
+def extract_pose(video_path: str | Path, model_path: str | Path, output_csv: str | Path, *, start_second: float = 0.0, end_second: float | None = None, subject_selection: str | None = None, estimator_factory: Callable[[Path, int], PoseEstimator] | None = None) -> dict:
     import cv2
-    import mediapipe as mp
 
     from .subject import PitcherSelector
 
@@ -35,13 +37,12 @@ def extract_pose(video_path: str | Path, model_path: str | Path, output_csv: str
     if end_frame < start_frame:
         raise ValueError("end_second must be after start_second")
     capture.set(cv2.CAP_PROP_POS_FRAMES, start_frame)
-    BaseOptions = mp.tasks.BaseOptions
-    options = mp.tasks.vision.PoseLandmarkerOptions(base_options=BaseOptions(model_asset_path=str(model_path)), running_mode=mp.tasks.vision.RunningMode.VIDEO, num_poses=4 if selector else 1, min_pose_detection_confidence=.5, min_pose_presence_confidence=.5, min_tracking_confidence=.5)
+    factory = estimator_factory or (lambda path, count: MediaPipePoseEstimator(path, num_poses=count))
     detected_frames = 0
     processed_frames = 0
     selection_frames = []
     try:
-        with output_csv.open("w", newline="", encoding="utf-8-sig") as sink, mp.tasks.vision.PoseLandmarker.create_from_options(options) as landmarker:
+        with output_csv.open("w", newline="", encoding="utf-8-sig") as sink, factory(model_path, 4 if selector else 1) as estimator:
             writer = csv.DictWriter(sink, fieldnames=("frame", "timestamp_ms", "landmark", "x", "y", "z", "visibility", "presence"))
             writer.writeheader()
             for frame_number in range(start_frame, end_frame + 1):
@@ -49,9 +50,10 @@ def extract_pose(video_path: str | Path, model_path: str | Path, output_csv: str
                 if not ok:
                     break
                 processed_frames += 1
-                image = mp.Image(image_format=mp.ImageFormat.SRGB, data=cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
                 timestamp_ms = round(capture.get(cv2.CAP_PROP_POS_MSEC)) if selector else round(frame_number * 1000 / fps)
-                result = landmarker.detect_for_video(image, timestamp_ms)
+                result = estimator.estimate(frame, timestamp_ms)
+                if any(len(pose) != len(LANDMARK_NAMES) for pose in result.pose_landmarks):
+                    raise ValueError("Pose backend must return 33 ordered landmarks per subject")
                 if selector:
                     choice = selector.select(result.pose_landmarks)
                     selection_frames.append({"frame_index": frame_number, "timestamp_ms": timestamp_ms,
