@@ -12,3 +12,7 @@ temp/
 output/
 .cache/
 # Historically tracked data and .venv are retained until a separate migration.
+
+# Local environment and video assets
+.venv/
+*.mp4
