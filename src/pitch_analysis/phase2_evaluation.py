@@ -50,6 +50,14 @@ def evaluate_against_ground_truth(ground_truth: dict, pose: dict, tracking: dict
             "reason": "Human labels are incomplete; model predictions cannot serve as ground truth.",
         }
 
+    # The extended review records ranges and uncertain subject/failure intervals.
+    # The legacy comparator must not silently turn these into exact/negative labels.
+    if ground_truth.get("review_profile") == "phase2_full_review":
+        raise ValueError(
+            "Full manual review requires uncertainty-aware comparison support; "
+            "preserve the labels and prepare that comparison after human review."
+        )
+
     labels = ground_truth["labels"]
     total = ground_truth["source_video"]["total_frames"]
     if total != pose["total_frames"] or total != tracking["total_frames"]:

@@ -1,0 +1,40 @@
+{
+  "schema_version": "ground-truth-v1",
+  "annotation_status": "unreviewed",
+  "source_video": {
+    "pitch_id": "pitch_003",
+    "filename": "pitch_003.mp4",
+    "sha256": "5c08dba98504d998536dfd0f0fab598760400612c9049445a68120e68fdf024c",
+    "total_frames": 115,
+    "frame_index_base": 0
+  },
+  "provenance": {
+    "reviewer": null,
+    "reviewed_at_utc": null,
+    "method": "manual_video_review",
+    "guidelines_version": "ground-truth-guidelines-v1"
+  },
+  "labels": {
+    "pitcher_correctly_selected": null,
+    "identity_switch_intervals": null,
+    "major_pose_failure_intervals": null,
+    "throwing_elbow_reliability": null,
+    "lead_knee_reliability": null,
+    "events": {
+      "preparation_start": null,
+      "leg_lift": null,
+      "foot_plant": null,
+      "approximate_release": null,
+      "follow_through_end": null
+    },
+    "track_break_intervals": null,
+    "throwing_arm_occlusion_intervals": null,
+    "throwing_shoulder_reliability": null,
+    "throwing_wrist_reliability": null,
+    "lead_hip_reliability": null,
+    "lead_ankle_reliability": null,
+    "pitcher_selection_review": null
+  },
+  "notes": [],
+  "review_profile": "phase2_full_review"
+}

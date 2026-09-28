@@ -1,6 +1,6 @@
 # Current status — Phase 1 accepted; Phase 2 reliability baseline
 
-Updated: 2026-09-25
+Updated: 2026-09-28
 
 **Phase 1 = PASSED**
 
@@ -16,9 +16,66 @@ Phase 2 acceptance result.
 
 ## Phase 2 baseline
 
+### Human review progress (2026-09-28)
+
+Manual review is **1/5**. `pitch_001/ground_truth.json` is `reviewed` by
+**HSU**, with completion time `2026-09-27T16:01:04Z` (2026-09-28 in Taiwan).
+The read-only review validator passed the schema, full-frame joint intervals,
+event ordering, and source-video hash checks. The judgments were supplied and
+entered by the human reviewer; validation does not establish model accuracy.
+`pitch_002` through `pitch_005` remain `unreviewed`. The next review is
+`pitch_002`, frames 0–174. No prediction comparison has been performed.
+
+The five canonical annotation JSON files under
+`analysis_results/phase2_yamamoto_20260925_01/ground_truth/` are explicitly
+included in Git for this review checkpoint. There is no second editable copy.
+Videos, overlays, contact sheets, and generated analysis reports remain local
+and ignored; source-video hashes in each annotation identify the required media.
+
+Checkpoint verification (2026-09-28 Taiwan time): **89 passed, 0 failed,
+1 skipped** (90 tests discovered). The opt-in real-video E2E was not enabled,
+so this checkpoint did not rerun the five formal videos. All five annotation
+files passed schema/source validation and retained their exact pre-checkpoint
+contents. Test log:
+`analysis_results/phase2_yamamoto_20260925_01/review_helper_20260926_01/test_suite_checkpoint_20260927T171721Z.log`.
+
+### Ground truth review preparation (2026-09-26–27)
+
+At preparation time, manual review was **0/5**. The five existing templates at
+`analysis_results/phase2_yamamoto_20260925_01/ground_truth/pitch_00N/ground_truth.json`
+now use the full-review extension of the same `ground-truth-v1` contract.
+All human judgments were initially null; no ground truth was inferred or scored
+by the preparation workflow. Current review progress is recorded above.
+The extension supports six joints, track breaks, throwing-arm occlusion,
+event frame ranges, explicit uncertainty/not-observable states, and reviewer
+confidence/notes. Original blank templates are preserved in the review
+package's `template_backups/` directory.
+
+Review-preparation tests (2026-09-27): **89 passed, 0 failed, 1 skipped**
+(90 discovered). The opt-in real-video E2E test was not enabled for this
+annotation-helper change. Log:
+`analysis_results/phase2_yamamoto_20260925_01/review_helper_20260926_01/test_suite_review_20260927.log`.
+
+Review entry point:
+`analysis_results/phase2_yamamoto_20260925_01/review_helper_20260926_01/START_HERE.md`.
+The package contains 592 full-size original/overlay frame pairs, 52 contact
+sheets, five per-frame state CSVs, and five checklists. Source hashes,
+frame/timestamp alignment, processed joint states, and decoded frame counts
+were verified. The original predictions and baseline reports remain unchanged.
+See [manual review instructions](phase2_ground_truth.md) for all field formats.
+
+Next: the human reviewer completes each clip, preserving uncertain ranges and
+occlusions, then validates the annotation schema/source. Only after that review
+should the comparison reader be extended to evaluate the full-review labels
+without collapsing uncertainty. The legacy comparator explicitly rejects this
+new profile rather than silently ignoring its additional labels. No comparison
+against the five human annotations has been run, and Phase 3 has not started.
+
+### Existing baseline findings
+
 Latest output: `analysis_results/phase2_yamamoto_20260925_01/`. It contains
 fresh five-pitch predictions and overlays, per-pitch `pose_reliability.json`
-and `tracking_reliability.json`, separate blank `ground_truth.json` templates,
+and `tracking_reliability.json`, initially blank separate `ground_truth.json` templates,
 and `evaluation_summary.json`. Fresh raw pose CSV and overlay MP4 hashes match
 the Phase 1 final run for all five clips after introducing the `PoseEstimator`
 interface. MediaPipe remains the backend.
@@ -36,11 +93,12 @@ cannot confirm identity, and its absence cannot prove correct pitcher
 selection. The provisional pose policy conservatively marks all five clip
 signals unreliable because of long throwing-wrist missing spans. This does
 not change the Phase 1 clip acceptance outcome. All five ground-truth files
-remain `unreviewed`; actual tracking and keypoint accuracy are unmeasured.
+were initially `unreviewed`; current human review progress is recorded above.
+Prediction agreement and actual tracking/keypoint accuracy remain unmeasured.
 See [Phase 2 reliability](phase2_reliability.md) and
 [manual ground truth](phase2_ground_truth.md).
-The full suite, including the real five-pitch E2E test, reports **84 passed,
-0 failed, 0 skipped** on this Phase 2 branch.
+The earlier baseline suite on 2026-09-25, including the real five-pitch E2E
+test, reported **84 passed, 0 failed, 0 skipped**.
 
 ## Formal inputs and preservation
 
@@ -125,16 +183,58 @@ Phase 1 acceptance result.
 The full unittest suite ran with
 `PITCH_ANALYSIS_REAL_BASELINE_DIR=input/yoshinobu_yamamoto/phase1_final`:
 **62 passed, 0 failed, 0 skipped**. This includes the opt-in real five-pitch E2E
-test. `input/` and `analysis_results/` are intentionally Git-ignored;
-Git records this status update, while the videos, archive, and run outputs
-remain local.
+test. `input/` and generated `analysis_results/` content remain Git-ignored,
+with the five canonical Phase 2 ground-truth JSON files as an explicit exception.
+Git records the review code, documentation, and annotation progress; videos,
+the media archive, and generated run outputs remain local.
 
 ## Next step recommendation
 
-Keep the five formal clips and the superseded archive unchanged. Have a human
-reviewer annotate the five separate Phase 2 ground-truth templates against
-each source video and overlay. Then run the comparison workflow and inspect
-false negative switch warnings, observed but unreliable joints, and event
-visibility. Calibrate reliability labels only after that evidence exists;
-do not treat the current heuristic labels as ground-truth accuracy. Do not
-begin Phase 3 or add more pitchers yet.
+Keep the five formal clips and the superseded archive unchanged. Follow this
+sequence agreed with the user on 2026-09-28:
+
+1. Finish human ground truth for `pitch_002` through `pitch_005`, one clip at a
+   time. Preserve `pitch_001` as the completed review. Human judgments must not
+   be inferred or filled automatically; validate each completed annotation.
+2. Extend the comparison reader to support the full-review contract, including
+   all six joints, track breaks, occlusion, event ranges, and uncertainty. Then
+   compare the five human annotations against the existing baseline predictions
+   in a new report. Keep raw-overlay judgments distinct from processed
+   observed/interpolated/missing states. Do not claim coordinate or event-timing
+   accuracy without matching reference data and predictions.
+3. Use those findings to decide whether pose/tracking reliability needs changes.
+   Do not change models, algorithms, or thresholds during manual review, and do
+   not treat successful execution as Phase 2 acceptance.
+4. Once Phase 2 is stable and accepted on evidence, proceed to the agreed
+   pitcher-motion analysis work. Do not automatically begin Phase 3.
+5. Subsequently integrate a small batch of MLB Pitch Clipper outputs under the
+   external handoff requirements below, then evaluate another pitcher.
+
+## Deferred MLB Pitch Clipper handoff
+
+`mlb-pitch-clipper` owns search, acquisition, cleaning, and cutting. Its current
+release candidate should remain unchanged unless a reproducible product bug
+requires a fix. `pitch-analysis` owns MP4 input validation, pose/tracking
+reliability, motion analysis, and later comparison/reporting. Do not duplicate
+Clipper's M1/M2 logic or depend on its internal temporary clips or event files.
+
+The current Clipper v0.1.0-rc1 downstream contract exports
+`<Pitcher_Name>_<Game_Year>.mp4`: chronological pitching clips in H.264/yuv420p,
+at original speed. This can be a multi-pitch compilation and may retain replays.
+It is not automatically a valid `pitch-input-v1` input. A shared folder or
+filename change alone does not resolve that difference.
+
+Before formal integration, the upstream handoff must provide individually
+prepared single-pitch MP4s plus adjacent `pitch-input-v1` JSON, with verified
+pitcher identity/handedness, continuous rear-centerfield full-body footage,
+normal speed, no mirror, and complete preparation/follow-through. Existing
+technical and quality gates still apply, including CFR and the 30-second limit.
+Keep the original Clipper product and available run/source manifests for
+traceability, outside the strict pitch metadata fields. Use a distinct batch
+directory and new analysis output root; never overwrite the Yamamoto baseline.
+
+The missing formal single-pitch handoff is a deferred integration requirement,
+not evidence of a Clipper bug or authorization to change Clipper now. Revisit it
+after the sequence above; GT completion alone does not authorize automatic
+integration. External MP4/JSON pairs can be read from a shared local folder, so
+merging repositories is unnecessary.

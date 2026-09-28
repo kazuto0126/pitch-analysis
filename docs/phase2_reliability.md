@@ -93,15 +93,24 @@ unreliable):
 
 ## Human ground truth and acceptance
 
-Five `ground_truth.json` files are blank templates with `annotation_status =
-unreviewed`. Follow [manual ground-truth guidelines](phase2_ground_truth.md)
-to record correct-subject selection, switches, major failures, throwing-elbow
-and lead-knee reliability intervals, and five event landmarks. A reviewer must
+Five `ground_truth.json` files were initially created as blank templates with
+`annotation_status = unreviewed`. As of 2026-09-28, `pitch_001` is reviewed by
+HSU and has passed schema/source validation; the other four remain unreviewed.
+Follow [manual ground-truth guidelines](phase2_ground_truth.md)
+to record correct-subject selection, switches, track breaks, major failures,
+throwing-arm occlusion, all six focus-joint reliability intervals, and five event
+landmarks. The same ground-truth-v1 contract now supports exact frames, ranges,
+uncertainty, not-observable states, confidence, and reviewer notes. A reviewer must
 inspect the source video and overlay. No prediction values are copied into
 human labels.
 
-After review, produce a *new* comparison report without changing predictions
-or annotations:
+The review package is at
+`analysis_results/phase2_yamamoto_20260925_01/review_helper_20260926_01/START_HERE.md`.
+Human review is 1/5 complete. After all five reviews, extend the comparison
+reader for the full-review fields and uncertainty before producing a *new*
+comparison report. The current legacy reader rejects this profile rather than
+silently interpreting uncertain intervals as confirmed errors. The following is
+the legacy invocation, **not a command to run during review preparation**:
 
 ```powershell
 .\.venv-analysis\Scripts\python.exe -B scripts\evaluate_phase2_ground_truth.py input\yoshinobu_yamamoto\phase1_final analysis_results\phase2_yamamoto_20260925_01 analysis_results\phase2_yamamoto_20260925_01\ground_truth_comparison_reviewed.json

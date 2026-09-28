@@ -6,7 +6,15 @@ build/
 dist/
 .pytest_cache/
 input/
-analysis_results/
+# Keep generated analysis local; version only the five canonical Phase 2 GT files.
+analysis_results/*
+!analysis_results/phase2_yamamoto_20260925_01/
+analysis_results/phase2_yamamoto_20260925_01/*
+!analysis_results/phase2_yamamoto_20260925_01/ground_truth/
+analysis_results/phase2_yamamoto_20260925_01/ground_truth/*
+!analysis_results/phase2_yamamoto_20260925_01/ground_truth/pitch_00[1-5]/
+analysis_results/phase2_yamamoto_20260925_01/ground_truth/pitch_00[1-5]/*
+!analysis_results/phase2_yamamoto_20260925_01/ground_truth/pitch_00[1-5]/ground_truth.json
 data/intake/
 temp/
 output/

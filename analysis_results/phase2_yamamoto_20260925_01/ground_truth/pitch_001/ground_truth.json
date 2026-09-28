@@ -1,0 +1,83 @@
+{
+  "schema_version": "ground-truth-v1",
+  "annotation_status": "reviewed",
+  "source_video": {
+    "pitch_id": "pitch_001",
+    "filename": "pitch_001.mp4",
+    "sha256": "7c9fe20e39c1b5358aa8e13b739222aebb6bf3ebfadf3569ccb3042c64f10190",
+    "total_frames": 87,
+    "frame_index_base": 0
+  },
+  "provenance": {
+    "reviewer": "HSU",
+    "reviewed_at_utc": "2026-09-27T16:01:04Z",
+    "method": "manual_video_review",
+    "guidelines_version": "ground-truth-guidelines-v1"
+  },
+  "labels": {
+    "pitcher_correctly_selected": true,
+    "identity_switch_intervals": [],
+    "major_pose_failure_intervals": [],
+    "throwing_elbow_reliability": [
+  {"start_frame":0,"end_frame":35,"status":"reliable","reason":"實際手肘可見，點位大致對位","confidence":null},
+  {"start_frame":36,"end_frame":37,"status":"unreliable","reason":"實際手肘可見，點位有偏差","confidence":null},
+  {"start_frame":38,"end_frame":40,"status":"reliable","reason":"實際手肘可見，點位對位","confidence":null},
+  {"start_frame":41,"end_frame":46,"status":"not_observable","reason":"手臂揮到身體前方，實際手肘被遮擋","confidence":null},
+  {"start_frame":47,"end_frame":54,"status":"unreliable","reason":"手肘點錯標到裁判腳附近","confidence":null},
+  {"start_frame":55,"end_frame":55,"status":"reliable","reason":"實際手肘可見，點位對位","confidence":null},
+  {"start_frame":56,"end_frame":56,"status":"unreliable","reason":"實際手肘可見，但未標到","confidence":null},
+  {"start_frame":57,"end_frame":57,"status":"reliable","reason":"實際手肘可見，點位對位","confidence":null},
+  {"start_frame":58,"end_frame":58,"status":"unreliable","reason":"實際手肘可見，但未標到","confidence":null},
+  {"start_frame":59,"end_frame":60,"status":"reliable","reason":"實際手肘可見，點位對位","confidence":null},
+  {"start_frame":61,"end_frame":83,"status":"not_observable","reason":"右手肘被身體遮擋，無法判讀實際位置","confidence":null},
+  {"start_frame":84,"end_frame":86,"status":"reliable","reason":"實際手肘可見，點位對位","confidence":null}
+],
+    "lead_knee_reliability": [
+  {"start_frame":0,"end_frame":34,"status":"reliable","reason":"左膝可見且點位大致對位","confidence":null},
+  {"start_frame":35,"end_frame":35,"status":"unreliable","reason":"實際左膝可見，但疊圖漏標","confidence":null},
+  {"start_frame":36,"end_frame":86,"status":"reliable","reason":"左膝可見且點位大致對位","confidence":null}
+],
+    "events": {
+      "preparation_start": {"status": "not_observable", "frame_index": null, "confidence": null, "note": "片段開始時前導左腳已抬起，無法看見開始離地的瞬間"},
+      "leg_lift": {"status": "annotated", "frame_index": null, "frame_range": {"start_frame": 12, "end_frame": 18}, "confidence": null, "note": "人工觀察的最高抬腿區間"},
+      "foot_plant": {"status": "annotated", "frame_index": null, "frame_range": {"start_frame": 34, "end_frame": 35}, "confidence": null, "note": "33格仍未著地，35格已著地"},
+      "approximate_release": {"status": "annotated", "frame_index": null, "frame_range": {"start_frame": 39, "end_frame": 40}, "confidence": null, "note": "39格球仍在手上，40格已離手"},
+      "follow_through_end": {"status": "annotated", "frame_index": null, "frame_range": {"start_frame": 58, "end_frame": 59}, "confidence": null, "note": "58格之後恢復平衡，收尾邊界約在58至59格"}
+    },
+    "track_break_intervals": [],
+    "throwing_arm_occlusion_intervals": [
+  {"start_frame":0,"end_frame":17,"status":"confirmed","reason":"右手腕在手套內，無法看見實際位置","confidence":null},
+  {"start_frame":36,"end_frame":38,"status":"confirmed","reason":"右手腕被遮擋","confidence":null},
+  {"start_frame":41,"end_frame":54,"status":"confirmed","reason":"右手肘與右手腕揮到身體前方，被身體遮擋","confidence":null},
+  {"start_frame":61,"end_frame":64,"status":"confirmed","reason":"右手肘被身體遮擋","confidence":null},
+  {"start_frame":65,"end_frame":83,"status":"confirmed","reason":"右手肘與右手腕被身體遮擋","confidence":null}
+],
+    "throwing_shoulder_reliability": [{"start_frame":0,"end_frame":86,"status":"reliable","reason":"人工觀察投球側肩點全片大致對位；第25格多出的線屬另一側手臂","confidence":null}],
+    "throwing_wrist_reliability": [
+  {"start_frame":0,"end_frame":17,"status":"not_observable","reason":"右手腕仍在手套內，原片看不清","confidence":null},
+  {"start_frame":18,"end_frame":19,"status":"reliable","reason":"右手腕可見，疊圖點對位","confidence":null},
+  {"start_frame":20,"end_frame":20,"status":"unreliable","reason":"右手腕可見，但漏標","confidence":null},
+  {"start_frame":21,"end_frame":35,"status":"reliable","reason":"右手腕可見，疊圖點沒有明顯偏移","confidence":null},
+  {"start_frame":36,"end_frame":38,"status":"not_observable","reason":"右手腕被遮擋，原片看不清","confidence":null},
+  {"start_frame":39,"end_frame":40,"status":"reliable","reason":"右手腕可見，原始疊圖點對位","confidence":null},
+  {"start_frame":41,"end_frame":46,"status":"not_observable","reason":"手臂揮到身體前方，右手腕看不清","confidence":null},
+  {"start_frame":47,"end_frame":54,"status":"unreliable","reason":"點位錯標到裁判腳附近","confidence":null},
+  {"start_frame":55,"end_frame":56,"status":"not_observable","reason":"原片看不清實際右手腕","confidence":null},
+  {"start_frame":57,"end_frame":64,"status":"unreliable","reason":"實際右手腕可見，但漏標","confidence":null},
+  {"start_frame":65,"end_frame":86,"status":"not_observable","reason":"原片看不清實際右手腕","confidence":null}
+],
+    "lead_hip_reliability": [{"start_frame":0,"end_frame":86,"status":"reliable","reason":"人工觀察全片左髖可見，點位大致對位","confidence":null}],
+    "lead_ankle_reliability": [
+  {"start_frame":0,"end_frame":34,"status":"reliable","reason":"左腳踝可見且點位大致對位","confidence":null},
+  {"start_frame":35,"end_frame":35,"status":"not_observable","reason":"實際左腳踝被遮擋，看不見位置","confidence":null},
+  {"start_frame":36,"end_frame":86,"status":"reliable","reason":"左腳踝可見且點位大致對位","confidence":null}
+],
+    "pitcher_selection_review": {"status": "annotated", "confidence": null, "note": ""}
+  },
+  "notes": [
+  "第19格手套側左手漏標，右手正常。",
+  "第25格左側手臂多出連到裁判腳附近的線；投球側肩點仍對位。",
+  "第29至30格手套側左手點位偏移。"
+],
+  "review_profile": "phase2_full_review"
+}
