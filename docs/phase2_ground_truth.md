@@ -7,6 +7,22 @@
 尚未執行 prediction comparison；標註完成與格式有效不代表 Phase 2 通過。
 後續工作順序及 Clipper 接入條件記錄於 [current status](current_status.md)。
 
+## 人工覆核紀錄 — HSU（2026-09-28）
+
+`pitch_001` 的 ground truth 由 **HSU 親自觀看影片、overlay 與逐格對照圖，逐項判讀並手動填寫**。
+本次覆核涵蓋 0–86 格的主體追蹤、六個重要關節的可靠性／遮擋區間，以及投球事件的影格或範圍。
+HSU 也逐次指出漏標、錯位及關節誤連到裁判腳附近等問題，並確認可見與不可見的區別。
+無法清楚判斷的部分保留不可觀測狀態或事件範圍。
+
+Codex 協助提供檢查素材、解釋欄位、整理 HSU 已表達的觀察及驗證 JSON 格式；
+人工判斷來自 HSU，並非由模型自動產生後直接當作 ground truth。
+
+- Reviewer：`HSU`；方法：`manual_video_review`。
+- JSON 記錄的完成時間：`2026-09-27T16:01:04Z`（臺灣時間 2026-09-28 00:01:04）。
+- 人工標註檔：[pitch_001/ground_truth.json](../analysis_results/phase2_yamamoto_20260925_01/ground_truth/pitch_001/ground_truth.json)。
+- 首次保存此標註的 checkpoint：[`f48fc0c`](https://github.com/kazuto0126/pitch-analysis/commit/f48fc0cb0353c18835691f13a2670051d76b4141)。
+- 本紀錄涵蓋已完成的 `pitch_001`，整體進度為 **1/5**；其餘四支仍待人工覆核，Phase 2 尚未通過驗收。
+
 ## 從哪裡開始
 
 本次入口：`analysis_results/phase2_yamamoto_20260925_01/review_helper_20260926_01/START_HERE.md`。
