@@ -1,6 +1,6 @@
 # Current status — Phase 1 accepted; Phase 2 reliability baseline
 
-Updated: 2026-09-28
+Updated: 2026-09-30
 
 **Phase 1 = PASSED**
 
@@ -16,15 +16,28 @@ Phase 2 acceptance result.
 
 ## Phase 2 baseline
 
-### Human review progress (2026-09-28)
+### Human review progress (2026-09-30)
 
-Manual review is **1/5**. `pitch_001/ground_truth.json` is `reviewed` by
-**HSU**, with completion time `2026-09-27T16:01:04Z` (2026-09-28 in Taiwan).
+Manual review is **2/5**. `pitch_001/ground_truth.json` and
+`pitch_002/ground_truth.json` are `reviewed` by **HSU**, with completion times
+`2026-09-27T16:01:04Z` and `2026-09-30T12:47:32Z`, respectively.
 The read-only review validator passed the schema, full-frame joint intervals,
 event ordering, and source-video hash checks. The judgments were supplied and
 entered by the human reviewer; validation does not establish model accuracy.
-`pitch_002` through `pitch_005` remain `unreviewed`. The next review is
-`pitch_002`, frames 0–174. No prediction comparison has been performed.
+`pitch_003` through `pitch_005` remain `unreviewed`. The next review is
+`pitch_003`, frames 0–114. No prediction comparison has been performed.
+
+For `pitch_002`, HSU confirmed continuous correct-subject tracking, no identity
+switch, no obvious track break, and no major whole-pose failure. Right shoulder
+and left hip/knee/ankle alignment were accepted throughout frames 0–174.
+Right-wrist frames 18–19 were visible but unmarked; frames 72–92 were hidden in
+the glove and frames 144–174 behind the body. Right-elbow frames 140–141,
+144–155, and 166–167 were not observable; the remaining elbow intervals were
+accepted. These are human observations of the imagery and raw overlay, not
+replacements for processed observed/interpolated/missing states.
+HSU annotated preparation start at 74, peak leg lift at 118, foot plant at 140,
+approximate release within 141–143, and follow-through end at 168. Unobserved
+positions remain unobserved and confidence values remain null.
 
 The five canonical annotation JSON files under
 `analysis_results/phase2_yamamoto_20260925_01/ground_truth/` are explicitly
@@ -193,8 +206,8 @@ the media archive, and generated run outputs remain local.
 Keep the five formal clips and the superseded archive unchanged. Follow this
 sequence agreed with the user on 2026-09-28:
 
-1. Finish human ground truth for `pitch_002` through `pitch_005`, one clip at a
-   time. Preserve `pitch_001` as the completed review. Human judgments must not
+1. Finish human ground truth for `pitch_003` through `pitch_005`, one clip at a
+   time. Preserve `pitch_001` and `pitch_002` as completed reviews. Human judgments must not
    be inferred or filled automatically; validate each completed annotation.
 2. Extend the comparison reader to support the full-review contract, including
    all six joints, track breaks, occlusion, event ranges, and uncertainty. Then

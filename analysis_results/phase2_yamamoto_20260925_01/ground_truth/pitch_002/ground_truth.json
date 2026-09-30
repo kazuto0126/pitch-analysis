@@ -1,6 +1,6 @@
 {
   "schema_version": "ground-truth-v1",
-  "annotation_status": "unreviewed",
+  "annotation_status": "reviewed",
   "source_video": {
     "pitch_id": "pitch_002",
     "filename": "pitch_002.mp4",
@@ -9,31 +9,69 @@
     "frame_index_base": 0
   },
   "provenance": {
-    "reviewer": null,
-    "reviewed_at_utc": null,
+    "reviewer": "HSU",
+    "reviewed_at_utc": "2026-09-30T12:47:32Z",
     "method": "manual_video_review",
     "guidelines_version": "ground-truth-guidelines-v1"
   },
   "labels": {
-    "pitcher_correctly_selected": null,
-    "identity_switch_intervals": null,
-    "major_pose_failure_intervals": null,
-    "throwing_elbow_reliability": null,
-    "lead_knee_reliability": null,
+    "pitcher_correctly_selected": true,
+    "identity_switch_intervals": [],
+    "major_pose_failure_intervals": [],
+    "throwing_elbow_reliability": [
+  {"start_frame": 0, "end_frame": 139, "status": "reliable", "reason": "右手肘可見，標記正確。", "confidence": null},
+  {"start_frame": 140, "end_frame": 141, "status": "not_observable", "reason": "右手肘看不清楚，無法核對點位。", "confidence": null},
+  {"start_frame": 142, "end_frame": 143, "status": "reliable", "reason": "右手肘可見，標記正確。", "confidence": null},
+  {"start_frame": 144, "end_frame": 155, "status": "not_observable", "reason": "右手肘被身體遮住；144–145 格雖有標點，仍無法確認真實位置。", "confidence": null},
+  {"start_frame": 156, "end_frame": 165, "status": "reliable", "reason": "人工確認右手肘標記正確。", "confidence": null},
+  {"start_frame": 166, "end_frame": 167, "status": "not_observable", "reason": "未被身體直接遮住，但無法從原片辨識右手肘位置，也沒有標點。", "confidence": null},
+  {"start_frame": 168, "end_frame": 174, "status": "reliable", "reason": "右手肘看得清楚，標記正確。", "confidence": null}
+],
+    "lead_knee_reliability": [
+  {"start_frame": 0, "end_frame": 174, "status": "reliable", "reason": "HSU 人工覆核：左膝蓋全片可見，標記正確。", "confidence": null}
+],
     "events": {
-      "preparation_start": null,
-      "leg_lift": null,
-      "foot_plant": null,
-      "approximate_release": null,
-      "follow_through_end": null
+      "preparation_start": {"status": "annotated", "frame_index": 74, "confidence": null, "note": "HSU 判定第 74 格開始進入投球準備動作。"},
+"leg_lift": {"status": "annotated", "frame_index": 118, "confidence": null, "note": "HSU 判定第 118 格為最高抬腿。"},
+"foot_plant": {"status": "annotated", "frame_index": 140, "confidence": null, "note": "HSU 判定第 140 格左腳首次落地。"},
+"approximate_release": {"status": "annotated", "frame_index": null, "frame_range": {"start_frame": 141, "end_frame": 143}, "confidence": null, "note": "HSU 判定球在第 141–143 格之間離手，保留範圍。"},
+"follow_through_end": {"status": "annotated", "frame_index": 168, "confidence": null, "note": "HSU 判定第 168 格完成收尾、恢復穩定。"}
+
     },
-    "track_break_intervals": null,
-    "throwing_arm_occlusion_intervals": null,
-    "throwing_shoulder_reliability": null,
-    "throwing_wrist_reliability": null,
-    "lead_hip_reliability": null,
-    "lead_ankle_reliability": null,
-    "pitcher_selection_review": null
+    "track_break_intervals": [],
+    "throwing_arm_occlusion_intervals": [
+  {"start_frame": 72, "end_frame": 92, "status": "confirmed", "reason": "右手腕在手套裡，無法看見。", "confidence": null},
+  {"start_frame": 144, "end_frame": 155, "status": "confirmed", "reason": "右手肘與右手腕被身體遮住。", "confidence": null},
+  {"start_frame": 156, "end_frame": 174, "status": "confirmed", "reason": "右手腕持續被身體遮住。", "confidence": null}
+],
+    "throwing_shoulder_reliability": [
+  {
+    "start_frame": 0,
+    "end_frame": 174,
+    "status": "reliable",
+    "reason": "HSU 人工覆核：右肩點全片對位，未見明顯偏移。",
+    "confidence": null
+  }
+],
+    "throwing_wrist_reliability": [
+  {"start_frame": 0, "end_frame": 17, "status": "reliable", "reason": "右手腕可見，標記正確。", "confidence": null},
+  {"start_frame": 18, "end_frame": 19, "status": "unreliable", "reason": "右手腕看得見，但沒有標到。", "confidence": null},
+  {"start_frame": 20, "end_frame": 71, "status": "reliable", "reason": "人工覆核右手腕標記正確。", "confidence": null},
+  {"start_frame": 72, "end_frame": 92, "status": "not_observable", "reason": "右手腕在手套裡，看不到也沒有標點。", "confidence": null},
+  {"start_frame": 93, "end_frame": 143, "status": "reliable", "reason": "人工覆核右手腕標記正確。", "confidence": null},
+  {"start_frame": 144, "end_frame": 174, "status": "not_observable", "reason": "右手腕被身體遮住，看不到也沒有標點。", "confidence": null}
+],
+    "lead_hip_reliability": [
+  {"start_frame": 0, "end_frame": 174, "status": "reliable", "reason": "HSU 人工覆核：左髖點全片位置正確。", "confidence": null}
+],
+    "lead_ankle_reliability": [
+  {"start_frame": 0, "end_frame": 174, "status": "reliable", "reason": "HSU 人工覆核：左腳踝全片可見，標記正確。", "confidence": null}
+],
+"pitcher_selection_review": {
+  "status": "annotated",
+  "confidence": null,
+  "note": "HSU 人工覆核：主要骨架全程在投手身上，未見換人或明顯追蹤中斷。"
+}
   },
   "notes": [],
   "review_profile": "phase2_full_review"

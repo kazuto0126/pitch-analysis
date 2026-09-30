@@ -1,9 +1,9 @@
 # Phase 2 人工 Ground Truth Review
 
-更新：2026-09-28。沿用 **ground-truth-v1**，以 `review_profile: phase2_full_review`
+更新：2026-09-30。沿用 **ground-truth-v1**，以 `review_profile: phase2_full_review`
 擴充完整人工覆核欄位，舊版模板仍可讀取。原始／處理後 prediction 均不覆寫。
-目前人工覆核 **1/5**：`pitch_001` 已由 HSU 標為 `reviewed`，格式／來源驗證通過；
-`pitch_002`–`pitch_005` 尚未覆核。下一支為 `pitch_002`，不自動填入人工判斷。
+目前人工覆核 **2/5**：`pitch_001`、`pitch_002` 已由 HSU 標為 `reviewed`，格式／來源驗證通過；
+`pitch_003`–`pitch_005` 尚未覆核。下一支為 `pitch_003`，不自動填入人工判斷。
 尚未執行 prediction comparison；標註完成與格式有效不代表 Phase 2 通過。
 後續工作順序及 Clipper 接入條件記錄於 [current status](current_status.md)。
 
@@ -21,7 +21,24 @@ Codex 協助提供檢查素材、解釋欄位、整理 HSU 已表達的觀察及
 - JSON 記錄的完成時間：`2026-09-27T16:01:04Z`（臺灣時間 2026-09-28 00:01:04）。
 - 人工標註檔：[pitch_001/ground_truth.json](../analysis_results/phase2_yamamoto_20260925_01/ground_truth/pitch_001/ground_truth.json)。
 - 首次保存此標註的 checkpoint：[`f48fc0c`](https://github.com/kazuto0126/pitch-analysis/commit/f48fc0cb0353c18835691f13a2670051d76b4141)。
-- 本紀錄涵蓋已完成的 `pitch_001`，整體進度為 **1/5**；其餘四支仍待人工覆核，Phase 2 尚未通過驗收。
+- 本紀錄涵蓋已完成的 `pitch_001`，當時整體進度為 **1/5**；其餘四支仍待人工覆核。
+
+## 人工覆核紀錄 — HSU（2026-09-30）
+
+HSU 親自檢查 `pitch_002` 原片、overlay 與 0–174 格的對照圖，逐段提供判斷，
+並手動填寫同一份 [pitch_002/ground_truth.json](../analysis_results/phase2_yamamoto_20260925_01/ground_truth/pitch_002/ground_truth.json)。
+Codex 協助解釋欄位、依 HSU 的回答提供填寫片段與行號，並做只讀格式／來源驗證。
+
+- 主體全程在投手身上，未見 identity switch、明顯 track break 或整體姿勢錯亂。
+- 右肩、左髖、左膝與左腳踝全片標記正確。
+- 右手肘 140–141、144–155、166–167 格無法清楚觀察，其餘區間確認標記正確。
+- 右手腕 18–19 格可見但漏標；72–92 格藏在手套內；144–174 格被身體遮住。
+- 事件：準備開始 74、最高抬腿 118、落腳 140、出手範圍 141–143、收尾結束 168。
+- 完成時間：`2026-09-30T12:47:32Z`（臺灣時間 2026-09-30 20:47:32）。
+- `annotation_status = reviewed`；完整關節區間、事件順序、schema 與原片 SHA-256 驗證通過。
+
+人工不可觀測區間保留原判斷；未自行填入 confidence 數值或修改 prediction。
+目前進度 **2/5**，尚未執行 prediction comparison，Phase 2 仍未通過驗收。
 
 ## 從哪裡開始
 

@@ -94,8 +94,9 @@ unreliable):
 ## Human ground truth and acceptance
 
 Five `ground_truth.json` files were initially created as blank templates with
-`annotation_status = unreviewed`. As of 2026-09-28, `pitch_001` is reviewed by
-HSU and has passed schema/source validation; the other four remain unreviewed.
+`annotation_status = unreviewed`. As of 2026-09-30, `pitch_001` and `pitch_002`
+are reviewed by HSU and have passed schema/source validation; the other three
+remain unreviewed.
 Follow [manual ground-truth guidelines](phase2_ground_truth.md)
 to record correct-subject selection, switches, track breaks, major failures,
 throwing-arm occlusion, all six focus-joint reliability intervals, and five event
@@ -106,7 +107,7 @@ human labels.
 
 The review package is at
 `analysis_results/phase2_yamamoto_20260925_01/review_helper_20260926_01/START_HERE.md`.
-Human review is 1/5 complete. After all five reviews, extend the comparison
+Human review is 2/5 complete. After all five reviews, extend the comparison
 reader for the full-review fields and uncertainty before producing a *new*
 comparison report. The current legacy reader rejects this profile rather than
 silently interpreting uncertain intervals as confirmed errors. The following is
