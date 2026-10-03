@@ -1,0 +1,151 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "manual-keypoints-v1",
+  "title": "Independent manual two-dimensional skeleton coordinates",
+  "description": "Human-placed CVAT joint positions on original video images. Uncertain, hidden, and unreviewed joints have null coordinates. Runtime validation also enforces full ordered frame coverage and original image bounds.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "annotation_status", "source_video", "coordinate_system",
+    "image_size", "provenance", "frames", "notes"
+  ],
+  "properties": {
+    "schema_version": {"const": "manual-keypoints-v1"},
+    "annotation_status": {"enum": ["in_progress", "reviewed"]},
+    "source_video": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["pitch_id", "filename", "sha256", "total_frames", "frame_index_base"],
+      "properties": {
+        "pitch_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9_]{0,79}$"},
+        "filename": {"type": "string", "pattern": "^[^/\\\\:]+\\.[mM][pP]4$"},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "total_frames": {"type": "integer", "minimum": 1},
+        "frame_index_base": {"const": 0}
+      }
+    },
+    "coordinate_system": {"const": "original_image_pixels_xy"},
+    "image_size": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["width", "height"],
+      "properties": {
+        "width": {"type": "integer", "minimum": 1},
+        "height": {"type": "integer", "minimum": 1}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "reviewer", "reviewed_at_utc", "method", "guidelines_version",
+        "annotation_mode", "source_annotation_sha256"
+      ],
+      "properties": {
+        "reviewer": {"type": ["string", "null"], "minLength": 1},
+        "reviewed_at_utc": {
+          "type": ["string", "null"], "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}[Tt]\\d{2}:\\d{2}:\\d{2}(?:\\.\\d+)?(?:Z|\\+00:00)$"
+        },
+        "method": {"const": "manual_cvat_keypoints"},
+        "guidelines_version": {"const": "manual-keypoints-guidelines-v1"},
+        "annotation_mode": {"const": "independent"},
+        "source_annotation_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "frames": {
+      "type": "array", "minItems": 1,
+      "items": {"$ref": "#/$defs/frame"}
+    },
+    "notes": {"type": "array", "items": {"type": "string"}}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "frame": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["frame_index", "timestamp_ms", "image_name", "image_sha256", "joints"],
+      "properties": {
+        "frame_index": {"type": "integer", "minimum": 0},
+        "timestamp_ms": {"type": "number", "minimum": 0},
+        "image_name": {"type": "string", "pattern": "^[^/\\\\:]+$"},
+        "image_sha256": {"$ref": "#/$defs/sha256"},
+        "joints": {
+          "type": "array", "minItems": 12, "maxItems": 12,
+          "items": {"$ref": "#/$defs/joint"},
+          "allOf": [
+            {"contains": {"properties": {"name": {"const": "LEFT_SHOULDER"}}}, "minContains": 1, "maxContains": 1},
+            {"contains": {"properties": {"name": {"const": "RIGHT_SHOULDER"}}}, "minContains": 1, "maxContains": 1},
+            {"contains": {"properties": {"name": {"const": "LEFT_ELBOW"}}}, "minContains": 1, "maxContains": 1},
+            {"contains": {"properties": {"name": {"const": "RIGHT_ELBOW"}}}, "minContains": 1, "maxContains": 1},
+            {"contains": {"properties": {"name": {"const": "LEFT_WRIST"}}}, "minContains": 1, "maxContains": 1},
+            {"contains": {"properties": {"name": {"const": "RIGHT_WRIST"}}}, "minContains": 1, "maxContains": 1},
+            {"contains": {"properties": {"name": {"const": "LEFT_HIP"}}}, "minContains": 1, "maxContains": 1},
+            {"contains": {"properties": {"name": {"const": "RIGHT_HIP"}}}, "minContains": 1, "maxContains": 1},
+            {"contains": {"properties": {"name": {"const": "LEFT_KNEE"}}}, "minContains": 1, "maxContains": 1},
+            {"contains": {"properties": {"name": {"const": "RIGHT_KNEE"}}}, "minContains": 1, "maxContains": 1},
+            {"contains": {"properties": {"name": {"const": "LEFT_ANKLE"}}}, "minContains": 1, "maxContains": 1},
+            {"contains": {"properties": {"name": {"const": "RIGHT_ANKLE"}}}, "minContains": 1, "maxContains": 1}
+          ]
+        }
+      }
+    },
+    "joint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "status", "x_px", "y_px", "confidence", "note"],
+      "properties": {
+        "name": {
+          "enum": [
+            "LEFT_SHOULDER", "RIGHT_SHOULDER", "LEFT_ELBOW", "RIGHT_ELBOW",
+            "LEFT_WRIST", "RIGHT_WRIST", "LEFT_HIP", "RIGHT_HIP",
+            "LEFT_KNEE", "RIGHT_KNEE", "LEFT_ANKLE", "RIGHT_ANKLE"
+          ]
+        },
+        "status": {"enum": ["visible", "uncertain", "not_observable", "unreviewed"]},
+        "x_px": {"type": ["number", "null"], "minimum": 0},
+        "y_px": {"type": ["number", "null"], "minimum": 0},
+        "confidence": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+        "note": {"type": "string"}
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"status": {"const": "visible"}}},
+          "then": {"properties": {"x_px": {"type": "number"}, "y_px": {"type": "number"}}},
+          "else": {"properties": {"x_px": {"type": "null"}, "y_px": {"type": "null"}}}
+        },
+        {
+          "if": {"properties": {"status": {"enum": ["uncertain", "not_observable"]}}},
+          "then": {"properties": {"note": {"pattern": "\\S"}}}
+        }
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"annotation_status": {"const": "reviewed"}}},
+      "then": {
+        "properties": {
+          "provenance": {
+            "properties": {
+              "reviewer": {"type": "string", "pattern": "\\S"},
+              "reviewed_at_utc": {"type": "string"}
+            }
+          },
+          "frames": {
+            "items": {
+              "properties": {
+                "joints": {
+                  "items": {"properties": {"status": {"enum": ["visible", "uncertain", "not_observable"]}}}
+                }
+              }
+            }
+          }
+        }
+      },
+      "else": {
+        "properties": {"provenance": {"properties": {"reviewed_at_utc": {"type": "null"}}}}
+      }
+    }
+  ]
+}

@@ -117,6 +117,15 @@ uses blank templates of the same contract and stores returned judgments under
 disagreements. HSU's canonical files remain separate. Event supplementation
 alone does not complete `pitch_005` or establish Phase 2 acceptance.
 
+On 2026-10-04 the user clarified that the classmate should manually place
+2D joints, not only label reliability. The [CVAT coordinate workflow](phase2_manual_keypoints.md)
+exports original `pitch_003` images and imports an independent
+`manual-keypoints-v1` sidecar. The coordinate evaluator measures each joint's
+pixel error only where humans provide visible coordinates, and reports raw
+prediction misses separately. Non-visible/uncertain coordinates stay null.
+No real coordinate reference has been returned yet, so no actual coordinate
+error or model-learning result is available. Existing pose/tracking logic is unchanged.
+
 The review package is at
 `analysis_results/phase2_yamamoto_20260925_01/review_helper_20260926_01/START_HERE.md`.
 Human review is 4/5 complete. After all five reviews, extend the comparison

@@ -1,5 +1,9 @@
 # Phase 2 同學獨立覆核
 
+**2026-10-04 任務更正：** 使用者需要同學實際手動放置骨架 X/Y，原本這份可靠性紀錄表
+不包含座標，無法獨立提供位置誤差基準。本次請改用 [CVAT 人工座標流程](phase2_manual_keypoints.md)
+及新的 `manual_pose_package_20261004_01.zip`；本文件保留作可靠性／事件回覆與分 reviewer 匯入的說明。
+
 本流程讓同學在自己的電腦檢查影片、既有骨架及事件，交回獨立人工判斷。沿用 `ground-truth-v1` 與 `review_profile: phase2_full_review`，並將結果另存；既有 HSU 標註與原始 prediction 都保持各自的來源。
 
 ## 本次範圍

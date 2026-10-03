@@ -38,6 +38,10 @@ finalization，五支均通過現有 clip-level acceptance 條件；正式狀態
 [同學獨立覆核流程](docs/phase2_peer_review.md)：`pitch_003` 完整覆核、
 `pitch_005` 事件補充。回覆沿用相同 ground truth 格式，按 reviewer 分開保存。
 
+2026-10-04 確認同學任務改為 [手動骨架座標標註](docs/phase2_manual_keypoints.md)：
+用 CVAT 在 `pitch_003` 原始逐格圖上標 12 個身體關節，另補 `pitch_003`／`pitch_005`
+事件。人工 X/Y 與可見性另存，可量化既有 AI 的逐關節位置誤差；不自動更新模型。
+
 `validate-input-quality <mp4> <metadata.json>` 先做影片層的保守檢查；
 `analyze-pitch` 會在姿態推論前執行同樣 preflight。明顯切鏡標記 `rejected`，
 不執行後續 pose；其他素材執行原有 pipeline 後，將主體遺失、疑似 identity switch、

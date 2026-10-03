@@ -1,6 +1,6 @@
 # Current status — Phase 1 accepted; Phase 2 reliability baseline
 
-Updated: 2026-10-03
+Updated: 2026-10-04
 
 **Phase 1 = PASSED**
 
@@ -15,6 +15,48 @@ reports, and annotation workflow are available; program execution is not a
 Phase 2 acceptance result.
 
 ## Phase 2 baseline
+
+### Manual skeleton coordinate handoff (2026-10-04)
+
+The user clarified that the classmate should manually place skeleton X/Y,
+instead of only filling qualitative reliability intervals. The earlier
+`peer_review_package_20261003_01` has no human coordinate fields and is retained
+as the review history. The current handoff is
+`analysis_results/phase2_yamamoto_20260925_01/manual_pose_package_20261004_01.zip`.
+
+Use CVAT to mark all 115 original `pitch_003` frames (0–114), with the 12
+bilateral shoulder/elbow/wrist/hip/knee/ankle joints in original 510 × 628
+image pixels. No AI annotations are seeded. Each point must be explicitly
+visible, uncertain, not observable, or unreviewed; only manually confirmed
+visible points retain X/Y. Fully occluded or uncertain points carry no inferred
+coordinate. Start with frames 0–4 and return a pilot export to check the format
+before completing the rest. `pitch_003` and `pitch_005` events use the existing
+ground-truth-v1 exact/range/uncertainty workflow.
+
+The CVAT XML/ZIP importer validates the source filename/hash, decoded
+timeline and original PNG hashes, image names/dimensions, and manual point
+states. It stores an independent `manual-keypoints-v1` reference plus the
+original XML under `annotations/manual_keypoints/<review-id>/pitch_003/`.
+The original HSU ground truth and raw model predictions remain separate.
+The new evaluator is ready to report per-joint pixel errors and missing raw
+predictions using only human-visible coordinates. It creates no new pass
+threshold, does not change pose/tracking logic, and does not train MediaPipe.
+No human X/Y annotations have been returned and no real coordinate comparison
+has run. HSU full qualitative review remains 4/5; Phase 2 remains in progress.
+See [manual coordinate instructions](phase2_manual_keypoints.md).
+
+Handoff verification: 115 lossless PNG frame hashes and both blank event
+templates validated; portable HTML links and ZIP CRCs passed. The ZIP is
+80.4 MiB (240 files). All 25 existing source-video, HSU annotation, raw CSV,
+overlay, and raw keypoint JSON hashes remain unchanged. The current CVAT
+configuration follows its official Raw-label format; a logged-in CVAT task
+was not created here, so the first five manually annotated frames are the
+required pilot to verify the classmate's actual export before completing
+the clip. No video was uploaded to a third-party service by this handoff.
+
+Full suite: **138 passed, 0 failed, 1 skipped** (139 discovered). The skipped
+test is the opt-in real-video E2E; no pose/tracking pipeline was rerun.
+Log: `analysis_results/phase2_yamamoto_20260925_01/test_suite_manual_pose_20261004_01.log`.
 
 ### Human review progress (2026-10-03)
 
@@ -298,8 +340,8 @@ sequence agreed with the user on 2026-09-28:
 1. Finish human ground truth for `pitch_005`. Preserve `pitch_001` through
    `pitch_004` as completed reviews. Human judgments must not
    be inferred or filled automatically; validate each completed annotation.
-   Collect the authorized classmate review for `pitch_003` and event supplement
-   for `pitch_005` as separate evidence, then review disagreements together.
+   Collect the classmate's manual `pitch_003` coordinates and the two clips'
+   event supplements as separate evidence, then review disagreements together.
    The event supplement does not fill the remaining `pitch_005` joint intervals.
 2. Extend the comparison reader to support the full-review contract, including
    all six joints, track breaks, occlusion, event ranges, and uncertainty. Then

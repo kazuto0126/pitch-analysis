@@ -6,6 +6,11 @@
 `pitch_005` 已開始覆核（`in_progress`），尚未提供的人工判斷保持 null；啟動與最高抬腿保留不確定。
 目前另安排同學獨立完整覆核 `pitch_003`，並補充 `pitch_005` 的事件。
 詳見 [同學覆核及回傳流程](phase2_peer_review.md)，不自動推測人工判斷。
+
+2026-10-04 更正同學任務為 [手動骨架座標](phase2_manual_keypoints.md)：在 `pitch_003`
+原圖標 12 個身體關節，另填兩支事件。現有 `ground-truth-v1` 沒有 X/Y 欄位，
+因此座標使用獨立 `manual-keypoints-v1` sidecar；事件仍沿用本格式，沒有第二套事件 schema。
+可見性與座標均來自人工，完全遮擋或不確定時不補透視座標；原有 HSU 檔不覆寫。
 尚未執行 prediction comparison；標註完成與格式有效不代表 Phase 2 通過。
 後續工作順序及 Clipper 接入條件記錄於 [current status](current_status.md)。
 
