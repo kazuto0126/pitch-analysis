@@ -82,11 +82,57 @@ follow-through end 99. Pose errors after 99 remain included. Per HSU's
 explicit instruction after a full-frame review, otherwise unreported
 intervals are clear and have no reported alignment issue. Confidence is null.
 
-The five canonical annotation JSON files under
+The five canonical HSU annotation JSON files under
 `analysis_results/phase2_yamamoto_20260925_01/ground_truth/` are explicitly
-included in Git for this review checkpoint. There is no second editable copy.
+included in Git for this review checkpoint. Independent peer reviews use the
+same contract and are stored separately by reviewer/version; they do not replace
+these canonical files.
 Videos, overlays, contact sheets, and generated analysis reports remain local
 and ignored; source-video hashes in each annotation identify the required media.
+
+### Independent classmate review (2026-10-03)
+
+HSU's manual-review checkpoint was pushed to GitHub as
+[`a02f190`](https://github.com/kazuto0126/pitch-analysis/commit/a02f1900d4b3eb77214cbf12bdfc37eb98fa1153).
+The user confirmed `pitch_003` for a complete independent review and
+`pitch_005` for event supplementation. `pitch_003` was selected because HSU
+recorded the longest whole-pose major displacement among these five reviews
+(18 frames, 87–104), without assigning a combined score or claiming an
+identity switch. The student handout does not expose HSU's answers.
+
+Portable package:
+`analysis_results/phase2_yamamoto_20260925_01/peer_review_package_20261003_01.zip`.
+Extract it completely, open `START_HERE.html`, and fill each pitch's
+`REVIEW_NOTES.md` or blank `ground_truth.json`. It includes the existing original
+and browser-compatible raw-overlay videos, all 216 frame pairs, 19 contact
+sheets, and model-state CSVs. The export performs no analysis or inference.
+Media remain local and Git-ignored; the user shares the ZIP with the classmate.
+
+Returned judgments must retain the classmate's actual reviewer, review scope,
+time/timezone, source binding, and uncertainty. After faithful transcription
+and schema/source validation, save them under
+`annotations/phase2_peer_reviews/<review-id>/<pitch-id>/ground_truth.json`.
+The importer refuses existing destinations and preserves the supplied JSON
+bytes. Event-only `pitch_005` remains `in_progress`; this task does not complete
+the missing HSU joint intervals. No peer answers exist yet, no canonical labels
+have been changed for the handoff, and no prediction comparison has run.
+Occluded joints remain `not_observable`; no imagined positions are annotated.
+See [peer review instructions](phase2_peer_review.md).
+
+Handoff verification: the ZIP contains 253 files (48.0 MiB), with valid CRCs
+and relative HTML links that resolve inside the package. Both blank templates
+passed the existing schema validator and contain no HSU judgments. Source and
+overlay playback counts/timestamps match the frame CSVs: 115 and 101 frames,
+both at 30 FPS, with timestamp error below 1 ms. The five canonical JSONs and
+ten raw CSV/overlay artifacts retained their pre-handoff SHA-256 hashes.
+The in-app browser blocks `file:` URLs, so browser rendering from a local file
+was not verified there; the package includes direct media/image access and an
+optional loopback server for playback fallback.
+
+Full suite after the review tools were added: **107 passed, 0 failed,
+1 skipped** (108 discovered). The skipped test is the opt-in real five-video
+E2E; it was not enabled because this handoff changes no pose/tracking logic.
+Log: `analysis_results/phase2_yamamoto_20260925_01/test_suite_peer_review_20261003_01.log`.
 
 Checkpoint verification (2026-09-28 Taiwan time): **89 passed, 0 failed,
 1 skipped** (90 tests discovered). The opt-in real-video E2E was not enabled,
@@ -252,6 +298,9 @@ sequence agreed with the user on 2026-09-28:
 1. Finish human ground truth for `pitch_005`. Preserve `pitch_001` through
    `pitch_004` as completed reviews. Human judgments must not
    be inferred or filled automatically; validate each completed annotation.
+   Collect the authorized classmate review for `pitch_003` and event supplement
+   for `pitch_005` as separate evidence, then review disagreements together.
+   The event supplement does not fill the remaining `pitch_005` joint intervals.
 2. Extend the comparison reader to support the full-review contract, including
    all six joints, track breaks, occlusion, event ranges, and uncertainty. Then
    compare the five human annotations against the existing baseline predictions

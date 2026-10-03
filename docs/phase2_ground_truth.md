@@ -3,7 +3,9 @@
 更新：2026-10-03。沿用 **ground-truth-v1**，以 `review_profile: phase2_full_review`
 擴充完整人工覆核欄位，舊版模板仍可讀取。原始／處理後 prediction 均不覆寫。
 目前人工覆核 **4/5**：`pitch_001`、`pitch_002`、`pitch_003`、`pitch_004` 已由 HSU 覆核，標為 `reviewed`，格式／來源驗證通過；
-`pitch_005` 已開始覆核（`in_progress`），尚未提供的人工判斷與事件保持 null。接續檢查 `pitch_005`，不自動推測人工判斷。
+`pitch_005` 已開始覆核（`in_progress`），尚未提供的人工判斷保持 null；啟動與最高抬腿保留不確定。
+目前另安排同學獨立完整覆核 `pitch_003`，並補充 `pitch_005` 的事件。
+詳見 [同學覆核及回傳流程](phase2_peer_review.md)，不自動推測人工判斷。
 尚未執行 prediction comparison；標註完成與格式有效不代表 Phase 2 通過。
 後續工作順序及 Clipper 接入條件記錄於 [current status](current_status.md)。
 
@@ -92,7 +94,7 @@ HSU 已確認整副骨架沒有換到其他人；第 54 格骨架缺失與局部
 本次入口：`analysis_results/phase2_yamamoto_20260925_01/review_helper_20260926_01/START_HERE.md`。
 Baseline root：`analysis_results/phase2_yamamoto_20260925_01/`。
 
-| 影片 | 唯一待填 ground truth（相對於 baseline root） | Frame index |
+| 影片 | HSU canonical ground truth（相對於 baseline root） | Frame index |
 |---|---|---|
 | pitch_001 | ground_truth/pitch_001/ground_truth.json | 0–86 |
 | pitch_002 | ground_truth/pitch_002/ground_truth.json | 0–174 |
@@ -100,8 +102,11 @@ Baseline root：`analysis_results/phase2_yamamoto_20260925_01/`。
 | pitch_004 | ground_truth/pitch_004/ground_truth.json | 0–113 |
 | pitch_005 | ground_truth/pitch_005/ground_truth.json | 0–100 |
 
-這五份既有 `ground_truth.json` 是唯一人工標註來源，也納入 Git 保存覆核進度；
-不另外建立第二套可編輯標註。影片、overlay、逐格圖片和其他分析輸出仍只保存在本機。
+這五份既有 `ground_truth.json` 是 HSU 的 canonical 標註，也納入 Git 保存覆核進度。
+經使用者授權的同學覆核沿用相同 schema，使用空白模板，回覆另存於
+`annotations/phase2_peer_reviews/<review-id>/<pitch-id>/ground_truth.json`；
+保留實際 reviewer 與分歧，不直接覆寫 HSU 標註，也不建立第二套 schema。
+影片、overlay、逐格圖片和其他分析輸出仍只保存在本機。
 還原或換機時，先用每份 JSON 的影片 SHA-256 核對來源，勿把另一支影片套到既有標註。
 
 正式原片：`input/yoshinobu_yamamoto/phase1_final/pitch_00N.mp4`。

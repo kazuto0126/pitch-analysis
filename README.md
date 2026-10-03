@@ -34,6 +34,10 @@ finalization，五支均通過現有 clip-level acceptance 條件；正式狀態
 詳見 [Phase 2 reliability](docs/phase2_reliability.md) 與
 [manual ground truth](docs/phase2_ground_truth.md)。
 
+目前 HSU 已完成 4/5 人工覆核。另提供可離線分享的
+[同學獨立覆核流程](docs/phase2_peer_review.md)：`pitch_003` 完整覆核、
+`pitch_005` 事件補充。回覆沿用相同 ground truth 格式，按 reviewer 分開保存。
+
 `validate-input-quality <mp4> <metadata.json>` 先做影片層的保守檢查；
 `analyze-pitch` 會在姿態推論前執行同樣 preflight。明顯切鏡標記 `rejected`，
 不執行後續 pose；其他素材執行原有 pipeline 後，將主體遺失、疑似 identity switch、

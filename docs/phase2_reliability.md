@@ -110,6 +110,13 @@ uncertainty, not-observable states, confidence, and reviewer notes. A reviewer m
 inspect the source video and overlay. No prediction values are copied into
 human labels.
 
+The user also authorized a separate classmate review: full `pitch_003` and
+event supplementation for `pitch_005`. The [portable review workflow](phase2_peer_review.md)
+uses blank templates of the same contract and stores returned judgments under
+`annotations/phase2_peer_reviews/`, preserving reviewer provenance and
+disagreements. HSU's canonical files remain separate. Event supplementation
+alone does not complete `pitch_005` or establish Phase 2 acceptance.
+
 The review package is at
 `analysis_results/phase2_yamamoto_20260925_01/review_helper_20260926_01/START_HERE.md`.
 Human review is 4/5 complete. After all five reviews, extend the comparison
