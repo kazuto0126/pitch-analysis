@@ -1,9 +1,9 @@
 # Phase 2 人工 Ground Truth Review
 
-更新：2026-09-30。沿用 **ground-truth-v1**，以 `review_profile: phase2_full_review`
+更新：2026-10-03。沿用 **ground-truth-v1**，以 `review_profile: phase2_full_review`
 擴充完整人工覆核欄位，舊版模板仍可讀取。原始／處理後 prediction 均不覆寫。
-目前人工覆核 **2/5**：`pitch_001`、`pitch_002` 已由 HSU 標為 `reviewed`，格式／來源驗證通過；
-`pitch_003`–`pitch_005` 尚未覆核。下一支為 `pitch_003`，不自動填入人工判斷。
+目前人工覆核 **4/5**：`pitch_001`、`pitch_002`、`pitch_003`、`pitch_004` 已由 HSU 覆核，標為 `reviewed`，格式／來源驗證通過；
+`pitch_005` 已開始覆核（`in_progress`），尚未提供的人工判斷與事件保持 null。接續檢查 `pitch_005`，不自動推測人工判斷。
 尚未執行 prediction comparison；標註完成與格式有效不代表 Phase 2 通過。
 後續工作順序及 Clipper 接入條件記錄於 [current status](current_status.md)。
 
@@ -38,7 +38,54 @@ Codex 協助解釋欄位、依 HSU 的回答提供填寫片段與行號，並做
 - `annotation_status = reviewed`；完整關節區間、事件順序、schema 與原片 SHA-256 驗證通過。
 
 人工不可觀測區間保留原判斷；未自行填入 confidence 數值或修改 prediction。
-目前進度 **2/5**，尚未執行 prediction comparison，Phase 2 仍未通過驗收。
+當時進度 **2/5**，尚未執行 prediction comparison，Phase 2 尚未通過驗收。
+
+## 人工覆核紀錄 — HSU（2026-10-03）
+
+HSU 親自檢查 `pitch_003` 原片、overlay 與全部 0–114 格對照圖，逐段指出異常，
+並明確表示完整檢查後未特別指出的部分清楚、未見異常。
+HSU 授權 Codex 依這些人工紀錄代填同一份
+[pitch_003/ground_truth.json](../analysis_results/phase2_yamamoto_20260925_01/ground_truth/pitch_003/ground_truth.json)。
+本次人工判讀者為 HSU，JSON 由 Codex 轉錄；來源資訊、原片與 prediction 維持原內容。
+
+- 主體仍在投手附近，沒有確認換到打者；87–104 格記為重大姿勢錯位，非 identity switch。
+- 右肩、右肘在 87–104 格跑偏，第 105 格恢復；左髖、左膝、左踝在 101–102 格跑偏，第 103 格恢復。
+- 22–23 格右肘、右腕不可觀測，骨架卻錯標到打者腳；25–29 格右肘可見但錯標，右腕不可觀測。
+- 33–44 格左右手臂錯標到打者腳；右肘與右腕實際可見，列為不可靠。
+- 83 格右肩以下點位向上偏；右肘可見但錯位，右腕不可觀測。87–104 格右腕也不可觀測。
+- 65 格經 HSU 後續澄清：左髖點正確、左膝可見卻漏標、左踝不可觀測。
+- 非投球側左手：46–48 格被右手遮住且漏標；66–72 格未遮住卻漏標。保留於 notes。
+- 事件：準備 12、最高抬腿 47、落腳 66、大致出手 69、收尾 99；99 格以後的錯位仍完整記錄。
+- 不可見關節保留 `not_observable`；未確認具體遮擋原因，未自行標為已確認身體遮擋。
+- 打者／視角影響是 HSU 的推測，未驗證因果。Confidence 數值保留 null。
+- 完成時間：`2026-10-03T02:54:48Z`（臺灣時間 2026-10-03 10:54:48）。
+- 完整關節區間、事件順序、schema 與原片 SHA-256 驗證通過。
+
+此時進度 **3/5**；尚未執行 prediction comparison，Phase 2 仍未通過驗收。
+
+## 人工覆核紀錄 — HSU（2026-10-03，pitch_004）
+
+HSU 親自檢查 `pitch_004` 全部 0–113 格原片／overlay 對照，逐段指出異常，
+完成後表示「剩下就還好了」。Codex 依 HSU 授權，將已提供的人工觀察與事件
+轉錄至同一份 [pitch_004/ground_truth.json](../analysis_results/phase2_yamamoto_20260925_01/ground_truth/pitch_004/ground_truth.json)。
+
+- 主要身體骨架持續在投手身上，未見整體 identity switch；75–76 格整體骨架缺失。
+- 75–76 格同時記錄重大 pose failure 與骨架輸出中斷；尚未判定是 ROI 或 pose extraction 造成。
+- 右手腕 11–26 格可見但偏移；右肘與右腕 27–32 格可見但標歪；右腕 66–67 格可見但漏標。
+- 77–80 格只有右腕可見，骨架錯標到打者腳：右腕為 unreliable、右肘為 not_observable。
+- 81–87 格右肘與右腕不可觀測，錯標到打者腳的現象保留；未推斷真實關節座標或遮擋原因。
+- 左膝 65 格可見但標歪。非投球側左肩／左手錯位、不可見時的多餘線與誤連打者腳保留於 notes。
+- 其他區段依 HSU 完整覆核後的整體確認整理；六個關節區間完整覆蓋 0–113 格。
+- 事件：準備開始 4、最高抬腿 44、落腳 65–66、大致出手 70–71、收尾結束 89。
+- 落腳與出手保留範圍，人工 confidence 數值保留 null。
+- 完成時間：`2026-10-03T09:21:10Z`（臺灣時間 2026-10-03 17:21:10）。
+- `annotation_status = reviewed`；完整區間、事件順序、schema 與原片 SHA-256 驗證通過。
+
+目前進度 **4/5**；`pitch_005` 覆核中，已保存 HSU 提供的部分異常區間與原始逐格觀察。
+落腳 55、出手範圍 58–59、收尾 83 已記錄；片頭開始 0 與候選最高抬腿 33 保留不確定。
+HSU 已確認整副骨架沒有換到其他人；第 54 格骨架缺失與局部錯點仍保留。
+未列出的六關節區段是否可見且對位正確仍待確認，不自動補齊。
+尚未執行 prediction comparison，Phase 2 仍未通過驗收。
 
 ## 從哪裡開始
 

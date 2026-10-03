@@ -1,6 +1,6 @@
 {
   "schema_version": "ground-truth-v1",
-  "annotation_status": "unreviewed",
+  "annotation_status": "reviewed",
   "source_video": {
     "pitch_id": "pitch_003",
     "filename": "pitch_003.mp4",
@@ -9,32 +9,391 @@
     "frame_index_base": 0
   },
   "provenance": {
-    "reviewer": null,
-    "reviewed_at_utc": null,
+    "reviewer": "HSU",
+    "reviewed_at_utc": "2026-10-03T02:54:48Z",
     "method": "manual_video_review",
     "guidelines_version": "ground-truth-guidelines-v1"
   },
   "labels": {
-    "pitcher_correctly_selected": null,
-    "identity_switch_intervals": null,
-    "major_pose_failure_intervals": null,
-    "throwing_elbow_reliability": null,
-    "lead_knee_reliability": null,
+    "pitcher_correctly_selected": true,
+    "identity_switch_intervals": [],
+    "major_pose_failure_intervals": [
+      {
+        "start_frame": 87,
+        "end_frame": 104,
+        "status": "confirmed",
+        "reason": "HSU 指出骨架仍在投手附近，但整體明顯上移並有嚴重姿勢錯位。",
+        "confidence": null,
+        "note": "各關節異常區間不同，詳見逐關節標註；不把此整體異常範圍當成每個關節全段都錯。"
+      }
+    ],
+    "throwing_elbow_reliability": [
+      {
+        "start_frame": 0,
+        "end_frame": 21,
+        "status": "reliable",
+        "reason": "HSU 已完整覆核；依其未特別指出的部分清楚、未見異常之說明，右手肘可核對且未見標記錯位。",
+        "confidence": null
+      },
+      {
+        "start_frame": 22,
+        "end_frame": 23,
+        "status": "not_observable",
+        "reason": "原片右手肘看不到，真實位置無法核對。",
+        "confidence": null,
+        "note": "骨架點卻錯標到打者腳上；具體不可見原因未確認。"
+      },
+      {
+        "start_frame": 24,
+        "end_frame": 24,
+        "status": "reliable",
+        "reason": "HSU 已完整覆核；依其未特別指出的部分清楚、未見異常之說明，右手肘可核對且未見標記錯位。",
+        "confidence": null
+      },
+      {
+        "start_frame": 25,
+        "end_frame": 29,
+        "status": "unreliable",
+        "reason": "右手肘可見，但骨架錯標到打者腳上。",
+        "confidence": null
+      },
+      {
+        "start_frame": 30,
+        "end_frame": 32,
+        "status": "reliable",
+        "reason": "HSU 已完整覆核；依其未特別指出的部分清楚、未見異常之說明，右手肘可核對且未見標記錯位。",
+        "confidence": null
+      },
+      {
+        "start_frame": 33,
+        "end_frame": 44,
+        "status": "unreliable",
+        "reason": "右手肘看得清楚，但手臂骨架錯標到打者腳上。",
+        "confidence": null
+      },
+      {
+        "start_frame": 45,
+        "end_frame": 82,
+        "status": "reliable",
+        "reason": "HSU 已完整覆核；依其未特別指出的部分清楚、未見異常之說明，右手肘可核對且未見標記錯位。",
+        "confidence": null
+      },
+      {
+        "start_frame": 83,
+        "end_frame": 83,
+        "status": "unreliable",
+        "reason": "右手肘可見，但右肩以下的手臂標點向上偏，未對位。",
+        "confidence": null
+      },
+      {
+        "start_frame": 84,
+        "end_frame": 86,
+        "status": "reliable",
+        "reason": "HSU 已完整覆核；依其未特別指出的部分清楚、未見異常之說明，右手肘可核對且未見標記錯位。",
+        "confidence": null
+      },
+      {
+        "start_frame": 87,
+        "end_frame": 104,
+        "status": "unreliable",
+        "reason": "右手肘全段可見，但標點跑偏；第 105 格恢復。",
+        "confidence": null
+      },
+      {
+        "start_frame": 105,
+        "end_frame": 114,
+        "status": "reliable",
+        "reason": "HSU 已完整覆核；依其未特別指出的部分清楚、未見異常之說明，右手肘可核對且未見標記錯位。",
+        "confidence": null
+      }
+    ],
+    "lead_knee_reliability": [
+      {
+        "start_frame": 0,
+        "end_frame": 64,
+        "status": "reliable",
+        "reason": "HSU 已完整覆核；依其未特別指出的部分清楚、未見異常之說明，左膝可核對且未見標記錯位。",
+        "confidence": null
+      },
+      {
+        "start_frame": 65,
+        "end_frame": 65,
+        "status": "unreliable",
+        "reason": "左膝蓋在原片可見，但骨架沒有標到。",
+        "confidence": null
+      },
+      {
+        "start_frame": 66,
+        "end_frame": 100,
+        "status": "reliable",
+        "reason": "HSU 已完整覆核；依其未特別指出的部分清楚、未見異常之說明，左膝可核對且未見標記錯位。",
+        "confidence": null
+      },
+      {
+        "start_frame": 101,
+        "end_frame": 102,
+        "status": "unreliable",
+        "reason": "左膝點跑偏，左腿仍可見；第 103 格恢復。",
+        "confidence": null
+      },
+      {
+        "start_frame": 103,
+        "end_frame": 114,
+        "status": "reliable",
+        "reason": "HSU 已完整覆核；依其未特別指出的部分清楚、未見異常之說明，左膝可核對且未見標記錯位。",
+        "confidence": null
+      }
+    ],
     "events": {
-      "preparation_start": null,
-      "leg_lift": null,
-      "foot_plant": null,
-      "approximate_release": null,
-      "follow_through_end": null
+      "preparation_start": {
+        "status": "annotated",
+        "frame_index": 12,
+        "confidence": null,
+        "note": "HSU 判定第 12 格開始進入投球動作；片頭仍站定準備。"
+      },
+      "leg_lift": {
+        "status": "annotated",
+        "frame_index": 47,
+        "confidence": null,
+        "note": "HSU 判定第 47 格為最高抬腿。"
+      },
+      "foot_plant": {
+        "status": "annotated",
+        "frame_index": 66,
+        "confidence": null,
+        "note": "HSU 判定第 66 格左腳首次落地。"
+      },
+      "approximate_release": {
+        "status": "annotated",
+        "frame_index": 69,
+        "confidence": null,
+        "note": "HSU 判定第 69 格為大致出手。"
+      },
+      "follow_through_end": {
+        "status": "annotated",
+        "frame_index": 99,
+        "confidence": null,
+        "note": "HSU 確認第 99 格為收尾結束。"
+      }
     },
-    "track_break_intervals": null,
-    "throwing_arm_occlusion_intervals": null,
-    "throwing_shoulder_reliability": null,
-    "throwing_wrist_reliability": null,
-    "lead_hip_reliability": null,
-    "lead_ankle_reliability": null,
-    "pitcher_selection_review": null
+    "track_break_intervals": [],
+    "throwing_arm_occlusion_intervals": [
+      {
+        "start_frame": 22,
+        "end_frame": 23,
+        "status": "not_observable",
+        "reason": "右手肘與右手腕都不可觀測；具體遮擋原因未確認。",
+        "confidence": null,
+        "note": "只記錄 HSU 確認的不可見情況，未斷言已確認身體遮擋。"
+      },
+      {
+        "start_frame": 25,
+        "end_frame": 29,
+        "status": "not_observable",
+        "reason": "右手腕不可觀測，右手肘可見；具體遮擋原因未確認。",
+        "confidence": null
+      },
+      {
+        "start_frame": 83,
+        "end_frame": 83,
+        "status": "not_observable",
+        "reason": "右手腕不可觀測，右手肘可見；具體遮擋原因未確認。",
+        "confidence": null
+      },
+      {
+        "start_frame": 87,
+        "end_frame": 104,
+        "status": "not_observable",
+        "reason": "右手腕不可觀測，右手肘可見；具體遮擋原因未確認。",
+        "confidence": null
+      }
+    ],
+    "throwing_shoulder_reliability": [
+      {
+        "start_frame": 0,
+        "end_frame": 86,
+        "status": "reliable",
+        "reason": "HSU 已完整覆核；依其未特別指出的部分清楚、未見異常之說明，右肩可核對且未見標記錯位。",
+        "confidence": null
+      },
+      {
+        "start_frame": 87,
+        "end_frame": 104,
+        "status": "unreliable",
+        "reason": "右肩點持續往上偏；第 105 格恢復。",
+        "confidence": null
+      },
+      {
+        "start_frame": 105,
+        "end_frame": 114,
+        "status": "reliable",
+        "reason": "HSU 已完整覆核；依其未特別指出的部分清楚、未見異常之說明，右肩可核對且未見標記錯位。",
+        "confidence": null
+      }
+    ],
+    "throwing_wrist_reliability": [
+      {
+        "start_frame": 0,
+        "end_frame": 21,
+        "status": "reliable",
+        "reason": "HSU 已完整覆核；依其未特別指出的部分清楚、未見異常之說明，右手腕可核對且未見標記錯位。",
+        "confidence": null
+      },
+      {
+        "start_frame": 22,
+        "end_frame": 23,
+        "status": "not_observable",
+        "reason": "原片右手腕看不到，真實位置無法核對。",
+        "confidence": null,
+        "note": "骨架錯標到打者腳上；具體不可見原因未確認。"
+      },
+      {
+        "start_frame": 24,
+        "end_frame": 24,
+        "status": "reliable",
+        "reason": "HSU 已完整覆核；依其未特別指出的部分清楚、未見異常之說明，右手腕可核對且未見標記錯位。",
+        "confidence": null
+      },
+      {
+        "start_frame": 25,
+        "end_frame": 29,
+        "status": "not_observable",
+        "reason": "右手腕看不到，真實位置無法核對。",
+        "confidence": null,
+        "note": "骨架錯標到打者腳上；具體不可見原因未確認。"
+      },
+      {
+        "start_frame": 30,
+        "end_frame": 32,
+        "status": "reliable",
+        "reason": "HSU 已完整覆核；依其未特別指出的部分清楚、未見異常之說明，右手腕可核對且未見標記錯位。",
+        "confidence": null
+      },
+      {
+        "start_frame": 33,
+        "end_frame": 44,
+        "status": "unreliable",
+        "reason": "右手腕看得清楚，但手臂骨架錯標到打者腳上。",
+        "confidence": null
+      },
+      {
+        "start_frame": 45,
+        "end_frame": 82,
+        "status": "reliable",
+        "reason": "HSU 已完整覆核；依其未特別指出的部分清楚、未見異常之說明，右手腕可核對且未見標記錯位。",
+        "confidence": null
+      },
+      {
+        "start_frame": 83,
+        "end_frame": 83,
+        "status": "not_observable",
+        "reason": "右手腕看不到，真實位置無法核對。",
+        "confidence": null,
+        "note": "右肩以下的標點向上偏；具體不可見原因未確認。"
+      },
+      {
+        "start_frame": 84,
+        "end_frame": 86,
+        "status": "reliable",
+        "reason": "HSU 已完整覆核；依其未特別指出的部分清楚、未見異常之說明，右手腕可核對且未見標記錯位。",
+        "confidence": null
+      },
+      {
+        "start_frame": 87,
+        "end_frame": 104,
+        "status": "not_observable",
+        "reason": "右手腕全段看不到，真實位置無法核對。",
+        "confidence": null,
+        "note": "此段有整體姿勢錯位；右腕不可見的具體原因未確認。"
+      },
+      {
+        "start_frame": 105,
+        "end_frame": 114,
+        "status": "reliable",
+        "reason": "HSU 已完整覆核；依其未特別指出的部分清楚、未見異常之說明，右手腕可核對且未見標記錯位。",
+        "confidence": null
+      }
+    ],
+    "lead_hip_reliability": [
+      {
+        "start_frame": 0,
+        "end_frame": 100,
+        "status": "reliable",
+        "reason": "HSU 已完整覆核；依其未特別指出的部分清楚、未見異常之說明，左髖可核對且未見標記錯位。",
+        "confidence": null
+      },
+      {
+        "start_frame": 101,
+        "end_frame": 102,
+        "status": "unreliable",
+        "reason": "左髖點跑偏；第 103 格恢復。",
+        "confidence": null
+      },
+      {
+        "start_frame": 103,
+        "end_frame": 114,
+        "status": "reliable",
+        "reason": "HSU 已完整覆核；依其未特別指出的部分清楚、未見異常之說明，左髖可核對且未見標記錯位。",
+        "confidence": null
+      }
+    ],
+    "lead_ankle_reliability": [
+      {
+        "start_frame": 0,
+        "end_frame": 64,
+        "status": "reliable",
+        "reason": "HSU 已完整覆核；依其未特別指出的部分清楚、未見異常之說明，左腳踝可核對且未見標記錯位。",
+        "confidence": null
+      },
+      {
+        "start_frame": 65,
+        "end_frame": 65,
+        "status": "not_observable",
+        "reason": "HSU 確認此格只有左膝露出，左腳踝看不到。",
+        "confidence": null
+      },
+      {
+        "start_frame": 66,
+        "end_frame": 100,
+        "status": "reliable",
+        "reason": "HSU 已完整覆核；依其未特別指出的部分清楚、未見異常之說明，左腳踝可核對且未見標記錯位。",
+        "confidence": null
+      },
+      {
+        "start_frame": 101,
+        "end_frame": 102,
+        "status": "unreliable",
+        "reason": "左腳踝點跑偏，左腿仍可見；第 103 格恢復。",
+        "confidence": null
+      },
+      {
+        "start_frame": 103,
+        "end_frame": 114,
+        "status": "reliable",
+        "reason": "HSU 已完整覆核；依其未特別指出的部分清楚、未見異常之說明，左腳踝可核對且未見標記錯位。",
+        "confidence": null
+      }
+    ],
+    "pitcher_selection_review": {
+      "status": "annotated",
+      "confidence": null,
+      "note": "HSU 澄清後段主要骨架仍在投手附近，呈整體上移與關節錯位，未確認主體換到打者；前段為局部手部錯標到打者腳上。"
+    }
   },
-  "notes": [],
+  "notes": [
+    "HSU 親自觀看原片、overlay 與全部 0–114 格對照圖，提供逐段人工判斷；2026-10-03 明確授權 Codex 僅依這些紀錄轉錄 JSON。本次不是模型自動產生 ground truth。",
+    "HSU 明確說明：完整看過後未特別指出的部分就是清楚；依本次完整覆核及已指出的異常，剩餘區段記為可核對且未見標記異常。",
+    "22–23、25–29 格右肘／右腕點錯標到打者腳；真實關節的可見性依逐關節標註分開保留，不推斷看不到的座標。",
+    "33–44 格左右手臂都錯標到打者腳；右手肘與右手腕實際均看得清楚。",
+    "46–48 格非投球側左手被右手遮住，也沒有標到；此非右側 throwing-arm 欄位的遮擋。",
+    "65 格最初概括為腰部以下沒標；後續 HSU 澄清左髖點仍正確、左膝可見但漏標、左腳踝不可見。依後續澄清記錄。",
+    "66–72 格非投球側左手未被遮住，仍沒有標到。",
+    "83 格右肩以下手臂點向上偏；右肘可見但錯位，右腕不可見。",
+    "87–104 格是骨架在投手附近整體上移，並非已確認換到打者。右肩及右肘異常於 87–104；左髖、左膝、左踝僅 101–102 錯位，第 103 格恢復。",
+    "HSU 推測異常可能受左打者與此視角影響；這是使用者推測，未驗證因果，也未據此修改模型或追蹤規則。",
+    "HSU 表示本支比前兩支較差；此為人工觀察備註，不建立總分或自動排名。",
+    "即使第 99 格投球動作已收尾，99 格之後的骨架異常仍保留在標註，未因動作結束而忽略。",
+    "confidence 數值未由 HSU 提供，保留 null。"
+  ],
   "review_profile": "phase2_full_review"
 }

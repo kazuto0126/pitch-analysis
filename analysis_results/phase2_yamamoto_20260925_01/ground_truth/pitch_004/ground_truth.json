@@ -1,6 +1,6 @@
 {
   "schema_version": "ground-truth-v1",
-  "annotation_status": "unreviewed",
+  "annotation_status": "reviewed",
   "source_video": {
     "pitch_id": "pitch_004",
     "filename": "pitch_004.mp4",
@@ -9,32 +9,334 @@
     "frame_index_base": 0
   },
   "provenance": {
-    "reviewer": null,
-    "reviewed_at_utc": null,
+    "reviewer": "HSU",
+    "reviewed_at_utc": "2026-10-03T09:21:10Z",
     "method": "manual_video_review",
     "guidelines_version": "ground-truth-guidelines-v1"
   },
   "labels": {
-    "pitcher_correctly_selected": null,
-    "identity_switch_intervals": null,
-    "major_pose_failure_intervals": null,
-    "throwing_elbow_reliability": null,
-    "lead_knee_reliability": null,
+    "pitcher_correctly_selected": true,
+    "identity_switch_intervals": [],
+    "major_pose_failure_intervals": [
+      {
+        "start_frame": 75,
+        "end_frame": 76,
+        "status": "confirmed",
+        "reason": "HSU 確認整個身體的骨架都沒有標出，為完整骨架缺失。",
+        "confidence": null
+      }
+    ],
+    "throwing_elbow_reliability": [
+      {
+        "start_frame": 0,
+        "end_frame": 26,
+        "status": "reliable",
+        "reason": "HSU 完整逐格覆核後表示「剩下就還好了」。此區段未指出本關節異常；Codex 依授權轉錄。",
+        "confidence": null
+      },
+      {
+        "start_frame": 27,
+        "end_frame": 32,
+        "status": "unreliable",
+        "reason": "HSU 確認右手肘在原片可見，但骨架標歪。",
+        "confidence": null
+      },
+      {
+        "start_frame": 33,
+        "end_frame": 74,
+        "status": "reliable",
+        "reason": "HSU 完整逐格覆核後表示「剩下就還好了」。此區段未指出本關節異常；Codex 依授權轉錄。",
+        "confidence": null
+      },
+      {
+        "start_frame": 75,
+        "end_frame": 76,
+        "status": "unreliable",
+        "reason": "HSU 確認這兩格整個人體骨架都沒有標出，該關節亦無骨架標點。",
+        "confidence": null
+      },
+      {
+        "start_frame": 77,
+        "end_frame": 87,
+        "status": "not_observable",
+        "reason": "HSU 確認 77–80 格只有右手腕可見，81–87 格右手整段不可見；右手肘在 77–87 格均不可觀測。",
+        "note": "右手部骨架錯標到打者腳；不據此推斷真實手肘座標或具體遮擋原因。",
+        "confidence": null
+      },
+      {
+        "start_frame": 88,
+        "end_frame": 113,
+        "status": "reliable",
+        "reason": "HSU 完整逐格覆核後表示「剩下就還好了」。此區段未指出本關節異常；Codex 依授權轉錄。",
+        "confidence": null
+      }
+    ],
+    "lead_knee_reliability": [
+      {
+        "start_frame": 0,
+        "end_frame": 64,
+        "status": "reliable",
+        "reason": "HSU 完整逐格覆核後表示「剩下就還好了」。此區段未指出本關節異常；Codex 依授權轉錄。",
+        "confidence": null
+      },
+      {
+        "start_frame": 65,
+        "end_frame": 65,
+        "status": "unreliable",
+        "reason": "HSU 確認左膝在原片可見，但骨架標歪。",
+        "confidence": null
+      },
+      {
+        "start_frame": 66,
+        "end_frame": 74,
+        "status": "reliable",
+        "reason": "HSU 完整逐格覆核後表示「剩下就還好了」。此區段未指出本關節異常；Codex 依授權轉錄。",
+        "confidence": null
+      },
+      {
+        "start_frame": 75,
+        "end_frame": 76,
+        "status": "unreliable",
+        "reason": "HSU 確認這兩格整個人體骨架都沒有標出，該關節亦無骨架標點。",
+        "confidence": null
+      },
+      {
+        "start_frame": 77,
+        "end_frame": 113,
+        "status": "reliable",
+        "reason": "HSU 完整逐格覆核後表示「剩下就還好了」。此區段未指出本關節異常；Codex 依授權轉錄。",
+        "confidence": null
+      }
+    ],
     "events": {
-      "preparation_start": null,
-      "leg_lift": null,
-      "foot_plant": null,
-      "approximate_release": null,
-      "follow_through_end": null
+      "preparation_start": {
+        "status": "annotated",
+        "frame_index": 4,
+        "confidence": null,
+        "note": "HSU 人工確認第 4 格開始準備進入投球動作；Codex 依授權轉錄。"
+      },
+      "leg_lift": {
+        "status": "annotated",
+        "frame_index": 44,
+        "confidence": null,
+        "note": "HSU 人工確認第 44 格為左膝最高抬腿位置；Codex 依授權轉錄。"
+      },
+      "foot_plant": {
+        "status": "annotated",
+        "frame_index": null,
+        "frame_range": {
+          "start_frame": 65,
+          "end_frame": 66
+        },
+        "confidence": null,
+        "note": "HSU 人工判斷左腳首次接觸地面在第 65 或 66 格，保留 65–66 格範圍；Codex 依授權轉錄。"
+      },
+      "approximate_release": {
+        "status": "annotated",
+        "frame_index": null,
+        "frame_range": {
+          "start_frame": 70,
+          "end_frame": 71
+        },
+        "confidence": null,
+        "note": "HSU 人工判斷球大約在第 70–71 格之間離開右手，保留範圍；Codex 依授權轉錄。"
+      },
+      "follow_through_end": {
+        "status": "annotated",
+        "frame_index": 89,
+        "confidence": null,
+        "note": "HSU 人工確認第 89 格投球後動作完成並恢復穩定；Codex 依授權轉錄。"
+      }
     },
-    "track_break_intervals": null,
-    "throwing_arm_occlusion_intervals": null,
-    "throwing_shoulder_reliability": null,
-    "throwing_wrist_reliability": null,
-    "lead_hip_reliability": null,
-    "lead_ankle_reliability": null,
-    "pitcher_selection_review": null
+    "track_break_intervals": [
+      {
+        "start_frame": 75,
+        "end_frame": 76,
+        "status": "confirmed",
+        "reason": "人工可見的骨架輸出在此兩格整體中斷。",
+        "confidence": null,
+        "note": "這裡記錄 skeleton 輸出的中斷，尚未判定是 ROI 追蹤或 pose extraction 造成；不視為 identity switch。"
+      }
+    ],
+    "throwing_arm_occlusion_intervals": [
+      {
+        "start_frame": 77,
+        "end_frame": 80,
+        "status": "not_observable",
+        "reason": "右手肘不可觀測，右手腕可見；具體不可見原因未確認。",
+        "confidence": null
+      },
+      {
+        "start_frame": 81,
+        "end_frame": 87,
+        "status": "not_observable",
+        "reason": "右手肘與右手腕都不可觀測；具體不可見原因未確認。",
+        "confidence": null
+      }
+    ],
+    "throwing_shoulder_reliability": [
+      {
+        "start_frame": 0,
+        "end_frame": 74,
+        "status": "reliable",
+        "reason": "HSU 完整逐格覆核後表示「剩下就還好了」。此區段未指出本關節異常；Codex 依授權轉錄。",
+        "confidence": null
+      },
+      {
+        "start_frame": 75,
+        "end_frame": 76,
+        "status": "unreliable",
+        "reason": "HSU 確認這兩格整個人體骨架都沒有標出，該關節亦無骨架標點。",
+        "confidence": null
+      },
+      {
+        "start_frame": 77,
+        "end_frame": 113,
+        "status": "reliable",
+        "reason": "HSU 完整逐格覆核後表示「剩下就還好了」。此區段未指出本關節異常；Codex 依授權轉錄。",
+        "confidence": null
+      }
+    ],
+    "throwing_wrist_reliability": [
+      {
+        "start_frame": 0,
+        "end_frame": 10,
+        "status": "reliable",
+        "reason": "HSU 完整逐格覆核後表示「剩下就還好了」。此區段未指出本關節異常；Codex 依授權轉錄。",
+        "confidence": null
+      },
+      {
+        "start_frame": 11,
+        "end_frame": 26,
+        "status": "unreliable",
+        "reason": "HSU 確認右手掌可見而稍偏，右手腕點也有偏移。",
+        "confidence": null
+      },
+      {
+        "start_frame": 27,
+        "end_frame": 32,
+        "status": "unreliable",
+        "reason": "HSU 確認右手腕在可見情況下也標歪。",
+        "confidence": null
+      },
+      {
+        "start_frame": 33,
+        "end_frame": 65,
+        "status": "reliable",
+        "reason": "HSU 完整逐格覆核後表示「剩下就還好了」。此區段未指出本關節異常；Codex 依授權轉錄。",
+        "confidence": null
+      },
+      {
+        "start_frame": 66,
+        "end_frame": 67,
+        "status": "unreliable",
+        "reason": "HSU 確認右手腕在原片可見，但沒有標到。",
+        "confidence": null
+      },
+      {
+        "start_frame": 68,
+        "end_frame": 74,
+        "status": "reliable",
+        "reason": "HSU 完整逐格覆核後表示「剩下就還好了」。此區段未指出本關節異常；Codex 依授權轉錄。",
+        "confidence": null
+      },
+      {
+        "start_frame": 75,
+        "end_frame": 76,
+        "status": "unreliable",
+        "reason": "HSU 確認這兩格整個人體骨架都沒有標出，該關節亦無骨架標點。",
+        "confidence": null
+      },
+      {
+        "start_frame": 77,
+        "end_frame": 80,
+        "status": "unreliable",
+        "reason": "HSU 確認右手腕可見，但右手部骨架卻錯標到打者腳上。",
+        "confidence": null
+      },
+      {
+        "start_frame": 81,
+        "end_frame": 87,
+        "status": "not_observable",
+        "reason": "HSU 表示右手整段看不到，右手腕真實位置無法核對。",
+        "note": "骨架仍錯標到打者腳上；具體不可見原因尚未確認。",
+        "confidence": null
+      },
+      {
+        "start_frame": 88,
+        "end_frame": 113,
+        "status": "reliable",
+        "reason": "HSU 完整逐格覆核後表示「剩下就還好了」。此區段未指出本關節異常；Codex 依授權轉錄。",
+        "confidence": null
+      }
+    ],
+    "lead_hip_reliability": [
+      {
+        "start_frame": 0,
+        "end_frame": 74,
+        "status": "reliable",
+        "reason": "HSU 完整逐格覆核後表示「剩下就還好了」。此區段未指出本關節異常；Codex 依授權轉錄。",
+        "confidence": null
+      },
+      {
+        "start_frame": 75,
+        "end_frame": 76,
+        "status": "unreliable",
+        "reason": "HSU 確認這兩格整個人體骨架都沒有標出，該關節亦無骨架標點。",
+        "confidence": null
+      },
+      {
+        "start_frame": 77,
+        "end_frame": 113,
+        "status": "reliable",
+        "reason": "HSU 完整逐格覆核後表示「剩下就還好了」。此區段未指出本關節異常；Codex 依授權轉錄。",
+        "confidence": null
+      }
+    ],
+    "lead_ankle_reliability": [
+      {
+        "start_frame": 0,
+        "end_frame": 74,
+        "status": "reliable",
+        "reason": "HSU 完整逐格覆核後表示「剩下就還好了」。此區段未指出本關節異常；Codex 依授權轉錄。",
+        "confidence": null
+      },
+      {
+        "start_frame": 75,
+        "end_frame": 76,
+        "status": "unreliable",
+        "reason": "HSU 確認這兩格整個人體骨架都沒有標出，該關節亦無骨架標點。",
+        "confidence": null
+      },
+      {
+        "start_frame": 77,
+        "end_frame": 113,
+        "status": "reliable",
+        "reason": "HSU 完整逐格覆核後表示「剩下就還好了」。此區段未指出本關節異常；Codex 依授權轉錄。",
+        "confidence": null
+      }
+    ],
+    "pitcher_selection_review": {
+      "status": "annotated",
+      "confidence": null,
+      "note": "HSU 確認：除 75–76 格整體骨架消失外，其餘影格主要身體骨架持續留在投手身上，未見整體換人。手臂錯標到打者腳的區間另行保留，不據此判定整個主體換人。"
+    }
   },
-  "notes": [],
+  "notes": [
+    "HSU 已完成 0–113 格的人工覆核；Codex 依使用者授權轉錄已提供的觀察與事件。人工判斷來自 HSU，未從 prediction 推測 ground truth。",
+    "11–26 格經 HSU 確認：右手掌標點稍偏，RIGHT_WRIST 手腕點也有偏移。",
+    "27–32 格經 HSU 確認：右手肘與右手腕在可見情況下都標歪。",
+    "36–37 格看不到非投球側左手，骨架卻多出一條從左肩延伸的線。",
+    "39–43 格非投球側左肩實際可見，但肩點標歪。",
+    "45–47 格看不到非投球側左手，骨架卻多出手臂線。",
+    "50–56 格非投球側左肩以下手部標到打者腳上。HSU 認為畫面上打者腳看似與投手相接；此為人工描述，模型錯位的因果未驗證。",
+    "65 格左膝可見但標歪；非投球側左手不可見，骨架卻誤標到打者腳。",
+    "66–67 格右手腕可見但漏標。",
+    "Confidence 數值未由 HSU 提供，保留 null。",
+    "HSU 完成逐格檢查並表示「剩下就還好了」；其餘區段依此人工結果整理為 reliable。已明確指出的錯位、漏標與不可觀測區間全數保留。",
+    "75–76 格經 HSU 後續確認：整個身體的骨架都沒有標出，非僅手臂缺失。",
+    "77–80 格經 HSU 確認：只有右手腕看得見，右手肘不可觀測；右手部骨架卻錯標到打者腳上。",
+    "81–87 格經 HSU 確認：右手肘與右手腕都不可觀測，骨架仍錯標到打者腳上；不推斷真實位置或具體遮擋原因。"
+  ],
   "review_profile": "phase2_full_review"
 }

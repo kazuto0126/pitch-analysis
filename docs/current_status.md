@@ -1,6 +1,6 @@
 # Current status — Phase 1 accepted; Phase 2 reliability baseline
 
-Updated: 2026-09-30
+Updated: 2026-10-03
 
 **Phase 1 = PASSED**
 
@@ -16,16 +16,43 @@ Phase 2 acceptance result.
 
 ## Phase 2 baseline
 
-### Human review progress (2026-09-30)
+### Human review progress (2026-10-03)
 
-Manual review is **2/5**. `pitch_001/ground_truth.json` and
-`pitch_002/ground_truth.json` are `reviewed` by **HSU**, with completion times
-`2026-09-27T16:01:04Z` and `2026-09-30T12:47:32Z`, respectively.
+Manual review is **4/5**. `pitch_001`, `pitch_002`, `pitch_003`, and `pitch_004`
+ground truth files are `reviewed` by **HSU**, with completion times
+`2026-09-27T16:01:04Z`, `2026-09-30T12:47:32Z`,
+`2026-10-03T02:54:48Z`, and `2026-10-03T09:21:10Z`, respectively.
 The read-only review validator passed the schema, full-frame joint intervals,
-event ordering, and source-video hash checks. The judgments were supplied and
-entered by the human reviewer; validation does not establish model accuracy.
-`pitch_003` through `pitch_005` remain `unreviewed`. The next review is
-`pitch_003`, frames 0–114. No prediction comparison has been performed.
+event ordering, and source-video hash checks. HSU supplied the human judgments
+for all four clips and entered the first two JSON files personally. For
+`pitch_003` and `pitch_004`, HSU explicitly authorized Codex to transcribe those judgments;
+the reviewer remains HSU. Validation does not establish model accuracy.
+`pitch_004` is `reviewed`; `pitch_005` is `in_progress` under HSU, with partial
+human observations saved in its canonical JSON. These include visible elbow
+errors at 6–23 and 29–33, visible wrist errors at 24–28, visible lower-leg
+errors at 45, and whole-skeleton loss at 54. HSU identified foot plant at 55,
+release within 58–59, and follow-through end at 83. HSU clarified that frame 0 is already
+ready to initiate; the actual preparation onset remains uncertain, as does
+the tentative peak at 33. Non-throwing-arm errors and remaining visibility
+questions are preserved in notes. HSU confirmed no whole-subject identity
+switch; the frame 54 output break and local joint errors remain recorded.
+No unreported joint interval is filled as reliable.
+Continue `pitch_005`, frames 0–100. HSU observations for `pitch_004` are saved in its canonical
+JSON: visible right-elbow errors at 27–32, visible left-knee error at 65,
+and visible right-wrist misses at 66–67. HSU also confirmed right-wrist
+deviation at 11–26, complete skeleton loss at 75–76, visible right-wrist errors at
+77–80, and an unseen right hand with false points on the batter's foot at
+81–87. HSU has completed the full-frame description and reports that the
+remaining frames are generally okay. HSU confirmed wrist deviation at 27–32
+and right-elbow invisibility throughout 77–87; wrist visibility is retained
+at 77–80, while both elbow and wrist are not observable at 81–87. HSU confirmed
+that the main body skeleton remains on the pitcher whenever present, with no
+whole-subject identity switch; the 75–76 skeleton break and limb errors remain
+recorded. All six joint intervals cover frames 0–113. HSU annotated preparation
+start at 4, peak leg lift at 44, foot plant within 65–66, approximate release
+within 70–71, and follow-through end at 89. Human ranges and not-observable
+intervals are preserved; confidence values remain null. No prediction comparison
+has been performed.
 
 For `pitch_002`, HSU confirmed continuous correct-subject tracking, no identity
 switch, no obvious track break, and no major whole-pose failure. Right shoulder
@@ -38,6 +65,22 @@ replacements for processed observed/interpolated/missing states.
 HSU annotated preparation start at 74, peak leg lift at 118, foot plant at 140,
 approximate release within 141–143, and follow-through end at 168. Unobserved
 positions remain unobserved and confidence values remain null.
+
+For `pitch_003`, HSU clarified that the subject remains near the pitcher;
+frames 87–104 show major pose displacement rather than a confirmed switch
+to the batter. Right shoulder/elbow points are displaced during 87–104,
+whereas left hip/knee/ankle points are displaced only during 101–102 and
+recover at 103. At 65, the left hip is correct, the visible left knee is
+unmarked, and the left ankle is not observable. Other right-arm errors and
+non-throwing-arm observations are retained in the annotation; a point drawn
+on the batter's foot is not accepted as evidence of an unseen joint's location.
+Invisible throwing-arm intervals retain `not_observable`; the specific
+occlusion cause was not confirmed. HSU's suggestion that the batter/view
+affected pose is recorded as a hypothesis. Exact human event labels are
+preparation 12, peak leg lift 47, foot plant 66, approximate release 69, and
+follow-through end 99. Pose errors after 99 remain included. Per HSU's
+explicit instruction after a full-frame review, otherwise unreported
+intervals are clear and have no reported alignment issue. Confidence is null.
 
 The five canonical annotation JSON files under
 `analysis_results/phase2_yamamoto_20260925_01/ground_truth/` are explicitly
@@ -206,8 +249,8 @@ the media archive, and generated run outputs remain local.
 Keep the five formal clips and the superseded archive unchanged. Follow this
 sequence agreed with the user on 2026-09-28:
 
-1. Finish human ground truth for `pitch_003` through `pitch_005`, one clip at a
-   time. Preserve `pitch_001` and `pitch_002` as completed reviews. Human judgments must not
+1. Finish human ground truth for `pitch_005`. Preserve `pitch_001` through
+   `pitch_004` as completed reviews. Human judgments must not
    be inferred or filled automatically; validate each completed annotation.
 2. Extend the comparison reader to support the full-review contract, including
    all six joints, track breaks, occlusion, event ranges, and uncertainty. Then
