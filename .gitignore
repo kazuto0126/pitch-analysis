@@ -24,3 +24,6 @@ output/
 # Local environment and video assets
 .venv/
 *.mp4
+
+# Original CVAT exports can contain account details; retain them locally.
+annotations/manual_keypoints/**/source_annotations.xml

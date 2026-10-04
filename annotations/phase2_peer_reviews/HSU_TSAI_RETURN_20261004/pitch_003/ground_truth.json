@@ -1,0 +1,73 @@
+{
+  "schema_version": "ground-truth-v1",
+  "annotation_status": "in_progress",
+  "source_video": {
+    "pitch_id": "pitch_003",
+    "filename": "pitch_003.mp4",
+    "sha256": "5c08dba98504d998536dfd0f0fab598760400612c9049445a68120e68fdf024c",
+    "total_frames": 115,
+    "frame_index_base": 0
+  },
+  "provenance": {
+    "reviewer": "HSU",
+    "reviewed_at_utc": null,
+    "method": "manual_video_review",
+    "guidelines_version": "ground-truth-guidelines-v1"
+  },
+  "labels": {
+    "pitcher_correctly_selected": null,
+    "identity_switch_intervals": null,
+    "major_pose_failure_intervals": null,
+    "throwing_elbow_reliability": null,
+    "lead_knee_reliability": null,
+    "events": {
+      "preparation_start": {
+        "status": "annotated",
+        "frame_index": 13,
+        "confidence": null,
+        "note": "HSU 在本次 Tsai 人工骨架／原圖覆核後，明確判定第 13 格為準備／啟動開始。此為 HSU 提供的補充，非 Tsai 事件標註。"
+      },
+      "leg_lift": {
+        "status": "annotated",
+        "frame_index": 46,
+        "confidence": null,
+        "note": "HSU 在本次 Tsai 人工骨架／原圖覆核後，明確判定第 46 格為最高抬腿。此為 HSU 提供的補充，非 Tsai 事件標註。"
+      },
+      "foot_plant": {
+        "status": "annotated",
+        "frame_index": 65,
+        "confidence": null,
+        "note": "HSU 在本次 Tsai 人工骨架／原圖覆核後，明確判定第 65 格為前導腳落地。此為 HSU 提供的補充，非 Tsai 事件標註。"
+      },
+      "approximate_release": {
+        "status": "annotated",
+        "frame_index": 69,
+        "confidence": null,
+        "note": "HSU 在本次 Tsai 人工骨架／原圖覆核後，明確判定第 69 格為大致出手。此為 HSU 提供的補充，非 Tsai 事件標註。"
+      },
+      "follow_through_end": {
+        "status": "annotated",
+        "frame_index": 99,
+        "confidence": null,
+        "note": "HSU 在本次 Tsai 人工骨架／原圖覆核後，明確判定第 99 格為收尾結束。此為 HSU 提供的補充，非 Tsai 事件標註。"
+      }
+    },
+    "track_break_intervals": null,
+    "throwing_arm_occlusion_intervals": null,
+    "throwing_shoulder_reliability": null,
+    "throwing_wrist_reliability": null,
+    "lead_hip_reliability": null,
+    "lead_ankle_reliability": null,
+    "pitcher_selection_review": null
+  },
+  "notes": [
+    "2026-10-04，HSU 親自觀看 pitch_003 原圖與 Tsai 人工骨架對照後，在對話提供這五個事件。Codex 僅依已明示的人工判斷轉錄，沒有推測事件。",
+    "Tsai 的人工座標來源為 pitch_003_manual_261004.zip，使用者提供署名 Tsai、標註日期 2026-10-04。本次事件 reviewer 為 HSU，不混成 Tsai 的回答。",
+    "HSU 的整體評語原文：「同學在透視被遮住的部位時，幾乎完全準確」。保留為整體目視意見，沒有提供逐格、逐關節遮擋狀態或座標誤差數值。",
+    "完全不可觀測的關節中心仍缺少本格影像證據；本評語不自動驗證其 visible 狀態、不把推估座標變成可見人工真值、不寫入模型或自動訓練。",
+    "此檔只補充五個事件和整體評語，其餘主體、可靠性、遮擋及異常欄位維持 null。in_progress 表示事件補充，不宣稱完整 phase2_full_review 已完成。",
+    "未提供本次完成的時分／時區，也未提供人工 confidence，reviewed_at_utc 及 confidence 保持 null。",
+    "既有 HSU canonical ground truth、原始模型輸出與 Tsai 回傳 ZIP 均保留原樣；本次補充使用獨立版本，未自動合併 reviewer 分歧。"
+  ],
+  "review_profile": "phase2_full_review"
+}

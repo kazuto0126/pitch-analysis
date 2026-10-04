@@ -126,7 +126,8 @@ event supplementation for `pitch_005`. The [portable review workflow](phase2_pee
 uses blank templates of the same contract and stores returned judgments under
 `annotations/phase2_peer_reviews/`, preserving reviewer provenance and
 disagreements. HSU's canonical files remain separate. Event supplementation
-alone does not complete `pitch_005` or establish Phase 2 acceptance.
+alone does not substitute for the classmate's full-clip review or establish
+Phase 2 acceptance. HSU's separate five qualitative reviews are complete.
 
 On 2026-10-04 the user clarified that the classmate should manually place
 2D joints, not only label reliability. The [CVAT coordinate workflow](phase2_manual_keypoints.md)
@@ -134,8 +135,10 @@ exports original `pitch_003` images and imports an independent
 `manual-keypoints-v1` sidecar. The coordinate evaluator measures each joint's
 pixel error only where humans provide visible coordinates, and reports raw
 prediction misses separately. Non-visible/uncertain coordinates stay null.
-No real coordinate reference has been returned yet, so no actual coordinate
-error or model-learning result is available. Existing pose/tracking logic is unchanged.
+Tsai's complete coordinate return has been received and its source/format checked.
+HSU's visibility and placement review remains incomplete; only explicitly
+confirmed visible points enter the partial reference. No actual coordinate-error
+comparison or model-learning result is available. Existing pose/tracking logic is unchanged.
 
 The review package is at
 `analysis_results/phase2_yamamoto_20260925_01/review_helper_20260926_01/START_HERE.md`.
@@ -154,9 +157,13 @@ To reproduce the comparison, choose a fresh output filename:
 The comparison counts warnings against human switch/failure intervals and
 tabulates observed/interpolated/missing states against human joint reliability
 labels. It explicitly leaves keypoint coordinate error and event timing error
-unmeasured: this baseline contains no human reference X/Y coordinates and does
-not automatically predict the five event frames. The classmate's manual X/Y
-coordinates have not been returned. The measured warning comparison identifies
+unmeasured: the existing comparison did not include human reference X/Y
+coordinates and the baseline does not automatically predict the five event frames.
+The later coordinate return is undergoing human review in a separate sidecar;
+it has not been included in this comparison. The measured warning comparison identifies
 missed displacement and observed states on human-unreliable raw-overlay frames.
 Phase 2 remains in progress while those gaps and independent coordinate evidence
 are addressed. Program execution alone is not a pass.
+
+The latest partial reference and remaining review questions are recorded in the
+[2026-10-05 manual review checkpoint](phase2_manual_review_checkpoint_20261005.md).

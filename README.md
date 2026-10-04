@@ -32,8 +32,8 @@ finalization，五支均通過現有 clip-level acceptance 條件；正式狀態
 推論經共用 `PoseEstimator` 介面執行，未更換模型或修改選取門檻。
 HSU 已完成五支影片的逐格定性覆核，並完成與既有可靠性警示的
 [比較報告](docs/phase2_ground_truth_comparison_20261004.md)。比較顯示骨架缺失能被抓到，
-仍有重大錯位及局部誤連未被可靠提示。同學手動 X/Y 尚未回傳，
-精確座標與事件誤差尚未量測；
+仍有重大錯位及局部誤連未被可靠提示。已收到 Tsai 的手動 X/Y 回傳，
+HSU 正在核對可見性與點位；完整座標覆核尚未完成，座標與事件誤差尚未量測。
 Phase 2 仍在進行中；
 詳見 [Phase 2 reliability](docs/phase2_reliability.md) 與
 [manual ground truth](docs/phase2_ground_truth.md)。
@@ -49,6 +49,9 @@ HSU 另確認其餘右肩／肘／腕及左髖／膝／踝皆可見且大致對�
 事件。人工 X/Y 與可見性另存，可量化既有 AI 的逐關節位置誤差；不自動更新模型。
 同學可直接下載 [GitHub 人工骨架標註 ZIP](https://github.com/kazuto0126/pitch-analysis/releases/download/phase2-manual-pose-review-20261004-01/manual_pose_package_20261004_01.zip)，
 解壓後閱讀 `START_HERE.md`；不需要 clone 專案。
+
+目前已確認的人工座標、遮擋狀態與下一次覆核入口見
+[2026-10-05 人工覆核 checkpoint](docs/phase2_manual_review_checkpoint_20261005.md)。
 
 `validate-input-quality <mp4> <metadata.json>` 先做影片層的保守檢查；
 `analyze-pitch` 會在姿態推論前執行同樣 preflight。明顯切鏡標記 `rejected`，

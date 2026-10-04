@@ -1,6 +1,6 @@
 # Phase 2 人工 Ground Truth Review
 
-更新：2026-10-04。沿用 **ground-truth-v1**，以 `review_profile: phase2_full_review`
+更新：2026-10-05。沿用 **ground-truth-v1**，以 `review_profile: phase2_full_review`
 擴充完整人工覆核欄位，舊版模板仍可讀取。原始／處理後 prediction 均不覆寫。
 目前 HSU 定性人工覆核 **5/5**：五支影片皆為 `reviewed`，格式／來源驗證通過。
 `pitch_005` 未列出的六關節區段已獲 HSU 明確確認可見且大致對位；啟動與最高抬腿仍保留不確定。
@@ -12,8 +12,9 @@
 因此座標使用獨立 `manual-keypoints-v1` sidecar；事件仍沿用本格式，沒有第二套事件 schema。
 可見性與座標均來自人工，完全遮擋或不確定時不補透視座標；原有 HSU 檔不覆寫。
 2026-10-04 已完成 [人工紀錄與可靠性警示比較](phase2_ground_truth_comparison_20261004.md)。
-尚未取得同學的人工 X/Y；標註完成、格式有效與診斷比較均不代表 Phase 2 通過。
+已取得 Tsai 的人工 X/Y 回傳；HSU 正在逐段確認原圖可見性與點位，尚未完成全片座標覆核或座標誤差比較。標註完成、格式有效與診斷比較均不代表 Phase 2 通過。
 後續工作順序及 Clipper 接入條件記錄於 [current status](current_status.md)。
+最新部分座標、待釐清回答與接續圖見 [2026-10-05 人工覆核 checkpoint](phase2_manual_review_checkpoint_20261005.md)。
 
 ## 人工覆核紀錄 — HSU（2026-09-28）
 

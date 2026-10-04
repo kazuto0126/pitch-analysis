@@ -1,6 +1,6 @@
 # Current status — Phase 1 accepted; Phase 2 reliability baseline
 
-Updated: 2026-10-04
+Updated: 2026-10-05
 
 **Phase 1 = PASSED**
 
@@ -10,7 +10,7 @@ per-joint pose reliability on those same five clips. No Phase 1 threshold,
 PitcherSelector rule, pose algorithm, interpolation, or smoothing policy was
 changed.
 
-**Phase 2 = IN PROGRESS — reliability gaps identified; manual X/Y pending.** HSU's
+**Phase 2 = IN PROGRESS — reliability gaps identified; manual X/Y review pending.** HSU's
 five qualitative reviews and their warning comparison are complete. The baseline runner,
 reports, and annotation workflow are available; program execution is not a
 Phase 2 acceptance result.
@@ -51,6 +51,145 @@ Full suite: **147 passed, 0 failed, 1 skipped** (148 discovered). The skipped
 case is the opt-in formal-video E2E; existing synthetic-video tests ran.
 Log: `analysis_results/phase2_gt_comparison_20261004_01/test_suite.log`.
 
+### Returned manual annotations and event supplement (2026-10-04)
+
+The classmate's `pitch_003_manual_261004.zip` was returned and checked against
+the trusted frame manifest: 115 images (0–114), original 510 × 628 dimensions,
+12 joints per image, and 1,380 finite in-bounds coordinate records. CVAT XML,
+in-memory contract conversion, source video hash, decoded timeline and PNG
+hash checks passed. The user supplied reviewer alias **Tsai** and annotation
+date **2026-10-04**; a precise completion time was not supplied.
+
+All 1,380 returned joint states are `visible`, with no reviewer notes.
+Format validity does not establish that occluded coordinates are observable.
+The raw return was not modified by the audit. A partial `manual-keypoints-v1`
+reference has now been imported as recorded below; no completed reference or
+coordinate-error comparison has been produced. The full human-review viewer
+contains all 115 original/manual frame pairs and ten contact sheets under
+`analysis_results/manual_pose_return_check_20261004_01/full_review_20261004_01/`.
+
+After viewing that material, HSU supplied a new event-only supplement:
+preparation start **13**, peak leg lift **46**, lead foot plant **65**,
+approximate release **69**, and follow-through end **99**. These are HSU's
+judgments, not events supplied by Tsai. They are saved with the existing
+`ground-truth-v1` contract at
+`annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261004/pitch_003/ground_truth.json`.
+Schema, source hash and 115 decoded frames were validated. The supplement
+remains `in_progress`, with other labels and completed review time null;
+the original HSU canonical review and Tsai coordinates remain unchanged.
+
+HSU's overall comment that Tsai's placements in occluded areas are "almost
+completely accurate" is preserved as a human review note. It is not converted
+into per-frame visibility labels or measured coordinate accuracy; fully
+unobservable locations still lack direct reference evidence. No algorithm,
+threshold, model weight or Phase 2 acceptance status was changed.
+
+After HSU agreed with the observability rule, a second supplement preserved
+the five events and reused only HSU's already explicit, same-source
+`not_observable` intervals: right elbow 22–23; right wrist 22–23, 25–29, 83,
+87–104; left ankle 65. It is stored at
+`annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261004_02/pitch_003/ground_truth.json`.
+Previously judged AI overlay errors were not turned into judgments of Tsai's
+placements. Both earlier reviews and the original XML remain unchanged.
+Joint-specific visibility still needs clarification where the earlier notes
+only described a whole hand or arm. HSU subsequently confirmed left elbow
+46–48 is fully unobservable and left wrist 46–48 is judgeable; this statement
+is preserved in the second supplement's notes, without treating judgeability
+as confirmation of Tsai's coordinate accuracy. HSU also confirmed both left
+elbow and left wrist are completely unobservable in frames 33–44; this is
+preserved in the same supplement's notes. HSU then confirmed only the left
+elbow is visible in frames 66–72, while the left wrist is unobservable. This
+is also preserved as visibility evidence, not coordinate-placement agreement.
+After viewing original/manual comparisons, HSU confirmed the left-wrist
+placements at frames 46–48 and left-elbow placements at 66–72 are correct.
+HSU also confirmed both left elbow and left wrist are visible and correctly
+placed at frames 64–65. This batch establishes 14 visible placements and 63
+unobservable joint-frames. Placement agreement is visual, not a measured
+zero-pixel error. Other joint-frames remain unverified in this partial HSU
+reference; no complete human coordinate reference is finalized.
+
+This batch was also saved as a local `manual-keypoints-v1` draft at
+`analysis_results/manual_pose_return_check_20261004_01/manual_keypoints_HSU_partial_draft_20261004_01.json`.
+It contains 14 visible placements copied from Tsai's previously verified
+display records, 63 `not_observable` points with null X/Y, and 1,303
+`unreviewed` points with null X/Y. All 115 original-image hashes, schema,
+source binding and event preservation checks passed. Tsai placed the
+coordinates; HSU supplied the visibility and placement review. The draft
+remains `in_progress`, with null confidence and completed-review time.
+
+The returned ZIP/XML was temporarily unavailable during draft preparation.
+The user reattached the ZIP; both its SHA-256 and the XML SHA-256 match the
+original audit exactly. The original ZIP/XML and unmodified CVAT state claims
+are now preserved locally under
+`analysis_results/manual_pose_return_check_20261004_01/original_return_preserved_20261004_01/`.
+
+The existing CVAT converter, manifest validator, source-timeline verifier and
+manual-keypoint contract checks were used to import the partial HSU reference:
+`annotations/manual_keypoints/HSU_TSAI_RETURN_20261004_01/pitch_003/manual_keypoints.json`.
+It remains `in_progress`: 14 `visible`, 63 `not_observable`, and 1,303
+`unreviewed`. All 14 retained X/Y pairs match Tsai's exact original values.
+The source video, all 115 decoded PNG hashes and timestamps, and all 1,380
+original coordinates against the reviewed display were rechecked. Original
+source, prediction and canonical annotation hashes remained unchanged.
+See `analysis_results/manual_pose_return_check_20261004_01/manual_keypoints_HSU_import_check_20261004_01.json`.
+The exact original XML is also retained beside the partial reference and
+ignored by Git because it contains account details. The earlier draft is
+preserved as a preparation checkpoint. No inference, coordinate comparison
+or model training ran; full manual-coordinate review remains incomplete.
+
+After that import checkpoint, HSU confirmed the right elbow and right wrist
+at frames 33–35 and 36–44 are clearly visible and correctly placed. HSU then
+confirmed the placements at 45–53 and 54–63; those joints already have explicit
+same-source visibility observations. These 62 additional points and their
+observations are saved in the existing event/visibility
+supplement's notes. The latest partial coordinate checkpoint is
+`annotations/manual_keypoints/HSU_TSAI_RETURN_20261004_07/pitch_003/manual_keypoints.json`:
+**96 visible, 84 not observable, 1,200 unreviewed**, still `in_progress`.
+All new visible X/Y pairs match the preserved original XML; the earlier
+checkpoints, canonical annotations and raw predictions retained their hashes.
+Check report:
+`analysis_results/manual_pose_return_check_20261004_01/manual_keypoints_HSU_checkpoint_check_20261004_07.json`.
+HSU then judged the right-elbow/wrist placements at 64–72 correct. That
+opinion is saved in the supplement's notes. In the separate raw-image
+clarification, HSU confirmed both joints at 70–71 are unobservable. Those
+four points now have null X/Y; the other 14 newly confirmed points at
+64–69 and 72 retain Tsai's coordinates. The more specific visibility
+observation is preserved independently of the old canonical blanket interval
+and of the earlier placement opinion. No hidden coordinate was inferred.
+HSU subsequently confirmed right wrist 73–78 is visible and correctly placed,
+right elbow 73–78 is unobservable, and both joints at 79–82 are unobservable.
+These six visible points and 14 unobservable points are now included in the
+latest checkpoint. HSU then confirmed right wrist 84–86 is occluded, adding
+three unobservable points, and right elbow 83–92 is visible. The placement
+accuracy of those ten elbow points is still pending; they retain unreviewed
+status and null X/Y. Previously confirmed unobservable wrists at 83 and 87–104
+retain null X/Y.
+
+### Saved manual review checkpoint (2026-10-05)
+
+HSU's last short answer, "沒有", is preserved in the new supplementary file
+`annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_01/pitch_003/ground_truth.json`.
+It may mean no displacement or disagreement with all placements; the exact
+meaning and affected frames remain unconfirmed. None of the ten right-elbow
+points at 83–92 was marked correct or incorrect from this answer.
+The previous supplement and all seven coordinate checkpoints remain unchanged.
+
+The latest coordinate reference still has **96 visible, 84 not observable,
+1,200 unreviewed**. Per-joint counts, source checks, saved-review history and the
+next review entry are in the [manual review checkpoint](phase2_manual_review_checkpoint_20261005.md).
+An offline helper provides ten enlarged original/Tsai pairs for the pending
+elbow review; it neither supplies human decisions nor writes ground truth.
+No formal-video inference, coordinate-error comparison, algorithm change,
+Phase 2 acceptance or Phase 3 work was performed in this cleanup.
+All seven coordinate checkpoints and three supplementary GT files passed
+schema/source checks. The 126 baseline/media hashes and 232 historical protected
+hash comparisons were unchanged. The full suite passed in the normal host
+execution context: **147 passed, 0 failed, 1 skipped** (148 tests). The opt-in
+formal-video E2E stayed skipped; synthetic-video MediaPipe tests ran.
+The first restricted-context attempt was blocked by temporary-directory access,
+with its log preserved; no code was changed to make the rerun pass.
+Verified log: `analysis_results/manual_pose_return_check_20261004_01/autonomous_cleanup_20261005_01/test_suite_verified.log`.
+
 ### Manual skeleton coordinate handoff (2026-10-04)
 
 The user clarified that the classmate should manually place skeleton X/Y,
@@ -76,8 +215,9 @@ The original HSU ground truth and raw model predictions remain separate.
 The new evaluator is ready to report per-joint pixel errors and missing raw
 predictions using only human-visible coordinates. It creates no new pass
 threshold, does not change pose/tracking logic, and does not train MediaPipe.
-No human X/Y annotations have been returned and no real coordinate comparison
-has run. HSU full qualitative review is now 5/5 and the qualitative warning
+Tsai's X/Y annotations have now been returned; visibility review remains
+pending and no real coordinate comparison has run. HSU full qualitative review
+is now 5/5 and the qualitative warning
 comparison is available above; Phase 2 remains in progress.
 See [manual coordinate instructions](phase2_manual_keypoints.md).
 
@@ -415,13 +555,14 @@ Keep the five formal clips and the superseded archive unchanged. Follow this
 sequence agreed with the user on 2026-09-28:
 
 1. Preserve all five completed HSU qualitative reviews and their uncertainty.
-   Collect the classmate's manual `pitch_003` coordinate pilot, validate its
-   format/source, then collect the complete annotation and the two clips'
-   independent event supplements. Review disagreements together, preserving
-   reviewer provenance and the original labels; do not automatically merge.
+   Review the returned complete `pitch_003` coordinates, whose format/source
+   checks passed. Resolve visibility and placement questions with the reviewers,
+   obtain the remaining independent event supplements and completion provenance,
+   and preserve the HSU event supplement recorded above. Do not automatically
+   merge or turn inferred hidden locations into observable reference points.
 2. Review the measured gaps in the qualitative comparison, especially the
    unscreened `pitch_003` displacement and observed states on human-unreliable
-   arm frames. Measure coordinate error when the independent reference arrives;
+   arm frames. Measure coordinate error after visible reference points are verified;
    keep raw-overlay judgments distinct from processed availability.
 3. Use both forms of evidence to decide whether pose/tracking reliability needs
    changes. Any such change is separate from this completed diagnostic comparison;

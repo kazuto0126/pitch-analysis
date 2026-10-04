@@ -114,7 +114,7 @@ Warning 可能只落在異常開始或轉換邊界；報告另列每段有無任
 其他影片的範圍也沒有改成單一影格。
 
 - Event timing error：未量測，baseline 沒有對應的自動事件估計。
-- X/Y 定位誤差：未量測，同學人工座標尚未回傳。
+- X/Y 定位誤差：未量測，本次比較執行時同學人工座標尚未回傳。
 - 遮擋原因準確率：未量測，baseline 沒有遮擋原因 detector。
 - 跨 reviewer 一致性與其他投手泛化：未量測。
 
@@ -129,7 +129,14 @@ Log：`analysis_results/phase2_gt_comparison_20261004_01/test_suite.log`。
 事件範圍與 uncertainty 保留、來源 hash／投手 ID／時序一致，以及拒絕覆寫輸出。
 獨立從原始五份 GT 與 reliability JSON 重算的各項格數與最終結果一致。
 
-接著先驗證同學的 0–4 格 CVAT pilot，再收完整 `pitch_003` 座標與兩支事件補充。
+本次比較完成時，下一步為驗證同學的 0–4 格 CVAT pilot，再收完整 `pitch_003` 座標與兩支事件補充。
 根據本報告與人工座標證據，再討論如何改進「有骨架但穩定錯位」與局部誤連的提示。
 本次只擴充比較與驗證功能，pose／tracking 演算法、threshold、gate、smoothing／interpolation 均未修改。
 Phase 3 與 Clipper 正式接入仍依現有順序另行進行。
+
+### 後續進度註記（2026-10-05）
+
+現在已收到 Tsai 的完整 `pitch_003` CVAT 回傳，格式與来源檢查通過；
+HSU 正在核對可見性與人工點位，完整座標比較尚未執行。
+這項後續進度不修改上述比較數字、原始五份 canonical 標註或當時的測試結果。
+目前入口見 [人工覆核 checkpoint](phase2_manual_review_checkpoint_20261005.md)。
