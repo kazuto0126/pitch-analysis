@@ -139,15 +139,16 @@ error or model-learning result is available. Existing pose/tracking logic is unc
 
 The review package is at
 `analysis_results/phase2_yamamoto_20260925_01/review_helper_20260926_01/START_HERE.md`.
-HSU's qualitative/full review is 5/5 complete. Extend the comparison reader
-for the full-review fields and uncertainty before producing a *new* comparison
-report. No prediction comparison has been completed against HSU's five clip
-reviews. The current legacy reader rejects this profile rather than
-silently interpreting uncertain intervals as confirmed errors. The following is
-the legacy invocation, **not a command to run during review preparation**:
+HSU's qualitative/full review and its diagnostic comparison are complete.
+The reader now supports all six joints, track breaks, occlusion records, event
+ranges and uncertainty. Uncertain/not-observable intervals are excluded from
+screening denominators. Legacy two-joint annotations remain supported.
+The [comparison report](phase2_ground_truth_comparison_20261004.md) records
+per-pitch counts, joint-state cross-tabs, cue overlap and limitations.
+To reproduce the comparison, choose a fresh output filename:
 
 ```powershell
-.\.venv-analysis\Scripts\python.exe -B scripts\evaluate_phase2_ground_truth.py input\yoshinobu_yamamoto\phase1_final analysis_results\phase2_yamamoto_20260925_01 analysis_results\phase2_yamamoto_20260925_01\ground_truth_comparison_reviewed.json
+.\.venv-analysis\Scripts\python.exe -B scripts\evaluate_phase2_ground_truth.py input\yoshinobu_yamamoto\phase1_final analysis_results\phase2_yamamoto_20260925_01 analysis_results\phase2_gt_comparison_NEW\ground_truth_comparison.json
 ```
 
 The comparison counts warnings against human switch/failure intervals and
@@ -155,6 +156,7 @@ tabulates observed/interpolated/missing states against human joint reliability
 labels. It explicitly leaves keypoint coordinate error and event timing error
 unmeasured: this baseline contains no human reference X/Y coordinates and does
 not automatically predict the five event frames. The classmate's manual X/Y
-coordinates have not been returned. Phase 2 remains in progress until the
-warnings and joint flags are judged against the validated human labels.
-Program execution alone is not a pass.
+coordinates have not been returned. The measured warning comparison identifies
+missed displacement and observed states on human-unreliable raw-overlay frames.
+Phase 2 remains in progress while those gaps and independent coordinate evidence
+are addressed. Program execution alone is not a pass.

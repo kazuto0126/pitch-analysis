@@ -6,9 +6,202 @@ accuracy. Empty ground-truth templates never become negative labels.
 from __future__ import annotations
 
 from collections import Counter
+from copy import deepcopy
+
+from pitch_analysis.ground_truth import FULL_JOINT_LABELS, validate_ground_truth
 
 
 _SWITCH_WARNINGS = {"body_center_jump", "skeleton_scale_jump", "motion_discontinuity"}
+_HUMAN_STATES = ("reliable", "unreliable", "uncertain", "not_observable")
+_MODEL_STATES = ("observed", "interpolated", "missing")
+
+
+def frame_ranges(frames) -> list[dict]:
+    """Lossless, inclusive ranges; no tolerance or extension around warnings."""
+    result = []
+    for frame in sorted(set(frames)):
+        if result and frame == result[-1]["end_frame"] + 1:
+            result[-1]["end_frame"] = frame
+        else:
+            result.append({"start_frame": frame, "end_frame": frame})
+    return result
+
+
+def _screening(intervals: list[dict], predicted: set[int], total: int) -> dict:
+    # The original frame-interval contract omitted status for confirmed spans.
+    positive = _interval_frames([i for i in intervals if i.get("status", "confirmed") == "confirmed"])
+    excluded = {status: _interval_frames([i for i in intervals if i.get("status", "confirmed") == status])
+                for status in ("uncertain", "not_observable")}
+    unknown = set().union(*excluded.values())
+    negative = set(range(total)) - positive - unknown
+    cells = {
+        "true_positive": predicted & positive,
+        "false_negative": positive - predicted,
+        "false_positive": predicted & negative,
+        "true_negative": negative - predicted,
+    }
+    tp, fp = len(cells["true_positive"]), len(cells["false_positive"])
+    interval_results = []
+    for item in intervals:
+        span = set(range(item["start_frame"], item["end_frame"] + 1))
+        interval_results.append({
+            "human_interval": deepcopy(item),
+            "screened_frames": len(span & predicted),
+            "screened_ranges": frame_ranges(span & predicted),
+            "scored": item.get("status", "confirmed") == "confirmed",
+        })
+    return {
+        "human_positive_frames": len(positive),
+        "human_negative_frames": len(negative),
+        "excluded_frames_by_status": {s: len(f) for s, f in excluded.items()},
+        "screened_frames_total": len(predicted),
+        "screened_excluded_frames": len(predicted & unknown),
+        **{name + "_frames": len(frames) for name, frames in cells.items()},
+        "recall_on_confirmed_frames": tp / len(positive) if positive else None,
+        "precision_on_scorable_frames": tp / (tp + fp) if tp + fp else None,
+        "false_positive_rate_on_known_negative_frames": fp / len(negative) if negative else None,
+        "ranges": {name: frame_ranges(frames) for name, frames in cells.items()},
+        "excluded_ranges_by_status": {s: frame_ranges(f) for s, f in excluded.items()},
+        "human_intervals": interval_results,
+        "confirmed_interval_count": sum(i.get("status", "confirmed") == "confirmed" for i in intervals),
+        "confirmed_intervals_with_any_screen": sum(
+            i["scored"] and i["screened_frames"] > 0 for i in interval_results),
+        "interpretation": (
+            "Exact frame overlap with this specified screening cue, not a calibrated detector. "
+            "Uncertain/unobservable frames are excluded, not negatives. A boundary cue need not "
+            "cover an entire interval; any-overlap interval counts are reported separately. "
+            "A false positive here can still be a useful warning for a different problem."
+        ),
+    }
+
+
+def _checked_indices(values: list[int], total: int, label: str) -> set[int]:
+    if any(type(i) is not int or not 0 <= i < total for i in values):
+        raise ValueError(f"{label} has an invalid frame index")
+    if len(set(values)) != len(values):
+        raise ValueError(f"{label} has duplicate frame indices")
+    return set(values)
+
+
+def _full_joint_agreement(intervals: list[dict], joint: dict, total: int) -> dict:
+    states = joint["frame_states"]
+    if len(states) != total or any(s not in _MODEL_STATES for s in states):
+        raise ValueError("Joint frame-state timeline is incomplete or invalid")
+    human = [None] * total
+    for item in intervals:
+        human[item["start_frame"]:item["end_frame"] + 1] = [item["status"]] * (
+            item["end_frame"] - item["start_frame"] + 1)
+    counts = {h: {m: sum(a == h and b == m for a, b in zip(human, states))
+                  for m in _MODEL_STATES} for h in _HUMAN_STATES}
+    contrasts = {
+        "observed_but_human_unreliable": {i for i in range(total)
+                                            if human[i] == "unreliable" and states[i] == "observed"},
+        "observed_but_human_not_observable": {i for i in range(total)
+                                                if human[i] == "not_observable" and states[i] == "observed"},
+        "human_reliable_but_model_unobserved": {i for i in range(total)
+                                                 if human[i] == "reliable" and states[i] != "observed"},
+    }
+    jump_frames = _checked_indices(joint["frame_to_frame_jump"]["candidate_frames"], total, "Joint jump")
+    # The jump marks the current endpoint of an adjacent-frame transition.
+    # It is not an interval-wide error prediction or a new reliability gate.
+    screening_labels = [{**item, "status": "confirmed" if item["status"] == "unreliable" else item["status"]}
+                        for item in intervals if item["status"] != "reliable"]
+    return {
+        "model_joint_status": joint["status"],
+        "model_joint_reasons": deepcopy(joint["reasons"]),
+        "human_label_by_model_state": counts,
+        "human_frame_counts": {h: sum(row.values()) for h, row in counts.items()},
+        **{name + "_frames": len(frames) for name, frames in contrasts.items()},
+        "contrast_ranges": {name: frame_ranges(frames) for name, frames in contrasts.items()},
+        "joint_jump_endpoint_screening": _screening(screening_labels, jump_frames, total),
+        "interpretation": (
+            "Human labels judge source imagery and the raw overlay; model states describe processed "
+            "quality-gated availability. This cross-tab is not processed-coordinate accuracy. "
+            "Observed does not prove correct position; interpolated does not prove wrong position. "
+            "Human not_observable is not a model error or a confirmed occlusion cause. "
+            "Clip-level model flags are retained, not converted into invented per-frame predictions."
+        ),
+    }
+
+
+def _evaluate_full_review(ground_truth: dict, pose: dict, tracking: dict) -> dict:
+    validate_ground_truth(ground_truth)
+    total = ground_truth["source_video"]["total_frames"]
+    pitch_id = ground_truth["source_video"]["pitch_id"]
+    if any(report.get("pitch_id") != pitch_id or report.get("total_frames") != total
+           for report in (pose, tracking)):
+        raise ValueError("Human annotation pitch/timeline differs from model output")
+    if (not isinstance(pose.get("pitcher_id"), str) or not pose["pitcher_id"].strip()
+            or pose["pitcher_id"] != tracking.get("pitcher_id")):
+        raise ValueError("Pose and tracking subject identifiers differ or are missing")
+    if pose.get("frame_indices") != list(range(total)):
+        raise ValueError("Pose frame indices do not align with the human timeline")
+    _checked_indices(pose["frame_indices"], total, "Pose timeline")
+    frames = tracking["frames"]
+    if [f["frame_index"] for f in frames] != list(range(total)):
+        raise ValueError("Tracking frame indices do not align with the human timeline")
+    _checked_indices([f["frame_index"] for f in frames], total, "Tracking timeline")
+    if any(f["selection_status"] not in ("selected", "rejected") or not isinstance(f["warnings"], list)
+           for f in frames):
+        raise ValueError("Invalid tracking selection state or warnings")
+    warning_frames = {e["frame_index"] for e in tracking["warning_events"] if e["type"] in _SWITCH_WARNINGS}
+    for event in tracking["warning_events"]:
+        _checked_indices([event["frame_index"]], total, "Tracking warning")
+    if warning_frames != {f["frame_index"] for f in frames if _SWITCH_WARNINGS.intersection(f["warnings"])}:
+        raise ValueError("Tracking warning events disagree with frame warnings")
+    breaks = {f["frame_index"] for f in frames if f["selection_status"] != "selected"}
+    if _interval_frames(tracking["track_breaks"]) != breaks:
+        raise ValueError("Tracking break intervals disagree with selection states")
+    screen = {f["frame_index"] for f in frames if f["selection_status"] != "selected" or f["warnings"]}
+    labels = ground_truth["labels"]
+    joints = {}
+    all_jump_frames = set()
+    for name in FULL_JOINT_LABELS:
+        role = name.removesuffix("_reliability")
+        landmark = pose["important_joints"][role]
+        joint = pose["joints"][landmark]
+        joints[role] = {"landmark": landmark, **_full_joint_agreement(labels[name], joint, total)}
+        all_jump_frames.update(joint["frame_to_frame_jump"]["candidate_frames"])
+    return {
+        "status": "human_comparison_available",
+        "ground_truth_status": "reviewed",
+        "review_profile": "phase2_full_review",
+        "correct_pitcher": labels["pitcher_correctly_selected"],
+        "human_pitcher_selection_review": deepcopy(labels["pitcher_selection_review"]),
+        "model_tracking_status": tracking["status"],
+        "model_tracking_reasons": deepcopy(tracking["reasons"]),
+        "identity_switch_warning_agreement": _screening(labels["identity_switch_intervals"], warning_frames, total),
+        "track_break_screening": _screening(labels["track_break_intervals"], breaks, total),
+        "major_pose_failure_screening": _screening(labels["major_pose_failure_intervals"], screen, total),
+        "major_pose_failure_with_joint_jump_cues": _screening(
+            labels["major_pose_failure_intervals"], screen | all_jump_frames, total),
+        "screen_definitions": {
+            "identity_switch": sorted(_SWITCH_WARNINGS),
+            "track_break": "selection_status != selected",
+            "major_pose_failure": "selection rejection or any existing per-frame tracking warning",
+            "major_pose_failure_with_joint_jump_cues": (
+                "Diagnostic union of the preceding tracking screen and six existing joint jump endpoints; "
+                "not a new detector and not used to change baseline flags."),
+        },
+        "joint_reliability_agreement": joints,
+        "human_arm_occlusion": {
+            "intervals": deepcopy(labels["throwing_arm_occlusion_intervals"]),
+            "frame_counts_by_status": {s: len(_interval_frames([i for i in labels["throwing_arm_occlusion_intervals"]
+                                                               if i.get("status", "confirmed") == s]))
+                                       for s in ("confirmed", "uncertain", "not_observable")},
+            "accuracy": None,
+            "reason": "The baseline has no occlusion-cause detector. Missing pose is not proof of occlusion; use joint-specific observability labels.",
+        },
+        "human_events": deepcopy(labels["events"]),
+        "event_accuracy": None,
+        "keypoint_coordinate_accuracy": None,
+        "unmeasured_reasons": [
+            "No automatic event estimates exist; human exact/range/uncertain events are preserved without a timing score.",
+            "Qualitative review contains no reference X/Y coordinates; coordinate accuracy remains unmeasured.",
+            "Single-reviewer judgments on five clips are not independent multi-reviewer validation or evidence of generalization.",
+            "Zero confirmed identity switches cannot establish switch-detection sensitivity.",
+        ],
+    }
 
 
 def _interval_frames(intervals: list[dict]) -> set[int]:
@@ -50,13 +243,8 @@ def evaluate_against_ground_truth(ground_truth: dict, pose: dict, tracking: dict
             "reason": "Human labels are incomplete; model predictions cannot serve as ground truth.",
         }
 
-    # The extended review records ranges and uncertain subject/failure intervals.
-    # The legacy comparator must not silently turn these into exact/negative labels.
     if ground_truth.get("review_profile") == "phase2_full_review":
-        raise ValueError(
-            "Full manual review requires uncertainty-aware comparison support; "
-            "preserve the labels and prepare that comparison after human review."
-        )
+        return _evaluate_full_review(ground_truth, pose, tracking)
 
     labels = ground_truth["labels"]
     total = ground_truth["source_video"]["total_frames"]

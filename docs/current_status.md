@@ -10,12 +10,46 @@ per-joint pose reliability on those same five clips. No Phase 1 threshold,
 PitcherSelector rule, pose algorithm, interpolation, or smoothing policy was
 changed.
 
-**Phase 2 = IN PROGRESS — ground-truth comparison pending.** HSU's five
-qualitative reviews are complete; independent manual X/Y is still pending. The baseline runner,
+**Phase 2 = IN PROGRESS — reliability gaps identified; manual X/Y pending.** HSU's
+five qualitative reviews and their warning comparison are complete. The baseline runner,
 reports, and annotation workflow are available; program execution is not a
 Phase 2 acceptance result.
 
 ## Phase 2 baseline
+
+### Human-label comparison completed (2026-10-04)
+
+The extended comparison reader supports all six joints, track breaks,
+occlusion records, event ranges and explicit uncertainty. It compared HSU's
+five reviewed annotations against the existing baseline, covering 592 frames.
+New output:
+`analysis_results/phase2_gt_comparison_20261004_01/ground_truth_comparison_verified.json`.
+See the [comparison report](phase2_ground_truth_comparison_20261004.md).
+
+- Human track breaks at `pitch_004` 75–76 and `pitch_005` 54 agree with all
+  three model rejection frames, with no other rejection frames.
+- Tracking screening covers only 3 of 21 human major-failure frames, leaving
+  `pitch_003` 87–104 (18 frames) unscreened. It also screens nine frames outside
+  the human major-failure intervals, all for unavailable body-scale geometry.
+- A diagnostic union with existing six-joint jump endpoints covers 13/21
+  major-failure frames and leaves eight unscreened, while screening 56 frames
+  outside that target. This is an audit of existing cues, not a new detector.
+- Cross-tabulating human raw-overlay judgments with processed availability,
+  72 elbow and 49 wrist frames are human-unreliable yet still `observed`.
+  Another 20 elbow and 36 wrist frames are human-not-observable yet observed;
+  these cannot be scored as coordinate errors without visible reference data.
+- All five human subject judgments are correct-pitcher and no switch is
+  confirmed. With zero switch-positive examples, sensitivity remains unmeasured.
+- Exact/range/uncertain event records were preserved; coordinate error, event
+  error, and independent reviewer agreement remain unmeasured.
+
+The comparison binds source hashes, pitch/pitcher IDs, anatomical joint roles,
+frame order and timestamps to the saved predictions. All 126 input artifact
+hashes remained unchanged. Formal five-video inference was not rerun; model,
+tracking, gate and interpolation/smoothing code were not modified.
+Full suite: **147 passed, 0 failed, 1 skipped** (148 discovered). The skipped
+case is the opt-in formal-video E2E; existing synthetic-video tests ran.
+Log: `analysis_results/phase2_gt_comparison_20261004_01/test_suite.log`.
 
 ### Manual skeleton coordinate handoff (2026-10-04)
 
@@ -43,7 +77,8 @@ The new evaluator is ready to report per-joint pixel errors and missing raw
 predictions using only human-visible coordinates. It creates no new pass
 threshold, does not change pose/tracking logic, and does not train MediaPipe.
 No human X/Y annotations have been returned and no real coordinate comparison
-has run. HSU full qualitative review is now 5/5; Phase 2 remains in progress.
+has run. HSU full qualitative review is now 5/5 and the qualitative warning
+comparison is available above; Phase 2 remains in progress.
 See [manual coordinate instructions](phase2_manual_keypoints.md).
 
 Handoff verification: 115 lossless PNG frame hashes and both blank event
@@ -93,9 +128,10 @@ and existing raw artifacts retained their hashes (34 protected files).
 The previous partial `pitch_005` JSON is also preserved locally under
 `analysis_results/phase2_yamamoto_20260925_01/review_checkpoints/pitch005_before_completion_20261004T025616Z.json`.
 
-No prediction comparison has run and no classmate X/Y annotation has returned.
-This completes the human qualitative review, not Phase 2 acceptance. The
-unchanged full suite last reported 138 passed, 0 failed, 1 skipped; this data
+At this review checkpoint, no prediction comparison had run and no classmate
+X/Y annotation had returned. It completed the human qualitative review,
+with the diagnostic comparison subsequently recorded above. The
+unchanged full suite then reported 138 passed, 0 failed, 1 skipped; this data
 checkpoint used the read-only annotation/source validator, with no inference.
 
 ### Human review history (2026-10-03)
@@ -383,15 +419,13 @@ sequence agreed with the user on 2026-09-28:
    format/source, then collect the complete annotation and the two clips'
    independent event supplements. Review disagreements together, preserving
    reviewer provenance and the original labels; do not automatically merge.
-2. Extend the comparison reader to support the full-review contract, including
-   all six joints, track breaks, occlusion, event ranges, and uncertainty. Then
-   compare the five human annotations against the existing baseline predictions
-   in a new report. Keep raw-overlay judgments distinct from processed
-   observed/interpolated/missing states. Do not claim coordinate or event-timing
-   accuracy without matching reference data and predictions.
-3. Use those findings to decide whether pose/tracking reliability needs changes.
-   Do not change models, algorithms, or thresholds during manual review, and do
-   not treat successful execution as Phase 2 acceptance.
+2. Review the measured gaps in the qualitative comparison, especially the
+   unscreened `pitch_003` displacement and observed states on human-unreliable
+   arm frames. Measure coordinate error when the independent reference arrives;
+   keep raw-overlay judgments distinct from processed availability.
+3. Use both forms of evidence to decide whether pose/tracking reliability needs
+   changes. Any such change is separate from this completed diagnostic comparison;
+   do not treat successful execution as Phase 2 acceptance.
 4. Once Phase 2 is stable and accepted on evidence, proceed to the agreed
    pitcher-motion analysis work. Do not automatically begin Phase 3.
 5. Subsequently integrate a small batch of MLB Pitch Clipper outputs under the

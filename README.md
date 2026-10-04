@@ -30,8 +30,10 @@ finalization，五支均通過現有 clip-level acceptance 條件；正式狀態
 逐關節 observed／interpolated／missing 狀態、關節覆蓋率與跳動檢查，以及
 投手骨架的 ROI、中心、尺度、動作連續性和 track-break 警示。原有 MediaPipe
 推論經共用 `PoseEstimator` 介面執行，未更換模型或修改選取門檻。
-HSU 已完成五支影片的逐格定性覆核，但同學手動 X/Y 尚未回傳，
-prediction comparison 尚未完成；Phase 2 可靠度結果仍是待驗證的診斷，
+HSU 已完成五支影片的逐格定性覆核，並完成與既有可靠性警示的
+[比較報告](docs/phase2_ground_truth_comparison_20261004.md)。比較顯示骨架缺失能被抓到，
+仍有重大錯位及局部誤連未被可靠提示。同學手動 X/Y 尚未回傳，
+精確座標與事件誤差尚未量測；
 Phase 2 仍在進行中；
 詳見 [Phase 2 reliability](docs/phase2_reliability.md) 與
 [manual ground truth](docs/phase2_ground_truth.md)。

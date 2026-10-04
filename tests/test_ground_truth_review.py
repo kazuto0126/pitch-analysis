@@ -8,7 +8,6 @@ import cv2
 import numpy as np
 
 from pitch_analysis.ground_truth import FULL_JOINT_LABELS, expand_blank_review, validate_ground_truth
-from pitch_analysis.phase2_evaluation import evaluate_against_ground_truth
 import test_ground_truth
 
 
@@ -46,8 +45,6 @@ class ExtendedReviewTests(unittest.TestCase):
         labels["events"]["preparation_start"] = {"status": "not_observable", "frame_index": None, "note": "outside clip"}
         labels["track_break_intervals"] = [{"start_frame": 2, "end_frame": 3, "status": "uncertain", "reason": "blur", "confidence": None}]
         validate_ground_truth(payload, source_video_path=self.fixture.video)
-        with self.assertRaisesRegex(ValueError, "uncertainty-aware"):
-            evaluate_against_ground_truth(payload, {}, {})
 
     def test_ranges_require_bounds_and_do_not_force_overlapping_events_apart(self):
         payload = self.reviewed()

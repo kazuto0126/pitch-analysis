@@ -11,7 +11,8 @@
 原圖標 12 個身體關節，另填兩支事件。現有 `ground-truth-v1` 沒有 X/Y 欄位，
 因此座標使用獨立 `manual-keypoints-v1` sidecar；事件仍沿用本格式，沒有第二套事件 schema。
 可見性與座標均來自人工，完全遮擋或不確定時不補透視座標；原有 HSU 檔不覆寫。
-尚未執行 prediction comparison；標註完成與格式有效不代表 Phase 2 通過。
+2026-10-04 已完成 [人工紀錄與可靠性警示比較](phase2_ground_truth_comparison_20261004.md)。
+尚未取得同學的人工 X/Y；標註完成、格式有效與診斷比較均不代表 Phase 2 通過。
 後續工作順序及 Clipper 接入條件記錄於 [current status](current_status.md)。
 
 ## 人工覆核紀錄 — HSU（2026-09-28）
@@ -112,7 +113,7 @@ Codex 依既有授權將這次人工確認轉錄至原本的
 - 完成時間：`2026-10-04T02:56:16Z`（臺灣時間 2026-10-04 10:56:16）。
 - `annotation_status = reviewed`；五份 JSON 的 schema、完整區間、事件順序與原片 SHA-256 驗證通過。
 
-HSU 定性覆核完成 **5/5**。同學人工 X/Y 與獨立事件補充仍待回傳，尚未執行 prediction comparison，
+HSU 定性覆核完成 **5/5**。同學人工 X/Y 與獨立事件補充仍待回傳；定性 comparison 已完成，
 **Phase 2 仍在進行中**；reviewed 不代表所有關節可靠，也不等於 Phase 2 通過。
 
 ## 從哪裡開始
@@ -309,9 +310,10 @@ CSV／圖下方 observed/interpolated/missing 是處理後 keypoint 狀態。
 只讀取／驗證，不執行模型或 prediction comparison。
 也可把人工判斷用影格區間與備註交回，再依據你的答案整理 JSON，不補猜缺少部分。
 
-**HSU 定性覆核已完成，comparison 仍待擴充。** 舊比較程式只處理兩關節和確定異常，目前對 full-review profile
-明確停止，避免忽略新欄位或把 uncertain 當成確定標籤。人工覆核完成後，才擴充比較讀取，
+**HSU 定性覆核與 comparison 已完成。** 比較讀取已支援 full-review profile，
 保留六關節、track break、遮擋、事件範圍與不確定區間，產生獨立 comparison report。
+不確定／不可觀測區段另列並排除於 screening 分母；raw-overlay 人工標籤與處理後可用性狀態交叉對照，
+沒有把 observed 視為位置正確。結果及限制見 [comparison report](phase2_ground_truth_comparison_20261004.md)。
 本 baseline 沒有自動事件預測或人工 X/Y 座標，事件時間誤差與座標誤差仍不能量測。
 
 ## 重建檢查素材（開發／追溯）
