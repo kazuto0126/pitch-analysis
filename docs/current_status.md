@@ -10,7 +10,8 @@ per-joint pose reliability on those same five clips. No Phase 1 threshold,
 PitcherSelector rule, pose algorithm, interpolation, or smoothing policy was
 changed.
 
-**Phase 2 = IN PROGRESS — human ground truth pending.** The baseline runner,
+**Phase 2 = IN PROGRESS — ground-truth comparison pending.** HSU's five
+qualitative reviews are complete; independent manual X/Y is still pending. The baseline runner,
 reports, and annotation workflow are available; program execution is not a
 Phase 2 acceptance result.
 
@@ -42,7 +43,7 @@ The new evaluator is ready to report per-joint pixel errors and missing raw
 predictions using only human-visible coordinates. It creates no new pass
 threshold, does not change pose/tracking logic, and does not train MediaPipe.
 No human X/Y annotations have been returned and no real coordinate comparison
-has run. HSU full qualitative review remains 4/5; Phase 2 remains in progress.
+has run. HSU full qualitative review is now 5/5; Phase 2 remains in progress.
 See [manual coordinate instructions](phase2_manual_keypoints.md).
 
 Handoff verification: 115 lossless PNG frame hashes and both blank event
@@ -71,9 +72,35 @@ Full suite: **138 passed, 0 failed, 1 skipped** (139 discovered). The skipped
 test is the opt-in real-video E2E; no pose/tracking pipeline was rerun.
 Log: `analysis_results/phase2_yamamoto_20260925_01/test_suite_manual_pose_20261004_01.log`.
 
-### Human review progress (2026-10-03)
+### HSU qualitative review completed (2026-10-04)
 
-Manual review is **4/5**. `pitch_001`, `pitch_002`, `pitch_003`, and `pitch_004`
+HSU's five canonical `ground_truth.json` files are now `reviewed` (**5/5**).
+After reviewing all `pitch_005` frames, HSU explicitly confirmed that, outside
+the already recorded exceptions, the remaining right shoulder/elbow/wrist and
+left hip/knee/ankle are visible and approximately aligned. Codex transcribed
+that confirmation only into the missing joint intervals; all previous error,
+missing-output and not-observable intervals, source binding, event labels,
+and null confidence values were retained. Each joint covers frames 0–100.
+`pitch_005` completed at `2026-10-04T02:56:16Z` (Taiwan 10:56:16).
+
+Preparation onset at candidate frame 0 and peak leg lift at candidate frame 33
+remain `uncertain`. Foot plant is 55, approximate release is the range 58–59,
+and follow-through end is 83. A reviewed annotation may retain uncertainty;
+the classmate's independent event supplements will be stored separately.
+All five annotations passed schema, interval-completeness, event-order and
+source-hash validation. The four other HSU annotations, five source videos,
+and existing raw artifacts retained their hashes (34 protected files).
+The previous partial `pitch_005` JSON is also preserved locally under
+`analysis_results/phase2_yamamoto_20260925_01/review_checkpoints/pitch005_before_completion_20261004T025616Z.json`.
+
+No prediction comparison has run and no classmate X/Y annotation has returned.
+This completes the human qualitative review, not Phase 2 acceptance. The
+unchanged full suite last reported 138 passed, 0 failed, 1 skipped; this data
+checkpoint used the read-only annotation/source validator, with no inference.
+
+### Human review history (2026-10-03)
+
+At that checkpoint, manual review was **4/5**. `pitch_001`, `pitch_002`, `pitch_003`, and `pitch_004`
 ground truth files are `reviewed` by **HSU**, with completion times
 `2026-09-27T16:01:04Z`, `2026-09-30T12:47:32Z`,
 `2026-10-03T02:54:48Z`, and `2026-10-03T09:21:10Z`, respectively.
@@ -82,7 +109,7 @@ event ordering, and source-video hash checks. HSU supplied the human judgments
 for all four clips and entered the first two JSON files personally. For
 `pitch_003` and `pitch_004`, HSU explicitly authorized Codex to transcribe those judgments;
 the reviewer remains HSU. Validation does not establish model accuracy.
-`pitch_004` is `reviewed`; `pitch_005` is `in_progress` under HSU, with partial
+`pitch_004` was `reviewed`; `pitch_005` was `in_progress` under HSU, with partial
 human observations saved in its canonical JSON. These include visible elbow
 errors at 6–23 and 29–33, visible wrist errors at 24–28, visible lower-leg
 errors at 45, and whole-skeleton loss at 54. HSU identified foot plant at 55,
@@ -92,7 +119,8 @@ the tentative peak at 33. Non-throwing-arm errors and remaining visibility
 questions are preserved in notes. HSU confirmed no whole-subject identity
 switch; the frame 54 output break and local joint errors remain recorded.
 No unreported joint interval is filled as reliable.
-Continue `pitch_005`, frames 0–100. HSU observations for `pitch_004` are saved in its canonical
+The remaining `pitch_005` intervals were subsequently confirmed on 2026-10-04,
+as recorded above. HSU observations for `pitch_004` are saved in its canonical
 JSON: visible right-elbow errors at 27–32, visible left-knee error at 65,
 and visible right-wrist misses at 66–67. HSU also confirmed right-wrist
 deviation at 11–26, complete skeleton loss at 75–76, visible right-wrist errors at
@@ -168,8 +196,8 @@ time/timezone, source binding, and uncertainty. After faithful transcription
 and schema/source validation, save them under
 `annotations/phase2_peer_reviews/<review-id>/<pitch-id>/ground_truth.json`.
 The importer refuses existing destinations and preserves the supplied JSON
-bytes. Event-only `pitch_005` remains `in_progress`; this task does not complete
-the missing HSU joint intervals. No peer answers exist yet, no canonical labels
+bytes. Event-only peer `pitch_005` remains `in_progress`; this task is separate
+from HSU's completed joint review. No peer answers exist yet, no canonical labels
 have been changed for the handoff, and no prediction comparison has run.
 Occluded joints remain `not_observable`; no imagined positions are annotated.
 See [peer review instructions](phase2_peer_review.md).
@@ -330,10 +358,10 @@ independently proved from these files.
   pitcher. Some arm landmarks overlap the batter in image projection, so
   exact joint placement remains a review caveat.
 
-This is an agent visual inspection, not player identity ground truth. The
-separate human validation templates, event annotations, and registry
-approval remain pending. They do not alter the completed clip-level
-Phase 1 acceptance result.
+This was an agent visual inspection, not player identity ground truth. At
+Phase 1 finalization, the separate human validation templates, event annotations,
+and registry approval were still pending. Current HSU review progress is
+recorded above; it does not alter the completed clip-level Phase 1 result.
 
 ## Tests and repository scope
 
@@ -350,12 +378,11 @@ the media archive, and generated run outputs remain local.
 Keep the five formal clips and the superseded archive unchanged. Follow this
 sequence agreed with the user on 2026-09-28:
 
-1. Finish human ground truth for `pitch_005`. Preserve `pitch_001` through
-   `pitch_004` as completed reviews. Human judgments must not
-   be inferred or filled automatically; validate each completed annotation.
-   Collect the classmate's manual `pitch_003` coordinates and the two clips'
-   event supplements as separate evidence, then review disagreements together.
-   The event supplement does not fill the remaining `pitch_005` joint intervals.
+1. Preserve all five completed HSU qualitative reviews and their uncertainty.
+   Collect the classmate's manual `pitch_003` coordinate pilot, validate its
+   format/source, then collect the complete annotation and the two clips'
+   independent event supplements. Review disagreements together, preserving
+   reviewer provenance and the original labels; do not automatically merge.
 2. Extend the comparison reader to support the full-review contract, including
    all six joints, track breaks, occlusion, event ranges, and uncertainty. Then
    compare the five human annotations against the existing baseline predictions

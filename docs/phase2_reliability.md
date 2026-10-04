@@ -95,13 +95,24 @@ unreliable):
 
 Five `ground_truth.json` files were initially created as blank templates with
 `annotation_status = unreviewed`. As of 2026-10-03, `pitch_001`, `pitch_002`,
-`pitch_003`, and `pitch_004` are reviewed by HSU and have passed schema/source
-validation; `pitch_005` is in progress, with partial human observations and
-events saved, including foot plant at 55. HSU confirmed no whole-subject
-identity switch; the frame 54 output break and local joint errors are retained.
-Unreported joint intervals remain for HSU to confirm; onset and peak retain uncertainty.
-For `pitch_003` and `pitch_004`, HSU supplied the complete
-human observations and explicitly authorized Codex to transcribe the JSON.
+`pitch_003`, and `pitch_004` were reviewed by HSU and had passed schema/source
+validation; `pitch_005` was still in progress, with partial human observations
+and events saved, including foot plant at 55. HSU confirmed no whole-subject
+identity switch; the frame 54 output break and local joint errors were retained.
+For `pitch_003` and `pitch_004`, HSU supplied the complete human observations
+and explicitly authorized Codex to transcribe the JSON.
+
+On 2026-10-04, HSU completed the frame-by-frame qualitative review of
+`pitch_005` and explicitly answered “對” when asked whether, outside the
+previously recorded exceptions, the remaining right shoulder/elbow/wrist and
+left hip/knee/ankle were visible and approximately aligned. HSU's full
+qualitative review is therefore 5/5 complete. Preparation onset and peak leg
+lift remain explicitly uncertain; this confirmation supplies no manual X/Y
+coordinates or measured keypoint error. The confirmation was transcribed
+into only the previously unfilled intervals; the canonical annotation is now
+`reviewed` at `2026-10-04T02:56:16Z` and passed schema/source validation,
+as did all five HSU annotations. All pre-existing exceptions and event
+uncertainty were retained.
 Follow [manual ground-truth guidelines](phase2_ground_truth.md)
 to record correct-subject selection, switches, track breaks, major failures,
 throwing-arm occlusion, all six focus-joint reliability intervals, and five event
@@ -128,9 +139,10 @@ error or model-learning result is available. Existing pose/tracking logic is unc
 
 The review package is at
 `analysis_results/phase2_yamamoto_20260925_01/review_helper_20260926_01/START_HERE.md`.
-Human review is 4/5 complete. After all five reviews, extend the comparison
-reader for the full-review fields and uncertainty before producing a *new*
-comparison report. The current legacy reader rejects this profile rather than
+HSU's qualitative/full review is 5/5 complete. Extend the comparison reader
+for the full-review fields and uncertainty before producing a *new* comparison
+report. No prediction comparison has been completed against HSU's five clip
+reviews. The current legacy reader rejects this profile rather than
 silently interpreting uncertain intervals as confirmed errors. The following is
 the legacy invocation, **not a command to run during review preparation**:
 
@@ -142,6 +154,7 @@ The comparison counts warnings against human switch/failure intervals and
 tabulates observed/interpolated/missing states against human joint reliability
 labels. It explicitly leaves keypoint coordinate error and event timing error
 unmeasured: this baseline contains no human reference X/Y coordinates and does
-not automatically predict the five event frames. Phase 2 acceptance remains
-pending until the five annotations are reviewed and the warnings and joint
-flags are judged against those labels. Program execution alone is not a pass.
+not automatically predict the five event frames. The classmate's manual X/Y
+coordinates have not been returned. Phase 2 remains in progress until the
+warnings and joint flags are judged against the validated human labels.
+Program execution alone is not a pass.

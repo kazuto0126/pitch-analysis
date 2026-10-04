@@ -1,6 +1,6 @@
 {
   "schema_version": "ground-truth-v1",
-  "annotation_status": "in_progress",
+  "annotation_status": "reviewed",
   "source_video": {
     "pitch_id": "pitch_005",
     "filename": "pitch_005.mp4",
@@ -10,7 +10,7 @@
   },
   "provenance": {
     "reviewer": "HSU",
-    "reviewed_at_utc": null,
+    "reviewed_at_utc": "2026-10-04T02:56:16Z",
     "method": "manual_video_review",
     "guidelines_version": "ground-truth-guidelines-v1"
   },
@@ -28,10 +28,24 @@
     ],
     "throwing_elbow_reliability": [
       {
+        "start_frame": 0,
+        "end_frame": 5,
+        "status": "reliable",
+        "reason": "HSU 完整觀看逐格對照後，明確確認除了已指出問題，其餘六個關節區段都看得清楚且大致對位；Codex 依授權轉錄。",
+        "confidence": null
+      },
+      {
         "start_frame": 6,
         "end_frame": 23,
         "status": "unreliable",
         "reason": "HSU 確認右手肘可見、有標點，但點位稍微跑掉。",
+        "confidence": null
+      },
+      {
+        "start_frame": 24,
+        "end_frame": 28,
+        "status": "reliable",
+        "reason": "HSU 完整觀看逐格對照後，明確確認除了已指出問題，其餘六個關節區段都看得清楚且大致對位；Codex 依授權轉錄。",
         "confidence": null
       },
       {
@@ -42,10 +56,24 @@
         "confidence": null
       },
       {
+        "start_frame": 34,
+        "end_frame": 53,
+        "status": "reliable",
+        "reason": "HSU 完整觀看逐格對照後，明確確認除了已指出問題，其餘六個關節區段都看得清楚且大致對位；Codex 依授權轉錄。",
+        "confidence": null
+      },
+      {
         "start_frame": 54,
         "end_frame": 54,
         "status": "unreliable",
         "reason": "HSU 確認第 54 格右手肘可見，但整體骨架缺失，該關節未標出。",
+        "confidence": null
+      },
+      {
+        "start_frame": 55,
+        "end_frame": 57,
+        "status": "reliable",
+        "reason": "HSU 完整觀看逐格對照後，明確確認除了已指出問題，其餘六個關節區段都看得清楚且大致對位；Codex 依授權轉錄。",
         "confidence": null
       },
       {
@@ -56,10 +84,24 @@
         "confidence": null
       },
       {
+        "start_frame": 59,
+        "end_frame": 59,
+        "status": "reliable",
+        "reason": "HSU 完整觀看逐格對照後，明確確認除了已指出問題，其餘六個關節區段都看得清楚且大致對位；Codex 依授權轉錄。",
+        "confidence": null
+      },
+      {
         "start_frame": 60,
         "end_frame": 60,
         "status": "not_observable",
         "reason": "HSU 確認第 60 格右手肘被遮住，真實肘點無法觀測。",
+        "confidence": null
+      },
+      {
+        "start_frame": 61,
+        "end_frame": 72,
+        "status": "reliable",
+        "reason": "HSU 完整觀看逐格對照後，明確確認除了已指出問題，其餘六個關節區段都看得清楚且大致對位；Codex 依授權轉錄。",
         "confidence": null
       },
       {
@@ -75,14 +117,35 @@
         "status": "unreliable",
         "reason": "HSU 確認第 74–75 格右手肘可見，而且肘點本身也標歪。",
         "confidence": null
+      },
+      {
+        "start_frame": 76,
+        "end_frame": 100,
+        "status": "reliable",
+        "reason": "HSU 完整觀看逐格對照後，明確確認除了已指出問題，其餘六個關節區段都看得清楚且大致對位；Codex 依授權轉錄。",
+        "confidence": null
       }
     ],
     "lead_knee_reliability": [
+      {
+        "start_frame": 0,
+        "end_frame": 44,
+        "status": "reliable",
+        "reason": "HSU 完整觀看逐格對照後，明確確認除了已指出問題，其餘六個關節區段都看得清楚且大致對位；Codex 依授權轉錄。",
+        "confidence": null
+      },
       {
         "start_frame": 45,
         "end_frame": 45,
         "status": "unreliable",
         "reason": "HSU 確認第 45 格左膝點本身與小腿、腳踝都標歪；依其先前觀察，該區段在原片可見。",
+        "confidence": null
+      },
+      {
+        "start_frame": 46,
+        "end_frame": 53,
+        "status": "reliable",
+        "reason": "HSU 完整觀看逐格對照後，明確確認除了已指出問題，其餘六個關節區段都看得清楚且大致對位；Codex 依授權轉錄。",
         "confidence": null
       },
       {
@@ -97,6 +160,13 @@
         "end_frame": 55,
         "status": "not_observable",
         "reason": "HSU 釐清第 55 格左膝被遮擋且未標出，真實膝點無法核對。",
+        "confidence": null
+      },
+      {
+        "start_frame": 56,
+        "end_frame": 100,
+        "status": "reliable",
+        "reason": "HSU 完整觀看逐格對照後，明確確認除了已指出問題，其餘六個關節區段都看得清楚且大致對位；Codex 依授權轉錄。",
         "confidence": null
       }
     ],
@@ -166,19 +236,47 @@
     ],
     "throwing_shoulder_reliability": [
       {
+        "start_frame": 0,
+        "end_frame": 53,
+        "status": "reliable",
+        "reason": "HSU 完整觀看逐格對照後，明確確認除了已指出問題，其餘六個關節區段都看得清楚且大致對位；Codex 依授權轉錄。",
+        "confidence": null
+      },
+      {
         "start_frame": 54,
         "end_frame": 54,
         "status": "unreliable",
         "reason": "HSU 確認第 54 格右肩可見，但整體骨架缺失，該關節未標出。",
         "confidence": null
+      },
+      {
+        "start_frame": 55,
+        "end_frame": 100,
+        "status": "reliable",
+        "reason": "HSU 完整觀看逐格對照後，明確確認除了已指出問題，其餘六個關節區段都看得清楚且大致對位；Codex 依授權轉錄。",
+        "confidence": null
       }
     ],
     "throwing_wrist_reliability": [
+      {
+        "start_frame": 0,
+        "end_frame": 23,
+        "status": "reliable",
+        "reason": "HSU 完整觀看逐格對照後，明確確認除了已指出問題，其餘六個關節區段都看得清楚且大致對位；Codex 依授權轉錄。",
+        "confidence": null
+      },
       {
         "start_frame": 24,
         "end_frame": 28,
         "status": "unreliable",
         "reason": "HSU 確認右手腕在可見情況下標點跑掉。",
+        "confidence": null
+      },
+      {
+        "start_frame": 29,
+        "end_frame": 53,
+        "status": "reliable",
+        "reason": "HSU 完整觀看逐格對照後，明確確認除了已指出問題，其餘六個關節區段都看得清楚且大致對位；Codex 依授權轉錄。",
         "confidence": null
       },
       {
@@ -189,6 +287,13 @@
         "confidence": null
       },
       {
+        "start_frame": 55,
+        "end_frame": 57,
+        "status": "reliable",
+        "reason": "HSU 完整觀看逐格對照後，明確確認除了已指出問題，其餘六個關節區段都看得清楚且大致對位；Codex 依授權轉錄。",
+        "confidence": null
+      },
+      {
         "start_frame": 58,
         "end_frame": 58,
         "status": "unreliable",
@@ -196,10 +301,24 @@
         "confidence": null
       },
       {
+        "start_frame": 59,
+        "end_frame": 59,
+        "status": "reliable",
+        "reason": "HSU 完整觀看逐格對照後，明確確認除了已指出問題，其餘六個關節區段都看得清楚且大致對位；Codex 依授權轉錄。",
+        "confidence": null
+      },
+      {
         "start_frame": 60,
         "end_frame": 60,
         "status": "not_observable",
         "reason": "HSU 確認第 60 格右手腕被遮住，真實腕點無法觀測。",
+        "confidence": null
+      },
+      {
+        "start_frame": 61,
+        "end_frame": 72,
+        "status": "reliable",
+        "reason": "HSU 完整觀看逐格對照後，明確確認除了已指出問題，其餘六個關節區段都看得清楚且大致對位；Codex 依授權轉錄。",
         "confidence": null
       },
       {
@@ -215,23 +334,58 @@
         "status": "unreliable",
         "reason": "HSU 確認第 74–75 格右手腕可見，但腕點標歪。",
         "confidence": null
+      },
+      {
+        "start_frame": 76,
+        "end_frame": 100,
+        "status": "reliable",
+        "reason": "HSU 完整觀看逐格對照後，明確確認除了已指出問題，其餘六個關節區段都看得清楚且大致對位；Codex 依授權轉錄。",
+        "confidence": null
       }
     ],
     "lead_hip_reliability": [
+      {
+        "start_frame": 0,
+        "end_frame": 53,
+        "status": "reliable",
+        "reason": "HSU 完整觀看逐格對照後，明確確認除了已指出問題，其餘六個關節區段都看得清楚且大致對位；Codex 依授權轉錄。",
+        "confidence": null
+      },
       {
         "start_frame": 54,
         "end_frame": 54,
         "status": "not_observable",
         "reason": "HSU 確認第 54 格左髖看不清或被遮住，真實髖點無法核對。",
         "confidence": null
+      },
+      {
+        "start_frame": 55,
+        "end_frame": 100,
+        "status": "reliable",
+        "reason": "HSU 完整觀看逐格對照後，明確確認除了已指出問題，其餘六個關節區段都看得清楚且大致對位；Codex 依授權轉錄。",
+        "confidence": null
       }
     ],
     "lead_ankle_reliability": [
+      {
+        "start_frame": 0,
+        "end_frame": 44,
+        "status": "reliable",
+        "reason": "HSU 完整觀看逐格對照後，明確確認除了已指出問題，其餘六個關節區段都看得清楚且大致對位；Codex 依授權轉錄。",
+        "confidence": null
+      },
       {
         "start_frame": 45,
         "end_frame": 45,
         "status": "unreliable",
         "reason": "HSU 確認第 45 格雙腳膝蓋以下在可見情況下標歪，並補充左膝點本身、小腿及腳踝都偏歪。",
+        "confidence": null
+      },
+      {
+        "start_frame": 46,
+        "end_frame": 53,
+        "status": "reliable",
+        "reason": "HSU 完整觀看逐格對照後，明確確認除了已指出問題，其餘六個關節區段都看得清楚且大致對位；Codex 依授權轉錄。",
         "confidence": null
       },
       {
@@ -247,6 +401,13 @@
         "status": "reliable",
         "reason": "HSU 回覆左膝與左腳踝可見性問題時，釐清左膝被遮擋、其餘正常；第 55 格左腳踝按此人工確認保留為正常。",
         "confidence": null
+      },
+      {
+        "start_frame": 56,
+        "end_frame": 100,
+        "status": "reliable",
+        "reason": "HSU 完整觀看逐格對照後，明確確認除了已指出問題，其餘六個關節區段都看得清楚且大致對位；Codex 依授權轉錄。",
+        "confidence": null
       }
     ],
     "pitcher_selection_review": {
@@ -256,7 +417,7 @@
     }
   },
   "notes": [
-    "HSU 人工逐格覆核，Codex 依使用者授權轉錄已提供的觀察。覆核仍為 in_progress，尚未確認的關節區段、主體判斷與事件不自動補齊，完成時間保持 null。",
+    "先前 in_progress checkpoint 紀錄：HSU 人工逐格覆核，Codex 依使用者授權轉錄已提供的觀察。覆核仍為 in_progress，尚未確認的關節區段、主體判斷與事件不自動補齊，完成時間保持 null。",
     "HSU 本次原始觀察：「0就開始進入投球動作了，6-23右手軸看的到有標但是有點跑掉，24-28右手腕也跟著跑掉也是可以看到的狀況，29-33右手肘看的到但是跑掉，33格應該是抬腳最高點，39-40開始看到完整的左手，但是標了卻跑掉，41左手肩膀以下完全沒標，45雙腳膝蓋以下都標歪在看的到的情況下，46-47左手肩膀下標歪是看的到的情況下，50-51左手手肘以下就標到打者的腳，54全身骨架都沒標，55雙腳都沒標，58-59球出手，58右手跟打者腳重疊導致手肘和手腕標歪，60右手被遮擋依然標了一條奇怪的線，73右手沒標，74-75右手肘以下標歪，83結束投球」。",
     "6–23 與 29–33 格右手肘可見但偏移；24–28 格右手腕可見但偏移。未自行把一個關節的觀察擴張至另一個關節。",
     "非投球側左手：39–40 格完整手臂可見但標點跑掉；41 格左肩以下未標；46–47 格左肩以下可見但標歪；50–51 格左手肘以下誤標到打者腳。保留於 notes，不改成投球側右肩／右手判斷。",
@@ -266,9 +427,11 @@
     "58 格 HSU 指出右手與打者腳在畫面重疊，手肘與手腕標歪，並確認右肘與右腕真實位置都看得清楚。兩關節列為 unreliable。因重疊導致錯位是 HSU 的解釋，模型因果未驗證。",
     "60 格 HSU 表示右手被遮擋，骨架仍有奇怪的線；後續對右肘、右腕可見性確認「全都擋住」，兩者記為 not_observable。不將此回答擴張成右肩也不可見，不推測被遮住關節的真實位置或具體遮擋物。",
     "73 格右手未標；HSU 後續確認原片右手肘與右手腕都看得到，兩者記為可見但漏標的 unreliable。74–75 格經 HSU 確認右手肘、右手腕都看得到，而且兩個點都標歪；兩者記為 unreliable。",
-    "HSU 已確認整副骨架沒有換到其他人。未列出的六關節區段是否皆可見且對位正確仍待確認；不把未報告區段自動當作 reliable。",
+    "先前 in_progress checkpoint 紀錄：HSU 已確認整副骨架沒有換到其他人。未列出的六關節區段是否皆可見且對位正確仍待確認；不把未報告區段自動當作 reliable。",
     "事件保留人工提供的位置與不確定性；HSU 人工確認前導左腳首次落地為第 55 格。人工 confidence 數值未提供，保持 null。",
-    "HSU 補充第 0 格「就是已經要啟動了」。保留片頭已準備啟動的描述，未將準備狀態改寫為已確認的精確啟動瞬間。"
+    "HSU 補充第 0 格「就是已經要啟動了」。保留片頭已準備啟動的描述，未將準備狀態改寫為已確認的精確啟動瞬間。",
+    "2026-10-04 HSU 對「除了已指出問題，其餘右肩、右肘、右腕、左髖、左膝、左踝是否都看得清楚且大致對位」明確回答「對」。依此人工確認只補齊六關節尚未記錄的區段為 reliable，保留全部既有錯位、漏標、不可觀測區段、原始逐格觀察及 null confidence。",
+    "本次完成 HSU qualitative/full review；準備開始與最高抬腿仍為 uncertain，不強迫改為精確事件，待同學提供獨立事件補充。標註完成不代表 Phase 2 已通過；尚未執行 prediction comparison 或取得同學人工 X/Y 座標。"
   ],
   "review_profile": "phase2_full_review"
 }

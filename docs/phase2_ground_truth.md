@@ -1,9 +1,9 @@
 # Phase 2 人工 Ground Truth Review
 
-更新：2026-10-03。沿用 **ground-truth-v1**，以 `review_profile: phase2_full_review`
+更新：2026-10-04。沿用 **ground-truth-v1**，以 `review_profile: phase2_full_review`
 擴充完整人工覆核欄位，舊版模板仍可讀取。原始／處理後 prediction 均不覆寫。
-目前人工覆核 **4/5**：`pitch_001`、`pitch_002`、`pitch_003`、`pitch_004` 已由 HSU 覆核，標為 `reviewed`，格式／來源驗證通過；
-`pitch_005` 已開始覆核（`in_progress`），尚未提供的人工判斷保持 null；啟動與最高抬腿保留不確定。
+目前 HSU 定性人工覆核 **5/5**：五支影片皆為 `reviewed`，格式／來源驗證通過。
+`pitch_005` 未列出的六關節區段已獲 HSU 明確確認可見且大致對位；啟動與最高抬腿仍保留不確定。
 目前另安排同學獨立完整覆核 `pitch_003`，並補充 `pitch_005` 的事件。
 詳見 [同學覆核及回傳流程](phase2_peer_review.md)，不自動推測人工判斷。
 
@@ -88,11 +88,32 @@ HSU 親自檢查 `pitch_004` 全部 0–113 格原片／overlay 對照，逐段�
 - 完成時間：`2026-10-03T09:21:10Z`（臺灣時間 2026-10-03 17:21:10）。
 - `annotation_status = reviewed`；完整區間、事件順序、schema 與原片 SHA-256 驗證通過。
 
-目前進度 **4/5**；`pitch_005` 覆核中，已保存 HSU 提供的部分異常區間與原始逐格觀察。
+當時進度 **4/5**；`pitch_005` 覆核中，已保存 HSU 提供的部分異常區間與原始逐格觀察。
 落腳 55、出手範圍 58–59、收尾 83 已記錄；片頭開始 0 與候選最高抬腿 33 保留不確定。
 HSU 已確認整副骨架沒有換到其他人；第 54 格骨架缺失與局部錯點仍保留。
-未列出的六關節區段是否可見且對位正確仍待確認，不自動補齊。
+未列出的六關節區段當時仍待確認，未自動補齊；2026-10-04 的人工確認見下節。
 尚未執行 prediction comparison，Phase 2 仍未通過驗收。
+
+## 人工覆核紀錄 — HSU（2026-10-04，pitch_005）
+
+HSU 已觀看 `pitch_005` 全部 0–100 格，重申先前逐格觀察後，對「除了已指出問題，
+其餘右肩、右肘、右腕、左髖、左膝、左踝是否都看得清楚且大致對位」明確回答「對」。
+Codex 依既有授權將這次人工確認轉錄至原本的
+[pitch_005/ground_truth.json](../analysis_results/phase2_yamamoto_20260925_01/ground_truth/pitch_005/ground_truth.json)，
+只補六關節尚未記錄的區段為 `reliable`，沒有重判或覆蓋先前異常。
+
+- 右肘 6–23、29–33、54、58、73–75 格與右腕 24–28、54、58、73–75 格不可靠。
+- 第 54 格全身骨架缺失仍記為 major pose failure 與輸出中斷；右肩可見但漏標。
+- 第 60 格右肘、右腕不可觀測；左髖／左膝／左踝第 54 格不可觀測，左膝第 55 格也不可觀測。
+- 第 45 格左膝與左踝可見但錯位；第 55 格左腳踝正常，先前右腿漏標的釐清保持於 notes。
+- 其他六關節區段依 HSU 這次明確確認補齊，每關節完整覆蓋 0–100 格。
+- 準備開始候選 0、最高抬腿候選 33 仍為 `uncertain`；落腳 55、出手 58–59、收尾 83 保持原紀錄。
+- Reviewer 保持 HSU、人工 confidence 保持 null；原始逐格觀察、來源資訊及其他 labels 沒有改寫。
+- 完成時間：`2026-10-04T02:56:16Z`（臺灣時間 2026-10-04 10:56:16）。
+- `annotation_status = reviewed`；五份 JSON 的 schema、完整區間、事件順序與原片 SHA-256 驗證通過。
+
+HSU 定性覆核完成 **5/5**。同學人工 X/Y 與獨立事件補充仍待回傳，尚未執行 prediction comparison，
+**Phase 2 仍在進行中**；reviewed 不代表所有關節可靠，也不等於 Phase 2 通過。
 
 ## 從哪裡開始
 
@@ -288,7 +309,7 @@ CSV／圖下方 observed/interpolated/missing 是處理後 keypoint 狀態。
 只讀取／驗證，不執行模型或 prediction comparison。
 也可把人工判斷用影格區間與備註交回，再依據你的答案整理 JSON，不補猜缺少部分。
 
-**本次停止於人工覆核準備。** 舊比較程式只處理兩關節和確定異常，目前對 full-review profile
+**HSU 定性覆核已完成，comparison 仍待擴充。** 舊比較程式只處理兩關節和確定異常，目前對 full-review profile
 明確停止，避免忽略新欄位或把 uncertain 當成確定標籤。人工覆核完成後，才擴充比較讀取，
 保留六關節、track break、遮擋、事件範圍與不確定區間，產生獨立 comparison report。
 本 baseline 沒有自動事件預測或人工 X/Y 座標，事件時間誤差與座標誤差仍不能量測。

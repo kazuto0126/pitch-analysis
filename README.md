@@ -30,11 +30,15 @@ finalization，五支均通過現有 clip-level acceptance 條件；正式狀態
 逐關節 observed／interpolated／missing 狀態、關節覆蓋率與跳動檢查，以及
 投手骨架的 ROI、中心、尺度、動作連續性和 track-break 警示。原有 MediaPipe
 推論經共用 `PoseEstimator` 介面執行，未更換模型或修改選取門檻。
-目前人工 ground truth 尚未完成，Phase 2 可靠度結果是待驗證的診斷；
+HSU 已完成五支影片的逐格定性覆核，但同學手動 X/Y 尚未回傳，
+prediction comparison 尚未完成；Phase 2 可靠度結果仍是待驗證的診斷，
+Phase 2 仍在進行中；
 詳見 [Phase 2 reliability](docs/phase2_reliability.md) 與
 [manual ground truth](docs/phase2_ground_truth.md)。
 
-目前 HSU 已完成 4/5 人工覆核。另提供可離線分享的
+目前 HSU 已完成 5/5 逐格定性覆核。`pitch_005` 除已記錄的問題外，
+HSU 另確認其餘右肩／肘／腕及左髖／膝／踝皆可見且大致對位；
+準備啟動與最高抬腿事件仍標為 uncertain。另提供可離線分享的
 [同學獨立覆核流程](docs/phase2_peer_review.md)：`pitch_003` 完整覆核、
 `pitch_005` 事件補充。回覆沿用相同 ground truth 格式，按 reviewer 分開保存。
 
