@@ -24,6 +24,14 @@ analysis_results/phase2_yamamoto_20260925_01/manual_pose_package_20261004_01.zip
 資料包已產生，約 80.4 MiB；原圖與來源、模板空白、包內連結及 ZIP 完整性檢查通過。
 這裡尚未建立登入後的 CVAT 任務，請同學先交回第 0–4 格的部分匯出檢查，再完成其餘影格。
 
+使用者已授權將資料包放到公開的 GitHub Release，供同學直接下載：
+
+- [下載完整人工骨架標註 ZIP](https://github.com/kazuto0126/pitch-analysis/releases/download/phase2-manual-pose-review-20261004-01/manual_pose_package_20261004_01.zip)
+- [Release 頁面與操作摘要](https://github.com/kazuto0126/pitch-analysis/releases/tag/phase2-manual-pose-review-20261004-01)
+
+請選 Assets 中的 `manual_pose_package_20261004_01.zip`；GitHub 自動提供的 Source code ZIP 不含媒體。
+資料包 SHA-256：`3b568e9065e0ec712c17bbd4d9ad741d39b1e1c7d5174d874ce6e2de7ffbe80e`。
+
 ## 標註基準
 
 同學上傳原始 PNG ZIP，在 Labels → Raw 貼上 `cvat_labels.json`。每格使用一個 `PITCHER_2D` skeleton，選 **Shape**，逐一拖曳關節點及設定各點的 `human_state`、`review_note`。以空白原片開始，不匯入 AI 預測、不用自動標註、Track 或自動內插，讓人工基準保持獨立。

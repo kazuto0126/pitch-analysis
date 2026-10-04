@@ -41,6 +41,8 @@ finalization，五支均通過現有 clip-level acceptance 條件；正式狀態
 2026-10-04 確認同學任務改為 [手動骨架座標標註](docs/phase2_manual_keypoints.md)：
 用 CVAT 在 `pitch_003` 原始逐格圖上標 12 個身體關節，另補 `pitch_003`／`pitch_005`
 事件。人工 X/Y 與可見性另存，可量化既有 AI 的逐關節位置誤差；不自動更新模型。
+同學可直接下載 [GitHub 人工骨架標註 ZIP](https://github.com/kazuto0126/pitch-analysis/releases/download/phase2-manual-pose-review-20261004-01/manual_pose_package_20261004_01.zip)，
+解壓後閱讀 `START_HERE.md`；不需要 clone 專案。
 
 `validate-input-quality <mp4> <metadata.json>` 先做影片層的保守檢查；
 `analyze-pitch` 會在姿態推論前執行同樣 preflight。明顯切鏡標記 `rejected`，

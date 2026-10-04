@@ -52,7 +52,20 @@ overlay, and raw keypoint JSON hashes remain unchanged. The current CVAT
 configuration follows its official Raw-label format; a logged-in CVAT task
 was not created here, so the first five manually annotated frames are the
 required pilot to verify the classmate's actual export before completing
-the clip. No video was uploaded to a third-party service by this handoff.
+the clip. The preparation step performed no third-party upload. The user's
+subsequent explicit request authorized publishing the complete media package
+as a public GitHub Release asset so the classmate can download it independently.
+
+Published annotation package:
+[Release page](https://github.com/kazuto0126/pitch-analysis/releases/tag/phase2-manual-pose-review-20261004-01)
+and [direct ZIP download](https://github.com/kazuto0126/pitch-analysis/releases/download/phase2-manual-pose-review-20261004-01/manual_pose_package_20261004_01.zip).
+The asset is 84,347,750 bytes; SHA-256
+`3b568e9065e0ec712c17bbd4d9ad741d39b1e1c7d5174d874ce6e2de7ffbe80e`.
+The data release points to tool commit `9eeb5eadf7014bf960e11e985d2126fb69929407`.
+It provides blank annotation tasks and does not indicate Phase 2 acceptance.
+GitHub's automatic Source code archives do not include these ignored media.
+GitHub reports the asset as uploaded with the matching SHA-256. Anonymous
+download verification returned HTTP 200 and the exact 84,347,750-byte length.
 
 Full suite: **138 passed, 0 failed, 1 skipped** (139 discovered). The skipped
 test is the opt-in real-video E2E; no pose/tracking pipeline was rerun.
