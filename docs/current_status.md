@@ -142,7 +142,7 @@ at frames 33–35 and 36–44 are clearly visible and correctly placed. HSU then
 confirmed the placements at 45–53 and 54–63; those joints already have explicit
 same-source visibility observations. These 62 additional points and their
 observations are saved in the existing event/visibility
-supplement's notes. The latest partial coordinate checkpoint is
+supplement's notes. The coordinate checkpoint after those initial reviews is
 `annotations/manual_keypoints/HSU_TSAI_RETURN_20261004_07/pitch_003/manual_keypoints.json`:
 **96 visible, 84 not observable, 1,200 unreviewed**, still `in_progress`.
 All new visible X/Y pairs match the preserved original XML; the earlier
@@ -174,7 +174,7 @@ meaning and affected frames remain unconfirmed. None of the ten right-elbow
 points at 83–92 was marked correct or incorrect from this answer.
 The previous supplement and all seven coordinate checkpoints remain unchanged.
 
-The latest coordinate reference still has **96 visible, 84 not observable,
+The saved overnight coordinate reference had **96 visible, 84 not observable,
 1,200 unreviewed**. Per-joint counts, source checks, saved-review history and the
 next review entry are in the [manual review checkpoint](phase2_manual_review_checkpoint_20261005.md).
 An offline helper provides ten enlarged original/Tsai pairs for the pending
@@ -189,6 +189,133 @@ formal-video E2E stayed skipped; synthetic-video MediaPipe tests ran.
 The first restricted-context attempt was blocked by temporary-directory access,
 with its log preserved; no code was changed to make the rerun pass.
 Verified log: `analysis_results/manual_pose_return_check_20261004_01/autonomous_cleanup_20261005_01/test_suite_verified.log`.
+
+HSU subsequently clarified the ten right-elbow placements at 83–92 with
+"位置正確". Their visibility was already explicitly confirmed. The new
+coordinate checkpoint is
+`annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_01/pitch_003/manual_keypoints.json`:
+**106 visible, 84 not observable, 1,190 unreviewed**, still `in_progress`.
+The exact original Tsai X/Y pairs were retained; all previous checkpoints and
+protected source/prediction hashes remained unchanged. The clarification is
+preserved in
+`annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_02/pitch_003/ground_truth.json`.
+The previous ambiguous answer remains in the review history but is no longer
+an open placement question for 83–92. The next review targets are right elbow
+93–104; unobservable right wrists in this range are not reconsidered.
+Check: `analysis_results/manual_pose_return_check_20261004_01/manual_keypoints_HSU_checkpoint_check_20261005_01.json`.
+
+HSU then explicitly confirmed right elbow 93–96 is visible and correctly
+placed ("看的到且正確"). Four more original Tsai coordinate pairs are saved in
+`annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_02/pitch_003/manual_keypoints.json`:
+**110 visible, 84 not observable, 1,186 unreviewed**, still `in_progress`.
+The latest supplement is `annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_03/pitch_003/ground_truth.json`;
+source/schema checks and protected-history hashes passed. The next four frames
+to review are right elbow 97–100. No other joints or frames were changed.
+Check: `analysis_results/manual_pose_return_check_20261004_01/manual_keypoints_HSU_checkpoint_check_20261005_02.json`.
+
+HSU confirmed right elbow 97–100 is hidden ("都看不到被遮住了"). These four
+points are now `not_observable`, with null X/Y, in
+`annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_03/pitch_003/manual_keypoints.json`:
+**110 visible, 88 not observable, 1,182 unreviewed**, still `in_progress`.
+The new supplemental GT is `annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_04/pitch_003/ground_truth.json`.
+No occluder was inferred, no right-wrist records were changed, and the earlier
+canonical observations remain preserved. Source/schema checks and protected
+hashes passed. The next review targets are right elbow 101–104.
+Check: `analysis_results/manual_pose_return_check_20261004_01/manual_keypoints_HSU_checkpoint_check_20261005_03.json`.
+
+HSU confirmed right elbow 101–104 is not visible ("看不到"). These four
+points are `not_observable` with null X/Y in
+`annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_04/pitch_003/manual_keypoints.json`:
+**110 visible, 92 not observable, 1,178 unreviewed**, still `in_progress`.
+The new supplement is `annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_05/pitch_003/ground_truth.json`.
+No cause of invisibility was inferred and no other joint records were changed.
+Source/schema validation and protected hashes passed. The next review is right
+elbow 105–108, followed by 109–114.
+Check: `analysis_results/manual_pose_return_check_20261004_01/manual_keypoints_HSU_checkpoint_check_20261005_04.json`.
+
+HSU replied "正確" about right-elbow placements at 105–108. This placement
+opinion is saved in `annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_06/pitch_003/ground_truth.json`.
+Direct source visibility remains to be clarified; the four manual points stay
+unreviewed with null X/Y and the latest counts remain 110/92/1,178.
+The earlier full-clip visibility principle is preserved separately; it is not
+used to substitute for this finer review's direct visibility answer.
+
+HSU then explicitly answered "可以" to direct right-elbow visibility at
+105–108. Together with the preceding placement confirmation, four original
+Tsai X/Y pairs were added in
+`annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_05/pitch_003/manual_keypoints.json`:
+**114 visible, 92 not observable, 1,174 unreviewed**, still `in_progress`.
+The new supplement is `annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_07/pitch_003/ground_truth.json`.
+Source/schema checks passed and protected source/prediction/history hashes
+remain unchanged. The next four-frame review is right elbow 109–112.
+Check: `analysis_results/manual_pose_return_check_20261004_01/manual_keypoints_HSU_checkpoint_check_20261005_05.json`.
+
+HSU confirmed right elbow 109–112 is directly visible and correctly placed
+("看的見且正確"). Four original coordinate pairs were added in
+`annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_06/pitch_003/manual_keypoints.json`:
+**118 visible, 92 not observable, 1,170 unreviewed**, still `in_progress`.
+The new supplement is `annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_08/pitch_003/ground_truth.json`.
+Source/schema checks and protected hashes passed; no other points were changed.
+The next review targets are right elbow 113–114.
+Check: `analysis_results/manual_pose_return_check_20261004_01/manual_keypoints_HSU_checkpoint_check_20261005_06.json`.
+
+HSU confirmed right elbow 113–114 is directly visible and correctly placed
+("正確可以"). Two original coordinate pairs were added in
+`annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_07/pitch_003/manual_keypoints.json`:
+**120 visible, 92 not observable, 1,168 unreviewed**, still `in_progress`.
+The new supplement is `annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_09/pitch_003/ground_truth.json`.
+Source/schema checks and protected hashes passed. Right elbow 33–114 is now
+reviewed, including explicitly unobservable intervals. The remaining 31
+right-elbow points are frames 0–21 and 24–32; 22–23 was already unobservable.
+Resume at 0–3 rather than rechecking finished ranges. Other joints remain
+incomplete and Phase 2 is not accepted.
+Check: `analysis_results/manual_pose_return_check_20261004_01/manual_keypoints_HSU_checkpoint_check_20261005_07.json`.
+
+HSU answered "正確" to the combined direct-visibility/correct-placement
+question for right elbow 0–3. These four original coordinate pairs were added in
+`annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_08/pitch_003/manual_keypoints.json`:
+**124 visible, 92 not observable, 1,164 unreviewed**, still `in_progress`.
+The new supplement is `annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_10/pitch_003/ground_truth.json`.
+Source/schema checks and protected hashes passed. The remaining right-elbow
+review ranges are 4–21 and 24–32; resume at 4–7 without revisiting completed frames.
+Check: `analysis_results/manual_pose_return_check_20261004_01/manual_keypoints_HSU_checkpoint_check_20261005_08.json`.
+
+HSU answered "正確" to the combined direct-visibility/correct-placement
+question for right elbow 4–7. Four original coordinate pairs were added in
+`annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_09/pitch_003/manual_keypoints.json`:
+**128 visible, 92 not observable, 1,160 unreviewed**, still `in_progress`.
+The new supplement is `annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_11/pitch_003/ground_truth.json`.
+Source/schema checks and protected hashes passed. No other joint records changed;
+resume at right elbow 8–11.
+Check: `analysis_results/manual_pose_return_check_20261004_01/manual_keypoints_HSU_checkpoint_check_20261005_09.json`.
+
+HSU confirmed right elbow 8–11 with "正確你一次給我多點": the first part
+affirms the combined direct-visibility/placement question; the second requests
+larger future batches. Four original coordinate pairs were added in
+`annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_10/pitch_003/manual_keypoints.json`:
+**132 visible, 92 not observable, 1,156 unreviewed**, still `in_progress`.
+The new supplement is `annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_12/pitch_003/ground_truth.json`.
+Source/schema checks and protected hashes passed. Present all remaining 19
+right-elbow frames, 12–21 and 24–32, as one review batch; no answers for that
+batch have been supplied yet. Already-unobservable 22–23 stays unchanged.
+Check: `analysis_results/manual_pose_return_check_20261004_01/manual_keypoints_HSU_checkpoint_check_20261005_10.json`.
+
+HSU answered "全部都正確" for the remaining 19 right-elbow placements at
+12–21 and 24–32. Same-source human visibility evidence exists separately:
+25–29 explicitly visible, and other frames covered by HSU's full-review
+"unmentioned portions are clear" principle and joint-specific observable intervals.
+Combining that visibility evidence with the new Tsai placement judgment,
+19 original coordinate pairs were saved in
+`annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_11/pitch_003/manual_keypoints.json`:
+**151 visible, 92 not observable, 1,137 unreviewed**, still `in_progress`.
+The new supplement is `annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_13/pitch_003/ground_truth.json`.
+Right elbow is complete for all 115 frames: **93 visible, 22 not observable,
+0 unreviewed**. Other joints and full-clip manual acceptance remain incomplete.
+Source/schema checks and protected hashes passed. Next review right wrist,
+whose remaining 36 frames are 0–21, 24, 30–32 and 105–114; start with 0–15 as
+one larger batch. No coordinate-error comparison or model changes were performed.
+Check: `analysis_results/manual_pose_return_check_20261004_01/manual_keypoints_HSU_checkpoint_check_20261005_11.json`.
+
 
 ### Manual skeleton coordinate handoff (2026-10-04)
 

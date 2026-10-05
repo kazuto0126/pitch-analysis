@@ -124,7 +124,7 @@ HSU 逐段覆核後，另存部分參考：
 HSU 接著確認 64–72 格點位，但單獨原圖澄清時表示 70–71 格右肘、右腕皆看不到。
 因此只加入 64–69、72 格的 14 個可見點；70–71 的四個點記為不可觀測、X/Y 留空。
 再覆核 73–82 格後，HSU 確認右腕 73–78 可見且正確、右肘 73–78 看不到，79–82 兩關節皆看不到。
-最新部分參考為 `annotations/manual_keypoints/HSU_TSAI_RETURN_20261004_07/pitch_003/manual_keypoints.json`：
+當時部分參考為 `annotations/manual_keypoints/HSU_TSAI_RETURN_20261004_07/pitch_003/manual_keypoints.json`：
 **96 個可見且對位、84 個不可觀測、1,200 個未覆核**，仍為 `in_progress`。
 HSU 再確認右腕 84–86 被遮住、右肘 83–92 可見；前者加入三個不可觀測點，後者點位正確性仍待釐清，仍為未覆核且 X/Y 留空。
 前六版保留原樣；已採用座標與保存的原 XML 相同，未複製舊 AI 對位判斷或推估隱藏座標。
@@ -133,6 +133,59 @@ HSU 再確認右腕 84–86 被遮住、右肘 83–92 可見；前者加入三�
 `annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_01/pitch_003/ground_truth.json`。
 尚不確定是表示沒有偏移，還是否定全部對位；不據此把右肘 83–92 十格判對或判錯。
 下次放大對照圖及完整進度見 [人工覆核 checkpoint](phase2_manual_review_checkpoint_20261005.md)。
+
+HSU 接著在同一個 83–92 右肘續看頁上下文明確回覆「位置正確」，解除這十格的點位待釐清。
+83–92 澄清後的部分參考為 `annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_01/pitch_003/manual_keypoints.json`：
+**106 個可見且對位、84 個不可觀測、1,190 個未覆核**，仍為 `in_progress`。
+十個新可見座標直接取自 Tsai 原 XML；前七版與先前補充皆保留，未改 confidence／完成時間。
+
+HSU 再明確確認右肘 93–96「看的到且正確」，新增四個可見且對位的原始座標。
+93–96 覆核後的部分參考為 `annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_02/pitch_003/manual_keypoints.json`：
+**110 個可見且對位、84 個不可觀測、1,186 個未覆核**，仍為 `in_progress`；下一段是右肘 97–100。
+
+HSU 確認 97–100 右肘「都看不到被遮住了」，四點記為不可觀測、X/Y 留空，未推定遮擋來源。
+97–100 覆核後的部分參考為 `annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_03/pitch_003/manual_keypoints.json`：
+**110 個可見且對位、88 個不可觀測、1,182 個未覆核**，仍為 `in_progress`；接續右肘 101–104。
+
+HSU 確認 101–104 右肘「看不到」，四點不可觀測、X/Y 留空；未推定不可見原因。
+101–104 覆核後的部分參考為 `annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_04/pitch_003/manual_keypoints.json`：
+**110 個可見且對位、92 個不可觀測、1,178 個未覆核**，仍為 `in_progress`；接續右肘 105–108。
+
+105–108 右肘點位意見已回答「正確」，原圖關節中心可見性仍待直接確認。
+最新補充為 `annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_06/pitch_003/ground_truth.json`；
+本次沒有採用新座標或推定不可見狀態，最新座標 checkpoint 及計數保持不變。
+
+HSU 隨後以「可以」明確確認 105–108 原圖右肘可直接看見，與前次位置正確的回答合併，加入四個 Tsai 原始可見點位。
+105–108 覆核後的部分參考為 `annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_05/pitch_003/manual_keypoints.json`：
+**114 個可見且對位、92 個不可觀測、1,174 個未覆核**，仍為 `in_progress`；接續右肘 109–112。
+
+HSU 確認 109–112 右肘「看的見且正確」，新增四個 Tsai 原始可見點位。
+109–112 覆核後的部分參考為 `annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_06/pitch_003/manual_keypoints.json`：
+**118 個可見且對位、92 個不可觀測、1,170 個未覆核**，仍為 `in_progress`；接續右肘 113–114。
+
+HSU 以「正確可以」確認 113–114 右肘可見且對位，新增兩個 Tsai 原始座標。
+113–114 覆核後的部分參考為 `annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_07/pitch_003/manual_keypoints.json`：
+**120 個可見且對位、92 個不可觀測、1,168 個未覆核**，仍為 `in_progress`。
+右肘尚待覆核 0–21、24–32 共31點；其他已完成區段不重複標，先回到 0–3 補齊。
+
+HSU 對 0–3 右肘是否直接可見且對位的合併問題回答「正確」，保存四個 Tsai 原始點位。
+0–3 覆核後的部分參考為 `annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_08/pitch_003/manual_keypoints.json`：
+**124 個可見且對位、92 個不可觀測、1,164 個未覆核**，仍為 `in_progress`；接續右肘 4–7。
+
+HSU 對 4–7 右肘是否直接可見且對位的合併問題回答「正確」，保存四個 Tsai 原始點位。
+4–7 覆核後的部分參考為 `annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_09/pitch_003/manual_keypoints.json`：
+**128 個可見且對位、92 個不可觀測、1,160 個未覆核**，仍為 `in_progress`；接續右肘 8–11。
+
+HSU 確認 8–11 並要求一次給更多格數，保存四個 Tsai 原始可見點位。
+8–11 覆核後的部分參考為 `annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_10/pitch_003/manual_keypoints.json`：
+**132 個可見且對位、92 個不可觀測、1,156 個未覆核**，仍為 `in_progress`。
+下一批一次呈現剩餘右肘 12–21、24–32 共19格；增加批次量不代表未看區段已獲人工確認。
+
+HSU 對最後19格右肘回答「全部都正確」；可見性另有同SHA既有人工紀錄，結合新點位判斷保存19個原始座標。
+最新部分參考為 `annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_11/pitch_003/manual_keypoints.json`：
+**151 個可見且對位、92 個不可觀測、1,137 個未覆核**，仍為 `in_progress`。
+右肘全115格已覆核（93可見、22不可觀測）；其他關節未完成，下一批改看右腕0–15。
+
 
 ## 計算 AI 位置誤差
 
