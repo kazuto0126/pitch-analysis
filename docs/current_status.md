@@ -658,23 +658,143 @@ This hip batch is saved locally; Phase 2 remains IN PROGRESS.
 
 HSU answered "都正確" to the combined question whether both hips in 96–114 are
 clearly visible and correctly placed, after both original/Tsai sheets were
-embedded in the conversation. The latest partial reference is
+embedded in the conversation. The partial reference saved at that point is
 `annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_34/pitch_003/manual_keypoints.json`:
 **746 visible, 173 not observable, 2 uncertain, 459 unreviewed**, still `in_progress`.
-The latest supplement is `annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_36/pitch_003/ground_truth.json`;
+The supplement saved at that point is `annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_36/pitch_003/ground_truth.json`;
 only notes were appended. The 38 new points retain original Tsai X/Y. Both hips
 are now reviewed for all 115 frames, with 115 visible and correctly placed points
 on each side. Both shoulders, elbows, wrists and hips are reviewed throughout.
 The four knee/ankle joints still require review; left ankle frame 65 retains its
 existing not-observable label. Whole-reference completion time and confidence
 remain null. Protected sources, predictions, canonical GT and history are unchanged.
-Next review only both knees at 0–15 using `analysis_results/knee_review_20261005_01/`
-(32 unreviewed points); display preparation assigned no human labels.
+At HSU's request, review both knees and both ankles together in each batch.
+Next review the four leg joints at 0–15 using `analysis_results/leg_review_20261005_01/`
+(64 unreviewed points). Cyan 9/11 are left knee/ankle; red 10/12 are right
+knee/ankle. The earlier knee-only helper is preserved. This display/workflow
+change assigned no human labels and changed no reference counts or coordinates.
 Check: `analysis_results/manual_pose_return_check_20261004_01/manual_keypoints_HSU_checkpoint_check_20261005_34.json`.
 The seven hip checkpoints and seven peer supplements are saved with human
 attribution for the authorized GitHub checkpoint. Private XML and local media
 remain excluded. No subagents, model inference, comparison, training or full
 test rerun were used; Phase 2 remains IN PROGRESS.
+
+HSU answered "正確" to the combined question whether all four knee/ankle points
+in 0–15 are clearly visible and correctly placed, after both original/Tsai
+sheets were embedded in the conversation. The partial reference saved at that point is
+`annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_35/pitch_003/manual_keypoints.json`:
+**810 visible, 173 not observable, 2 uncertain, 395 unreviewed**, still `in_progress`.
+The supplement saved at that point is `annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_37/pitch_003/ground_truth.json`;
+only notes were appended. All 64 new points retain original Tsai X/Y. Both knees
+and right ankle have 16 visible / 99 unreviewed points; left ankle has 16 visible,
+1 existing not-observable point (65), and 98 unreviewed. Schema/source checks
+passed; protected sources, predictions, canonical GT and history are unchanged.
+Next review all four knee/ankle joints at 16–31 using `analysis_results/leg_review_20261005_02/`
+(64 unreviewed points). No labels were assigned during display preparation.
+Check: `analysis_results/manual_pose_return_check_20261004_01/manual_keypoints_HSU_checkpoint_check_20261005_35.json`.
+This batch is saved locally. No subagents, model inference, comparison, training
+or full test rerun were used; Phase 2 remains IN PROGRESS.
+
+HSU answered "可以" to the combined visibility/placement question for all four
+knee/ankle points in 16–31 after the original/Tsai sheets were shown. That batch's
+reference is `annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_36/pitch_003/manual_keypoints.json`:
+**874 visible, 173 not observable, 2 uncertain, 331 unreviewed**, still `in_progress`.
+That batch's notes-only supplement is `annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_38/pitch_003/ground_truth.json`.
+All 64 new points retain original Tsai X/Y. Both knees and right ankle have
+32 visible / 83 unreviewed; left ankle has 32 visible / 1 not observable / 82 unreviewed.
+Schema/source checks passed; history, canonical GT, predictions and existing
+hidden/uncertain labels are unchanged. Next combined review is 32–47 at
+`analysis_results/leg_review_20261005_03/` (64 unreviewed points).
+Check: `analysis_results/manual_pose_return_check_20261004_01/manual_keypoints_HSU_checkpoint_check_20261005_36.json`.
+This batch is saved locally. No subagents, inference, comparison, training or full
+test rerun; Phase 2 remains IN PROGRESS.
+
+HSU answered "正確" to the combined visibility/placement question for all four
+knee/ankle points in 32–47 after the original/Tsai sheets were shown. That batch's
+reference is `annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_37/pitch_003/manual_keypoints.json`:
+**938 visible, 173 not observable, 2 uncertain, 267 unreviewed**, still `in_progress`.
+That batch's notes-only supplement is `annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_39/pitch_003/ground_truth.json`.
+All 64 new points retain original Tsai X/Y. Both knees and right ankle have
+48 visible / 67 unreviewed; left ankle has 48 visible / 1 not observable / 66 unreviewed.
+Schema/source checks passed; history, canonical GT, predictions and existing
+hidden/uncertain labels are unchanged. Next combined review is 48–63 at
+`analysis_results/leg_review_20261005_04/` (64 unreviewed points).
+Check: `analysis_results/manual_pose_return_check_20261004_01/manual_keypoints_HSU_checkpoint_check_20261005_37.json`.
+This batch is saved locally. No subagents, inference, comparison, training or full
+test rerun; Phase 2 remains IN PROGRESS.
+
+HSU answered "正確" to the combined visibility/placement question for all four
+knee/ankle points in 48–63 after reviewing the original/Tsai sheets. That batch's
+reference is `annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_38/pitch_003/manual_keypoints.json`:
+**1002 visible, 173 not observable, 2 uncertain, 203 unreviewed**, still `in_progress`.
+That batch's notes-only supplement is `annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_40/pitch_003/ground_truth.json`.
+All 64 new points retain exact original Tsai X/Y. Both knees and right ankle have
+64 visible / 51 unreviewed; left ankle has 64 visible / 1 not observable / 50 unreviewed.
+Schema/source checks passed; history, canonical GT, predictions and existing
+hidden/uncertain labels are unchanged. Next combined review is 64–79 at
+`analysis_results/leg_review_20261005_05/`: 64 displayed points, 63 unreviewed.
+Frame 65 left ankle is already not observable with null X/Y; preserve it and exclude
+it from the next question. Original/Tsai source pixels match in all 32 panels.
+Check: `analysis_results/manual_pose_return_check_20261004_01/manual_keypoints_HSU_checkpoint_check_20261005_38.json`.
+Saved locally; no subagents, inference, comparison, training or full test rerun.
+Phase 2 remains IN PROGRESS.
+
+HSU answered "都可以" to the combined visibility/placement question for knees
+and ankles in 64–79. The question explicitly excluded the previously reviewed
+left ankle at frame 65; only the other 63 unreviewed points were saved as visible
+and correctly placed using original Tsai X/Y. Left ankle 65 remains not observable
+with null coordinates. That batch's partial reference is
+`annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_39/pitch_003/manual_keypoints.json`:
+**1065 visible, 173 not observable, 2 uncertain, 140 unreviewed**, still `in_progress`.
+That batch's notes-only supplement: `annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_41/pitch_003/ground_truth.json`.
+Both knees and right ankle: 80 visible / 35 unreviewed; left ankle:
+79 visible / 1 not observable / 35 unreviewed. Schema/source checks passed;
+history, canonical GT, predictions, confidence and completion timestamps unchanged.
+Next combined review: 80–95 in `analysis_results/leg_review_20261005_06/`,
+64 unreviewed points. Both sheets viewed for layout; all 32 panels match source pixels.
+Check: `analysis_results/manual_pose_return_check_20261004_01/manual_keypoints_HSU_checkpoint_check_20261005_39.json`.
+Saved locally; no subagents, inference, comparison, training or full test rerun.
+Phase 2 remains IN PROGRESS.
+
+HSU answered "正確" to the combined visibility/placement question for all four
+knee/ankle points in 80–95 after reviewing both original/Tsai sheets. That batch's
+partial reference is `annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_40/pitch_003/manual_keypoints.json`:
+**1129 visible, 173 not observable, 2 uncertain, 76 unreviewed**, still `in_progress`.
+That batch's notes-only supplement: `annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_42/pitch_003/ground_truth.json`.
+All 64 new points retain original Tsai X/Y. Both knees and right ankle:
+96 visible / 19 unreviewed; left ankle: 95 visible / 1 not observable / 19 unreviewed.
+Frame 65 left ankle remains not observable. Schema/source checks passed; history,
+canonical GT, raw predictions and hidden/uncertain points unchanged. Confidence
+and completion timestamps remain null. Final combined batch: 96–114 in
+`analysis_results/leg_review_20261005_07/`, 19 frames / 76 unreviewed points.
+Both sheets viewed for layout; all 38 panels preserve source pixels. No human
+labels inferred during preparation. Check:
+`analysis_results/manual_pose_return_check_20261004_01/manual_keypoints_HSU_checkpoint_check_20261005_40.json`.
+Saved locally; no subagents, inference, comparison, training or full test rerun.
+Phase 2 remains IN PROGRESS.
+
+HSU answered "都正確" to the combined visibility/placement question for all four
+knee/ankle points in the final 96–114 batch. All 76 points retain original Tsai X/Y.
+**All 115 frames and 12 joints have now been individually reviewed: 1,380 states,
+1,205 visible and correctly placed, 173 not observable, 2 uncertain, 0 unreviewed.**
+Latest coordinate reference: `annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_41/pitch_003/manual_keypoints.json`.
+Latest notes-only supplement: `annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_43/pitch_003/ground_truth.json`.
+Both knees and right ankle: 115 visible each; left ankle: 114 visible / 1 not observable
+(frame 65). Left wrist 85–86 remains uncertain. All 175 nonvisible points keep null XY.
+Tsai manually placed original coordinates on 2026-10-04; HSU personally reviewed
+visibility and placement on 2026-10-05; Codex only transcribed and verified evidence.
+Point review is complete, but actual completion provenance has not been supplied:
+annotation_status remains in_progress, reviewed_at_utc and confidence remain null.
+Next: obtain actual completion provenance, preserve a new reviewed checkpoint,
+then evaluate existing raw 2D predictions against visible reference coordinates.
+Do not re-review hidden points or force uncertain coordinates. Schema/source checks
+passed; historical references, canonical five-clip GT, raw predictions, video and
+Tsai source are unchanged. Supplemental events 13/46/65/69/99 remain separate
+from canonical 12/47/66/69/99. Check:
+`analysis_results/manual_pose_return_check_20261004_01/manual_keypoints_HSU_checkpoint_check_20261005_41.json`.
+This checkpoint publishes the seven leg batches and human attribution. No model,
+threshold, inference, training or Phase 3 changes; no full test rerun for annotations.
+**Phase 2 = IN PROGRESS.** Completing this clip's reference does not establish pose accuracy.
 
 ### Manual skeleton coordinate handoff (2026-10-04)
 

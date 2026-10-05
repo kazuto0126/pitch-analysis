@@ -343,13 +343,72 @@ HSU對雙髖80–95看得清楚且位置正確的合併問題回答「正確」�
 schema／來源檢查通過；原Tsai座標、歷史、模型輸出與canonical GT保留，未修改分析邏輯。
 
 HSU對雙髖96–114清楚可見且位置正確的合併問題回答「都正確」，新增38個原Tsai X/Y。
-最新部分參考為 `annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_34/pitch_003/manual_keypoints.json`：
+雙髖96–114覆核後的部分參考為 `annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_34/pitch_003/manual_keypoints.json`：
 **746 個可見且對位、173 個不可觀測、2 個不確定、459 個未覆核**，仍為 `in_progress`。
-最新補充為 `annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_36/pitch_003/ground_truth.json`；只追加原話與問題上下文。
+該次補充為 `annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_36/pitch_003/ground_truth.json`；只追加原話與問題上下文。
 雙髖全115格已逐點覆核，左右髖各115可見且對位；雙肩、雙肘、雙腕及雙髖全片已覆核。
-下一批雙膝0–15共32點全為未覆核，對照位於 `analysis_results/knee_review_20261005_01/`。
+依HSU要求，後續每批同時覆核左右膝踝，避免同一段影格分開重看。
+下一批膝踝0–15共64點全為未覆核，對照位於 `analysis_results/leg_review_20261005_01/`。
+青色9／11為左膝／左踝，紅色10／12為右膝／右踝；原雙膝助手保留，流程調整沒有新增人工判定。
 schema／來源檢查通過；原Tsai座標、歷史、模型輸出與canonical GT保留，未修改分析邏輯。
 全片12關節參考仍待膝踝覆核；人工 confidence／完整完成時間維持null，不宣稱像素誤差為零。
+
+HSU對左右膝踝0–15四點清楚可見且位置正確的合併問題回答「正確」，新增64個原Tsai X/Y。
+膝踝0–15覆核後的部分參考為 `annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_35/pitch_003/manual_keypoints.json`：
+**810 個可見且對位、173 個不可觀測、2 個不確定、395 個未覆核**，仍為 `in_progress`。
+該次補充為 `annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_37/pitch_003/ground_truth.json`；只追加原話與問題上下文。
+雙膝、右踝各16可見／99未覆核；左踝16可見／1不可觀測／98未覆核，左踝65原不可觀測紀錄保留。
+下一批左右膝踝16–31共64點全為未覆核，對照位於 `analysis_results/leg_review_20261005_02/`。
+schema／來源檢查通過；原Tsai座標、歷史、模型輸出與canonical GT保留，未修改分析邏輯。
+人工 confidence／完整完成時間維持null，不宣稱像素誤差為零。
+
+HSU對左右膝踝16–31四點清楚可見且位置正確的合併問題回答「可以」，新增64個原Tsai X/Y。
+膝踝16–31覆核後的部分參考：`annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_36/pitch_003/manual_keypoints.json`，
+**874 可見且對位、173 不可觀測、2 不確定、331 未覆核**，仍為 `in_progress`。
+該次補充：`annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_38/pitch_003/ground_truth.json`，只追加notes。
+雙膝、右踝各32可見／83未覆核；左踝32可見／1不可觀測／82未覆核。
+下一批左右膝踝32–47共64個未覆核點，對照位於 `analysis_results/leg_review_20261005_03/`。
+schema／來源檢查通過；歷史、canonical GT、prediction與既有不可觀測／不確定點保留，confidence與完整完成時間仍null。
+
+HSU對左右膝踝32–47四點清楚可見且位置正確的合併問題回答「正確」，新增64個原Tsai X/Y。
+膝踝32–47覆核後的部分參考：`annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_37/pitch_003/manual_keypoints.json`，
+**938 可見且對位、173 不可觀測、2 不確定、267 未覆核**，仍為 `in_progress`。
+該次補充：`annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_39/pitch_003/ground_truth.json`，只追加notes。
+雙膝、右踝各48可見／67未覆核；左踝48可見／1不可觀測／66未覆核。
+下一批左右膝踝48–63共64個未覆核點，對照位於 `analysis_results/leg_review_20261005_04/`。
+schema／來源檢查通過；歷史、canonical GT、prediction與既有不可觀測／不確定點保留，confidence與完整完成時間仍null。
+
+HSU對左右膝踝48–63四點清楚可見且位置正確的合併問題回答「正確」，新增64個原Tsai X/Y。
+膝踝48–63覆核後的部分參考：`annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_38/pitch_003/manual_keypoints.json`，
+**1002 可見且對位、173 不可觀測、2 不確定、203 未覆核**，仍為 `in_progress`。
+該次補充：`annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_40/pitch_003/ground_truth.json`，只追加notes。
+雙膝、右踝各64可見／51未覆核；左踝64可見／1不可觀測／50未覆核。
+下一批左右膝踝64–79對照位於 `analysis_results/leg_review_20261005_05/legs_0064_0071.png` 與 `analysis_results/leg_review_20261005_05/legs_0072_0079.png`。共顯示64點，其中63點未覆核；第65格左踝已記為不可觀測、X/Y留空，保留原判定，不再詢問。
+schema／來源檢查通過；歷史、canonical GT、prediction與既有不可觀測／不確定點保留，confidence與完整完成時間仍null。
+
+HSU對64–79格膝踝問題回答「都可以」。問題已排除第65格左踝，其餘63點確認清楚可見且對位，採用Tsai原始X/Y。第65格左踝保留不可觀測與null座標。
+雙膝、右踝各80可見／35未覆核；左踝79可見／1不可觀測／35未覆核。
+膝踝64–79覆核後的部分參考：`annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_39/pitch_003/manual_keypoints.json`，
+**1065 可見且對位、173 不可觀測、2 不確定、140 未覆核**，仍為 `in_progress`。
+該次補充：`annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_41/pitch_003/ground_truth.json`，只追加notes。
+下一批左右膝踝80–95對照位於 `analysis_results/leg_review_20261005_06/legs_0080_0087.png` 與 `analysis_results/leg_review_20261005_06/legs_0088_0095.png`。四個點一起看，共64個未覆核點。
+schema／來源檢查通過；歷史、canonical GT、prediction與既有不可觀測／不確定點保留，confidence與完整完成時間仍null。
+
+HSU對80–95格四個膝踝點清楚可見且位置正確的合併問題回答「正確」，新增64個Tsai原始X/Y。
+雙膝、右踝各96可見／19未覆核；左踝95可見／1不可觀測／19未覆核。
+膝踝80–95覆核後的部分參考：`annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_40/pitch_003/manual_keypoints.json`，
+**1129 可見且對位、173 不可觀測、2 不確定、76 未覆核**，仍為 `in_progress`。
+該次補充：`annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_42/pitch_003/ground_truth.json`，只追加notes。
+最後一批左右膝踝96–114對照位於 `analysis_results/leg_review_20261005_07/legs_0096_0105.png` 與 `analysis_results/leg_review_20261005_07/legs_0106_0114.png`。19格四個點一起看，共76個未覆核點；第65格左踝保留既有不可觀測判定。
+schema／來源檢查通過；歷史、canonical GT、prediction及既有不可觀測／不確定點保留，confidence與完整完成時間仍null。
+
+HSU對最後96–114格四個膝踝點清楚可見且位置正確的合併問題回答「都正確」，新增76個Tsai原始X/Y。
+雙膝、右踝各115可見；左踝114可見／1不可觀測（第65格）。全115格12關節的1,380個點狀態均已逐點覆核，0未覆核。
+最新座標參考（逐點覆核完成、正式provenance待補）：`annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_41/pitch_003/manual_keypoints.json`，
+**1205 可見且對位、173 不可觀測、2 不確定、0 未覆核**。
+最新補充：`annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_43/pitch_003/ground_truth.json`，只追加notes。
+逐點影像覆核已完成，包含不可觀測與不確定這些有效結果；85–86左腕保留不確定，不強迫補精確答案。正式完成時間未由人工提供，`reviewed_at_utc`及confidence仍為null，`annotation_status`暫留`in_progress`。下一步補齊完成provenance，再用現有評估器比較原始prediction與可見人工座標，排除175個非可見點並分開報告模型漏點；Phase 2仍IN PROGRESS。
+schema／來源檢查通過；歷史、canonical GT、prediction及既有不可觀測／不確定點保留；本次未執行新模型推論、座標比較或訓練。
 
 ## 計算 AI 位置誤差
 

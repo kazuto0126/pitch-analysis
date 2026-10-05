@@ -4,11 +4,11 @@
 
 ## 目前應使用的部分參考
 
-- 人工座標：`manual_keypoints/HSU_TSAI_RETURN_20261005_34/pitch_003/manual_keypoints.json`。
-- 最新 HSU 補充：`phase2_peer_reviews/HSU_TSAI_RETURN_20261005_36/pitch_003/ground_truth.json`。
+- 人工座標：`manual_keypoints/HSU_TSAI_RETURN_20261005_41/pitch_003/manual_keypoints.json`。
+- 最新 HSU 補充：`phase2_peer_reviews/HSU_TSAI_RETURN_20261005_43/pitch_003/ground_truth.json`。
 - 原始 HSU 五支定性紀錄：`analysis_results/phase2_yamamoto_20260925_01/ground_truth/pitch_00N/ground_truth.json`。
 
-部分座標共有 **746 visible、173 not_observable、2 uncertain、459 unreviewed**；仍為 `in_progress`。
+部分座標共有 **1205 visible、173 not_observable、2 uncertain、0 unreviewed**；仍為 `in_progress`。
 Tsai 放置原始 X/Y；HSU 逐段確認影像可見性及點位。只有確認可見且對位的點保留原始 X/Y。
 其他狀態座標留空，沒有用透視、插值或模型補成 ground truth。
 HSU 後續明確回答右肘 83–92「位置正確」，已保存十個可見且對位的原始座標。
@@ -54,13 +54,28 @@ HSU對雙髖64–79看得清楚且位置正確的合併問題回答「都正確�
 HSU對雙髖80–95看得清楚且位置正確的合併問題回答「正確」，新增32個原Tsai X/Y；左右髖各96可見／19未覆核。
 HSU對雙髖96–114清楚可見且位置正確的合併問題回答「都正確」，新增38個原Tsai X/Y。
 雙髖全115格已逐點覆核：左右髖各115可見且對位；左右肩肘腕髖八個關節全片已覆核。
-下一批雙膝0–15格：青色9號左膝、紅色10號右膝，32點均尚未覆核。
-對照圖位於 `analysis_results/knee_review_20261005_01/knees_0000_0007.png` 與 `knees_0008_0015.png`。
+依HSU要求，後續每批同時覆核左右膝蓋與腳踝，避免同一段影格分開重看。
+HSU對膝踝0–15四個點清楚可見且位置正確的合併問題回答「正確」，本批64點採用Tsai原始X/Y。
+雙膝、右踝各16可見／99未覆核；左踝16可見／1不可觀測／98未覆核，左踝65既有紀錄保持原樣。
+HSU對膝踝16–31四點清楚可見且位置正確的合併問題回答「可以」，新增64個原Tsai X/Y。
+雙膝、右踝各32可見／83未覆核；左踝32可見／1不可觀測／82未覆核。
+HSU對膝踝32–47四點清楚可見且位置正確的合併問題回答「正確」，新增64個原Tsai X/Y。
+雙膝、右踝各48可見／67未覆核；左踝48可見／1不可觀測／66未覆核。
+HSU對左右膝踝48–63四點清楚可見且位置正確的合併問題回答「正確」，新增64個原Tsai X/Y。
+雙膝、右踝各64可見／51未覆核；左踝64可見／1不可觀測／50未覆核。
+HSU對64–79格膝踝問題回答「都可以」。問題已排除第65格左踝，其餘63點確認清楚可見且對位，採用Tsai原始X/Y。第65格左踝保留不可觀測與null座標。
+雙膝、右踝各80可見／35未覆核；左踝79可見／1不可觀測／35未覆核。
+HSU對80–95格四個膝踝點清楚可見且位置正確的合併問題回答「正確」，新增64個Tsai原始X/Y。
+雙膝、右踝各96可見／19未覆核；左踝95可見／1不可觀測／19未覆核。
+HSU對最後96–114格四個膝踝點清楚可見且位置正確的合併問題回答「都正確」，新增76個Tsai原始X/Y。
+雙膝、右踝各115可見；左踝114可見／1不可觀測（第65格）。全115格12關節的1,380個點狀態均已逐點覆核，0未覆核。
+逐點影像覆核已完成，包含不可觀測與不確定這些有效結果；85–86左腕保留不確定，不強迫補精確答案。正式完成時間未由人工提供，`reviewed_at_utc`及confidence仍為null，`annotation_status`暫留`in_progress`。下一步補齊完成provenance，再用現有評估器比較原始prediction與可見人工座標，排除175個非可見點並分開報告模型漏點；Phase 2仍IN PROGRESS。
+全片助手與歷史保留；只有HSU已確認可見且對位的點採入座標，非可見點保留null。
 
 ## 保存與接續
 
 舊 checkpoint 不刪除、不覆寫。補充事件與 canonical 的差異分開記錄，不自動合併。
-完成時間與 confidence 未提供時保持 null。完整人工覆核前不宣稱 Phase 2 通過。
+完成時間與 confidence 未提供時保持 null。逐點覆核完成不等於 Phase 2 已通過可靠性驗收。
 
 原 ZIP/XML 與完整對照圖保存在本機 `analysis_results/manual_pose_return_check_20261004_01/`。
 XML 含帳號資訊，僅本地保存並由 Git 忽略；沒有將其加入 GitHub。

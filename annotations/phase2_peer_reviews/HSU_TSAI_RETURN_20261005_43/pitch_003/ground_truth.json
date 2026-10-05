@@ -1,0 +1,268 @@
+{
+  "schema_version": "ground-truth-v1",
+  "annotation_status": "in_progress",
+  "source_video": {
+    "pitch_id": "pitch_003",
+    "filename": "pitch_003.mp4",
+    "sha256": "5c08dba98504d998536dfd0f0fab598760400612c9049445a68120e68fdf024c",
+    "total_frames": 115,
+    "frame_index_base": 0
+  },
+  "provenance": {
+    "reviewer": "HSU",
+    "reviewed_at_utc": null,
+    "method": "manual_video_review",
+    "guidelines_version": "ground-truth-guidelines-v1"
+  },
+  "labels": {
+    "pitcher_correctly_selected": null,
+    "identity_switch_intervals": null,
+    "major_pose_failure_intervals": null,
+    "throwing_elbow_reliability": [
+      {
+        "start_frame": 22,
+        "end_frame": 23,
+        "status": "not_observable",
+        "reason": "原片右手肘看不到，真實位置無法核對。",
+        "confidence": null,
+        "note": "沿用 HSU 先前針對同支原片已明確確認的不可觀測紀錄。本次只處理影像可見性，沒有判定 Tsai 的推估座標對或錯；原 AI overlay 錯標備註保留在 canonical 舊紀錄，不轉成對 Tsai 的判斷。"
+      },
+      {
+        "start_frame": 70,
+        "end_frame": 71,
+        "status": "not_observable",
+        "reason": "HSU 針對這兩格原圖確認關節中心看不到，不能提供可見座標。",
+        "confidence": null,
+        "note": "依本次逐關節可見性回答保存；不把此前對推估點位的認同當成可觀測真值，亦不自行推定不可見原因。"
+      },
+      {
+        "start_frame": 73,
+        "end_frame": 78,
+        "status": "not_observable",
+        "reason": "HSU 逐關節澄清右肘看不到，無法從這段原圖取得可見關節中心。",
+        "confidence": null,
+        "note": "與右腕可見性分開記錄；沒有推估隱藏座標或自行指定不可見原因。"
+      },
+      {
+        "start_frame": 79,
+        "end_frame": 82,
+        "status": "not_observable",
+        "reason": "HSU 確認此區段的關節看不到，沒有足夠本格影像證據提供座標。",
+        "confidence": null,
+        "note": "依本次可見性回答保存；沒有沿用舊 AI 對位評語或推估不可見座標。"
+      },
+      {
+        "start_frame": 97,
+        "end_frame": 100,
+        "status": "not_observable",
+        "reason": "HSU 確認這四格右肘被遮住，看不到關節中心。",
+        "confidence": null,
+        "note": "依本次對原圖可見性的明確回答保存，不推定遮擋來源；隱藏 X/Y 留空，不以透視點位計算誤差。"
+      },
+      {
+        "start_frame": 101,
+        "end_frame": 104,
+        "status": "not_observable",
+        "reason": "HSU 確認這四格右肘看不到，無法直接觀察關節中心。",
+        "confidence": null,
+        "note": "僅保存這次明示的不可觀測狀態，未推定不可見原因；X/Y 留空，不補透視位置。"
+      }
+    ],
+    "lead_knee_reliability": null,
+    "events": {
+      "preparation_start": {
+        "status": "annotated",
+        "frame_index": 13,
+        "confidence": null,
+        "note": "HSU 在本次 Tsai 人工骨架／原圖覆核後，明確判定第 13 格為準備／啟動開始。此為 HSU 提供的補充，非 Tsai 事件標註。"
+      },
+      "leg_lift": {
+        "status": "annotated",
+        "frame_index": 46,
+        "confidence": null,
+        "note": "HSU 在本次 Tsai 人工骨架／原圖覆核後，明確判定第 46 格為最高抬腿。此為 HSU 提供的補充，非 Tsai 事件標註。"
+      },
+      "foot_plant": {
+        "status": "annotated",
+        "frame_index": 65,
+        "confidence": null,
+        "note": "HSU 在本次 Tsai 人工骨架／原圖覆核後，明確判定第 65 格為前導腳落地。此為 HSU 提供的補充，非 Tsai 事件標註。"
+      },
+      "approximate_release": {
+        "status": "annotated",
+        "frame_index": 69,
+        "confidence": null,
+        "note": "HSU 在本次 Tsai 人工骨架／原圖覆核後，明確判定第 69 格為大致出手。此為 HSU 提供的補充，非 Tsai 事件標註。"
+      },
+      "follow_through_end": {
+        "status": "annotated",
+        "frame_index": 99,
+        "confidence": null,
+        "note": "HSU 在本次 Tsai 人工骨架／原圖覆核後，明確判定第 99 格為收尾結束。此為 HSU 提供的補充，非 Tsai 事件標註。"
+      }
+    },
+    "track_break_intervals": null,
+    "throwing_arm_occlusion_intervals": null,
+    "throwing_shoulder_reliability": null,
+    "throwing_wrist_reliability": [
+      {
+        "start_frame": 0,
+        "end_frame": 15,
+        "status": "not_observable",
+        "reason": "HSU 確認這16格右腕看不到，無法直接觀察關節中心。",
+        "confidence": null,
+        "note": "HSU 同時認為推估位置正確，該位置意見保留在 notes；不可觀測座標留空，不視為可見真值或像素誤差為零，未推定不可見原因。"
+      },
+      {
+        "start_frame": 16,
+        "end_frame": 21,
+        "status": "not_observable",
+        "reason": "HSU 確認這6格右腕看不到，無法直接觀察關節中心。",
+        "confidence": null,
+        "note": "HSU 對本批16–21格右腕回答「位置正確但看不到」。原圖關節中心不可觀測，X/Y留空；推估位置意見保留但不當成可見真值，未推定不可見原因。"
+      },
+      {
+        "start_frame": 22,
+        "end_frame": 23,
+        "status": "not_observable",
+        "reason": "原片右手腕看不到，真實位置無法核對。",
+        "confidence": null,
+        "note": "沿用 HSU 先前針對同支原片已明確確認的不可觀測紀錄。本次只處理影像可見性，沒有判定 Tsai 的推估座標對或錯；原 AI overlay 錯標備註保留在 canonical 舊紀錄，不轉成對 Tsai 的判斷。"
+      },
+      {
+        "start_frame": 25,
+        "end_frame": 29,
+        "status": "not_observable",
+        "reason": "右手腕看不到，真實位置無法核對。",
+        "confidence": null,
+        "note": "沿用 HSU 先前針對同支原片已明確確認的不可觀測紀錄。本次只處理影像可見性，沒有判定 Tsai 的推估座標對或錯；原 AI overlay 錯標備註保留在 canonical 舊紀錄，不轉成對 Tsai 的判斷。"
+      },
+      {
+        "start_frame": 70,
+        "end_frame": 71,
+        "status": "not_observable",
+        "reason": "HSU 針對這兩格原圖確認關節中心看不到，不能提供可見座標。",
+        "confidence": null,
+        "note": "依本次逐關節可見性回答保存；不把此前對推估點位的認同當成可觀測真值，亦不自行推定不可見原因。"
+      },
+      {
+        "start_frame": 79,
+        "end_frame": 82,
+        "status": "not_observable",
+        "reason": "HSU 確認此區段的關節看不到，沒有足夠本格影像證據提供座標。",
+        "confidence": null,
+        "note": "依本次可見性回答保存；沒有沿用舊 AI 對位評語或推估不可見座標。"
+      },
+      {
+        "start_frame": 83,
+        "end_frame": 83,
+        "status": "not_observable",
+        "reason": "右手腕看不到，真實位置無法核對。",
+        "confidence": null,
+        "note": "沿用 HSU 先前針對同支原片已明確確認的不可觀測紀錄。本次只處理影像可見性，沒有判定 Tsai 的推估座標對或錯；原 AI overlay 錯標備註保留在 canonical 舊紀錄，不轉成對 Tsai 的判斷。"
+      },
+      {
+        "start_frame": 84,
+        "end_frame": 86,
+        "status": "not_observable",
+        "reason": "HSU 確認這三格右腕被遮住，无法從原圖直接取得關節中心。",
+        "confidence": null,
+        "note": "只保存人工明示的遮擋狀態，不推定遮擋來源；X/Y 留空，不判定隱藏的推估座標對或錯。"
+      },
+      {
+        "start_frame": 87,
+        "end_frame": 104,
+        "status": "not_observable",
+        "reason": "右手腕全段看不到，真實位置無法核對。",
+        "confidence": null,
+        "note": "沿用 HSU 先前針對同支原片已明確確認的不可觀測紀錄。本次只處理影像可見性，沒有判定 Tsai 的推估座標對或錯；原 AI overlay 錯標備註保留在 canonical 舊紀錄，不轉成對 Tsai 的判斷。"
+      }
+    ],
+    "lead_hip_reliability": null,
+    "lead_ankle_reliability": [
+      {
+        "start_frame": 65,
+        "end_frame": 65,
+        "status": "not_observable",
+        "reason": "HSU 確認此格只有左膝露出，左腳踝看不到。",
+        "confidence": null,
+        "note": "沿用 HSU 先前針對同支原片已明確確認的不可觀測紀錄。本次只處理影像可見性，沒有判定 Tsai 的推估座標對或錯；原 AI overlay 錯標備註保留在 canonical 舊紀錄，不轉成對 Tsai 的判斷。"
+      }
+    ],
+    "pitcher_selection_review": null
+  },
+  "notes": [
+    "2026-10-04，HSU 親自觀看 pitch_003 原圖與 Tsai 人工骨架對照後，在對話提供這五個事件。Codex 僅依已明示的人工判斷轉錄，沒有推測事件。",
+    "Tsai 的人工座標來源為 pitch_003_manual_261004.zip，使用者提供署名 Tsai、標註日期 2026-10-04。本次事件 reviewer 為 HSU，不混成 Tsai 的回答。",
+    "HSU 的整體評語原文：「同學在透視被遮住的部位時，幾乎完全準確」。保留為整體目視意見，沒有提供逐格、逐關節遮擋狀態或座標誤差數值。",
+    "完全不可觀測的關節中心仍缺少本格影像證據；本評語不自動驗證其 visible 狀態、不把推估座標變成可見人工真值、不寫入模型或自動訓練。",
+    "此檔補充五個事件、整體評語與 HSU 已明確確認的逐關節可見性。既有 schema 支援的右肘、右腕、左踝不可觀測區間記於對應欄位；左肘與左腕可見性記於 notes。其他未覆核的主體、可靠性、遮擋及異常欄位仍維持 null。in_progress 表示部分補充，不宣稱完整 phase2_full_review 已完成。",
+    "未提供本次完成的時分／時區，也未提供人工 confidence，reviewed_at_utc 及 confidence 保持 null。",
+    "既有 HSU canonical ground truth、原始模型輸出與 Tsai 回傳 ZIP 均保留原樣；本次補充使用獨立版本，未自動合併 reviewer 分歧。",
+    "本次補充依 HSU 已確認且 source SHA 相同的原圖不可觀測區間，沿用右肘 22–23、右腕 22–23／25–29／83／87–104、左踝 65 的 not_observable 標籤，避免要求使用者重標已提供的觀察。",
+    "沒有複製原 AI raw-overlay 的 reliable／unreliable 判斷到 Tsai 人工座標；未明確確認的逐關節可見性仍保持未覆核。",
+    "此為 HSU 覆核 Tsai 回覆的第二個獨立補充版本；第一版事件補充、canonical HSU 與 Tsai 原 XML 均保留。沒有修改原匯出 1,380 個 visible 狀態或推估 X/Y。",
+    "2026-10-04，本次逐關節可見性覆核：HSU 明確回覆「左肘完全看不到左腕可以」，指 pitch_003 第 46–48 格。LEFT_ELBOW 全段 not_observable；LEFT_WRIST 可判讀。後者只表示可從影像判讀，不自動確認 Tsai 腕點對位精度；未提供 confidence。此兩關節陳述記入 notes，未套到其他關節或其他影片，也未修改 Tsai 原始 XML。",
+    "2026-10-04，本次逐關節可見性覆核：針對 pitch_003 第 33–44 格的 LEFT_ELBOW、LEFT_WRIST，HSU 明確回覆「完全看不見兩個都是」。兩關節全段 not_observable。此為 HSU 對原圖的人工判讀，不推估被遮住的座標、不把此判讀擴及其他關節或影片，亦未修改 Tsai 原始 XML。",
+    "2026-10-04，本次逐關節可見性覆核：針對 pitch_003 第 66–72 格的 LEFT_ELBOW、LEFT_WRIST，HSU 明確回覆「只看的見左肘」。LEFT_ELBOW 全段可見；LEFT_WRIST 全段 not_observable。此判讀只描述原圖可見性，沒有確認 Tsai 左肘座標的對位精度，不推估左腕座標，未擴及其他關節或影片，亦未修改 Tsai 原始 XML。",
+    "2026-10-04，本次人工點位覆核：HSU 觀看 pitch_003 第 46–48 格原圖與 Tsai 人工骨架的左腕（青色 5 號點）對照後，明確回覆「正確」，確認這三格 LEFT_WRIST 點位對齊。此為 HSU 的目視判斷，不宣稱像素誤差為零；未提供 confidence，未擴及不可見的 LEFT_ELBOW 或其他關節，亦未修改 Tsai 原始 XML。",
+    "2026-10-04，本次人工點位覆核：HSU 觀看 pitch_003 第 66–72 格原圖與 Tsai 人工骨架的左肘（青色 3 號點）對照後，對「左肘是否都標在正確位置」明確回覆「有」，確認這七格 LEFT_ELBOW 點位對齊。此為 HSU 的目視判斷，不宣稱像素誤差為零；未提供 confidence，未擴及不可見的 LEFT_WRIST 或其他關節，亦未修改 Tsai 原始 XML。",
+    "2026-10-04，本次逐關節可見性覆核：HSU 觀看 pitch_003 第 64、65 格原圖後回覆「看的見」，並對「64、65 格的左肘和左腕，四個點都看得見」明確確認「對」。這兩格 LEFT_ELBOW 與 LEFT_WRIST 均可見；此時只確認影像可見性，尚未確認 Tsai 點位是否對齊。未提供 confidence，未擴及其他關節或影片，亦未修改 Tsai 原始 XML。",
+    "2026-10-04，本次人工點位覆核：HSU 觀看 pitch_003 第 64、65 格原圖與 Tsai 人工骨架的左肘（青色 3 號點）、左腕（青色 5 號點）對照後，明確回覆「都有在\\對的位置」，確認這兩格 LEFT_ELBOW 與 LEFT_WRIST 共四個點位對齊。此為 HSU 的目視判斷，不宣稱像素誤差為零；未提供 confidence，未擴及其他关節，亦未修改 Tsai 原始 XML。",
+    "2026-10-04，本次逐關節可見性覆核：HSU 觀看 pitch_003 第 33–35 格原圖與 Tsai 人工骨架的右肘（紅色 4 號點）、右腕（紅色 6 號點）對照後，明確回覆「可以看清楚」。這三格 RIGHT_ELBOW 與 RIGHT_WRIST 均可清楚判讀；此回答只確認可見性，尚未確認 Tsai 點位對齊。未提供 confidence，未擴及其他格數或關節，亦未修改原 XML 或原預測。",
+    "2026-10-04，本次人工點位覆核：HSU 已明確確認 pitch_003 第 33–35 格 RIGHT_ELBOW、RIGHT_WRIST 可清楚判讀；觀看原圖與 Tsai 人工骨架的右肘（紅色 4 號點）、右腕（紅色 6 號點）對照後，再對兩關節這三格是否都在正確位置回覆「正確」。確認這六個點位對齊。此為 HSU 的目視判斷，不宣稱像素誤差為零；未提供 confidence，未擴及其他格數或關節，亦未修改原 XML 或原預測。",
+    "2026-10-04，本次人工點位覆核：HSU 觀看 pitch_003 第 36–44 格原圖與 Tsai 人工骨架的右肘（紅色 4 號點）、右腕（紅色 6 號點）對照後，對「是否都看得清楚、標在正確位置」明確回覆「都正確」，確認這九格 RIGHT_ELBOW 與 RIGHT_WRIST 均可清楚判讀且十八個點位對齊。此為 HSU 的目視判斷，不宣稱像素誤差為零；未提供 confidence，未擴及其他格數或關節，亦未修改原 XML 或原預測。",
+    "2026-10-04，本次人工點位覆核：HSU 觀看 pitch_003 第 45–53 格原圖與 Tsai 人工骨架的右肘（紅色 4 號点）、右腕（紅色 6 號點）對照後，對這兩關節是否都標在正確位置明確回覆「正確」，確認這九格 RIGHT_ELBOW 與 RIGHT_WRIST 共十八個點位對齊。原圖可見性另有同 SHA 原片的既有明確人工紀錄；本次點位判斷針對 Tsai 座標，不沿用舊 AI 對位判斷。未提供 confidence，未擴及其他格數或關節，亦未修改原 XML 或原預測。",
+    "2026-10-04，本次人工點位覆核：HSU 觀看 pitch_003 第 54–63 格原圖與 Tsai 人工骨架的右肘（紅色 4 號點）、右腕（紅色 6 號點）對照後，對這兩關節是否都標在正確位置回覆「接正確」，確認這十格 RIGHT_ELBOW 與 RIGHT_WRIST 共二十個點位對齊。原圖可見性另有同 SHA 原片的既有明確人工紀錄；此為 HSU 對 Tsai 點位的目視判斷，不宣稱像素誤差為零，未提供 confidence，未擴及其他格數或關節。",
+    "2026-10-04，本次人工點位覆核：HSU 觀看 pitch_003 第 64–72 格原圖與 Tsai 人工骨架的右肘（紅色 4 號點）、右腕（紅色 6 號點）對照後，對哪些格的點位正確明確回覆「都正確」。保存為這段十八個點位的目視意見；出手後第 70、71 格右肘／右腕仍將單獨確認是否能直接觀察關節中心，避免把對推估位置的認同混成可觀測座標。此時尚未把本段加入下一份座標 checkpoint，也未判定任何新不可觀測點；原 XML、原模型輸出與既有 checkpoint 保留。",
+    "2026-10-04，本次逐關節可見性澄清：HSU 單獨觀看 pitch_003 第 70、71 格原圖，對右肘、右腕關節中心是否實際可見回覆「看不到」。兩格 RIGHT_ELBOW 與 RIGHT_WRIST 均記為 not_observable，X/Y 留空。此前 64–72 的「都正確」評語仍保留為目視位置意見；這四個不可觀測點不因推估位置看似合理而成為可見人工座標。未提供具體不可見原因或 confidence，未擴及其他格數；canonical 舊版與 Tsai 原 XML 保留原樣。",
+    "2026-10-04，本次逐關節可見性覆核：HSU 觀看 pitch_003 第 73–82 格原圖與 Tsai 人工骨架後回覆「73-78可以看就右腕其他時間右肘右腕都看不見」。已明確部分分別保存為 RIGHT_WRIST 73–78 可見，以及 RIGHT_ELBOW、RIGHT_WRIST 79–82 不可觀測。RIGHT_ELBOW 73–78 的可見性與可見右腕點位是否對齊仍待確認，沒有把這些未明示的判斷自動填入。未提供 confidence 或不可見原因；原 XML、canonical 舊版及模型輸出保留。",
+    "2026-10-04，本次人工澄清：對 pitch_003 第 73–78 格右肘可見性、以及可見右腕（紅色 6 號點）是否都在正確位置的兩個問題，HSU 依序明確回覆「看不到，正確」。因此 RIGHT_ELBOW 73–78 為 not_observable；RIGHT_WRIST 73–78 可見且點位對齊，保留 Tsai 原 X/Y。此前明確確認的 RIGHT_ELBOW、RIGHT_WRIST 79–82 不可觀測維持原判斷。未提供 confidence 或不可見原因；不沿用舊 AI 對位評語，亦未修改原 XML、canonical 舊版或模型輸出。",
+    "2026-10-04，本次人工可見性覆核：HSU 觀看 pitch_003 第 83–92 格原圖與 Tsai 標註後回覆「右腕都被遮住右肘皆可看到」。依本次問題範圍，RIGHT_WRIST 84–86 被遮住，記為 not_observable，X/Y 留空；RIGHT_ELBOW 83–92 可見，但 Tsai 紅色 4 號點是否正確尚未回答，僅保存可見性，不採用這十個座標或填入可靠性判斷。此前 RIGHT_WRIST 83、87–104 不可觀測維持原紀錄。未提供 confidence 或完整覆核完成時間；原 XML、canonical HSU 舊版及模型輸出保留原樣。",
+    "2026-10-05，HSU 對「83–92 格右肘紅色 4 號點也都在正確位置嗎？若有偏移，告訴我哪些格」回覆原話：「沒有，我現在要睡了你先把能自行處理的部分處理好token用完也行」。短答「沒有」可能是否定全部對位，也可能表示沒有偏移；尚未釐清含義與個別格數。因此僅保留原話及待澄清事項，不把十格判定全部正確或全部錯誤，不修改既有可見性觀察。RIGHT_ELBOW 83–92 的座標覆核仍未完成，最新 manual-keypoints checkpoint 維持 unreviewed、X/Y null。未提供新座標、confidence 或完成時間。",
+    "2026-10-05 自主整理 checkpoint：承接 HSU_TSAI_RETURN_20261004_02，舊補充檔保留原樣。人工座標參考仍為 HSU_TSAI_RETURN_20261004_07（96 visible、84 not_observable、1200 unreviewed），不自行填補待確認區段。完整座標比較待人工覆核完成後進行；Phase 2 未通過驗收。",
+    "2026-10-05，本次人工澄清：HSU 在 83–92 格右肘續看頁／放大原圖與 Tsai 點位對照的上下文中明確回覆「位置正確」。此回答確認 RIGHT_ELBOW 83–92 共十個點位對齊，先前可見性已由 HSU 明確確認。此前短答「沒有」保留為歷史原話；現在以這次明確位置判斷解除這十格的點位待釐清事項。僅採用 Tsai 原始 X/Y，不宣稱像素誤差為零，不擴及其他格數或關節，confidence 與完整覆核完成時間保持 null；原 XML、canonical HSU 標註及原模型輸出保留原樣。",
+    "2026-10-05，本次人工覆核：HSU 觀看 pitch_003 第 93–96 格原圖／Tsai 人工骨架右肘紅色 4 號點對照，對「這四格右肘是否都看得到，而且點位正確」明確回覆「看的到且正確」。RIGHT_ELBOW 93–96 共四點確認可見且對位，採用 Tsai 原始 X/Y。不擴及其他格數或關節，不自行填 confidence 或完整覆核完成時間，不宣稱像素誤差為零；原 XML、canonical HSU 標註及模型輸出保持原樣。",
+    "2026-10-05，本次人工可見性覆核：HSU 觀看 pitch_003 第 97–100 格原圖／Tsai 人工骨架對照，對右肘紅色 4 號是否看得到且點位正確回覆「都看不到被遮住了」。RIGHT_ELBOW 97–100 四點記為 not_observable，X/Y 留空；不判定隱藏推估座標對錯，不推定遮擋來源，不擴及其他格數或關節。同段右腕已有不可觀測紀錄，保持原樣。canonical HSU 舊紀錄保留，以此次獨立補充與人工座標狀態記錄更具體的可見性回答；不修改原 XML 或模型輸出。未提供 confidence 或完整覆核完成時間，維持 null。",
+    "2026-10-05，本次人工可見性覆核：HSU 觀看 pitch_003 第 101–104 格原圖／Tsai 人工骨架右肘紅色 4 號點對照，對這四格右肘是否看得到回覆「看不到」。RIGHT_ELBOW 101–104 四點記為 not_observable，X/Y 留空；未提供不可見的原因，不沿用上一區段的遮擋原因，不判定隱藏推估座標對錯。同段右腕既有不可觀測紀錄保持原樣；不擴及其他格數或關節。canonical HSU 舊紀錄、Tsai 原 XML、模型輸出保留原樣。confidence 與完整覆核完成時間未提供，保持 null。",
+    "2026-10-05，本次人工點位覆核：HSU 觀看 pitch_003 第 105–108 格原圖／Tsai 人工骨架右肘紅色 4 號點對照，對「這四格右肘看得到嗎？看得到的格數，點位是否正確？」回覆「正確」。保存為此四格的點位正確意見；本次未明確回答是否能直接觀察原圖關節中心，故原圖可見性待澄清，不將推估隱藏位置的正確意見當成已確認可見座標。既有 canonical 為依全片未特別指出則清楚的概括紀錄；當前細部覆核尚未因此改動。RIGHT_ELBOW 105–108 在最新座標 checkpoint 仍為 unreviewed、X/Y null，計數110 visible、92 not_observable、1178 unreviewed不變。不改其他關節或格數，不推定不可見狀態／原因，不填 confidence 或完成時間。",
+    "2026-10-05，本次人工可見性澄清：HSU 先針對 pitch_003 第 105–108 格右肘紅色 4 號點位回答「正確」，再對「這四格原圖中的右肘，也都能直接看見嗎？」明確回覆「可以」。兩次回答分別確認點位及直接可見性；RIGHT_ELBOW 105–108 四點可見且對位，採用 Tsai 原始 X/Y。不擴及 109–112 或其他關節，不把舊 AI 點位判斷混作此次人工點位結果，不宣稱像素誤差為零。confidence 與完整覆核完成時間保持 null；原 XML、canonical HSU 舊紀錄、模型輸出及歷史 checkpoint 全部保留原樣。",
+    "2026-10-05，本次人工覆核：HSU 觀看 pitch_003 第 109–112 格原圖／Tsai 人工骨架右肘紅色 4 號點對照，對「這四格是否都能直接看見右肘，且紅色 4 號點位置正確？」明確回覆「看的見且正確」。RIGHT_ELBOW 109–112 四點確認直接可見且對位，採用 Tsai 原始 X/Y。未擴及 113–114 或其他關節，不宣稱像素誤差為零，不填 confidence 或完整覆核完成時間。原 XML、canonical HSU 舊紀錄、模型輸出及歷史 checkpoint 保留原樣。",
+    "2026-10-05，本次人工覆核：HSU 觀看 pitch_003 第 113–114 格原圖／Tsai 人工骨架右肘紅色 4 號點對照，對「這兩格是否都能直接看見右肘，且紅色 4 號點位置正確？」回覆「正確可以」。RIGHT_ELBOW 113–114 兩點確認直接可見且對位，採用 Tsai 原始 X/Y。不擴及其他關節或尚未覆核的前段，不宣稱像素誤差為零，不填 confidence 或完整覆核完成時間。原 XML、canonical HSU 舊紀錄、模型輸出及歷史 checkpoint 保留原樣。",
+    "2026-10-05，本次人工覆核：HSU 觀看 pitch_003 第 0–3 格原圖／Tsai 人工骨架右肘紅色 4 號點對照，對「這四格是否都能直接看見右肘，且紅色 4 號點位置正確？」回覆「正確」。依此次合併問題的肯定回答，RIGHT_ELBOW 0–3 四點確認直接可見且對位，採用 Tsai 原始 X/Y。範圍僅限這四格右肘，不擴及 4–7 或其他關節，不沿用舊 AI 點位判斷、不宣稱像素誤差為零。confidence 與完整覆核完成時間未提供，保持 null；原 XML、canonical HSU 標註、模型輸出及歷史 checkpoint 保留原樣。",
+    "2026-10-05，本次人工覆核：HSU 觀看 pitch_003 第 4–7 格原圖／Tsai 人工骨架右肘紅色 4 號點對照，對「這四格是否也都能直接看見右肘，且點位正確？」回覆「正確」。依此次合併問題的肯定回答，RIGHT_ELBOW 4–7 四點確認直接可見且對位，採用 Tsai 原始 X/Y。不擴及 8–11 或其他關節，不沿用舊 AI 點位判斷、不宣稱像素誤差為零。confidence 與完整覆核完成時間未提供，保持 null；原 XML、canonical HSU 標註、模型輸出及歷史 checkpoint 保留原樣。",
+    "2026-10-05，本次人工覆核：HSU 觀看 pitch_003 第 8–11 格原圖／Tsai 人工骨架右肘紅色 4 號點對照，對「這四格是否也都能直接看見右肘，且點位正確？」回覆「正確你一次給我多點」。保存為 RIGHT_ELBOW 8–11 四點直接可見且對位的確認，採用 Tsai 原始 X/Y；後半句是要求下一批增加覆核格數，不是對未看新圖的格數作判斷。下一批僅準備尚未覆核的 12–21、24–32 共19格；22–23 已不可觀測不重複處理。不擴大人工已確認範圍、不宣稱像素誤差為零，confidence 與完整覆核完成時間保持 null；原 XML、canonical HSU 標註、模型輸出與歷史 checkpoint 不改。",
+    "2026-10-05，本次右肘整批覆核：HSU 觀看 pitch_003 第 12–21、24–32 共19格原圖／Tsai 人工骨架右肘紅色 4 號點對照，在「若全部都看得見且對位，回覆全部可見且正確；有看不到、偏移或不確定則列格數」的整批提示後回答「全部都正確」。保存為這19個點位全部對齊的判斷；可見性另有同 SHA 原片的既有 HSU 紀錄：25–29 明確記右肘可見，其餘12–21、24、30–32依 HSU 完整看過後未特別指出即清楚的原則記為可核對。結合此次整批肯定，這19個 RIGHT_ELBOW 點採用 Tsai 原始 X/Y；不沿用舊 AI 點位正確性、不宣稱像素誤差為零。22–23 已不可觀測不重複處理，不擴及右腕或其他關節。confidence 與完整覆核完成時間保持 null，原 XML、canonical HSU 標註、模型輸出及歷史 checkpoint 保留原樣。",
+    "2026-10-05，本次右腕人工覆核：HSU 觀看 pitch_003 第 0–7、8–15 格共16格原圖／Tsai 人工骨架右腕紅色 6 號點對照，在可見且正確／看不到／偏移／不確定的分類提示後回覆「位置正確但是看不到」。保存位置正確為對推估點位的目視意見；原圖關節中心看不到的明確回答決定 RIGHT_WRIST 0–15 為 not_observable、X/Y null，不因推估位置看似正確而採入可見人工座標。未確認不可見原因，不自動推定手套或身體遮擋來源。不擴及其他格數或關節，confidence 與完整覆核完成時間保持 null；原 XML、canonical HSU 既有紀錄、模型輸出與歷史 checkpoint 保留原樣。",
+    "2026-10-05，本次右腕整批人工覆核：HSU 觀看 pitch_003 第16–21、24、30–32、105–114共20格原圖／Tsai 人工骨架右腕紅色6號點對照，回覆原話：「16-21位置正確但看不到，其他都看的到且位置正確」。其中 RIGHT_WRIST 16–21 共6點為 not_observable、X/Y null；推估位置正確的意見保留，不當成可見人工座標，未推定不可見原因。其餘明示範圍24、30–32、105–114共14點確認可見且點位正確，採用 Tsai 原始 X/Y。『其他』僅指本次呈現的剩餘右腕格數，不擴及左手、其他關節或未看區段，不宣稱像素誤差為零。右腕115格全數覆核完成（58 visible、57 not_observable）；全片12關節人工參考仍為 in_progress。confidence 與完整覆核完成時間保持 null，原 XML、canonical HSU 舊紀錄、模型輸出與歷史 checkpoint 保留原樣。",
+    "2026-10-05，本次左手人工覆核：HSU 觀看 pitch_003 第0–7、8–15格原圖／Tsai人工骨架青色3號LEFT_ELBOW及5號LEFT_WRIST，回覆原話：「看不到左腕但是位置正確，左肘位置正確」。LEFT_WRIST 0–15共16點明確看不到，記not_observable、X/Y null；位置正確保留為對推估點位的目視意見，不當成可觀測座標真值，未推定不可見原因。LEFT_ELBOW 0–15位置正確的意見已保存，但這次未明確回答原圖可見性，仍待澄清，座標保持unreviewed、X/Y null；不自行採用原Tsai座標。既有schema沒有左肘／左腕可靠性欄位，此補充以notes記錄，逐點狀態另存manual-keypoints-v1，不另建schema或改其他labels。不擴及其他格數或關節；confidence與完整覆核完成時間保持null，原XML、canonical HSU舊紀錄、模型輸出與歷史checkpoint保留原樣。",
+    "2026-10-05，本次左肘可見性澄清：HSU 先觀看 pitch_003 第0–7、8–15格原圖／Tsai人工骨架，回答「看不到左腕但是位置正確，左肘位置正確」。再對「剛才0–15格原圖中的左肘（青色3號），每一格都能直接看見關節中心嗎？你已確認點位正確，現在只補確認可見性」明確回答「全部看得見」。兩次回答分別確認左肘點位及直接可見性；LEFT_ELBOW 0–15共16點可見且對位，採用Tsai原始X/Y。前版保留可見性待澄清的歷史，此明確回答解除該16點待釐清事項；同段LEFT_WRIST不可觀測、X/Y null保持原樣。不擴及16–32或其他關節，不宣稱像素誤差為零。confidence與完整覆核完成時間保持null；原XML、canonical HSU舊紀錄、模型輸出與历史checkpoint保留原樣。",
+    "2026-10-05，本次左手人工覆核：HSU 觀看 pitch_003 第16–23、24–32共17格原圖／Tsai人工骨架青色3號LEFT_ELBOW及5號LEFT_WRIST，回覆原話：「全部都被遮住但位置正確」。本次呈現的LEFT_ELBOW及LEFT_WRIST 16–32共34點均被遮住，記not_observable、X/Y null；位置正確保留為對推估點位的目視意見，不當成可觀測座標真值，不宣稱像素誤差為零。HSU明確提供被遮住這個原因，但未指定遮擋來源，不自行補推估座標。既有schema沒有左肘／左腕可靠性欄位，此补充以notes記錄；逐點狀態另存manual-keypoints-v1，不另建schema或改其他labels。不擴及33格以後或其他關節；confidence與完整覆核完成時間保持null，原XML、canonical HSU舊紀錄、模型輸出與歷史checkpoint保留原樣。",
+    "2026-10-05，本次左手整批人工覆核：HSU 觀看 pitch_003 第45、49–55、56–63共16格原圖／Tsai人工骨架青色3號LEFT_ELBOW及5號LEFT_WRIST，回覆原話：「皆可看到位置正確」。本批LEFT_ELBOW與LEFT_WRIST共32點明確可見且位置正確，採用Tsai原始X/Y；不修改或推估座標，不宣稱像素誤差為零。只轉錄本次呈現的45、49–63，不擴及其他格數或關節；已完成的46–48與64–72保持原樣。既有schema沒有左肘／左腕可靠性欄位，此補充以notes記錄，逐點狀態另存manual-keypoints-v1，不另建schema或改其他labels。confidence與完整覆核完成時間保持null，原XML、canonical HSU舊紀錄、模型輸出與歷史checkpoint保留原樣。",
+    "2026-10-05，本次左手人工覆核：HSU 觀看 pitch_003 第73–80、81–88格原圖／Tsai人工骨架青色3號LEFT_ELBOW及5號LEFT_WRIST，回覆原話「85-86左腕看不清之外其他都正確」。再對「除了85–86格左腕外，這批73–88格其餘左肘、左腕也都能清楚看見嗎？你已確認位置正確，現在只補確認可見性」明確回答「其餘全部看得見」。兩次回答分別確認點位與可見性；LEFT_ELBOW 73–88共16點、LEFT_WRIST 73–84與87–88共14點可見且對位，採用Tsai原始X/Y。LEFT_WRIST 85–86共2點因HSU表示看不清，保留uncertain、X/Y null；未宣稱完全看不到或指定遮擋原因，沒有以推估座標製造精確答案。不擴及89格以後或其他關節，不宣稱像素誤差為零。左肘／左腕補充記於notes，逐點狀態另存既有manual-keypoints-v1。confidence與完整覆核完成時間保持null；原XML、canonical HSU舊紀錄、模型輸出及歷史checkpoint保留原樣。",
+    "2026-10-05，本次左手人工覆核：HSU 在對話直接觀看 pitch_003 第89–96、97–104格原圖／Tsai人工骨架青色3號LEFT_ELBOW及5號LEFT_WRIST，先回答「皆清楚可見」。再對「89–104格的青色3號左肘、5號左腕，標點位置也都正確嗎？可見性已確認，現在只確認對位」明確回答「全部位置正確」。兩次回答分別確認可見性及點位；LEFT_ELBOW與LEFT_WRIST89–104共32點可見且對位，採用Tsai原始X/Y，不推估或修改座標，不宣稱像素誤差為零。LEFT_WRIST 85–86原有uncertain、X/Y null保持原樣；不擴及105格以後或其他關節。左肘／左腕補充記於notes，逐點狀態另存既有manual-keypoints-v1。confidence與完整覆核完成時間保持null；原XML、canonical HSU舊紀錄、模型輸出及歷史checkpoint保留原樣。",
+    "2026-10-05，HSU在對話直接觀看pitch_003第105–110、111–114格原圖／Tsai人工骨架，對「105–114格LEFT_ELBOW青色3號／LEFT_WRIST青色5號是否也都清楚可見且位置正確」合併問題回答「正確」。本次肯定同時確認本批兩關節可見性及對位，105–114共20點採用Tsai原始X/Y，不推估或修改座標，不宣稱像素誤差為零。左肘／左腕全115格逐點覆核完成，其中85–86左腕原有uncertain及X/Y null保持不變；其他關節未經確認的點仍unreviewed，不將整份12關節參考標為reviewed。左肘／左腕補充僅記於notes，逐點狀態沿用manual-keypoints-v1；confidence及完整覆核完成時間保持null。原XML、canonical HSU紀錄、模型輸出、事件補充及歷史checkpoint保留原樣。",
+    "2026-10-05，HSU在對話觀看pitch_003第0–7及8–15格原圖／Tsai人工骨架雙肩對照，青色1號為LEFT_SHOULDER，橘紅2號為RIGHT_SHOULDER。HSU引用「這16格兩肩是否都清楚可見且位置正確？有例外就告訴我格數與哪側肩膀」並明確回答「都正確清楚」。只確認0–15左右肩共32點可見且對位，採用Tsai原始X/Y，不修改或推估座標，不宣稱像素誤差為零；16格以後及其他未覆核關節保持unreviewed。85–86左腕原有uncertain與X/Y null不變。逐點狀態沿用manual-keypoints-v1，這次補充只追加notes，原labels、source、events、provenance不變。整份仍in_progress，confidence與完整覆核完成時間保持null；原XML、canonical HSU紀錄、模型輸出及歷史checkpoint保留原樣。",
+    "2026-10-05，HSU觀看直接貼於對話的pitch_003第16–23、24–31格原圖／Tsai雙肩對照。對「看青色1號左肩、橘紅2號右肩：是否都清楚可見且位置正確？」回答「正確」。肯定本批16–31兩肩共32點可見且對位，採用Tsai原始X/Y，不推估或修改座標，不宣稱像素誤差為零；32格以後及其他未覆核關節不代判。85–86左腕原有uncertain及null座標不變。這次peer補充僅追加notes，原labels/source/events/provenance不變。完整12關節參考仍in_progress，confidence／完整覆核完成時間保持null，原來源、canonical GT、模型prediction及歷史checkpoint保留原樣；沒有啟用子代理。",
+    "2026-10-05，HSU觀看直接貼於最終回覆的pitch_003第32–39、40–47格原圖／Tsai雙肩對照。對「青色1號左肩、橘紅2號右肩，是否都清楚可見且位置正確？有例外請說格數與哪側」回答「都正確」。此回答肯定本批32–47左右肩共32點清楚可見且對位，採用Tsai原始X/Y，不推估或修改座標，不宣稱像素誤差為零；不代判48格以後或其他未覆核點。左腕85–86uncertain與null座標不變。僅追加peer notes，原labels/source/events/provenance不變。整份12關節參考仍in_progress，confidence與完整覆核完成時間保持null；原來源、canonical GT、模型prediction及歷史checkpoint保留，沒有啟用子代理。",
+    "2026-10-05，HSU觀看直接貼於最終回覆的pitch_003第48–55、56–63格原圖／Tsai雙肩對照。對「這批青色1號左肩、橘紅2號右肩，是否都清楚可見且位置正確？有例外請說格數與哪側」回答「正確」。肯定48–63左右肩共32點可見且對位，採用Tsai原始X/Y，不推估或修改座標，不宣稱像素誤差為零；不代判64格以後或其他未覆核點。左腕85–86既有uncertain及null座標不變。僅追加peer notes，原labels/source/events/provenance不變。整份12關節參考仍in_progress，confidence／完整覆核完成時間保持null；原來源、canonical GT、模型prediction及歷史checkpoint保留，沒有啟用子代理。",
+    "2026-10-05，HSU觀看直接貼於最終回覆的pitch_003第64–71、72–79格原圖／Tsai雙肩對照。對兩肩是否清楚可見且位置正確回答「70-78誘姦被遮住其他沒問題」。工具未直接猜測側別，另問「你說『70–78誘姦被遮住』，是指橘紅色2號的右肩嗎？」HSU明確回答「對，是右肩」。因此只將RIGHT_SHOULDER70–78共9點記為not_observable、X/Y null；HSU未指定遮擋來源，也未確認隱藏點的精確位置，不推估透視座標。其餘本批LEFT_SHOULDER64–79共16點、RIGHT_SHOULDER64–69與79共7點，由『其他沒問題』確認可見且對位，採用Tsai原始X/Y。不代判80格以後或其他未覆核點，不宣稱像素誤差為零。左腕85–86原有uncertain與null座標不變；peer僅追加notes，原labels/source/events/provenance不变。完整12關節參考仍in_progress，confidence／完整覆核完成時間保持null；原來源、canonical GT、模型prediction及歷史checkpoint保留，沒有子代理。",
+    "2026-10-05，HSU觀看直接貼於對話的pitch_003第80–87與88–95格原圖／Tsai雙肩對照。對『80–95格青色1號左肩、橘紅2號右肩是否都清楚可見且位置正確』的合併問題回答原話『都沒問替』。依問答上下文理解為『都沒問題』，只將本批左右肩各16點、共32點轉錄為可見且對位，採用Tsai原始X/Y。不代判96格以後或其他未覆核關節，不宣稱像素誤差為零。右肩70–78的not_observable與null座標、左腕85–86的uncertain與null座標維持原樣。peer僅追加notes，原labels/source/events/provenance不變。完整12關節參考仍in_progress；confidence與完整覆核完成時間保持null。原來源、canonical GT、模型prediction與歷史checkpoint保留；沒有子代理、模型分析、比較或訓練。",
+    "2026-10-05，HSU觀看直接貼於對話的pitch_003第96–105與106–114格原圖／Tsai雙肩對照。對『這19格兩肩是否都清楚可見且位置正確？有遮住、看不清或偏移，告訴我格數與哪側即可』的合併問題回答原話『正確』，只將本批左右肩各19點、共38點轉錄為可見且對位，採用Tsai原始X/Y。雙肩全115格已逐点覆核：LEFT_SHOULDER115可見；RIGHT_SHOULDER106可見與70–78共9點不可觀測。不代判尚未覆核的髖、膝、踝，不宣稱像素誤差為零。右肩70–78的not_observable與null座標、左腕85–86的uncertain與null座標維持原樣。peer僅追加notes，原labels/source/events/provenance不變。完整12關節參考仍in_progress；confidence與完整覆核完成時間保持null。原來源、canonical GT、模型prediction與歷史checkpoint保留；沒有子代理、模型分析、比較或訓練。",
+    "2026-10-05，HSU觀看直接貼於對話的pitch_003第0–7與8–15格原圖／Tsai雙髖對照。對『這16格兩側髖部是否都看得清楚且標點位置正確？有遮住、看不清或偏移，告訴我格數與哪側即可』的合併問題回答原話『正確』，只將本批LEFT_HIP與RIGHT_HIP各16點、共32點转錄為可見且對位，採用Tsai原始X/Y。不代判16格以後的髖或其他未覆核關節，不宣稱像素誤差為零。右肩70–78的not_observable與null座標、左腕85–86的uncertain與null座標維持原樣。peer僅追加notes，原labels/source/events/provenance不變。完整12關節參考仍in_progress；confidence與完整覆核完成時間保持null。原來源、canonical GT、模型prediction與歷史checkpoint保留；沒有子代理、模型分析、比較或訓練。",
+    "2026-10-05，HSU觀看直接貼於對話的pitch_003第16–23與24–31格原圖／Tsai雙髖對照。對『這16格兩側髖部是否都看得清楚且位置正確？有例外就告訴我格數與哪側；看不清也可以直接說』的合併問題回答原話『可以』，只將本批LEFT_HIP與RIGHT_HIP各16點、共32點轉錄為可見且對位，採用Tsai原始X/Y。不代判32格以後的髖或其他未覆核關節，不宣稱像素誤差為零。右肩70–78的not_observable與null座標、左腕85–86的uncertain與null座標維持原樣。peer僅追加notes，原labels/source/events/provenance不變。完整12關節參考仍in_progress；confidence與完整覆核完成時間保持null。原來源、canonical GT、模型prediction與歷史checkpoint保留；沒有子代理、模型分析、比較或訓練。",
+    "2026-10-05，HSU觀看直接貼於對話的pitch_003第32–39與40–47格原圖／Tsai雙髖對照。對『這16格兩側髖部是否都看得清楚且位置正確？有遮住、看不清或偏移，告訴我格數與哪側即可』的合併問題回答原話『正確』，只將本批LEFT_HIP與RIGHT_HIP各16點、共32點轉錄為可見且對位，採用Tsai原始X/Y。不代判48格以後的髖或其他未覆核關節，不宣稱像素誤差為零。右肩70–78的not_observable與null座標、左腕85–86的uncertain與null座標維持原樣。peer僅追加notes，原labels/source/events/provenance不變。完整12關節參考仍in_progress；confidence與完整覆核完成時間保持null。原來源、canonical GT、模型prediction與歷史checkpoint保留；沒有子代理、模型分析、比較或訓練。",
+    "2026-10-05，HSU觀看直接貼於對話的pitch_003第48–55與56–63格原圖／Tsai雙髖對照。對『這16格兩側髖部是否都看得清楚且位置正確？有遮住、看不清或偏移，告訴我格數與哪側即可』的合併問題回答原話『可以』，只將本批LEFT_HIP與RIGHT_HIP各16點、共32點轉錄為可見且對位，採用Tsai原始X/Y。不代判64格以後的髖或其他未覆核關節，不宣稱像素誤差為零。右肩70–78的not_observable與null座標、左腕85–86的uncertain與null座標維持原樣。peer僅追加notes，原labels/source/events/provenance不變。完整12關節參考仍in_progress；confidence與完整覆核完成時間保持null。原來源、canonical GT、模型prediction與歷史checkpoint保留；沒有子代理、模型分析、比較或訓練。",
+    "2026-10-05，HSU觀看直接貼於對話的pitch_003第64–71與72–79格原圖／Tsai雙髖對照。對『這16格兩側髖部是否都看得清楚且位置正確？有遮住、看不清或偏移，告訴我格數與哪側即可』的合併問題回答原話『都正確』，只將本批LEFT_HIP與RIGHT_HIP各16點、共32點轉錄為可見且對位，採用Tsai原始X/Y。不代判80格以後的髖或其他未覆核關節，不宣稱像素誤差為零。右肩70–78的not_observable與null座標、左腕85–86的uncertain與null座標維持原樣。peer僅追加notes，原labels/source/events/provenance不變。完整12關節參考仍in_progress；confidence與完整覆核完成時間保持null。原來源、canonical GT、模型prediction與歷史checkpoint保留；沒有子代理、模型分析、比較或訓練。",
+    "2026-10-05，HSU觀看直接貼於對話的pitch_003第80–87與88–95格原圖／Tsai雙髖對照。對『這16格兩側髖部是否都看得清楚且位置正確？有遮住、看不清或偏移，告訴我格數與哪側即可』的合併問題回答原話『正確』，只將本批LEFT_HIP與RIGHT_HIP各16點、共32點轉錄為可見且對位，採用Tsai原始X/Y。不代判96格以後的髖或其他未覆核關節，不宣稱像素誤差為零。右肩70–78的not_observable與null座標、左腕85–86的uncertain與null座標維持原樣。peer僅追加notes，原labels/source/events/provenance不變。完整12關節參考仍in_progress；confidence與完整覆核完成時間保持null。原來源、canonical GT、模型prediction與歷史checkpoint保留；沒有子代理、模型分析、比較或訓練。",
+    "2026-10-05，HSU觀看直接貼於對話的pitch_003第96–105與106–114格原圖／Tsai雙髖對照。對『這19格兩側髖部是否都清楚可見且位置正確？有遮住、看不清或偏移，告訴我格數與哪側即可』的合併問題回答原話『都正確』，只將本批LEFT_HIP與RIGHT_HIP各19點、共38點轉錄為可見且對位，採用Tsai原始X/Y。雙髖全115格覆核完成，左右髖各115個可見且對位；不代判膝、踝等其他未覆核關節，不宣稱像素誤差為零。右肩70–78的not_observable與null座標、左腕85–86的uncertain與null座標維持原樣。peer僅追加notes，原labels/source/events/provenance不變。完整12關節參考仍in_progress；confidence與完整覆核完成時間保持null。原來源、canonical GT、模型prediction與歷史checkpoint保留；沒有子代理、模型分析、比較或訓練。",
+    "2026-10-05，HSU要求膝蓋與腳踝同時看，並觀看直接貼於對話的pitch_003第0–7與8–15格原圖／Tsai膝踝對照。圖例：青色9左膝／11左踝，橘紅10右膝／12右踝。對『這四個點是否都清楚可見且位置正確？有例外只需說格數、哪個點，以及遮住／看不清／偏移』的合併問題回答原話『正確』，只將本批四關節各16點、共64點轉錄為可見且對位，採用Tsai原始X/Y。不代判16格以後的膝踝或其他未覆核點，不宣稱像素誤差為零。左踝65既有不可觀測／null座標、右肩70–78不可觀測／null座標、左腕85–86不確定／null座標維持原樣。peer僅追加notes，原labels/source/events/provenance不變。完整12關節參考仍in_progress；confidence與完整覆核完成時間保持null。原來源、canonical GT、模型prediction與歷史checkpoint保留；沒有子代理、模型分析、比較或訓練。",
+    "2026-10-05，HSU要求膝蓋與腳踝同時看，並觀看直接貼於對話的pitch_003第16–23與24–31格原圖／Tsai膝踝對照。圖例：青色9左膝／11左踝，橘紅10右膝／12右踝。對『這16格四個點是否都清楚可見且位置正確？有例外只需說格數、哪個點，以及遮住／看不清／偏移』的合併問題回答原話『可以』，只將本批四關節各16點、共64點轉錄為可見且對位，採用Tsai原始X/Y。不代判32格以後的膝踝或其他未覆核點，不宣稱像素誤差為零。左踝65既有不可觀測／null座標、右肩70–78不可觀測／null座標、左腕85–86不確定／null座標維持原樣。peer僅追加notes，原labels/source/events/provenance不變。完整12關節參考仍in_progress；confidence與完整覆核完成時間保持null。原來源、canonical GT、模型prediction與歷史checkpoint保留；沒有子代理、模型分析、比較或訓練。",
+    "2026-10-05，HSU要求膝蓋與腳踝同時看，並觀看直接貼於對話的pitch_003第32–39與40–47格原圖／Tsai膝踝對照。圖例：青色9左膝／11左踝，橘紅10右膝／12右踝。對『這16格四個點是否都清楚可見且位置正確？有例外只需說格數、哪個點，以及遮住／看不清／偏移』的合併問題回答原話『正確』，只將本批四關節各16點、共64點轉錄為可見且對位，採用Tsai原始X/Y。不代判48格以後的膝踝或其他未覆核點，不宣稱像素誤差為零。左踝65既有不可觀測／null座標、右肩70–78不可觀測／null座標、左腕85–86不確定／null座標維持原樣。peer僅追加notes，原labels/source/events/provenance不變。完整12關節參考仍in_progress；confidence與完整覆核完成時間保持null。原來源、canonical GT、模型prediction與歷史checkpoint保留；沒有子代理、模型分析、比較或訓練。",
+    "2026-10-05，HSU要求膝蓋與腳踝同時看，並觀看直接貼於對話的pitch_003第48–55與56–63格原圖／Tsai膝踝對照。圖例：青色9左膝／11左踝，橘紅10右膝／12右踝。對『這16格四個點是否都清楚可見且位置正確？有例外只需說格數、哪個點，以及遮住／看不清／偏移』的合併問題回答原話『正確』，只將本批四關節各16點、共64點轉錄為可見且對位，採用Tsai原始X/Y。不代判64格以後的膝踝或其他未覆核點，不宣稱像素誤差為零。左踝65既有不可觀測／null座標、右肩70–78不可觀測／null座標、左腕85–86不確定／null座標維持原樣。peer僅追加notes，原labels/source/events/provenance不變。完整12關節參考仍in_progress；confidence與完整覆核完成時間保持null。原來源、canonical GT、模型prediction與歷史checkpoint保留；沒有子代理、模型分析、比較或訓練。",
+    "2026-10-05，HSU觀看對話中pitch_003第64–71與72–79格原圖／Tsai膝踝對照。圖例青色9左膝／11左踝、橘紅10右膝／12右踝。問題明確排除已記錄看不到的第65格左踝，詢問其餘點是否都清楚可見且位置正確；HSU回答原話「都可以」。只將本批其餘63個未覆核點轉錄為可見且對位，採用Tsai原始X/Y。第65格左踝保留not_observable及null座標，不重複覆核或覆寫。80格以後未覆核膝踝不代判；右肩70–78不可觀測、左腕85–86不確定保持null座標。peer只追加notes，labels/source/events/provenance不變。整體仍in_progress，confidence與完整覆核完成時間null。來源、canonical GT、prediction與歷史保留；沒有子代理、模型分析、比較或訓練。",
+    "2026-10-05，HSU觀看直接貼於對話的pitch_003第80–87與88–95格原圖／Tsai膝踝對照。圖例青色9左膝／11左踝、橘紅10右膝／12右踝。對「這16格四個點是否都清楚可見且位置正確？有例外就告訴我格數與關節」的合併問題回答原話「正確」。只將本批四關節各16點、共64個未覆核點轉錄為可見且對位，採用Tsai原始X/Y，不宣稱像素誤差為零。96格以後膝踝不代判；第65格左踝保留不可觀測與null座標，右肩70–78不可觀測、左腕85–86不確定維持null座標。peer只追加notes，labels/source/events/provenance不變；整體in_progress，confidence與完整覆核完成時間null。來源、canonical GT、prediction與歷史保留；沒有子代理、模型分析、比較或訓練。",
+    "2026-10-05，HSU觀看直接貼於對話的pitch_003第96–105與106–114格原圖／Tsai膝踝對照。圖例青色9左膝／11左踝、橘紅10右膝／12右踝。對「這最後19格，四個點是否都清楚可見且位置正確？有例外就告訴我格數與關節」的合併問題回答原話「都正確」。只將本批四關節各19點、共76個未覆核點轉錄為可見且對位，採用Tsai原始X/Y，不宣稱像素誤差為零。pitch_003的115格12關節全部已有人工可見性及對位判定：1205可見且對位、173不可觀測、2不確定、0未覆核。第65格左踝、右肩70–78與所有既有不可觀測點保持null座標；85–86左腕保留uncertain及null座標。peer僅追加notes，labels/source/events/provenance不變。逐點覆核已完成，正式完成provenance與confidence未提供，整體annotation_status仍in_progress，reviewed_at_utc及confidence維持null。來源、canonical GT、prediction與歷史保留；沒有子代理、模型分析、比較或訓練，Phase 2仍IN PROGRESS。"
+  ],
+  "review_profile": "phase2_full_review"
+}
