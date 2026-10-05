@@ -345,6 +345,113 @@ left wrist together at 0–15; no human answers for that batch have been supplie
 Full-clip coordinate review and error comparison remain incomplete.
 Check: `analysis_results/manual_pose_return_check_20261004_01/manual_keypoints_HSU_checkpoint_check_20261005_13.json`.
 
+HSU reviewed left elbow and wrist at 0–15, answering
+"看不到左腕但是位置正確，左肘位置正確". The 16 left-wrist points were
+saved as `not_observable` with null X/Y; their inferred-placement opinion is
+retained without assigning an invisibility cause. Left-elbow placement was
+confirmed first, while direct visibility remained pending in checkpoint
+`HSU_TSAI_RETURN_20261005_14` (165 visible / 130 not observable / 1,085 unreviewed).
+HSU then explicitly answered "全部看得見" to the left-elbow visibility
+question for the same 0–15 frames. Those 16 elbow points now retain Tsai's
+original visible X/Y in the latest partial reference
+`annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_15/pitch_003/manual_keypoints.json`:
+**181 visible, 130 not observable, 1,069 unreviewed**, still `in_progress`.
+The latest supplement is `annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_17/pitch_003/ground_truth.json`;
+the preceding `_20261005_16` supplement and all previous checkpoints are preserved.
+Left elbow now has 25 visible / 15 not observable / 75 unreviewed; left wrist
+has 5 visible / 35 not observable / 75 unreviewed. Next review both at 16–32,
+17 frames / 34 points; that batch still has no human judgments.
+Source/schema checks and protected hashes passed. No coordinate-error
+comparison, inference or model changes were performed.
+Checks: `analysis_results/manual_pose_return_check_20261004_01/manual_keypoints_HSU_checkpoint_check_20261005_14.json`
+and `analysis_results/manual_pose_return_check_20261004_01/manual_keypoints_HSU_checkpoint_check_20261005_15.json`.
+
+HSU answered "全部都被遮住但位置正確" for the displayed left elbow and
+left wrist at 16–32. All 34 points are `not_observable` with null X/Y;
+the inferred-placement opinion is retained separately from visible truth.
+Occlusion is explicitly human-confirmed, but no occluding object was specified.
+The latest partial reference is
+`annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_16/pitch_003/manual_keypoints.json`:
+**181 visible, 164 not observable, 1,035 unreviewed**, still `in_progress`.
+The latest supplement is `annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_18/pitch_003/ground_truth.json`.
+Left elbow now has 25 visible / 32 not observable / 58 unreviewed; left wrist
+has 5 visible / 52 not observable / 58 unreviewed. Next review both at
+45 and 49–63 (16 frames / 32 points); already reviewed 33–44 and 46–48 are skipped.
+Source/schema checks and protected hashes passed. Previous annotations and raw
+predictions remain unchanged; no coordinate-error comparison or model changes.
+Check: `analysis_results/manual_pose_return_check_20261004_01/manual_keypoints_HSU_checkpoint_check_20261005_16.json`.
+
+HSU answered "皆可看到位置正確" for the displayed left elbow and left wrist
+at 45 and 49–63. These 32 points are visible and correctly placed, retaining
+Tsai's original X/Y without claiming zero pixel error. The judgment applies
+only to the displayed batch; previously reviewed 46–48 and 64–72 remain unchanged.
+The latest partial reference is
+`annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_17/pitch_003/manual_keypoints.json`:
+**213 visible, 164 not observable, 1,003 unreviewed**, still `in_progress`.
+The latest supplement is `annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_19/pitch_003/ground_truth.json`.
+Left elbow now has 41 visible / 32 not observable / 42 unreviewed; left wrist
+has 21 visible / 52 not observable / 42 unreviewed. Both are reviewed through
+0–72; next review both at 73–88 (16 frames / 32 points), which still lack human judgments.
+Source/schema checks and protected hashes passed. Previous annotations and raw
+predictions remain unchanged; no coordinate-error comparison, inference or model changes.
+Check: `analysis_results/manual_pose_return_check_20261004_01/manual_keypoints_HSU_checkpoint_check_20261005_17.json`.
+
+HSU reviewed left elbow and wrist at 73–88, first answering
+"85-86左腕看不清之外其他都正確", then explicitly confirming
+"其餘全部看得見" for all remaining points in that batch. Left elbow 73–88
+and left wrist 73–84 / 87–88 (30 points) are visible and correctly placed,
+retaining Tsai's original X/Y. Left wrist 85–86 (two points) is `uncertain`
+with null X/Y: lack of clarity was not forced into complete invisibility
+or an exact coordinate, and no cause was inferred.
+The latest partial reference is
+`annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_18/pitch_003/manual_keypoints.json`:
+**243 visible, 164 not observable, 2 uncertain, 971 unreviewed**, still `in_progress`.
+The latest supplement is `annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_20/pitch_003/ground_truth.json`.
+Left elbow has 57 visible / 32 not observable / 26 unreviewed; left wrist
+has 35 visible / 52 not observable / 2 uncertain / 26 unreviewed.
+Both have been reviewed through 0–88, retaining the two uncertain judgments.
+Next review both at 89–104 (16 frames / 32 points), which lack human judgments.
+Source/schema checks and protected hashes passed. Existing schema and raw
+predictions are unchanged; only the local transcription helper was extended
+to store explicit `uncertain` answers. No inference, training or pose/tracking changes.
+Check: `analysis_results/manual_pose_return_check_20261004_01/manual_keypoints_HSU_checkpoint_check_20261005_18.json`.
+
+HSU viewed the 89–104 original/Tsai comparisons directly in this conversation,
+first answering "皆清楚可見" and then explicitly confirming "全部位置正確"
+for the left-elbow and left-wrist placements. These 32 points retain Tsai's
+original visible X/Y. Left wrist 85–86 remains uncertain with null X/Y.
+The partial reference at this checkpoint is
+`annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_19/pitch_003/manual_keypoints.json`:
+**275 visible, 164 not observable, 2 uncertain, 939 unreviewed**, still `in_progress`.
+Its supplement is `annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_21/pitch_003/ground_truth.json`.
+Left elbow has 73 visible / 32 not observable / 10 unreviewed; left wrist
+has 51 visible / 52 not observable / 2 uncertain / 10 unreviewed.
+Both have been reviewed through 0–104. The final left-arm batch is 105–114
+(10 frames / 20 points), which still lacks human judgments; display its
+comparisons directly in the conversation for the user's phone review.
+Source/schema checks and protected hashes passed. Previous annotations and raw
+predictions remain unchanged; no inference, coordinate-error comparison or model changes.
+Check: `analysis_results/manual_pose_return_check_20261004_01/manual_keypoints_HSU_checkpoint_check_20261005_19.json`.
+
+HSU answered "正確" to the combined question asking whether LEFT_ELBOW
+(cyan 3) and LEFT_WRIST (cyan 5) at 105–114 are all clearly visible and correctly
+placed. These 20 points retain Tsai's original X/Y in the latest partial reference,
+`annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_20/pitch_003/manual_keypoints.json`:
+**295 visible, 164 not observable, 2 uncertain, 919 unreviewed**, still `in_progress`.
+The latest supplement is `annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_22/pitch_003/ground_truth.json`.
+Left elbow has 83 visible / 32 not observable / 0 unreviewed; left wrist has
+61 visible / 52 not observable / 2 uncertain / 0 unreviewed. Right elbow remains
+93 visible / 22 not observable and right wrist 58 visible / 57 not observable.
+All four elbow/wrist joints have been reviewed across 0–114; left wrist 85–86
+remains uncertain with null X/Y. The full 12-joint reference remains in progress.
+Next review only both shoulders at 0–15 (32 unreviewed points): cyan 1 is LEFT_SHOULDER
+and red 2 is RIGHT_SHOULDER. The two comparisons are
+`analysis_results/shoulder_review_20261005_01/shoulders_0000_0007.png` and
+`analysis_results/shoulder_review_20261005_01/shoulders_0008_0015.png`.
+This annotation checkpoint uses schema/source-hash checks. The previously recorded
+full suite result, 147 passed / 0 failed / 1 skipped, is historical and was not rerun
+for this batch. Phase 2 remains in progress.
+
 
 ### Manual skeleton coordinate handoff (2026-10-04)
 
@@ -712,7 +819,10 @@ sequence agreed with the user on 2026-09-28:
 
 1. Preserve all five completed HSU qualitative reviews and their uncertainty.
    Review the returned complete `pitch_003` coordinates, whose format/source
-   checks passed. Resolve visibility and placement questions with the reviewers,
+   checks passed. The four elbow/wrist joints are reviewed across 0–114, with
+   left wrist 85–86 retained as uncertain. Next review only both shoulders at 0–15,
+   using cyan 1 for left shoulder and red 2 for right shoulder. Resolve remaining
+   visibility and placement questions with the reviewers,
    obtain the remaining independent event supplements and completion provenance,
    and preserve the HSU event supplement recorded above. Do not automatically
    merge or turn inferred hidden locations into observable reference points.
