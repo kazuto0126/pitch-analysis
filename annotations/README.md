@@ -4,11 +4,11 @@
 
 ## 目前應使用的部分參考
 
-- 人工座標：`manual_keypoints/HSU_TSAI_RETURN_20261005_11/pitch_003/manual_keypoints.json`。
-- 最新 HSU 補充：`phase2_peer_reviews/HSU_TSAI_RETURN_20261005_13/pitch_003/ground_truth.json`。
+- 人工座標：`manual_keypoints/HSU_TSAI_RETURN_20261005_13/pitch_003/manual_keypoints.json`。
+- 最新 HSU 補充：`phase2_peer_reviews/HSU_TSAI_RETURN_20261005_15/pitch_003/ground_truth.json`。
 - 原始 HSU 五支定性紀錄：`analysis_results/phase2_yamamoto_20260925_01/ground_truth/pitch_00N/ground_truth.json`。
 
-部分座標共有 **151 visible、92 not_observable、1,137 unreviewed**；仍為 `in_progress`。
+部分座標共有 **165 visible、114 not_observable、1,101 unreviewed**；仍為 `in_progress`。
 Tsai 放置原始 X/Y；HSU 逐段確認影像可見性及點位。只有確認可見且對位的點保留原始 X/Y。
 其他狀態座標留空，沒有用透視、插值或模型補成 ground truth。
 HSU 後續明確回答右肘 83–92「位置正確」，已保存十個可見且對位的原始座標。
@@ -24,7 +24,9 @@ HSU 再確認右肘 93–96「看的到且正確」，新增四個可見原始�
 右肘 8–11 也已確認可見且對位，保存四個原始座標。
 HSU 對右肘最後19格回答「全部都正確」，結合同SHA既有原片可見性紀錄，保存19個原始座標。
 右肘115格全數完成：93可見且對位、22不可觀測；其他關節仍待人工，整體不改為 reviewed。
-下一項是右腕，尚未覆核0–21、24、30–32、105–114共36格；依 HSU 偏好用較大批次呈現。
+HSU 對右腕0–15回答「位置正確但是看不到」；16點記為不可觀測，X/Y留空，推估位置意見保留在 notes。
+HSU 接著確認右腕16–21位置正確但看不到，六點不可觀測；本批其餘24、30–32、105–114共14點可見且對位。
+右腕115格全數完成：58可見且對位、57不可觀測。接續左肘／左腕0–15，尚未收到該批人工判斷。
 
 ## 保存與接續
 

@@ -6,12 +6,12 @@ Tsai 在 2026-10-04 人工放置 `pitch_003` 的 115 格、12 關節，共 1,380
 HSU 親自觀看原圖與人工骨架，逐段確認可見性及點位；Codex 依明確回答轉錄，未代替人工判斷。
 原始 CVAT 全點 `visible` 宣告原樣保存，不把推估隱藏位置直接當成可觀測真值。
 
-最新部分座標：[manual_keypoints.json](../annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_11/pitch_003/manual_keypoints.json)。
-最新補充：[ground_truth.json](../annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_13/pitch_003/ground_truth.json)。
-七份舊座標 checkpoint、原 HSU canonical 紀錄、原影片與模型 prediction 均保留。
+最新部分座標：[manual_keypoints.json](../annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_13/pitch_003/manual_keypoints.json)。
+最新補充：[ground_truth.json](../annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_15/pitch_003/ground_truth.json)。
+所有舊座標 checkpoint、原 HSU canonical 紀錄、原影片與模型 prediction 均保留。
 
-目前 **151 visible、92 not_observable、1,137 unreviewed**，狀態為 `in_progress`。
-只有確認可見且對位的 151 組座標保留 Tsai 原始 X/Y；其餘座標為 `null`。
+目前 **165 visible、114 not_observable、1,101 unreviewed**，狀態為 `in_progress`。
+只有確認可見且對位的 165 組座標保留 Tsai 原始 X/Y；其餘座標為 `null`。
 人工 confidence 與完整覆核完成時間未提供，均保持 `null`。
 
 | 關節 | 可見且對位 | 不可觀測 | 未完成覆核 |
@@ -21,7 +21,7 @@ HSU 親自觀看原圖與人工骨架，逐段確認可見性及點位；Codex �
 | LEFT_ELBOW | 9 | 15 | 91 |
 | RIGHT_ELBOW | 93 | 22 | 0 |
 | LEFT_WRIST | 5 | 19 | 91 |
-| RIGHT_WRIST | 44 | 35 | 36 |
+| RIGHT_WRIST | 58 | 57 | 0 |
 | LEFT_HIP | 0 | 0 | 115 |
 | RIGHT_HIP | 0 | 0 | 115 |
 | LEFT_KNEE | 0 | 0 | 115 |
@@ -51,6 +51,11 @@ HSU 再確認右肘 93–96「看的到且正確」，另保存四個原始 X/Y�
 HSU 隨後對最後19格回答「全部都正確」。同SHA既有人工原片可見性紀錄另行可追溯，結合新點位判斷保存19個原始 X/Y。
 右肘115格全數覆核完成，93可見且對位、22不可觀測；整支12關節人工參考仍未完成。
 右腕 84–86 遮擋已保存，加上原先 83 與 87–104 不可觀測區段，不需要重複詢問。
+HSU 對右腕0–15回答「位置正確但是看不到」；16點記為不可觀測，X/Y留空。
+推估位置意見保留在 notes，未推定不可見原因；不能因此把點當成可見真值或零誤差。
+HSU 再回答「16-21位置正確但看不到，其他都看的到且位置正確」；只轉錄本批剩餘20格右腕。
+16–21共6點不可觀測、X/Y留空；24、30–32、105–114共14點可見且對位，採用Tsai原始座標。
+右腕全115格已覆核（58可見、57不可觀測）；左手等其他關節尚待逐點確認，整體不改為 reviewed。
 
 ## 下次從這裡續看
 
@@ -69,9 +74,9 @@ HSU 隨後對最後19格回答「全部都正確」。同SHA既有人工原片�
 剩餘19格整批對照位於 `analysis_results/manual_pose_return_check_20261004_01/right_elbow_review_20261005_04/`。
 接續右腕對照位於 `analysis_results/manual_pose_return_check_20261004_01/right_wrist_review_20261005_01/`。
 
-1. 右肘全片已完成。依 HSU 偏好用較大批次覆核右腕；剩餘0–21、24、30–32、105–114共36格，先看0–15。
+1. 右肘、右腕全片已完成。接續左肘／左腕0–15，依 HSU 偏好用兩張大圖呈現16格、32個目標點。
 2. 若有偏移，列格數；只有人提供修正座標或明確確認正確點時，才能採用該 X/Y。
-3. 補齊右腕後，再檢查其餘尚未確認的手臂區段，然後雙肩、髖、膝、踝。
+3. 檢查其餘尚未確認的左肘／左腕區段，再接雙肩、髖、膝、踝；已保存的不可觀測區段不重複詢問。
 4. 被遮住或關節中心無法觀察時，不補透視座標；不確定可保留 `uncertain`。
 5. 完整人工覆核後，先驗證 JSON／來源，再比較原始 prediction 與可見人工座標；人工不可觀測與 AI 漏點分開計數。
 
@@ -92,6 +97,8 @@ HSU 對 `pitch_003` 的補充事件 13／46／65／69／99 保留於獨立檔，
 - `_20261005_09` 座標與 `_20261005_11` 補充已驗證；4–7 四個右肘可見且對位，採用原 Tsai X/Y，歷史與模型輸出不變。
 - `_20261005_10` 座標與 `_20261005_12` 補充已驗證；8–11 四個右肘可見且對位，採用原 Tsai X/Y，歷史與模型輸出不變。
 - `_20261005_11` 座標與 `_20261005_13` 補充已驗證；最後19個右肘採用原 Tsai X/Y，可見性來源可追溯，歷史與模型輸出不變。
+- `_20261005_12` 座標與 `_20261005_14` 補充已驗證；右腕0–15共16點不可觀測、X/Y留空，推估位置意見另存，歷史與模型輸出不變。
+- `_20261005_13` 座標與 `_20261005_15` 補充已驗證；右腕16–21共6點不可觀測，其餘本批14點可見且對位，歷史與模型輸出不變。
 - 所有保留 X/Y 與原始 Tsai XML 相同；非 `visible` 座標為空白。
 - 126 項正式 baseline／影片 hash、232 次歷史保護檔 hash 核對一致。
 - 十張續看圖及原來源 hash 不變；離線頁 43 個相對連結存在。
