@@ -453,6 +453,116 @@ full suite result, 147 passed / 0 failed / 1 skipped, is historical and was not 
 for this batch. Phase 2 remains in progress.
 
 
+HSU reviewed both shoulders at 0–15 in the two inline original/Tsai comparisons
+and answered "都正確清楚" to the combined visibility/placement question. These
+32 points retain exact original Tsai X/Y in the latest partial reference,
+`annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_21/pitch_003/manual_keypoints.json`:
+**327 visible, 164 not observable, 2 uncertain, 887 unreviewed**, still `in_progress`.
+The new supplement is `annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_23/pitch_003/ground_truth.json`;
+it appends only the human response/context to notes. Each shoulder has 16 visible
+and 99 unreviewed points. Left wrist 85–86 remains uncertain with null X/Y.
+Previous checkpoints, canonical GT, source files and predictions are unchanged;
+schema/source-hash validation passed and no inference or full test rerun occurred.
+Next review only both shoulders at 16–31 (32 unreviewed points), cyan 1 left and
+red 2 right, using `analysis_results/shoulder_review_20261005_02/`.
+Check: `analysis_results/manual_pose_return_check_20261004_01/manual_keypoints_HSU_checkpoint_check_20261005_21.json`.
+No subagents were used for this batch. Phase 2 remains in progress.
+
+HSU then answered "正確" to the combined visibility/placement question for
+both shoulders at 16–31 after the original/Tsai images were embedded directly
+in the final response. These 32 points retain original Tsai X/Y in
+`annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_22/pitch_003/manual_keypoints.json`:
+**359 visible, 164 not observable, 2 uncertain, 855 unreviewed**, still `in_progress`.
+The latest supplement is `annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_24/pitch_003/ground_truth.json`;
+only notes were appended. Each shoulder now has 32 visible / 83 unreviewed.
+Schema/source checks passed; prior checkpoints, canonical GT, source files,
+predictions and left-wrist uncertainty at 85–86 are unchanged.
+Next review only both shoulders at 32–47 (32 unreviewed points) using
+`analysis_results/shoulder_review_20261005_03/`, cyan 1 left / red 2 right.
+Check: `analysis_results/manual_pose_return_check_20261004_01/manual_keypoints_HSU_checkpoint_check_20261005_22.json`.
+No subagents, model inference or full test rerun were used for this batch.
+
+HSU answered "都正確" to the combined visibility/placement question for both
+shoulders at 32–47, after reviewing the original/Tsai images in the final response.
+The new partial reference is
+`annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_23/pitch_003/manual_keypoints.json`:
+**391 visible, 164 not observable, 2 uncertain, 823 unreviewed**, still `in_progress`.
+The latest supplement is `annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_25/pitch_003/ground_truth.json`;
+only notes were appended. Each shoulder has 48 visible / 67 unreviewed.
+The 32 new points retain exact original Tsai X/Y. Schema/source checks passed;
+old checkpoints, canonical GT, model predictions and left-wrist uncertainty at
+85–86 are unchanged. Next review only both shoulders at 48–63 using
+`analysis_results/shoulder_review_20261005_04/`, cyan 1 left / red 2 right.
+Check: `analysis_results/manual_pose_return_check_20261004_01/manual_keypoints_HSU_checkpoint_check_20261005_23.json`.
+No subagents, model inference or full test rerun were used.
+
+HSU answered "正確" to the combined visibility/placement question for both
+shoulders at 48–63 after reviewing the original/Tsai images in the final response.
+The new partial reference is
+`annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_24/pitch_003/manual_keypoints.json`:
+**423 visible, 164 not observable, 2 uncertain, 791 unreviewed**, still `in_progress`.
+The latest supplement is `annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_26/pitch_003/ground_truth.json`;
+only notes were appended. Each shoulder has 64 visible / 51 unreviewed.
+The 32 new points retain exact original Tsai X/Y; schema/source checks passed.
+Historical checkpoints, canonical GT, source files, predictions and left-wrist
+uncertainty at 85–86 are unchanged. Next review only both shoulders at 64–79
+using `analysis_results/shoulder_review_20261005_05/`, cyan 1 left / red 2 right.
+Check: `analysis_results/manual_pose_return_check_20261004_01/manual_keypoints_HSU_checkpoint_check_20261005_24.json`.
+No subagents, model inference or full test rerun were used.
+
+HSU reported "70-78誘姦被遮住其他沒問題" for the shoulder 64–79 batch and
+explicitly clarified "對，是右肩" when asked which side was occluded. The new
+partial reference is
+`annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_25/pitch_003/manual_keypoints.json`:
+**446 visible, 173 not observable, 2 uncertain, 759 unreviewed**, still `in_progress`.
+The latest supplement is `annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_27/pitch_003/ground_truth.json`;
+only notes were appended. RIGHT_SHOULDER 70–78 (9 points) is not observable with
+null X/Y; the occluder and exact hidden position were not supplied. The other
+23 points in this batch retain original Tsai X/Y. LEFT_SHOULDER has 80 visible /
+35 unreviewed, RIGHT_SHOULDER 71 visible / 9 not observable / 35 unreviewed.
+Schema/source checks passed; historical records, source files, canonical GT,
+predictions and left-wrist uncertainty at 85–86 are unchanged. Next review only
+both shoulders at 80–95 using `analysis_results/shoulder_review_20261005_06/`.
+Check: `analysis_results/manual_pose_return_check_20261004_01/manual_keypoints_HSU_checkpoint_check_20261005_25.json`.
+No subagents, model inference or full test rerun were used.
+
+HSU answered "都沒問替" to the combined question whether both shoulders in
+80–95 are clearly visible and correctly placed, after the original/Tsai sheets
+were embedded in the conversation. The answer is recorded verbatim and interpreted
+as "都沒問題" in that question context. The latest partial reference is
+`annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_26/pitch_003/manual_keypoints.json`:
+**478 visible, 173 not observable, 2 uncertain, 727 unreviewed**, still `in_progress`.
+The latest supplement is `annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_28/pitch_003/ground_truth.json`;
+only notes were appended. The 32 newly confirmed points retain original Tsai X/Y.
+LEFT_SHOULDER has 96 visible / 19 unreviewed; RIGHT_SHOULDER has 87 visible /
+9 not observable / 19 unreviewed. Right-shoulder 70–78 occlusion and left-wrist
+85–86 uncertainty are unchanged. Schema/source checks passed; historical records,
+source files, canonical GT and predictions are unchanged. Next review only both
+shoulders at 96–114, the final shoulder batch, using
+`analysis_results/shoulder_review_20261005_07/` (38 unreviewed points).
+Check: `analysis_results/manual_pose_return_check_20261004_01/manual_keypoints_HSU_checkpoint_check_20261005_26.json`.
+No subagents, model inference or full test rerun were used.
+
+HSU answered "正確" to the combined question whether both shoulders in 96–114
+are clearly visible and correctly placed, after both original/Tsai sheets were
+embedded in the conversation. The latest partial reference is
+`annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_27/pitch_003/manual_keypoints.json`:
+**516 visible, 173 not observable, 2 uncertain, 689 unreviewed**, still `in_progress`.
+The latest supplement is `annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_29/pitch_003/ground_truth.json`;
+only notes were appended. The 38 newly confirmed points retain original Tsai X/Y.
+Both shoulders have now been reviewed for all 115 frames: LEFT_SHOULDER has
+115 visible; RIGHT_SHOULDER has 106 visible / 9 not observable (70–78).
+Both shoulders, elbows and wrists are complete at the joint-frame review level;
+the 12-joint reference is incomplete. Left-wrist 85–86 uncertainty is preserved.
+Schema/source checks passed; historical records, source files, canonical GT and
+predictions are unchanged. Next review only both hips at 0–15 using
+`analysis_results/hip_review_20261005_01/` (32 unreviewed points). No hip visibility
+or placement judgments were assigned while preparing the sheets.
+Check: `analysis_results/manual_pose_return_check_20261004_01/manual_keypoints_HSU_checkpoint_check_20261005_27.json`.
+No subagents, model inference or full test rerun were used. Tsai placed the original
+coordinates on 2026-10-04; HSU personally reviewed the images and Codex transcribed
+the answers. Phase 2 remains IN PROGRESS; no Phase 3 work was started.
+
 ### Manual skeleton coordinate handoff (2026-10-04)
 
 The user clarified that the classmate should manually place skeleton X/Y,
