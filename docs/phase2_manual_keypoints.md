@@ -291,13 +291,65 @@ HSU對雙肩80–95清楚可見且位置正確的合併問題回答原話「都�
 schema／來源檢查通過；右肩70–78不可觀測、左腕85–86不確定與原來源／模型／歷史不變，沒有啟用子代理。
 
 HSU對雙肩96–114清楚可見且位置正確的合併問題回答「正確」，新增38個原Tsai X/Y。
-最新部分參考為 `annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_27/pitch_003/manual_keypoints.json`：
+雙肩96–114覆核後的部分參考為 `annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_27/pitch_003/manual_keypoints.json`：
 **516 個可見且對位、173 個不可觀測、2 個不確定、689 個未覆核**，仍為 `in_progress`。
-最新補充為 `annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_29/pitch_003/ground_truth.json`；只追加原話與問題上下文。
+該次補充為 `annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_29/pitch_003/ground_truth.json`；只追加原話與問題上下文。
 雙肩115格全片覆核完成：左肩115可見；右肩106可見／9不可觀測（70–78）。
 肩、肘、腕六關節均已逐點覆核；髖、膝、踝尚待人工，左腕85–86不確定紀錄保留。
 下一批雙髖0–15共32點全為未覆核；對照位於 `analysis_results/hip_review_20261005_01/`，青色7左髖、紅色8右髖。
 schema／來源檢查通過，歷史、來源、模型與canonical GT保留；沒有啟用子代理、重跑分析或訓練。
+
+HSU對雙髖0–15看得清楚且標點位置正確的合併問題回答「正確」，新增32個原Tsai X/Y。
+雙髖0–15覆核後的部分參考為 `annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_28/pitch_003/manual_keypoints.json`：
+**548 個可見且對位、173 個不可觀測、2 個不確定、657 個未覆核**，仍為 `in_progress`。
+該次補充為 `annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_30/pitch_003/ground_truth.json`；只追加原話與問題上下文。
+左右髖各16可見／99未覆核；下一批雙髖16–31共32點全為未覆核，對照位於 `analysis_results/hip_review_20261005_02/`。
+schema／來源檢查通過，來源、canonical GT、prediction、歷史与既有不確定／不可觀測狀態保留。
+沒有啟用子代理、修改模型、重跑分析、比較或訓練。
+
+HSU對雙髖16–31看得清楚且位置正確的合併問題回答「可以」，新增32個原Tsai X/Y。
+雙髖16–31覆核後的部分參考為 `annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_29/pitch_003/manual_keypoints.json`：
+**580 個可見且對位、173 個不可觀測、2 個不確定、625 個未覆核**，仍為 `in_progress`。
+該次補充為 `annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_31/pitch_003/ground_truth.json`；只追加原話與問題上下文。
+左右髖各32可見／83未覆核；下一批雙髖32–47共32點全為未覆核，對照位於 `analysis_results/hip_review_20261005_03/`。
+後續「繼續」只要求接續展示，不當成未看影格的人工標註。schema／來源檢查通過；歷史、模型輸出與canonical GT保留。
+
+HSU對雙髖32–47看得清楚且位置正確的合併問題回答「正確」，新增32個原Tsai X/Y。
+雙髖32–47覆核後的部分參考為 `annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_30/pitch_003/manual_keypoints.json`：
+**612 個可見且對位、173 個不可觀測、2 個不確定、593 個未覆核**，仍為 `in_progress`。
+該次補充為 `annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_32/pitch_003/ground_truth.json`；只追加原話與問題上下文。
+左右髖各48可見／67未覆核；下一批雙髖48–63共32點全為未覆核，對照位於 `analysis_results/hip_review_20261005_04/`。
+schema／來源檢查通過；原Tsai座標、歷史、模型輸出與canonical GT保留，未修改分析邏輯。
+
+HSU對雙髖48–63看得清楚且位置正確的合併問題回答「可以」，新增32個原Tsai X/Y。
+雙髖48–63覆核後的部分參考為 `annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_31/pitch_003/manual_keypoints.json`：
+**644 個可見且對位、173 個不可觀測、2 個不確定、561 個未覆核**，仍為 `in_progress`。
+該次補充為 `annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_33/pitch_003/ground_truth.json`；只追加原話與問題上下文。
+左右髖各64可見／51未覆核；下一批雙髖64–79共32點全為未覆核，對照位於 `analysis_results/hip_review_20261005_05/`。
+schema／來源檢查通過；原Tsai座標、歷史、模型輸出與canonical GT保留，未修改分析邏輯。
+
+HSU對雙髖64–79看得清楚且位置正確的合併問題回答「都正確」，新增32個原Tsai X/Y。
+雙髖64–79覆核後的部分參考為 `annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_32/pitch_003/manual_keypoints.json`：
+**676 個可見且對位、173 個不可觀測、2 個不確定、529 個未覆核**，仍為 `in_progress`。
+該次補充為 `annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_34/pitch_003/ground_truth.json`；只追加原話與問題上下文。
+左右髖各80可見／35未覆核；下一批雙髖80–95共32點全為未覆核，對照位於 `analysis_results/hip_review_20261005_06/`。
+schema／來源檢查通過；原Tsai座標、歷史、模型輸出與canonical GT保留，未修改分析邏輯。
+
+HSU對雙髖80–95看得清楚且位置正確的合併問題回答「正確」，新增32個原Tsai X/Y。
+雙髖80–95覆核後的部分參考為 `annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_33/pitch_003/manual_keypoints.json`：
+**708 個可見且對位、173 個不可觀測、2 個不確定、497 個未覆核**，仍為 `in_progress`。
+該次補充為 `annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_35/pitch_003/ground_truth.json`；只追加原話與問題上下文。
+左右髖各96可見／19未覆核；最後一批雙髖96–114共38點全為未覆核，對照位於 `analysis_results/hip_review_20261005_07/`。
+schema／來源檢查通過；原Tsai座標、歷史、模型輸出與canonical GT保留，未修改分析邏輯。
+
+HSU對雙髖96–114清楚可見且位置正確的合併問題回答「都正確」，新增38個原Tsai X/Y。
+最新部分參考為 `annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_34/pitch_003/manual_keypoints.json`：
+**746 個可見且對位、173 個不可觀測、2 個不確定、459 個未覆核**，仍為 `in_progress`。
+最新補充為 `annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_36/pitch_003/ground_truth.json`；只追加原話與問題上下文。
+雙髖全115格已逐點覆核，左右髖各115可見且對位；雙肩、雙肘、雙腕及雙髖全片已覆核。
+下一批雙膝0–15共32點全為未覆核，對照位於 `analysis_results/knee_review_20261005_01/`。
+schema／來源檢查通過；原Tsai座標、歷史、模型輸出與canonical GT保留，未修改分析邏輯。
+全片12關節參考仍待膝踝覆核；人工 confidence／完整完成時間維持null，不宣稱像素誤差為零。
 
 ## 計算 AI 位置誤差
 

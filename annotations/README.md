@@ -4,11 +4,11 @@
 
 ## 目前應使用的部分參考
 
-- 人工座標：`manual_keypoints/HSU_TSAI_RETURN_20261005_27/pitch_003/manual_keypoints.json`。
-- 最新 HSU 補充：`phase2_peer_reviews/HSU_TSAI_RETURN_20261005_29/pitch_003/ground_truth.json`。
+- 人工座標：`manual_keypoints/HSU_TSAI_RETURN_20261005_34/pitch_003/manual_keypoints.json`。
+- 最新 HSU 補充：`phase2_peer_reviews/HSU_TSAI_RETURN_20261005_36/pitch_003/ground_truth.json`。
 - 原始 HSU 五支定性紀錄：`analysis_results/phase2_yamamoto_20260925_01/ground_truth/pitch_00N/ground_truth.json`。
 
-部分座標共有 **516 visible、173 not_observable、2 uncertain、689 unreviewed**；仍為 `in_progress`。
+部分座標共有 **746 visible、173 not_observable、2 uncertain、459 unreviewed**；仍為 `in_progress`。
 Tsai 放置原始 X/Y；HSU 逐段確認影像可見性及點位。只有確認可見且對位的點保留原始 X/Y。
 其他狀態座標留空，沒有用透視、插值或模型補成 ground truth。
 HSU 後續明確回答右肘 83–92「位置正確」，已保存十個可見且對位的原始座標。
@@ -46,8 +46,16 @@ HSU對雙肩80–95清楚可見且位置正確的合併問題回答原話「都�
 HSU對雙肩96–114清楚可見且位置正確的合併問題回答「正確」，新增38個原Tsai X/Y。
 雙肩全115格已逐點覆核：左肩115可見；右肩106可見／9不可觀測（70–78）。
 左右肩、肘、腕六關節全片已覆核；左腕85–86保留不確定，整體12關節參考仍未完成。
-下一批只看雙髖0–15格：青色7號左髖、紅色8號右髖，32點均尚未覆核。
-對照圖位於 `analysis_results/hip_review_20261005_01/hips_0000_0007.png` 與 `hips_0008_0015.png`。
+HSU對雙髖0–15看得清楚且標點位置正確的合併問題回答「正確」，新增32個原Tsai X/Y；左右髖各16可見／99未覆核。
+HSU對雙髖16–31看得清楚且位置正確的合併問題回答「可以」，新增32個原Tsai X/Y；左右髖各32可見／83未覆核。
+HSU對雙髖32–47看得清楚且位置正確的合併問題回答「正確」，新增32個原Tsai X/Y；左右髖各48可見／67未覆核。
+HSU對雙髖48–63看得清楚且位置正確的合併問題回答「可以」，新增32個原Tsai X/Y；左右髖各64可見／51未覆核。
+HSU對雙髖64–79看得清楚且位置正確的合併問題回答「都正確」，新增32個原Tsai X/Y；左右髖各80可見／35未覆核。
+HSU對雙髖80–95看得清楚且位置正確的合併問題回答「正確」，新增32個原Tsai X/Y；左右髖各96可見／19未覆核。
+HSU對雙髖96–114清楚可見且位置正確的合併問題回答「都正確」，新增38個原Tsai X/Y。
+雙髖全115格已逐點覆核：左右髖各115可見且對位；左右肩肘腕髖八個關節全片已覆核。
+下一批雙膝0–15格：青色9號左膝、紅色10號右膝，32點均尚未覆核。
+對照圖位於 `analysis_results/knee_review_20261005_01/knees_0000_0007.png` 與 `knees_0008_0015.png`。
 
 ## 保存與接續
 

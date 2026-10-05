@@ -563,6 +563,119 @@ No subagents, model inference or full test rerun were used. Tsai placed the orig
 coordinates on 2026-10-04; HSU personally reviewed the images and Codex transcribed
 the answers. Phase 2 remains IN PROGRESS; no Phase 3 work was started.
 
+HSU answered "正確" to the combined question whether both hips in 0–15 are
+clearly visible and correctly placed, after both original/Tsai sheets were
+embedded in the conversation. The latest partial reference is
+`annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_28/pitch_003/manual_keypoints.json`:
+**548 visible, 173 not observable, 2 uncertain, 657 unreviewed**, still `in_progress`.
+The latest supplement is `annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_30/pitch_003/ground_truth.json`;
+only notes were appended. The 32 newly confirmed hip points retain original Tsai
+X/Y; each hip has 16 visible / 99 unreviewed. Historical references, canonical
+GT, predictions, source files, shoulder occlusion and wrist uncertainty are
+unchanged. Schema and source checks passed. Next review only both hips at 16–31
+using `analysis_results/hip_review_20261005_02/` (32 unreviewed points).
+Check: `analysis_results/manual_pose_return_check_20261004_01/manual_keypoints_HSU_checkpoint_check_20261005_28.json`.
+No subagents, model inference, comparison, training or full test rerun were used.
+Phase 2 remains IN PROGRESS; the original shoulder checkpoint backup is GitHub
+commit `457d11aaf1e90843860652df82cea111942c0132`. This hip batch is saved locally.
+
+HSU answered "可以" to the combined question whether both hips in 16–31 are
+clearly visible and correctly placed, after both original/Tsai sheets were
+embedded in the conversation. The latest partial reference is
+`annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_29/pitch_003/manual_keypoints.json`:
+**580 visible, 173 not observable, 2 uncertain, 625 unreviewed**, still `in_progress`.
+The latest supplement is `annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_31/pitch_003/ground_truth.json`;
+only notes were appended. The 32 new points retain original Tsai X/Y; each hip
+has 32 visible / 83 unreviewed. Schema/source checks passed and protected sources,
+predictions, canonical GT and historical references are unchanged. Next review
+only both hips at 32–47 using `analysis_results/hip_review_20261005_03/`
+(32 unreviewed points). HSU's subsequent "繼續" requests the next display batch;
+it does not assign labels to the unreviewed points.
+Check: `analysis_results/manual_pose_return_check_20261004_01/manual_keypoints_HSU_checkpoint_check_20261005_29.json`.
+No subagents, model inference, comparison, training or full test rerun were used.
+This hip batch is saved locally; Phase 2 remains IN PROGRESS.
+
+HSU answered "正確" to the combined question whether both hips in 32–47 are
+clearly visible and correctly placed, after both original/Tsai sheets were
+embedded in the conversation. The latest partial reference is
+`annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_30/pitch_003/manual_keypoints.json`:
+**612 visible, 173 not observable, 2 uncertain, 593 unreviewed**, still `in_progress`.
+The latest supplement is `annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_32/pitch_003/ground_truth.json`;
+only notes were appended. The 32 new points retain original Tsai X/Y; each hip
+has 48 visible / 67 unreviewed. Schema/source checks passed and protected sources,
+predictions, canonical GT and historical references are unchanged. Next review
+only both hips at 48–63 using `analysis_results/hip_review_20261005_04/`
+(32 unreviewed points); no labels were assigned to those points during display
+preparation. Check:
+`analysis_results/manual_pose_return_check_20261004_01/manual_keypoints_HSU_checkpoint_check_20261005_30.json`.
+No subagents, model inference, comparison, training or full test rerun were used.
+This hip batch is saved locally; Phase 2 remains IN PROGRESS.
+
+HSU answered "可以" to the combined question whether both hips in 48–63 are
+clearly visible and correctly placed, after both original/Tsai sheets were
+embedded in the conversation. The latest partial reference is
+`annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_31/pitch_003/manual_keypoints.json`:
+**644 visible, 173 not observable, 2 uncertain, 561 unreviewed**, still `in_progress`.
+The latest supplement is `annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_33/pitch_003/ground_truth.json`;
+only notes were appended. The 32 new points retain original Tsai X/Y; each hip
+has 64 visible / 51 unreviewed. Schema/source checks passed and protected sources,
+predictions, canonical GT and historical references are unchanged. Next review
+only both hips at 64–79 using `analysis_results/hip_review_20261005_05/`
+(32 unreviewed points); no labels were assigned during display preparation.
+Check: `analysis_results/manual_pose_return_check_20261004_01/manual_keypoints_HSU_checkpoint_check_20261005_31.json`.
+No subagents, model inference, comparison, training or full test rerun were used.
+This hip batch is saved locally; Phase 2 remains IN PROGRESS.
+
+HSU answered "都正確" to the combined question whether both hips in 64–79 are
+clearly visible and correctly placed, after both original/Tsai sheets were
+embedded in the conversation. The partial reference saved at that point is
+`annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_32/pitch_003/manual_keypoints.json`:
+**676 visible, 173 not observable, 2 uncertain, 529 unreviewed**, still `in_progress`.
+The supplement saved at that point is `annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_34/pitch_003/ground_truth.json`;
+only notes were appended. The 32 new points retain original Tsai X/Y; each hip
+has 80 visible / 35 unreviewed. Schema/source checks passed and protected sources,
+predictions, canonical GT and historical references are unchanged. Next review
+only both hips at 80–95 using `analysis_results/hip_review_20261005_06/`
+(32 unreviewed points); no labels were assigned during display preparation.
+Check: `analysis_results/manual_pose_return_check_20261004_01/manual_keypoints_HSU_checkpoint_check_20261005_32.json`.
+No subagents, model inference, comparison, training or full test rerun were used.
+This hip batch is saved locally; Phase 2 remains IN PROGRESS.
+
+HSU answered "正確" to the combined question whether both hips in 80–95 are
+clearly visible and correctly placed, after both original/Tsai sheets were
+embedded in the conversation. The partial reference saved at that point is
+`annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_33/pitch_003/manual_keypoints.json`:
+**708 visible, 173 not observable, 2 uncertain, 497 unreviewed**, still `in_progress`.
+The supplement saved at that point is `annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_35/pitch_003/ground_truth.json`;
+only notes were appended. The 32 new points retain original Tsai X/Y; each hip
+has 96 visible / 19 unreviewed. Schema/source checks passed and protected sources,
+predictions, canonical GT and historical references are unchanged. Next review
+only the final hips at 96–114 using `analysis_results/hip_review_20261005_07/`
+(38 unreviewed points); no labels were assigned during display preparation.
+Check: `analysis_results/manual_pose_return_check_20261004_01/manual_keypoints_HSU_checkpoint_check_20261005_33.json`.
+No subagents, model inference, comparison, training or full test rerun were used.
+This hip batch is saved locally; Phase 2 remains IN PROGRESS.
+
+HSU answered "都正確" to the combined question whether both hips in 96–114 are
+clearly visible and correctly placed, after both original/Tsai sheets were
+embedded in the conversation. The latest partial reference is
+`annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_34/pitch_003/manual_keypoints.json`:
+**746 visible, 173 not observable, 2 uncertain, 459 unreviewed**, still `in_progress`.
+The latest supplement is `annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_36/pitch_003/ground_truth.json`;
+only notes were appended. The 38 new points retain original Tsai X/Y. Both hips
+are now reviewed for all 115 frames, with 115 visible and correctly placed points
+on each side. Both shoulders, elbows, wrists and hips are reviewed throughout.
+The four knee/ankle joints still require review; left ankle frame 65 retains its
+existing not-observable label. Whole-reference completion time and confidence
+remain null. Protected sources, predictions, canonical GT and history are unchanged.
+Next review only both knees at 0–15 using `analysis_results/knee_review_20261005_01/`
+(32 unreviewed points); display preparation assigned no human labels.
+Check: `analysis_results/manual_pose_return_check_20261004_01/manual_keypoints_HSU_checkpoint_check_20261005_34.json`.
+The seven hip checkpoints and seven peer supplements are saved with human
+attribution for the authorized GitHub checkpoint. Private XML and local media
+remain excluded. No subagents, model inference, comparison, training or full
+test rerun were used; Phase 2 remains IN PROGRESS.
+
 ### Manual skeleton coordinate handoff (2026-10-04)
 
 The user clarified that the classmate should manually place skeleton X/Y,
