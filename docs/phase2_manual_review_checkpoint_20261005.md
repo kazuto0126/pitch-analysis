@@ -6,13 +6,13 @@ Tsai 在 2026-10-04 人工放置 `pitch_003` 的 115 格、12 關節，共 1,380
 HSU 親自觀看原圖與人工骨架，逐段確認可見性及點位；Codex 依明確回答轉錄，未代替人工判斷。
 原始 CVAT 全點 `visible` 宣告原樣保存，不把推估隱藏位置直接當成可觀測真值。
 
-最新部分座標：[manual_keypoints.json](../annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_41/pitch_003/manual_keypoints.json)。
-最新補充：[ground_truth.json](../annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_43/pitch_003/ground_truth.json)。
+最新正式座標：[manual_keypoints.json](../annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_42/pitch_003/manual_keypoints.json)。
+最新補充：[ground_truth.json](../annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_44/pitch_003/ground_truth.json)。
 所有舊座標 checkpoint、原 HSU canonical 紀錄、原影片與模型 prediction 均保留。
 
-目前 **1205 visible、173 not_observable、2 uncertain、0 unreviewed**，狀態為 `in_progress`。
+目前 **1205 visible、173 not_observable、2 uncertain、0 unreviewed**，座標sidecar狀態為 `reviewed`。
 只有確認可見且對位的 1205 組座標保留 Tsai 原始 X/Y；其餘座標為 `null`。
-人工 confidence 與完整覆核完成時間未提供，均保持 `null`。
+人工confidence未提供，保持null。HSU提供完成時間台灣2026-10-05 10:14；UTC為2026-10-05T02:14:00Z，原答案為分鐘精度。
 
 | 關節 | 可見且對位 | 不可觀測 | 不確定 | 未完成覆核 |
 |---|---:|---:|---:|---:|
@@ -30,7 +30,7 @@ HSU 親自觀看原圖與人工骨架，逐段確認可見性及點位；Codex �
 | RIGHT_ANKLE | 115 | 0 | 0 | 0 |
 
 這是逐點座標覆核進度，不是先前五支定性 GT 的完成比例。
-全115格12個關節均已逐點覆核。不可觀測及不確定是有效結果；左踝65格不可觀測、左腕85–86不確定維持原樣。正式完成時間未提供，整體in_progress只表示provenance待補，沒有剩餘未覆核點。
+全115格12個關節均已逐點覆核。不可觀測及不確定是有效結果；左踝65格不可觀測、左腕85–86不確定維持原樣。完成provenance已由HSU提供並另存第42版reviewed；沒有剩餘未覆核點。
 
 ## 最後回答及後續澄清
 
@@ -140,7 +140,7 @@ HSU對最後96–114格四個膝踝點清楚可見且位置正確的合併問題
 雙膝、右踝各115可見；左踝114可見／1不可觀測（第65格）。全115格12關節的1,380個點狀態均已逐點覆核，0未覆核。
 逐點影像覆核已完成，包含不可觀測與不確定這些有效結果；85–86左腕保留不確定，不強迫補精確答案。正式完成時間未由人工提供，`reviewed_at_utc`及confidence仍為null，`annotation_status`暫留`in_progress`。下一步補齊完成provenance，再用現有評估器比較原始prediction與可見人工座標，排除175個非可見點並分開報告模型漏點；Phase 2仍IN PROGRESS。
 
-## 下次從這裡續看
+## 已完成的回看來源與後續
 
 83–92 格已完成的離線助手仍可回看：
 `analysis_results/manual_pose_return_check_20261004_01/autonomous_cleanup_20261005_01/review_resume/review_resume.html`。
@@ -187,14 +187,16 @@ HSU要求膝蓋與腳踝同時看，後續每批一起覆核四個腿部點，�
 青色9／11號為左膝／左踝、紅色10／12號為右膝／右踝。
 原雙膝助手保留。先前流程調整本身沒有新增人工判定，本批確認來自HSU後續回答，圖中既有Tsai點位不是自動判定的真值。
 
-1. 全115格12關節均已逐點覆核。先向HSU取得實際完成日期／時間，核對reviewer後另存新的`reviewed` checkpoint，不替人工猜完成時間。
+1. 全115格12關節已覆核，HSU已提供完成時間，第42版正式reviewed。先閱讀已完成的座標比較報告，不重複詢問已完成影格。
 2. 若有偏移，列格數；只有人提供修正座標或明確確認正確點時，才能採用該 X/Y。
 3. 依人工回答逐批同時檢查左右膝踝；已保存的不可觀測區段不重複詢問，各關節仍分別保存可見性／座標。
 4. 被遮住或關節中心無法觀察時，不補透視座標；不確定可保留 `uncertain`。
-5. 完整人工覆核後，先驗證 JSON／來源，再比較原始 prediction 與可見人工座標；人工不可觀測與 AI 漏點分開計數。
+5. JSON／來源與原始prediction座標比較已完成；確認raw presence、processed狀態、位置正確性三者的差異，再提出修正方案。
 
 仍待同學 `pitch_005` 事件補充及實際完成 provenance；不擅自給 uncertain 事件精確答案。
 HSU 對 `pitch_003` 的補充事件 13／46／65／69／99 保留於獨立檔，沒有覆蓋 canonical 的 12／47／66／69／99。
+
+HSU提供完成時間原話「2026/10/5 10.14」，記為台灣2026-10-05 10:14、UTC `2026-10-05T02:14:00Z`（分鐘精度，00秒為格式填位）。正式座標sidecar已另存為 `reviewed`，confidence保持null，舊版保留。已使用原始prediction完成1,205個可見點的位置誤差比較，排除175個不可觀測／不確定點。詳見 [座標比較報告](phase2_manual_coordinate_comparison_20261005.md)。Phase 2仍IN PROGRESS。
 
 ## 驗證結果
 
@@ -253,7 +255,7 @@ HSU 對 `pitch_003` 的補充事件 13／46／65／69／99 保留於獨立檔，
 
 ## 現在的範圍
 
-**Phase 2 = IN PROGRESS**。已完成的定性 comparison 不等於精確座標準確率；完整座標比較尚未執行。
+**Phase 2 = IN PROGRESS**。已完成五支定性comparison及pitch_003可見人工座標比較。87–104整體偏移與高visibility錯位已有量化證據，可靠性修正與驗收尚未完成。
 本次保存人工紀錄、接續助手與驗證結果，沒有模型學習、演算法修改或 Phase 3 工作。
 MLB Pitch Clipper 的正式接入依 [current status](current_status.md#deferred-mlb-pitch-clipper-handoff) 順序：
 先完成 Phase 2 人工證據與驗收，再做後續動作分析，之後才接收外部單球 MP4＋metadata；不複製其取得／剪輯邏輯。

@@ -136,9 +136,11 @@ exports original `pitch_003` images and imports an independent
 pixel error only where humans provide visible coordinates, and reports raw
 prediction misses separately. Non-visible/uncertain coordinates stay null.
 Tsai's complete coordinate return has been received and its source/format checked.
-HSU's visibility and placement review remains incomplete; only explicitly
-confirmed visible points enter the partial reference. No actual coordinate-error
-comparison or model-learning result is available. Existing pose/tracking logic is unchanged.
+HSU completed all 115 frames / 12 joints and supplied completion time
+2026-10-05 10:14 Taiwan (02:14 UTC). The reviewed sidecar retains 1205 visible
+points, 173 not observable and two uncertain points. The separate coordinate
+comparison is now available; no model learning occurred. Existing pose/tracking
+logic is unchanged.
 
 The review package is at
 `analysis_results/phase2_yamamoto_20260925_01/review_helper_20260926_01/START_HERE.md`.
@@ -159,11 +161,13 @@ tabulates observed/interpolated/missing states against human joint reliability
 labels. It explicitly leaves keypoint coordinate error and event timing error
 unmeasured: the existing comparison did not include human reference X/Y
 coordinates and the baseline does not automatically predict the five event frames.
-The later coordinate return is undergoing human review in a separate sidecar;
-it has not been included in this comparison. The measured warning comparison identifies
+HSU has now completed the coordinate review in a separate reviewed sidecar;
+the later [pitch_003 coordinate report](phase2_manual_coordinate_comparison_20261005.md)
+measures 1205 visible-reference raw 2D predictions, excluding 175 nonvisible points.
+That separate measurement leaves the earlier qualitative comparison unchanged. The measured warning comparison identifies
 missed displacement and observed states on human-unreliable raw-overlay frames.
 Phase 2 remains in progress while those gaps and independent coordinate evidence
 are addressed. Program execution alone is not a pass.
 
-The latest partial reference and remaining review questions are recorded in the
+The latest reviewed coordinate reference and follow-up evidence are recorded in the
 [2026-10-05 manual review checkpoint](phase2_manual_review_checkpoint_20261005.md).

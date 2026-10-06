@@ -1,6 +1,6 @@
 # Current status — Phase 1 accepted; Phase 2 reliability baseline
 
-Updated: 2026-10-05
+Updated: 2026-10-06
 
 **Phase 1 = PASSED**
 
@@ -10,12 +10,47 @@ per-joint pose reliability on those same five clips. No Phase 1 threshold,
 PitcherSelector rule, pose algorithm, interpolation, or smoothing policy was
 changed.
 
-**Phase 2 = IN PROGRESS — reliability gaps identified; manual X/Y review pending.** HSU's
-five qualitative reviews and their warning comparison are complete. The baseline runner,
+**Phase 2 = IN PROGRESS — reliability gaps measured; pitch_003 manual X/Y reviewed.** HSU's
+five qualitative reviews, warning comparison and pitch_003 visible-coordinate comparison are complete. The baseline runner,
 reports, and annotation workflow are available; program execution is not a
 Phase 2 acceptance result.
 
 ## Phase 2 baseline
+
+### Reviewed coordinate reference and comparison (2026-10-05; documented 2026-10-06)
+
+HSU supplied completion time "2026/10/5 10.14": Taiwan 2026-10-05 10:14,
+UTC `2026-10-05T02:14:00Z`. Precision is minutes; 00 seconds are formatting.
+New reviewed reference: `annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_42/pitch_003/manual_keypoints.json`.
+115 frames / 12 joints: 1205 visible, 173 not observable, 2 uncertain, 0 unreviewed.
+All frame-level labels/XY match checkpoint 41; only completion status/time and notes
+changed. Confidence remains null. The notes-only peer checkpoint 44 retains its
+separate in_progress status; canonical events and five-clip GT are unchanged.
+
+Existing raw 2D predictions were measured against 1205 visible reference points:
+175 nonvisible points excluded, no new inference. Raw prediction coordinates
+are present on all eligible points; this does not mean quality-gated observed
+status or correct placement. Throwing elbow mean/median/P95: 27.50/10.55/106.19px.
+The existing human major-failure interval 87–104 averages 76.90px versus 11.67px
+in 0–86. Right shoulder frame 95 visibility 0.9996 still has 147.37px error;
+left wrist frame 112 visibility 0.9927 still has 252.37px error. Confidence alone
+is not correctness. No new thresholds or pass score were introduced.
+
+Output: `analysis_results/phase2_manual_coordinate_comparison_20261005_01/`.
+See [full 12-joint report](phase2_manual_coordinate_comparison_20261005.md).
+Schemas/source hashes and independent recalculation of distances/means passed;
+raw predictions, source video, original Tsai return, canonical GT and all history
+are unchanged. Private XML remains local/ignored. No full test rerun for these
+data/docs changes; prior 147 passed / 0 failed / 1 skipped result remains historical.
+
+Occluded original Tsai estimates remain preserved in the raw return. They may
+serve as future explicitly uncertain auxiliary annotations; the current observed
+2D coordinate benchmark retains null nonvisible XY. This does not change the schema,
+pose/tracking algorithms, confidence gate, smoothing or interpolation. Single-clip
+error measurements do not establish generalization or 3D/event accuracy.
+Next: propose reliability improvements/regression checks grounded in the measured
+missed displacement and local arm errors; no automatic implementation or Phase 3.
+Independent pitch_005 event supplement is still pending.
 
 ### Human-label comparison completed (2026-10-04)
 
@@ -40,8 +75,9 @@ See the [comparison report](phase2_ground_truth_comparison_20261004.md).
   these cannot be scored as coordinate errors without visible reference data.
 - All five human subject judgments are correct-pitcher and no switch is
   confirmed. With zero switch-positive examples, sensitivity remains unmeasured.
-- Exact/range/uncertain event records were preserved; coordinate error, event
-  error, and independent reviewer agreement remain unmeasured.
+- At this qualitative-comparison checkpoint, coordinate error, event error and
+  independent reviewer agreement were unmeasured. The later pitch_003 coordinate
+  measurement is recorded above; event accuracy and independent agreement remain unmeasured.
 
 The comparison binds source hashes, pitch/pitcher IDs, anatomical joint roles,
 frame order and timestamps to the saved predictions. All 126 input artifact
@@ -1160,18 +1196,15 @@ the media archive, and generated run outputs remain local.
 Keep the five formal clips and the superseded archive unchanged. Follow this
 sequence agreed with the user on 2026-09-28:
 
-1. Preserve all five completed HSU qualitative reviews and their uncertainty.
-   Review the returned complete `pitch_003` coordinates, whose format/source
-   checks passed. The four elbow/wrist joints are reviewed across 0–114, with
-   left wrist 85–86 retained as uncertain. Next review only both shoulders at 0–15,
-   using cyan 1 for left shoulder and red 2 for right shoulder. Resolve remaining
-   visibility and placement questions with the reviewers,
-   obtain the remaining independent event supplements and completion provenance,
-   and preserve the HSU event supplement recorded above. Do not automatically
-   merge or turn inferred hidden locations into observable reference points.
+1. Preserve all five HSU qualitative reviews and the now-reviewed `pitch_003`
+   coordinate reference with its supplied completion time. All 12 joints across
+   0–114 are reviewed; left wrist 85–86 remains uncertain. Review the measured
+   coordinate comparison recorded above and obtain the remaining independent
+   `pitch_005` event supplement. Keep supplemental events and occluded original
+   estimates separate from canonical/observable reference data.
 2. Review the measured gaps in the qualitative comparison, especially the
    unscreened `pitch_003` displacement and observed states on human-unreliable
-   arm frames. Measure coordinate error after visible reference points are verified;
+   arm frames. Review the completed visible-coordinate errors;
    keep raw-overlay judgments distinct from processed availability.
 3. Use both forms of evidence to decide whether pose/tracking reliability needs
    changes. Any such change is separate from this completed diagnostic comparison;

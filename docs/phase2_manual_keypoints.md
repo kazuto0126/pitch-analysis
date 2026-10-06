@@ -1,6 +1,6 @@
 # Phase 2 人工 2D 關節座標
 
-更新：2026-10-05。本次以 `pitch_003` 建立獨立人工 X/Y 基準，量化既有 AI 骨架位置誤差。讓同學在原片上親自畫出及修正骨架，並逐格記錄是否有足夠影像證據；這比「骨架可靠／不可靠」區間多出可直接比較的座標。
+更新：2026-10-06。本次以 `pitch_003` 建立獨立人工 X/Y 基準，量化既有 AI 骨架位置誤差。讓同學在原片上親自畫出及修正骨架，並逐格記錄是否有足夠影像證據；這比「骨架可靠／不可靠」區間多出可直接比較的座標。
 
 既有 HSU ground truth、`ground-truth-v1` 事件及原始 prediction 各自保留來源。人工座標存成獨立 sidecar，不取代 canonical ground truth。此工作屬 Phase 2 人工資料與評估工具，尚未進入 Phase 3。
 
@@ -404,11 +404,21 @@ schema／來源檢查通過；歷史、canonical GT、prediction及既有不可�
 
 HSU對最後96–114格四個膝踝點清楚可見且位置正確的合併問題回答「都正確」，新增76個Tsai原始X/Y。
 雙膝、右踝各115可見；左踝114可見／1不可觀測（第65格）。全115格12關節的1,380個點狀態均已逐點覆核，0未覆核。
-最新座標參考（逐點覆核完成、正式provenance待補）：`annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_41/pitch_003/manual_keypoints.json`，
+第41版座標參考（當時逐點覆核完成、正式provenance待補）：`annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_41/pitch_003/manual_keypoints.json`，
 **1205 可見且對位、173 不可觀測、2 不確定、0 未覆核**。
-最新補充：`annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_43/pitch_003/ground_truth.json`，只追加notes。
+該次補充：`annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_43/pitch_003/ground_truth.json`，只追加notes。
 逐點影像覆核已完成，包含不可觀測與不確定這些有效結果；85–86左腕保留不確定，不強迫補精確答案。正式完成時間未由人工提供，`reviewed_at_utc`及confidence仍為null，`annotation_status`暫留`in_progress`。下一步補齊完成provenance，再用現有評估器比較原始prediction與可見人工座標，排除175個非可見點並分開報告模型漏點；Phase 2仍IN PROGRESS。
 schema／來源檢查通過；歷史、canonical GT、prediction及既有不可觀測／不確定點保留；本次未執行新模型推論、座標比較或訓練。
+
+## 正式座標覆核與比較完成
+
+HSU提供完成時間原話「2026/10/5 10.14」，記為台灣2026-10-05 10:14、UTC `2026-10-05T02:14:00Z`（分鐘精度，00秒為格式填位）。正式座標sidecar已另存為 `reviewed`，confidence保持null，舊版保留。已使用原始prediction完成1,205個可見點的位置誤差比較，排除175個不可觀測／不確定點。詳見 [座標比較報告](phase2_manual_coordinate_comparison_20261005.md)。Phase 2仍IN PROGRESS。
+
+最新正式參考：`annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_42/pitch_003/manual_keypoints.json`。
+最新時間紀錄補充：`annotations/phase2_peer_reviews/HSU_TSAI_RETURN_20261005_44/pitch_003/ground_truth.json`（僅notes更新，事件／其他provenance維持原樣）。
+
+原片510 × 628；投球肘平均誤差27.50px、中位數10.55px、P95 106.19px。87–104格整體偏移平均76.90px；有raw座標及高visibility仍可能錯位。
+原有人工非可見政策與評估器保留，同學被遮擋關節的原始推估座標保存在來源ZIP/XML；其價值與限制見比較報告，不把這些點混入可觀測位置誤差。
 
 ## 計算 AI 位置誤差
 

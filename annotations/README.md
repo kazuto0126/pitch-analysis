@@ -1,14 +1,15 @@
 # 人工標註與覆核進度
 
-更新：2026-10-05。人工判斷來自 HSU／Tsai；工具只轉錄已提供的答案及驗證格式／來源。
+更新：2026-10-06。人工判斷來自 HSU／Tsai；工具只轉錄已提供的答案及驗證格式／來源。
 
-## 目前應使用的部分參考
+## 目前應使用的正式座標參考
 
-- 人工座標：`manual_keypoints/HSU_TSAI_RETURN_20261005_41/pitch_003/manual_keypoints.json`。
-- 最新 HSU 補充：`phase2_peer_reviews/HSU_TSAI_RETURN_20261005_43/pitch_003/ground_truth.json`。
+- 人工座標：`manual_keypoints/HSU_TSAI_RETURN_20261005_42/pitch_003/manual_keypoints.json`。
+- 最新 HSU 補充：`phase2_peer_reviews/HSU_TSAI_RETURN_20261005_44/pitch_003/ground_truth.json`。
 - 原始 HSU 五支定性紀錄：`analysis_results/phase2_yamamoto_20260925_01/ground_truth/pitch_00N/ground_truth.json`。
 
-部分座標共有 **1205 visible、173 not_observable、2 uncertain、0 unreviewed**；仍為 `in_progress`。
+正式座標共有 **1205 visible、173 not_observable、2 uncertain、0 unreviewed**；座標sidecar為 `reviewed`。
+HSU已提供台灣2026-10-05 10:14完成時間（UTC 02:14，分鐘精度）；confidence仍null。獨立事件補充仍in_progress。
 Tsai 放置原始 X/Y；HSU 逐段確認影像可見性及點位。只有確認可見且對位的點保留原始 X/Y。
 其他狀態座標留空，沒有用透視、插值或模型補成 ground truth。
 HSU 後續明確回答右肘 83–92「位置正確」，已保存十個可見且對位的原始座標。
@@ -71,6 +72,9 @@ HSU對最後96–114格四個膝踝點清楚可見且位置正確的合併問題
 雙膝、右踝各115可見；左踝114可見／1不可觀測（第65格）。全115格12關節的1,380個點狀態均已逐點覆核，0未覆核。
 逐點影像覆核已完成，包含不可觀測與不確定這些有效結果；85–86左腕保留不確定，不強迫補精確答案。正式完成時間未由人工提供，`reviewed_at_utc`及confidence仍為null，`annotation_status`暫留`in_progress`。下一步補齊完成provenance，再用現有評估器比較原始prediction與可見人工座標，排除175個非可見點並分開報告模型漏點；Phase 2仍IN PROGRESS。
 全片助手與歷史保留；只有HSU已確認可見且對位的點採入座標，非可見點保留null。
+
+HSU後續提供完成時間並完成正式座標封存與比較；原Tsai遮擋處推估座標保留於原始回傳檔，現有位置誤差評估只使用可見點。
+報告見 `docs/phase2_manual_coordinate_comparison_20261005.md`；輸出位於 `analysis_results/phase2_manual_coordinate_comparison_20261005_01/`。
 
 ## 保存與接續
 

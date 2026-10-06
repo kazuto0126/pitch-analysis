@@ -33,7 +33,9 @@ finalization，五支均通過現有 clip-level acceptance 條件；正式狀態
 HSU 已完成五支影片的逐格定性覆核，並完成與既有可靠性警示的
 [比較報告](docs/phase2_ground_truth_comparison_20261004.md)。比較顯示骨架缺失能被抓到，
 仍有重大錯位及局部誤連未被可靠提示。已收到 Tsai 的手動 X/Y 回傳，
-HSU 正在核對可見性與點位；完整座標覆核尚未完成，座標與事件誤差尚未量測。
+HSU 已完成 `pitch_003` 全115格12關節覆核，並提供2026-10-05 10:14（台灣）完成時間。
+[座標比較報告](docs/phase2_manual_coordinate_comparison_20261005.md)已量測1,205個可見人工點的raw 2D誤差；173個不可觀測點與2個不確定點排除。
+87–104格整體偏移的平均誤差為76.90px，高visibility仍可能錯位；事件偵測誤差尚未量測。
 Phase 2 仍在進行中；
 詳見 [Phase 2 reliability](docs/phase2_reliability.md) 與
 [manual ground truth](docs/phase2_ground_truth.md)。
