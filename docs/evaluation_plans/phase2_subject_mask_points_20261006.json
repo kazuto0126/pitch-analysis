@@ -1,0 +1,68 @@
+{
+  "purpose": "Frozen same-model 11-point public-indexing measurement; human answers evaluator-only",
+  "source_video": {
+    "path": "input\\yoshinobu_yamamoto\\phase1_final\\pitch_003.mp4",
+    "sha256": "5c08dba98504d998536dfd0f0fab598760400612c9049445a68120e68fdf024c"
+  },
+  "width": 510,
+  "height": 628,
+  "total_frames": 115,
+  "model_path": "models/pose_landmarker_full.task",
+  "model_sha256": "5134a3aad27a58b93da0088d431f366da362b44e3ccfbe3462b3827a839011b1",
+  "question_snapshots": [
+    "analysis_results/phase2_feature_membership_pilot_20261006_02/query_manifest.json",
+    "analysis_results/phase2_membership_supplement_20261006_01/query_manifest.json"
+  ],
+  "options": {
+    "num_poses": 4,
+    "min_pose_detection_confidence": 0.5,
+    "min_pose_presence_confidence": 0.5,
+    "min_tracking_confidence": 0.5,
+    "output_segmentation_masks": true
+  },
+  "running_mode": "VIDEO; every clip frame processed in original order; native rounded PTS, no jumps to query frames",
+  "source_hashes": {
+    "input\\yoshinobu_yamamoto\\phase1_final\\pitch_003.mp4": "5c08dba98504d998536dfd0f0fab598760400612c9049445a68120e68fdf024c",
+    "models/pose_landmarker_full.task": "5134a3aad27a58b93da0088d431f366da362b44e3ccfbe3462b3827a839011b1",
+    "src/pitch_analysis/pose_estimator.py": "beb8a3a295712f16ed75bbd9545e0a2acb286c325ae4ae62d1ad8f1631250046",
+    "src/pitch_analysis/subject.py": "c5cae1ace96db5b9f3229f4f5e41870d420370676d99dea0abd03dcad3748276",
+    "analysis_results/phase2_feature_membership_pilot_20261006_02/query_manifest.json": "2a6ad342b8f833e9555fc02df83b491ee2def0061b97d38f66050e74ace20a6a",
+    "analysis_results/phase2_membership_supplement_20261006_01/query_manifest.json": "58b33ece6c15f75acbdce462998e7e20a9e6ba5b8b14dc78e00e15e548dbd388",
+    "scripts/measure_subject_mask_points.py": "d8137d3f2af34d2c2ea6b90f971b725728bb2cb344b15882808d6617312d1a5e",
+    ".venv-analysis/Lib/site-packages/mediapipe/tasks/python/vision/core/image.py": "427c6561e7b0290624d8b21563358d761aae5174b3d001bb14f4d1bc6b6dab29",
+    "analysis_results/phase2_mask_api_probe_20261006_01/known_array_probe.json": "c0929e6af71aad72415175c0d158cdb19c3b8639707d3677db46635bccbc7d15",
+    "analysis_results/phase2_mask_api_probe_20261006_01/single_frame_probe.json": "c80ff504a486cbd0935f283498e611b22c71934daa32eeeefa8dcd8bb67a3ab9",
+    "analysis_results/phase2_mask_api_probe_20261006_01/verification.json": "86f02ac446d4ab73f9dbf54cf2dfb632c9cc3c623d1d5c69c6005573a4073860"
+  },
+  "human_annotation_inputs": [],
+  "parameters": {
+    "mask_sampling": "Bilinear at original float xy via public Image[row,column]; recorded raw neighbors/weights; native bounds checked before access",
+    "mask_candidate_association": "Ordinal within current SDK result; count/format/dimension/index mismatch remains missing",
+    "selection": "Existing unchanged PitcherSelector on new candidates; previous candidate index never used",
+    "new_output": "analysis_results/phase2_subject_mask_pilot_20261006_03",
+    "mask_read_policy": "Public Image[row,column] only; no numpy_view/private pointer/uint8 reinterpretation",
+    "whole_mask_read": false,
+    "mask_cutoff": null,
+    "warning_thresholds": null,
+    "save_raw_frames": [
+      86,
+      95
+    ]
+  },
+  "limits": [
+    "Same model mask and pose errors may correlate; not independent identity evidence.",
+    "Sparse targeted development queries cannot yield full-mask IoU, full-clip accuracy or Phase2 acceptance.",
+    "Question coordinates are sampled after inference; they never influence detection, selection, masks or ROI."
+  ],
+  "mediapipe_version": "1.0.1",
+  "preserved_previous_plans": [
+    {
+      "path": "docs\\evaluation_plans\\phase2_subject_mask_pilot_20261006_02.json",
+      "sha256": "5c3cf45ea68fcf795e987bdd838f95e361eec7bb1e3d4ad12b27c89ea5f2d629"
+    },
+    {
+      "path": "docs\\evaluation_plans\\phase2_subject_mask_pilot_20261006.json",
+      "sha256": "158989c8afc091abe28bf4265d34048ce5344d1d13f19dd5ee8fd8f42b71183c"
+    }
+  ]
+}

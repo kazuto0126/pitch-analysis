@@ -19,6 +19,31 @@ Phase 2 acceptance result.
 
 ## Phase 2 resumed by the user (2026-10-06)
 
+### Latest: eleven mask point values measured and compared
+
+[Point comparison report](phase2_subject_mask_points_20261006.md).
+New isolated output: `analysis_results/phase2_subject_mask_pilot_20261006_03/`.
+Public indexing reads **11/11 fixed positions**, with44 raw pixel receipts and
+bilinear weights. Producer receives blank question snapshots only; actual human
+answers remain evaluator-only. T3/P2 all score1; O6 range~1.77e-8 to1, including
+one score1 and another~.999875. Thus a monotone mask-value cutoff cannot perfectly
+separate these eleven references. No cutoff, warning or identity decision is fitted.
+Accuracy/AUC/IoU remain null; these two targeted frames lack independent/full-mask
+validation. Historical all-missing output and every earlier reply are preserved.
+
+All115 selection traces and3795 landmark rows (18975 values) match baseline exactly.
+Both raw frames match the prior reference pixels.335 source/plan hashes and
+the295/44/5 prior inventories remain unchanged; independent read-only audit agrees.
+Full suite: **176 passed / 0 failed / 0 errors / 0 skipped**, including the formal
+five real-video inputs. Five new tests cover public bounds, zero/invalid values
+and candidate/dimension association. Production src/dependencies/model/thresholds,
+canonical GT and predictions remain untouched. **Phase2 remains IN PROGRESS.**
+Next: propose additional subject-image evidence and bounded validation using the
+existing human references; this mask is insufficient as standalone identity truth.
+The shared-folder stop gate remains deferred until Phase2 is stable; no Phase3.
+
+### Preserved supplementary review and initial mask attempts
+
 The user explicitly resumed Phase 2 after the stop checkpoint below. HSU has
 completed all eight supplementary questions: five previous membership positions
 were rechecked and three new fixed image positions supplement the sparse
@@ -59,7 +84,7 @@ archive still matches its original frozen plan. Test logs/results and integrity
 check are under the new output. Tests passing do not make unreadable masks usable.
 The shared-folder todo remains deferred until Phase 2 is stable; no Phase 3.
 
-### Read-only public mask indexing compatibility probe (2026-10-06)
+### Read-only public mask indexing compatibility probe (2026-10-06, historical checkpoint)
 
 The installed SDK also exposes public `Image[row, column]` indexing through a
 distinct float32 native entry point. Three known-array cases (widths2/4/510,
