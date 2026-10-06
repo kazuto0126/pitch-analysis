@@ -183,3 +183,11 @@ Feature drift and inconsistent local-joint separation prevent accepting it as
 a reliable warning policy. Human GT remains evaluator-only; no new warning
 predictions or production thresholds exist,
 and prediction abstention cannot silently remove eligible GT from primary metrics.
+
+The [feature-support validity follow-up](phase2_feature_support_validation_20261006.md)
+compares saved features with reviewed pitch_003 visible torso geometry in 106/115
+frames. Low FB still fails to guarantee torso support; the four-point hull is not
+body segmentation or identity GT. Missing references remain explicit, and the
+other four clips have no quantitative human torso reference. The complete suite
+now reports 166 passed / 0 failed / 1 skipped. No production logic, human labels,
+warning thresholds or model were changed; Phase 2 acceptance remains pending.

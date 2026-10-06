@@ -1,0 +1,38 @@
+{
+  "experiment": "phase2_feature_support_20261006",
+  "scope": "Offline validity evidence on the existing five clips; no pose inference or warning decisions",
+  "measurement_root": "analysis_results/phase2_image_geometry_measurements_20261006_01",
+  "new_output_root": "analysis_results/phase2_feature_support_20261006_01",
+  "parameters": {
+    "numerical_feature_eligibility": "Existing measurement numerically_usable flag and finite saved current position; seed rows kept without fabricated FB or motion",
+    "quality_scores": ["fb_error_px", "movement_deviation_from_same_cohort_median_px", "radial_distance_from_current_cohort_median_px"],
+    "rank_percentile": "(count strictly smaller + half count tied) / valid count",
+    "rank_groups": "min(floor(4 * percentile), 3); per-frame and per-clip; ties stay together",
+    "quartile_interpretation": "Descriptive relative strata, not numeric warning cutoffs or accepted quality gates",
+    "feature_rejection_or_reseeding": false,
+    "warning_thresholds": null,
+    "human_inputs_to_producer": []
+  },
+  "evaluation": {
+    "manual_reference": "annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_42/pitch_003/manual_keypoints.json",
+    "proxy": "Convex hull of LEFT_SHOULDER, RIGHT_SHOULDER, LEFT_HIP, RIGHT_HIP; all four must be human-visible with coordinates and form a nondegenerate hull",
+    "proxy_is_body_segmentation_or_identity_gt": false,
+    "inside_definition": "Signed point-to-polygon distance >= 0; exact boundary included; no tuned dilation or distance cutoff",
+    "missing_reference_policy": "No three-point hull, coordinate fill, raw substitute or interpolation; explicit null and unchanged full frame denominator",
+    "pair_support": ["both_inside", "previous_only", "current_only", "neither_inside"],
+    "paired_missing_policy": "Either endpoint proxy absent means unavailable; exclude only from conditional statistic and explicitly report the original denominator",
+    "outputs": ["signed distances and current/pair proxy coverage", "quality-rank group support with frame counts", "conditional quality-score rank AUC for outside-torso-proxy", "per-pitch image-quality distribution", "five uniform-frame contact sheets and reference-clip comparison"],
+    "auc_direction": "Larger quality score ranks outside proxy higher; no direction fitting",
+    "auc_limit": "Feature-frame rows are correlated; descriptive known-development evidence, not independent samples, warning recall, classification accuracy or identity proof",
+    "canonical_gt_usage": "Evaluator-only context for known major failures, never a producer input or new warning target label",
+    "visual_inspection": "Agent diagnostic notes remain separate from human GT",
+    "other_clips": "No reviewed torso coordinates; manual proxy unavailable, not successful validation"
+  },
+  "constraints": {
+    "source_predictions_or_annotations_modified": false,
+    "production_algorithm_changes": false,
+    "new_warning_predictions": false,
+    "new_model_or_training": false,
+    "phase3_or_clipper_integration": false
+  }
+}

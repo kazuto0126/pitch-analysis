@@ -12,11 +12,40 @@ changed.
 
 **Phase 2 = IN PROGRESS — reliability gaps measured; pitch_003 manual X/Y reviewed.** HSU's
 five qualitative reviews, warning comparison, pitch_003 visible-coordinate comparison
-and five-clip offline image/geometry measurements are complete. The baseline runner,
+and five-clip offline image/geometry measurements with torso-support proxy checks
+are complete. The baseline runner,
 reports, and annotation workflow are available; program execution is not a
 Phase 2 acceptance result.
 
 ## Phase 2 baseline
+
+### Feature support validity checked (2026-10-06)
+
+The [feature-support report](phase2_feature_support_validation_20261006.md)
+checks saved image features against pitch_003's reviewed visible shoulder/hip
+geometry. The frozen GT-blind producer retains all 28,185 usable feature-frame
+rows on five clips; a separate evaluator uses human coordinates only afterward.
+This is an anatomical torso proxy, not foreground segmentation or identity GT.
+No features are rejected, reseeded or corrected; warning thresholds remain null.
+
+003 has proxy reference in 106/115 frames (70–78 right shoulder not observable),
+and paired reference in 104/114 transitions. Of 6,783 feature-frame rows, 6,288
+have current reference and 6,171 have both endpoints. Missing rows are explicit.
+The lowest within-frame FB rank group still has 1,031/1,530 rows outside the
+visible torso hull; low FB cannot guarantee torso support. Normal-motion frame86
+has 0/55 inside with maximum FB .000829px. Outside proxy alone does not prove
+background or another person, and cannot serve as a major-pose-failure label.
+
+The other four clips lack reviewed torso XY and retain unavailable/null proxy
+results. Five uniform contact sheets and the reference comparison were inspected;
+agent diagnostic notes remain separate from human GT. Full suite: **166 passed /
+0 failed / 0 errors / 1 skipped**, 167 discovered. All 295 protected files, 42
+prior sources and 44 current sources remain unchanged; independent recomputation
+passed. Output: `analysis_results/phase2_feature_support_20261006_01/`.
+
+Next: define a bounded candidate foreground-support method and its independent
+reference needs before selecting a production warning policy. Phase 2 remains
+IN PROGRESS; no algorithm changes, new warning decisions, Phase 3 or Clipper handoff.
 
 ### Offline image/geometry evidence measured (2026-10-06)
 
@@ -1300,8 +1329,9 @@ sequence agreed with the user on 2026-09-28:
    arm frames. Review the completed visible-coordinate errors;
    keep raw-overlay judgments distinct from processed availability.
 3. Use both forms of evidence to decide whether pose/tracking reliability needs
-   changes. The offline image/geometry experiment is complete; first address
-   unverified foreground support and normal-motion overlap in a bounded proposal.
+   changes. The offline image/geometry and torso-proxy experiments are complete;
+   low-FB and survival are insufficient. First define independently verifiable
+   foreground support and normal-motion evaluation in a bounded proposal.
    Any production change is separate from these completed comparisons;
    do not treat successful execution as Phase 2 acceptance.
 4. Once Phase 2 is stable and accepted on evidence, proceed to the agreed
