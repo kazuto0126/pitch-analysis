@@ -13,6 +13,7 @@
 - 接續答案為 3 個 T、1 個 P、4 個 O；第 86 格 3 號由本人確認為 P（腿部）。合併最新明確回答共有 11 個不同位置：3 T、2 P、6 O。原回答、初次轉錄與確認版本分開保留。
 - 同一 MediaPipe 模型的隔離 mask 實驗已嘗試：SDK 讀取 float32 遮罩時原生中止，兩次獨立程序重現。後續安全紀錄保留 11/11 missing，不生成假數值。
 - 隔離 run 的 115 格選取紀錄與 3,795 筆關節資料與原 baseline 完全一致；只代表輸出一致，不證明骨架正確。
+- SDK 公開逐像素讀取相容性檢查已通過：1,548個已知float像素精確吻合；同模型第0格真實mask六個位置成功取值。沒有重試故障的`numpy_view()`；11個人工位置尚未重新比較。
 - 工作與人工來源已有 Git 紀錄；本次整理輸入需求文件，保留既有演算法與驗收門檻。
 
 ## 尚未完成
@@ -56,9 +57,10 @@
 ## 目前接續位置
 
 八題可見歸屬確認已完成，不需重答。候選主體 mask 因讀取相容性問題停在證據不足；
-下一步先提出隔離環境的 SDK 相容性核對方案，保持模型與正式環境不變，再取得可用數值。
+公開逐像素API已通過已知陣列及單格真mask檢查，下一步以此方式在隔離run取得11個位置的數值並比較；正式環境、模型和門檻保持不變。
 覆核輸出：`analysis_results/phase2_membership_supplement_20261006_01/`；
 實驗輸出：`analysis_results/phase2_subject_mask_pilot_20261006_02/`。
 人工來源、失敗紀錄、分母與限制見 [mask 實驗報告](phase2_subject_mask_pilot_20261006.md)。
+讀取相容性probe：`analysis_results/phase2_mask_api_probe_20261006_01/`。
 共用資料夾接入仍遵守上方未啟動待辦；Phase 3 與新投手未開始。
 詳細歷史與資料位置見 [current_status.md](current_status.md)；供片需求見 [INPUT_REQUIREMENTS.md](INPUT_REQUIREMENTS.md)。

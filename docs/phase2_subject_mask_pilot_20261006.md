@@ -83,9 +83,36 @@ person mask 與 pose 出自同模型，錯誤可能相關；不能當作獨立�
 
 ## 下一步範圍
 
-先核對 SDK 官方支援的 float mask 讀取方式與版本相容性。
+公開API的最小相容性檢查已通過（見下節）。下一步先在新隔離實驗中使用逐像素
+讀取，在原始坐標做固定11點比較，不需更換SDK、模型或正式wrapper。
+既有失敗結果保持原樣。
 如需不同 SDK，只提出隔離環境的最小驗證方案，先使用相同模型及一格，
 檢查 float 數值格式、範圍、坐標與候選對應，不能直接升級正式環境。
 取得可用數值後才重做這11個位置的比較；目前不需使用者重答。
 不據此改 threshold、tracking／pose 邏輯或推論不可見關節。
 Phase 2 尚未穩定；共用交付資料夾接入仍為待辦，Phase 3 未開始。
+
+## 後續相容性檢查：公開逐像素讀取
+
+本機SDK的公開`Image[row, column]`經`MpImageGetValueFloat32`取得單一float；
+與`numpy_view()`的`MpImageDataFloat32`整張讀取路徑分開。
+官方API列出這個公開索引方式：[Image API](https://developers.google.com/edge/api/mediapipe/python/mp/Image#__getitem__)。
+官方原始碼可核對型別與stride處理：[image.cc](https://raw.githubusercontent.com/google-ai-edge/mediapipe/master/mediapipe/tasks/c/vision/core/image.cc)、
+[image_frame_util.h](https://raw.githubusercontent.com/google-ai-edge/mediapipe/master/mediapipe/tasks/c/vision/core/image_frame_util.h)。
+master不保證與安裝wheel完全相同，因此另以本機實際探測確認；不據master宣稱故障已修復。
+
+- 已知float32陣列：3列、寬2／4／510；含非連續padded row及最後一列／欄。
+  全部1,548個公開索引數值精確等於原輸入，差異0。
+- 真mask：原`pitch_003`第0格、同模型與設定，VEC32F1、510×628、stride2048、
+  non-contiguous。六個合法位置成功讀取有限0–1數值，程序正常結束。
+- 與原baseline比對：選取trace及33關節165數值完全一致；295／44／5來源未改。
+- 沒有呼叫故障`numpy_view()`、私人pointer、重解碼、變更依賴、裁剪／縮放或使用真人答案。
+
+輸出：`analysis_results/phase2_mask_api_probe_20261006_01/`下的
+`known_array_probe.json`、`single_frame_probe.json`、`verification.json`。
+保留本機SDK Python source SHA與素材／模型來源SHA。
+實驗只用合法坐標；下一步的sampler也必須自行檢查邊界，不測試越界native存取。
+
+這是讀取相容性通過，尚不是11個人工位置的比較，也不是整張mask或投手身份驗證。
+歷史0/11報告未覆寫。最新完整suite仍為先前171 passed／0 failed／0 errors／0 skipped；
+這次只執行隔離probe與完整性核對，沒有宣稱再次跑完整suite。

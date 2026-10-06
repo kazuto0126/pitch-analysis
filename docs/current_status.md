@@ -59,6 +59,26 @@ archive still matches its original frozen plan. Test logs/results and integrity
 check are under the new output. Tests passing do not make unreadable masks usable.
 The shared-folder todo remains deferred until Phase 2 is stable; no Phase 3.
 
+### Read-only public mask indexing compatibility probe (2026-10-06)
+
+The installed SDK also exposes public `Image[row, column]` indexing through a
+distinct float32 native entry point. Three known-array cases (widths2/4/510,
+including padded non-contiguous rows) reproduce all **1,548 values exactly**.
+A same-model frame0 VIDEO probe reads six valid real-mask pixels without
+`numpy_view()`, private pointers, resizing, dependency upgrades or production edits.
+The frame0 selection trace and all33 raw landmarks (165 numeric values) match
+the existing baseline exactly. Source integrity remains 295/44/5 unchanged.
+
+Output: `analysis_results/phase2_mask_api_probe_20261006_01/`.
+This proves bounded read compatibility, not mask membership/identity accuracy.
+The prior11-query report remains0/11 usable and is preserved; the frozen query
+comparison has not yet been rerun using this API. Next: use validated public
+indexing in a separate experiment with explicit coordinate bounds, then compare
+all11 positions without feeding human answers into inference. No SDK replacement
+is needed for this next point-sampling check. Full suite remains the prior
+171/0/0/0 result; this follow-up only ran the compatibility and integrity probes.
+The user's stop gate before shared-folder integration remains in STATUS.md.
+
 ## Historical stop checkpoint requested by the user (2026-10-06)
 
 At that checkpoint the current work was closed out for a stop. Concise progress, unfinished work and
