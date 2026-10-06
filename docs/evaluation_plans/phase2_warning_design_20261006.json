@@ -1,0 +1,976 @@
+{
+  "plan_id": "phase2-warning-design-20261006",
+  "status": "design_only",
+  "documented_date_taiwan": "2026-10-06",
+  "implementation_started": false,
+  "new_diagnostic_thresholds": null,
+  "phase2_acceptance": "in_progress",
+  "purpose": "Design generic warning-only evidence and exact-frame regression evaluation.",
+  "predictor_allowed_inputs": [
+    "prepared MP4",
+    "metadata and handedness",
+    "saved raw landmarks",
+    "selection trace",
+    "saved pose/tracking reliability reports with original observed-adjacent jump endpoints",
+    "prior image evidence"
+  ],
+  "predictor_forbidden_inputs": [
+    "manual X/Y",
+    "canonical or peer ground truth",
+    "human event/failure frames",
+    "pitch-specific frame rules"
+  ],
+  "evaluation_only_references": {
+    "canonical_contract": "ground-truth-v1",
+    "coordinate_contract": "manual-keypoints-v1",
+    "comparison": {
+      "path": "analysis_results/phase2_gt_comparison_20261004_01/ground_truth_comparison_verified.json",
+      "sha256": "02d082f4772f062ae5bbc3e9747274bae85b5d97e51564d1b75012f70b458181"
+    },
+    "manual_reference": {
+      "path": "annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_42/pitch_003/manual_keypoints.json",
+      "sha256": "a970354b14f728d38af97336d6872900625c956e7a105f75ab9cdcff0aa77735"
+    }
+  },
+  "planned_warning_scopes": [
+    "major_pose_alignment",
+    "joint_alignment",
+    "selection_break",
+    "image_evidence_insufficient"
+  ],
+  "planned_decision_states": [
+    "warning",
+    "no_warning",
+    "insufficient_evidence"
+  ],
+  "required_warning_fields": [
+    "pitch_id",
+    "frame_index",
+    "timestamp_ms",
+    "scope",
+    "joint_if_applicable",
+    "decision",
+    "reason",
+    "evidence_validity",
+    "raw_evidence_values",
+    "policy_version",
+    "source_artifact_hashes",
+    "marked_interval_if_any",
+    "emission_frame_if_online"
+  ],
+  "policy": {
+    "raw_and_processed_predictions": "immutable; warning sidecar does not correct or train coordinates",
+    "existing_selector_gate_interpolation_smoothing": "unchanged",
+    "absence_of_warning": "not evidence of correct coordinates or identity",
+    "human_uncertain_not_observable": "exclude from the matching target denominator; never convert to negative",
+    "prediction_insufficient_evidence": "do not remove from full eligible-GT denominator; report abstention by human class",
+    "predicted_interval": "explicit output interval only; exact-frame primary, no added tolerance",
+    "joint_warnings": "score against matching joint labels; do not automatically classify whole-body failure",
+    "identity_switch": "zero positive examples; recall null; pose misalignment does not confirm identity switch",
+    "coordinate_error": "visible manual XY only; per-joint distance, missing count, coverage and fixed-subset retention",
+    "event_accuracy": "unmeasured; no automatic event predictions or invented exact events",
+    "parameter_selection": "development set already examined; not independent validation; numeric diagnostic bounds unset"
+  },
+  "candidate_evidence": [
+    {
+      "name": "independent_image_motion",
+      "implementation": "proposed only",
+      "idea": "Image feature continuity around automatically seeded torso anchors; forward/backward consistency and evidence coverage.",
+      "limits": "Seed is a hypothesis, not identity truth; rotation, blur, occlusion or background flow may invalidate evidence."
+    },
+    {
+      "name": "local_arm_alignment",
+      "implementation": "proposed only",
+      "idea": "Existing observed-adjacent current-frame jump endpoints from saved pose reliability, raw projected segment changes and valid image-motion disagreement.",
+      "limits": "Fast real motion, rotation and foreshortening are not automatic errors; occluded position remains unknown."
+    }
+  ],
+  "required_metrics": [
+    "per-pitch exact-frame TP/FN/FP/TN and excluded counts",
+    "target-specific precision/recall/FPR",
+    "warning total frames and interval any-hit",
+    "first-warning latency and interval boundary error where defined",
+    "prediction abstention counts by human label and decision coverage",
+    "visible raw-coordinate per-joint error on fixed reference set",
+    "all warning reasons and source hashes; no weighted composite score"
+  ],
+  "baseline": {
+    "identity_switch_warning_agreement": {
+      "human_positive_frames": 0,
+      "human_negative_frames": 592,
+      "true_positive_frames": 0,
+      "false_negative_frames": 0,
+      "false_positive_frames": 0,
+      "true_negative_frames": 592,
+      "screened_frames_total": 0,
+      "screened_excluded_frames": 0
+    },
+    "track_break_screening": {
+      "human_positive_frames": 3,
+      "human_negative_frames": 589,
+      "true_positive_frames": 3,
+      "false_negative_frames": 0,
+      "false_positive_frames": 0,
+      "true_negative_frames": 589,
+      "screened_frames_total": 3,
+      "screened_excluded_frames": 0
+    },
+    "major_pose_failure_screening": {
+      "human_positive_frames": 21,
+      "human_negative_frames": 571,
+      "true_positive_frames": 3,
+      "false_negative_frames": 18,
+      "false_positive_frames": 9,
+      "true_negative_frames": 562,
+      "screened_frames_total": 12,
+      "screened_excluded_frames": 0
+    },
+    "major_pose_failure_with_joint_jump_cues": {
+      "human_positive_frames": 21,
+      "human_negative_frames": 571,
+      "true_positive_frames": 13,
+      "false_negative_frames": 8,
+      "false_positive_frames": 56,
+      "true_negative_frames": 515,
+      "screened_frames_total": 69,
+      "screened_excluded_frames": 0
+    }
+  },
+  "six_joint_human_counts": {
+    "throwing_shoulder": {
+      "reliable": 571,
+      "unreliable": 21
+    },
+    "throwing_elbow": {
+      "reliable": 449,
+      "unreliable": 84,
+      "not_observable": 59
+    },
+    "throwing_wrist": {
+      "not_observable": 137,
+      "reliable": 384,
+      "unreliable": 71
+    },
+    "lead_hip": {
+      "reliable": 587,
+      "unreliable": 4,
+      "not_observable": 1
+    },
+    "lead_knee": {
+      "reliable": 582,
+      "unreliable": 8,
+      "not_observable": 2
+    },
+    "lead_ankle": {
+      "reliable": 584,
+      "not_observable": 3,
+      "unreliable": 5
+    }
+  },
+  "clips": [
+    {
+      "pitch_id": "pitch_001",
+      "total_frames": 87,
+      "sources": {
+        "video": {
+          "path": "input/yoshinobu_yamamoto/phase1_final/pitch_001.mp4",
+          "sha256": "7c9fe20e39c1b5358aa8e13b739222aebb6bf3ebfadf3569ccb3042c64f10190"
+        },
+        "ground_truth": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/ground_truth/pitch_001/ground_truth.json",
+          "sha256": "0efe2f4c63417e1f5744cec5fac7d375e0a0ec5060c870a36cec720a7a4b8d81"
+        },
+        "metadata": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_001/metadata.json",
+          "sha256": "6f4da90eeea3f4d9251d53d93ccfc2f9f25e51451810bd86304e966011078ec5"
+        },
+        "raw_keypoints": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_001/keypoints.json",
+          "sha256": "51c22c52c0ee0aa60ba0177e53247439e1a232c60ccf5dd22a15563df55b39ad"
+        },
+        "capture": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_001/pose_raw.capture.json",
+          "sha256": "58c69f79ee2b99e4c9f22026ac3f735e60fec84905192d478e69003c08a69267"
+        },
+        "processed_keypoints": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_001/processed_keypoints.jsonl",
+          "sha256": "ce04cb0ffc536d5c946975b92d30779f856f01c7a7930474e966348a60ae61a7"
+        },
+        "pose_reliability": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/reliability/pitch_001/pose_reliability.json",
+          "sha256": "a0fb5e0334d5db0b864fc710889877d7671bb5928d0c29e54cbbe2045735ec07"
+        },
+        "tracking_reliability": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/reliability/pitch_001/tracking_reliability.json",
+          "sha256": "2456ffaf52d321390abb36f17249a42cb461ddb41aebf411be5e58ab784b12fb"
+        }
+      },
+      "baseline": {
+        "identity_switch_warning_agreement": {
+          "human_positive_frames": 0,
+          "human_negative_frames": 87,
+          "true_positive_frames": 0,
+          "false_negative_frames": 0,
+          "false_positive_frames": 0,
+          "true_negative_frames": 87,
+          "screened_frames_total": 0,
+          "screened_excluded_frames": 0
+        },
+        "track_break_screening": {
+          "human_positive_frames": 0,
+          "human_negative_frames": 87,
+          "true_positive_frames": 0,
+          "false_negative_frames": 0,
+          "false_positive_frames": 0,
+          "true_negative_frames": 87,
+          "screened_frames_total": 0,
+          "screened_excluded_frames": 0
+        },
+        "major_pose_failure_screening": {
+          "human_positive_frames": 0,
+          "human_negative_frames": 87,
+          "true_positive_frames": 0,
+          "false_negative_frames": 0,
+          "false_positive_frames": 2,
+          "true_negative_frames": 85,
+          "screened_frames_total": 2,
+          "screened_excluded_frames": 0
+        },
+        "major_pose_failure_with_joint_jump_cues": {
+          "human_positive_frames": 0,
+          "human_negative_frames": 87,
+          "true_positive_frames": 0,
+          "false_negative_frames": 0,
+          "false_positive_frames": 7,
+          "true_negative_frames": 80,
+          "screened_frames_total": 7,
+          "screened_excluded_frames": 0
+        }
+      },
+      "six_joint_human_frame_counts": {
+        "throwing_shoulder": {
+          "reliable": 87
+        },
+        "throwing_elbow": {
+          "reliable": 46,
+          "unreliable": 12,
+          "not_observable": 29
+        },
+        "throwing_wrist": {
+          "not_observable": 51,
+          "reliable": 19,
+          "unreliable": 17
+        },
+        "lead_hip": {
+          "reliable": 87
+        },
+        "lead_knee": {
+          "reliable": 86,
+          "unreliable": 1
+        },
+        "lead_ankle": {
+          "reliable": 86,
+          "not_observable": 1
+        }
+      },
+      "major_failure_intervals": [],
+      "track_break_intervals": [],
+      "event_precision_preserved": {
+        "preparation_start": "not_observable",
+        "leg_lift": "annotated",
+        "foot_plant": "annotated",
+        "approximate_release": "annotated",
+        "follow_through_end": "annotated"
+      }
+    },
+    {
+      "pitch_id": "pitch_002",
+      "total_frames": 175,
+      "sources": {
+        "video": {
+          "path": "input/yoshinobu_yamamoto/phase1_final/pitch_002.mp4",
+          "sha256": "b38258e682370349d085d0b43683f183afc632f682dc85b758604c9d1489f01a"
+        },
+        "ground_truth": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/ground_truth/pitch_002/ground_truth.json",
+          "sha256": "2b682738812d78ef433027b7002ed3787d022eb288453ed157d91eaca74651c7"
+        },
+        "metadata": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_002/metadata.json",
+          "sha256": "0171e3fc1b92bee142edd2b7583559116e723ab574a99257f60a6c8866cfef83"
+        },
+        "raw_keypoints": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_002/keypoints.json",
+          "sha256": "80174e2776f19469941f0720e69f32bc75d5b47c5f949c990250f09789f00051"
+        },
+        "capture": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_002/pose_raw.capture.json",
+          "sha256": "d53b9bbc186436300c3e17d9a23f57a17a46cf94753dad69023532de707db7cc"
+        },
+        "processed_keypoints": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_002/processed_keypoints.jsonl",
+          "sha256": "9f86b86ae1f8ce5d9031d8328b675ea270ddb78b5af8d322e9e99d6a521306e0"
+        },
+        "pose_reliability": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/reliability/pitch_002/pose_reliability.json",
+          "sha256": "16b26b633329609e190672115f2a3ab31efb33d363f5c9ebe691a6637f470ed1"
+        },
+        "tracking_reliability": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/reliability/pitch_002/tracking_reliability.json",
+          "sha256": "c0ebf943704f9df7234066a5cc2b1db1addce70acafdf444013a7e2e246af8f5"
+        }
+      },
+      "baseline": {
+        "identity_switch_warning_agreement": {
+          "human_positive_frames": 0,
+          "human_negative_frames": 175,
+          "true_positive_frames": 0,
+          "false_negative_frames": 0,
+          "false_positive_frames": 0,
+          "true_negative_frames": 175,
+          "screened_frames_total": 0,
+          "screened_excluded_frames": 0
+        },
+        "track_break_screening": {
+          "human_positive_frames": 0,
+          "human_negative_frames": 175,
+          "true_positive_frames": 0,
+          "false_negative_frames": 0,
+          "false_positive_frames": 0,
+          "true_negative_frames": 175,
+          "screened_frames_total": 0,
+          "screened_excluded_frames": 0
+        },
+        "major_pose_failure_screening": {
+          "human_positive_frames": 0,
+          "human_negative_frames": 175,
+          "true_positive_frames": 0,
+          "false_negative_frames": 0,
+          "false_positive_frames": 0,
+          "true_negative_frames": 175,
+          "screened_frames_total": 0,
+          "screened_excluded_frames": 0
+        },
+        "major_pose_failure_with_joint_jump_cues": {
+          "human_positive_frames": 0,
+          "human_negative_frames": 175,
+          "true_positive_frames": 0,
+          "false_negative_frames": 0,
+          "false_positive_frames": 11,
+          "true_negative_frames": 164,
+          "screened_frames_total": 11,
+          "screened_excluded_frames": 0
+        }
+      },
+      "six_joint_human_frame_counts": {
+        "throwing_shoulder": {
+          "reliable": 175
+        },
+        "throwing_elbow": {
+          "reliable": 159,
+          "not_observable": 16
+        },
+        "throwing_wrist": {
+          "reliable": 121,
+          "unreliable": 2,
+          "not_observable": 52
+        },
+        "lead_hip": {
+          "reliable": 175
+        },
+        "lead_knee": {
+          "reliable": 175
+        },
+        "lead_ankle": {
+          "reliable": 175
+        }
+      },
+      "major_failure_intervals": [],
+      "track_break_intervals": [],
+      "event_precision_preserved": {
+        "preparation_start": "annotated",
+        "leg_lift": "annotated",
+        "foot_plant": "annotated",
+        "approximate_release": "annotated",
+        "follow_through_end": "annotated"
+      }
+    },
+    {
+      "pitch_id": "pitch_003",
+      "total_frames": 115,
+      "sources": {
+        "video": {
+          "path": "input/yoshinobu_yamamoto/phase1_final/pitch_003.mp4",
+          "sha256": "5c08dba98504d998536dfd0f0fab598760400612c9049445a68120e68fdf024c"
+        },
+        "ground_truth": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/ground_truth/pitch_003/ground_truth.json",
+          "sha256": "c839f5bd767c82d8be0506c15bb83a22230f4ea7bf83dc240c321bfa3876b240"
+        },
+        "metadata": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_003/metadata.json",
+          "sha256": "c1906d35e06df9a6ea34bf595e781963aebdede9b8c99bb66d8f14780d24b225"
+        },
+        "raw_keypoints": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_003/keypoints.json",
+          "sha256": "45728260fbc2dfa4632472736e86a30d893cf99268838f4f3c2ec809a3e2aa39"
+        },
+        "capture": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_003/pose_raw.capture.json",
+          "sha256": "2ff595a3e58eeffd8ce072ed5d9a8bbc982694474b633cbec92fc15ca7ffd961"
+        },
+        "processed_keypoints": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_003/processed_keypoints.jsonl",
+          "sha256": "e1e4c34bfc211bf2c6b28c16fac1c1f87803583b38240b280a1f8045ed8d449f"
+        },
+        "pose_reliability": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/reliability/pitch_003/pose_reliability.json",
+          "sha256": "4a1ed54c1287117cb4f802022fb71aba80f1238f86c47d4a47c9cf2a238126ec"
+        },
+        "tracking_reliability": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/reliability/pitch_003/tracking_reliability.json",
+          "sha256": "afc1aef201efada7a99f475f1cfd351667edf4a7c19b0dac80af2b180858f7df"
+        }
+      },
+      "baseline": {
+        "identity_switch_warning_agreement": {
+          "human_positive_frames": 0,
+          "human_negative_frames": 115,
+          "true_positive_frames": 0,
+          "false_negative_frames": 0,
+          "false_positive_frames": 0,
+          "true_negative_frames": 115,
+          "screened_frames_total": 0,
+          "screened_excluded_frames": 0
+        },
+        "track_break_screening": {
+          "human_positive_frames": 0,
+          "human_negative_frames": 115,
+          "true_positive_frames": 0,
+          "false_negative_frames": 0,
+          "false_positive_frames": 0,
+          "true_negative_frames": 115,
+          "screened_frames_total": 0,
+          "screened_excluded_frames": 0
+        },
+        "major_pose_failure_screening": {
+          "human_positive_frames": 18,
+          "human_negative_frames": 97,
+          "true_positive_frames": 0,
+          "false_negative_frames": 18,
+          "false_positive_frames": 2,
+          "true_negative_frames": 95,
+          "screened_frames_total": 2,
+          "screened_excluded_frames": 0
+        },
+        "major_pose_failure_with_joint_jump_cues": {
+          "human_positive_frames": 18,
+          "human_negative_frames": 97,
+          "true_positive_frames": 10,
+          "false_negative_frames": 8,
+          "false_positive_frames": 8,
+          "true_negative_frames": 89,
+          "screened_frames_total": 18,
+          "screened_excluded_frames": 0
+        }
+      },
+      "six_joint_human_frame_counts": {
+        "throwing_shoulder": {
+          "reliable": 97,
+          "unreliable": 18
+        },
+        "throwing_elbow": {
+          "reliable": 77,
+          "not_observable": 2,
+          "unreliable": 36
+        },
+        "throwing_wrist": {
+          "reliable": 77,
+          "not_observable": 26,
+          "unreliable": 12
+        },
+        "lead_hip": {
+          "reliable": 113,
+          "unreliable": 2
+        },
+        "lead_knee": {
+          "reliable": 112,
+          "unreliable": 3
+        },
+        "lead_ankle": {
+          "reliable": 112,
+          "not_observable": 1,
+          "unreliable": 2
+        }
+      },
+      "major_failure_intervals": [
+        {
+          "start_frame": 87,
+          "end_frame": 104,
+          "status": "confirmed",
+          "reason": "HSU 指出骨架仍在投手附近，但整體明顯上移並有嚴重姿勢錯位。",
+          "confidence": null,
+          "note": "各關節異常區間不同，詳見逐關節標註；不把此整體異常範圍當成每個關節全段都錯。"
+        }
+      ],
+      "track_break_intervals": [],
+      "event_precision_preserved": {
+        "preparation_start": "annotated",
+        "leg_lift": "annotated",
+        "foot_plant": "annotated",
+        "approximate_release": "annotated",
+        "follow_through_end": "annotated"
+      }
+    },
+    {
+      "pitch_id": "pitch_004",
+      "total_frames": 114,
+      "sources": {
+        "video": {
+          "path": "input/yoshinobu_yamamoto/phase1_final/pitch_004.mp4",
+          "sha256": "e5a57bfc2e0746bb19af2a073d94abb7265d8dfb9ad37de06cee1de29f63d11a"
+        },
+        "ground_truth": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/ground_truth/pitch_004/ground_truth.json",
+          "sha256": "ee721b91ce340ce29899e40854712e2d5d9c770d09d154c913489f17f1b4408a"
+        },
+        "metadata": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_004/metadata.json",
+          "sha256": "f0726e0b707390b5808d4f8dbee00330c8764c2fc584a94714214232f58c299a"
+        },
+        "raw_keypoints": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_004/keypoints.json",
+          "sha256": "f7606b31ca1a18d3c37b6b68dfdd340192be180140e78c01bf084a79bffe8087"
+        },
+        "capture": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_004/pose_raw.capture.json",
+          "sha256": "23799e6a5149509e1651c1393225d5693bce0e8cbfa2fb9c88ad321b4715e1a5"
+        },
+        "processed_keypoints": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_004/processed_keypoints.jsonl",
+          "sha256": "8368210aaf8bca14f695e7e6c5fc38871c5ad0fd03b5833f7f858ea99d30766d"
+        },
+        "pose_reliability": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/reliability/pitch_004/pose_reliability.json",
+          "sha256": "c5332978d06fbb5d1931fe6d134bee4d68dc032bcd5540703850a1804751e8ac"
+        },
+        "tracking_reliability": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/reliability/pitch_004/tracking_reliability.json",
+          "sha256": "5fafcb26e7f05b6e1497d20918ae6cedf240c12fc9d755ac9f218810eec6d015"
+        }
+      },
+      "baseline": {
+        "identity_switch_warning_agreement": {
+          "human_positive_frames": 0,
+          "human_negative_frames": 114,
+          "true_positive_frames": 0,
+          "false_negative_frames": 0,
+          "false_positive_frames": 0,
+          "true_negative_frames": 114,
+          "screened_frames_total": 0,
+          "screened_excluded_frames": 0
+        },
+        "track_break_screening": {
+          "human_positive_frames": 2,
+          "human_negative_frames": 112,
+          "true_positive_frames": 2,
+          "false_negative_frames": 0,
+          "false_positive_frames": 0,
+          "true_negative_frames": 112,
+          "screened_frames_total": 2,
+          "screened_excluded_frames": 0
+        },
+        "major_pose_failure_screening": {
+          "human_positive_frames": 2,
+          "human_negative_frames": 112,
+          "true_positive_frames": 2,
+          "false_negative_frames": 0,
+          "false_positive_frames": 3,
+          "true_negative_frames": 109,
+          "screened_frames_total": 5,
+          "screened_excluded_frames": 0
+        },
+        "major_pose_failure_with_joint_jump_cues": {
+          "human_positive_frames": 2,
+          "human_negative_frames": 112,
+          "true_positive_frames": 2,
+          "false_negative_frames": 0,
+          "false_positive_frames": 15,
+          "true_negative_frames": 97,
+          "screened_frames_total": 17,
+          "screened_excluded_frames": 0
+        }
+      },
+      "six_joint_human_frame_counts": {
+        "throwing_shoulder": {
+          "reliable": 112,
+          "unreliable": 2
+        },
+        "throwing_elbow": {
+          "reliable": 95,
+          "unreliable": 8,
+          "not_observable": 11
+        },
+        "throwing_wrist": {
+          "reliable": 77,
+          "unreliable": 30,
+          "not_observable": 7
+        },
+        "lead_hip": {
+          "reliable": 112,
+          "unreliable": 2
+        },
+        "lead_knee": {
+          "reliable": 111,
+          "unreliable": 3
+        },
+        "lead_ankle": {
+          "reliable": 112,
+          "unreliable": 2
+        }
+      },
+      "major_failure_intervals": [
+        {
+          "start_frame": 75,
+          "end_frame": 76,
+          "status": "confirmed",
+          "reason": "HSU 確認整個身體的骨架都沒有標出，為完整骨架缺失。",
+          "confidence": null
+        }
+      ],
+      "track_break_intervals": [
+        {
+          "start_frame": 75,
+          "end_frame": 76,
+          "status": "confirmed",
+          "reason": "人工可見的骨架輸出在此兩格整體中斷。",
+          "confidence": null,
+          "note": "這裡記錄 skeleton 輸出的中斷，尚未判定是 ROI 追蹤或 pose extraction 造成；不視為 identity switch。"
+        }
+      ],
+      "event_precision_preserved": {
+        "preparation_start": "annotated",
+        "leg_lift": "annotated",
+        "foot_plant": "annotated",
+        "approximate_release": "annotated",
+        "follow_through_end": "annotated"
+      }
+    },
+    {
+      "pitch_id": "pitch_005",
+      "total_frames": 101,
+      "sources": {
+        "video": {
+          "path": "input/yoshinobu_yamamoto/phase1_final/pitch_005.mp4",
+          "sha256": "e289cb1159e5863583f85915214123d6afe03baa6f32ac6040040878093c873b"
+        },
+        "ground_truth": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/ground_truth/pitch_005/ground_truth.json",
+          "sha256": "885986e1e150bd343968898899cfda5f5457b55a0c244d4c95c3f68daf33a66a"
+        },
+        "metadata": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_005/metadata.json",
+          "sha256": "fe72ba676c3a77f977e0784e6f10335635e627235b6cd9ff11d07d51aade2431"
+        },
+        "raw_keypoints": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_005/keypoints.json",
+          "sha256": "456482ea68e2dff7fa28cc29f0d7e1ab5e74ca2c3782ce2e5e3f2897bbdbb1a1"
+        },
+        "capture": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_005/pose_raw.capture.json",
+          "sha256": "72ac52c8c06a8545f5c8603d4e6ea1aa012bd895557220e4b0343172256a0269"
+        },
+        "processed_keypoints": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_005/processed_keypoints.jsonl",
+          "sha256": "fa158655e5567f01c22e39b304e35b642a096f1a1948966b64d5526858c58bae"
+        },
+        "pose_reliability": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/reliability/pitch_005/pose_reliability.json",
+          "sha256": "2c9a351ba579aaa2e442817fef5ac9329dec4f10ab59edf937943c84f50b1f9a"
+        },
+        "tracking_reliability": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/reliability/pitch_005/tracking_reliability.json",
+          "sha256": "bbb754311bcd3212754b6c39933e2544de9d0ebcf46ce50857dfa8637dac74b3"
+        }
+      },
+      "baseline": {
+        "identity_switch_warning_agreement": {
+          "human_positive_frames": 0,
+          "human_negative_frames": 101,
+          "true_positive_frames": 0,
+          "false_negative_frames": 0,
+          "false_positive_frames": 0,
+          "true_negative_frames": 101,
+          "screened_frames_total": 0,
+          "screened_excluded_frames": 0
+        },
+        "track_break_screening": {
+          "human_positive_frames": 1,
+          "human_negative_frames": 100,
+          "true_positive_frames": 1,
+          "false_negative_frames": 0,
+          "false_positive_frames": 0,
+          "true_negative_frames": 100,
+          "screened_frames_total": 1,
+          "screened_excluded_frames": 0
+        },
+        "major_pose_failure_screening": {
+          "human_positive_frames": 1,
+          "human_negative_frames": 100,
+          "true_positive_frames": 1,
+          "false_negative_frames": 0,
+          "false_positive_frames": 2,
+          "true_negative_frames": 98,
+          "screened_frames_total": 3,
+          "screened_excluded_frames": 0
+        },
+        "major_pose_failure_with_joint_jump_cues": {
+          "human_positive_frames": 1,
+          "human_negative_frames": 100,
+          "true_positive_frames": 1,
+          "false_negative_frames": 0,
+          "false_positive_frames": 15,
+          "true_negative_frames": 85,
+          "screened_frames_total": 16,
+          "screened_excluded_frames": 0
+        }
+      },
+      "six_joint_human_frame_counts": {
+        "throwing_shoulder": {
+          "reliable": 100,
+          "unreliable": 1
+        },
+        "throwing_elbow": {
+          "reliable": 72,
+          "unreliable": 28,
+          "not_observable": 1
+        },
+        "throwing_wrist": {
+          "reliable": 90,
+          "unreliable": 10,
+          "not_observable": 1
+        },
+        "lead_hip": {
+          "reliable": 100,
+          "not_observable": 1
+        },
+        "lead_knee": {
+          "reliable": 98,
+          "unreliable": 1,
+          "not_observable": 2
+        },
+        "lead_ankle": {
+          "reliable": 99,
+          "unreliable": 1,
+          "not_observable": 1
+        }
+      },
+      "major_failure_intervals": [
+        {
+          "start_frame": 54,
+          "end_frame": 54,
+          "status": "confirmed",
+          "reason": "HSU 確認第 54 格全身骨架都沒有標出。",
+          "confidence": null
+        }
+      ],
+      "track_break_intervals": [
+        {
+          "start_frame": 54,
+          "end_frame": 54,
+          "status": "confirmed",
+          "reason": "HSU 確認第 54 格整體骨架輸出中斷。",
+          "note": "此處記錄可見的 skeleton 輸出缺失；未判定是 ROI 追蹤或 pose extraction 造成，也未據此判定 identity switch。",
+          "confidence": null
+        }
+      ],
+      "event_precision_preserved": {
+        "preparation_start": "uncertain",
+        "leg_lift": "uncertain",
+        "foot_plant": "annotated",
+        "approximate_release": "annotated",
+        "follow_through_end": "annotated"
+      }
+    }
+  ],
+  "known_cases": [
+    {
+      "case_id": "pitch_003_major_pose_failure_87_104",
+      "pitch_id": "pitch_003",
+      "start_frame": 87,
+      "end_frame": 104,
+      "target": "major_pose_failure",
+      "source": "canonical reviewed interval",
+      "role": "known_failure_regression",
+      "expectation": "Measure warning overlap without shifting or extending labels."
+    },
+    {
+      "case_id": "pitch_004_selection_break_75_76",
+      "pitch_id": "pitch_004",
+      "start_frame": 75,
+      "end_frame": 76,
+      "target": "selection_break",
+      "source": "canonical reviewed interval",
+      "role": "known_failure_regression",
+      "expectation": "Measure warning overlap without shifting or extending labels."
+    },
+    {
+      "case_id": "pitch_005_selection_break_54_54",
+      "pitch_id": "pitch_005",
+      "start_frame": 54,
+      "end_frame": 54,
+      "target": "selection_break",
+      "source": "canonical reviewed interval",
+      "role": "known_failure_regression",
+      "expectation": "Measure warning overlap without shifting or extending labels."
+    },
+    {
+      "case_id": "pitch_003_RIGHT_ELBOW_38",
+      "pitch_id": "pitch_003",
+      "start_frame": 38,
+      "end_frame": 38,
+      "joint": "RIGHT_ELBOW",
+      "target": "visible_coordinate_error_evidence",
+      "role": "known_case_regression",
+      "manual_status": "visible",
+      "baseline_raw_error_px": 90.77505009397284,
+      "baseline_visibility": 0.9823364615440369,
+      "baseline_processed_state": "observed",
+      "expectation": "Report warning and visible-coordinate error separately; no new binary pixel-error threshold."
+    },
+    {
+      "case_id": "pitch_003_RIGHT_WRIST_38",
+      "pitch_id": "pitch_003",
+      "start_frame": 38,
+      "end_frame": 38,
+      "joint": "RIGHT_WRIST",
+      "target": "visible_coordinate_error_evidence",
+      "role": "known_case_regression",
+      "manual_status": "visible",
+      "baseline_raw_error_px": 108.06672967680133,
+      "baseline_visibility": 0.9517198204994202,
+      "baseline_processed_state": "observed",
+      "expectation": "Report warning and visible-coordinate error separately; no new binary pixel-error threshold."
+    },
+    {
+      "case_id": "pitch_003_RIGHT_ELBOW_93",
+      "pitch_id": "pitch_003",
+      "start_frame": 93,
+      "end_frame": 93,
+      "joint": "RIGHT_ELBOW",
+      "target": "visible_coordinate_error_evidence",
+      "role": "known_case_regression",
+      "manual_status": "visible",
+      "baseline_raw_error_px": 166.56301746029152,
+      "baseline_visibility": 0.6763662695884705,
+      "baseline_processed_state": "observed",
+      "expectation": "Report warning and visible-coordinate error separately; no new binary pixel-error threshold."
+    },
+    {
+      "case_id": "pitch_003_RIGHT_SHOULDER_95",
+      "pitch_id": "pitch_003",
+      "start_frame": 95,
+      "end_frame": 95,
+      "joint": "RIGHT_SHOULDER",
+      "target": "visible_coordinate_error_evidence",
+      "role": "known_case_regression",
+      "manual_status": "visible",
+      "baseline_raw_error_px": 147.37031016491628,
+      "baseline_visibility": 0.9996048808097839,
+      "baseline_processed_state": "observed",
+      "expectation": "Report warning and visible-coordinate error separately; no new binary pixel-error threshold."
+    },
+    {
+      "case_id": "pitch_003_LEFT_WRIST_112",
+      "pitch_id": "pitch_003",
+      "start_frame": 112,
+      "end_frame": 112,
+      "joint": "LEFT_WRIST",
+      "target": "visible_coordinate_error_evidence",
+      "role": "known_case_regression",
+      "manual_status": "visible",
+      "baseline_raw_error_px": 252.36739808148587,
+      "baseline_visibility": 0.9927186965942383,
+      "baseline_processed_state": "observed",
+      "expectation": "Report warning and visible-coordinate error separately; no new binary pixel-error threshold."
+    },
+    {
+      "case_id": "pitch_003_unscorable_RIGHT_ELBOW_22",
+      "pitch_id": "pitch_003",
+      "start_frame": 22,
+      "end_frame": 22,
+      "joint": "RIGHT_ELBOW",
+      "target": "coordinate_exclusion",
+      "role": "observability_policy_regression",
+      "manual_status": "not_observable",
+      "expectation": "Keep XY null; no coordinate error, no inferred occluded location."
+    },
+    {
+      "case_id": "pitch_003_unscorable_RIGHT_WRIST_26",
+      "pitch_id": "pitch_003",
+      "start_frame": 26,
+      "end_frame": 26,
+      "joint": "RIGHT_WRIST",
+      "target": "coordinate_exclusion",
+      "role": "observability_policy_regression",
+      "manual_status": "not_observable",
+      "expectation": "Keep XY null; no coordinate error, no inferred occluded location."
+    },
+    {
+      "case_id": "pitch_003_unscorable_LEFT_WRIST_85",
+      "pitch_id": "pitch_003",
+      "start_frame": 85,
+      "end_frame": 85,
+      "joint": "LEFT_WRIST",
+      "target": "coordinate_exclusion",
+      "role": "observability_policy_regression",
+      "manual_status": "uncertain",
+      "expectation": "Keep XY null; no coordinate error, no inferred occluded location."
+    },
+    {
+      "case_id": "pitch_003_unscorable_LEFT_WRIST_86",
+      "pitch_id": "pitch_003",
+      "start_frame": 86,
+      "end_frame": 86,
+      "joint": "LEFT_WRIST",
+      "target": "coordinate_exclusion",
+      "role": "observability_policy_regression",
+      "manual_status": "uncertain",
+      "expectation": "Keep XY null; no coordinate error, no inferred occluded location."
+    },
+    {
+      "case_id": "pitch_001_major_negative",
+      "pitch_id": "pitch_001",
+      "start_frame": 0,
+      "end_frame": 86,
+      "target": "major_pose_failure",
+      "role": "known_negative_regression",
+      "expectation": "Measure target-specific false warnings; this does not label every local joint correct."
+    },
+    {
+      "case_id": "pitch_002_major_negative",
+      "pitch_id": "pitch_002",
+      "start_frame": 0,
+      "end_frame": 174,
+      "target": "major_pose_failure",
+      "role": "known_negative_regression",
+      "expectation": "Measure target-specific false warnings; this does not label every local joint correct."
+    }
+  ],
+  "implementation_sequence": [
+    "freeze inputs/targets (completed by this inventory)",
+    "offline measurement experiment with no detector thresholds or production changes",
+    "review evidence and false warnings before selecting any new diagnostic policy",
+    "only then separately implement additive warning output and run full suite"
+  ],
+  "not_done": [
+    "new warning detector",
+    "optical flow benchmark",
+    "pose inference",
+    "automatic GT",
+    "training",
+    "Phase 3",
+    "Clipper integration"
+  ],
+  "handoff_order": "Phase 2 evidence-based stability/acceptance, then small Clipper MP4+metadata intake test."
+}

@@ -171,3 +171,12 @@ are addressed. Program execution alone is not a pass.
 
 The latest reviewed coordinate reference and follow-up evidence are recorded in the
 [2026-10-05 manual review checkpoint](phase2_manual_review_checkpoint_20261005.md).
+
+The [2026-10-06 raw-error diagnosis](phase2_pitch003_diagnosis_20261006.md)
+locates pitch_003 displacement in the raw model output and explains why existing
+tracking continuity warnings miss it. The subsequent
+[warning design and regression inventory](phase2_warning_design_20261006.md)
+fix separate evaluation targets and known cases before any new implementation.
+Candidate image-motion and local-arm evidence remains proposed only; no optical-flow
+benchmark or new warning predictions exist. Human GT remains evaluator-only,
+and prediction abstention cannot silently remove eligible GT from primary metrics.

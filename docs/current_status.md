@@ -17,6 +17,29 @@ Phase 2 acceptance result.
 
 ## Phase 2 baseline
 
+### Warning design and regression inventory ready (2026-10-06)
+
+The [warning design](phase2_warning_design_20261006.md) and
+[machine-readable evaluation plan](evaluation_plans/phase2_warning_design_20261006.json)
+fix separate targets for major pose alignment, local joint reliability, selection
+breaks and insufficient image evidence. This is **design only**: no new warning
+detector, optical-flow experiment, diagnostic thresholds or algorithm changes.
+The plan restricts human GT/X/Y to evaluation, keeps source predictions immutable,
+and requires exact-frame metrics, per-pitch false warnings, interval coverage,
+decision abstention and source binding. Model abstention cannot remove difficult
+human-scorable frames from the primary denominator.
+
+Derived inventory: 592 frames, 14 known cases, six-joint human masks and all baseline
+screen counts independently reproduced. 295 protected source hashes unchanged;
+five canonical GT schemas plus direct MP4 filename/content hashes and the reviewed
+manual schema passed. Output: `analysis_results/phase2_warning_design_20261006_01/`.
+Existing tests remain historical (147 passed / 0 failed / 1 skipped); not rerun.
+Next: offline image-motion/geometry measurement on these five clips, with evidence
+and false-warning analysis before selecting a diagnostic policy or implementing
+additive warnings. This dataset is known development/regression evidence, not an
+independent holdout. Phase 2 acceptance, peer pitch_005 event supplement and the
+later small Clipper MP4 + metadata handoff remain pending; no Phase 3.
+
 ### pitch_003 saved-data diagnosis completed (2026-10-06)
 
 The [diagnosis report](phase2_pitch003_diagnosis_20261006.md) separates raw model
