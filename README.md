@@ -3,6 +3,9 @@
 接收已整理好的 **單次投球 MP4 + metadata**，分析 MLB 投手的姿勢、動作時序與特徵。
 長期目標包括單一投手 motion profile，以及不同投手的完整時序比較。
 
+本次收尾摘要見 [STATUS](docs/STATUS.md)；外部專案供片需求見
+[INPUT_REQUIREMENTS](docs/INPUT_REQUIREMENTS.md)。
+
 專案不負責影片搜尋、YouTube、下載、yt-dlp、來源管理、從長影片建立素材或指定球員 ReID。
 這些能力由獨立 preprocessing 專案負責。本機 MP4 probe / validation / working-copy
 standardization 屬於分析輸入品質控制，仍保留在本專案。

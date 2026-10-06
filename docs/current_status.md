@@ -17,6 +17,26 @@ are complete. The baseline runner,
 reports, and annotation workflow are available; program execution is not a
 Phase 2 acceptance result.
 
+## Stop checkpoint requested by the user (2026-10-06)
+
+The current work is closed out for a stop. Concise progress, unfinished work and
+known issues are in [STATUS.md](STATUS.md); external shared-folder video needs
+are in [INPUT_REQUIREMENTS.md](INPUT_REQUIREMENTS.md). No new feature, mask
+experiment, warning policy, input integration or Phase 3 was started.
+
+Full suite rerun with the formal five-pitch real-video fixture enabled:
+**167 passed / 0 failed / 0 errors / 0 skipped**. The real-video test writes only
+temporary outputs and checks execution/artifacts; it does not certify Phase 2
+accuracy. Log and result:
+`analysis_results/stage1_closeout_20261006_01/`.
+Dependency consistency passed. All 295 protected files, 44 prior sources and
+five membership-comparison sources remain unchanged; the five E2E fixture
+pairs still match their canonical video/metadata hashes.
+
+Phase 1 remains PASSED; Phase 2 remains IN PROGRESS. Formal media, reviewed
+annotations and historical predictions are preserved. Pending review and
+future proposals remain documented for an explicitly requested resumption.
+
 ## Phase 2 baseline
 
 ### Eight human feature memberships reviewed and compared (2026-10-06)
