@@ -35,7 +35,7 @@ Tsai 於2026-10-04手動放置原片的12個身體關節；HSU逐格確認可見
 | 右踝 | 115 | 115 | 0 | 17.48 | 10.16 | 72.44 | 120.41 |
 
 **raw座標存在不代表是可信的observed點。** 此評估器沿用既有raw presence規則，不加入visibility gate；1,205點都有raw座標、raw漏點0，並不表示overlay每格都畫出可信關節。
-overlay與processed observed／interpolated／missing另受既有confidence gate影響。MediaPipe官方將visibility定義為可見／遮擋分數，未將它定義為位置正確率。參見[官方Landmark文件](https://ai.google.dev/edge/api/mediapipe/python/mp/tasks/components/containers/Landmark)。
+既有overlay畫raw座標，其顯示條件為 `min(visibility, presence) >= 0.35`；processed observed／interpolated／missing則沿用clean的visibility與presence各0.5門檻及最多2格插值。visualization median欄位沒有驅動這支overlay。詳見[2026-10-06程式與影像診斷](phase2_pitch003_diagnosis_20261006.md)。MediaPipe官方將visibility定義為可見／遮擋分數，未將它定義為位置正確率。參見[官方Landmark文件](https://ai.google.dev/edge/api/mediapipe/python/mp/tasks/components/containers/Landmark)。
 
 ## 人工指出的整體偏移
 
@@ -75,6 +75,6 @@ overlay與processed observed／interpolated／missing另受既有confidence gate
 包含 `manual_keypoints_evaluation.json`、`evaluation_summary.json`、`regional_diagnostics.json`、`evidence_integrity_check.json`。
 原始JSON與媒體保持本機；此摘要、正式座標sidecar及人工作業來源納入Git。
 
-下一步聚焦既有警示漏掉的87–104整體偏移及局部腕／肘錯位，先提出可靠性修正與回歸驗證方案。
+2026-10-06已完成[87–104整體偏移及局部腕／肘錯位的來源診斷](phase2_pitch003_diagnosis_20261006.md)。下一步先設計可靠性警示與回歸評估，再決定修正範圍。
 本次沒有修改pose／tracking演算法或門檻，不自動訓練、不開始Phase 3；同學pitch_005事件補充仍待回傳。
 MLB Pitch Clipper正式接入仍待Phase 2穩定且以證據驗收後，再依既定順序執行，不擴增投手。

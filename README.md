@@ -36,6 +36,9 @@ HSU 已完成五支影片的逐格定性覆核，並完成與既有可靠性警�
 HSU 已完成 `pitch_003` 全115格12關節覆核，並提供2026-10-05 10:14（台灣）完成時間。
 [座標比較報告](docs/phase2_manual_coordinate_comparison_20261005.md)已量測1,205個可見人工點的raw 2D誤差；173個不可觀測點與2個不確定點排除。
 87–104格整體偏移的平均誤差為76.90px，高visibility仍可能錯位；事件偵測誤差尚未量測。
+[錯位診斷](docs/phase2_pitch003_diagnosis_20261006.md)確認誤差已存在於raw模型輸出，
+現有tracking連續性警示漏掉該18格；插值與平滑未修正這段偏移。
+診斷包含人工／raw／processed對照圖，未改演算法或門檻。
 Phase 2 仍在進行中；
 詳見 [Phase 2 reliability](docs/phase2_reliability.md) 與
 [manual ground truth](docs/phase2_ground_truth.md)。

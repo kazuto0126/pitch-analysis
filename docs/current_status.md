@@ -17,6 +17,40 @@ Phase 2 acceptance result.
 
 ## Phase 2 baseline
 
+### pitch_003 saved-data diagnosis completed (2026-10-06)
+
+The [diagnosis report](phase2_pitch003_diagnosis_20261006.md) separates raw model
+error, selection, clean/interpolation and overlay behavior without new inference.
+Full prepared-clip frames enter MediaPipe; the selector ROI is a post-inference
+geometry filter. Every saved frame has one returned pose and selected index 0;
+this is not an identity proof. All 3,255 quality-valid clean coordinates equal raw.
+The 87–104 displacement is already in raw output, with 76.90px mean error over
+190 human-visible points. On the same 189 usable points, raw/clean/visualization
+median means are 76.53/76.89/76.32px. Cleaning does not correct this displacement.
+
+Tracking has no warnings in these 18 human major-failure frames: maximum center
+step/scale ratio/center acceleration remain below the existing .45/1.6/.45 bounds,
+and centers stay inside the ROI. Stored six-joint jump **current-frame** candidates
+cover 10/18 frames; this is not an expanded-interval detector. Pose-level unreliable
+status does not localize the sustained full-body failure. Batter influence remains
+a hypothesis; no model-internal causal evidence or confirmed identity switch exists.
+
+The saved overlay draws raw coordinates at min(visibility,presence) >= .35.
+Processed observed/interpolated/missing uses clean's separate .5/.5 gate and
+two-frame interpolation limit. Visualization median fields do not drive that overlay.
+Output: `analysis_results/phase2_pitch003_diagnostics_20261006_01/`, including
+13 original/manual/raw/clean comparisons, three saved-overlay extracts and a timeline.
+316 protected-file hashes, 115 exact decoded-video/PNG comparisons, serialization,
+schema and numerical checks passed; source/GT/predictions/algorithms remain unchanged.
+No full suite rerun: prior 147 passed / 0 failed / 1 skipped remains historical.
+
+Next: design generic sustained-displacement and local-arm reliability warnings with
+regression evaluation on known failures and reliable portions of all five clips.
+No warning implementation, model change, new thresholds or Phase 3 started.
+HSU need not repeat the completed pitch_003 coordinate review. Independent pitch_005
+event supplement remains pending. Clipper integration stays after evidence-based
+Phase 2 stabilization/acceptance, followed by a small MP4 + metadata handoff test.
+
 ### Reviewed coordinate reference and comparison (2026-10-05; documented 2026-10-06)
 
 HSU supplied completion time "2026/10/5 10.14": Taiwan 2026-10-05 10:14,
@@ -48,8 +82,9 @@ serve as future explicitly uncertain auxiliary annotations; the current observed
 2D coordinate benchmark retains null nonvisible XY. This does not change the schema,
 pose/tracking algorithms, confidence gate, smoothing or interpolation. Single-clip
 error measurements do not establish generalization or 3D/event accuracy.
-Next: propose reliability improvements/regression checks grounded in the measured
-missed displacement and local arm errors; no automatic implementation or Phase 3.
+The later saved-data diagnosis above identifies where displacement enters and why
+existing warnings miss it; next design reliability/regression checks, with no automatic
+implementation or Phase 3.
 Independent pitch_005 event supplement is still pending.
 
 ### Human-label comparison completed (2026-10-04)
