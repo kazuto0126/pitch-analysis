@@ -1,0 +1,112 @@
+{
+  "purpose": "Supplement visible torso reference and recheck apparent prior point-membership ambiguity; labels remain unreviewed",
+  "source_video": {
+    "path": "input\\yoshinobu_yamamoto\\phase1_final\\pitch_003.mp4",
+    "sha256": "5c08dba98504d998536dfd0f0fab598760400612c9049445a68120e68fdf024c"
+  },
+  "width": 510,
+  "height": 628,
+  "total_frames": 115,
+  "previous_query_snapshot": {
+    "path": "analysis_results\\phase2_feature_membership_pilot_20261006_02\\query_manifest.json",
+    "sha256": "2a6ad342b8f833e9555fc02df83b491ee2def0061b97d38f66050e74ace20a6a"
+  },
+  "queries": [
+    {
+      "query_id": "pitch_003_membership2_f0086_q1",
+      "frame_index": 86,
+      "display_number": 1,
+      "image_xy_px": [
+        199.5953826904297,
+        195.5159912109375
+      ],
+      "previous_query_id": "pitch_003_f0086_q1",
+      "query_origin": "same prior raw image-feature location; human confirmation requested"
+    },
+    {
+      "query_id": "pitch_003_membership2_f0086_q2",
+      "frame_index": 86,
+      "display_number": 2,
+      "image_xy_px": [
+        207.1212921142578,
+        188.2799072265625
+      ],
+      "previous_query_id": "pitch_003_f0086_q2",
+      "query_origin": "same prior raw image-feature location; human confirmation requested"
+    },
+    {
+      "query_id": "pitch_003_membership2_f0086_q3",
+      "frame_index": 86,
+      "display_number": 3,
+      "image_xy_px": [
+        345.3405456542969,
+        312.5114440917969
+      ],
+      "previous_query_id": "pitch_003_f0086_q3",
+      "query_origin": "same prior raw image-feature location; human confirmation requested"
+    },
+    {
+      "query_id": "pitch_003_membership2_f0086_q4",
+      "frame_index": 86,
+      "display_number": 4,
+      "image_xy_px": [
+        189.89382934570312,
+        187.1669158935547
+      ],
+      "previous_query_id": "pitch_003_f0086_q4",
+      "query_origin": "same prior raw image-feature location; human confirmation requested"
+    },
+    {
+      "query_id": "pitch_003_membership2_f0086_q5",
+      "frame_index": 86,
+      "display_number": 5,
+      "image_xy_px": [
+        245,
+        235
+      ],
+      "previous_query_id": null,
+      "query_origin": "fixed supplemental image position proposed before masks; no expected human code"
+    },
+    {
+      "query_id": "pitch_003_membership2_f0086_q6",
+      "frame_index": 86,
+      "display_number": 6,
+      "image_xy_px": [
+        262,
+        255
+      ],
+      "previous_query_id": null,
+      "query_origin": "fixed supplemental image position proposed before masks; no expected human code"
+    },
+    {
+      "query_id": "pitch_003_membership2_f0095_q1",
+      "frame_index": 95,
+      "display_number": 1,
+      "image_xy_px": [
+        207.90061950683594,
+        224.477294921875
+      ],
+      "previous_query_id": "pitch_003_f0095_q3",
+      "query_origin": "same prior raw image-feature location; display renumbered from prior q3 to q1"
+    },
+    {
+      "query_id": "pitch_003_membership2_f0095_q2",
+      "frame_index": 95,
+      "display_number": 2,
+      "image_xy_px": [
+        234,
+        260
+      ],
+      "previous_query_id": null,
+      "query_origin": "fixed supplemental image position proposed before masks; no expected human code"
+    }
+  ],
+  "human_inputs_to_mask_producer": [],
+  "limits": [
+    "Known development diagnostic frames; selection is targeted, not random or an independent holdout.",
+    "Question centers are evaluation-only; never supplied to pose, mask or selector as prompts or corrections.",
+    "Prior answers stay unchanged until explicit human confirmation; preserve both original and later review provenance.",
+    "No class, confidence, reviewer note or completion time is inferred; sparse points cannot establish full-body IoU or Phase 2 acceptance.",
+    "Three new centers are image positions, not anatomical joints or tracked optical-flow features."
+  ]
+}

@@ -17,9 +17,33 @@ are complete. The baseline runner,
 reports, and annotation workflow are available; program execution is not a
 Phase 2 acceptance result.
 
-## Stop checkpoint requested by the user (2026-10-06)
+## Phase 2 resumed by the user (2026-10-06)
 
-The current work is closed out for a stop. Concise progress, unfinished work and
+The user explicitly resumed Phase 2 after the stop checkpoint below. A bounded
+reference check is ready: five previous membership positions need explicit
+human confirmation and three new fixed image positions supplement the sparse
+reference. Raw context and separate larger crops reduce label/position ambiguity.
+Frame86 has six questions; frame95 has two (new 95/q1 is the original 95/q3).
+Output: `analysis_results/phase2_membership_supplement_20261006_01/`.
+The [frozen query plan](evaluation_plans/phase2_membership_supplement_20261006.json)
+contains coordinates/source hashes, never expected human labels.
+
+All eight answers are unreviewed/null. Original HSU replies and anatomical GT
+remain unchanged; possible ambiguity is a reason to ask, not authority to
+relabel. The five rechecked positions are pending confirmation for the next
+mask evaluation, not silently reused as resolved references. Three new positions
+are image samples, not new joints or tracked optical-flow features. These are
+targeted development examples, not random samples or a holdout benchmark.
+
+Two raw PNGs and untouched context panels match previous exact decoded frames;
+295 protected files, 44 prior sources and original membership-comparison sources
+remain unchanged. No new pose/mask inference, warning decision or production
+change occurred. Full suite remains the latest stop-checkpoint result below.
+The shared-folder todo remains deferred until Phase 2 is stable; no Phase 3.
+
+## Historical stop checkpoint requested by the user (2026-10-06)
+
+At that checkpoint the current work was closed out for a stop. Concise progress, unfinished work and
 known issues are in [STATUS.md](STATUS.md); external shared-folder video needs
 are in [INPUT_REQUIREMENTS.md](INPUT_REQUIREMENTS.md). No new feature, mask
 experiment, warning policy, input integration or Phase 3 was started.
