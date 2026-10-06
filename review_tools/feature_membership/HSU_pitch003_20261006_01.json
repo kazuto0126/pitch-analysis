@@ -1,0 +1,187 @@
+{
+  "purpose": "Actual human chat reply transcript for fixed image-feature queries; not a pose/event GT schema",
+  "reviewer_code": "HSU",
+  "reviewer_code_source": "Existing user-selected reviewer code in this review session",
+  "recorded_on_local_date": "2026-10-06",
+  "reviewed_at_utc": null,
+  "review_time_source": "No new completion time supplied; do not reuse the prior anatomical review timestamp",
+  "raw_user_reply": "86:1=o,2=o,3=o,4=p;95:1=o,2=o,3=o,4=p",
+  "normalization": "Only uppercase the explicitly supplied class code; no inferred answers",
+  "code_meanings": {
+    "T": "Visible pitcher torso/clothing",
+    "P": "Other visible pitcher part/equipment",
+    "O": "Other person/background",
+    "?": "Uncertain"
+  },
+  "source_video": {
+    "path": "input\\yoshinobu_yamamoto\\phase1_final\\pitch_003.mp4",
+    "sha256": "5c08dba98504d998536dfd0f0fab598760400612c9049445a68120e68fdf024c"
+  },
+  "source_query_manifest": {
+    "path": "analysis_results\\phase2_feature_membership_pilot_20261006_02\\query_manifest.json",
+    "sha256": "2a6ad342b8f833e9555fc02df83b491ee2def0061b97d38f66050e74ace20a6a"
+  },
+  "source_query_manifest_is_blank_generation_snapshot": true,
+  "measurement_file": "analysis_results\\phase2_feature_support_20261006_01\\feature_validity_measurements.json",
+  "measurement_sha256": "d7e5243dfea3186a9be21cd0fc7b8f12250cd798822e6c21fb1b64ed486e9d68",
+  "display_files": [
+    {
+      "frame_index": 86,
+      "raw_image": "analysis_results\\phase2_feature_membership_pilot_20261006_02\\raw_frames\\pitch_003_frame_0086.png",
+      "raw_sha256": "94b040037e40fb6f9bce8dfc8d534c3cec2a75ba5e513c17fafa0654490587b6",
+      "display_image": "analysis_results\\phase2_feature_membership_pilot_20261006_02\\pitch_003_frame_0086_review.png",
+      "display_sha256": "82a09d6db30f61e8a39be0a5ebe17bf74108e4352312e4e1eaad388d9456481c"
+    },
+    {
+      "frame_index": 95,
+      "raw_image": "analysis_results\\phase2_feature_membership_pilot_20261006_02\\raw_frames\\pitch_003_frame_0095.png",
+      "raw_sha256": "9a6c63f66e00f6a2b40d7144cd30bc986c0cc4deaa2ff3fd6d1d682aba3e34b5",
+      "display_image": "analysis_results\\phase2_feature_membership_pilot_20261006_02\\pitch_003_frame_0095_review.png",
+      "display_sha256": "7db8c06c754ccde6638427f1d6238eabe9e2864620cbcd96b65759fc36d64c28"
+    }
+  ],
+  "review_status": "all_eight_answers_received",
+  "queries": [
+    {
+      "query_id": "pitch_003_f0086_q1",
+      "pitch_id": "pitch_003",
+      "frame_index": 86,
+      "timestamp_ms": 2866.6666666666665,
+      "display_number": 1,
+      "saved_feature_id": 53,
+      "queried_image_xy_px": [
+        199.5953826904297,
+        195.5159912109375
+      ],
+      "source_raw_image_sha256": "94b040037e40fb6f9bce8dfc8d534c3cec2a75ba5e513c17fafa0654490587b6",
+      "human_code": "O",
+      "body_region_detail": null,
+      "confidence": null,
+      "reviewer_note": null
+    },
+    {
+      "query_id": "pitch_003_f0086_q2",
+      "pitch_id": "pitch_003",
+      "frame_index": 86,
+      "timestamp_ms": 2866.6666666666665,
+      "display_number": 2,
+      "saved_feature_id": 56,
+      "queried_image_xy_px": [
+        207.1212921142578,
+        188.2799072265625
+      ],
+      "source_raw_image_sha256": "94b040037e40fb6f9bce8dfc8d534c3cec2a75ba5e513c17fafa0654490587b6",
+      "human_code": "O",
+      "body_region_detail": null,
+      "confidence": null,
+      "reviewer_note": null
+    },
+    {
+      "query_id": "pitch_003_f0086_q3",
+      "pitch_id": "pitch_003",
+      "frame_index": 86,
+      "timestamp_ms": 2866.6666666666665,
+      "display_number": 3,
+      "saved_feature_id": 8,
+      "queried_image_xy_px": [
+        345.3405456542969,
+        312.5114440917969
+      ],
+      "source_raw_image_sha256": "94b040037e40fb6f9bce8dfc8d534c3cec2a75ba5e513c17fafa0654490587b6",
+      "human_code": "O",
+      "body_region_detail": null,
+      "confidence": null,
+      "reviewer_note": null
+    },
+    {
+      "query_id": "pitch_003_f0086_q4",
+      "pitch_id": "pitch_003",
+      "frame_index": 86,
+      "timestamp_ms": 2866.6666666666665,
+      "display_number": 4,
+      "saved_feature_id": 29,
+      "queried_image_xy_px": [
+        189.89382934570312,
+        187.1669158935547
+      ],
+      "source_raw_image_sha256": "94b040037e40fb6f9bce8dfc8d534c3cec2a75ba5e513c17fafa0654490587b6",
+      "human_code": "P",
+      "body_region_detail": null,
+      "confidence": null,
+      "reviewer_note": null
+    },
+    {
+      "query_id": "pitch_003_f0095_q1",
+      "pitch_id": "pitch_003",
+      "frame_index": 95,
+      "timestamp_ms": 3166.666666666667,
+      "display_number": 1,
+      "saved_feature_id": 43,
+      "queried_image_xy_px": [
+        121.03359985351562,
+        260.5058898925781
+      ],
+      "source_raw_image_sha256": "9a6c63f66e00f6a2b40d7144cd30bc986c0cc4deaa2ff3fd6d1d682aba3e34b5",
+      "human_code": "O",
+      "body_region_detail": null,
+      "confidence": null,
+      "reviewer_note": null
+    },
+    {
+      "query_id": "pitch_003_f0095_q2",
+      "pitch_id": "pitch_003",
+      "frame_index": 95,
+      "timestamp_ms": 3166.666666666667,
+      "display_number": 2,
+      "saved_feature_id": 10,
+      "queried_image_xy_px": [
+        250.05516052246094,
+        198.87374877929688
+      ],
+      "source_raw_image_sha256": "9a6c63f66e00f6a2b40d7144cd30bc986c0cc4deaa2ff3fd6d1d682aba3e34b5",
+      "human_code": "O",
+      "body_region_detail": null,
+      "confidence": null,
+      "reviewer_note": null
+    },
+    {
+      "query_id": "pitch_003_f0095_q3",
+      "pitch_id": "pitch_003",
+      "frame_index": 95,
+      "timestamp_ms": 3166.666666666667,
+      "display_number": 3,
+      "saved_feature_id": 40,
+      "queried_image_xy_px": [
+        207.90061950683594,
+        224.477294921875
+      ],
+      "source_raw_image_sha256": "9a6c63f66e00f6a2b40d7144cd30bc986c0cc4deaa2ff3fd6d1d682aba3e34b5",
+      "human_code": "O",
+      "body_region_detail": null,
+      "confidence": null,
+      "reviewer_note": null
+    },
+    {
+      "query_id": "pitch_003_f0095_q4",
+      "pitch_id": "pitch_003",
+      "frame_index": 95,
+      "timestamp_ms": 3166.666666666667,
+      "display_number": 4,
+      "saved_feature_id": 53,
+      "queried_image_xy_px": [
+        187.87197875976562,
+        280.6147155761719
+      ],
+      "source_raw_image_sha256": "9a6c63f66e00f6a2b40d7144cd30bc986c0cc4deaa2ff3fd6d1d682aba3e34b5",
+      "human_code": "P",
+      "body_region_detail": null,
+      "confidence": null,
+      "reviewer_note": null
+    }
+  ],
+  "anatomical_ground_truth_or_raw_predictions_modified": false,
+  "limits": [
+    "Sparse diagnostic sample; not all features, all frames, all clips or a held-out benchmark.",
+    "No full-body mask, keypoint correction, identity-switch label or confidence was inferred."
+  ]
+}

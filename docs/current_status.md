@@ -19,6 +19,46 @@ Phase 2 acceptance result.
 
 ## Phase 2 baseline
 
+### Eight human feature memberships reviewed and compared (2026-10-06)
+
+The [subject-support proposal](phase2_subject_support_proposal_20261006.md)
+defines the next bounded step: two pitch_003 frames (86/95), four saved image
+feature queries each. HSU supplied all eight answers in chat: each frame's
+queries 1/2/3 are **O** (other person/background), query 4 is **P** (other visible
+pitcher part). Total: **6 O / 2 P / 0 T / 0 uncertain**. The exact reply,
+source-bound query IDs/coordinates and image hashes are saved in
+[the review transcript](../review_tools/feature_membership/HSU_pitch003_20261006_01.json).
+No confidence, subtype or new review completion time was supplied or inferred.
+Raw/marked images include separate magnified patches for every query;
+completed twelve-joint annotation remains unchanged.
+Output: `analysis_results/phase2_feature_membership_pilot_20261006_02/`.
+The initial `_01` display draft is preserved; `_02` improves overlapping labels.
+
+Existing contracts cannot encode arbitrary feature membership or masks; the
+manifest remains the original blank generation snapshot; actual human responses
+are preserved separately. The blank `REVIEW_NOTES.md` is also preserved.
+No canonical/schema change or automatic annotation has occurred. A proposed
+candidate uses the existing MediaPipe model's optional segmentation output;
+local SDK fields and model hash were checked, but no pose/mask inference,
+benchmark, new model or production change was run. Candidate masks and subject
+binding require evidence; they are not independent identity truth.
+
+The offline comparison is in `evaluation_01/human_membership_comparison.json`
+under the pilot output. All eight joins match. The lowest per-frame FB rank
+group's two representative queries are both O. All eight are outside the old
+anatomical torso proxy, including the two P points. This supports two limited
+conclusions: small FB error does not establish pitcher membership, and outside
+the torso proxy does not establish non-pitcher membership. The 6/8 count is not
+a full-clip error rate, identity-switch label or mask accuracy result.
+
+All 295 protected files and 44 prior source files remain unchanged. Full suite:
+**166 passed / 0 failed / 0 errors / 1 skipped**, 167 discovered; the optional
+real-video handoff test requires `PITCH_ANALYSIS_REAL_BASELINE_DIR`.
+Next: keep the bounded subject-mask proposal separate from production; this
+pilot has no torso-positive T query, so it cannot establish torso coverage.
+Phase 2 remains IN PROGRESS. Peer pitch_005 events and later Clipper handoff stay
+pending under the existing sequence; no Phase 3.
+
 ### Feature support validity checked (2026-10-06)
 
 The [feature-support report](phase2_feature_support_validation_20261006.md)
