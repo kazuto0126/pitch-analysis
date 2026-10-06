@@ -177,6 +177,9 @@ locates pitch_003 displacement in the raw model output and explains why existing
 tracking continuity warnings miss it. The subsequent
 [warning design and regression inventory](phase2_warning_design_20261006.md)
 fix separate evaluation targets and known cases before any new implementation.
-Candidate image-motion and local-arm evidence remains proposed only; no optical-flow
-benchmark or new warning predictions exist. Human GT remains evaluator-only,
+The subsequent [five-clip offline image/geometry experiment](phase2_image_geometry_experiment_20261006.md)
+measures candidate image-motion and local-arm evidence on 592 saved frames.
+Feature drift and inconsistent local-joint separation prevent accepting it as
+a reliable warning policy. Human GT remains evaluator-only; no new warning
+predictions or production thresholds exist,
 and prediction abstention cannot silently remove eligible GT from primary metrics.

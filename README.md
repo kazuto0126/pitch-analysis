@@ -40,7 +40,8 @@ HSU 已完成 `pitch_003` 全115格12關節覆核，並提供2026-10-05 10:14（
 現有tracking連續性警示漏掉該18格；插值與平滑未修正這段偏移。
 診斷包含人工／raw／processed對照圖，未改演算法或門檻。
 [警示設計與驗證清單](docs/phase2_warning_design_20261006.md)已固定五支592格及14個已知案例，
-下一步先量測影像／幾何證據；目前尚未實作新警示。
+[離線影像／幾何實驗](docs/phase2_image_geometry_experiment_20261006.md)已完成五支量測及人工參考比較。
+逐格移動差異提供錯位線索，但影像特徵會漂離投手、手臂證據跨片不一致；尚未實作新警示。
 Phase 2 仍在進行中；
 詳見 [Phase 2 reliability](docs/phase2_reliability.md) 與
 [manual ground truth](docs/phase2_ground_truth.md)。

@@ -11,11 +11,45 @@ PitcherSelector rule, pose algorithm, interpolation, or smoothing policy was
 changed.
 
 **Phase 2 = IN PROGRESS — reliability gaps measured; pitch_003 manual X/Y reviewed.** HSU's
-five qualitative reviews, warning comparison and pitch_003 visible-coordinate comparison are complete. The baseline runner,
+five qualitative reviews, warning comparison, pitch_003 visible-coordinate comparison
+and five-clip offline image/geometry measurements are complete. The baseline runner,
 reports, and annotation workflow are available; program execution is not a
 Phase 2 acceptance result.
 
 ## Phase 2 baseline
+
+### Offline image/geometry evidence measured (2026-10-06)
+
+The [five-clip measurement report](phase2_image_geometry_experiment_20261006.md)
+compares frozen experimental image motion and raw 2D arm geometry against the
+existing HSU GT and reviewed Tsai/HSU coordinates. All 592 frames were measured
+without new formal-clip pose inference or production algorithm changes. Producer
+inputs exclude human annotations; the separate evaluator uses them only after
+measurement. No warning decisions, fitted thresholds or model training exist.
+
+Adjacent-step discrepancy shows exploratory separation for pitch_003's 18
+displaced frames (conditional AUC .924190 within that clip). Pooled evidence has
+18/21 positive frames with values; the three skeleton-loss positives remain
+missing, not successful detections. All measured major positives come from one
+known interval. Normal motion overlaps with discrepancy, cumulative evidence is
+weaker, and local elbow/wrist/geometry separation varies across clips. Actual
+feature inspection shows foreground drift despite numerically successful KLT
+and sometimes small round-trip error. This is not an accepted warning detector.
+
+Output: `analysis_results/phase2_image_geometry_measurements_20261006_01/`;
+final evaluator output: `evaluation_02/`. The original `evaluation/` remains
+preserved; only a pooled normalized-unit key was corrected, with identical values.
+1205 visible-coordinate comparisons, all GT denominators and conditional AUCs
+were independently checked. 295 protected files and 42 evaluator sources are
+unchanged. Full suite rerun: **158 passed / 0 failed / 0 errors / 1 skipped**
+(159 discovered; real-video E2E requires explicit dataset configuration).
+The initial sandbox attempt had 68 Windows strict-realpath permission errors;
+unchanged tests/validators passed on the permitted retry outside the sandbox.
+
+Next: propose a bounded image-evidence validity experiment before choosing any
+new diagnostic policy. Phase 2 remains IN PROGRESS; peer pitch_005 event
+supplement and evidence-based acceptance remain pending. Clipper single-pitch
+MP4 + metadata handoff stays deferred until stabilization; no Phase 3.
 
 ### Warning design and regression inventory ready (2026-10-06)
 
@@ -23,7 +57,8 @@ The [warning design](phase2_warning_design_20261006.md) and
 [machine-readable evaluation plan](evaluation_plans/phase2_warning_design_20261006.json)
 fix separate targets for major pose alignment, local joint reliability, selection
 breaks and insufficient image evidence. This is **design only**: no new warning
-detector, optical-flow experiment, diagnostic thresholds or algorithm changes.
+detector, diagnostic thresholds or algorithm changes were included in this
+design checkpoint. The later offline measurement experiment is recorded above.
 The plan restricts human GT/X/Y to evaluation, keeps source predictions immutable,
 and requires exact-frame metrics, per-pitch false warnings, interval coverage,
 decision abstention and source binding. Model abstention cannot remove difficult
@@ -34,7 +69,7 @@ screen counts independently reproduced. 295 protected source hashes unchanged;
 five canonical GT schemas plus direct MP4 filename/content hashes and the reviewed
 manual schema passed. Output: `analysis_results/phase2_warning_design_20261006_01/`.
 Existing tests remain historical (147 passed / 0 failed / 1 skipped); not rerun.
-Next: offline image-motion/geometry measurement on these five clips, with evidence
+The then-planned next step was offline image-motion/geometry measurement, with evidence
 and false-warning analysis before selecting a diagnostic policy or implementing
 additive warnings. This dataset is known development/regression evidence, not an
 independent holdout. Phase 2 acceptance, peer pitch_005 event supplement and the
@@ -1265,7 +1300,9 @@ sequence agreed with the user on 2026-09-28:
    arm frames. Review the completed visible-coordinate errors;
    keep raw-overlay judgments distinct from processed availability.
 3. Use both forms of evidence to decide whether pose/tracking reliability needs
-   changes. Any such change is separate from this completed diagnostic comparison;
+   changes. The offline image/geometry experiment is complete; first address
+   unverified foreground support and normal-motion overlap in a bounded proposal.
+   Any production change is separate from these completed comparisons;
    do not treat successful execution as Phase 2 acceptance.
 4. Once Phase 2 is stable and accepted on evidence, proceed to the agreed
    pitcher-motion analysis work. Do not automatically begin Phase 3.
