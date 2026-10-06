@@ -1,0 +1,174 @@
+{
+  "purpose": "Actual HSU membership supplement reply; anatomical GT unchanged",
+  "reviewer_code": "HSU",
+  "recorded_on_local_date": "2026-10-06",
+  "reviewed_at_utc": null,
+  "raw_user_reply": "86：1=o、2=o、3=T、4=o、5=T、6=T和95：1=o、2=T",
+  "normalization": "Uppercase only; preserve original T for86/q3 pending category clarification",
+  "source_query_manifest": {
+    "path": "analysis_results\\phase2_membership_supplement_20261006_01\\query_manifest.json",
+    "sha256": "58b33ece6c15f75acbdce462998e7e20a9e6ba5b8b14dc78e00e15e548dbd388"
+  },
+  "source_video": {
+    "path": "input\\yoshinobu_yamamoto\\phase1_final\\pitch_003.mp4",
+    "sha256": "5c08dba98504d998536dfd0f0fab598760400612c9049445a68120e68fdf024c"
+  },
+  "display_files": [
+    {
+      "frame_index": 86,
+      "raw_image": "analysis_results\\phase2_membership_supplement_20261006_01\\raw_frames\\pitch_003_frame_0086.png",
+      "raw_sha256": "94b040037e40fb6f9bce8dfc8d534c3cec2a75ba5e513c17fafa0654490587b6",
+      "display_image": "analysis_results\\phase2_membership_supplement_20261006_01\\pitch_003_frame_0086_review.png",
+      "display_sha256": "041137d1d8be5771af329c6a1f039a4c5f2a19623fbf97a1b665c95bbe5f555b"
+    },
+    {
+      "frame_index": 95,
+      "raw_image": "analysis_results\\phase2_membership_supplement_20261006_01\\raw_frames\\pitch_003_frame_0095.png",
+      "raw_sha256": "9a6c63f66e00f6a2b40d7144cd30bc986c0cc4deaa2ff3fd6d1d682aba3e34b5",
+      "display_image": "analysis_results\\phase2_membership_supplement_20261006_01\\pitch_003_frame_0095_review.png",
+      "display_sha256": "31b91e2a1f93cac77e8ea4dc1ff10e3142d135be82177095a47965098a1c2dba"
+    }
+  ],
+  "responses_received": 8,
+  "region_clarification_pending": 1,
+  "queries": [
+    {
+      "query_id": "pitch_003_membership2_f0086_q1",
+      "frame_index": 86,
+      "display_number": 1,
+      "image_xy_px": [
+        199.5953826904297,
+        195.5159912109375
+      ],
+      "timestamp_ms": 2866.6666666666665,
+      "raw_image_sha256": "94b040037e40fb6f9bce8dfc8d534c3cec2a75ba5e513c17fafa0654490587b6",
+      "previous_query_id": "pitch_003_f0086_q1",
+      "actual_reply_code": "O",
+      "resolved_code": "O",
+      "region_status": "human_confirmed",
+      "confidence": null,
+      "reviewer_note": null
+    },
+    {
+      "query_id": "pitch_003_membership2_f0086_q2",
+      "frame_index": 86,
+      "display_number": 2,
+      "image_xy_px": [
+        207.1212921142578,
+        188.2799072265625
+      ],
+      "timestamp_ms": 2866.6666666666665,
+      "raw_image_sha256": "94b040037e40fb6f9bce8dfc8d534c3cec2a75ba5e513c17fafa0654490587b6",
+      "previous_query_id": "pitch_003_f0086_q2",
+      "actual_reply_code": "O",
+      "resolved_code": "O",
+      "region_status": "human_confirmed",
+      "confidence": null,
+      "reviewer_note": null
+    },
+    {
+      "query_id": "pitch_003_membership2_f0086_q3",
+      "frame_index": 86,
+      "display_number": 3,
+      "image_xy_px": [
+        345.3405456542969,
+        312.5114440917969
+      ],
+      "timestamp_ms": 2866.6666666666665,
+      "raw_image_sha256": "94b040037e40fb6f9bce8dfc8d534c3cec2a75ba5e513c17fafa0654490587b6",
+      "previous_query_id": "pitch_003_f0086_q3",
+      "actual_reply_code": "T",
+      "resolved_code": null,
+      "region_status": "clarification_pending",
+      "confidence": null,
+      "reviewer_note": null
+    },
+    {
+      "query_id": "pitch_003_membership2_f0086_q4",
+      "frame_index": 86,
+      "display_number": 4,
+      "image_xy_px": [
+        189.89382934570312,
+        187.1669158935547
+      ],
+      "timestamp_ms": 2866.6666666666665,
+      "raw_image_sha256": "94b040037e40fb6f9bce8dfc8d534c3cec2a75ba5e513c17fafa0654490587b6",
+      "previous_query_id": "pitch_003_f0086_q4",
+      "actual_reply_code": "O",
+      "resolved_code": "O",
+      "region_status": "human_confirmed",
+      "confidence": null,
+      "reviewer_note": null
+    },
+    {
+      "query_id": "pitch_003_membership2_f0086_q5",
+      "frame_index": 86,
+      "display_number": 5,
+      "image_xy_px": [
+        245,
+        235
+      ],
+      "timestamp_ms": 2866.6666666666665,
+      "raw_image_sha256": "94b040037e40fb6f9bce8dfc8d534c3cec2a75ba5e513c17fafa0654490587b6",
+      "previous_query_id": null,
+      "actual_reply_code": "T",
+      "resolved_code": "T",
+      "region_status": "human_confirmed",
+      "confidence": null,
+      "reviewer_note": null
+    },
+    {
+      "query_id": "pitch_003_membership2_f0086_q6",
+      "frame_index": 86,
+      "display_number": 6,
+      "image_xy_px": [
+        262,
+        255
+      ],
+      "timestamp_ms": 2866.6666666666665,
+      "raw_image_sha256": "94b040037e40fb6f9bce8dfc8d534c3cec2a75ba5e513c17fafa0654490587b6",
+      "previous_query_id": null,
+      "actual_reply_code": "T",
+      "resolved_code": "T",
+      "region_status": "human_confirmed",
+      "confidence": null,
+      "reviewer_note": null
+    },
+    {
+      "query_id": "pitch_003_membership2_f0095_q1",
+      "frame_index": 95,
+      "display_number": 1,
+      "image_xy_px": [
+        207.90061950683594,
+        224.477294921875
+      ],
+      "timestamp_ms": 3166.666666666667,
+      "raw_image_sha256": "9a6c63f66e00f6a2b40d7144cd30bc986c0cc4deaa2ff3fd6d1d682aba3e34b5",
+      "previous_query_id": "pitch_003_f0095_q3",
+      "actual_reply_code": "O",
+      "resolved_code": "O",
+      "region_status": "human_confirmed",
+      "confidence": null,
+      "reviewer_note": null
+    },
+    {
+      "query_id": "pitch_003_membership2_f0095_q2",
+      "frame_index": 95,
+      "display_number": 2,
+      "image_xy_px": [
+        234,
+        260
+      ],
+      "timestamp_ms": 3166.666666666667,
+      "raw_image_sha256": "9a6c63f66e00f6a2b40d7144cd30bc986c0cc4deaa2ff3fd6d1d682aba3e34b5",
+      "previous_query_id": null,
+      "actual_reply_code": "T",
+      "resolved_code": "T",
+      "region_status": "human_confirmed",
+      "confidence": null,
+      "reviewer_note": null
+    }
+  ],
+  "confidence_inferred": false,
+  "canonical_ground_truth_or_original_reply_modified": false
+}

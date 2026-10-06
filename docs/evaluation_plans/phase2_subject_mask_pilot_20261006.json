@@ -1,0 +1,52 @@
+{
+  "purpose": "Bounded shadow measurement of same-model person masks; no production changes",
+  "source_video": {
+    "path": "input\\yoshinobu_yamamoto\\phase1_final\\pitch_003.mp4",
+    "sha256": "5c08dba98504d998536dfd0f0fab598760400612c9049445a68120e68fdf024c"
+  },
+  "width": 510,
+  "height": 628,
+  "total_frames": 115,
+  "model_path": "models/pose_landmarker_full.task",
+  "model_sha256": "5134a3aad27a58b93da0088d431f366da362b44e3ccfbe3462b3827a839011b1",
+  "question_snapshots": [
+    "analysis_results/phase2_feature_membership_pilot_20261006_02/query_manifest.json",
+    "analysis_results/phase2_membership_supplement_20261006_01/query_manifest.json"
+  ],
+  "options": {
+    "num_poses": 4,
+    "min_pose_detection_confidence": 0.5,
+    "min_pose_presence_confidence": 0.5,
+    "min_tracking_confidence": 0.5,
+    "output_segmentation_masks": true
+  },
+  "running_mode": "VIDEO; every clip frame processed in original order; native rounded PTS, no jumps to query frames",
+  "source_hashes": {
+    "input\\yoshinobu_yamamoto\\phase1_final\\pitch_003.mp4": "5c08dba98504d998536dfd0f0fab598760400612c9049445a68120e68fdf024c",
+    "models/pose_landmarker_full.task": "5134a3aad27a58b93da0088d431f366da362b44e3ccfbe3462b3827a839011b1",
+    "src/pitch_analysis/pose_estimator.py": "beb8a3a295712f16ed75bbd9545e0a2acb286c325ae4ae62d1ad8f1631250046",
+    "src/pitch_analysis/subject.py": "c5cae1ace96db5b9f3229f4f5e41870d420370676d99dea0abd03dcad3748276",
+    "scripts/measure_subject_mask_pilot.py": "608a3adbe5ee7dd08f572bf210606e71468d4772b3fa5b4e5c30252955ac284f",
+    "analysis_results/phase2_feature_membership_pilot_20261006_02/query_manifest.json": "2a6ad342b8f833e9555fc02df83b491ee2def0061b97d38f66050e74ace20a6a",
+    "analysis_results/phase2_membership_supplement_20261006_01/query_manifest.json": "58b33ece6c15f75acbdce462998e7e20a9e6ba5b8b14dc78e00e15e548dbd388"
+  },
+  "human_annotation_inputs": [],
+  "parameters": {
+    "mask_sampling": "bilinear at fixed source-image xy; last row/column edge value retained",
+    "mask_candidate_association": "ordinal in same new SDK result; count/shape/missing mismatch remains missing",
+    "selection": "existing unchanged PitcherSelector on new candidates; old selected index never used",
+    "new_output": "analysis_results/phase2_subject_mask_pilot_20261006_01",
+    "save_mask_frames": [
+      86,
+      95
+    ],
+    "display_alpha": 0.4,
+    "mask_cutoff": null,
+    "warning_thresholds": null
+  },
+  "limits": [
+    "Same model mask and pose errors may correlate; not independent identity evidence.",
+    "Sparse targeted development queries cannot yield full-mask IoU, full-clip accuracy or Phase2 acceptance.",
+    "Question coordinates are sampled after inference; they never influence detection, selection, masks or ROI."
+  ]
+}

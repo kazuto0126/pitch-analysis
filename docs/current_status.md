@@ -19,26 +19,44 @@ Phase 2 acceptance result.
 
 ## Phase 2 resumed by the user (2026-10-06)
 
-The user explicitly resumed Phase 2 after the stop checkpoint below. A bounded
-reference check is ready: five previous membership positions need explicit
-human confirmation and three new fixed image positions supplement the sparse
+The user explicitly resumed Phase 2 after the stop checkpoint below. HSU has
+completed all eight supplementary questions: five previous membership positions
+were rechecked and three new fixed image positions supplement the sparse
 reference. Raw context and separate larger crops reduce label/position ambiguity.
 Frame86 has six questions; frame95 has two (new 95/q1 is the original 95/q3).
 Output: `analysis_results/phase2_membership_supplement_20261006_01/`.
 The [frozen query plan](evaluation_plans/phase2_membership_supplement_20261006.json)
 contains coordinates/source hashes, never expected human labels.
 
-All eight answers are unreviewed/null. Original HSU replies and anatomical GT
-remain unchanged; possible ambiguity is a reason to ask, not authority to
-relabel. The five rechecked positions are pending confirmation for the next
-mask evaluation, not silently reused as resolved references. Three new positions
-are image samples, not new joints or tracked optical-flow features. These are
-targeted development examples, not random samples or a holdout benchmark.
+The generation manifests remain blank snapshots. Actual replies are separate:
+[initial transcription](../review_tools/feature_membership/HSU_pitch003_membership_supplement_20261006_01.json)
+and [confirmed version](../review_tools/feature_membership/HSU_pitch003_membership_supplement_20261006_02.json).
+HSU explicitly clarified frame86/q3 as P (pitcher leg), preserving the original
+reply T and prior review O. Supplement: **3 T / 1 P / 4 O**. Latest references
+at all **11 unique positions: 3 T / 2 P / 6 O**. Two explicit rechecks changed
+codes (86/q3 O to P; 86/q4 P to O); older records and their historical comparison
+remain intact. New positions are image samples, not anatomical joints or tracked
+features. These are targeted development examples, not a random/holdout benchmark.
 
 Two raw PNGs and untouched context panels match previous exact decoded frames;
 295 protected files, 44 prior sources and original membership-comparison sources
-remain unchanged. No new pose/mask inference, warning decision or production
-change occurred. Full suite remains the latest stop-checkpoint result below.
+remain unchanged. A bounded same-model shadow experiment now ran separately,
+with no human replies supplied to inference. The pinned SDK's float mask reader
+aborted in two isolated processes with `Check failed: 1 == ChannelSize() (1 vs. 4)`.
+The subsequent fail-closed run records all **11 mask values missing**; it does
+not repair the reader or fabricate mask probabilities. Accuracy/AUC/IoU remain
+null. The 115-frame selection trace and 3,795 raw landmark rows exactly match
+the preserved baseline; shared errors and unknown identity remain possible.
+No production code, dependency, threshold, warning decision or canonical GT changed.
+Report: [same-model mask experiment](phase2_subject_mask_pilot_20261006.md).
+Output: `analysis_results/phase2_subject_mask_pilot_20261006_02/`;
+comparison: `evaluation_01/human_mask_comparison.json`.
+Full suite: **171 passed / 0 failed / 0 errors / 0 skipped**, including all five
+formal real-video E2E inputs. Four new tests cover safe failure and sample edges.
+Independent integrity verification preserves 295 protected files, 44 prior
+sources and five original membership-comparison sources; the failed-run code
+archive still matches its original frozen plan. Test logs/results and integrity
+check are under the new output. Tests passing do not make unreadable masks usable.
 The shared-folder todo remains deferred until Phase 2 is stable; no Phase 3.
 
 ## Historical stop checkpoint requested by the user (2026-10-06)

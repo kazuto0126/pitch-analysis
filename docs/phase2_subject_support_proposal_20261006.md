@@ -1,26 +1,30 @@
 # Phase 2：獨立核對特徵歸屬與主體範圍的下一步
 
-日期：2026-10-06。狀態：**人工答案8／8，局部特徵對照完成；候選mask實驗仍為方案。**
+日期：2026-10-06。狀態：**接續人工答案8／8；候選mask實驗已嘗試，SDK讀取失敗，證據不足。**
 Phase 2 = IN PROGRESS。
 
 ## 恢復 Phase 2 後的八題確認
 
 使用者已要求繼續 Phase 2。原八題回答與對照保持原樣；其中五個位置的可見歸屬
 值得再核對，不由 Codex 根據圖片自行改答案。新增三個固定影像位置，以補足參考。
-新問題全部為未覆核；沒有預填T或其他答案。
+產生問題時全部未覆核，沒有預填答案；現在已收到全部真人回答。
 
 - 新資料：`analysis_results/phase2_membership_supplement_20261006_01/`。
 - [固定題目與來源](evaluation_plans/phase2_membership_supplement_20261006.json)。
 - 86格1–4保留原題位置；5、6為新增位置。95格新1號對應舊3號；2號為新增位置。
 - 每題單獨放大，圈的中心保留原像素，上方全景原圖沒有畫記號。
-- 先依本人重新確認另存版本與來源；未確認的五點不當成下一次mask評估的已解決參考。
+- 本人重新確認已另存版本與來源；86／3由本人補充為P（投手腿部）。
 - 原T／P／O／?含義沿用。頭頸、手臂與腿屬P；只有可見胸背腰的軀幹／衣物屬T。
 
 這是已知診斷案例的定向核對，不是隨機／獨立測試集。新增位置不是關節，也不是
 既有追蹤特徵；之後僅供evaluator抽取同位置mask值，不能成為模型／selector的提示。
-本次沒有跑新mask或pose推論，沒有變更threshold、演算法或原人工GT。
+本輪八題為3T、1P、4O；合併最新明確答案共11個不同位置（3T、2P、6O）。
+原答案與初次轉錄保持原樣，確認版本見
+[HSU紀錄](../review_tools/feature_membership/HSU_pitch003_membership_supplement_20261006_02.json)。
+後續獨立mask實驗因SDK原生讀取錯誤無可用數值；完整紀錄見
+[實驗報告](phase2_subject_mask_pilot_20261006.md)。沒有變更threshold、演算法或原人工GT。
 
-## 八點試看與人工回覆
+## 原先八點試看與人工回覆（歷史紀錄）
 
 已完成的003十二關節、五支定性GT及事件都沿用。
 本次只新增「影像特徵的圓圈中心是否落在可見投手上」這個人工問題。
@@ -80,9 +84,11 @@ T與P都屬可見投手，但只有T直接提供軀幹特徵的支援；手部�
 參考：[MediaPipe官方Python指南](https://developers.google.com/edge/mediapipe/solutions/vision/pose_landmarker/python#configuration_options)。
 
 本機正式`MediaPipePoseEstimator`只回傳landmarks，保存的baseline沒有person mask。
-因此**目前沒有可直接比較的mask，也尚未跑新推論**。
+歷史baseline沒有保存mask。本輪隔離推論已有mask物件，但無法可靠取出數值；
+**目前仍沒有可直接比較的mask值**。
 模型SHA：`5134a3aad27a58b93da0088d431f366da362b44e3ccfbe3462b3827a839011b1`。
-本次只核對SDK欄位、模型檔案及既有wrapper，沒有建立或執行landmarker實例。
+先前方案只核對SDK欄位；這次隔離實驗執行同模型、原信心設定與selector，
+讀取float32 mask的`numpy_view()`原生中止。安全報告將全部11點保留missing。
 
 這是同一pose模型的附加輸出，錯誤可能相關；「person mask」也不能自行證明其屬於投手。
 若之後進行實驗，使用獨立shadow runner與新目錄，不修改正式wrapper或原33-landmark contract。
@@ -104,11 +110,11 @@ T與P都屬可見投手，但只有T直接提供軀幹特徵的支援；手部�
 5. person membership不衡量關節中心誤差，不能宣稱修好了被遮住的肘腕。
 6. 兩格八點只驗證試看與局部點歸屬；不能算整張mask IoU、全片正確追蹤或Phase 2通過。
 
-八點真人回覆已收到；本次只對照保存的數值特徵，沒有mask可供評估。
+原八點與接續八點真人回覆均已收到；SDK讀取失敗使mask數值全部不可用。
 若第一個候選在多人場景不能綁定投手，先記錄限制，再提出下一個有界方案；
 不自行大規模替換模型或調正式gate。
 
-## 八點人工對照結果
+## 原八點人工對照結果（保留當時回答，最新重核對見上方）
 
 HSU原話：`86:1=o,2=o,3=o,4=p;95:1=o,2=o,3=o,4=p`。
 只將代碼轉成大寫；不補猜O是打者、裁判或哪一塊背景，也不補猜P的細分部位。
@@ -134,7 +140,7 @@ HSU原話：`86:1=o,2=o,3=o,4=p;95:1=o,2=o,3=o,4=p`。
 沒有T正例，不能衡量軀幹mask覆蓋；若擴充，需另外取得人工確認的T與其他場景參考。
 兩個P正例同樣不足以建立完整身體mask的驗收結果。
 
-## 本次驗證紀錄
+## 原八點驗證紀錄（歷史）
 
 八個query與原保存feature ID／坐標、FB分群選點一致；兩張原圖與MP4解碼pixel完全一致。
 原圖及顯示圖hash、來源SHA與generator code hash保存於manifest。
@@ -145,6 +151,7 @@ HSU原話：`86:1=o,2=o,3=o,4=p;95:1=o,2=o,3=o,4=p`。
 人工對照後重新核對295份保護檔案、44份既有來源，皆未變；
 紀錄在`evaluation_01/review_integrity_check.json`。
 
-下一步沿本文件的有界方案核對主體mask，並補足獨立參考所需的可見軀幹正例。
+原定下一步已嘗試；新的3個軀幹正例已由真人確認，但mask讀取問題仍待解決。
+下一步先提出不改正式環境的SDK相容性核對方案，不能以程序不再中止當作mask驗證通過。
 peer005事件補充仍待回傳；Phase 2尚未通過。
 Clipper少量single-pitch MP4＋metadata交接維持在Phase 2穩定且經證據驗收之後。
