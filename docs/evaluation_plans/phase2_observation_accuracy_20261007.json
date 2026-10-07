@@ -1,0 +1,41 @@
+{
+  "status": "frozen_before_assessment",
+  "created_at_utc": "2026-10-07T10:32:33.647556+00:00",
+  "pitch_id": "pitch_003",
+  "total_frames": 115,
+  "reference_scope": "all115frames/12joints; manual visible1205 eligible;173not_observable+2uncertain excluded onlyfromcoordinateerror",
+  "source_roles": {
+    "manual": "annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_42/pitch_003/manual_keypoints.json",
+    "raw": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_003/keypoints.json",
+    "processed": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_003/processed_keypoints.jsonl",
+    "metadata": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_003/video_metadata.json",
+    "pose": "analysis_results/phase2_yamamoto_20260925_01/reliability/pitch_003/pose_reliability.json",
+    "diagnostics": "analysis_results/phase2_pitch003_diagnostics_20261006_01/per_joint_diagnostics.json",
+    "qualitative_gt": "analysis_results/phase2_yamamoto_20260925_01/ground_truth/pitch_003/ground_truth.json",
+    "original_video": "input/yoshinobu_yamamoto/phase1_final/pitch_003.mp4",
+    "clean_config": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_003/pose_clean.clean.json"
+  },
+  "source_hashes": {
+    "annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_42/pitch_003/manual_keypoints.json": "a970354b14f728d38af97336d6872900625c956e7a105f75ab9cdcff0aa77735",
+    "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_003/keypoints.json": "45728260fbc2dfa4632472736e86a30d893cf99268838f4f3c2ec809a3e2aa39",
+    "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_003/processed_keypoints.jsonl": "e1e4c34bfc211bf2c6b28c16fac1c1f87803583b38240b280a1f8045ed8d449f",
+    "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_003/video_metadata.json": "79bcd048187fd1901c5ab285119919aa82a78cc2eda4339a5da1228a2cce42c7",
+    "analysis_results/phase2_yamamoto_20260925_01/reliability/pitch_003/pose_reliability.json": "4a1ed54c1287117cb4f802022fb71aba80f1238f86c47d4a47c9cf2a238126ec",
+    "analysis_results/phase2_pitch003_diagnostics_20261006_01/per_joint_diagnostics.json": "9b420bcf0d3f37c1b70830745ba8757c38867c544e37fd7f201fa527e07b365b",
+    "analysis_results/phase2_yamamoto_20260925_01/ground_truth/pitch_003/ground_truth.json": "c839f5bd767c82d8be0506c15bb83a22230f4ea7bf83dc240c321bfa3876b240",
+    "input/yoshinobu_yamamoto/phase1_final/pitch_003.mp4": "5c08dba98504d998536dfd0f0fab598760400612c9049445a68120e68fdf024c",
+    "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_003/pose_clean.clean.json": "e18d4e94c66de91419a3274710818343690db57e9c2dac364d0ad13c2efbe8dc"
+  },
+  "runner_sha256": "10b511aeb95ea1dd5bbc1c251acbc4e84685429a8e0b8ec9123f8d7315f9d803",
+  "tests_sha256": "1190c1e6ac1f5f3cd6b1bdcbec3020c3e39d10cfab4da083115a12cd680a71be",
+  "old_diagnostics_reaggregated": true,
+  "new_inference": false,
+  "model_or_processing_changes": false,
+  "comparison": "state-conditioned raw/clean errors; paired sameusablecohort; keepmissing in denominator withnullerror",
+  "error_acceptance_threshold": null,
+  "all_nonvisible_inferred_coords_excluded": true,
+  "coordinate_units": "savedraw/cleanx*width,y*height; notinternalx_height; no clamp; notvisualizationmedian",
+  "manual_inputs_evaluator_only": true,
+  "phase2_acceptance": "IN PROGRESS",
+  "shared_folder_stop_gate": "Stop and report whenPhase2stable and integrationtodo reached; waitfornewuserstartinstruction"
+}

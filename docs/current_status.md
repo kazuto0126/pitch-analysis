@@ -17,7 +17,53 @@ are complete. The baseline runner,
 reports, and annotation workflow are available; program execution is not a
 Phase 2 acceptance result.
 
-## Latest Phase 2 checkpoint (2026-10-07): fixed clothing appearance diagnostic
+## Latest Phase 2 checkpoint (2026-10-07): usable reviewed baseline exports
+
+[Reviewed-output guide](phase2_reviewed_reliability_20261007.md).
+All five formal clips now have new **reviewed_overlay.mp4** and
+**reviewed_reliability.json** under `analysis_results/phase2_reviewed_baseline_20261007_01/`.
+The source-bound derived view covers592 frames/3552 focus-joint rows. It copies
+HSU's original intervals/reasons and existing model observed/interpolated/missing
+states independently. A Chinese panel marks003's87–104 human-confirmed major
+failure,004's75–76 and005's54 human-confirmed breaks, and each focus joint's review.
+Raw/processed coordinates, baseline warnings and canonical human annotations
+are unchanged. This is usable post-review evidence for known clips, **not a new
+automatic detector, new GT schema, coordinate correction or Phase2 PASSED result**.
+
+Each output is H264/yuv420p/faststart. All original/new video frame counts,
+dimensions and FPS decode checks pass; every pre-encoding source-overlay region
+is unchanged. Reencoded decoded pixels are lossy. All five key-frame layouts,
+including major failure, breaks and interpolation, were visually inspected.
+The JSON retains uncertain events, unavailable points and per-point use restrictions;
+raw-overlay reliable labels never certify cleaned interpolation or visualization median.
+
+The [state-conditioned coordinate assessment](phase2_observation_accuracy_20261007.md)
+also completes evaluation of saved003 data: all1380 reference rows and15 groups
+reproduce. Of1205 visible references,1150 are observed/24 interpolated/31 missing.
+On the same1174 usable points, raw mean error21.9504px vs clean22.0292px;
+interpolation improves11 points and worsens13.97.43% retention is not accuracy.
+No new pixel threshold or confidence gate is selected.
+
+Full suite **203 passed /0 failed /0 errors /0 skipped**, including all five real
+formal inputs, about47 seconds. Six observation-assessment tests and twelve
+review-export tests added; full logs/results live in the reviewed-output directory.
+Implementation/frozen source plans are committed; generated videos are local
+derived artifacts and can be reproduced from the bound sources.
+Independent read-only audit matches all592 frame joins/3552 rows and summaries,
+all five decoded videos and22 exact PNG source regions;342 unique bound/historical
+source files are unchanged. Receipt: `read_only_audit.json` in the export directory.
+
+[Acceptance scope](phase2_acceptance_review_20261007.md) now separates original
+completed **5/5 canonical reviewed GT** from the separately requested005 peer
+event supplement, still awaiting its actual return. Uncertain events are allowed
+review results, not proof that canonical review is incomplete. Baseline evaluation
+is complete; automatic reliability remains IN PROGRESS because its known major-
+failure misses/false warnings are unresolved. This export does not remedy them.
+No reliable finish date follows from the earlier conditional2–4-session estimate.
+At the deferred shared-folder todo, stop/report and await the user's start instruction.
+No shared-folder integration, Phase3, new pitcher or production algorithm change.
+
+## Historical Phase 2 checkpoint (2026-10-07): fixed clothing appearance diagnostic
 
 [Result and remaining-work report](phase2_subject_appearance_results_20261007.md).
 New isolated output: `analysis_results/phase2_subject_appearance_20261007_01/`.

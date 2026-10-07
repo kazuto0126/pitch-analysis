@@ -5,6 +5,12 @@
 
 ## 已完成
 
+- 五支影片新增可播放的中文覆核 overlay 與 `reviewed_reliability.json`：
+  **592格、3,552列重要關節**的原人工判讀／原因與原模型observed／interpolated／missing分開顯示。
+  003的87–104格現在明確顯示人工重大錯位；004的75–76、005的54格显示人工中斷。
+  這是已知baseline的人工覆核後視圖，原骨架不修正、插值不冒稱已人工確認。
+- 003同點座標評估補齊：同1,174個可用點raw均誤差21.95px、clean22.03px；
+  24個可見插值點11改善／13增加。97.43%是可用點保留率，不是準確率。
 - 正式 5 支山本由伸單球影片已完成 Phase 1 驗收；舊 `pitch_003`–`005` 已封存，可恢復。
 - Phase 2 baseline 已有逐格原始／處理後骨架、overlay、關節可靠性與追蹤報告。
 - HSU 完成 5/5 定性人工覆核；Tsai 標註、HSU 覆核的 `pitch_003` 115 格、12 關節座標已完成比較：1,205 個可見點，173 個不可觀測點、2 個不確定點分開保留。
@@ -42,6 +48,18 @@
 
 ## 最新完整測試（Phase 2 接續）
 
+**203 passed、0 failed、0 errors、0 skipped**；包含正式5片真影片E2E，耗時約47秒。
+本輪增加6項同點誤差評估測試及12項覆核輸出測試；沒有待修失敗。
+紀錄：`analysis_results/phase2_reviewed_baseline_20261007_01/full_test_suite_result.json`。
+原片／原overlay／新overlay皆逐格解碼核對，新增影片均為H264/yuv420p。
+592格新增面板前核對原overlay區域像素相同；編碼後是有損壓縮。
+原人工GT、原模型預測及來源保護清單維持不變；新版關鍵畫面已實際檢查。
+獨立覆核確認全部592格／3,552列逐項一致、22張PNG原overlay區域像素一致，
+342份不重複綁定／歷史保護來源未變；紀錄在新輸出`read_only_audit.json`。
+測試全綠與人工視圖可用，不代表自動警示或Phase 2通過。
+
+## 上一完整測試（外觀診斷 checkpoint）
+
 **185 passed、0 failed、0 errors、0 skipped**；包含正式5支影片的真影片 E2E，耗時約54秒。
 本輪新增9項測試，檢查來源邊界／退化、同分競爭、常數分母、原始時間對齊、圖片保存失敗、receipt被改及人工參考缺失；沒有待修失敗。
 紀錄：`analysis_results/phase2_subject_appearance_20261007_01/full_test_suite_result.json`。
@@ -61,17 +79,14 @@
 
 ## 目前接續位置
 
-八題可見歸屬確認及11點數值比較已完成，不需重答。公開API解決點級讀取，
-但mask單獨不足以確認投手身份。[追加原圖外觀證據量測](phase2_subject_appearance_results_20261007.md)已完成，
-固定小patch亦不足以建立可信的主體警示。本輪停在有界診斷結果，不自動填來源歸屬、不修改正式演算法。
-正式環境、模型、演算法和門檻保持不變。
-覆核輸出：`analysis_results/phase2_membership_supplement_20261006_01/`；
-最新實驗輸出：`analysis_results/phase2_subject_appearance_20261007_01/`。
-逐點結果與限制見 [11點比較報告](phase2_subject_mask_points_20261006.md)。
-人工來源、失敗紀錄、分母與限制見 [mask 實驗報告](phase2_subject_mask_pilot_20261006.md)。
-讀取相容性probe：`analysis_results/phase2_mask_api_probe_20261006_01/`。
-共用資料夾接入仍遵守上方未啟動待辦；Phase 3 與新投手未開始。
-Phase 2尚缺可信警示方案、五片逐格驗證與005事件補充。工作安排粗估為：
-若下一個證據方案可用、人工覆核順利，約再2–4個工作回合；若每天能進行一段工作，約2–4個工作日。
-這不是期限，方案若仍有無法分開的旁人／背景歧義，需再迭代；不能靠降低標準縮短。
+可直接使用的[人工覆核視圖](phase2_reviewed_reliability_20261007.md)已完成五片，
+輸出：`analysis_results/phase2_reviewed_baseline_20261007_01/`，先看`START_HERE.md`。
+五片原GT已5/5 reviewed；不確定事件合法保留，不需再重標已完成内容。
+[同點誤差評估](phase2_observation_accuracy_20261007.md)與
+[原驗收範圍對照](phase2_acceptance_review_20261007.md)也已完成。
+現有自動警示漏掉003整體錯位的18格；新增人工標記不是自動偵測修好。
+尚待具體、可驗證的自動警示改進與驗收；同學005獨立事件補充另外保留待辦。
+原2–4工作回合的粗估依賴可用證據和人工配合，不能作確定完成日。
+接續需先有可核對的方案，不繼續用小patch／mask分數當主體真值。
+共用資料夾接入仍遵守上方停止條件；Phase 3與新投手未開始。
 詳細歷史與資料位置見 [current_status.md](current_status.md)；供片需求見 [INPUT_REQUIREMENTS.md](INPUT_REQUIREMENTS.md)。
