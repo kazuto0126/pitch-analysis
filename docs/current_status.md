@@ -17,7 +17,49 @@ are complete. The baseline runner,
 reports, and annotation workflow are available; program execution is not a
 Phase 2 acceptance result.
 
-## Latest Phase 2 checkpoint (2026-10-07): usable reviewed baseline exports
+## Latest Phase 2 checkpoint (2026-10-07): review-aware use of saved 2D features
+
+[Feature-use guide](phase2_reviewed_features_20261007.md).
+New evaluator-only tool `scripts/export_reviewed_feature_quality.py` exports
+`reviewed_features.csv`, `reviewed_feature_quality.json` and a Chinese timeline
+for each formal clip under `analysis_results/phase2_reviewed_features_20261007_02/`.
+All592 frames/1184 feature rows remain. The two existing unsmoothed base values
+are retained; a separate nullable eligible_value requires finite saved raw
+observations and all three constituent joints' reviewed qualitative evidence,
+with no whole-frame review restriction. Elbow246/592 and lead-knee530/592 rows
+qualify;120/366 saved elbow values and36/566 saved knee values are withheld from
+that new field. Existing raw metrics counts350/548 remain unchanged.
+
+This prevents known questionable values being silently presented as eligible
+in this reviewed export. It is not a new automatic localization detector, numeric
+angle-accuracy claim, motion feature or Phase3. Original analysis files and the
+production analyze-pitch flow remain unchanged; the latter does not yet consume
+this sidecar. Feature-interpolated and smoothed values stay explicitly unverified
+because current-frame human review does not certify their neighboring support.
+Original missing states stay missing, held values null/CSV blank, and zero remains
+a genuine value. No resampling, new aggregate metrics or Phase1 threshold change.
+
+Frozen source plan checks formal identity/handedness/timestamps and reconstructs
+the reviewed view from canonical/model sources. Saved base values independently
+match original width/height-corrected processed geometry. Numerical tolerance is
+serialization-only, not accuracy acceptance. The initial_01 output and exact
+implementation snapshots remain; final_02 distinguishes uncertain/not_observable
+whole-frame reasons and retains human frame evidence, without changing eligibility.
+
+Full suite **215 passed /0 failed /0 errors /0 skipped**, including all five real
+formal inputs, about43 seconds;12 new tests cover constituent dependencies,
+raw/imputed provenance, alternate-variant limits, original values, missing/zero,
+source/timeline/aspect-ratio mismatches, conservative frame holds and CSV blank
+semantics. Test logs/results and read-only audit live under the final output.
+Five timeline layouts were visually checked.
+Independent read-only audit verifies all1184 rows, nullable CSV cells, complete
+source values/flags/evidence, all timeline colors and summaries;349 unique
+bound/protected files unchanged. All00387–104 feature rows remain held.
+Phase2 remains IN PROGRESS: automatic warning gaps and the separate005 peer event supplement are not resolved
+by applying reviewed evidence. Shared-folder integration remains deferred with
+the user's stop/report gate; no Phase3 or new pitchers.
+
+## Previous Phase 2 checkpoint (2026-10-07): usable reviewed baseline exports
 
 [Reviewed-output guide](phase2_reviewed_reliability_20261007.md).
 All five formal clips now have new **reviewed_overlay.mp4** and

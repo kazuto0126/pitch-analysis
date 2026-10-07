@@ -1,0 +1,169 @@
+{
+  "schema_version": "reviewed-feature-export-plan-v1",
+  "status": "frozen_before_file_export_after_unit_and_in_memory_source_preflight",
+  "created_at_utc": "2026-10-07T15:11:51.223218+00:00",
+  "scope": "Existing two unsmoothed 2D feature streams; known five reviewed baseline clips only",
+  "inference_run": false,
+  "prediction_gt_algorithm_or_threshold_change": false,
+  "new_motion_analysis_or_phase3": false,
+  "automatic_localization_improvement_claimed": false,
+  "human_review_use": "evaluator only: actual canonical review, never inference/selection/training",
+  "policy": "eligible iff finite saved base raw observation and all three original reviewed joints eligible and no confirmed/uncertain whole-frame issue; no new numeric accuracy acceptance",
+  "coordinate_integrity_check": "original width/height projection, abs1e-8/rel1e-10 numerical serialization tolerance only, no accuracy threshold",
+  "alternate_values": "retained unverified; never certify feature interpolation or smoothing from current-frame review",
+  "implementation": {
+    "runner": {
+      "path": "scripts/export_reviewed_feature_quality.py",
+      "sha256": "538cc00cc37f27d5248128411ae7ef6692b4a1a520cf8a7282650d484a619613"
+    },
+    "tests": {
+      "path": "tests/test_reviewed_feature_quality.py",
+      "sha256": "29f1b8c8fa3b87f4d48f4892503e63775de3bfa6c58c934910dbff5e2c9284ed"
+    },
+    "original_review_exporter": {
+      "path": "scripts/export_reviewed_reliability.py",
+      "sha256": "af30f6ab6c7352d0fe64b5d4919db63ad473699ad1b622c4b5839e3facdd9369"
+    },
+    "ground_truth_validator": {
+      "path": "src/pitch_analysis/ground_truth.py",
+      "sha256": "8d4f781726762492787c4a8cf1342b225d44911d86f518660f469f550d489603"
+    },
+    "ground_truth_schema": {
+      "path": "src/pitch_analysis/contracts/schemas/ground-truth-v1.json",
+      "sha256": "ed1953b61d8da305488f506830bd0928b7fd058d3d17e3fa14aa834157c1d87c"
+    },
+    "original_feature_code": {
+      "path": "src/pitch_analysis/features.py",
+      "sha256": "d0499df3cff573fc9eeadb8c6b0bf4c651708d65d152920295160f9bcfd19b6b"
+    },
+    "original_geometry_code": {
+      "path": "src/pitch_analysis/geometry.py",
+      "sha256": "6a01f5707ed57c7c0b2d4c386d82a6e814b075c1025609cf3d8a0acfb41137f1"
+    },
+    "original_feature_pipeline": {
+      "path": "src/pitch_analysis/pipeline.py",
+      "sha256": "f26adff03121acbc1285711da0763afd32958b85779073c8a72a562b3b8047da"
+    }
+  },
+  "font": {
+    "path": "C:\\Windows\\Fonts\\msjh.ttc",
+    "sha256": "1fd5fc7046e0eea753988ee06d1a5a731df68475614e2174fbba9b4800f392ac"
+  },
+  "clips": [
+    {
+      "pitch_id": "pitch_001",
+      "sources": {
+        "reviewed_reliability": {
+          "path": "analysis_results/phase2_reviewed_baseline_20261007_01/pitch_001/reviewed_reliability.json",
+          "sha256": "376c25eddd2580c928b0299489d13ce8a7f283e97c77b9e5a570cbe2a1231ee9"
+        },
+        "features": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_001/features.csv",
+          "sha256": "fb6a33374c3cc529d68f3f6cddce812394d31dce0c1b6b11db0071c9638ded00"
+        },
+        "metrics": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_001/metrics.json",
+          "sha256": "33dc1d53c459736e294354f75bb65b3aadbeca26bd033ea070af3bd5ee00e7ef"
+        },
+        "feature_quality": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_001/features.quality.json",
+          "sha256": "8752a2c0f2ab991440d235ff5ea3701e0cc9f03449883e1f9507203002729212"
+        }
+      }
+    },
+    {
+      "pitch_id": "pitch_002",
+      "sources": {
+        "reviewed_reliability": {
+          "path": "analysis_results/phase2_reviewed_baseline_20261007_01/pitch_002/reviewed_reliability.json",
+          "sha256": "b2f510d9d52a8dd2d1939fc37e5829b479716ac962b4ea72fc3b2b9396748569"
+        },
+        "features": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_002/features.csv",
+          "sha256": "85e0a099d09c7c562a3908e278a2f850f6b6b6f0caf68ead5e05dbe4b9277624"
+        },
+        "metrics": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_002/metrics.json",
+          "sha256": "4b0a04d0ca4119b1f24a67d2502b3caf87eba5722c1d040ea6e55aee7ce1aa6a"
+        },
+        "feature_quality": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_002/features.quality.json",
+          "sha256": "76cdbef7773014cafdb9a64ce9bb32881c36f8872fb3388c35713d8c807ef49b"
+        }
+      }
+    },
+    {
+      "pitch_id": "pitch_003",
+      "sources": {
+        "reviewed_reliability": {
+          "path": "analysis_results/phase2_reviewed_baseline_20261007_01/pitch_003/reviewed_reliability.json",
+          "sha256": "11bda72ebc85911bbf473f95f3a63fcf67443a33f13021cb2d36a889eca4f915"
+        },
+        "features": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_003/features.csv",
+          "sha256": "a4776071c2966f42fd42980a7f5678a2f0d5abebd5b9279dc235803bd4d9eeb6"
+        },
+        "metrics": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_003/metrics.json",
+          "sha256": "9ae3cee9a542cec8017a4302cca26a4ab64f6b52b693a83a1f778797315045ed"
+        },
+        "feature_quality": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_003/features.quality.json",
+          "sha256": "8582200547f8b33aa3afc729f7adf85dbbda859cd0dd0bc558914326c3fe236b"
+        }
+      }
+    },
+    {
+      "pitch_id": "pitch_004",
+      "sources": {
+        "reviewed_reliability": {
+          "path": "analysis_results/phase2_reviewed_baseline_20261007_01/pitch_004/reviewed_reliability.json",
+          "sha256": "800230fbafbe264e0d4c8bda66d57f101f9c18544ef76bf5a8b7709d48f5476a"
+        },
+        "features": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_004/features.csv",
+          "sha256": "bc9aa201b6280b9bc0f226074830c7930ad5615d0b18a8ab9d704842d86e4aa1"
+        },
+        "metrics": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_004/metrics.json",
+          "sha256": "c00a0f063316fe663ee5765e493cf1cda576a8190483333bdaa413798c9b1a98"
+        },
+        "feature_quality": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_004/features.quality.json",
+          "sha256": "a1c7bad159ef2b4cbb5d8e59339dce2d7c3a6320b23e8f4552202a3724d499c0"
+        }
+      }
+    },
+    {
+      "pitch_id": "pitch_005",
+      "sources": {
+        "reviewed_reliability": {
+          "path": "analysis_results/phase2_reviewed_baseline_20261007_01/pitch_005/reviewed_reliability.json",
+          "sha256": "cb7e308708cd5268d3ae59722a69ba62a9341e135c485d2803fe242c48d8f36c"
+        },
+        "features": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_005/features.csv",
+          "sha256": "f6b8c676df9928bfbc99463974578e288bdf9135c4fa5ef43b128427bfa7ba33"
+        },
+        "metrics": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_005/metrics.json",
+          "sha256": "90c88943454ec9264331b392026e310e70e6fb5fc74ca8b906a49d25d7b626f5"
+        },
+        "feature_quality": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_005/features.quality.json",
+          "sha256": "cc632f547a5548769dda65605137adc96e98ad3abfcfa2f49dd4f6ebc173c7e3"
+        }
+      }
+    }
+  ],
+  "output_directory": "D:\\project\\pitch-analysis\\analysis_results\\phase2_reviewed_features_20261007_01",
+  "checks": [
+    "all592frames/1184feature rows retained with exact original values",
+    "reviewed sidecar fully reproduces original GT/model states and provenance",
+    "saved flags/base values match original processed 2D geometry",
+    "original metrics raw counts/coverage retained and checked",
+    "null eligible value on every withheld row; no zero fill, resampling or altered source",
+    "all old evidence inventories unchanged",
+    "full suite with five formal real-video inputs"
+  ]
+}
