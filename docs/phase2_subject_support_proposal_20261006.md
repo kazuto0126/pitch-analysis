@@ -7,7 +7,11 @@ Phase 2 = IN PROGRESS。
 但一個O與五個T／P都為1，不能單靠mask值完全區分這批位置。
 歷史SDK整張讀取失敗與原方案保留於下文；沒有變更正式算法或選新cutoff。
 
-## 恢復 Phase 2 後的八題確認
+新的[原圖外觀證據方案](phase2_subject_appearance_plan_20261006.md)已於2026-10-07完成有界量測；
+見[結果報告](phase2_subject_appearance_results_20261007.md)，此方法證據不足，未採用。
+下方方法與「沒有mask可比較」描述是早期方案／結果的歷史紀錄，以最新11點報告為準。
+
+## 恢復 Phase 2 後的八題確認（歷史）
 
 使用者已要求繼續 Phase 2。原八題回答與對照保持原樣；其中五個位置的可見歸屬
 值得再核對，不由 Codex 根據圖片自行改答案。新增三個固定影像位置，以補足參考。
@@ -80,7 +84,7 @@ T與P都屬可見投手，但只有T直接提供軀幹特徵的支援；手部�
 試看格式可用後，再決定是否擴至五片24格、每格至多四點、上限96個問題。
 這是後續工作量的上限提案，本次未交出96題或要求重標整部影片。
 
-## 第一個候選方向：現有MediaPipe的附加person mask
+## 第一個候選方向：現有MediaPipe的附加person mask（歷史）
 
 現行模型為`models/pose_landmarker_full.task`，不更換weights或backend。
 本機MediaPipe1.0.1的options有`output_segmentation_masks`，result有`segmentation_masks`。

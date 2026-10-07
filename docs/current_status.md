@@ -1,6 +1,6 @@
 # Current status — Phase 1 accepted; Phase 2 reliability baseline
 
-Updated: 2026-10-06
+Updated: 2026-10-07
 
 **Phase 1 = PASSED**
 
@@ -17,9 +17,65 @@ are complete. The baseline runner,
 reports, and annotation workflow are available; program execution is not a
 Phase 2 acceptance result.
 
-## Phase 2 resumed by the user (2026-10-06)
+## Latest Phase 2 checkpoint (2026-10-07): fixed clothing appearance diagnostic
 
-### Latest: eleven mask point values measured and compared
+[Result and remaining-work report](phase2_subject_appearance_results_20261007.md).
+New isolated output: `analysis_results/phase2_subject_appearance_20261007_01/`.
+The proposal below has now been executed on003 only, with two immutable9x9
+source hypotheses from the earliest existing-gate frame0. No GT entered the
+producer; all115 frames/230 patch records remain, and every match/score-map
+receipt independently reproduces. Raw source pixels, competitor/tie receipts,
+unavailable states and evaluator-only human geometry are stored separately.
+
+Highest-similarity centers fall inside the four-visible-joint manual torso proxy
+in33/106 and30/106 frames; outside73/106 and76/106. Even frames without major-failure
+reference have56/88 and58/88 outside centers. Remaining9 frames lack a visible
+manual right shoulder (70–78), so their proxy stays unavailable. These are geometry
+counts, not identity errors/accuracy; source whole-patch ownership remains unreviewed.
+Scores/margins overlap major-failure and other frames. This diagnostic is
+**insufficient evidence; not adopted as tracking support or a warning**.
+No001/002 extension, new cutoff, GT answer, raw pose correction or production change.
+
+Preflight stopped before output creation because CSV native capture milliseconds
+are integer while video PTS are fractional. Failed code/plan are preserved under
+`analysis_results/phase2_subject_appearance_20261007_00_preflight/`.
+The [second before-run plan](evaluation_plans/phase2_subject_appearance_execution_20261007_02.json)
+binds corrected original-capture-time alignment, runner/runtime and sources; no
+original timestamps or predictions changed. All295/44/5/335 earlier hash inventories
+remain intact; independent read-only audit confirms350 unique source files unchanged.
+
+Full suite **185 passed /0 failed /0 errors /0 skipped**, including five formal
+real-video E2E inputs; nine additional safety/numerical/reference tests. Total
+verification run about54 seconds; log/result live under the new output.
+Phase2 remains IN PROGRESS. Remaining gates are evidence-backed subject/warning
+policy, per-frame miss/normal-motion false-warning/abstention/coverage evaluation
+across592 frames, the independent005 onset/peak event supplement, and explicit
+acceptance/reporting. No identity-switch positive GT or unseen validation set
+exists. If the next evidence direction works and review proceeds, provisionally
+reserve2–4 working sessions (2–4 working days at one session/day); this is planning,
+not a verified completion ETA. Further unresolved ambiguity needs more iterations.
+At the shared-folder todo, stop and report before any integration as requested.
+
+## Phase 2 resumed by the user (2026-10-06; historical checkpoints)
+
+### Historical proposal: immutable source-image appearance evidence
+
+[Bounded appearance plan](phase2_subject_appearance_plan_20261006.md) and its
+[source-bound proposal manifest](evaluation_plans/phase2_subject_appearance_proposal_20261006.json)
+were written; **at this historical checkpoint no implementation or measurement was run**. Pilot scope is003's
+115frames, up to two9x9 immutable raw-image torso patch hypotheses. Full-frame
+image matching stays separate from current skeleton/mask/KLT coordinates;
+competitors, texture validity and ambiguity remain visible. No cutoff, warning,
+template adaptation, pose correction or production change is proposed for this pilot.
+Source patch ownership needs separate reviewer evidence; existing center-point
+T/P/O and visible joint coordinates do not establish whole-patch ownership.
+Human records remain evaluator-only, all frame denominators remain intact, and
+known development clips cannot be relabeled as unseen validation data.
+Latest full tests remain176/0/0/0 from the previous code checkpoint; this step
+only adds planning documents/source checks. Phase2 remains IN PROGRESS;
+the user stop gate before shared-folder integration remains in effect.
+
+### Historical: eleven mask point values measured and compared
 
 [Point comparison report](phase2_subject_mask_points_20261006.md).
 New isolated output: `analysis_results/phase2_subject_mask_pilot_20261006_03/`.
@@ -38,8 +94,9 @@ Full suite: **176 passed / 0 failed / 0 errors / 0 skipped**, including the form
 five real-video inputs. Five new tests cover public bounds, zero/invalid values
 and candidate/dimension association. Production src/dependencies/model/thresholds,
 canonical GT and predictions remain untouched. **Phase2 remains IN PROGRESS.**
-Next: propose additional subject-image evidence and bounded validation using the
-existing human references; this mask is insufficient as standalone identity truth.
+At this historical checkpoint the additional subject-image evidence proposal
+was written and its measurement remained pending. The2026-10-07 result is above.
+This mask is insufficient as standalone identity truth.
 The shared-folder stop gate remains deferred until Phase2 is stable; no Phase3.
 
 ### Preserved supplementary review and initial mask attempts

@@ -1,0 +1,73 @@
+{
+  "status": "frozen_before_measurement",
+  "created_at_utc": "2026-10-07T09:53:56.039942+00:00",
+  "pitch_id": "pitch_003",
+  "total_frames": 115,
+  "proposal_path": "docs\\evaluation_plans\\phase2_subject_appearance_proposal_20261006.json",
+  "proposal_sha256": "353445871b8c67ae9b38123fa286a3d3bbc9ce11e4fe378f71122bb4138f5c05",
+  "measurement_source_hashes": {
+    "input/yoshinobu_yamamoto/phase1_final/pitch_003.mp4": "5c08dba98504d998536dfd0f0fab598760400612c9049445a68120e68fdf024c",
+    "input/yoshinobu_yamamoto/phase1_final/pitch_003.json": "d6015e8e864f4a7d665e289587b692294d53680f61e016bd68d07f6d84a91da6",
+    "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_003/pose_raw.csv": "ff55b5aaf78f01e686a1f0e44b32401837ddddf771bfcadb0e213062ed54c85f",
+    "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_003/pose_raw.capture.json": "2ff595a3e58eeffd8ce072ed5d9a8bbc982694474b633cbec92fc15ca7ffd961",
+    "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_003/pose_clean.clean.json": "e18d4e94c66de91419a3274710818343690db57e9c2dac364d0ad13c2efbe8dc",
+    "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_003/video_metadata.json": "79bcd048187fd1901c5ab285119919aa82a78cc2eda4339a5da1228a2cce42c7"
+  },
+  "measurement_source_roles": {
+    "video": "input/yoshinobu_yamamoto/phase1_final/pitch_003.mp4",
+    "metadata": "input/yoshinobu_yamamoto/phase1_final/pitch_003.json",
+    "raw_csv": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_003/pose_raw.csv",
+    "capture": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_003/pose_raw.capture.json",
+    "clean_config": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_003/pose_clean.clean.json",
+    "video_metadata": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_003/video_metadata.json"
+  },
+  "evaluator_only_source_hashes": {
+    "annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_42/pitch_003/manual_keypoints.json": "a970354b14f728d38af97336d6872900625c956e7a105f75ab9cdcff0aa77735",
+    "review_tools/feature_membership/HSU_pitch003_20261006_01.json": "96c7b179e458761798c54467e4173ab261790e6b5dab45b9b50be3bd8204ad20",
+    "review_tools/feature_membership/HSU_pitch003_membership_supplement_20261006_02.json": "c43604ce50641559cf61049cc7f3ac65bb40d4a34c1c2d196c9269215550d91f",
+    "analysis_results/phase2_subject_mask_pilot_20261006_03/evaluation_01/human_mask_comparison.json": "8a650f44868e3c56c7abaaa0e5743dbaabbd1baa60e077dccdbd70af01c8d5c0",
+    "analysis_results/phase2_yamamoto_20260925_01/ground_truth/pitch_001/ground_truth.json": "0efe2f4c63417e1f5744cec5fac7d375e0a0ec5060c870a36cec720a7a4b8d81",
+    "analysis_results/phase2_yamamoto_20260925_01/ground_truth/pitch_002/ground_truth.json": "2b682738812d78ef433027b7002ed3787d022eb288453ed157d91eaca74651c7",
+    "analysis_results/phase2_yamamoto_20260925_01/ground_truth/pitch_003/ground_truth.json": "c839f5bd767c82d8be0506c15bb83a22230f4ea7bf83dc240c321bfa3876b240",
+    "analysis_results/phase2_yamamoto_20260925_01/ground_truth/pitch_004/ground_truth.json": "ee721b91ce340ce29899e40854712e2d5d9c770d09d154c913489f17f1b4408a",
+    "analysis_results/phase2_yamamoto_20260925_01/ground_truth/pitch_005/ground_truth.json": "885986e1e150bd343968898899cfda5f5457b55a0c244d4c95c3f68daf33a66a"
+  },
+  "manual_reference": "annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_42/pitch_003/manual_keypoints.json",
+  "qualitative_reference": "analysis_results/phase2_yamamoto_20260925_01/ground_truth/pitch_003/ground_truth.json",
+  "parameters": {
+    "source_rule": "earliest_raw_four_torso_gate_only_no_later_fallback",
+    "patch_size_px": 9,
+    "center_fractions": [
+      0.3333333333333333,
+      0.6666666666666666
+    ],
+    "rounding": "floor",
+    "search": "full_native_grayscale_frame",
+    "method": "TM_CCOEFF_NORMED",
+    "maximum_nonoverlapping_candidates": 3,
+    "equal_score_order": "row_then_column",
+    "template_updates": false,
+    "reseed": false,
+    "warning_threshold": null,
+    "matching_cutoff": null,
+    "minmax_normalization": false,
+    "constant_denominator": "unavailable"
+  },
+  "runtime": {
+    "python": "3.12.14",
+    "executable_sha256": "5fc3c5244b5eef01a82fbefd1932d1382b79c72fe6e64ffe8df1e3ce3643f02f",
+    "opencv": "5.0.0",
+    "numpy": "2.5.3"
+  },
+  "producer_sha256": "c7fba0820be046bb57b54d85078ea8c55650216c679f7b13e2ae4c96b580d5b2",
+  "evaluator_sha256": "9602452e52f2e3e273b60dd3eb83266e130f8f9905b93a6e0cea791662cb1cc1",
+  "test_sha256": "929729c8f9ed910e0e63a883a3f8883a0d3929729322220fcea3d4f27f230f12",
+  "output_path": "analysis_results/phase2_subject_appearance_20261007_01",
+  "human_source_patch_ownership": "not_yet_reviewed",
+  "warning_or_identity_cutoff": null,
+  "production_changes": false,
+  "shared_folder_stop_gate": "Stop and report when Phase2 is stable and integration is reached; wait for new user start instruction",
+  "previous_preflight_plan": "docs/evaluation_plans/phase2_subject_appearance_execution_20261007.json",
+  "preflight_failure_record": "analysis_results/phase2_subject_appearance_20261007_00_preflight/failure_record.json",
+  "timestamp_binding": "frame index; raw CSV exact capture integer ms; capture equals rounded native fractional video PTS; output retains original fractional video PTS"
+}

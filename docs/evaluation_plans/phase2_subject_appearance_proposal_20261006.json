@@ -1,0 +1,83 @@
+{
+  "status": "proposal_only_not_executed",
+  "date_local": "2026-10-06",
+  "scope": {
+    "initial_pitch": "pitch_003",
+    "full_frame_denominator": 115,
+    "optional_later_controls": [
+      "pitch_001",
+      "pitch_002"
+    ],
+    "all_clips_are_known_development_material": true
+  },
+  "measurement_source_hashes": {
+    "input/yoshinobu_yamamoto/phase1_final/pitch_003.mp4": "5c08dba98504d998536dfd0f0fab598760400612c9049445a68120e68fdf024c",
+    "input/yoshinobu_yamamoto/phase1_final/pitch_003.json": "d6015e8e864f4a7d665e289587b692294d53680f61e016bd68d07f6d84a91da6",
+    "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_003/pose_raw.csv": "ff55b5aaf78f01e686a1f0e44b32401837ddddf771bfcadb0e213062ed54c85f",
+    "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_003/pose_raw.capture.json": "2ff595a3e58eeffd8ce072ed5d9a8bbc982694474b633cbec92fc15ca7ffd961",
+    "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_003/pose_clean.clean.json": "e18d4e94c66de91419a3274710818343690db57e9c2dac364d0ad13c2efbe8dc",
+    "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_003/video_metadata.json": "79bcd048187fd1901c5ab285119919aa82a78cc2eda4339a5da1228a2cce42c7"
+  },
+  "evaluator_only_source_hashes": {
+    "annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_42/pitch_003/manual_keypoints.json": "a970354b14f728d38af97336d6872900625c956e7a105f75ab9cdcff0aa77735",
+    "review_tools/feature_membership/HSU_pitch003_20261006_01.json": "96c7b179e458761798c54467e4173ab261790e6b5dab45b9b50be3bd8204ad20",
+    "review_tools/feature_membership/HSU_pitch003_membership_supplement_20261006_02.json": "c43604ce50641559cf61049cc7f3ac65bb40d4a34c1c2d196c9269215550d91f",
+    "analysis_results/phase2_subject_mask_pilot_20261006_03/evaluation_01/human_mask_comparison.json": "8a650f44868e3c56c7abaaa0e5743dbaabbd1baa60e077dccdbd70af01c8d5c0",
+    "analysis_results/phase2_yamamoto_20260925_01/ground_truth/pitch_001/ground_truth.json": "0efe2f4c63417e1f5744cec5fac7d375e0a0ec5060c870a36cec720a7a4b8d81",
+    "analysis_results/phase2_yamamoto_20260925_01/ground_truth/pitch_002/ground_truth.json": "2b682738812d78ef433027b7002ed3787d022eb288453ed157d91eaca74651c7",
+    "analysis_results/phase2_yamamoto_20260925_01/ground_truth/pitch_003/ground_truth.json": "c839f5bd767c82d8be0506c15bb83a22230f4ea7bf83dc240c321bfa3876b240",
+    "analysis_results/phase2_yamamoto_20260925_01/ground_truth/pitch_004/ground_truth.json": "ee721b91ce340ce29899e40854712e2d5d9c770d09d154c913489f17f1b4408a",
+    "analysis_results/phase2_yamamoto_20260925_01/ground_truth/pitch_005/ground_truth.json": "885986e1e150bd343968898899cfda5f5457b55a0c244d4c95c3f68daf33a66a"
+  },
+  "proposed_method": {
+    "source_frame": "Earliest existing raw four-point torso visibility/presence gate; never use human annotations",
+    "patch_centers": "S + (H-S)/3 and S + 2*(H-S)/3; S=raw shoulder midpoint,H=raw hip midpoint",
+    "patch_size_px": [
+      9,
+      9
+    ],
+    "max_source_patches": 2,
+    "center_rounding": "floor; half-size4",
+    "source_geometry": "Complete in-frame nonoverlapping rectangles with corners inside nondegenerate raw torso hull; not identity proof",
+    "template_updates_or_reseeding": false,
+    "image_matching": "Grayscale OpenCV TM_CCOEFF_NORMED; full source frame independent of current skeleton/mask/KLT",
+    "max_spatially_nonoverlapping_candidates": 3,
+    "equal_score_order": "row,column; retain tie count, not identity tie-break",
+    "save_score_map_receipts": "shape/hash plus source frame/template/runner/parameters for recomputation",
+    "numerical_validity": "Constant-template or constant-search-patch normalized denominator unavailable; preserve null/reason",
+    "post_match_minmax_normalization": false,
+    "warning_thresholds": null,
+    "matching_cutoff": null,
+    "roi_restricted_by_current_skeleton": false
+  },
+  "reference_limits": {
+    "source_patch_ownership": "Not established by raw confidence, shoulder/hip hull or existing center-point T/P/O; reviewer evidence needed",
+    "patch_is_anatomical_joint_or_torso_center": false,
+    "canonical_gt_producer_input": false,
+    "missing_frames_removed_from_denominator": false,
+    "identity_switch_positive_reference_available": false
+  },
+  "future_reviewer_work": {
+    "source_patch_questions_maximum": 2,
+    "questions_generated_now": false,
+    "existing_ground_truth_or_human_answers_modified": false,
+    "whole_patch_observation": "Preserve actual reviewer note with source pixels; center-point codes keep existing meaning; mixed/uncertain/unanswered not converted to foreground"
+  },
+  "stopping_conditions": [
+    "Unverified source patch ownership",
+    "Undistinguishable foreground/background/person appearance competitors",
+    "Natural posture/occlusion removes usable appearance support",
+    "Useful outcome requires tuning to known human failure interval",
+    "No separately validated policy for production warning"
+  ],
+  "execution_plan_required_before_measurement": true,
+  "runner_created": false,
+  "new_measurements_generated": false,
+  "new_warning_or_identity_predictions_generated": false,
+  "production_algorithm_or_threshold_changes": false,
+  "new_model_or_reid": false,
+  "phase3_or_shared_folder_integration_started": false,
+  "shared_folder_stop_gate": "Stop and report when Phase2 is stable and this pending integration is reached; wait for new user start instruction",
+  "phase2_acceptance": "IN PROGRESS",
+  "primary_api_source": "https://docs.opencv.org/5.0/tutorials/imgproc/histograms/template_matching/template_matching.html"
+}
