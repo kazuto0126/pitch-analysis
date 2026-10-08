@@ -49,7 +49,9 @@ HSU 已完成 `pitch_003` 全115格12關節覆核，並提供2026-10-05 10:14（
 低往返誤差仍無法保證特徵留在可見軀幹；該範圍也不等於完整身體輪廓或身分真值。
 [八點人工特徵覆核與下一步方案](docs/phase2_subject_support_proposal_20261006.md)已完成局部對照：
 HSU確認003兩格中6點屬其他人／背景、2點屬投手其他部位；小往返誤差仍不保證抓對投手。
-Phase 2 仍在進行中；
+Phase 2 本輪評估已收尾：**evaluation = COMPLETE；自動可靠性 = NOT PASSED**。
+最終五片結果與240項測試見 [Phase 2 final report](docs/phase2_final_report.md)。
+已知003重大錯位漏報尚未修復；沒有開始Phase3或共用交付資料夾接入。
 詳見 [Phase 2 reliability](docs/phase2_reliability.md) 與
 [manual ground truth](docs/phase2_ground_truth.md)。
 

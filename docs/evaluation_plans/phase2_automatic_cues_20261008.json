@@ -1,0 +1,228 @@
+{
+  "schema_version": "existing-reliability-cue-plan-v1",
+  "status": "frozen_before_export",
+  "created_at_utc": "2026-10-08T00:56:25.213593+00:00",
+  "purpose": "Expose exactly existing offline cached joint cues on the five formal baseline clips; no new detector or GT input",
+  "new_inference": false,
+  "new_threshold": false,
+  "scope": "full592frames and6important joints",
+  "implementation": {
+    "runner": {
+      "path": "scripts/export_existing_reliability_cues.py",
+      "sha256": "7e9e2aef47810162fb7ea0fbbf2f35ae96b25b5cf682af685cbda3a0829c731f"
+    },
+    "tests": {
+      "path": "tests/test_existing_reliability_cues.py",
+      "sha256": "a7ca3903f89256aff4c8915910fc38d1c7bf5e80c4345e0e735e155357e959e6"
+    },
+    "original_pose_reliability": {
+      "path": "src/pitch_analysis/pose_reliability.py",
+      "sha256": "df96b0e0a5d0883cddbcb921c23ac402ea968fd74e461d98a12971629779bc9d"
+    },
+    "original_tracking_reliability": {
+      "path": "src/pitch_analysis/tracking_reliability.py",
+      "sha256": "87edf930892aa685480cfe60fddc88280c88e0af43924842e71c56bde3725b30"
+    }
+  },
+  "runtime": {
+    "ffmpeg": {
+      "path": "C:/Users/lingz/AppData/Local/Microsoft/WinGet/Packages/Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe/ffmpeg-9.0.1-full_build/bin/ffmpeg.exe",
+      "sha256": "57c56e369d5b4873b4d93fc1a1d833cb7cd8bc9325c14b05c34ce60b22842d8a"
+    },
+    "ffprobe": {
+      "path": "C:/Users/lingz/AppData/Local/Microsoft/WinGet/Packages/Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe/ffmpeg-9.0.1-full_build/bin/ffprobe.exe",
+      "sha256": "afe05347caaabe479b3c4eae71992b6ec1e11c57266a1d665deb0f9fe9847208"
+    },
+    "font": {
+      "path": "C:/Windows/Fonts/msjh.ttc",
+      "sha256": "1fd5fc7046e0eea753988ee06d1a5a731df68475614e2174fbba9b4800f392ac"
+    }
+  },
+  "clips": [
+    {
+      "pitch_id": "pitch_001",
+      "sources": {
+        "original_video": {
+          "path": "input/yoshinobu_yamamoto/phase1_final/pitch_001.mp4",
+          "sha256": "7c9fe20e39c1b5358aa8e13b739222aebb6bf3ebfadf3569ccb3042c64f10190"
+        },
+        "pose_reliability": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/reliability/pitch_001/pose_reliability.json",
+          "sha256": "a0fb5e0334d5db0b864fc710889877d7671bb5928d0c29e54cbbe2045735ec07"
+        },
+        "tracking_reliability": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/reliability/pitch_001/tracking_reliability.json",
+          "sha256": "2456ffaf52d321390abb36f17249a42cb461ddb41aebf411be5e58ab784b12fb"
+        },
+        "input_manifest": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_001/input_manifest.json",
+          "sha256": "992c7cae9b771e05e98f3018ddf1b45cbb8a632f38076374f436e01ffb8e7c1d"
+        },
+        "video_metadata": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_001/video_metadata.json",
+          "sha256": "0a19c50d3032a65b1b1c0549c047780ad643cf75b7e59b1ebc240a1b5d18c070"
+        },
+        "processed_keypoints": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_001/processed_keypoints.jsonl",
+          "sha256": "ce04cb0ffc536d5c946975b92d30779f856f01c7a7930474e966348a60ae61a7"
+        },
+        "pose_clean": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_001/pose_clean.csv",
+          "sha256": "2f657fc7aa4088c50d86735b40ef432fda083d23f2b13b8bf8fc35e3168a86ca"
+        },
+        "original_overlay": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_001/overlay.mp4",
+          "sha256": "6461fca279c766ad8f1af89d2a6f2b7c54535017984ea2e009ec2f6d2d44cd5a"
+        }
+      }
+    },
+    {
+      "pitch_id": "pitch_002",
+      "sources": {
+        "original_video": {
+          "path": "input/yoshinobu_yamamoto/phase1_final/pitch_002.mp4",
+          "sha256": "b38258e682370349d085d0b43683f183afc632f682dc85b758604c9d1489f01a"
+        },
+        "pose_reliability": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/reliability/pitch_002/pose_reliability.json",
+          "sha256": "16b26b633329609e190672115f2a3ab31efb33d363f5c9ebe691a6637f470ed1"
+        },
+        "tracking_reliability": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/reliability/pitch_002/tracking_reliability.json",
+          "sha256": "c0ebf943704f9df7234066a5cc2b1db1addce70acafdf444013a7e2e246af8f5"
+        },
+        "input_manifest": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_002/input_manifest.json",
+          "sha256": "c152ab4a6f08058feabe58fe45feefe4ab1cebdb0988d7c784679a50a317b1a5"
+        },
+        "video_metadata": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_002/video_metadata.json",
+          "sha256": "92e0c293045b1ab117410d9b7d4a1f1596b17b4411220ef4687773f8103a7a74"
+        },
+        "processed_keypoints": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_002/processed_keypoints.jsonl",
+          "sha256": "9f86b86ae1f8ce5d9031d8328b675ea270ddb78b5af8d322e9e99d6a521306e0"
+        },
+        "pose_clean": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_002/pose_clean.csv",
+          "sha256": "dc106138c7165e57671ebdf2832d08957eede0bf2d1b39342e9adef708f3c4c3"
+        },
+        "original_overlay": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_002/overlay.mp4",
+          "sha256": "20fd31305b96e6087200142c074b654ac2706a3dff2493a73029b3ea7c5bc6d6"
+        }
+      }
+    },
+    {
+      "pitch_id": "pitch_003",
+      "sources": {
+        "original_video": {
+          "path": "input/yoshinobu_yamamoto/phase1_final/pitch_003.mp4",
+          "sha256": "5c08dba98504d998536dfd0f0fab598760400612c9049445a68120e68fdf024c"
+        },
+        "pose_reliability": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/reliability/pitch_003/pose_reliability.json",
+          "sha256": "4a1ed54c1287117cb4f802022fb71aba80f1238f86c47d4a47c9cf2a238126ec"
+        },
+        "tracking_reliability": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/reliability/pitch_003/tracking_reliability.json",
+          "sha256": "afc1aef201efada7a99f475f1cfd351667edf4a7c19b0dac80af2b180858f7df"
+        },
+        "input_manifest": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_003/input_manifest.json",
+          "sha256": "fb31384523e4c60248d526dd028f5a5d934cc2d5d2ced51f182b7d448cee8c1f"
+        },
+        "video_metadata": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_003/video_metadata.json",
+          "sha256": "79bcd048187fd1901c5ab285119919aa82a78cc2eda4339a5da1228a2cce42c7"
+        },
+        "processed_keypoints": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_003/processed_keypoints.jsonl",
+          "sha256": "e1e4c34bfc211bf2c6b28c16fac1c1f87803583b38240b280a1f8045ed8d449f"
+        },
+        "pose_clean": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_003/pose_clean.csv",
+          "sha256": "9bed744d265386ec510d110748f0a0e80632a5483d14af290f2890459d02464f"
+        },
+        "original_overlay": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_003/overlay.mp4",
+          "sha256": "29e5a68c09ffff08fbb5fda16d7102d8771c3256c7e796e4aeb11cf2b6f0801d"
+        }
+      }
+    },
+    {
+      "pitch_id": "pitch_004",
+      "sources": {
+        "original_video": {
+          "path": "input/yoshinobu_yamamoto/phase1_final/pitch_004.mp4",
+          "sha256": "e5a57bfc2e0746bb19af2a073d94abb7265d8dfb9ad37de06cee1de29f63d11a"
+        },
+        "pose_reliability": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/reliability/pitch_004/pose_reliability.json",
+          "sha256": "c5332978d06fbb5d1931fe6d134bee4d68dc032bcd5540703850a1804751e8ac"
+        },
+        "tracking_reliability": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/reliability/pitch_004/tracking_reliability.json",
+          "sha256": "5fafcb26e7f05b6e1497d20918ae6cedf240c12fc9d755ac9f218810eec6d015"
+        },
+        "input_manifest": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_004/input_manifest.json",
+          "sha256": "c2ed240391e0f65255e160dab12c9765a4192422d824651320f4a498422cfc21"
+        },
+        "video_metadata": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_004/video_metadata.json",
+          "sha256": "ccc237aa03f3e2f48dfd86ef0adf0856a05297033abc374a48d36c6e575786a4"
+        },
+        "processed_keypoints": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_004/processed_keypoints.jsonl",
+          "sha256": "8368210aaf8bca14f695e7e6c5fc38871c5ad0fd03b5833f7f858ea99d30766d"
+        },
+        "pose_clean": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_004/pose_clean.csv",
+          "sha256": "8ee545fada947d8064fd20bdfb8fe2816e973e59394a65c8934eb00e1812e360"
+        },
+        "original_overlay": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_004/overlay.mp4",
+          "sha256": "74d8c78e9559c78c97f60369288264ecf7fb8b997665015ac77c041898921515"
+        }
+      }
+    },
+    {
+      "pitch_id": "pitch_005",
+      "sources": {
+        "original_video": {
+          "path": "input/yoshinobu_yamamoto/phase1_final/pitch_005.mp4",
+          "sha256": "e289cb1159e5863583f85915214123d6afe03baa6f32ac6040040878093c873b"
+        },
+        "pose_reliability": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/reliability/pitch_005/pose_reliability.json",
+          "sha256": "2c9a351ba579aaa2e442817fef5ac9329dec4f10ab59edf937943c84f50b1f9a"
+        },
+        "tracking_reliability": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/reliability/pitch_005/tracking_reliability.json",
+          "sha256": "bbb754311bcd3212754b6c39933e2544de9d0ebcf46ce50857dfa8637dac74b3"
+        },
+        "input_manifest": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_005/input_manifest.json",
+          "sha256": "81b14c9061d197cdab9fd7c5140286dc845ef6c326bdc2bf71fb2ea8a43ace9e"
+        },
+        "video_metadata": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_005/video_metadata.json",
+          "sha256": "1e67779d8df3ae4cfb2f7d6c4d57bac7b6c02a2b28da669ede18613652e9a8a6"
+        },
+        "processed_keypoints": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_005/processed_keypoints.jsonl",
+          "sha256": "fa158655e5567f01c22e39b304e35b642a096f1a1948966b64d5526858c58bae"
+        },
+        "pose_clean": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_005/pose_clean.csv",
+          "sha256": "0b508a2736309ac2968fde705632830930c99ca13183db26ffb36ef13747a254"
+        },
+        "original_overlay": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_005/overlay.mp4",
+          "sha256": "7a9c092eee84fbcd74d497ca2fe639786b1827159059d2c6834e3cda544db226"
+        }
+      }
+    }
+  ]
+}

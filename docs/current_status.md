@@ -1,23 +1,69 @@
-# Current status — Phase 1 accepted; Phase 2 reliability baseline
+# Current status — Phase 2 evaluation closed, automatic reliability not passed
 
-Updated: 2026-10-07
+Updated: 2026-10-08
 
-**Phase 1 = PASSED**
+**Phase 1 = PASSED.**
+**Phase 2 evaluation = COMPLETE; Phase 2 = NOT PASSED (automatic reliability degraded).**
 
-The five formal Yoshinobu Yamamoto single-pitch inputs passed the existing
-Phase 1 clip-level acceptance checks. Phase 2 now evaluates tracking and
-per-joint pose reliability on those same five clips. No Phase 1 threshold,
-PitcherSelector rule, pose algorithm, interpolation, or smoothing policy was
-changed.
+This is the terminal result of the existing baseline evaluation, not an automatic
+reliability release. No new numeric acceptance bar, model, confidence gate,
+PitcherSelector, pose/tracking algorithm, interpolation or smoothing change.
+The original Phase 1 stable state and five formal videos remain unchanged.
 
-**Phase 2 = IN PROGRESS — reliability gaps measured; pitch_003 manual X/Y reviewed.** HSU's
-five qualitative reviews, warning comparison, pitch_003 visible-coordinate comparison
-and five-clip offline image/geometry measurements with torso-support proxy checks
-are complete. The baseline runner,
-reports, and annotation workflow are available; program execution is not a
-Phase 2 acceptance result.
+## Final Phase 2 result (2026-10-08)
 
-## Latest Phase 2 checkpoint (2026-10-07): review-aware use of saved 2D features
+[Final report](phase2_final_report.md). Final output:
+`analysis_results/phase2_final_yamamoto_20261008_02/`.
+Canonical HSU GT is 5/5 reviewed; original warning comparison, reviewed data use,
+and003 coordinate assessment reproduce from bound sources across592 frames.
+Known major-failure screening remains TP3/FN18/FP9:00387–104 is entirely missed.
+The diagnostic union with saved joint endpoints remains TP13/FN8/FP56, not a new
+adopted detector. Evaluation completion does not turn these gaps into PASSED.
+Confirmed breaks3/3 match; zero confirmed switches cannot measure sensitivity.
+
+New `scripts/export_existing_reliability_cues.py` exposes the already-saved
+whole-clip jump endpoint cues on all five formal clips, without any GT input.
+New Chinese H264/yuv420p videos, complete JSON and CSV live in
+`analysis_results/phase2_automatic_cues_20261008_01/`.
+All592 frames/3552 joint rows retained:3028 measured adjacent observed pairs,
+92 saved endpoint events across59 frames,524 unmeasured joint rows.
+No-cue and unmeasured remain distinct; automatic alignment/identity unverified.
+No wider error intervals, real-time latency or hidden-joint recovery claim.
+
+New finalizer separates evaluation COMPLETE from automatic NOT PASSED in
+`phase2_final_assessment.json` and `release_status.json` (`accepted=false`).
+It verifies canonical/model/video bindings and reconstructs prior comparisons,
+reviewed reliability, feature restrictions and1380 saved003 coordinate rows.
+Same1174 usable points:raw21.9504px vs clean22.0292px mean error;97.43% retention
+is not accuracy. Existing reviewed feature eligibility remains elbow246/knee530
+of592 frames; production analyze-pitch does not automatically consume these sidecars.
+
+Final full suite **240 passed /0 failed /0 errors /0 skipped**, including all five
+real formal videos, about42seconds.25 new tests (cue14/finalizer11). Secondary
+read-only verification confirms374 unique physical source/code/test/media files,
+3552 CSV rows, all592 decoded video frames and33 exact PNG source regions.
+Five representative panel layouts were inspected; H264 decoded pixels are lossy.
+Initial_01 assessment and exact implementation snapshots are preserved;_02 fixes
+only duplicate path spellings in physical-file accounting and binds the final suite.
+Source plans/code/tests/report are versioned; large generated media stays local.
+
+The separate peer005 event supplement is still not returned. Canonical uncertain
+onset/peak answers remain valid reviewed data, not an unfinished review or new
+acceptance blocker. Event accuracy/identity sensitivity/unseen-video generalization
+are explicitly unmeasured, without invented new work requirements.
+
+This Phase2 evaluation is now closed with NOT PASSED rather than indefinite
+IN PROGRESS. Further automatic warning repair requires a separately arranged task.
+Stop here:shared-folder integration and Phase3 are not started. The deferred
+`D:/project/pitch-video-handoff` todo remains read-only and requires a new start
+instruction when reached; its CONTRACT/code was not accessed in this work.
+
+## Historical checkpoints
+
+The dated entries below preserve earlier in-progress conclusions and next steps.
+The final result above supersedes them; they do not reopen completed reviews.
+
+## Historical Phase 2 checkpoint (2026-10-07): review-aware use of saved 2D features
 
 [Feature-use guide](phase2_reviewed_features_20261007.md).
 New evaluator-only tool `scripts/export_reviewed_feature_quality.py` exports
@@ -1607,29 +1653,16 @@ the media archive, and generated run outputs remain local.
 
 ## Next step recommendation
 
-Keep the five formal clips and the superseded archive unchanged. Follow this
-sequence agreed with the user on 2026-09-28:
+This existing Phase2 evaluation has ended with automatic reliability NOT PASSED.
+Keep all original inputs, canonical annotations and raw predictions unchanged.
+If a new reliability repair task is authorized, use the measured003 major misses
+and local-arm errors to define independently verifiable work and evaluation.
+The separate005 peer supplement may be source-validated when actually returned;
+its absence does not reopen canonical5/5 completed review.
 
-1. Preserve all five HSU qualitative reviews and the now-reviewed `pitch_003`
-   coordinate reference with its supplied completion time. All 12 joints across
-   0–114 are reviewed; left wrist 85–86 remains uncertain. Review the measured
-   coordinate comparison recorded above and obtain the remaining independent
-   `pitch_005` event supplement. Keep supplemental events and occluded original
-   estimates separate from canonical/observable reference data.
-2. Review the measured gaps in the qualitative comparison, especially the
-   unscreened `pitch_003` displacement and observed states on human-unreliable
-   arm frames. Review the completed visible-coordinate errors;
-   keep raw-overlay judgments distinct from processed availability.
-3. Use both forms of evidence to decide whether pose/tracking reliability needs
-   changes. The offline image/geometry and torso-proxy experiments are complete;
-   low-FB and survival are insufficient. First define independently verifiable
-   foreground support and normal-motion evaluation in a bounded proposal.
-   Any production change is separate from these completed comparisons;
-   do not treat successful execution as Phase 2 acceptance.
-4. Once Phase 2 is stable and accepted on evidence, proceed to the agreed
-   pitcher-motion analysis work. Do not automatically begin Phase 3.
-5. Subsequently integrate a small batch of MLB Pitch Clipper outputs under the
-   external handoff requirements below, then evaluate another pitcher.
+Do not automatically begin Phase3 or shared delivery-folder integration. At the
+handoff todo, stop/report and await a new user start instruction. It remains
+conditional on reliable analysis, not merely completed assessment or green tests.
 
 ## Deferred MLB Pitch Clipper handoff
 

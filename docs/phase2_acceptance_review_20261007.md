@@ -1,3 +1,5 @@
+> 2026-10-08更新：本文件保留為歷史範圍對照。最終評估已完成、自動可靠性NOT PASSED；以 [最終報告](phase2_final_report.md) 為準。
+
 # Phase 2：已具備的能力與驗收缺口
 
 日期：2026-10-07（台灣）。**Phase 1 = PASSED；Phase 2 = IN PROGRESS。**

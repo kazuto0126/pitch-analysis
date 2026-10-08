@@ -1,5 +1,11 @@
 # Phase 2 — Pitcher tracking and pose reliability
 
+2026-10-08 final outcome: **evaluation COMPLETE; automatic reliability NOT PASSED**.
+Canonical human GT is now5/5 reviewed; the initial blank-template snapshot below
+is historical. See [final report](phase2_final_report.md) for current results and
+the stop gate before Phase3/shared-folder integration. Original provisional policy
+and baseline predictions below remain unchanged.
+
 Phase 1 accepted five prepared Yoshinobu Yamamoto single-pitch clips. Phase 2
 uses only those clips to measure what the rear-centerfield pose pipeline can
 and cannot observe. MediaPipe remains the baseline backend. The selector,
