@@ -1,4 +1,4 @@
-# Current status — Phase 2 evaluation closed, automatic reliability not passed
+# Current status — Phase 2 closed; read-only candidate intake added
 
 Updated: 2026-10-08
 
@@ -9,6 +9,35 @@ This is the terminal result of the existing baseline evaluation, not an automati
 reliability release. No new numeric acceptance bar, model, confidence gate,
 PitcherSelector, pose/tracking algorithm, interpolation or smoothing change.
 The original Phase 1 stable state and five formal videos remain unchanged.
+
+## Authorized delivery candidate reader (2026-10-08)
+
+The user approved the first intake scope independently of automatic reliability
+release. [Reader guide](handoff_reader.md). Only the handoff folder's CONTRACT.md
+v2 defines the upstream interface; no provider repo/code/output was accessed.
+The standalone reader imports indexed MP4/JSON pairs into `data/intake/handoff/`,
+checks SHA before/after copying, maps original IDs and explicit local pitcher IDs,
+maps unknown to null, and retains durable SQLite deduplication/refusal records.
+
+Each clip must declare CFR=true, fully decode to its declared frame count, and
+have every normalized native PTS within strictly less than 1ms of frame index
+divided by exact fractional FPS. Canonical contract timestamps separately use
+fps_float. Container start is recorded, never applied; energy anchors remain
+non-event provenance. No edits to analysis/pitch.py, workflow.py, pose_capture.py
+or any other Phase2 core. No analysis runs or pitch-input-v1/formal promotion.
+
+Actual batch `20261006T114959Z_Q8Bl2X4VKuw`:8 candidates,3396 decoded frames,
+maximum native deviation0.000666667ms. Repeat:0 new,8 already imported; all
+candidate files and delivered bytes/mtime unchanged. Each has7 pending input
+review items, no fabricated human findings. Explicit reviewer/time/conclusion/
+note and append history are required. Even review_complete remains candidate.
+Validation evidence:`analysis_results/handoff_reader_validation_20261008_01/`.
+The existing formal five, GT, predictions and protected Phase2 sources remain
+unchanged. Phase2 automatic reliability remains NOT PASSED; Phase3 not started.
+Full suite:302 passed/0 failed/0 errors/2 skipped,304 total, including the
+existing formal five real-video E2E.64 new intake/timing/review/path cases.
+Two file-symlink cases skipped due Windows creation permissions; actual
+directory-junction containment tests passed. No unresolved test failures.
 
 ## Final Phase 2 result (2026-10-08)
 
@@ -54,9 +83,9 @@ are explicitly unmeasured, without invented new work requirements.
 
 This Phase2 evaluation is now closed with NOT PASSED rather than indefinite
 IN PROGRESS. Further automatic warning repair requires a separately arranged task.
-Stop here:shared-folder integration and Phase3 are not started. The deferred
-`D:/project/pitch-video-handoff` todo remains read-only and requires a new start
-instruction when reached; its CONTRACT/code was not accessed in this work.
+That evaluation stopped before shared-folder integration and Phase3. The later
+user-approved candidate-only intake is recorded above; it does not repair the
+automatic reliability result or authorize formal promotion/new analysis.
 
 ## Historical checkpoints
 
@@ -1660,11 +1689,10 @@ and local-arm errors to define independently verifiable work and evaluation.
 The separate005 peer supplement may be source-validated when actually returned;
 its absence does not reopen canonical5/5 completed review.
 
-Do not automatically begin Phase3 or shared delivery-folder integration. At the
-handoff todo, stop/report and await a new user start instruction. It remains
-conditional on reliable analysis, not merely completed assessment or green tests.
+Do not automatically begin Phase3 or new-candidate analysis/formal promotion.
+The approved reader scope ends at candidate intake and explicit local input review.
 
-## Deferred MLB Pitch Clipper handoff
+## MLB Pitch Clipper handoff boundary
 
 `mlb-pitch-clipper` owns search, acquisition, cleaning, and cutting. Its current
 release candidate should remain unchanged unless a reproducible product bug
@@ -1672,23 +1700,15 @@ requires a fix. `pitch-analysis` owns MP4 input validation, pose/tracking
 reliability, motion analysis, and later comparison/reporting. Do not duplicate
 Clipper's M1/M2 logic or depend on its internal temporary clips or event files.
 
-The current Clipper v0.1.0-rc1 downstream contract exports
-`<Pitcher_Name>_<Game_Year>.mp4`: chronological pitching clips in H.264/yuv420p,
-at original speed. This can be a multi-pitch compilation and may retain replays.
-It is not automatically a valid `pitch-input-v1` input. A shared folder or
-filename change alone does not resolve that difference.
+The current delivery folder's CONTRACT.md v2 supplies index.jsonl, batch.json,
+individual single-pitch MP4/JSON pairs and an optional viewing-only compilation.
+Only indexed individual pairs are imported. The provider JSON is not the
+analysis project's pitch-input-v1 and is preserved unchanged. No provider-side
+implementation or repo dependency is introduced.
 
-Before formal integration, the upstream handoff must provide individually
-prepared single-pitch MP4s plus adjacent `pitch-input-v1` JSON, with verified
-pitcher identity/handedness, continuous rear-centerfield full-body footage,
-normal speed, no mirror, and complete preparation/follow-through. Existing
-technical and quality gates still apply, including CFR and the 30-second limit.
-Keep the original Clipper product and available run/source manifests for
-traceability, outside the strict pitch metadata fields. Use a distinct batch
-directory and new analysis output root; never overwrite the Yamamoto baseline.
-
-The missing formal single-pitch handoff is a deferred integration requirement,
-not evidence of a Clipper bug or authorization to change Clipper now. Revisit it
-after the sequence above; GT completion alone does not authorize automatic
-integration. External MP4/JSON pairs can be read from a shared local folder, so
-merging repositories is unnecessary.
+First intake scope is complete as candidates. Pitcher identity, actual delivery,
+replay/mirror/full-body checks and preparation/follow-through require explicit
+human review. Unknown context or handedness is not guessed. Formal conversion,
+promotion and pipeline execution are separate future work; none was begun.
+Shared-folder requirements remain documented in INPUT_REQUIREMENTS.md, and
+version2 mapping, timeline evidence and review workflow in handoff_reader.md.

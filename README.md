@@ -51,7 +51,10 @@ HSU 已完成 `pitch_003` 全115格12關節覆核，並提供2026-10-05 10:14（
 HSU確認003兩格中6點屬其他人／背景、2點屬投手其他部位；小往返誤差仍不保證抓對投手。
 Phase 2 本輪評估已收尾：**evaluation = COMPLETE；自動可靠性 = NOT PASSED**。
 最終五片結果與240項測試見 [Phase 2 final report](docs/phase2_final_report.md)。
-已知003重大錯位漏報尚未修復；沒有開始Phase3或共用交付資料夾接入。
+已知003重大錯位漏報尚未修復；沒有開始Phase3。
+使用者另核准的 [交付資料夾候選讀取器](docs/handoff_reader.md) 已接入 contract v2：
+驗 hash、完整解碼、分數 FPS 逐格時間與去重，保存本地待人工覆核候選。
+它不自動分析、轉換正式 metadata 或取代山本正式五球，也不改 Phase 2 核心。
 詳見 [Phase 2 reliability](docs/phase2_reliability.md) 與
 [manual ground truth](docs/phase2_ground_truth.md)。
 

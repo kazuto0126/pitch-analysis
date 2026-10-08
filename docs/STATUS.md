@@ -5,9 +5,24 @@
 **Phase 1 = PASSED。**
 **Phase 2 evaluation = COMPLETE；Phase 2 = NOT PASSED（自動可靠性未通過）。**
 
-本輪評估與收尾已結束；不再把已完成的人工工作記為IN PROGRESS。
+Phase 2 評估與收尾已結束；不再把已完成的人工工作記為IN PROGRESS。
 原模型／門檻／pose／tracking／平滑／插值不變，沒有開始Phase3。
 最終完整報告見 [Phase 2 final report](phase2_final_report.md)。
+
+## 使用者另核准的交付候選接入（2026-10-08）
+
+- 第一版 [交付讀取器](handoff_reader.md)：只依交付 `CONTRACT.md` v2 和 index 找批次。
+  SHA 比對、候選複製、原 ID／本地 ID 與投手 ID 對照、unknown→null、SQLite 去重及拒收原因紀錄已完成。
+- 每檔完整解碼，CFR=true、實際格數相等、分數 FPS 逐格 native PTS 偏差嚴格 <1 ms 才接收。
+  contract 的第0格時間與 container start 分開保存，motion anchors 不轉成人工事件。
+- 實測批次 `20261006T114959Z_Q8Bl2X4VKuw` 八球／3,396格全部通過匯入檢查；
+  最大時間偏差0.000667ms。重跑新增0球、跳過8球，副本與交付資料保持不變。
+- 本地 `data/intake/handoff/` 八球皆 candidate／review pending；沒有代填人工判定、沒有自動分析。
+  每項人工提交須有判讀者、含時區時間、結論、備註；保留原答案與歷史。
+- Phase 2 核心、五球正式素材、raw／GT與原輸出 hash 未變；沒有將 Phase 2 改標 PASSED。
+- 實測證據：`analysis_results/handoff_reader_validation_20261008_01/`。
+- 本次完整測試 **302 passed、0 failed、0 errors、2 skipped**（共304項，含正式五球E2E）。
+  新增64項；兩項檔案符號連結案例因Windows建立權限跳過，實際目錄連結案例通過。
 
 ## 已完成
 
@@ -22,7 +37,7 @@
 - 最終評估重算既有來源比較，建立 `phase2_final_assessment.json` 與 `release_status.json`，
   評估完成與自動驗收分開、`accepted=false`，沒有新增任意總分或通過線。
 
-## 最終測試與核對
+## Phase 2 最終測試與核對
 
 **240 passed、0 failed、0 errors、0 skipped**，含正式五片真影片E2E，約42秒。
 本輪新增25項測試（提示14、收尾11），沒有待修失敗。
@@ -49,9 +64,10 @@
 - 同學 `pitch_005` 獨立事件補充未回傳；canonical啟動／最高抬腿uncertain合法保留。
   不冒填、不要求重做已完成canonical覆核，也不把這份補充當目前GT完成的必要條件。
 - 自動警示修復與再驗收須另行安排；本輪以實際NOT PASSED結果結束。
-- [ ] **Phase 2可靠性穩定後**：實作從共用交付資料夾 `D:/project/pitch-video-handoff` 讀取輸入影片。
-  規格以該資料夾的 `CONTRACT.md` 為準；交付資料夾只讀，不依賴另一個專案程式碼。
-  **未開始；輪到此待辦時先停止回報，收到使用者新的開始指示才接入。**
+- [x] 使用者已另行核准 `D:/project/pitch-video-handoff` 第一版候選讀取器；
+  規格只依 `CONTRACT.md` v2，交付唯讀，不依賴另一專案程式碼。
+- [ ] 八球人工輸入覆核、正式 metadata 轉換／提升及後續分析另行安排。
+  第一版只完成候選接入，不因程式與時間檢查通過就認證素材或 Phase 2 自動可靠性。
 
-完成本輪收尾後停止。沒有開始Phase3或供片接入。
+完成候選讀取器後停止。沒有開始Phase3或新球分析。
 供片需求見 [INPUT_REQUIREMENTS](INPUT_REQUIREMENTS.md)；完整歷史見 [current_status](current_status.md)。
