@@ -10,6 +10,28 @@ reliability release. No new numeric acceptance bar, model, confidence gate,
 PitcherSelector, pose/tracking algorithm, interpolation or smoothing change.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
+## 2026-10-09 next evidence proposal (not executed)
+
+[Bounded person-support proposal](phase2_person_support_proposal_20261009.md)
+and [proposal manifest](evaluation_plans/phase2_person_support_proposal_20261009.json).
+Local capability-only check confirms OpenCV5.0.0 defaultHOG/personSVM,
+3781 coefficients/64x128 window with bound coefficient/native-library hashes.
+Zero image/video inference, downloads or installs. No new runner or new result
+is claimed; this manifest is explicitly not an execution freeze.
+
+Proposed feasibility scope is003's full115 native frames, one fixed configuration,
+all returned grouped rectangles/rawSVM scores, no poseROI/humanseed/automatic
+pitcher assignment or warning policy. A person box can also support the batter;
+it is not verified pitcher alignment. Existing visibleXY/TPO pixels do not
+establish whole-box identity or IoU. If viable candidate evidence appears,
+at most12 known-case rectangle-membership questions would be proposed separately;
+no human answers have been filled, no completeGT review is reopened.
+
+The original374 protected physical sources remain unchanged. Latest complete
+code suite remains320 passed/0 failed/0 errors/2 Windows skips; this docs-only
+proposal does not rerun tests or media. AutomaticPhase2 remainsNOT PASSED,
+eight inputs remaincandidate/pending; no Phase3 or production model change.
+
 ## 2026-10-09 authorized repair: full-frame mode countercheck
 
 [Results](phase2_pose_mode_results_20261009.md) and

@@ -1,0 +1,146 @@
+{
+  "status": "proposal_only_not_execution_freeze",
+  "created_at_utc": "2026-10-09T10:18:25.687819+00:00",
+  "proposal_path": "docs/phase2_person_support_proposal_20261009.md",
+  "proposal_sha256": "4b2471ee9f5661d209cb04eccd6ae38d75e87bf6d8125e242485d63bfac3eed3",
+  "producer_implemented": false,
+  "evaluator_implemented": false,
+  "video_inference_started": false,
+  "target": {
+    "pitch_id": "pitch_003",
+    "total_frames": 115,
+    "width": 510,
+    "height": 628
+  },
+  "proposed_producer_sources": {
+    "video": {
+      "path": "input/yoshinobu_yamamoto/phase1_final/pitch_003.mp4",
+      "sha256": "5c08dba98504d998536dfd0f0fab598760400612c9049445a68120e68fdf024c"
+    },
+    "metadata": {
+      "path": "input/yoshinobu_yamamoto/phase1_final/pitch_003.json",
+      "sha256": "d6015e8e864f4a7d665e289587b692294d53680f61e016bd68d07f6d84a91da6"
+    },
+    "video_technical": {
+      "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_003/video_metadata.json",
+      "sha256": "79bcd048187fd1901c5ab285119919aa82a78cc2eda4339a5da1228a2cce42c7"
+    }
+  },
+  "evaluator_only_sources": {
+    "original_raw": {
+      "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_003/pose_raw.csv",
+      "sha256": "ff55b5aaf78f01e686a1f0e44b32401837ddddf771bfcadb0e213062ed54c85f"
+    },
+    "capture": {
+      "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_003/pose_raw.capture.json",
+      "sha256": "2ff595a3e58eeffd8ce072ed5d9a8bbc982694474b633cbec92fc15ca7ffd961"
+    },
+    "canonical_review": {
+      "path": "analysis_results/phase2_yamamoto_20260925_01/ground_truth/pitch_003/ground_truth.json",
+      "sha256": "c839f5bd767c82d8be0506c15bb83a22230f4ea7bf83dc240c321bfa3876b240"
+    },
+    "manual_xy": {
+      "path": "annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_42/pitch_003/manual_keypoints.json",
+      "sha256": "a970354b14f728d38af97336d6872900625c956e7a105f75ab9cdcff0aa77735"
+    },
+    "membership_original": {
+      "path": "review_tools/feature_membership/HSU_pitch003_20261006_01.json",
+      "sha256": "96c7b179e458761798c54467e4173ab261790e6b5dab45b9b50be3bd8204ad20"
+    },
+    "membership_supplement": {
+      "path": "review_tools/feature_membership/HSU_pitch003_membership_supplement_20261006_02.json",
+      "sha256": "c43604ce50641559cf61049cc7f3ac65bb40d4a34c1c2d196c9269215550d91f"
+    }
+  },
+  "runtime": {
+    "python": "3.12.14",
+    "executable_sha256": "5fc3c5244b5eef01a82fbefd1932d1382b79c72fe6e64ffe8df1e3ce3643f02f",
+    "mediapipe": "1.0.1",
+    "opencv": "5.0.0.93",
+    "numpy": "2.5.3"
+  },
+  "detector": {
+    "opencv": "5.0.0",
+    "detector_coefficients": 3781,
+    "coefficient_representation": "little_endian_float32",
+    "detector_sha256": "cb2198952eaa5bc7e43d950b9f2aa1966528063c7295c7262133e7fa0d3d564c",
+    "win_size": [
+      64,
+      128
+    ],
+    "block_size": [
+      16,
+      16
+    ],
+    "block_stride": [
+      8,
+      8
+    ],
+    "cell_size": [
+      8,
+      8
+    ],
+    "nbins": 9,
+    "gamma_correction": true,
+    "nlevels": 64,
+    "detector_size_valid": true,
+    "csrt_api_available": true,
+    "image_inference_calls": 0,
+    "downloads": 0,
+    "installs": 0,
+    "detect_multiscale_binding_doc": "detectMultiScale(img[, hitThreshold[, winStride[, padding[, scale[, groupThreshold[, useMeanshiftGrouping]]]]]]) -> foundLocations, foundWeights\n.   @brief Detects objects of different sizes in the input image. The detected objects are returned as a list\n.       of rectangles.\n.       @param img Matrix of the type CV_8U or CV_8UC3 containing an image where objects are detected.\n.       @param foundLocations Vector of rectangles where each rectangle contains the detected object.\n.       @param foundWeights Vector that will contain confidence values for each detected object.\n.       @param hitThreshold Threshold for the distance between features and SVM classifying plane.\n.       Usually it is 0 and should be specified in the detector coefficients (as the last free coefficient).\n.       But if the free coefficient is omitted (which is allowed), you can specify it manually here.\n.       @param winStride Window stride. It must be a multiple of block stride.\n.       @param padding Padding\n.       @param scale Coefficient of the detection window increase.\n.       @param groupThreshold Coefficient to regulate the similarity threshold. When detected, some objects can be covered\n.       by many rectangles. 0 means not to perform grouping.\n.       @param useMeanshiftGrouping indicates grouping algorithm"
+  },
+  "native_binding_hashes": {
+    ".venv-analysis/Lib/site-packages/cv2/cv2.pyd": "ae833b9b5771f5932200bd3b8ad0f483f4fbec92cbdbd26d21d38fe524c60e66"
+  },
+  "proposed_parameters": {
+    "hitThreshold": 0.0,
+    "winStride": [
+      0,
+      0
+    ],
+    "padding": [
+      0,
+      0
+    ],
+    "scale": 1.05,
+    "groupThreshold": 2.0,
+    "useMeanshiftGrouping": false
+  },
+  "external_resize": null,
+  "crop": null,
+  "producer_pose_inputs": [],
+  "producer_human_inputs": [],
+  "pitcher_assignment": null,
+  "cross_frame_tracking": false,
+  "warning_policy": null,
+  "review_if_evidence_exists": {
+    "frames": [
+      0,
+      38,
+      86,
+      95,
+      105,
+      112
+    ],
+    "max_boxes_per_frame": 2,
+    "ordering": "raw_svm_score_desc_then_x_y_w_h",
+    "maximum_questions": 12,
+    "sampling_role": "evaluator_known_cases_not_producer_or_holdout"
+  },
+  "missing_references": [
+    "independent_rectangle_subject_membership",
+    "visible_body_extent_if_IoU_is_claimed",
+    "separate_input_seed_if_temporal_target_tracking_is_proposed"
+  ],
+  "protected_source_inventory": {
+    "path": "docs/evaluation_plans/phase2_pose_mode_countercheck_20261009.json",
+    "sha256": "587d7df4e91e279262be408607c8bdc13d73b6f11c1a28e5f874ab0af3c3bb69",
+    "key": "protected_source_hashes",
+    "physical_files": 374
+  },
+  "phase2_automatic_reliability": "NOT PASSED",
+  "production_changes": false,
+  "official_semantic_reference": "https://docs.opencv.org/4.13.0/d5/d33/structcv_1_1HOGDescriptor.html",
+  "documentation_version_is_not_runtime_version": true
+}
