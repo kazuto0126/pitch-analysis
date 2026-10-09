@@ -1,6 +1,18 @@
 # 進度摘要
 
-更新日期：2026-10-08（台灣）。
+更新日期：2026-10-09（台灣）。
+
+## 2026-10-09 回歸核對與主線恢復
+
+見 [逐項核對](handoff_regression_20261009.md)。兩次重跑各0新增／8跳過／0拒收；
+SQLite批次1、素材8保持固定，events27→36→45僅為執行紀錄。
+修正交付覆核入口的中間junction保護缺口，新增5項回歸測試；完整suite
+307 passed／0 failed／0 errors／2 skipped，原有240項全部通過。
+正式五球592格重新跑完整流程：10份reliability逐欄位0差異、35份預測檔逐byte相同。
+原374份保護來源、交付21檔、候選40檔未變，9份registry無八球ID。
+八球仍candidate／pending，不分析、不提升。
+已回主線整理 [Phase 2修復案例](phase2_reliability_repair_20261009.md)，FN18仍待修復；
+Phase 2 NOT PASSED不變，沒有開始Phase 3。
 
 **Phase 1 = PASSED。**
 **Phase 2 evaluation = COMPLETE；Phase 2 = NOT PASSED（自動可靠性未通過）。**

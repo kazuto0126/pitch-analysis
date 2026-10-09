@@ -6,7 +6,7 @@ import json
 import re
 from pathlib import Path
 
-from pitch_analysis.handoff.reader import PROJECT_ROOT, import_handoff, list_candidates, local_intake_root
+from pitch_analysis.handoff.reader import PROJECT_ROOT, _local_path, import_handoff, list_candidates, local_intake_root
 from pitch_analysis.handoff.review import CONCLUSIONS, record_review
 
 
@@ -35,8 +35,9 @@ def main(argv=None) -> int:
         else:
             if not re.fullmatch(r"h_[0-9a-f]{64}", args.internal_pitch_id):
                 raise ValueError("internal_pitch_id must be a local h_ SHA-256 identifier")
-            intake = local_intake_root(args.intake_root)
-            result = record_review(intake / "candidates" / args.internal_pitch_id, item=args.item, reviewer=args.reviewer, reviewed_at_utc=args.reviewed_at, conclusion=args.conclusion, note=args.note)
+            intake = local_intake_root(args.intake_root, project_root=PROJECT_ROOT)
+            candidate = _local_path(intake, "candidates/" + args.internal_pitch_id)
+            result = record_review(candidate, item=args.item, reviewer=args.reviewer, reviewed_at_utc=args.reviewed_at, conclusion=args.conclusion, note=args.note)
         print(json.dumps(result, ensure_ascii=False, indent=2, allow_nan=False))
         return int(isinstance(result, dict) and result.get("status") == "needs_attention")
     except (ValueError, OSError) as exc:

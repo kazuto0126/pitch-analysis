@@ -1,6 +1,6 @@
 # Current status — Phase 2 closed; read-only candidate intake added
 
-Updated: 2026-10-08
+Updated: 2026-10-09
 
 **Phase 1 = PASSED.**
 **Phase 2 evaluation = COMPLETE; Phase 2 = NOT PASSED (automatic reliability degraded).**
@@ -9,6 +9,25 @@ This is the terminal result of the existing baseline evaluation, not an automati
 reliability release. No new numeric acceptance bar, model, confidence gate,
 PitcherSelector, pose/tracking algorithm, interpolation or smoothing change.
 The original Phase 1 stable state and five formal videos remain unchanged.
+
+## 2026-10-09 regression gate and return to Phase 2
+
+[Itemized report](handoff_regression_20261009.md). Two real intake reruns each
+returned0 new/8 skipped/0 refused; batches1 and pitches8 stayed fixed, events
+27→36→45 are execution history. Audit found and repaired an intermediate
+junction gap in the handoff human-review entry, with5 new boundary regressions.
+Full suite307 passed/0 failures/0 errors/2 platform skips; original240 all passed.
+Fresh formal-five predictions plus run_phase2_reliability and reviewed GT
+comparison cover592 frames:10 reliability JSONs have0 field differences,
+35 raw/processed/quality/metrics files byte-identical. All374 protected physical
+sources unchanged; delivered21 and candidate40 files retain bytes/mtime;
+9 registries contain0 handoff ID matches. Eight inputs remaincandidate/pending.
+
+Per user direction, returned to the original reliability repair route and
+prepared [the repair case index/checkpoint](phase2_reliability_repair_20261009.md):
+original major-screenTP3/FN18/FP9/TN562, FN18 is00387–104. This is source-bound
+case preparation, not a new detector, core change or claim of generalization.
+Automatic Phase2 remainsNOT PASSED; no Phase3/new-input analysis/promotion.
 
 ## Authorized delivery candidate reader (2026-10-08)
 

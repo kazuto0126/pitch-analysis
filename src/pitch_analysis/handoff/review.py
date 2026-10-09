@@ -101,8 +101,10 @@ def _is_link(path: Path) -> bool:
 
 def _candidate_root(candidate_dir: str | os.PathLike[str]) -> Path:
     root = Path(candidate_dir).absolute()
-    if _is_link(root) or not root.is_dir():
-        raise ValueError("candidate_dir must be an existing local directory without a symbolic link")
+    if any(_is_link(component) for component in (root, *root.parents)):
+        raise ValueError("candidate_dir path components must not use symbolic links or junctions")
+    if not root.is_dir():
+        raise ValueError("candidate_dir must be an existing local directory")
     return root.resolve(strict=True)
 
 
@@ -250,6 +252,10 @@ def record_review(
     record = _record(reviewer, reviewed_at_utc, conclusion, note)
     item = _text(item, "review item")
     root = _candidate_root(candidate_dir)
+    provenance = _load_provenance(root)
+    review = _validate_review(_read_json(root, root / "review.json"), provenance)
+    if item not in review["items"]:
+        raise ValueError(f"unknown review item: {item}")
     with _review_lock(root):
         provenance = _load_provenance(root)
         review = _validate_review(_read_json(root, root / "review.json"), provenance)
