@@ -1,4 +1,4 @@
-# Current status — Phase 2 closed; read-only candidate intake added
+# Current status — Phase 2 repair checkpoint; candidate intake isolated
 
 Updated: 2026-10-09
 
@@ -9,6 +9,37 @@ This is the terminal result of the existing baseline evaluation, not an automati
 reliability release. No new numeric acceptance bar, model, confidence gate,
 PitcherSelector, pose/tracking algorithm, interpolation or smoothing change.
 The original Phase 1 stable state and five formal videos remain unchanged.
+
+## 2026-10-09 authorized repair: full-frame mode countercheck
+
+[Results](phase2_pose_mode_results_20261009.md) and
+[frozen plan](evaluation_plans/phase2_pose_mode_countercheck_20261009.json).
+New isolated IMAGE-versus-saved-VIDEO measurement/evaluation tools cover all592
+native frames with the same MediaPipe/model/options and unchanged selector.
+No production pose/tracking/gate/smoothing/interpolation or annotation edits.
+
+IMAGE selected560 versus original589 frames. All560 selected skeletons are
+exactly identical across33 landmarks and5 fields (92,400 scalars; maximumXY
+delta0px), independently reproduced. Candidate availability/selection changes
+on29 frames are real, so this is not a claim that all mode behavior is identical.
+003 major87–104 retains14 identically wrong selected frames;4 become ambiguous.
+Its918 common existing-gate visible points have the same20.157145px mean error;
+947 commonfinite points have the same21.254704px mean. Missing258 of1205 visible
+references cannot be counted as accuracy improvement. Hidden173/uncertain2 excluded.
+
+This bounded direction is not adopted. New warning policy/counts remainnull;
+originalTP3/FN18/FP9/TN562 and automaticNOT PASSED remain. Same-model agreement
+does not certify correctness; native stateless behavior or internal causes are
+unverified. No GT re-review, new-model switch, candidate analysis or Phase3.
+Next repair needs independently verifiable image/subject alignment evidence;
+different-model benchmarking requires a separate bounded proposal first.
+
+Output:`analysis_results/phase2_pose_mode_countercheck_20261009_01/`, with complete
+receipts, comparison, independent audit and95/101/112 illustration panels.
+All374 protected physical sources unchanged. Full suite322 run/320 passed/
+0 failures/0 errors/2 Windowsfile-symlink skips, including formal-five E2E.
+13 new source/missing/coordinate/receipt regressions passed. Eight handoff inputs
+remaincandidate/pending; original5/5 canonical review remainsCOMPLETE.
 
 ## 2026-10-09 regression gate and return to Phase 2
 
@@ -1701,10 +1732,12 @@ the media archive, and generated run outputs remain local.
 
 ## Next step recommendation
 
-This existing Phase2 evaluation has ended with automatic reliability NOT PASSED.
-Keep all original inputs, canonical annotations and raw predictions unchanged.
-If a new reliability repair task is authorized, use the measured003 major misses
-and local-arm errors to define independently verifiable work and evaluation.
+The original Phase2 evaluation ended with automatic reliability NOT PASSED.
+The user subsequently authorized the isolated repair work recorded above.
+Keep all original inputs, canonical annotations and raw predictions unchanged;
+the mode countercheck is complete and not adopted. Future repair must address
+independently verifiable subject alignment rather than reuse same-model agreement
+as correctness or tune gates to the known003 misses.
 The separate005 peer supplement may be source-validated when actually returned;
 its absence does not reopen canonical5/5 completed review.
 

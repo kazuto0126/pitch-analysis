@@ -2,6 +2,21 @@
 
 更新日期：2026-10-09（台灣）。
 
+## 最新：Phase 2模式對照checkpoint
+
+見 [模式對照結果](phase2_pose_mode_results_20261009.md)。新增隔離量測／比較工具及13項測試，
+同模型IMAGE／VIDEO完整592格實測；沒有改正式核心、門檻、selector、GT或原始輸出。
+IMAGE selected560／原589格；560格共92,400數值逐項相同，另29格選取狀態變化。
+003重大錯位18格中14格仍同樣錯位、4格ambiguous；相同918個gate可見點均誤差皆20.157145px。
+缺少更多預測不是精度改善，本方向不採用，沒有新警示policy或新TP／FN／FP。
+原FN18仍在，自動Phase2 **NOT PASSED**；原baseline評估與5/5人工覆核維持COMPLETE。
+
+完整測試 **320 passed／0 failed／0 errors／2 skipped**（322項，含正式五片E2E）；
+兩項Windowsfile-symlink建立權限skip，junction回歸通過。374份原保護來源hash未變。
+輸出：`analysis_results/phase2_pose_mode_countercheck_20261009_01/`，含獨立核對及三張案例圖。
+下一步需要獨立可核對的投手影像對位證據；不同模型benchmark先另列有界方案。
+交付八球仍candidate／pending，不分析、不提升，不進Phase3。
+
 ## 2026-10-09 回歸核對與主線恢復
 
 見 [逐項核對](handoff_regression_20261009.md)。兩次重跑各0新增／8跳過／0拒收；
@@ -75,11 +90,13 @@ Phase 2 評估與收尾已結束；不再把已完成的人工工作記為IN PRO
 
 - 同學 `pitch_005` 獨立事件補充未回傳；canonical啟動／最高抬腿uncertain合法保留。
   不冒填、不要求重做已完成canonical覆核，也不把這份補充當目前GT完成的必要條件。
-- 自動警示修復與再驗收須另行安排；本輪以實際NOT PASSED結果結束。
+- 使用者已核准回主線修復；本輪模式對照已完成且不採用，下一個方法需先固定證據與驗證方案。
+  原baseline的NOT PASSED結論沒有改標。
 - [x] 使用者已另行核准 `D:/project/pitch-video-handoff` 第一版候選讀取器；
   規格只依 `CONTRACT.md` v2，交付唯讀，不依賴另一專案程式碼。
 - [ ] 八球人工輸入覆核、正式 metadata 轉換／提升及後續分析另行安排。
   第一版只完成候選接入，不因程式與時間檢查通過就認證素材或 Phase 2 自動可靠性。
 
-完成候選讀取器後停止。沒有開始Phase3或新球分析。
+候選讀取器已收尾；後續使用者另核准的Phase2修復checkpoint見本文最上方。
+沒有開始Phase3或新球分析。
 供片需求見 [INPUT_REQUIREMENTS](INPUT_REQUIREMENTS.md)；完整歷史見 [current_status](current_status.md)。
