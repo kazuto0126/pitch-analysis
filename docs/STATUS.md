@@ -2,7 +2,26 @@
 
 更新日期：2026-10-09（台灣）。
 
-## 下一個方案已具體化，尚未執行
+## 最新：人體候選範圍試驗已完成，九個框待人工歸屬
+
+見 [本輪實測結果](phase2_person_support_results_20261009.md)。新增隔離量測／比較工具及26項回歸，
+003完整115格產生177個人體候選框／114格有框；完整重播115格的框／原分數multiset差異0。
+API回傳順序另有8格不同，原始順序與各次框編號完整保存，不當跨格track ID。
+106格可用四肩髖人工proxy、9格缺值；93格有框包含四點，僅描述幾何關係。
+18格原重大失效全部有框，其中7格連錯誤raw四肩髖點也被包含；有框不代表骨架正確。
+
+固定抽樣產生9張新框歸屬題，**答案0／9，全部null**，不重做已完成5/5 GT；
+待HSU只判「投手／其他人／多人難以分開／不確定」。不自動指定投手、不建立warning cutoff。
+原FN18仍待修復，Phase2 automatic reliability **NOT PASSED**，identity accuracy／IoU／新警示數null。
+CLI入口及多框順序核對修正均保留舊plan／結果／source快照；偵測設定不變、不放寬數值容差。
+下一步先完成這9題，若只有局部人像或其他人證據便停止此候選；不調參讓它通過。
+
+完整suite **346 passed／0 failed／0 errors／2 skipped**（348項，含正式五片E2E）；
+兩項為Windows file-symlink建立限制，junction案例通過。原374個受保護來源hash不變。
+輸出：`analysis_results/phase2_person_support_20261009_03/`，有獨立audit、完整receipt與九圖總覽。
+正式五球、人工GT與分析核心保持原樣；交付八球仍candidate／pending，沒有進Phase3。
+
+## 能力核對與方案歷史（當時尚未執行，已由上節接續）
 
 [獨立人體候選範圍方案](phase2_person_support_proposal_20261009.md)：
 先限定003完整115格，以本機已有HOG/personSVM做有界可行性檢查。

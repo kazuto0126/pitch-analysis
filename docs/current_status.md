@@ -10,7 +10,39 @@ reliability release. No new numeric acceptance bar, model, confidence gate,
 PitcherSelector, pose/tracking algorithm, interpolation or smoothing change.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-09 next evidence proposal (not executed)
+## 2026-10-09 independent person-support pilot completed
+
+[Bounded HOG pilot results](phase2_person_support_results_20261009.md) and
+[latest frozen execution](evaluation_plans/phase2_person_support_execution_20261009_03.json).
+Implemented isolated GT-blind measurement plus source-bound offline evaluation
+and26 regressions; no production core or human-label edits.003's115 native frames
+produce177 grouped person boxes on114 frames. Complete115-frame replay reproduces
+every rectangle/rawSVM value exactly as a multiset;8 API-order-only differences
+are retained and separately reported. Candidate indexes are run-local.
+
+Existing manual proxies are available106 frames/missing9;93/106 have some box
+containing all four visible shoulder/hip points. All18 known major failures have
+boxes, and7/18 have a box containing even the wrong raw shoulder/hip points.
+Containment cannot certify correct alignment. Nine fixed-case box ownership
+questions are generated with all answers/reviewer/time/verbatim fields null;
+existing5/5 canonical GT stays COMPLETE. No box is automatically called pitcher.
+Identity accuracy/IoU/new warning counts remainnull; originalFN18 remainsunfixed.
+
+CLI dispatch and API-order comparison repairs are documented with original
+seals/code snapshots and planSHA chains; neither changes detector parameters or
+introduces numeric tolerance. The order comparison amendment is explicitly
+post-observation, not claimed as the original prespecified rule.
+Output:`analysis_results/phase2_person_support_20261009_03/`.
+Full suite348 run/346 passed/0 failed/0 errors/2 Windowsfile-symlink skips,
+including real formal-five E2E; all374 protected physical sources unchanged.
+
+Next is only the nine independent rectangle ownership checks; no completeGT
+re-review. If evidence only identifies some person/partial body, stop this
+candidate. A five-clip warning evaluation needs separately defined verified
+subject evidence and policy. AutomaticPhase2 remainsNOT PASSED; eight handoff
+clips remaincandidate/pending; no promotion/new-input analysis or Phase3.
+
+## 2026-10-09 capability/proposal history (before execution above)
 
 [Bounded person-support proposal](phase2_person_support_proposal_20261009.md)
 and [proposal manifest](evaluation_plans/phase2_person_support_proposal_20261009.json).

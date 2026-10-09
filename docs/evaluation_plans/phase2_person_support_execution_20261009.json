@@ -1,0 +1,140 @@
+{
+  "status": "frozen_before_measurement",
+  "created_at_utc": "2026-10-09T10:27:58.555968+00:00",
+  "proposal_manifest": "docs/evaluation_plans/phase2_person_support_proposal_20261009.json",
+  "proposal_manifest_sha256": "d5a391ca3d4ee58f4405dd518702ad8fc99f9fdadf7bb2da4464ae793c0bb00a",
+  "producer_sha256": "de33884826301f4e12cf1373c7cb2329222f421ea6737fa7a2c181a0496f5969",
+  "evaluator_sha256": "5ab12ed6d067d0ef7805d16260ac6e63c0beceda994c7fc0c474280a29d54145",
+  "test_sha256": "3f8dd3e18271f6e81d99a03bb25ac9899cd7c5fe7ec0beba46a17417f2b92689",
+  "runtime": {
+    "python": "3.12.14",
+    "executable_sha256": "5fc3c5244b5eef01a82fbefd1932d1382b79c72fe6e64ffe8df1e3ce3643f02f",
+    "opencv_distribution": "5.0.0.93",
+    "numpy": "2.5.3"
+  },
+  "detector_signature": {
+    "opencv": "5.0.0",
+    "detector_coefficients": 3781,
+    "detector_sha256": "cb2198952eaa5bc7e43d950b9f2aa1966528063c7295c7262133e7fa0d3d564c",
+    "win_size": [
+      64,
+      128
+    ],
+    "block_size": [
+      16,
+      16
+    ],
+    "block_stride": [
+      8,
+      8
+    ],
+    "cell_size": [
+      8,
+      8
+    ],
+    "nbins": 9,
+    "gamma_correction": true,
+    "nlevels": 64,
+    "detector_size_valid": true,
+    "deriv_aperture": 1,
+    "histogram_norm_type": 0,
+    "win_sigma": -1.0,
+    "l2_hys_threshold": 0.2,
+    "signed_gradient": false
+  },
+  "native_binding_hashes": {
+    ".venv-analysis/Lib/site-packages/cv2/cv2.pyd": "ae833b9b5771f5932200bd3b8ad0f483f4fbec92cbdbd26d21d38fe524c60e66"
+  },
+  "producer_sources": {
+    "video": {
+      "path": "input/yoshinobu_yamamoto/phase1_final/pitch_003.mp4",
+      "sha256": "5c08dba98504d998536dfd0f0fab598760400612c9049445a68120e68fdf024c"
+    },
+    "metadata": {
+      "path": "input/yoshinobu_yamamoto/phase1_final/pitch_003.json",
+      "sha256": "d6015e8e864f4a7d665e289587b692294d53680f61e016bd68d07f6d84a91da6"
+    },
+    "video_technical": {
+      "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_003/video_metadata.json",
+      "sha256": "79bcd048187fd1901c5ab285119919aa82a78cc2eda4339a5da1228a2cce42c7"
+    }
+  },
+  "evaluator_sources": {
+    "original_raw": {
+      "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_003/pose_raw.csv",
+      "sha256": "ff55b5aaf78f01e686a1f0e44b32401837ddddf771bfcadb0e213062ed54c85f"
+    },
+    "capture": {
+      "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_003/pose_raw.capture.json",
+      "sha256": "2ff595a3e58eeffd8ce072ed5d9a8bbc982694474b633cbec92fc15ca7ffd961"
+    },
+    "canonical_review": {
+      "path": "analysis_results/phase2_yamamoto_20260925_01/ground_truth/pitch_003/ground_truth.json",
+      "sha256": "c839f5bd767c82d8be0506c15bb83a22230f4ea7bf83dc240c321bfa3876b240"
+    },
+    "manual_xy": {
+      "path": "annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_42/pitch_003/manual_keypoints.json",
+      "sha256": "a970354b14f728d38af97336d6872900625c956e7a105f75ab9cdcff0aa77735"
+    },
+    "membership_original": {
+      "path": "review_tools/feature_membership/HSU_pitch003_20261006_01.json",
+      "sha256": "96c7b179e458761798c54467e4173ab261790e6b5dab45b9b50be3bd8204ad20"
+    },
+    "membership_supplement": {
+      "path": "review_tools/feature_membership/HSU_pitch003_membership_supplement_20261006_02.json",
+      "sha256": "c43604ce50641559cf61049cc7f3ac65bb40d4a34c1c2d196c9269215550d91f"
+    }
+  },
+  "target": {
+    "pitch_id": "pitch_003",
+    "total_frames": 115,
+    "width": 510,
+    "height": 628
+  },
+  "parameters": {
+    "hitThreshold": 0.0,
+    "winStride": [
+      0,
+      0
+    ],
+    "padding": [
+      0,
+      0
+    ],
+    "scale": 1.05,
+    "groupThreshold": 2.0,
+    "useMeanshiftGrouping": false
+  },
+  "review_sampling": {
+    "frames": [
+      0,
+      38,
+      86,
+      95,
+      105,
+      112
+    ],
+    "max_boxes_per_frame": 2,
+    "ordering": "raw_svm_score_desc_then_x_y_w_h",
+    "maximum_questions": 12,
+    "sampling_role": "evaluator_known_cases_not_producer_or_holdout"
+  },
+  "protected_source_inventory": {
+    "path": "docs/evaluation_plans/phase2_pose_mode_countercheck_20261009.json",
+    "sha256": "587d7df4e91e279262be408607c8bdc13d73b6f11c1a28e5f874ab0af3c3bb69",
+    "key": "protected_source_hashes",
+    "physical_files": 374
+  },
+  "source_integrity_before_sha256": "ef202ecbbfd1a882c77901bcc23fc775b405d7e1285d8624f0bb15f06e846d8d",
+  "output": "analysis_results/phase2_person_support_20261009_01",
+  "producer_human_inputs": [],
+  "producer_pose_inputs": [],
+  "crop": null,
+  "external_resize": null,
+  "subject_assignment": null,
+  "warning_policy": null,
+  "single_configuration_only": true,
+  "production_changes": false,
+  "verification": "One identical replay after sealing, no parameter variation",
+  "phase2_automatic_reliability": "NOT PASSED"
+}
