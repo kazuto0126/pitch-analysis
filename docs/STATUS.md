@@ -2,7 +2,27 @@
 
 更新日期：2026-10-10（台灣）。
 
-## 最新：六格裁切失效已分類，五球驗證前置方案已保存
+## 最新：五球人工起點固定裁切對照完成，設定不採用
+
+見 [五球結果](phase2_assisted_roi_cohort_results_20261010.md)。HSU已確認001／002／004／005第0格的
+投手與當時可見肢體範圍，實際「全部正確」另存，保留原草案與空白snapshot；不延伸成全片身份GT。
+四片各量測一次477格；003沿用封存追蹤／pose／XY評估，新增呼叫0。完整592格保留，成效587格。
+裁切selected552／全圖IMAGE555／原VIDEO584；逐片裁切對IMAGE差為 **-3／0／+19／-7／-12**。
+新四片單獨444／473 vs IMAGE466／473，少22格，不能用003改善掩蓋退步。
+587次後續tracker update均native success，仍可見伸展手腳在框外；API成功不等於輸入完整或對位正確。
+裁切右肘gate且input-supported：001=44／86、002=139／174、003=77／114、004=68／113、005=80／100。
+這是可用性而非人工準確率。精確XY只003沿用；其餘四片XY／新warning／identity／event accuracy皆null。
+39個事前固定圖完成工程檢查，無新增人工GT；原5/5 GT保持reviewed。
+固定窄框裁切未通過五球適用性，不接入正式核心；自動Phase2仍**NOT PASSED**。
+下一步先診斷新增缺失與動作範圍，再定保留完整輸入的有限方案，不調padding／gate或自動fallback。
+
+完整suite **442 passed／0 failed／0 errors／2 skipped**（444項，73.972秒，含正式五球E2E）。
+374受保護來源與上游封存／答案不變，正式五球與src不改，八顆交付片仍candidate／pending。
+輸出：`analysis_results/phase2_assisted_roi_cohort_20261010_01/`。
+實際execution為`_02`；`_01`因推論前補強文件SHA檢查而未使用，完整保留，沒有重跑或改設定。
+本輪至checkpoint停止；沒有進Phase3。
+
+## 前次：六格裁切失效已分類，五球驗證前置方案已保存
 
 見 [下一關方案](phase2_roi_completeness_fiveclip_plan_20261010.md)。本輪只讀舊輸出、重播原selector，
 115格receipt完全一致：63／68／79／81為後端無候選；65只有5／8主要關節達原0.35條件，

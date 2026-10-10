@@ -1,0 +1,453 @@
+{
+  "status": "frozen_before_measurement",
+  "client_date_local": "2026-10-10",
+  "frozen_at_utc": "2026-10-10T10:34:49.950432+00:00",
+  "proposal_manifest": "docs/evaluation_plans/phase2_assisted_roi_cohort_proposal_20261010.json",
+  "proposal_manifest_sha256": "d710bb07c10efa3f01af33d6ab2bef72e8452245715c9669d4cc973ef082aaa6",
+  "clips": [
+    {
+      "kind": "new_measurement",
+      "target": {
+        "pitch_id": "pitch_001",
+        "total_frames": 87,
+        "width": 434,
+        "height": 616
+      },
+      "sources": {
+        "video": {
+          "path": "input/yoshinobu_yamamoto/phase1_final/pitch_001.mp4",
+          "sha256": "7c9fe20e39c1b5358aa8e13b739222aebb6bf3ebfadf3569ccb3042c64f10190"
+        },
+        "metadata": {
+          "path": "input/yoshinobu_yamamoto/phase1_final/pitch_001.json",
+          "sha256": "1b50d630f777d9897fed8c579ac60ff830a666e63452dafca2ce92649634549c"
+        },
+        "video_technical": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_001/video_metadata.json",
+          "sha256": "0a19c50d3032a65b1b1c0549c047780ad643cf75b7e59b1ebc240a1b5d18c070"
+        },
+        "initialization": {
+          "path": "review_tools/subject_initialization/confirmed_HSU_pitch_001_visual_20261010_01.json",
+          "sha256": "7999475c0ccef9aa117da567f84f7e3d048737822a2017cc86ed2fb5e705edea"
+        }
+      }
+    },
+    {
+      "kind": "new_measurement",
+      "target": {
+        "pitch_id": "pitch_002",
+        "total_frames": 175,
+        "width": 460,
+        "height": 634
+      },
+      "sources": {
+        "video": {
+          "path": "input/yoshinobu_yamamoto/phase1_final/pitch_002.mp4",
+          "sha256": "b38258e682370349d085d0b43683f183afc632f682dc85b758604c9d1489f01a"
+        },
+        "metadata": {
+          "path": "input/yoshinobu_yamamoto/phase1_final/pitch_002.json",
+          "sha256": "10f453ac9733523b6a703f996411f112922b7ec25dd0766c6a88f32f23cda14d"
+        },
+        "video_technical": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_002/video_metadata.json",
+          "sha256": "92e0c293045b1ab117410d9b7d4a1f1596b17b4411220ef4687773f8103a7a74"
+        },
+        "initialization": {
+          "path": "review_tools/subject_initialization/confirmed_HSU_pitch_002_visual_20261010_01.json",
+          "sha256": "6edb06cb7c05f7c67089dd9e8822691a452591c539808de08bcdee6ed11ca08b"
+        }
+      }
+    },
+    {
+      "kind": "reuse_sealed",
+      "target": {
+        "pitch_id": "pitch_003",
+        "total_frames": 115,
+        "width": 510,
+        "height": 628
+      },
+      "sources": {
+        "video": {
+          "path": "input/yoshinobu_yamamoto/phase1_final/pitch_003.mp4",
+          "sha256": "5c08dba98504d998536dfd0f0fab598760400612c9049445a68120e68fdf024c"
+        },
+        "metadata": {
+          "path": "input/yoshinobu_yamamoto/phase1_final/pitch_003.json",
+          "sha256": "d6015e8e864f4a7d665e289587b692294d53680f61e016bd68d07f6d84a91da6"
+        },
+        "video_technical": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_003/video_metadata.json",
+          "sha256": "79bcd048187fd1901c5ab285119919aa82a78cc2eda4339a5da1228a2cce42c7"
+        },
+        "initialization": {
+          "path": "review_tools/subject_initialization/proposed_HSU_pitch003_csrt_20261010_01.json",
+          "sha256": "b126d209a35667f7cc4e796ed26229cba64f9dd9430d508c90e4dc9b65f5b36c"
+        }
+      },
+      "reused_tracking": {
+        "path": "analysis_results/phase2_subject_assignment_20261010_01/seeded_subject_measurements.json",
+        "sha256": "27c503042abbe0fef3a04191f325735b019954db3289206722becae333296997"
+      },
+      "reused_pose": {
+        "path": "analysis_results/phase2_tracked_roi_pose_20261010_01/roi_pose_measurements.json",
+        "sha256": "73b309969ad1dc371a029b6a6135f3e412c8683b7c849feb0f1996d9511658c1"
+      }
+    },
+    {
+      "kind": "new_measurement",
+      "target": {
+        "pitch_id": "pitch_004",
+        "total_frames": 114,
+        "width": 532,
+        "height": 676
+      },
+      "sources": {
+        "video": {
+          "path": "input/yoshinobu_yamamoto/phase1_final/pitch_004.mp4",
+          "sha256": "e5a57bfc2e0746bb19af2a073d94abb7265d8dfb9ad37de06cee1de29f63d11a"
+        },
+        "metadata": {
+          "path": "input/yoshinobu_yamamoto/phase1_final/pitch_004.json",
+          "sha256": "3804edec77d79590f949e8b5d9e9ba17a91341a4cf00672d2053d479a064c8ec"
+        },
+        "video_technical": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_004/video_metadata.json",
+          "sha256": "ccc237aa03f3e2f48dfd86ef0adf0856a05297033abc374a48d36c6e575786a4"
+        },
+        "initialization": {
+          "path": "review_tools/subject_initialization/confirmed_HSU_pitch_004_visual_20261010_01.json",
+          "sha256": "e109b20311db288cde51e70dceff8c4dfa56d5305d376bc793cb6243d68314bf"
+        }
+      }
+    },
+    {
+      "kind": "new_measurement",
+      "target": {
+        "pitch_id": "pitch_005",
+        "total_frames": 101,
+        "width": 512,
+        "height": 598
+      },
+      "sources": {
+        "video": {
+          "path": "input/yoshinobu_yamamoto/phase1_final/pitch_005.mp4",
+          "sha256": "e289cb1159e5863583f85915214123d6afe03baa6f32ac6040040878093c873b"
+        },
+        "metadata": {
+          "path": "input/yoshinobu_yamamoto/phase1_final/pitch_005.json",
+          "sha256": "a9e9db2ccfe522159e8b771261403c31acbd7f218aadf5063fe32fc0bd89dba4"
+        },
+        "video_technical": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_005/video_metadata.json",
+          "sha256": "1e67779d8df3ae4cfb2f7d6c4d57bac7b6c02a2b28da669ede18613652e9a8a6"
+        },
+        "initialization": {
+          "path": "review_tools/subject_initialization/confirmed_HSU_pitch_005_visual_20261010_01.json",
+          "sha256": "388e7b489c35a0a5845f37d40b4d0c89da213af68556399a81629a8a034fade7"
+        }
+      }
+    }
+  ],
+  "model": {
+    "path": "models/pose_landmarker_full.task",
+    "sha256": "5134a3aad27a58b93da0088d431f366da362b44e3ccfbe3462b3827a839011b1"
+  },
+  "tracker_parameters": {
+    "use_hog": true,
+    "use_color_names": true,
+    "use_gray": true,
+    "use_rgb": false,
+    "use_channel_weights": true,
+    "use_segmentation": true,
+    "window_function": "hann",
+    "kaiser_alpha": 3.75,
+    "cheb_attenuation": 45.0,
+    "template_size": 200.0,
+    "gsl_sigma": 1.0,
+    "hog_orientations": 9.0,
+    "hog_clip": 0.20000000298023224,
+    "padding": 3.0,
+    "filter_lr": 0.019999999552965164,
+    "weights_lr": 0.019999999552965164,
+    "num_hog_channels_used": 18,
+    "admm_iterations": 4,
+    "histogram_bins": 16,
+    "histogram_lr": 0.03999999910593033,
+    "background_ratio": 2,
+    "number_of_scales": 33,
+    "scale_sigma_factor": 0.25,
+    "scale_model_max_area": 512.0,
+    "scale_lr": 0.02500000037252903,
+    "scale_step": 1.0199999809265137,
+    "psr_threshold": 0.03500000014901161
+  },
+  "pose_options": {
+    "num_poses": 4,
+    "min_pose_detection_confidence": 0.5,
+    "min_pose_presence_confidence": 0.5,
+    "min_tracking_confidence": 0.5,
+    "output_segmentation_masks": false
+  },
+  "crop_parameters": {
+    "running_mode": "IMAGE",
+    "crop": "sealed_csrt_rectangle_integer_floor_ceil_intersection",
+    "external_resize": null,
+    "padding": 0,
+    "mirror": false,
+    "map_before_selector": true,
+    "selector": "original_PitcherSelector_fresh_per_clip",
+    "candidate_association": null,
+    "coordinate_correction": false,
+    "interpolation": false,
+    "fallback": null,
+    "seed_frame_excluded": 0,
+    "warning_policy": null,
+    "image_processing_options": null,
+    "xy_mapping": "crop_affine_to_original_image_normalized",
+    "z_mapping": "crop_width_over_original_width_backend_relative_bookkeeping",
+    "output_semantics": "experimental_raw_not_observed_or_correct"
+  },
+  "runtime": {
+    "python": "3.12.14",
+    "executable_sha256": "5fc3c5244b5eef01a82fbefd1932d1382b79c72fe6e64ffe8df1e3ce3643f02f",
+    "mediapipe": "1.0.1",
+    "opencv": "5.0.0.93",
+    "numpy": "2.5.3"
+  },
+  "native_binding_hashes": {
+    ".venv-analysis/Lib/site-packages/cv2/cv2.pyd": "ae833b9b5771f5932200bd3b8ad0f483f4fbec92cbdbd26d21d38fe524c60e66",
+    ".venv-analysis/Lib/site-packages/mediapipe/tasks/c/libmediapipe.dll": "31335db8bb8cd4bb294fd689b6b06086eb33782ee9c7f4667e12a6014a68436c"
+  },
+  "producer_dependencies": {
+    "scripts/measure_seeded_subject.py": {
+      "path": "scripts/measure_seeded_subject.py",
+      "sha256": "70be947491df5535ac769dcc97ab9c528bc8e279b0e2317c01e1762dbda7a644"
+    },
+    "scripts/measure_tracked_roi_pose.py": {
+      "path": "scripts/measure_tracked_roi_pose.py",
+      "sha256": "4c271070df6f10449455ffd1a88680adee51c13edbc44ea31143666aadbb0c9e"
+    },
+    "src/pitch_analysis/pose_capture.py": {
+      "path": "src/pitch_analysis/pose_capture.py",
+      "sha256": "02f071811a2de83011e6927e2bd933623f918b8338dfe364888c6050e6ba3061"
+    },
+    "src/pitch_analysis/pose_estimator.py": {
+      "path": "src/pitch_analysis/pose_estimator.py",
+      "sha256": "beb8a3a295712f16ed75bbd9545e0a2acb286c325ae4ae62d1ad8f1631250046"
+    },
+    "src/pitch_analysis/subject.py": {
+      "path": "src/pitch_analysis/subject.py",
+      "sha256": "c5cae1ace96db5b9f3229f4f5e41870d420370676d99dea0abd03dcad3748276"
+    }
+  },
+  "evaluator_sources": {
+    "pitch_001": {
+      "full_frame_image": {
+        "path": "analysis_results/phase2_pose_mode_countercheck_20261009_01/pitch_001.json",
+        "sha256": "3c58dca6a4e0e3e3abe9dba13f7dd9476a9c13d0ac7c7530c85a2806d5c6dd96"
+      },
+      "original_raw": {
+        "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_001/pose_raw.csv",
+        "sha256": "67e064073604a7b66d59136f06f93b6b0bba42a74faa5d757595666e4faf4781"
+      },
+      "capture": {
+        "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_001/pose_raw.capture.json",
+        "sha256": "58c69f79ee2b99e4c9f22026ac3f735e60fec84905192d478e69003c08a69267"
+      },
+      "clean_config": {
+        "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_001/pose_clean.clean.json",
+        "sha256": "1dc031018d938a0721ee2752dbf22497e024c3052ce4e55472b99b4b6670c430"
+      },
+      "canonical_review": {
+        "path": "analysis_results/phase2_yamamoto_20260925_01/ground_truth/pitch_001/ground_truth.json",
+        "sha256": "0efe2f4c63417e1f5744cec5fac7d375e0a0ec5060c870a36cec720a7a4b8d81"
+      }
+    },
+    "pitch_002": {
+      "full_frame_image": {
+        "path": "analysis_results/phase2_pose_mode_countercheck_20261009_01/pitch_002.json",
+        "sha256": "49f90fbeb450717ca1f93df6cd7e26c8cb7ef5f76e59c789be180755963aa3c1"
+      },
+      "original_raw": {
+        "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_002/pose_raw.csv",
+        "sha256": "efc05874349820533b407d0722d002fb14e0b60533d2999e1cbcb75b7f929df2"
+      },
+      "capture": {
+        "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_002/pose_raw.capture.json",
+        "sha256": "d53b9bbc186436300c3e17d9a23f57a17a46cf94753dad69023532de707db7cc"
+      },
+      "clean_config": {
+        "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_002/pose_clean.clean.json",
+        "sha256": "bb4fab575d7420b0adcb2c4b65ef4fc579df3c1467ee78c08416def3c411cdbe"
+      },
+      "canonical_review": {
+        "path": "analysis_results/phase2_yamamoto_20260925_01/ground_truth/pitch_002/ground_truth.json",
+        "sha256": "2b682738812d78ef433027b7002ed3787d022eb288453ed157d91eaca74651c7"
+      }
+    },
+    "pitch_003": {
+      "full_frame_image": {
+        "path": "analysis_results/phase2_pose_mode_countercheck_20261009_01/pitch_003.json",
+        "sha256": "653dad260e5f545b4b40561302335015fc880edc81e02eb6b29c98b58c5bd302"
+      },
+      "original_raw": {
+        "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_003/pose_raw.csv",
+        "sha256": "ff55b5aaf78f01e686a1f0e44b32401837ddddf771bfcadb0e213062ed54c85f"
+      },
+      "capture": {
+        "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_003/pose_raw.capture.json",
+        "sha256": "2ff595a3e58eeffd8ce072ed5d9a8bbc982694474b633cbec92fc15ca7ffd961"
+      },
+      "clean_config": {
+        "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_003/pose_clean.clean.json",
+        "sha256": "e18d4e94c66de91419a3274710818343690db57e9c2dac364d0ad13c2efbe8dc"
+      },
+      "canonical_review": {
+        "path": "analysis_results/phase2_yamamoto_20260925_01/ground_truth/pitch_003/ground_truth.json",
+        "sha256": "c839f5bd767c82d8be0506c15bb83a22230f4ea7bf83dc240c321bfa3876b240"
+      },
+      "manual_xy": {
+        "path": "annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_42/pitch_003/manual_keypoints.json",
+        "sha256": "a970354b14f728d38af97336d6872900625c956e7a105f75ab9cdcff0aa77735"
+      },
+      "reused_xy_evaluation": {
+        "path": "analysis_results/phase2_tracked_roi_pose_20261010_01/evaluation/roi_pose_evaluation.json",
+        "sha256": "a4c1f9c8dc1b16d777699576232c3d92595af1c6e6311679e7dd4d04a21e7b49"
+      }
+    },
+    "pitch_004": {
+      "full_frame_image": {
+        "path": "analysis_results/phase2_pose_mode_countercheck_20261009_01/pitch_004.json",
+        "sha256": "c88ccebf19d24adac2cceca0e893cdb7640e2a8807548c22cfc930767fe885e0"
+      },
+      "original_raw": {
+        "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_004/pose_raw.csv",
+        "sha256": "0d75dea23fa65786fb73aaec26700f43645e1fa076542ec162b947121f90ad6c"
+      },
+      "capture": {
+        "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_004/pose_raw.capture.json",
+        "sha256": "23799e6a5149509e1651c1393225d5693bce0e8cbfa2fb9c88ad321b4715e1a5"
+      },
+      "clean_config": {
+        "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_004/pose_clean.clean.json",
+        "sha256": "5b85798c18cace10e79ae746492a6cec4b26e06350a2fe4eb25e81479e54e7b2"
+      },
+      "canonical_review": {
+        "path": "analysis_results/phase2_yamamoto_20260925_01/ground_truth/pitch_004/ground_truth.json",
+        "sha256": "ee721b91ce340ce29899e40854712e2d5d9c770d09d154c913489f17f1b4408a"
+      }
+    },
+    "pitch_005": {
+      "full_frame_image": {
+        "path": "analysis_results/phase2_pose_mode_countercheck_20261009_01/pitch_005.json",
+        "sha256": "da0bd0a1694e9472afeaa5ea29a5cc5b075e9cbd9ba049305c850fb97678c361"
+      },
+      "original_raw": {
+        "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_005/pose_raw.csv",
+        "sha256": "2db3ad4087fe99d1bf5d35f48c7396d11f5f054496910851200459551f90c6ea"
+      },
+      "capture": {
+        "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_005/pose_raw.capture.json",
+        "sha256": "72ac52c8c06a8545f5c8603d4e6ea1aa012bd895557220e4b0343172256a0269"
+      },
+      "clean_config": {
+        "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_005/pose_clean.clean.json",
+        "sha256": "118a081df3f9e2cb4f4bb34bf80a132f59ce58bd304693a6211619e56dcf9174"
+      },
+      "canonical_review": {
+        "path": "analysis_results/phase2_yamamoto_20260925_01/ground_truth/pitch_005/ground_truth.json",
+        "sha256": "885986e1e150bd343968898899cfda5f5457b55a0c244d4c95c3f68daf33a66a"
+      }
+    }
+  },
+  "evaluator_dependencies": {
+    "scripts/measure_seeded_subject.py": {
+      "path": "scripts/measure_seeded_subject.py",
+      "sha256": "70be947491df5535ac769dcc97ab9c528bc8e279b0e2317c01e1762dbda7a644"
+    },
+    "scripts/measure_tracked_roi_pose.py": {
+      "path": "scripts/measure_tracked_roi_pose.py",
+      "sha256": "4c271070df6f10449455ffd1a88680adee51c13edbc44ea31143666aadbb0c9e"
+    },
+    "scripts/measure_pose_mode_countercheck.py": {
+      "path": "scripts/measure_pose_mode_countercheck.py",
+      "sha256": "a8007fe7b7b36e3e2404aaf5e42a56f7217d0f7c0ef2558b48e97ce6d912b519"
+    },
+    "src/pitch_analysis/subject.py": {
+      "path": "src/pitch_analysis/subject.py",
+      "sha256": "c5cae1ace96db5b9f3229f4f5e41870d420370676d99dea0abd03dcad3748276"
+    },
+    "src/pitch_analysis/ground_truth.py": {
+      "path": "src/pitch_analysis/ground_truth.py",
+      "sha256": "8d4f781726762492787c4a8cf1342b225d44911d86f518660f469f550d489603"
+    },
+    "src/pitch_analysis/manual_keypoints.py": {
+      "path": "src/pitch_analysis/manual_keypoints.py",
+      "sha256": "31e219dcec595f5bda943ed6456c65ec27632b7e2a401322c44ab0b969473066"
+    },
+    "src/pitch_analysis/contracts/schemas/ground-truth-v1.json": {
+      "path": "src/pitch_analysis/contracts/schemas/ground-truth-v1.json",
+      "sha256": "ed1953b61d8da305488f506830bd0928b7fd058d3d17e3fa14aa834157c1d87c"
+    },
+    "src/pitch_analysis/contracts/schemas/manual-keypoints-v1.json": {
+      "path": "src/pitch_analysis/contracts/schemas/manual-keypoints-v1.json",
+      "sha256": "0377df72433b6c20799a173ad45b9a4d88520b582cf97128fa635191300b5bad"
+    }
+  },
+  "review_frames": {
+    "pitch_001": [
+      0,
+      21,
+      43,
+      65,
+      86
+    ],
+    "pitch_002": [
+      0,
+      43,
+      87,
+      131,
+      174
+    ],
+    "pitch_003": [
+      0,
+      38,
+      70,
+      78,
+      87,
+      92,
+      95,
+      101,
+      104,
+      112,
+      114
+    ],
+    "pitch_004": [
+      0,
+      28,
+      57,
+      74,
+      75,
+      76,
+      85,
+      113
+    ],
+    "pitch_005": [
+      0,
+      25,
+      50,
+      53,
+      54,
+      55,
+      58,
+      59,
+      75,
+      100
+    ]
+  },
+  "producer_sha256": "54f1f7e0d1ab28e7b6be674c27068eac643d14348465e81172aefacb8b153b10",
+  "producer_test_sha256": "a204dac3ec9d40be5c2e3399336cad94b1545a729c38ed476ecdb7cb61b4d64f",
+  "evaluator_sha256": "0b1762995e8fbc1cb2587e800596157cec6cc4ed27fb39ee0b80e7969dee24f6",
+  "evaluator_test_sha256": "4f8c531edcaf191d0b188b535a3dba77d9d1b9e03074c9a99450e53ac0230ad1"
+}

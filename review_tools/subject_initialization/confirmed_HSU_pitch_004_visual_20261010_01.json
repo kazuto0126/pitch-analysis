@@ -1,0 +1,51 @@
+{
+  "purpose": "Human-confirmed frame0 initialization for bounded assisted pilot; not anatomical GT",
+  "status": "human_confirmed_initialization",
+  "pitch_id": "pitch_004",
+  "frame_index": 0,
+  "native_timestamp_ms": 0.0,
+  "rectangle_xywh": [
+    133,
+    110,
+    187,
+    520
+  ],
+  "decoded_bgr_sha256": "b69573556b536d4437485667988fd083b39fdc7c137e3da85ccb51db765f282b",
+  "source_video": {
+    "path": "input/yoshinobu_yamamoto/phase1_final/pitch_004.mp4",
+    "sha256": "e5a57bfc2e0746bb19af2a073d94abb7265d8dfb9ad37de06cee1de29f63d11a"
+  },
+  "query_id": "pitch_004_frame0_visual_proposal_20261010_01",
+  "native_hog_candidate_index": null,
+  "raw_hog_svm_score": null,
+  "source_kind": "assistant_visual_proposed_human_confirmed",
+  "human_conclusion": "pitcher",
+  "extent_observation": "all_presently_visible_head_arms_legs_inside_rectangle",
+  "actual_reply_token": "全部正確",
+  "reviewer_code": "HSU",
+  "reviewed_at_utc": null,
+  "confidence": null,
+  "excluded_from_effectiveness_evaluation": true,
+  "producer_must_not_open_lineage_sources": true,
+  "lineage_for_parent_preflight_only": {
+    "raw_frame": {
+      "path": "analysis_results/phase2_roi_completeness_audit_20261010_01/seed_review/pitch_004_frame0000.png",
+      "sha256": "87496d39ec76ed38bb6f58a7948dad6bb67d7afe9facc416eae4b8128337f892"
+    },
+    "question_image": {
+      "path": "analysis_results/phase2_roi_completeness_audit_20261010_01/seed_review/pitch_004_proposed_box.png",
+      "sha256": "1ee931b943770cbb170ab907be28699e64c46ff6edc76b27d52cfbf649851ace"
+    },
+    "original_unreviewed_draft": {
+      "path": "review_tools/subject_initialization/proposed_HSU_pitch_004_visual_20261010_01.json",
+      "sha256": "ff53b7d93cf438daf67a872636989a2377cae6e57ee7dd1091e04e9832fd9ede"
+    },
+    "actual_confirmation": {
+      "path": "review_tools/subject_initialization/HSU_formal_four_seed_review_20261010_01.json",
+      "sha256": "d63fff3fb8c277717eea6080a647bd680d02ecb1b61b7c3e8dd0ededd747120f"
+    }
+  },
+  "must_not_execute_until_human_confirmation": false,
+  "note": "Visible frame0 extent confirmed by actual reply; hidden joints, later-frame identity and isolation from all background people are not certified.",
+  "execution_scope": "bounded_assisted_pilot_only"
+}

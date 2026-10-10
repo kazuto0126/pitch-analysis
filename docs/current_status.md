@@ -10,7 +10,32 @@ reliability release. No new numeric acceptance bar, model, confidence gate,
 PitcherSelector, pose/tracking algorithm, interpolation or smoothing change.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-10 crop completeness diagnosis and next-gate design (latest)
+## 2026-10-10 five-clip assisted ROI cohort (latest; not adopted)
+
+[Results](phase2_assisted_roi_cohort_results_20261010.md),
+[actual frozen execution](evaluation_plans/phase2_assisted_roi_cohort_execution_20261010_02.json).
+HSU confirmed four frame0 subjects and presently visible extents: actual reply 全部正確 saved separately;
+original drafts/questions unchanged, later identity/hidden anatomy/human completion time/confidence not inferred.
+Four new clips477frames,4initializations/473updates/477pose calls;003 reuses sealed115frames and exact XY summary,
+zero new tracker/pose/evaluation inference. All592 retained;587non-seed effectiveness frames.
+Crop selected552 vs fullIMAGE555 vs originalVIDEO584. Perclip crop-IMAGE differences -3/0/+19/-7/-12;
+the four NEW clips444/473 vs IMAGE466/473 regress22frames, not hidden by003's19-frame increase.
+All587 subsequent native tracker updates succeed and allROIs are usable, yet extended limbs visibly leave narrow crops.
+35non-selected frames =16backend-empty/18original-selector-rejected/1ambiguous; no gate change or guessed causal label.
+Crop throwing-elbow supported gate availability:44/86,139/174,77/114,68/113,80/100; not anatomical accuracy.
+Per12joint raw/gate/support/extrapolation/visibility/presence/missing spans/adjacent jumps saved.
+Only003 has exact visible XY, reused without rerun; fourclip XY and newwarning/identity/event accuracy remainnull.
+39prespecified figures inspected as engineering evidence, not new humanGT. CanonicalGT5/5 remainsreviewed.
+Fixed narrow crop setting fails cohort applicability and is NOT adopted into production; automaticPhase2 staysNOT PASSED.
+Next: diagnose new missing/input-extent evidence and preregister a bounded complete-input strategy, no GT-tuned padding,
+automatic fallback, confidence reduction or repeated wholeGT review. Stop at this checkpoint; noPhase3.
+Fullsuite444run/442passed/0failures/0errors/2Windowsfile-symlinkskips,73.972s, includes real formal-five E2E.
+374protected physical sources and upstreamseals/replies unchanged; no production src/threshold/selector/pose/tracking edits.
+Eight handoff clips remaincandidate/pending, no analysis or promotion. Output:`analysis_results/phase2_assisted_roi_cohort_20261010_01/`.
+Execution `_01` retained unused because evaluator gained plan-document SHA guard before ANY inference; `_02` seals final code,
+same source/settings, with amendment reason and previous hash. No overwritten freeze or repeated measurement.
+
+## 2026-10-10 crop completeness diagnosis and next-gate design (preceding)
 
 [Next-gate plan](phase2_roi_completeness_fiveclip_plan_20261010.md).
 Offline replay of all115 original selector receipts matches exactly. All six rejected frames have valid ROI:

@@ -1,0 +1,145 @@
+{
+  "purpose": "Actual HSU confirmation of four new frame0 subject boxes and presently visible extent",
+  "reviewer_code": "HSU",
+  "reviewer_code_source": "Previously user-selected reviewer code in this conversation",
+  "recorded_at_utc": "2026-10-10T10:28:45.360115+00:00",
+  "client_local_date": "2026-10-10",
+  "reviewed_at_utc": null,
+  "confidence": null,
+  "review_time_source": "No human completion timestamp supplied; recording time is separate",
+  "exact_question": "請看上方四張第0格圖片：Q1=pitch_001、Q2=pitch_002、Q3=pitch_004、Q4=pitch_005。每個黃框是否主要框住投手，且沒有裁掉目前看得見的頭、手臂或腳？全部符合可回「四個都正確」；有例外請說 Q 編號及哪裡被裁掉／框錯。只確認可見範圍，不需要猜被遮住的關節。",
+  "raw_user_reply": "全部正確",
+  "source_question_snapshot": {
+    "path": "analysis_results/phase2_roi_completeness_audit_20261010_01/seed_review/questions.json",
+    "sha256": "6fba3105e7f7e553f91a27a3fa4a69028a62688a2fa37dcc0140558d21af8a6c"
+  },
+  "display_contact_sheets": [
+    {
+      "path": "analysis_results/phase2_roi_completeness_audit_20261010_01/seed_review/seed_contact_01.png",
+      "sha256": "9089406e7125a05359eaf276e2ae4b5628f4901af863a864f2a64ece01690fca"
+    },
+    {
+      "path": "analysis_results/phase2_roi_completeness_audit_20261010_01/seed_review/seed_contact_02.png",
+      "sha256": "f8f8e0dacc353ff7e063e51dec6537e0066bfa1c0455234ba6465838bbc0f401"
+    }
+  ],
+  "scope": "Only these four frame0 rectangles: main subject pitcher and presently visible head/arms/legs within box",
+  "hidden_anatomy_verified": false,
+  "later_frames_identity_verified": false,
+  "all_other_people_excluded": false,
+  "review_status": "four_frame0_subjects_and_visible_extents_confirmed",
+  "queries": [
+    {
+      "display_number": 1,
+      "query_id": "pitch_001_frame0_visual_proposal_20261010_01",
+      "pitch_id": "pitch_001",
+      "frame_index": 0,
+      "native_timestamp_ms": 0.0,
+      "rectangle_xywh": [
+        115,
+        80,
+        160,
+        410
+      ],
+      "decoded_bgr_sha256": "d2f3c8a19f02b4e4fd9ac9697e27a723195f049f71f3b9fcca683e2c764d34ce",
+      "draft": {
+        "path": "review_tools/subject_initialization/proposed_HSU_pitch_001_visual_20261010_01.json",
+        "sha256": "5b2b04c61ab03dc28468168795a5d70b85140ae8e4e01942fdde71443ab7d4d9"
+      },
+      "question_image": {
+        "path": "analysis_results/phase2_roi_completeness_audit_20261010_01/seed_review/pitch_001_proposed_box.png",
+        "sha256": "9de163914b38c9e56e9c123ce058847425e58e66bff4daf71c9cbbfb88ef7f4c"
+      },
+      "conclusion": "pitcher",
+      "extent_observation": "all_presently_visible_head_arms_legs_inside_rectangle",
+      "raw_user_reply": "全部正確",
+      "reviewer_code": "HSU",
+      "reviewed_at_utc": null,
+      "confidence": null
+    },
+    {
+      "display_number": 2,
+      "query_id": "pitch_002_frame0_visual_proposal_20261010_01",
+      "pitch_id": "pitch_002",
+      "frame_index": 0,
+      "native_timestamp_ms": 0.0,
+      "rectangle_xywh": [
+        95,
+        105,
+        190,
+        460
+      ],
+      "decoded_bgr_sha256": "1759be0158444c7c3dad05b244d5a29923061fafff97b3a58d091041d94f202a",
+      "draft": {
+        "path": "review_tools/subject_initialization/proposed_HSU_pitch_002_visual_20261010_01.json",
+        "sha256": "03b7352b7003ffe73a29180c53a73642cf11b66a892215d8fe09ea38d1ab4f19"
+      },
+      "question_image": {
+        "path": "analysis_results/phase2_roi_completeness_audit_20261010_01/seed_review/pitch_002_proposed_box.png",
+        "sha256": "6eebbb0ec3619692aa068109141ff009e84defb7eb9b101104ff36fc7ab686d7"
+      },
+      "conclusion": "pitcher",
+      "extent_observation": "all_presently_visible_head_arms_legs_inside_rectangle",
+      "raw_user_reply": "全部正確",
+      "reviewer_code": "HSU",
+      "reviewed_at_utc": null,
+      "confidence": null
+    },
+    {
+      "display_number": 3,
+      "query_id": "pitch_004_frame0_visual_proposal_20261010_01",
+      "pitch_id": "pitch_004",
+      "frame_index": 0,
+      "native_timestamp_ms": 0.0,
+      "rectangle_xywh": [
+        133,
+        110,
+        187,
+        520
+      ],
+      "decoded_bgr_sha256": "b69573556b536d4437485667988fd083b39fdc7c137e3da85ccb51db765f282b",
+      "draft": {
+        "path": "review_tools/subject_initialization/proposed_HSU_pitch_004_visual_20261010_01.json",
+        "sha256": "ff53b7d93cf438daf67a872636989a2377cae6e57ee7dd1091e04e9832fd9ede"
+      },
+      "question_image": {
+        "path": "analysis_results/phase2_roi_completeness_audit_20261010_01/seed_review/pitch_004_proposed_box.png",
+        "sha256": "1ee931b943770cbb170ab907be28699e64c46ff6edc76b27d52cfbf649851ace"
+      },
+      "conclusion": "pitcher",
+      "extent_observation": "all_presently_visible_head_arms_legs_inside_rectangle",
+      "raw_user_reply": "全部正確",
+      "reviewer_code": "HSU",
+      "reviewed_at_utc": null,
+      "confidence": null
+    },
+    {
+      "display_number": 4,
+      "query_id": "pitch_005_frame0_visual_proposal_20261010_01",
+      "pitch_id": "pitch_005",
+      "frame_index": 0,
+      "native_timestamp_ms": 0.0,
+      "rectangle_xywh": [
+        120,
+        75,
+        175,
+        445
+      ],
+      "decoded_bgr_sha256": "21a1bf4b6e976da1706afda3d31c1a0bb9f81823a0476010830a0a37524548b6",
+      "draft": {
+        "path": "review_tools/subject_initialization/proposed_HSU_pitch_005_visual_20261010_01.json",
+        "sha256": "bd2a0c0ae178f050d4e98c48c844b96904c1b9760542fb6a0da16666f4fe34a6"
+      },
+      "question_image": {
+        "path": "analysis_results/phase2_roi_completeness_audit_20261010_01/seed_review/pitch_005_proposed_box.png",
+        "sha256": "43e172e50d60a618521e4f13efcd0b176e99e87fd4da70f6a08d615886a6f43d"
+      },
+      "conclusion": "pitcher",
+      "extent_observation": "all_presently_visible_head_arms_legs_inside_rectangle",
+      "raw_user_reply": "全部正確",
+      "reviewer_code": "HSU",
+      "reviewed_at_utc": null,
+      "confidence": null
+    }
+  ]
+}
