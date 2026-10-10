@@ -10,7 +10,31 @@ reliability release. No new numeric acceptance bar, model, confidence gate,
 PitcherSelector, pose/tracking algorithm, interpolation or smoothing change.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-10 human-initialized subject continuation checkpoint
+## 2026-10-10 tracked crop pose sensitivity checkpoint (latest)
+
+[Results](phase2_tracked_roi_pose_results_20261010.md),
+[frozen execution](evaluation_plans/phase2_tracked_roi_pose_execution_20261010_01.json).
+Added isolated crop producer/offline evaluator and 28 regressions. One003 forward run,115 native frames,
+same full model/options/original selector; sealed CSRT rectangles reused without tracker replay or tuning.
+Frame0 excluded:114frames/1195visible manual references,1151in/44out. All source/crop pixel/PTS,
+XY/Z mapping and both crop/full-IMAGE selector receipts independently verified across115frames.
+Primary supported common847points: fullIMAGE mean19.1565px -> crop9.0031px,478improved/369worsened.
+Original major18 common113points:80.4089 ->10.8965px,110improved/3worsened; other96 common734:
+9.7266 ->8.7116px,368improved/366worsened. Old labels are group membership, not new CROP correctness GT.
+Secondary common1002withVIDEO:20.7130 ->9.6994px. Different conditional sets remain separate.
+Crop108selected/6rejected; missing64visible points/below-gate95, cropgate1036vsIMAGE908/VIDEO1140.
+Only1016cropgate points have reference AND prediction inside input.44out-of-crop references stay in denominator.
+Visible throwing elbow87–96 remains below existing gate; no confidence reduction or fabricated observation.
+Nine prespecified examples inspected; severe torso displacement improves, local errors and cropped limbs remain.
+Known003/human-initialized development evidence only, no automatic promotion/core integration/other-four expansion.
+Newwarningpolicy/counts/identityaccuracy/eventaccuracy/passed=null; original productionFN18 remains unchanged.
+Phase2 automatic reliability staysNOT PASSED. Next: input completeness/abstention and bounded five-clip validation
+design before any proposed core change; do not repeat5/5GT or automatically tune crop settings.
+Fullsuite411run/409passed/0failures/0errors/2Windowsfile-symlinkskips, including real formal-five E2E.
+374protected physical sources plus upstreamCSRT/replies/mode seals unchanged. Eight handoffclips candidate/pending.
+Output:`analysis_results/phase2_tracked_roi_pose_20261010_01/`. No Phase3.
+
+## 2026-10-10 human-initialized subject continuation checkpoint (preceding)
 
 [Results](phase2_subject_assignment_results_20261010.md),
 [frozen execution](evaluation_plans/phase2_subject_assignment_execution_20261010_01.json).

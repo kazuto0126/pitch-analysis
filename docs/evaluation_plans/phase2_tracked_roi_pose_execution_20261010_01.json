@@ -1,0 +1,133 @@
+{
+  "status": "frozen_before_measurement",
+  "client_date_local": "2026-10-10",
+  "proposal_manifest": "docs/evaluation_plans/phase2_tracked_roi_pose_proposal_20261010.json",
+  "proposal_manifest_sha256": "9b751727d94e06c928ec00e577b980ef0af85d7b39adbb7b77cd5a4f27cef484",
+  "producer_sources": {
+    "video": {
+      "path": "input/yoshinobu_yamamoto/phase1_final/pitch_003.mp4",
+      "sha256": "5c08dba98504d998536dfd0f0fab598760400612c9049445a68120e68fdf024c"
+    },
+    "metadata": {
+      "path": "input/yoshinobu_yamamoto/phase1_final/pitch_003.json",
+      "sha256": "d6015e8e864f4a7d665e289587b692294d53680f61e016bd68d07f6d84a91da6"
+    },
+    "video_technical": {
+      "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_003/video_metadata.json",
+      "sha256": "79bcd048187fd1901c5ab285119919aa82a78cc2eda4339a5da1228a2cce42c7"
+    },
+    "tracked_roi": {
+      "path": "analysis_results/phase2_subject_assignment_20261010_01/seeded_subject_measurements.json",
+      "sha256": "27c503042abbe0fef3a04191f325735b019954db3289206722becae333296997"
+    },
+    "model": {
+      "path": "models/pose_landmarker_full.task",
+      "sha256": "5134a3aad27a58b93da0088d431f366da362b44e3ccfbe3462b3827a839011b1"
+    }
+  },
+  "producer_dependencies": {
+    "scripts/measure_seeded_subject.py": {
+      "path": "scripts/measure_seeded_subject.py",
+      "sha256": "70be947491df5535ac769dcc97ab9c528bc8e279b0e2317c01e1762dbda7a644"
+    },
+    "src/pitch_analysis/pose_capture.py": {
+      "path": "src/pitch_analysis/pose_capture.py",
+      "sha256": "02f071811a2de83011e6927e2bd933623f918b8338dfe364888c6050e6ba3061"
+    },
+    "src/pitch_analysis/pose_estimator.py": {
+      "path": "src/pitch_analysis/pose_estimator.py",
+      "sha256": "beb8a3a295712f16ed75bbd9545e0a2acb286c325ae4ae62d1ad8f1631250046"
+    },
+    "src/pitch_analysis/subject.py": {
+      "path": "src/pitch_analysis/subject.py",
+      "sha256": "c5cae1ace96db5b9f3229f4f5e41870d420370676d99dea0abd03dcad3748276"
+    }
+  },
+  "parameters": {
+    "running_mode": "IMAGE",
+    "crop": "sealed_csrt_rectangle_integer_floor_ceil_intersection",
+    "external_resize": null,
+    "padding": 0,
+    "mirror": false,
+    "map_before_selector": true,
+    "selector": "original_PitcherSelector_fresh_per_clip",
+    "candidate_association": null,
+    "coordinate_correction": false,
+    "interpolation": false,
+    "fallback": null,
+    "seed_frame_excluded": 0,
+    "warning_policy": null,
+    "image_processing_options": null,
+    "xy_mapping": "crop_affine_to_original_image_normalized",
+    "z_mapping": "crop_width_over_original_width_backend_relative_bookkeeping",
+    "output_semantics": "experimental_raw_not_observed_or_correct"
+  },
+  "options": {
+    "num_poses": 4,
+    "min_pose_detection_confidence": 0.5,
+    "min_pose_presence_confidence": 0.5,
+    "min_tracking_confidence": 0.5,
+    "output_segmentation_masks": false
+  },
+  "target": {
+    "pitch_id": "pitch_003",
+    "total_frames": 115,
+    "width": 510,
+    "height": 628
+  },
+  "runtime": {
+    "python": "3.12.14",
+    "executable_sha256": "5fc3c5244b5eef01a82fbefd1932d1382b79c72fe6e64ffe8df1e3ce3643f02f",
+    "mediapipe": "1.0.1",
+    "opencv": "5.0.0.93",
+    "numpy": "2.5.3"
+  },
+  "native_binding_hashes": {
+    ".venv-analysis/Lib/site-packages/cv2/cv2.pyd": "ae833b9b5771f5932200bd3b8ad0f483f4fbec92cbdbd26d21d38fe524c60e66",
+    ".venv-analysis/Lib/site-packages/mediapipe/tasks/c/libmediapipe.dll": "31335db8bb8cd4bb294fd689b6b06086eb33782ee9c7f4667e12a6014a68436c"
+  },
+  "evaluator_sources": {
+    "original_raw": {
+      "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_003/pose_raw.csv",
+      "sha256": "ff55b5aaf78f01e686a1f0e44b32401837ddddf771bfcadb0e213062ed54c85f"
+    },
+    "capture": {
+      "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_003/pose_raw.capture.json",
+      "sha256": "2ff595a3e58eeffd8ce072ed5d9a8bbc982694474b633cbec92fc15ca7ffd961"
+    },
+    "manual_xy": {
+      "path": "annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_42/pitch_003/manual_keypoints.json",
+      "sha256": "a970354b14f728d38af97336d6872900625c956e7a105f75ab9cdcff0aa77735"
+    },
+    "canonical_review": {
+      "path": "analysis_results/phase2_yamamoto_20260925_01/ground_truth/pitch_003/ground_truth.json",
+      "sha256": "c839f5bd767c82d8be0506c15bb83a22230f4ea7bf83dc240c321bfa3876b240"
+    },
+    "clean_config": {
+      "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_003/pose_clean.clean.json",
+      "sha256": "e18d4e94c66de91419a3274710818343690db57e9c2dac364d0ad13c2efbe8dc"
+    },
+    "full_frame_image": {
+      "path": "analysis_results/phase2_pose_mode_countercheck_20261009_01/pitch_003.json",
+      "sha256": "653dad260e5f545b4b40561302335015fc880edc81e02eb6b29c98b58c5bd302"
+    }
+  },
+  "evaluator_dependencies": {
+    "scripts/measure_pose_mode_countercheck.py": {
+      "path": "scripts/measure_pose_mode_countercheck.py",
+      "sha256": "a8007fe7b7b36e3e2404aaf5e42a56f7217d0f7c0ef2558b48e97ce6d912b519"
+    },
+    "src/pitch_analysis/ground_truth.py": {
+      "path": "src/pitch_analysis/ground_truth.py",
+      "sha256": "8d4f781726762492787c4a8cf1342b225d44911d86f518660f469f550d489603"
+    },
+    "src/pitch_analysis/manual_keypoints.py": {
+      "path": "src/pitch_analysis/manual_keypoints.py",
+      "sha256": "31e219dcec595f5bda943ed6456c65ec27632b7e2a401322c44ab0b969473066"
+    }
+  },
+  "producer_sha256": "4c271070df6f10449455ffd1a88680adee51c13edbc44ea31143666aadbb0c9e",
+  "evaluator_sha256": "d4448023e6461c9a2c879c7a4290f3182eab52494ca64a7dc526a33b3b19828f",
+  "producer_test_sha256": "fe9285a053a8110e5187b46a29a232f64077ab6d98d5559d3db2cf94f08ddc81",
+  "evaluator_test_sha256": "bc04e54d0bbdca5c7f4327059ec9a2ff3f7e178f6522c17f4cd8d28d1a43f932"
+}
