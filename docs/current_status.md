@@ -10,7 +10,26 @@ reliability release. No new numeric acceptance bar, model, confidence gate,
 PitcherSelector, pose/tracking algorithm, interpolation or smoothing change.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-10 tracked crop pose sensitivity checkpoint (latest)
+## 2026-10-10 crop completeness diagnosis and next-gate design (latest)
+
+[Next-gate plan](phase2_roi_completeness_fiveclip_plan_20261010.md).
+Offline replay of all115 original selector receipts matches exactly. All six rejected frames have valid ROI:
+63/68/79/81 backend no-candidate,65 only5/8 major joints meet existing0.35rule,80 body height0.07945
+violates existing0.16 minimum. Backend empty causal reason remains unknown; no gate change or fabricated occlusion.
+44visible reference points outside crop across26frames;21left-wrist/11right-ankle dominate. Do not tune padding fromGT.
+Defined missing/support/unknown semantics and five-clip prerequisites; no new detector or warning implemented.
+Only003 has saved human-confirmed seed and pixelXY reference; four frame0 visual proposals and two contact sheets
+are prepared, with confirmation requested in conversation. All four human-answer fields remainnull; do not execute
+unreviewed proposals or transfer prior responses. Preserve drafts and save future actual replies separately.
+Five assisted clips retain592sourceframes,587non-seed if excluding eachframe0; all5canonicalGT remainsreviewed.
+No direct four-clip expansion/new padding/fallback selected; quantitativeXY for four clips remainsnull.
+Human-seeded experiment cannot certify automatic initialization; automaticPhase2 remainsNOT PASSED.
+No new inference/tracker/GT/core change;374protected hashes unchanged. Latest suite409passed/2skipped
+is the preceding411-test formal-five run, not rerun for this documents/offline-audit checkpoint.
+Audit:`analysis_results/phase2_roi_completeness_audit_20261010_01/failure_audit.json`.
+Eight handoff clips remaincandidate/pending; no Phase3.
+
+## 2026-10-10 tracked crop pose sensitivity checkpoint (preceding)
 
 [Results](phase2_tracked_roi_pose_results_20261010.md),
 [frozen execution](evaluation_plans/phase2_tracked_roi_pose_execution_20261010_01.json).

@@ -19,3 +19,5 @@ scripts/evaluate_tracked_roi_pose.py text eol=lf
 tests/test_tracked_roi_pose.py text eol=lf
 tests/test_tracked_roi_pose_evaluation.py text eol=lf
 docs/phase2_tracked_roi_pose_results_20261010.md text eol=lf
+docs/phase2_roi_completeness_fiveclip_plan_20261010.md text eol=lf
+docs/evaluation_plans/phase2_roi_completeness_*.json text eol=lf

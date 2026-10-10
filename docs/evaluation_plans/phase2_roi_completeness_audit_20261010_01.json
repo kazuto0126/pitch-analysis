@@ -1,0 +1,591 @@
+{
+  "status": "completed_offline_failure_audit",
+  "client_date_local": "2026-10-10",
+  "sources": {
+    "execution": {
+      "path": "docs/evaluation_plans/phase2_tracked_roi_pose_execution_20261010_01.json",
+      "sha256": "18596af448baa8442ca97e2a3818f67a6286fc6596aff780a684067796cf0070"
+    },
+    "measurements": {
+      "path": "analysis_results/phase2_tracked_roi_pose_20261010_01/roi_pose_measurements.json",
+      "sha256": "73b309969ad1dc371a029b6a6135f3e412c8683b7c849feb0f1996d9511658c1"
+    },
+    "evaluation": {
+      "path": "analysis_results/phase2_tracked_roi_pose_20261010_01/evaluation/roi_pose_evaluation.json",
+      "sha256": "a4c1f9c8dc1b16d777699576232c3d92595af1c6e6311679e7dd4d04a21e7b49"
+    },
+    "point_comparisons": {
+      "path": "analysis_results/phase2_tracked_roi_pose_20261010_01/evaluation/point_comparisons.json",
+      "sha256": "d676f9aea7168397298230da3ef2f40535b217db030b8bf215901032f04107f4"
+    },
+    "original_selector": {
+      "path": "src/pitch_analysis/subject.py",
+      "sha256": "c5cae1ace96db5b9f3229f4f5e41870d420370676d99dea0abd03dcad3748276"
+    }
+  },
+  "original_selector_receipts_replayed": 115,
+  "new_model_inference_calls": 0,
+  "new_tracker_calls": 0,
+  "new_human_labels": 0,
+  "rejections": [
+    {
+      "frame_index": 63,
+      "crop_bounds_xyxy": [
+        135,
+        190,
+        339,
+        600
+      ],
+      "roi_available": true,
+      "inference_status": "measured",
+      "candidate_count": 0,
+      "original_selector_receipt": {
+        "index": null,
+        "status": "rejected",
+        "reason": "no_reliable_pitcher_candidate",
+        "candidate_count": 0,
+        "score": null,
+        "mean_confidence": null
+      },
+      "candidate_diagnostics": [],
+      "visible_reference_count": 12,
+      "visible_references_outside_crop": [],
+      "source_failure_category": "backend_no_candidate",
+      "causal_reason_for_backend_output": null,
+      "old_video_status": "selected",
+      "old_image_status": "rejected"
+    },
+    {
+      "frame_index": 65,
+      "crop_bounds_xyxy": [
+        138,
+        202,
+        338,
+        604
+      ],
+      "roi_available": true,
+      "inference_status": "measured",
+      "candidate_count": 1,
+      "original_selector_receipt": {
+        "index": null,
+        "status": "rejected",
+        "reason": "no_reliable_pitcher_candidate",
+        "candidate_count": 1,
+        "score": null,
+        "mean_confidence": null
+      },
+      "candidate_diagnostics": [
+        {
+          "candidate_index": 0,
+          "mean_major_confidence": 0.6434140577912331,
+          "major_joints_at_least_0_35": 5,
+          "hip_x_normalized": 0.4581798008843964,
+          "hip_y_normalized": 0.6436398737369828,
+          "body_height_normalized": 0.3630891718729666,
+          "hip_distance_normalized": 0.010907411105496336,
+          "existing_continuity_limit": 0.18,
+          "checks_from_frozen_original_selector": {
+            "mean_confidence_at_least_0_45": true,
+            "at_least_six_joints_at_0_35": false,
+            "hip_x_in_existing_range": true,
+            "hip_y_in_existing_range": true,
+            "height_in_existing_range": true,
+            "continuity_if_active": true
+          },
+          "failed_checks": [
+            "at_least_six_joints_at_0_35"
+          ],
+          "per_major_joint_confidence": {
+            "11": 0.9841724634170532,
+            "12": 0.9963834285736084,
+            "23": 0.9738988876342773,
+            "24": 0.9909124374389648,
+            "25": 0.11835259944200516,
+            "26": 0.7202322483062744,
+            "27": 0.10342224687337875,
+            "28": 0.25993815064430237
+          }
+        }
+      ],
+      "visible_reference_count": 11,
+      "visible_references_outside_crop": [],
+      "source_failure_category": "existing_selector_rejected",
+      "causal_reason_for_backend_output": null,
+      "old_video_status": "selected",
+      "old_image_status": "rejected"
+    },
+    {
+      "frame_index": 68,
+      "crop_bounds_xyxy": [
+        144,
+        189,
+        344,
+        591
+      ],
+      "roi_available": true,
+      "inference_status": "measured",
+      "candidate_count": 0,
+      "original_selector_receipt": {
+        "index": null,
+        "status": "rejected",
+        "reason": "no_reliable_pitcher_candidate",
+        "candidate_count": 0,
+        "score": null,
+        "mean_confidence": null
+      },
+      "candidate_diagnostics": [],
+      "visible_reference_count": 11,
+      "visible_references_outside_crop": [],
+      "source_failure_category": "backend_no_candidate",
+      "causal_reason_for_backend_output": null,
+      "old_video_status": "selected",
+      "old_image_status": "rejected"
+    },
+    {
+      "frame_index": 79,
+      "crop_bounds_xyxy": [
+        166,
+        157,
+        370,
+        567
+      ],
+      "roi_available": true,
+      "inference_status": "measured",
+      "candidate_count": 0,
+      "original_selector_receipt": {
+        "index": null,
+        "status": "rejected",
+        "reason": "no_reliable_pitcher_candidate",
+        "candidate_count": 0,
+        "score": null,
+        "mean_confidence": null
+      },
+      "candidate_diagnostics": [],
+      "visible_reference_count": 10,
+      "visible_references_outside_crop": [
+        "LEFT_ELBOW",
+        "LEFT_WRIST",
+        "RIGHT_KNEE",
+        "RIGHT_ANKLE"
+      ],
+      "source_failure_category": "backend_no_candidate",
+      "causal_reason_for_backend_output": null,
+      "old_video_status": "selected",
+      "old_image_status": "rejected"
+    },
+    {
+      "frame_index": 80,
+      "crop_bounds_xyxy": [
+        162,
+        157,
+        366,
+        567
+      ],
+      "roi_available": true,
+      "inference_status": "measured",
+      "candidate_count": 1,
+      "original_selector_receipt": {
+        "index": null,
+        "status": "rejected",
+        "reason": "no_reliable_pitcher_candidate",
+        "candidate_count": 1,
+        "score": null,
+        "mean_confidence": null
+      },
+      "candidate_diagnostics": [
+        {
+          "candidate_index": 0,
+          "mean_major_confidence": 0.6467525055631995,
+          "major_joints_at_least_0_35": 6,
+          "hip_x_normalized": 0.497018207171384,
+          "hip_y_normalized": 0.4392973107706969,
+          "body_height_normalized": 0.07945170329444726,
+          "hip_distance_normalized": 0.10915958853706346,
+          "existing_continuity_limit": 0.18,
+          "checks_from_frozen_original_selector": {
+            "mean_confidence_at_least_0_45": true,
+            "at_least_six_joints_at_0_35": true,
+            "hip_x_in_existing_range": true,
+            "hip_y_in_existing_range": true,
+            "height_in_existing_range": false,
+            "continuity_if_active": true
+          },
+          "failed_checks": [
+            "height_in_existing_range"
+          ],
+          "per_major_joint_confidence": {
+            "11": 0.9998087286949158,
+            "12": 0.9999351501464844,
+            "23": 0.9991787075996399,
+            "24": 0.9991692304611206,
+            "25": 0.5038012862205505,
+            "26": 0.45210808515548706,
+            "27": 0.15468503534793854,
+            "28": 0.06533382087945938
+          }
+        }
+      ],
+      "visible_reference_count": 10,
+      "visible_references_outside_crop": [
+        "LEFT_ELBOW",
+        "LEFT_WRIST",
+        "RIGHT_KNEE",
+        "RIGHT_ANKLE"
+      ],
+      "source_failure_category": "existing_selector_rejected",
+      "causal_reason_for_backend_output": null,
+      "old_video_status": "selected",
+      "old_image_status": "rejected"
+    },
+    {
+      "frame_index": 81,
+      "crop_bounds_xyxy": [
+        162,
+        156,
+        366,
+        566
+      ],
+      "roi_available": true,
+      "inference_status": "measured",
+      "candidate_count": 0,
+      "original_selector_receipt": {
+        "index": null,
+        "status": "rejected",
+        "reason": "no_reliable_pitcher_candidate",
+        "candidate_count": 0,
+        "score": null,
+        "mean_confidence": null
+      },
+      "candidate_diagnostics": [],
+      "visible_reference_count": 10,
+      "visible_references_outside_crop": [
+        "LEFT_ELBOW",
+        "LEFT_WRIST",
+        "RIGHT_KNEE",
+        "RIGHT_ANKLE"
+      ],
+      "source_failure_category": "backend_no_candidate",
+      "causal_reason_for_backend_output": null,
+      "old_video_status": "selected",
+      "old_image_status": "rejected"
+    }
+  ],
+  "outside_visible_reference_count": 44,
+  "frames_with_outside_visible_reference_count": 26,
+  "outside_visible_reference_by_joint": {
+    "LEFT_WRIST": 21,
+    "LEFT_ANKLE": 2,
+    "RIGHT_WRIST": 1,
+    "RIGHT_KNEE": 4,
+    "RIGHT_ANKLE": 11,
+    "LEFT_ELBOW": 5
+  },
+  "outside_visible_reference_by_frame": {
+    "49": 1,
+    "50": 1,
+    "51": 1,
+    "52": 1,
+    "53": 1,
+    "54": 2,
+    "55": 2,
+    "56": 1,
+    "57": 1,
+    "58": 1,
+    "59": 1,
+    "60": 1,
+    "61": 1,
+    "62": 1,
+    "69": 1,
+    "77": 3,
+    "78": 2,
+    "79": 4,
+    "80": 4,
+    "81": 4,
+    "82": 3,
+    "83": 3,
+    "84": 1,
+    "85": 1,
+    "86": 1,
+    "87": 1
+  },
+  "outside_visible_reference_records": [
+    {
+      "frame_index": 49,
+      "joint": "LEFT_WRIST"
+    },
+    {
+      "frame_index": 50,
+      "joint": "LEFT_WRIST"
+    },
+    {
+      "frame_index": 51,
+      "joint": "LEFT_WRIST"
+    },
+    {
+      "frame_index": 52,
+      "joint": "LEFT_WRIST"
+    },
+    {
+      "frame_index": 53,
+      "joint": "LEFT_WRIST"
+    },
+    {
+      "frame_index": 54,
+      "joint": "LEFT_WRIST"
+    },
+    {
+      "frame_index": 54,
+      "joint": "LEFT_ANKLE"
+    },
+    {
+      "frame_index": 55,
+      "joint": "LEFT_WRIST"
+    },
+    {
+      "frame_index": 55,
+      "joint": "LEFT_ANKLE"
+    },
+    {
+      "frame_index": 56,
+      "joint": "LEFT_WRIST"
+    },
+    {
+      "frame_index": 57,
+      "joint": "LEFT_WRIST"
+    },
+    {
+      "frame_index": 58,
+      "joint": "LEFT_WRIST"
+    },
+    {
+      "frame_index": 59,
+      "joint": "LEFT_WRIST"
+    },
+    {
+      "frame_index": 60,
+      "joint": "LEFT_WRIST"
+    },
+    {
+      "frame_index": 61,
+      "joint": "LEFT_WRIST"
+    },
+    {
+      "frame_index": 62,
+      "joint": "LEFT_WRIST"
+    },
+    {
+      "frame_index": 69,
+      "joint": "RIGHT_WRIST"
+    },
+    {
+      "frame_index": 77,
+      "joint": "LEFT_WRIST"
+    },
+    {
+      "frame_index": 77,
+      "joint": "RIGHT_KNEE"
+    },
+    {
+      "frame_index": 77,
+      "joint": "RIGHT_ANKLE"
+    },
+    {
+      "frame_index": 78,
+      "joint": "LEFT_WRIST"
+    },
+    {
+      "frame_index": 78,
+      "joint": "RIGHT_ANKLE"
+    },
+    {
+      "frame_index": 79,
+      "joint": "LEFT_ELBOW"
+    },
+    {
+      "frame_index": 79,
+      "joint": "LEFT_WRIST"
+    },
+    {
+      "frame_index": 79,
+      "joint": "RIGHT_KNEE"
+    },
+    {
+      "frame_index": 79,
+      "joint": "RIGHT_ANKLE"
+    },
+    {
+      "frame_index": 80,
+      "joint": "LEFT_ELBOW"
+    },
+    {
+      "frame_index": 80,
+      "joint": "LEFT_WRIST"
+    },
+    {
+      "frame_index": 80,
+      "joint": "RIGHT_KNEE"
+    },
+    {
+      "frame_index": 80,
+      "joint": "RIGHT_ANKLE"
+    },
+    {
+      "frame_index": 81,
+      "joint": "LEFT_ELBOW"
+    },
+    {
+      "frame_index": 81,
+      "joint": "LEFT_WRIST"
+    },
+    {
+      "frame_index": 81,
+      "joint": "RIGHT_KNEE"
+    },
+    {
+      "frame_index": 81,
+      "joint": "RIGHT_ANKLE"
+    },
+    {
+      "frame_index": 82,
+      "joint": "LEFT_ELBOW"
+    },
+    {
+      "frame_index": 82,
+      "joint": "LEFT_WRIST"
+    },
+    {
+      "frame_index": 82,
+      "joint": "RIGHT_ANKLE"
+    },
+    {
+      "frame_index": 83,
+      "joint": "LEFT_ELBOW"
+    },
+    {
+      "frame_index": 83,
+      "joint": "LEFT_WRIST"
+    },
+    {
+      "frame_index": 83,
+      "joint": "RIGHT_ANKLE"
+    },
+    {
+      "frame_index": 84,
+      "joint": "RIGHT_ANKLE"
+    },
+    {
+      "frame_index": 85,
+      "joint": "RIGHT_ANKLE"
+    },
+    {
+      "frame_index": 86,
+      "joint": "RIGHT_ANKLE"
+    },
+    {
+      "frame_index": 87,
+      "joint": "RIGHT_ANKLE"
+    }
+  ],
+  "reference_visibility_semantics_unchanged": true,
+  "completeness_truth_is_offline_only": true,
+  "automatic_complete_body_detection_implemented": false,
+  "padding_selected_from_manual_coordinates": false,
+  "formal_core_changed": false,
+  "new_warning_policy": null,
+  "automatic_phase2": "NOT PASSED",
+  "protected_files_verified": 374,
+  "full_suite_rerun": false,
+  "latest_full_suite": {
+    "run": 411,
+    "passed": 409,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 2,
+    "seconds": 63.469,
+    "real_formal_five_e2e": "executed_ok",
+    "skip_reasons": [
+      "test_dangling_snapshot_file_link_cannot_create_external_target_when_supported (test_handoff_paths.HandoffPathTests.test_dangling_snapshot_file_link_cannot_create_external_target_when_supported) ... skipped 'file symlink creation is unavailable'",
+      "test_source_symlink_outside_candidate_is_rejected_when_supported (test_handoff_review.HandoffReviewTests.test_source_symlink_outside_candidate_is_rejected_when_supported) ... skipped 'creating symbolic links is unavailable'"
+    ],
+    "log_path": "analysis_results/phase2_tracked_roi_pose_proposal_20261010_01/full_test_suite_formal5.log",
+    "log_sha256": "d8e7c7b43bee0102773943aea3f8cdd7b3f724ee304775b73fdb9b1f270a2fc1"
+  },
+  "offline_audit": {
+    "path": "analysis_results/phase2_roi_completeness_audit_20261010_01/failure_audit.json",
+    "sha256": "f1442cbf5bc3d4e4ee6d1e1e00b0611e5bff574a47b323d0da1d6a91eed15578"
+  },
+  "plan": {
+    "path": "docs/phase2_roi_completeness_fiveclip_plan_20261010.md",
+    "sha256": "fdd367a200abe15a558a6a0d0525144534eb0bfcf6b22f2d1bb94643d6f02c27"
+  },
+  "audit_generator": {
+    "path": "analysis_results/phase2_roi_completeness_audit_20261010_01/audit.py",
+    "sha256": "9165c0bd269fdcd6cb2036d8594d83ddc477e1d8e55ac98c451ad2b1b602ec2f"
+  },
+  "seed_preparation_generator": {
+    "path": "analysis_results/phase2_roi_completeness_audit_20261010_01/prepare_seed_review.py",
+    "sha256": "8f9e4addaf1a5721176e53c4db1186b873e53ec7b483036b963f9b6d90b7adbe"
+  },
+  "seed_review_snapshot": {
+    "status": "four_proposals_awaiting_human_confirmation",
+    "questions": [
+      {
+        "query_number": 1,
+        "proposal_path": "review_tools/subject_initialization/proposed_HSU_pitch_001_visual_20261010_01.json",
+        "proposal_sha256": "5b2b04c61ab03dc28468168795a5d70b85140ae8e4e01942fdde71443ab7d4d9",
+        "display_path": "analysis_results/phase2_roi_completeness_audit_20261010_01/seed_review/pitch_001_proposed_box.png",
+        "display_sha256": "9de163914b38c9e56e9c123ce058847425e58e66bff4daf71c9cbbfb88ef7f4c",
+        "human_conclusion": null,
+        "used": false
+      },
+      {
+        "query_number": 2,
+        "proposal_path": "review_tools/subject_initialization/proposed_HSU_pitch_002_visual_20261010_01.json",
+        "proposal_sha256": "03b7352b7003ffe73a29180c53a73642cf11b66a892215d8fe09ea38d1ab4f19",
+        "display_path": "analysis_results/phase2_roi_completeness_audit_20261010_01/seed_review/pitch_002_proposed_box.png",
+        "display_sha256": "6eebbb0ec3619692aa068109141ff009e84defb7eb9b101104ff36fc7ab686d7",
+        "human_conclusion": null,
+        "used": false
+      },
+      {
+        "query_number": 3,
+        "proposal_path": "review_tools/subject_initialization/proposed_HSU_pitch_004_visual_20261010_01.json",
+        "proposal_sha256": "ff53b7d93cf438daf67a872636989a2377cae6e57ee7dd1091e04e9832fd9ede",
+        "display_path": "analysis_results/phase2_roi_completeness_audit_20261010_01/seed_review/pitch_004_proposed_box.png",
+        "display_sha256": "1ee931b943770cbb170ab907be28699e64c46ff6edc76b27d52cfbf649851ace",
+        "human_conclusion": null,
+        "used": false
+      },
+      {
+        "query_number": 4,
+        "proposal_path": "review_tools/subject_initialization/proposed_HSU_pitch_005_visual_20261010_01.json",
+        "proposal_sha256": "bd2a0c0ae178f050d4e98c48c844b96904c1b9760542fb6a0da16666f4fe34a6",
+        "display_path": "analysis_results/phase2_roi_completeness_audit_20261010_01/seed_review/pitch_005_proposed_box.png",
+        "display_sha256": "43e172e50d60a618521e4f13efcd0b176e99e87fd4da70f6a08d615886a6f43d",
+        "human_conclusion": null,
+        "used": false
+      }
+    ],
+    "question": "Does each yellow box contain the pitcher and all presently visible head/arms/legs? Report wrong subject or cropped visible limb by pitch ID.",
+    "new_inference_calls": 0,
+    "new_tracker_calls": 0,
+    "human_answers_received": 0,
+    "canonical_gt_modified": false
+  },
+  "seed_contact_sheets": [
+    {
+      "path": "analysis_results/phase2_roi_completeness_audit_20261010_01/seed_review/seed_contact_01.png",
+      "sha256": "9089406e7125a05359eaf276e2ae4b5628f4901af863a864f2a64ece01690fca"
+    },
+    {
+      "path": "analysis_results/phase2_roi_completeness_audit_20261010_01/seed_review/seed_contact_02.png",
+      "sha256": "f8f8e0dacc353ff7e063e51dec6537e0066bfa1c0455234ba6465838bbc0f401"
+    }
+  ],
+  "new_assisted_five_clip_execution_started": false,
+  "remaining_preconditions": [
+    "four_new_seed_confirmations",
+    "fixed_input_strategy_and_execution_manifest",
+    "bounded_new_output_review_design"
+  ]
+}

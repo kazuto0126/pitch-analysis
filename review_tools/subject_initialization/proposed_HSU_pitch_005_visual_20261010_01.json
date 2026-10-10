@@ -1,0 +1,42 @@
+{
+  "purpose": "Unreviewed visual initialization proposal; not human GT, not yet used",
+  "status": "unreviewed_not_used",
+  "pitch_id": "pitch_005",
+  "frame_index": 0,
+  "native_timestamp_ms": 0.0,
+  "rectangle_xywh": [
+    120,
+    75,
+    175,
+    445
+  ],
+  "decoded_bgr_sha256": "21a1bf4b6e976da1706afda3d31c1a0bb9f81823a0476010830a0a37524548b6",
+  "source_video": {
+    "path": "input/yoshinobu_yamamoto/phase1_final/pitch_005.mp4",
+    "sha256": "e289cb1159e5863583f85915214123d6afe03baa6f32ac6040040878093c873b"
+  },
+  "query_id": "pitch_005_frame0_visual_proposal_20261010_01",
+  "native_hog_candidate_index": null,
+  "raw_hog_svm_score": null,
+  "source_kind": "assistant_visual_proposal_unreviewed",
+  "human_conclusion": null,
+  "extent_observation": null,
+  "actual_reply_token": null,
+  "reviewer_code": null,
+  "reviewed_at_utc": null,
+  "confidence": null,
+  "excluded_from_effectiveness_evaluation": true,
+  "producer_must_not_open_lineage_sources": true,
+  "lineage_for_parent_preflight_only": {
+    "raw_frame": {
+      "path": "analysis_results/phase2_roi_completeness_audit_20261010_01/seed_review/pitch_005_frame0000.png",
+      "sha256": "7aab6a9e4c65538bb9bcb883dc1175f75b4307fbd982c69b0f887f3587e89cc1"
+    },
+    "question_image": {
+      "path": "analysis_results/phase2_roi_completeness_audit_20261010_01/seed_review/pitch_005_proposed_box.png",
+      "sha256": "43e172e50d60a618521e4f13efcd0b176e99e87fd4da70f6a08d615886a6f43d"
+    }
+  },
+  "must_not_execute_until_human_confirmation": true,
+  "note": "Rectangle is a visible proposal, not an anatomical annotation; no earlier answers transferred."
+}
