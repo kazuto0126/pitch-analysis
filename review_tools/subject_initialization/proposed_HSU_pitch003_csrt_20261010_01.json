@@ -1,0 +1,48 @@
+{
+  "purpose": "Derived Q1-only human-confirmed initialization input; not anatomical or box-extent GT",
+  "status": "proposed_not_used",
+  "pitch_id": "pitch_003",
+  "frame_index": 0,
+  "native_timestamp_ms": 0.0,
+  "rectangle_xywh": [
+    85,
+    165,
+    217,
+    435
+  ],
+  "decoded_bgr_sha256": "751c27c03682033262b4ebdbde20e37bb039f1f0db13586bfe867297ccb28a73",
+  "source_video": {
+    "path": "input/yoshinobu_yamamoto/phase1_final/pitch_003.mp4",
+    "sha256": "5c08dba98504d998536dfd0f0fab598760400612c9049445a68120e68fdf024c"
+  },
+  "query_id": "pitch_003_f0000_box0",
+  "native_hog_candidate_index": 0,
+  "raw_hog_svm_score": 2.3220562075730413,
+  "source_kind": "model_proposed_human_confirmed",
+  "human_conclusion": "pitcher",
+  "extent_observation": null,
+  "actual_reply_token": "投",
+  "reviewer_code": "HSU",
+  "reviewed_at_utc": null,
+  "confidence": null,
+  "lineage_for_parent_preflight_only": {
+    "source_review": {
+      "path": "review_tools/person_support/HSU_pitch003_20261009_01.json",
+      "sha256": "b6c5896b0101c424d60ecaadf7039128d37b0be6a6350bb907f706a20b8cd7d0"
+    },
+    "source_query_manifest": {
+      "path": "analysis_results/phase2_person_support_20261009_03/evaluation/ownership_questions.json",
+      "sha256": "90f7ffb1601c9e16b87cc5b134498bf6ace1696f79d90cb31f32b3c789842eec"
+    },
+    "source_measurements": {
+      "path": "analysis_results/phase2_person_support_20261009_03/person_measurements.json",
+      "sha256": "8849d567c95210a19bca4f75306a506e17038861552709d4943ed0d242f81bf6"
+    },
+    "question_image": {
+      "path": "analysis_results/phase2_person_support_20261009_03/evaluation/pitch_003_f0000_box0.png",
+      "sha256": "1af9b3bf5dd00c174c501605c2c20cba54515dfb69915cae7bc822961a12e1df"
+    }
+  },
+  "producer_must_not_open_lineage_sources": true,
+  "excluded_from_effectiveness_evaluation": true
+}

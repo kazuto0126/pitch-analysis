@@ -2,7 +2,23 @@
 
 更新日期：2026-10-10（台灣）。
 
-## 最新：人體候選試驗及九個框的人工歸屬已完成
+## 最新：人工起點主體延續試驗及十個新框覆核完成
+
+見 [本輪結果](phase2_subject_assignment_results_20261010.md)。新增隔離CSRT量測／離線比對及35項回歸。
+只跑003一次，採前次HSU確認的第0格框與27個預設；producer只讀影片／metadata／technical／Q1輸入。
+完整115格保存，初始化1次、後續update114次全native成功；第0格排除成效分母。
+1195個可見人工點有1151框內／44框外；四肩髖proxy105／105在框內，另9格缺參考。
+固定10個新框由HSU回覆「全部都是投手」，另外保存；extent／confidence／完成時間未提供皆null。
+只支持人工初始化後的有限主體延續，未證明114格身份／骨架全對或自動選人可靠。
+18格原重大錯位有10格連錯誤raw四肩髖仍在框內，原FN18未修復；Phase2仍**NOT PASSED**。
+未採用新warning或改正式核心；下一步須處理框內錯位證據及歧義，再定592格回歸方案。
+
+完整suite **381 passed／0 failed／0 errors／2 skipped**（383項，含正式五球E2E）。
+兩項Windowsfile-symlink限制；原374來源、前次九題與HOG封存保持hash。
+輸出：`analysis_results/phase2_subject_assignment_20261010_01/`，包含新圖、獨立核對與人工覆核assessment。
+原5/5 GT保持COMPLETE；交付八球仍candidate／pending，沒有進Phase3。
+
+## 前次：人體候選試驗及九個框的人工歸屬已完成
 
 見 [本輪實測結果](phase2_person_support_results_20261009.md)。新增隔離量測／比較工具及26項回歸，
 003完整115格產生177個人體候選框／114格有框；完整重播115格的框／原分數multiset差異0。

@@ -10,7 +10,35 @@ reliability release. No new numeric acceptance bar, model, confidence gate,
 PitcherSelector, pose/tracking algorithm, interpolation or smoothing change.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-10 person-support human review checkpoint
+## 2026-10-10 human-initialized subject continuation checkpoint
+
+[Results](phase2_subject_assignment_results_20261010.md),
+[frozen execution](evaluation_plans/phase2_subject_assignment_execution_20261010_01.json).
+New isolated CSRT measurement/offline evaluation and35 regressions; production core remains unchanged.
+Only003, one human-confirmed model-proposed Q1 initialization,27 installed defaults, one forward execution.
+Producer reads video/metadata/technical/Q1-only input; no full review, pose or manualXY content.
+All115 source receipts retained and independently pixel/PTS verified; initialization1/update114/native-success114.
+Frame0 excluded:1195 visible manual points partition1151 inside/44 outside/0 unavailable;
+105/105 visible torso proxies inside,9 reference-missing frames retained separately.
+
+HSU explicitly answered all ten NEW fixed-frame rectangles are pitchers. Actual reply saved separately in
+`review_tools/seeded_subject/HSU_pitch003_csrt_20261010_01.json`; extent/confidence/human completion time
+remainnull. Blank generation, sealed measurements/evaluation, prior nine HOG replies and canonicalGT unchanged.
+This supports limited human-initialized continuation feasibility, not114-frame identity/anatomical accuracy
+or automatic initialization. Known development data only; no independent tracker replay claimed.
+10/18 original major failures still contain the wrong raw torso in the tracker box;
+containment alone cannot fix originalFN18. No new warning policy/counts, identity accuracy or IoU.
+AutomaticPhase2 remainsNOT PASSED. Next design must handle incorrect anatomy inside a correct subject box
+and ambiguity before any full592-frame warning regression; do not adopt/extend this pilot automatically.
+
+Full suite383 run/381 passed/0 failures/0 errors/2 Windowsfile-symlink skips,
+including real formal-five E2E. Initial sandbox permission failures and the intermediate E2E-not-configured
+run are preserved as history; final configured suite includes all five. All374 protected physical sources,
+prior HOG seals and ownership replies unchanged. Output:`analysis_results/phase2_subject_assignment_20261010_01/`.
+Five formal videos/raw/GT and production thresholds/selector/pose/tracking/smoothing/interpolation unchanged.
+Eight handoff clips remaincandidate/pending; no new-input analysis, promotion orPhase3.
+
+## 2026-10-10 person-support human review checkpoint (preceding experiment)
 
 [Bounded HOG pilot results](phase2_person_support_results_20261009.md) and
 [latest frozen execution](evaluation_plans/phase2_person_support_execution_20261009_03.json).

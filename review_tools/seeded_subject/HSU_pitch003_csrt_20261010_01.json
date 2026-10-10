@@ -1,0 +1,284 @@
+{
+  "purpose": "Actual HSU reply for fixed CSRT rectangle ownership; separate from anatomical/event GT and initialization",
+  "reviewer_code": "HSU",
+  "reviewer_code_source": "Previously user-selected reviewer code in this session",
+  "recorded_at_utc": "2026-10-10T04:34:42.308993+00:00",
+  "client_local_date": "2026-10-10",
+  "reviewed_at_utc": null,
+  "review_time_source": "No human completion timestamp supplied; recording time is not review time",
+  "raw_user_reply": "全部都是投手",
+  "normalization": "User explicitly answered all ten displayed Q1-Q10 are pitchers; no extent or confidence inferred",
+  "source_query_manifest": {
+    "path": "analysis_results/phase2_subject_assignment_20261010_01/evaluation/ownership_questions.json",
+    "sha256": "3fa4eec689ec59494d613fbd8b48f3ad0a2259133153fdb0f135c4deb98c5e02"
+  },
+  "source_measurements": {
+    "path": "analysis_results/phase2_subject_assignment_20261010_01/seeded_subject_measurements.json",
+    "sha256": "27c503042abbe0fef3a04191f325735b019954db3289206722becae333296997"
+  },
+  "source_evaluation": {
+    "path": "analysis_results/phase2_subject_assignment_20261010_01/evaluation/seeded_subject_evaluation.json",
+    "sha256": "cc2d008a86d920955aa9786e954a4fc17ac03de3ff55e40d9acacbe6cc3819f6"
+  },
+  "source_execution_manifest": {
+    "path": "docs/evaluation_plans/phase2_subject_assignment_execution_20261010_01.json",
+    "sha256": "83c316f2259899feecb1f824a8e26c5a841fce2ff64073f47f87feb8e195f44e"
+  },
+  "display_contact_sheets": [
+    {
+      "path": "analysis_results/phase2_subject_assignment_20261010_01/ownership_contact_sheet_01.png",
+      "sha256": "4470a24a43739e756834af4ba0de1b6bf828a5d2aac0782153e2bfa24c72c606"
+    },
+    {
+      "path": "analysis_results/phase2_subject_assignment_20261010_01/ownership_contact_sheet_02.png",
+      "sha256": "53a8a351af02be62bb6bd5fb5ab893090f5c6a771cc7b68c8f9ba6dac6fd6299"
+    }
+  ],
+  "review_status": "all_ten_ownerships_confirmed",
+  "ownership_counts": {
+    "pitcher": 10
+  },
+  "extent_unspecified_count": 10,
+  "queries": [
+    {
+      "query_id": "pitch_003_csrt_f0038",
+      "frame_index": 38,
+      "native_timestamp_ms": 1266.6666666666667,
+      "decoded_bgr_sha256": "89b387b40f2758c143ab292d3d2d2cc0917b95b51ec68e0b71c4350a5c9df139",
+      "rectangle_xywh": [
+        113,
+        162,
+        204,
+        410
+      ],
+      "truncated": false,
+      "conclusion": "pitcher",
+      "extent_observation": null,
+      "raw_user_reply": "全部都是投手",
+      "reviewer": "HSU",
+      "reviewed_at_utc": null,
+      "confidence": null,
+      "note": null,
+      "image_path": "analysis_results/phase2_subject_assignment_20261010_01/evaluation/pitch_003_csrt_f0038.png",
+      "image_sha256": "59e3edccc5ef52fc9643866d8ede379f203514ca56ba4330a3ccfd2354605426",
+      "display_number": 1,
+      "ownership_status": "human_confirmed"
+    },
+    {
+      "query_id": "pitch_003_csrt_f0070",
+      "frame_index": 70,
+      "native_timestamp_ms": 2333.3333333333335,
+      "decoded_bgr_sha256": "8cbe7d75f41593fc821658c43e5389884e80b2f9c72562f8a0a36641ecf54acc",
+      "rectangle_xywh": [
+        151,
+        181,
+        204,
+        410
+      ],
+      "truncated": false,
+      "conclusion": "pitcher",
+      "extent_observation": null,
+      "raw_user_reply": "全部都是投手",
+      "reviewer": "HSU",
+      "reviewed_at_utc": null,
+      "confidence": null,
+      "note": null,
+      "image_path": "analysis_results/phase2_subject_assignment_20261010_01/evaluation/pitch_003_csrt_f0070.png",
+      "image_sha256": "364120443a14b70dd18bfd0e3289e67502609ebc82af3a43c4f978981c0cc482",
+      "display_number": 2,
+      "ownership_status": "human_confirmed"
+    },
+    {
+      "query_id": "pitch_003_csrt_f0078",
+      "frame_index": 78,
+      "native_timestamp_ms": 2600.0,
+      "decoded_bgr_sha256": "b33693455d396bc894fa628ba910cbdeceabb69b3ff27b16832452bcdd84f925",
+      "rectangle_xywh": [
+        153,
+        164,
+        204,
+        410
+      ],
+      "truncated": false,
+      "conclusion": "pitcher",
+      "extent_observation": null,
+      "raw_user_reply": "全部都是投手",
+      "reviewer": "HSU",
+      "reviewed_at_utc": null,
+      "confidence": null,
+      "note": null,
+      "image_path": "analysis_results/phase2_subject_assignment_20261010_01/evaluation/pitch_003_csrt_f0078.png",
+      "image_sha256": "f43985ee5ffa7e9940f7ee31739487642ac2afeab364660740ce5c80a1196cb2",
+      "display_number": 3,
+      "ownership_status": "human_confirmed"
+    },
+    {
+      "query_id": "pitch_003_csrt_f0086",
+      "frame_index": 86,
+      "native_timestamp_ms": 2866.6666666666665,
+      "decoded_bgr_sha256": "dd12d364bdee47da9bffc3a28964cd92c2d6087af7e338223aee91282aa3ce7f",
+      "rectangle_xywh": [
+        171,
+        130,
+        204,
+        410
+      ],
+      "truncated": false,
+      "conclusion": "pitcher",
+      "extent_observation": null,
+      "raw_user_reply": "全部都是投手",
+      "reviewer": "HSU",
+      "reviewed_at_utc": null,
+      "confidence": null,
+      "note": null,
+      "image_path": "analysis_results/phase2_subject_assignment_20261010_01/evaluation/pitch_003_csrt_f0086.png",
+      "image_sha256": "b6cce5478d4b7e9008705366e90021dc13f05a3e51412dfec7dd655e34b3ab9f",
+      "display_number": 4,
+      "ownership_status": "human_confirmed"
+    },
+    {
+      "query_id": "pitch_003_csrt_f0087",
+      "frame_index": 87,
+      "native_timestamp_ms": 2900.0000000000005,
+      "decoded_bgr_sha256": "ec5aff19248adc9a60a1eb8c64e7a6a4b355aa898cd316e9760ed3746f332232",
+      "rectangle_xywh": [
+        171,
+        133,
+        209,
+        418
+      ],
+      "truncated": false,
+      "conclusion": "pitcher",
+      "extent_observation": null,
+      "raw_user_reply": "全部都是投手",
+      "reviewer": "HSU",
+      "reviewed_at_utc": null,
+      "confidence": null,
+      "note": null,
+      "image_path": "analysis_results/phase2_subject_assignment_20261010_01/evaluation/pitch_003_csrt_f0087.png",
+      "image_sha256": "2ff7dcf17dfae73cdc097e412a280764413ddeff4aa2aaca2b92858434979dac",
+      "display_number": 5,
+      "ownership_status": "human_confirmed"
+    },
+    {
+      "query_id": "pitch_003_csrt_f0095",
+      "frame_index": 95,
+      "native_timestamp_ms": 3166.666666666667,
+      "decoded_bgr_sha256": "6766d93bcf1df66cb744fb4545fff2c5ea498adc204f2cbc2902382dc7fd3243",
+      "rectangle_xywh": [
+        152,
+        149,
+        213,
+        426
+      ],
+      "truncated": false,
+      "conclusion": "pitcher",
+      "extent_observation": null,
+      "raw_user_reply": "全部都是投手",
+      "reviewer": "HSU",
+      "reviewed_at_utc": null,
+      "confidence": null,
+      "note": null,
+      "image_path": "analysis_results/phase2_subject_assignment_20261010_01/evaluation/pitch_003_csrt_f0095.png",
+      "image_sha256": "6110c9dfb55950683e00e3d0d19d2cd274e79fd1c9b53f93c71342f29619fd45",
+      "display_number": 6,
+      "ownership_status": "human_confirmed"
+    },
+    {
+      "query_id": "pitch_003_csrt_f0104",
+      "frame_index": 104,
+      "native_timestamp_ms": 3466.666666666667,
+      "decoded_bgr_sha256": "64c7260e8e69ed88a00e32474809f0731930e58a8aaa2bb394ff38872ff58724",
+      "rectangle_xywh": [
+        76,
+        155,
+        226,
+        453
+      ],
+      "truncated": false,
+      "conclusion": "pitcher",
+      "extent_observation": null,
+      "raw_user_reply": "全部都是投手",
+      "reviewer": "HSU",
+      "reviewed_at_utc": null,
+      "confidence": null,
+      "note": null,
+      "image_path": "analysis_results/phase2_subject_assignment_20261010_01/evaluation/pitch_003_csrt_f0104.png",
+      "image_sha256": "e5f5580c32256fef7d13d472d4aab1da174b34d004e649c896f7cba9248d77db",
+      "display_number": 7,
+      "ownership_status": "human_confirmed"
+    },
+    {
+      "query_id": "pitch_003_csrt_f0105",
+      "frame_index": 105,
+      "native_timestamp_ms": 3500.0,
+      "decoded_bgr_sha256": "19d1760d18fadb344c477ae0cb8c342c3aa0b6b9bd913f3efc8c1a48531d2eff",
+      "rectangle_xywh": [
+        74,
+        154,
+        226,
+        453
+      ],
+      "truncated": false,
+      "conclusion": "pitcher",
+      "extent_observation": null,
+      "raw_user_reply": "全部都是投手",
+      "reviewer": "HSU",
+      "reviewed_at_utc": null,
+      "confidence": null,
+      "note": null,
+      "image_path": "analysis_results/phase2_subject_assignment_20261010_01/evaluation/pitch_003_csrt_f0105.png",
+      "image_sha256": "c7f32adbaa4567d9398b4af08c3004ec9af2438bcc9df2910ddbdab12e844783",
+      "display_number": 8,
+      "ownership_status": "human_confirmed"
+    },
+    {
+      "query_id": "pitch_003_csrt_f0112",
+      "frame_index": 112,
+      "native_timestamp_ms": 3733.3333333333335,
+      "decoded_bgr_sha256": "070c2b7128c451b8dacb840a476b014896022e66a09c5805b346db58eb98e585",
+      "rectangle_xywh": [
+        72,
+        154,
+        226,
+        453
+      ],
+      "truncated": false,
+      "conclusion": "pitcher",
+      "extent_observation": null,
+      "raw_user_reply": "全部都是投手",
+      "reviewer": "HSU",
+      "reviewed_at_utc": null,
+      "confidence": null,
+      "note": null,
+      "image_path": "analysis_results/phase2_subject_assignment_20261010_01/evaluation/pitch_003_csrt_f0112.png",
+      "image_sha256": "ba0970a9c9e7f11acbb136c13cf6217bdd7f6196122baea15019737f2aa4abdc",
+      "display_number": 9,
+      "ownership_status": "human_confirmed"
+    },
+    {
+      "query_id": "pitch_003_csrt_f0114",
+      "frame_index": 114,
+      "native_timestamp_ms": 3800.0000000000005,
+      "decoded_bgr_sha256": "edcb36b1aa4c35ffc2132298fb05654c8246cd190bce3121b89a1d51a214a4c1",
+      "rectangle_xywh": [
+        71,
+        153,
+        226,
+        453
+      ],
+      "truncated": false,
+      "conclusion": "pitcher",
+      "extent_observation": null,
+      "raw_user_reply": "全部都是投手",
+      "reviewer": "HSU",
+      "reviewed_at_utc": null,
+      "confidence": null,
+      "note": null,
+      "image_path": "analysis_results/phase2_subject_assignment_20261010_01/evaluation/pitch_003_csrt_f0114.png",
+      "image_sha256": "2efadc979239c21f46144f41676bb0517e9e83c810c3ccd2399119fee8988d28",
+      "display_number": 10,
+      "ownership_status": "human_confirmed"
+    }
+  ]
+}

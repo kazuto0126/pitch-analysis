@@ -1,0 +1,167 @@
+{
+  "status": "completed_and_human_reviewed_feasibility_only",
+  "client_date_local": "2026-10-10",
+  "result_document": "docs/phase2_subject_assignment_results_20261010.md",
+  "execution": {
+    "path": "docs/evaluation_plans/phase2_subject_assignment_execution_20261010_01.json",
+    "sha256": "83c316f2259899feecb1f824a8e26c5a841fce2ff64073f47f87feb8e195f44e"
+  },
+  "measurements": {
+    "path": "analysis_results/phase2_subject_assignment_20261010_01/seeded_subject_measurements.json",
+    "sha256": "27c503042abbe0fef3a04191f325735b019954db3289206722becae333296997"
+  },
+  "sealed_evaluation": {
+    "path": "analysis_results/phase2_subject_assignment_20261010_01/evaluation/seeded_subject_evaluation.json",
+    "sha256": "cc2d008a86d920955aa9786e954a4fc17ac03de3ff55e40d9acacbe6cc3819f6"
+  },
+  "blank_question_generation": {
+    "path": "analysis_results/phase2_subject_assignment_20261010_01/evaluation/ownership_questions.json",
+    "sha256": "3fa4eec689ec59494d613fbd8b48f3ad0a2259133153fdb0f135c4deb98c5e02"
+  },
+  "actual_human_review": {
+    "path": "review_tools/seeded_subject/HSU_pitch003_csrt_20261010_01.json",
+    "sha256": "ec78510dec14b0f4e8550a9f68f979e99eda13e2529c9e0d69790164897f4074"
+  },
+  "post_review_assessment": {
+    "path": "analysis_results/phase2_subject_assignment_20261010_01/ownership_review_assessment.json",
+    "sha256": "5294b2257cd799203cf79478f884cb4a128cf8ecffba6892b77e010371d04615"
+  },
+  "completion_audit": {
+    "path": "analysis_results/phase2_subject_assignment_20261010_01/completion_audit.json",
+    "sha256": "fec4785ce9b34412309b09ca80353f334623adf3f4ac0c7f65ec82bae3b1829f"
+  },
+  "measurement_summary": {
+    "denominators": {
+      "source_frames": 115,
+      "non_seed_frames": 114,
+      "manual_joint_records": 1368,
+      "visible_xy": 1195,
+      "not_observable": 171,
+      "uncertain": 2,
+      "torso_proxy_available": 105,
+      "torso_proxy_missing": 9,
+      "major_frames": 18,
+      "other_non_seed_frames": 96
+    },
+    "non_seed_tracking_states": {
+      "native_success": 114
+    },
+    "usable_non_seed_frames": 114,
+    "visible_joint_partition": {
+      "inside": 1151,
+      "outside": 44,
+      "tracker_unavailable": 0
+    },
+    "per_joint_visible_partition": {
+      "LEFT_SHOULDER": {
+        "inside": 114
+      },
+      "RIGHT_SHOULDER": {
+        "inside": 105
+      },
+      "LEFT_ELBOW": {
+        "inside": 77,
+        "outside": 5
+      },
+      "RIGHT_ELBOW": {
+        "inside": 92
+      },
+      "LEFT_HIP": {
+        "inside": 114
+      },
+      "RIGHT_HIP": {
+        "inside": 114
+      },
+      "LEFT_KNEE": {
+        "inside": 114
+      },
+      "RIGHT_KNEE": {
+        "inside": 110,
+        "outside": 4
+      },
+      "LEFT_ANKLE": {
+        "inside": 111,
+        "outside": 2
+      },
+      "RIGHT_ANKLE": {
+        "inside": 103,
+        "outside": 11
+      },
+      "RIGHT_WRIST": {
+        "inside": 57,
+        "outside": 1
+      },
+      "LEFT_WRIST": {
+        "inside": 40,
+        "outside": 21
+      }
+    },
+    "torso_proxy_partition": {
+      "inside": 105,
+      "reference_missing": 9
+    },
+    "major_usable_frames": 18,
+    "major_manual_torso_inside_frames": 18,
+    "major_original_raw_torso_inside_frames": 10,
+    "identity_accuracy": null,
+    "box_iou": null,
+    "new_warning_counts": null,
+    "warning_policy": null,
+    "original_fn_frames_unchanged": 18,
+    "phase2_automatic_reliability": "NOT PASSED",
+    "independent_source_frames_verified": 115,
+    "independent_tracker_replay": false,
+    "initialization_calls": 1,
+    "native_update_calls": 114,
+    "terminal_break": null,
+    "hog_non_seed_torso_inside_any_frame_count": 92,
+    "fixed_review_slots": 10,
+    "ownership_questions": 10,
+    "review_slots_without_candidate": 0,
+    "ownership_answers": 0,
+    "conclusion": "insufficient_evidence_pending_review"
+  },
+  "ownership_review_summary": {
+    "fixed_slots": 10,
+    "answers_received": 10,
+    "pitcher": 10,
+    "other": 0,
+    "mixed": 0,
+    "uncertain": 0,
+    "unreviewed": 0,
+    "no_candidate": 0,
+    "extent_unspecified": 10,
+    "confidence_null": 10,
+    "human_completion_time_null": true,
+    "result": "limited_human_initialized_subject_continuation_feasibility_supported",
+    "scope": "Only the ten newly displayed CSRT rectangles, one development clip, conditional on human-confirmed Q1 initialization",
+    "all_114_frames_identity_verified": false,
+    "verified_anatomical_accuracy": false,
+    "original_fn18_fixed": false,
+    "phase2_automatic_reliability": "NOT PASSED",
+    "identity_accuracy": null,
+    "box_iou": null,
+    "new_warning_counts": null,
+    "warning_policy": null,
+    "production_adoption": false,
+    "blank_generation_snapshot_unchanged": true
+  },
+  "full_suite": {
+    "run": 383,
+    "passed": 381,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 2,
+    "formal_five_e2e_included": true,
+    "log_sha256": "fb8976cea729e6cd509083bc504b7f7375a76bc8dc72fcdba8e9ba4baf6750ec"
+  },
+  "full_suite_log": {
+    "path": "analysis_results/phase2_subject_assignment_proposal_20261010_01/full_test_suite_formal5.log",
+    "sha256": "fb8976cea729e6cd509083bc504b7f7375a76bc8dc72fcdba8e9ba4baf6750ec"
+  },
+  "protected_physical_files_unchanged": 374,
+  "prior_ownership_review_unchanged": true,
+  "production_core_modified": false,
+  "original_fn18_fixed": false,
+  "phase2_automatic_reliability": "NOT PASSED"
+}
