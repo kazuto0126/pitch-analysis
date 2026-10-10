@@ -10,7 +10,32 @@ reliability release. No new numeric acceptance bar, model, confidence gate,
 PitcherSelector, pose/tracking algorithm, interpolation or smoothing change.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-10 five-clip assisted ROI cohort (latest; not adopted)
+## 2026-10-10 paired ROI loss diagnosis (latest; production unchanged)
+
+[Diagnosis](phase2_roi_loss_diagnosis_20261010.md),
+[bounded complete-input proposal](phase2_complete_input_comparison_plan_20261010.md),
+[result seal](evaluation_plans/phase2_roi_loss_result_20261010_01.json).
+Saved candidates replay the original selector exactly for592frames; no diagnostic pose/tracker inference.
+587non-seed pairs:527both-selected/28new-loss/25gain/7both-unselected.
+Newfour alone28loss/6gain, net-22;003gain19 retained separately.
+28loss=12backend-empty/15original-selector-rejected/1ambiguous (001/44).
+14rejections have only5/8major joints at original0.35, below original6 requirement;005/67
+shoulder-to-ankle height0.1467945031<original0.16. No new-loss continuity exclusions.
+Supported-gate loss/gain:rightelbow65/15,rightwrist75/17,leftknee99/28,leftankle100/29.
+002selects174/174 yet loses15elbow-supported frames, all originalIMAGE proxies insidecrop;
+availability/ROI containment is not anatomy, and rejection branches do not establish backend failure causes.
+No newaccuracy/GT/warning policy or fix to baselineFN18; automaticPhase2 remainsNOT PASSED.
+Fullsuite457run/455passed/0failures/0errors/2Windowsfile-symlinkskips,54.968s,
+includes real formal-five E2E separately from saved-output diagnostic.13newregression tests.
+374protected physical sources/62upstream references unchanged; formal5/GT/production src unchanged;
+eight handoff clips remaincandidate/pending, no analysis/promotion.
+Output:`analysis_results/phase2_roi_loss_audit_20261010_01/`.
+Propose MoveNet MultiPose Lightning TF2 v1 isolated compatibility gate under prior benchmark-proposal instruction:
+approval pending, at most1synthetic smoke inference and0formal-video inference; no acquisition/install yet.
+MediaPipe baseline remains. A592-frame comparator requires a later sealed plan after compatibility report.
+Stop at clean committed/pushed checkpoint; noPhase3.
+
+## 2026-10-10 five-clip assisted ROI cohort (previous; not adopted)
 
 [Results](phase2_assisted_roi_cohort_results_20261010.md),
 [actual frozen execution](evaluation_plans/phase2_assisted_roi_cohort_execution_20261010_02.json).

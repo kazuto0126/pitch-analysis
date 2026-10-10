@@ -1,0 +1,49 @@
+{
+  "status": "frozen_before_offline_diagnostic",
+  "client_date_local": "2026-10-10",
+  "frozen_at_utc": "2026-10-10T14:58:17.366103+00:00",
+  "source_result_manifest": {
+    "path": "docs/evaluation_plans/phase2_assisted_roi_cohort_result_20261010_01.json",
+    "sha256": "866d59b02cc45a09f486cf6202e60e9eabc4dbfc7b3cd6a879d969f5ed647aaf"
+  },
+  "source_execution": {
+    "path": "docs/evaluation_plans/phase2_assisted_roi_cohort_execution_20261010_02.json",
+    "sha256": "fa79044e555031b37d74d6486a28db89ebcee49797a13c88a584d288cb5debce"
+  },
+  "source_evaluation": {
+    "path": "analysis_results/phase2_assisted_roi_cohort_20261010_01/evaluation/assisted_roi_cohort_evaluation.json",
+    "sha256": "7f899e42fe2f8fbd764ac2e0e6d4be2d2b45187deb47465476570d06388c6132"
+  },
+  "source_measurements": {
+    "path": "analysis_results/phase2_assisted_roi_cohort_20261010_01/cohort_measurements.json",
+    "sha256": "9476e4bd27a5d054d27a9b21c153fcdb7a05ccafd52dd786537a8f0108cd6003"
+  },
+  "audit_code": {
+    "path": "scripts/audit_roi_losses.py",
+    "sha256": "6359a603e6a60225b88a40944a3c49583a5ac370ac5a86755ce6597ebdabb099"
+  },
+  "audit_tests": {
+    "path": "tests/test_roi_loss_audit.py",
+    "sha256": "a184d3088bdd51e9a6dd45c444662cb3410ede4cf383b37cbad20d7adcdf3b18"
+  },
+  "protected_source_inventory": {
+    "path": "docs/evaluation_plans/phase2_pose_mode_countercheck_20261009.json",
+    "sha256": "587d7df4e91e279262be408607c8bdc13d73b6f11c1a28e5f874ab0af3c3bb69",
+    "key": "protected_source_hashes",
+    "physical_files": 374
+  },
+  "protected_physical_files": 374,
+  "original_selector": {
+    "path": "src/pitch_analysis/subject.py",
+    "sha256": "c5cae1ace96db5b9f3229f4f5e41870d420370676d99dea0abd03dcad3748276"
+  },
+  "method": "Paired IMAGE-to-crop selection and supported-gate losses; observe original selector executed continue branches by Python trace without modifying source or thresholds.",
+  "source_frames": 592,
+  "non_seed_frames": 587,
+  "new_inference_calls": 0,
+  "retrospective_diagnostic_not_independent_validation": true,
+  "prior_selection_totals_already_known": true,
+  "human_annotations_as_new_prediction_answers": false,
+  "new_warning_policy": null,
+  "phase2_automatic_reliability": "NOT PASSED"
+}

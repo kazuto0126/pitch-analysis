@@ -2,7 +2,23 @@
 
 更新日期：2026-10-10（台灣）。
 
-## 最新：五球人工起點固定裁切對照完成，設定不採用
+## 最新：五球裁切漏格與關節損失診斷完成
+
+見 [損失診斷](phase2_roi_loss_diagnosis_20261010.md)與
+[完整輸入比較提案](phase2_complete_input_comparison_plan_20261010.md)。
+已保存候選重播原selector592格完全一致；587格配對有28新增選取損失、25新增選取、7共同未選。
+新四片28損失／6新增選取，淨少22；003新增19。28損失拆為12後端無候選／15原selector拒絕／1歧義。
+15拒絕中14格只有5／8主要關節達原0.35、未達原6個要求；005／67肩至踝高度0.1467945低於原0.16。
+右肘65損失／15新增可用、右腕75／17、左膝99／28、左踝100／29；這是可用性，不是人工準確率。
+002雖174格全selected，右肘仍少15格，原IMAGE肘點都在框內，不能只歸因於手腳出框。
+診斷推論0次，完整suite另跑正式五球E2E；**455 passed／0 failed／0 errors／2 skipped**（457項，54.968秒）。
+374來源與62上游引用不變；正式核心／GT／五球不改，交付八球仍candidate／pending。
+Phase2仍**NOT PASSED**，原FN18未修復。輸出：`analysis_results/phase2_roi_loss_audit_20261010_01/`。
+已提出MoveNet MultiPose Lightning v1隔離相容性第一關，需依原「benchmark先提案」指示等核准。
+最多1次合成圖、正式影片0次；下載／安裝尚未執行，MediaPipe維持baseline。
+本輪至commit／push與乾淨checkpoint停止，不開始Phase3。
+
+## 前次：五球人工起點固定裁切對照完成，設定不採用
 
 見 [五球結果](phase2_assisted_roi_cohort_results_20261010.md)。HSU已確認001／002／004／005第0格的
 投手與當時可見肢體範圍，實際「全部正確」另存，保留原草案與空白snapshot；不延伸成全片身份GT。

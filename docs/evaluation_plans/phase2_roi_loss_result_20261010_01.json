@@ -1,0 +1,427 @@
+{
+  "status": "completed_retrospective_paired_roi_loss_diagnostic",
+  "client_date_local": "2026-10-10",
+  "frozen_audit": {
+    "path": "docs/evaluation_plans/phase2_roi_loss_audit_20261010_01.json",
+    "sha256": "7fd45c29438d9fba13234d94bffdd3ceae7aefd4a2d4db54dd65a35e17d376e5"
+  },
+  "audit_code": {
+    "path": "scripts/audit_roi_losses.py",
+    "sha256": "6359a603e6a60225b88a40944a3c49583a5ac370ac5a86755ce6597ebdabb099"
+  },
+  "audit_tests": {
+    "path": "tests/test_roi_loss_audit.py",
+    "sha256": "a184d3088bdd51e9a6dd45c444662cb3410ede4cf383b37cbad20d7adcdf3b18"
+  },
+  "parent_result": {
+    "path": "docs/evaluation_plans/phase2_assisted_roi_cohort_result_20261010_01.json",
+    "sha256": "866d59b02cc45a09f486cf6202e60e9eabc4dbfc7b3cd6a879d969f5ed647aaf"
+  },
+  "output": {
+    "path": "analysis_results/phase2_roi_loss_audit_20261010_01/paired_loss_audit.json",
+    "sha256": "d102b0c431ea69c46bdd8e8ba44b1e421fe7d0cd90e7b8fefb31fd3abafde709"
+  },
+  "completion_audit": {
+    "path": "analysis_results/phase2_roi_loss_audit_20261010_01/completion_audit.json",
+    "sha256": "95eac719095be93bc22e3a4763c894c28cb02ce31d73c50fc8266f98d2f7cc53"
+  },
+  "result_document": {
+    "path": "docs/phase2_roi_loss_diagnosis_20261010.md",
+    "sha256": "47af8912aa2c266ece153118b81039bbc63aca6b4eeeeb87f9cb9dbfef2f5dbd"
+  },
+  "next_proposal_document": {
+    "path": "docs/phase2_complete_input_comparison_plan_20261010.md",
+    "sha256": "ae36c25ac05621a87ab97e735137e50a882fc69dc8fbed05d6b4b38338677e1a"
+  },
+  "source_frames": 592,
+  "non_seed_frames": 587,
+  "selection_transitions": {
+    "both_selected": 527,
+    "new_loss": 28,
+    "gain": 25,
+    "both_unselected": 7
+  },
+  "new_four_only": {
+    "new_loss": 28,
+    "gain": 6,
+    "net_difference": -22
+  },
+  "new_loss_categories": {
+    "backend_no_candidate": 12,
+    "selector_ambiguous": 1,
+    "selector_rejected": 15
+  },
+  "executed_original_exclusion_conditions": {
+    "confidence < 0.45 or sum((value >= 0.35 for value in confidences)) < 6": 14,
+    "not (0.15 <= hip_x <= 0.85 and 0.12 <= hip_y <= 0.85 and (0.16 <= body_height <= 0.85))": 1
+  },
+  "clip_summary": [
+    {
+      "pitch_id": "pitch_001",
+      "non_seed_frames": 86,
+      "selection_transitions": {
+        "both_selected": 79,
+        "new_loss": 5,
+        "gain": 2,
+        "both_unselected": 0
+      },
+      "new_loss_categories": {
+        "backend_no_candidate": 3,
+        "selector_ambiguous": 1,
+        "selector_rejected": 1
+      },
+      "new_loss_frames": [
+        33,
+        42,
+        44,
+        45,
+        53
+      ],
+      "gained_frames": [
+        39,
+        40
+      ]
+    },
+    {
+      "pitch_id": "pitch_002",
+      "non_seed_frames": 174,
+      "selection_transitions": {
+        "both_selected": 174,
+        "new_loss": 0,
+        "gain": 0,
+        "both_unselected": 0
+      },
+      "new_loss_categories": {},
+      "new_loss_frames": [],
+      "gained_frames": []
+    },
+    {
+      "pitch_id": "pitch_003",
+      "non_seed_frames": 114,
+      "selection_transitions": {
+        "both_selected": 89,
+        "new_loss": 0,
+        "gain": 19,
+        "both_unselected": 6
+      },
+      "new_loss_categories": {},
+      "new_loss_frames": [],
+      "gained_frames": [
+        64,
+        66,
+        67,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        83,
+        101,
+        102,
+        103,
+        104,
+        112
+      ]
+    },
+    {
+      "pitch_id": "pitch_004",
+      "non_seed_frames": 113,
+      "selection_transitions": {
+        "both_selected": 99,
+        "new_loss": 10,
+        "gain": 3,
+        "both_unselected": 1
+      },
+      "new_loss_categories": {
+        "backend_no_candidate": 1,
+        "selector_rejected": 9
+      },
+      "new_loss_frames": [
+        64,
+        72,
+        77,
+        78,
+        79,
+        80,
+        81,
+        84,
+        85,
+        86
+      ],
+      "gained_frames": [
+        53,
+        76,
+        87
+      ]
+    },
+    {
+      "pitch_id": "pitch_005",
+      "non_seed_frames": 100,
+      "selection_transitions": {
+        "both_selected": 86,
+        "new_loss": 13,
+        "gain": 1,
+        "both_unselected": 0
+      },
+      "new_loss_categories": {
+        "selector_rejected": 5,
+        "backend_no_candidate": 8
+      },
+      "new_loss_frames": [
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        77,
+        78,
+        79,
+        80
+      ],
+      "gained_frames": [
+        54
+      ]
+    }
+  ],
+  "joint_summary": {
+    "LEFT_SHOULDER": {
+      "paired_supported_gate": {
+        "both_selected": 527,
+        "new_loss": 28,
+        "gain": 25,
+        "both_unselected": 7
+      },
+      "loss_state_partition": {
+        "selected_point_missing": 28
+      },
+      "lost_joint_image_prediction_geometry_not_ground_truth": {
+        "image_prediction_inside_crop": 27,
+        "image_prediction_outside_crop": 1
+      }
+    },
+    "RIGHT_SHOULDER": {
+      "paired_supported_gate": {
+        "both_selected": 527,
+        "new_loss": 28,
+        "gain": 25,
+        "both_unselected": 7
+      },
+      "loss_state_partition": {
+        "selected_point_missing": 28
+      },
+      "lost_joint_image_prediction_geometry_not_ground_truth": {
+        "image_prediction_inside_crop": 28
+      }
+    },
+    "LEFT_ELBOW": {
+      "paired_supported_gate": {
+        "both_selected": 228,
+        "new_loss": 127,
+        "gain": 42,
+        "both_unselected": 190
+      },
+      "loss_state_partition": {
+        "below_existing_gate": 97,
+        "selected_point_missing": 27,
+        "gate_but_extrapolated": 3
+      },
+      "lost_joint_image_prediction_geometry_not_ground_truth": {
+        "image_prediction_inside_crop": 77,
+        "image_prediction_outside_crop": 50
+      }
+    },
+    "RIGHT_ELBOW": {
+      "paired_supported_gate": {
+        "both_selected": 393,
+        "new_loss": 65,
+        "gain": 15,
+        "both_unselected": 114
+      },
+      "loss_state_partition": {
+        "selected_point_missing": 17,
+        "below_existing_gate": 45,
+        "gate_but_extrapolated": 3
+      },
+      "lost_joint_image_prediction_geometry_not_ground_truth": {
+        "image_prediction_inside_crop": 62,
+        "image_prediction_outside_crop": 3
+      }
+    },
+    "LEFT_WRIST": {
+      "paired_supported_gate": {
+        "both_selected": 37,
+        "new_loss": 154,
+        "gain": 9,
+        "both_unselected": 387
+      },
+      "loss_state_partition": {
+        "below_existing_gate": 121,
+        "selected_point_missing": 17,
+        "gate_but_extrapolated": 16
+      },
+      "lost_joint_image_prediction_geometry_not_ground_truth": {
+        "image_prediction_outside_crop": 113,
+        "image_prediction_inside_crop": 41
+      }
+    },
+    "RIGHT_WRIST": {
+      "paired_supported_gate": {
+        "both_selected": 261,
+        "new_loss": 75,
+        "gain": 17,
+        "both_unselected": 234
+      },
+      "loss_state_partition": {
+        "below_existing_gate": 53,
+        "gate_but_extrapolated": 10,
+        "selected_point_missing": 12
+      },
+      "lost_joint_image_prediction_geometry_not_ground_truth": {
+        "image_prediction_outside_crop": 25,
+        "image_prediction_inside_crop": 50
+      }
+    },
+    "LEFT_HIP": {
+      "paired_supported_gate": {
+        "both_selected": 527,
+        "new_loss": 28,
+        "gain": 25,
+        "both_unselected": 7
+      },
+      "loss_state_partition": {
+        "selected_point_missing": 28
+      },
+      "lost_joint_image_prediction_geometry_not_ground_truth": {
+        "image_prediction_inside_crop": 28
+      }
+    },
+    "RIGHT_HIP": {
+      "paired_supported_gate": {
+        "both_selected": 527,
+        "new_loss": 28,
+        "gain": 25,
+        "both_unselected": 7
+      },
+      "loss_state_partition": {
+        "selected_point_missing": 28
+      },
+      "lost_joint_image_prediction_geometry_not_ground_truth": {
+        "image_prediction_inside_crop": 28
+      }
+    },
+    "LEFT_KNEE": {
+      "paired_supported_gate": {
+        "both_selected": 424,
+        "new_loss": 99,
+        "gain": 28,
+        "both_unselected": 36
+      },
+      "loss_state_partition": {
+        "below_existing_gate": 39,
+        "gate_but_extrapolated": 32,
+        "selected_point_missing": 28
+      },
+      "lost_joint_image_prediction_geometry_not_ground_truth": {
+        "image_prediction_inside_crop": 63,
+        "image_prediction_outside_crop": 36
+      }
+    },
+    "RIGHT_KNEE": {
+      "paired_supported_gate": {
+        "both_selected": 472,
+        "new_loss": 71,
+        "gain": 25,
+        "both_unselected": 19
+      },
+      "loss_state_partition": {
+        "selected_point_missing": 28,
+        "below_existing_gate": 42,
+        "gate_but_extrapolated": 1
+      },
+      "lost_joint_image_prediction_geometry_not_ground_truth": {
+        "image_prediction_inside_crop": 39,
+        "image_prediction_outside_crop": 32
+      }
+    },
+    "LEFT_ANKLE": {
+      "paired_supported_gate": {
+        "both_selected": 439,
+        "new_loss": 100,
+        "gain": 29,
+        "both_unselected": 19
+      },
+      "loss_state_partition": {
+        "below_existing_gate": 53,
+        "gate_but_extrapolated": 19,
+        "selected_point_missing": 28
+      },
+      "lost_joint_image_prediction_geometry_not_ground_truth": {
+        "image_prediction_inside_crop": 43,
+        "image_prediction_outside_crop": 57
+      }
+    },
+    "RIGHT_ANKLE": {
+      "paired_supported_gate": {
+        "both_selected": 448,
+        "new_loss": 88,
+        "gain": 20,
+        "both_unselected": 31
+      },
+      "loss_state_partition": {
+        "selected_point_missing": 24,
+        "below_existing_gate": 58,
+        "gate_but_extrapolated": 6
+      },
+      "lost_joint_image_prediction_geometry_not_ground_truth": {
+        "image_prediction_inside_crop": 28,
+        "image_prediction_outside_crop": 60
+      }
+    }
+  },
+  "tests": {
+    "run": 457,
+    "passed": 455,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 2,
+    "seconds": 54.968,
+    "new_tests": 13,
+    "formal_five_e2e_included": true,
+    "log": {
+      "path": "analysis_results/phase2_roi_loss_proposal_20261010_01/full_test_suite_formal5.log",
+      "sha256": "8e260fcfccb5e9e504f8ad777cfedf2a56ce7a2f953589c3e7a44173721b2b14"
+    },
+    "skip_reasons": [
+      "Windows file-symlink creation unavailable (dangling snapshot file)",
+      "Windows file-symlink creation unavailable (source outside candidate)"
+    ]
+  },
+  "protected_sources_unchanged": true,
+  "human_annotations_modified": false,
+  "production_core_modified": false,
+  "diagnostic_inference_calls": {
+    "pose": 0,
+    "tracker": 0
+  },
+  "new_model": {
+    "status": "proposal_pending_approval",
+    "downloads": 0,
+    "installs": 0,
+    "inference_calls": 0
+  },
+  "new_warning_policy": null,
+  "warning_accuracy": null,
+  "identity_accuracy": null,
+  "phase2_automatic_reliability": "NOT PASSED",
+  "original_fn18_fixed": false,
+  "phase3_started": false
+}
