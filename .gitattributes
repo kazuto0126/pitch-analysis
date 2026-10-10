@@ -3,3 +3,4 @@ scripts/measure_person_support.py text eol=lf
 scripts/evaluate_person_support.py text eol=lf
 tests/test_person_support.py text eol=lf
 docs/evaluation_plans/phase2_person_support_execution_*.json text eol=lf
+review_tools/person_support/*.json text eol=lf

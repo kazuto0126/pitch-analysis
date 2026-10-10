@@ -1,0 +1,302 @@
+{
+  "purpose": "Actual HSU replies for fixed person-box ownership questions; separate from pose/event/anatomical GT",
+  "reviewer_code": "HSU",
+  "reviewer_code_source": "Existing user-selected reviewer code in this review session",
+  "recorded_at_utc": "2026-10-09T14:25:18.290094+00:00",
+  "recorded_on_local_date": "2026-10-09",
+  "reviewed_at_utc": null,
+  "review_time_source": "No human-supplied completion time; recorded_at_utc is the recording time only",
+  "source_query_manifest": {
+    "path": "analysis_results/phase2_person_support_20261009_03/evaluation/ownership_questions.json",
+    "sha256": "90f7ffb1601c9e16b87cc5b134498bf6ace1696f79d90cb31f32b3c789842eec"
+  },
+  "source_query_manifest_is_blank_generation_snapshot": true,
+  "source_video": {
+    "path": "input/yoshinobu_yamamoto/phase1_final/pitch_003.mp4",
+    "sha256": "5c08dba98504d998536dfd0f0fab598760400612c9049445a68120e68fdf024c"
+  },
+  "source_measurements": {
+    "path": "analysis_results/phase2_person_support_20261009_03/person_measurements.json",
+    "sha256": "8849d567c95210a19bca4f75306a506e17038861552709d4943ed0d242f81bf6"
+  },
+  "source_evaluation": {
+    "path": "analysis_results/phase2_person_support_20261009_03/evaluation/person_support_evaluation.json",
+    "sha256": "7ac384319e384e6e22b61c1131d2e0d637723ef60660526fa2490a3acd2395b4"
+  },
+  "source_execution_manifest": {
+    "path": "docs/evaluation_plans/phase2_person_support_execution_20261009_03.json",
+    "sha256": "9505c4381cb1337173d18d06f6dce39c5326270a93f97331feb52231ca12c07d"
+  },
+  "display_contact_sheet": {
+    "path": "analysis_results/phase2_person_support_20261009_03/ownership_contact_sheet.png",
+    "sha256": "2466f787ecbebb255c5ebb72e6b7057488503510e8aee99f1623f4e286a93163"
+  },
+  "raw_user_reply": "\u6295/\u5c40/\u5c40/\u4ed6/\u6295/\u6295/\u4ed6/\u6295/\u4ed6",
+  "clarifications": [
+    {
+      "id": "clarification_1",
+      "question": "Q2\u3001Q3 \u4f60\u6a19\u300c\u5c40\u300d\uff0c\u662f\u6307\u5169\u500b\u90fd\u53ea\u6846\u5230\u6295\u624b\u7684\u5c40\u90e8\u55ce\uff1f\u76ee\u524d\u6211\u53ea\u4fdd\u5b58\u300c\u5c40\u90e8\u300d\uff0c\u5c1a\u672a\u88dc\u4e0a\u6b78\u5c6c\u3002",
+      "raw_user_reply": "\u5169\u500b\u90fd\u662f\u6295\u624b\u7684\u5c40\u90e8",
+      "applies_to_display_numbers": [
+        2,
+        3
+      ],
+      "applies_to_query_ids": [
+        "pitch_003_f0038_box0",
+        "pitch_003_f0086_box1"
+      ],
+      "conclusion": "pitcher",
+      "extent_observation": "partial"
+    }
+  ],
+  "normalization": "Map \u6295 to pitcher and \u4ed6 to other. \u5c40 denotes partial extent only; Q2/Q3 ownership comes from the separately saved explicit clarification. Never infer full-body extent from \u6295.",
+  "review_status": "all_nine_ownerships_confirmed",
+  "responses_received": 9,
+  "ownership_clarification_pending": 0,
+  "ownership_counts": {
+    "pitcher": 6,
+    "other": 3
+  },
+  "explicit_partial_extent_count": 2,
+  "extent_unspecified_count": 7,
+  "queries": [
+    {
+      "query_id": "pitch_003_f0000_box0",
+      "frame_index": 0,
+      "native_timestamp_ms": 0.0,
+      "decoded_bgr_sha256": "751c27c03682033262b4ebdbde20e37bb039f1f0db13586bfe867297ccb28a73",
+      "candidate_index": 0,
+      "rectangle_xywh": [
+        85,
+        165,
+        217,
+        435
+      ],
+      "raw_svm_score": 2.3220562075730413,
+      "image_path": "analysis_results/phase2_person_support_20261009_03/evaluation/pitch_003_f0000_box0.png",
+      "image_sha256": "1af9b3bf5dd00c174c501605c2c20cba54515dfb69915cae7bc822961a12e1df",
+      "display_number": 1,
+      "actual_reply_token": "\u6295",
+      "conclusion": "pitcher",
+      "extent_observation": null,
+      "initial_ownership_conclusion": "pitcher",
+      "clarification_applied": false,
+      "ownership_status": "human_confirmed",
+      "confidence": null,
+      "reviewer_note": null
+    },
+    {
+      "query_id": "pitch_003_f0038_box0",
+      "frame_index": 38,
+      "native_timestamp_ms": 1266.6666666666667,
+      "decoded_bgr_sha256": "89b387b40f2758c143ab292d3d2d2cc0917b95b51ec68e0b71c4350a5c9df139",
+      "candidate_index": 0,
+      "rectangle_xywh": [
+        162,
+        388,
+        82,
+        164
+      ],
+      "raw_svm_score": 0.13883166015148163,
+      "image_path": "analysis_results/phase2_person_support_20261009_03/evaluation/pitch_003_f0038_box0.png",
+      "image_sha256": "cee525dc781d1e122e8c72ec8508dab28882c09cb221659d7a3e5d31581ee251",
+      "display_number": 2,
+      "actual_reply_token": "\u5c40",
+      "conclusion": "pitcher",
+      "extent_observation": "partial",
+      "initial_ownership_conclusion": null,
+      "clarification_applied": true,
+      "ownership_status": "human_confirmed",
+      "confidence": null,
+      "reviewer_note": null
+    },
+    {
+      "query_id": "pitch_003_f0086_box1",
+      "frame_index": 86,
+      "native_timestamp_ms": 2866.6666666666665,
+      "decoded_bgr_sha256": "dd12d364bdee47da9bffc3a28964cd92c2d6087af7e338223aee91282aa3ce7f",
+      "candidate_index": 1,
+      "rectangle_xywh": [
+        243,
+        382,
+        85,
+        170
+      ],
+      "raw_svm_score": 0.61497344635427,
+      "image_path": "analysis_results/phase2_person_support_20261009_03/evaluation/pitch_003_f0086_box1.png",
+      "image_sha256": "e866df1aafb068c6ca51f06318dd5993e1e9e6c5676059eb8faf906ce3645486",
+      "display_number": 3,
+      "actual_reply_token": "\u5c40",
+      "conclusion": "pitcher",
+      "extent_observation": "partial",
+      "initial_ownership_conclusion": null,
+      "clarification_applied": true,
+      "ownership_status": "human_confirmed",
+      "confidence": null,
+      "reviewer_note": null
+    },
+    {
+      "query_id": "pitch_003_f0086_box0",
+      "frame_index": 86,
+      "native_timestamp_ms": 2866.6666666666665,
+      "decoded_bgr_sha256": "dd12d364bdee47da9bffc3a28964cd92c2d6087af7e338223aee91282aa3ce7f",
+      "candidate_index": 0,
+      "rectangle_xywh": [
+        102,
+        48,
+        102,
+        205
+      ],
+      "raw_svm_score": 0.3399557345546782,
+      "image_path": "analysis_results/phase2_person_support_20261009_03/evaluation/pitch_003_f0086_box0.png",
+      "image_sha256": "85172ca15c7dcd1ffb5f6cf0bfb1fc2fa2cb5ebe6632f26366d2d6ec1dc23dd0",
+      "display_number": 4,
+      "actual_reply_token": "\u4ed6",
+      "conclusion": "other",
+      "extent_observation": null,
+      "initial_ownership_conclusion": "other",
+      "clarification_applied": false,
+      "ownership_status": "human_confirmed",
+      "confidence": null,
+      "reviewer_note": null
+    },
+    {
+      "query_id": "pitch_003_f0095_box0",
+      "frame_index": 95,
+      "native_timestamp_ms": 3166.666666666667,
+      "decoded_bgr_sha256": "6766d93bcf1df66cb744fb4545fff2c5ea498adc204f2cbc2902382dc7fd3243",
+      "candidate_index": 0,
+      "rectangle_xywh": [
+        161,
+        181,
+        194,
+        387
+      ],
+      "raw_svm_score": 0.9522319969255477,
+      "image_path": "analysis_results/phase2_person_support_20261009_03/evaluation/pitch_003_f0095_box0.png",
+      "image_sha256": "b8973554722ff13c0c4d2d81be420474555bd429ebe9af413a33c9d89e8fe932",
+      "display_number": 5,
+      "actual_reply_token": "\u6295",
+      "conclusion": "pitcher",
+      "extent_observation": null,
+      "initial_ownership_conclusion": "pitcher",
+      "clarification_applied": false,
+      "ownership_status": "human_confirmed",
+      "confidence": null,
+      "reviewer_note": null
+    },
+    {
+      "query_id": "pitch_003_f0105_box0",
+      "frame_index": 105,
+      "native_timestamp_ms": 3500.0,
+      "decoded_bgr_sha256": "19d1760d18fadb344c477ae0cb8c342c3aa0b6b9bd913f3efc8c1a48531d2eff",
+      "candidate_index": 0,
+      "rectangle_xywh": [
+        81,
+        134,
+        225,
+        451
+      ],
+      "raw_svm_score": 1.2365461576264352,
+      "image_path": "analysis_results/phase2_person_support_20261009_03/evaluation/pitch_003_f0105_box0.png",
+      "image_sha256": "ebd0a9527e0819e5f4c3e9efefdbe439db2afccda9cb87c427ba7b2a528a1e41",
+      "display_number": 6,
+      "actual_reply_token": "\u6295",
+      "conclusion": "pitcher",
+      "extent_observation": null,
+      "initial_ownership_conclusion": "pitcher",
+      "clarification_applied": false,
+      "ownership_status": "human_confirmed",
+      "confidence": null,
+      "reviewer_note": null
+    },
+    {
+      "query_id": "pitch_003_f0105_box1",
+      "frame_index": 105,
+      "native_timestamp_ms": 3500.0,
+      "decoded_bgr_sha256": "19d1760d18fadb344c477ae0cb8c342c3aa0b6b9bd913f3efc8c1a48531d2eff",
+      "candidate_index": 1,
+      "rectangle_xywh": [
+        378,
+        0,
+        95,
+        189
+      ],
+      "raw_svm_score": 0.7221233169548213,
+      "image_path": "analysis_results/phase2_person_support_20261009_03/evaluation/pitch_003_f0105_box1.png",
+      "image_sha256": "11d45fcf3f3f57da344bdb1eeffca5ca4e2e81125ca0bb675630d5ae52649772",
+      "display_number": 7,
+      "actual_reply_token": "\u4ed6",
+      "conclusion": "other",
+      "extent_observation": null,
+      "initial_ownership_conclusion": "other",
+      "clarification_applied": false,
+      "ownership_status": "human_confirmed",
+      "confidence": null,
+      "reviewer_note": null
+    },
+    {
+      "query_id": "pitch_003_f0112_box0",
+      "frame_index": 112,
+      "native_timestamp_ms": 3733.3333333333335,
+      "decoded_bgr_sha256": "070c2b7128c451b8dacb840a476b014896022e66a09c5805b346db58eb98e585",
+      "candidate_index": 0,
+      "rectangle_xywh": [
+        70,
+        131,
+        233,
+        467
+      ],
+      "raw_svm_score": 1.3536763814627193,
+      "image_path": "analysis_results/phase2_person_support_20261009_03/evaluation/pitch_003_f0112_box0.png",
+      "image_sha256": "d5c661de045709e010287dd40185735fe1a29b6943fc448e7e0e2596cf5ad197",
+      "display_number": 8,
+      "actual_reply_token": "\u6295",
+      "conclusion": "pitcher",
+      "extent_observation": null,
+      "initial_ownership_conclusion": "pitcher",
+      "clarification_applied": false,
+      "ownership_status": "human_confirmed",
+      "confidence": null,
+      "reviewer_note": null
+    },
+    {
+      "query_id": "pitch_003_f0112_box2",
+      "frame_index": 112,
+      "native_timestamp_ms": 3733.3333333333335,
+      "decoded_bgr_sha256": "070c2b7128c451b8dacb840a476b014896022e66a09c5805b346db58eb98e585",
+      "candidate_index": 2,
+      "rectangle_xywh": [
+        425,
+        66,
+        71,
+        142
+      ],
+      "raw_svm_score": 0.6460766650270671,
+      "image_path": "analysis_results/phase2_person_support_20261009_03/evaluation/pitch_003_f0112_box2.png",
+      "image_sha256": "687b7a88e9e4d2679a01baa5a096905a928ef3b3b28000db7ca26c0f03e206c6",
+      "display_number": 9,
+      "actual_reply_token": "\u4ed6",
+      "conclusion": "other",
+      "extent_observation": null,
+      "initial_ownership_conclusion": "other",
+      "clarification_applied": false,
+      "ownership_status": "human_confirmed",
+      "confidence": null,
+      "reviewer_note": null
+    }
+  ],
+  "sample_scope": "Nine fixed known-case development boxes from six frames; remaining168 boxes unreviewed",
+  "automatic_pitcher_assignment": null,
+  "warning_policy": null,
+  "new_warning_counts": null,
+  "pitcher_identity_accuracy": null,
+  "box_iou": null,
+  "phase2_automatic_reliability": "NOT PASSED",
+  "limits": [
+    "Ownership is not an anatomical accuracy or full-body extent judgment",
+    "Other-person boxes are valid person candidates, not automatically detector false positives",
+    "No rule selects a pitcher box or measures cross-frame identity continuity",
+    "No human completion timestamp or confidence was supplied; these stay null"
+  ]
+}
