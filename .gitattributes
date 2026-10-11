@@ -33,3 +33,7 @@ tests/test_roi_loss_audit.py text eol=lf
 docs/phase2_roi_loss_diagnosis_20261010.md text eol=lf
 docs/phase2_complete_input_comparison_plan_20261010.md text eol=lf
 docs/evaluation_plans/phase2_roi_loss_*.json text eol=lf
+scripts/check_movenet_compatibility.py text eol=lf
+tests/test_movenet_compatibility.py text eol=lf
+docs/phase2_movenet_compatibility_*.md text eol=lf
+docs/evaluation_plans/phase2_movenet_compatibility_*.json text eol=lf

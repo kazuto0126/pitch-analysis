@@ -1,0 +1,85 @@
+{
+  "status": "compatible_synthetic_only",
+  "client_date_local": "2026-10-11",
+  "frozen_execution": {
+    "path": "docs/evaluation_plans/phase2_movenet_compatibility_execution_20261011_01.json",
+    "sha256": "794f9dbcaeb49ff7a2052455c50afd4f58ad6c82b6beeab9d9740aa099a50a2d"
+  },
+  "gate_code": {
+    "path": "scripts/check_movenet_compatibility.py",
+    "sha256": "f3b2ff2864d35ae37e7623c99fccba5689a3ee111b79658bed3b272f334b5fa9"
+  },
+  "gate_tests": {
+    "path": "tests/test_movenet_compatibility.py",
+    "sha256": "f5a8e3a723731ae21c95a8625411bcd12ee2ff01dbb5ba26918f7fd4a9eb80e3"
+  },
+  "gate_output": {
+    "path": "analysis_results/movenet_compatibility_20261010_01/gate_20261011_01/compatibility.json",
+    "sha256": "74a9345a5d643904e7c51eb3e047031ff16f5048506a95abe2209a3f5a7c7848"
+  },
+  "gate_run_log": {
+    "path": "analysis_results/movenet_compatibility_20261010_01/gate_run_20261011.log",
+    "sha256": "3b9e8c853b530422a31ec48b8d29e56b459c598fb21b8306ecf71b14281b3de7"
+  },
+  "completion_audit": {
+    "path": "analysis_results/movenet_compatibility_20261010_01/completion_audit_20261011.json",
+    "sha256": "1d10ca1750b56aaa0e4725004eb7ad14f3d6224bdea8e47adfbeaaf7252d5175"
+  },
+  "result_document": {
+    "path": "docs/phase2_movenet_compatibility_20261011.md",
+    "sha256": "9da5e098e48b6cb32fbfd1f22b2f6247d6d3e98ee89a290150ac5721eb001026"
+  },
+  "reporting_code": {
+    "path": "analysis_results/movenet_compatibility_20261010_01/publish_checkpoint.py",
+    "sha256": "381709e845ba69fd0046c39e97d9fe11aa36abc8be6e1c2b5523fe828a3585de"
+  },
+  "synthetic_inference_attempts": 1,
+  "formal_video_inference_calls": 0,
+  "actual_signature": {
+    "input_key": "input",
+    "input_shape": [
+      1,
+      null,
+      null,
+      3
+    ],
+    "input_dtype": "int32",
+    "output_key": "output_0",
+    "output_shape": [
+      1,
+      6,
+      56
+    ],
+    "output_dtype": "float32"
+  },
+  "tests": {
+    "run": 472,
+    "passed": 470,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 2,
+    "seconds": 69.675,
+    "new_tests": 15,
+    "formal_five_e2e_included": true,
+    "log": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/full_test_suite_formal5_runtime_guards_20261011.log",
+      "sha256": "a5a71edac4ca613029d85b47f6342887e3751f157d243ec51f9e0d655d52bf14"
+    },
+    "skip_reasons": [
+      "Windows file-symlink creation unavailable (dangling snapshot file)",
+      "Windows file-symlink creation unavailable (source outside candidate)"
+    ]
+  },
+  "protected_physical_files_unchanged": 374,
+  "upstream_references_unchanged": 62,
+  "production_changed": false,
+  "baseline_package_metadata_unchanged": 30,
+  "baseline_package_byte_snapshot_available": false,
+  "handoff_candidates_pending": 8,
+  "canonical_ground_truth_reviewed": 5,
+  "anatomical_accuracy": null,
+  "tracking_accuracy": null,
+  "baseline_false_negatives_unresolved": 18,
+  "phase2_automatic_reliability": "NOT PASSED",
+  "next_stage_automatically_authorized": false
+}

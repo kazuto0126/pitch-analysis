@@ -1,8 +1,20 @@
 # 進度摘要
 
-更新日期：2026-10-10（台灣）。
+更新日期：2026-10-11（台灣）。
 
-## 最新：五球裁切漏格與關節損失診斷完成
+## 最新：MoveNet 隔離相容性第一關
+
+見 [本輪結果](phase2_movenet_compatibility_20261011.md)。狀態 `compatible_synthetic_only`；
+最多一次的合成圖推論實際嘗試1次，MoveNet正式影片0次，未切換production。
+32個wheels共405,678,583bytes皆符合官方SHA，獨立CPU環境33套件，pip check無衝突。
+全圖256×256與六個幾何fixture完成情況、signature與首次耗時均在實際receipt記錄。
+完整suite **470 passed／0 failed／0 errors／2 skipped**（472項、69.675秒，含正式五球MediaPipe E2E）。
+374保護來源／62上游引用不變，正式五球、raw、GT5/5與src未改，八顆交付片仍candidate／pending。
+Phase2仍 **NOT PASSED**，原FN18未修復。原分析環境30套件metadata與3個dependency files不變。
+輸出：`analysis_results/movenet_compatibility_20261010_01/`。本輪至commit／push與乾淨checkpoint停止，不自動跑592格比較、不開始Phase3。
+下方10/10提案的「待核准／尚未下載」為當時狀態；已由本輪核准與實際結果接續。
+
+## 前次：五球裁切漏格與關節損失診斷完成
 
 見 [損失診斷](phase2_roi_loss_diagnosis_20261010.md)與
 [完整輸入比較提案](phase2_complete_input_comparison_plan_20261010.md)。

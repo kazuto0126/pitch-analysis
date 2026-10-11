@@ -1,0 +1,452 @@
+{
+  "status": "frozen_before_synthetic_gate",
+  "client_date_local": "2026-10-11",
+  "frozen_at_utc": "2026-10-11T02:08:56.189820+00:00",
+  "approval": {
+    "source": "conversation",
+    "reply": "繼續",
+    "scope": "Previously proposed isolated compatibility gate only",
+    "resumed_after_auto_review_usage_failure": true,
+    "human_submission_timestamp": null
+  },
+  "synthetic_attempt_budget": 1,
+  "formal_video_inference_budget": 0,
+  "isolated_python": ".venv-movenet-compat-20261010/Scripts/python.exe",
+  "launch_environment": {
+    "KERAS_HOME": "analysis_results/movenet_compatibility_20261010_01/keras_home"
+  },
+  "model_directory": "analysis_results/movenet_compatibility_20261010_01/saved_model",
+  "output_directory": "analysis_results/movenet_compatibility_20261010_01/gate_20261011_01",
+  "sources": {
+    "gate_code": {
+      "path": "scripts/check_movenet_compatibility.py",
+      "sha256": "f3b2ff2864d35ae37e7623c99fccba5689a3ee111b79658bed3b272f334b5fa9"
+    },
+    "gate_tests": {
+      "path": "tests/test_movenet_compatibility.py",
+      "sha256": "f5a8e3a723731ae21c95a8625411bcd12ee2ff01dbb5ba26918f7fd4a9eb80e3"
+    },
+    "proposal": {
+      "path": "docs/phase2_complete_input_comparison_plan_20261010.md",
+      "sha256": "ae36c25ac05621a87ab97e735137e50a882fc69dc8fbed05d6b4b38338677e1a"
+    },
+    "previous_result": {
+      "path": "docs/evaluation_plans/phase2_roi_loss_result_20261010_01.json",
+      "sha256": "a8db2cbb2d56f942dbad4050bc709dbb9127b993e524272c46025e8550b25bde"
+    },
+    "upstream_container": {
+      "path": "docs/evaluation_plans/phase2_assisted_roi_cohort_proposal_20261010.json",
+      "sha256": "d710bb07c10efa3f01af33d6ab2bef72e8452245715c9669d4cc973ef082aaa6"
+    },
+    "acquisition": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/model_acquisition.json",
+      "sha256": "46826a8c19948c2c7b6c677194624210f61f6d40e1823d688648b9e256a5f14b"
+    },
+    "license": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/license_provenance.json",
+      "sha256": "9cb715c0d9c5abb853822bf569f9b186fb23f3efcf4b24902c79e218690f2980"
+    },
+    "model_archive": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/movenet_multipose_lightning_tf2_v1.tar.gz",
+      "sha256": "f01b9e5e8c3bc31f82e9ca7fa4a2876f25d7a54b65c83da5df2eca3e1632cec8"
+    },
+    "official_model_document": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/official_model_document.md",
+      "sha256": "48d2b2dd95d0657505c36bc996ae77896c7a289ea6d992cadbfd2b1a3a0a75f7"
+    },
+    "license_text": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/LICENSE.apache-2.0.txt",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    "wheel_acquisition": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/wheel_acquisition.json",
+      "sha256": "76cfed2a5295f0aaecf15be7c88d6cc8bb1b3dbdbd414a165ee5f8089713bdd7"
+    },
+    "runtime_lock": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/runtime_lock.json",
+      "sha256": "d5224743b4da133b459c0e00ffc606802bd2609fb31f12fee2895285582ffbb3"
+    },
+    "requirements_lock": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/runtime_requirements.lock",
+      "sha256": "1d1504abd9224a6744d1160db3b913edb04785f86a5bb9eb891edf25562a296a"
+    },
+    "installation_report": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/pip_install_report.json",
+      "sha256": "068c4ddc7923f1dc5aa5bee176a82f85d10224737a90347abef44125218d19f7"
+    },
+    "pip_check": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/pip_check.log",
+      "sha256": "672aec65a45bed50e70229c70934a7eebf0462595c459b83023027645d57cccf"
+    },
+    "bootstrap_provenance": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/bootstrap_provenance.json",
+      "sha256": "bf6d62fe18674521c8339dab8b71bbf21bd1c4dd83b93d9f1c84e515e7eeed67"
+    },
+    "bootstrap_pip_wheel": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/bootstrap_wheels/pip-25.0.1-py3-none-any.whl",
+      "sha256": "c46efd13b6aa8279f33f2864459c8ce587ea6a1a59ee20de055868d8f7688f7f"
+    },
+    "installed_runtime_inventory": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/installed_runtime_inventory.json",
+      "sha256": "4b584c884a54e8f9de5358364d0b1e7c08cd81b2af1d003075d48d24ef8a81a1"
+    },
+    "acquisition_code": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/acquire_official.py",
+      "sha256": "a1f44f0a8723e127fada52b1c219ba4e89b625b90bd36d1fa31d2fb81f0ad4e6"
+    },
+    "runtime_acquisition_code": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/acquire_runtime_wheels_small_ranges.py",
+      "sha256": "92963c7725b5e1618542baca6957ea988c92fb1c524a429e21272f8b2b3ab240"
+    },
+    "runtime_recording_code": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/record_runtime.py",
+      "sha256": "d2e446b72257d12f1d3c10271ac875cb8cec812a43e1755a38215071d4fbc746"
+    },
+    "freeze_code": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/freeze_gate.py",
+      "sha256": "0c4b43d8d5ebfa448554ffe63b8e32789253801fbdb767ac5a4af6eb6c4a00c6"
+    },
+    "completion_audit_code": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/complete_audit.py",
+      "sha256": "7401e793ec2c46c8e8d72cb678e0c2243d22d1a336c1e69131e4b7104d8c4571"
+    },
+    "baseline_preflight": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/preflight.json",
+      "sha256": "297100ae8489a8c453f079a0c74674667fd0330cc8fe64cd85c36f55e951ce82"
+    },
+    "model_0": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/saved_model/saved_model.pb",
+      "sha256": "c06a202afbfb25efb73cc13e9a7d22068e955b5f8c0facae5f718a3d31e92e77"
+    },
+    "model_1": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/saved_model/variables/variables.data-00000-of-00001",
+      "sha256": "0a5c7cabeea2212be48158855d07fe9e3a324c522a5f2ce9077a1be7c1f53bcc"
+    },
+    "model_2": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/saved_model/variables/variables.index",
+      "sha256": "aeb78ccdbe9e55e0a37c50167c9a9d1a49e8106f3e0cbd2f73eaccd1aff6f12f"
+    },
+    "wheel_0": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/wheels/absl_py-2.5.1-py3-none-any.whl",
+      "sha256": "721200f2f0e9960f2ca9dc3a2a706b201f5f75d812c158f059cbbe29eeafbdb8"
+    },
+    "wheel_metadata_0": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/pypi_metadata/absl_py-2.5.1.json",
+      "sha256": "008786801f40a1b81f02aa77bd94fcb9129b4ba1cee7643d26cd95b71be4c39c"
+    },
+    "wheel_1": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/wheels/astunparse-1.6.3-py2.py3-none-any.whl",
+      "sha256": "c2652417f2c8b5bb325c885ae329bdf3f86424075c4fd1a128674bc6fba4b8e8"
+    },
+    "wheel_metadata_1": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/pypi_metadata/astunparse-1.6.3.json",
+      "sha256": "63e3cfcc02db89f49c00b68deed843c3fe94c8bd3c06e6682dd4439280c1d4e9"
+    },
+    "wheel_2": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/wheels/certifi-2026.7.22-py3-none-any.whl",
+      "sha256": "62f22742b58a1a33014a2b6b706588a8d7e2a88ae7bd1a6ebe8c992928483775"
+    },
+    "wheel_metadata_2": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/pypi_metadata/certifi-2026.7.22.json",
+      "sha256": "c6fe912677e373608eab51e324946005998faeb0fa999e6ddada24676e3556d3"
+    },
+    "wheel_3": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/wheels/charset_normalizer-3.5.2-cp312-cp312-win_amd64.whl",
+      "sha256": "780fbe7cab297b81dad9fb8dc5eb003c0468ffb0d9e5f65068c53a34661a96bc"
+    },
+    "wheel_metadata_3": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/pypi_metadata/charset_normalizer-3.5.2.json",
+      "sha256": "9fda300857ae6a0486b4cd2d2fec7817ed2d45657249a6dfc0c2bbd1a44267b6"
+    },
+    "wheel_4": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/wheels/flatbuffers-25.12.19-py2.py3-none-any.whl",
+      "sha256": "7634f50c427838bb021c2d66a3d1168e9d199b0607e6329399f04846d42e20b4"
+    },
+    "wheel_metadata_4": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/pypi_metadata/flatbuffers-25.12.19.json",
+      "sha256": "3800bcba3177624044bb53f06f4a588061c10034f93467a0d163549b0928045a"
+    },
+    "wheel_5": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/wheels/gast-0.7.0-py3-none-any.whl",
+      "sha256": "99cbf1365633a74099f69c59bd650476b96baa5ef196fec88032b00b31ba36f7"
+    },
+    "wheel_metadata_5": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/pypi_metadata/gast-0.7.0.json",
+      "sha256": "91a9ba28946d819450f386aa48aff82affce16f2e932f26c8849c1afcb58e88a"
+    },
+    "wheel_6": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/wheels/google_pasta-0.2.0-py3-none-any.whl",
+      "sha256": "b32482794a366b5366a32c92a9a9201b107821889935a02b3e51f6b432ea84ed"
+    },
+    "wheel_metadata_6": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/pypi_metadata/google_pasta-0.2.0.json",
+      "sha256": "71b3125d22f2b422481313dcd66bfaa2b2dcd932283d28c5e195f45dfba571a2"
+    },
+    "wheel_7": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/wheels/grpcio-1.84.0-cp312-cp312-win_amd64.whl",
+      "sha256": "49717e857899f4136d7657bf5aded61ac479110a075438290923a4d86af7cd02"
+    },
+    "wheel_metadata_7": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/pypi_metadata/grpcio-1.84.0.json",
+      "sha256": "e54cb0f9d951acddc0c6bad36d87dbe4ae81281d5eb5964004d71c67eea2c8ca"
+    },
+    "wheel_8": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/wheels/h5py-3.14.0-cp312-cp312-win_amd64.whl",
+      "sha256": "bf4897d67e613ecf5bdfbdab39a1158a64df105827da70ea1d90243d796d367f"
+    },
+    "wheel_metadata_8": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/pypi_metadata/h5py-3.14.0.json",
+      "sha256": "d8de55a79473da573f94d65442ce418ffd8973f5ed87c07243ae7d2071f1665c"
+    },
+    "wheel_9": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/wheels/idna-3.20-py3-none-any.whl",
+      "sha256": "ab7ae7122974553370f0bdb919e1a960b2cd1bc1ef0276416d896db81c14582c"
+    },
+    "wheel_metadata_9": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/pypi_metadata/idna-3.20.json",
+      "sha256": "e7cbd26e23ce60f6cb3a151d2adf3b1b087bb8f10ac2d9d6db70fdccbf3bb041"
+    },
+    "wheel_10": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/wheels/keras-3.15.1-py3-none-any.whl",
+      "sha256": "836460e480930acbd19bb7a17e62f9ecad40e8a9af9a651fc8d0586a96d27e20"
+    },
+    "wheel_metadata_10": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/pypi_metadata/keras-3.15.1.json",
+      "sha256": "eb34e1011c92ba64aa4bd8918a971cdf4fb0b8990f9848b3c9d265cec7669304"
+    },
+    "wheel_11": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/wheels/libclang-18.1.1-py2.py3-none-win_amd64.whl",
+      "sha256": "4dd2d3b82fab35e2bf9ca717d7b63ac990a3519c7e312f19fa8e86dcc712f7fb"
+    },
+    "wheel_metadata_11": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/pypi_metadata/libclang-18.1.1.json",
+      "sha256": "0e3d42c2c83d87f90b9586dd8a59d8770cfde05709598c6954d84b2b17616fa2"
+    },
+    "wheel_12": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/wheels/markdown_it_py-4.2.0-py3-none-any.whl",
+      "sha256": "9f7ebbcd14fe59494226453aed97c1070d83f8d24b6fc3a3bcf9a38092641c4a"
+    },
+    "wheel_metadata_12": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/pypi_metadata/markdown_it_py-4.2.0.json",
+      "sha256": "62affba459c80b1279b5759735f7da3e9c7d24966086ff81ec0303c94512b966"
+    },
+    "wheel_13": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/wheels/mdurl-0.1.2-py3-none-any.whl",
+      "sha256": "84008a41e51615a49fc9966191ff91509e3c40b939176e643fd50a5c2196b8f8"
+    },
+    "wheel_metadata_13": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/pypi_metadata/mdurl-0.1.2.json",
+      "sha256": "c7baac0b363d92cf55f1f3a313f4bb0564bff27343e6a0a4e9d7ff03afc8a6c7"
+    },
+    "wheel_14": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/wheels/ml_dtypes-0.6.0-cp312-cp312-win_amd64.whl",
+      "sha256": "2a3e9d53925597fbffafd2a37048dadeddd0bdaba58058f6ae0869ed709a184d"
+    },
+    "wheel_metadata_14": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/pypi_metadata/ml_dtypes-0.6.0.json",
+      "sha256": "99684e9e2e506da8db8acbfb076e2b8108ae442e62d8af858613bd41d42662ea"
+    },
+    "wheel_15": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/wheels/namex-0.1.0-py3-none-any.whl",
+      "sha256": "e2012a474502f1e2251267062aae3114611f07df4224b6e06334c57b0f2ce87c"
+    },
+    "wheel_metadata_15": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/pypi_metadata/namex-0.1.0.json",
+      "sha256": "fa76d8dfc07c6280238dbc406083dbdc7edd27d3dd89dfca09c5109a7b2033e2"
+    },
+    "wheel_16": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/wheels/numpy-2.5.3-cp312-cp312-win_amd64.whl",
+      "sha256": "0a59a421a32580a009e8a1751345bf829631b990dc1794b80514ab722b435def"
+    },
+    "wheel_metadata_16": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/pypi_metadata/numpy-2.5.3.json",
+      "sha256": "497ade587d7c2cad83a918ca79b9776dbde9eddf4c0abddbfb637b27160e87a9"
+    },
+    "wheel_17": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/wheels/opt_einsum-3.4.0-py3-none-any.whl",
+      "sha256": "69bb92469f86a1565195ece4ac0323943e83477171b91d24c35afe028a90d7cd"
+    },
+    "wheel_metadata_17": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/pypi_metadata/opt_einsum-3.4.0.json",
+      "sha256": "2add37620afa4479121a81d07899b50f8ee03c6b40a07b11a6b7ca93897d6813"
+    },
+    "wheel_18": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/wheels/optree-0.20.0-cp312-cp312-win_amd64.whl",
+      "sha256": "ed117076eab16f8ce4510efffcc81b08f0f50cbbc14f3b8b550aa46e1ebc97b1"
+    },
+    "wheel_metadata_18": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/pypi_metadata/optree-0.20.0.json",
+      "sha256": "504d235d60fdd36783cff6bee092ba0a3dcf3f6ec4a39bfeefed10ead3c4f7d9"
+    },
+    "wheel_19": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/wheels/packaging-26.3-py3-none-any.whl",
+      "sha256": "d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c"
+    },
+    "wheel_metadata_19": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/pypi_metadata/packaging-26.3.json",
+      "sha256": "4f190d2f0b312b3086058cee64ab4333bf3ce67fb78b4c2bdb43899049b29f4d"
+    },
+    "wheel_20": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/wheels/protobuf-7.36.2-cp310-abi3-win_amd64.whl",
+      "sha256": "a300819d441e078a5608c0d3c709796bb548136058fda017ae51d425b44fd353"
+    },
+    "wheel_metadata_20": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/pypi_metadata/protobuf-7.36.2.json",
+      "sha256": "eef9b2956f2fbe4bbd2edbc8ec98d8bad9e3fc5de1de2518af6b77230db00450"
+    },
+    "wheel_21": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/wheels/pygments-2.21.0-py3-none-any.whl",
+      "sha256": "2363c69b61c4a97c838da3b130dcd6468f4848992b21a82f2a63ec34377137d9"
+    },
+    "wheel_metadata_21": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/pypi_metadata/pygments-2.21.0.json",
+      "sha256": "330104a10adc8a587e3f98f4e207557125ca0c1d489e129334da5acb2b813a03"
+    },
+    "wheel_22": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/wheels/requests-2.34.2-py3-none-any.whl",
+      "sha256": "2a0d60c172f83ac6ab31e4554906c0f3b3588d37b5cb939b1c061f4907e278e0"
+    },
+    "wheel_metadata_22": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/pypi_metadata/requests-2.34.2.json",
+      "sha256": "8622e50ffd295ed759ec793f2a009172a4ed0204bbc5e948de23111bc3d2aeae"
+    },
+    "wheel_23": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/wheels/rich-15.0.0-py3-none-any.whl",
+      "sha256": "33bd4ef74232fb73fe9279a257718407f169c09b78a87ad3d296f548e27de0bb"
+    },
+    "wheel_metadata_23": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/pypi_metadata/rich-15.0.0.json",
+      "sha256": "455015cb0b237a24819d91236152ad0e71b2be39a83cbe6afa0e29ea8aafa550"
+    },
+    "wheel_24": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/wheels/setuptools-84.0.0-py3-none-any.whl",
+      "sha256": "51a52592b3b99e102b609654876bd65f19f999935166d1352678931132b0c670"
+    },
+    "wheel_metadata_24": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/pypi_metadata/setuptools-84.0.0.json",
+      "sha256": "24d07932459261bbf9e66e5cfdebfeba23a977234ab24bf9c3a1df053c53ba21"
+    },
+    "wheel_25": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/wheels/six-1.17.0-py2.py3-none-any.whl",
+      "sha256": "4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274"
+    },
+    "wheel_metadata_25": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/pypi_metadata/six-1.17.0.json",
+      "sha256": "d8de39dd52b73048d81a8fd78022ee2bc72f8b568bcf0d88e5d5069c302b1208"
+    },
+    "wheel_26": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/wheels/tensorflow_cpu-2.21.0-cp312-cp312-win_amd64.whl",
+      "sha256": "13ed4af80e5c5ddd6849323abecb4804eb2770f7570b57fe20208ad1e58c5d12"
+    },
+    "wheel_metadata_26": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/pypi_metadata/tensorflow_cpu-2.21.0.json",
+      "sha256": "be4e446f31b31f307fee9c96bc72e81c8d1f311eb3ed7ee2a180cf88a1511e8d"
+    },
+    "wheel_27": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/wheels/termcolor-3.3.0-py3-none-any.whl",
+      "sha256": "cf642efadaf0a8ebbbf4bc7a31cec2f9b5f21a9f726f4ccbb08192c9c26f43a5"
+    },
+    "wheel_metadata_27": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/pypi_metadata/termcolor-3.3.0.json",
+      "sha256": "4bf3a3f04fccdadaa5f0a513a867baa4361521f4edfa785d2eb8a0ef79862ce8"
+    },
+    "wheel_28": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/wheels/typing_extensions-4.16.0-py3-none-any.whl",
+      "sha256": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8"
+    },
+    "wheel_metadata_28": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/pypi_metadata/typing_extensions-4.16.0.json",
+      "sha256": "2140da00d62dde967f52d0be0ae28444f1d6a3fe603f52c83c23988c32122d5a"
+    },
+    "wheel_29": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/wheels/urllib3-2.8.0-py3-none-any.whl",
+      "sha256": "0cf3cae568d36aa9576b28dfb35f11328f1cb974ca7647d9475ebb86c75ac6e3"
+    },
+    "wheel_metadata_29": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/pypi_metadata/urllib3-2.8.0.json",
+      "sha256": "5315e7401db3cacccd0c2ce5daf81f752a9cc3614b18c37f2b79930b7159ce2f"
+    },
+    "wheel_30": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/wheels/wheel-0.48.0-py3-none-any.whl",
+      "sha256": "3217dcc807155e45db462d7ef2431f5ddda0d7273b700d05a67b271ceb1287ab"
+    },
+    "wheel_metadata_30": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/pypi_metadata/wheel-0.48.0.json",
+      "sha256": "03f655da3a6dd010d9ac41d4771d5d973109cb662a1e10eb9d967535ffd145f8"
+    },
+    "wheel_31": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/wheels/wrapt-2.5.0-cp312-cp312-win_amd64.whl",
+      "sha256": "ab45839c912777e2738fed369636589c8b2a6d9c44ca56de0fd0814581d467c2"
+    },
+    "wheel_metadata_31": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/pypi_metadata/wrapt-2.5.0.json",
+      "sha256": "81c93ec894bae972773bf591c44c69093b733ea0c2bf6f981ef58fc371c62064"
+    }
+  },
+  "model_files": [
+    {
+      "path": "analysis_results/movenet_compatibility_20261010_01/saved_model/saved_model.pb",
+      "sha256": "c06a202afbfb25efb73cc13e9a7d22068e955b5f8c0facae5f718a3d31e92e77"
+    },
+    {
+      "path": "analysis_results/movenet_compatibility_20261010_01/saved_model/variables/variables.data-00000-of-00001",
+      "sha256": "0a5c7cabeea2212be48158855d07fe9e3a324c522a5f2ce9077a1be7c1f53bcc"
+    },
+    {
+      "path": "analysis_results/movenet_compatibility_20261010_01/saved_model/variables/variables.index",
+      "sha256": "aeb78ccdbe9e55e0a37c50167c9a9d1a49e8106f3e0cbd2f73eaccd1aff6f12f"
+    }
+  ],
+  "protected_source_inventory": {
+    "path": "docs/evaluation_plans/phase2_pose_mode_countercheck_20261009.json",
+    "sha256": "587d7df4e91e279262be408607c8bdc13d73b6f11c1a28e5f874ab0af3c3bb69",
+    "key": "protected_source_hashes",
+    "physical_files": 374
+  },
+  "protected_physical_files": 374,
+  "upstream_references": 62,
+  "preprocessing": {
+    "whole_frame": true,
+    "resize_with_pad": [
+      256,
+      256
+    ],
+    "method": "bilinear",
+    "antialias": false,
+    "RGB": true,
+    "dtype": "int32",
+    "batch": 1,
+    "geometry": "Observed from resized all-ones mask, not assumed padding rounding.",
+    "fixtures": [
+      [
+        720,
+        1280
+      ],
+      [
+        1280,
+        720
+      ],
+      [
+        719,
+        1281
+      ],
+      [
+        257,
+        319
+      ],
+      [
+        256,
+        256
+      ],
+      [
+        127,
+        257
+      ]
+    ]
+  },
+  "failure_policy": "Stop on any contract/runtime/mapping mismatch; one attempt includes errors; no auto retry.",
+  "production_integrity_policy": "External before/after374-source inventory and baseline package lock verification.",
+  "accuracy": null,
+  "warning_policy": null,
+  "phase2_automatic_reliability": "NOT PASSED"
+}

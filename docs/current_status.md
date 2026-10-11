@@ -1,6 +1,6 @@
 # Current status — Phase 2 repair checkpoint; candidate intake isolated
 
-Updated: 2026-10-10
+Updated: 2026-10-11
 
 **Phase 1 = PASSED.**
 **Phase 2 evaluation = COMPLETE; Phase 2 = NOT PASSED (automatic reliability degraded).**
@@ -10,7 +10,25 @@ reliability release. No new numeric acceptance bar, model, confidence gate,
 PitcherSelector, pose/tracking algorithm, interpolation or smoothing change.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-10 paired ROI loss diagnosis (latest; production unchanged)
+## 2026-10-11 isolated MoveNet compatibility gate (latest; production unchanged)
+
+[Result](phase2_movenet_compatibility_20261011.md),
+[frozen execution](evaluation_plans/phase2_movenet_compatibility_execution_20261011_01.json),
+[result seal](evaluation_plans/phase2_movenet_compatibility_result_20261011_01.json).
+Status `compatible_synthetic_only`; 1 synthetic attempt, zero MoveNet formal-video calls.
+Exact official MultiPose Lightning TF2 v1 / TensorFlow CPU2.21.0, separate33-distribution environment;
+32wheels /405,678,583bytes verified against official PyPI SHA; pip check has no broken requirements.
+Actual signature, six whole-frame preprocessing fixtures, observed padding/inverse and first-call timing saved.
+Runtime executable and installed file bytes verified before/after; no production backend adoption or accuracy claim.
+Fullsuite 472run/470passed/0failures/0errors/2Windowsfile-symlinkskips,69.675s,
+includes real formal-five MediaPipe E2E separately from the synthetic gate;15newtests.
+374protected physical sources/62upstream references unchanged; formal5/raw/GT5of5/src unchanged.
+Original30package metadata entries and3dependency files unchanged; no baseline package-bytes before snapshot.
+Eight handoff clips remain candidate/pending, no analysis/promotion. Automatic Phase2 staysNOT PASSED; baselineFN18 unresolved.
+Output:`analysis_results/movenet_compatibility_20261010_01/`. Stop at committed/pushed clean checkpoint; no592-frame comparison orPhase3.
+The10/10 proposal's pending/no-download text below is historical; this approved gate supersedes that status only.
+
+## 2026-10-10 paired ROI loss diagnosis (previous; production unchanged)
 
 [Diagnosis](phase2_roi_loss_diagnosis_20261010.md),
 [bounded complete-input proposal](phase2_complete_input_comparison_plan_20261010.md),
