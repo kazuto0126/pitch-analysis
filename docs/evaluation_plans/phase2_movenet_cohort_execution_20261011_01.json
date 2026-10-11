@@ -1,0 +1,244 @@
+{
+  "status": "frozen_before_measurement",
+  "client_date_local": "2026-10-11",
+  "frozen_at_utc": "2026-10-11T04:49:22.778671+00:00",
+  "approval": {
+    "source": "conversation",
+    "reply": "繼續努力完成phase2；繼續",
+    "scope": "One fixed formal-five full-frame comparison after compatibility report; no production adoption."
+  },
+  "synthetic_inference_budget": 0,
+  "formal_video_inference_budget": 592,
+  "isolated_python": ".venv-movenet-compat-20261010/Scripts/python.exe",
+  "model_directory": "analysis_results/movenet_compatibility_20261010_01/saved_model",
+  "model_files": [
+    {
+      "path": "analysis_results/movenet_compatibility_20261010_01/saved_model/saved_model.pb",
+      "sha256": "c06a202afbfb25efb73cc13e9a7d22068e955b5f8c0facae5f718a3d31e92e77"
+    },
+    {
+      "path": "analysis_results/movenet_compatibility_20261010_01/saved_model/variables/variables.data-00000-of-00001",
+      "sha256": "0a5c7cabeea2212be48158855d07fe9e3a324c522a5f2ce9077a1be7c1f53bcc"
+    },
+    {
+      "path": "analysis_results/movenet_compatibility_20261010_01/saved_model/variables/variables.index",
+      "sha256": "aeb78ccdbe9e55e0a37c50167c9a9d1a49e8106f3e0cbd2f73eaccd1aff6f12f"
+    }
+  ],
+  "sources": {
+    "producer_code": {
+      "path": "scripts/measure_movenet_cohort.py",
+      "sha256": "1a4552443f9a43cd0d1d5df642ad78b5798436febc7faed1e665f9a87c4837f6"
+    },
+    "producer_tests": {
+      "path": "tests/test_movenet_cohort.py",
+      "sha256": "db164f72009b9a55f5599d6166a9452110f9f9a7406b4ab1275fbe82b0c56fbd"
+    },
+    "common_helpers": {
+      "path": "scripts/check_movenet_compatibility.py",
+      "sha256": "f3b2ff2864d35ae37e7623c99fccba5689a3ee111b79658bed3b272f334b5fa9"
+    },
+    "study_plan": {
+      "path": "docs/phase2_movenet_cohort_plan_20261011.md",
+      "sha256": "7a80dd1684a53531e9331474aac901f0a00a781381d3273b05e20de88b8125f6"
+    },
+    "compatibility_result": {
+      "path": "docs/evaluation_plans/phase2_movenet_compatibility_result_20261011_01.json",
+      "sha256": "9dcb676f7344a7a4d61032846e94d5a6a3d9813fa647af14154bd1e2a159349b"
+    },
+    "compatibility_execution": {
+      "path": "docs/evaluation_plans/phase2_movenet_compatibility_execution_20261011_01.json",
+      "sha256": "794f9dbcaeb49ff7a2052455c50afd4f58ad6c82b6beeab9d9740aa099a50a2d"
+    },
+    "runtime_lock": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/runtime_lock.json",
+      "sha256": "d5224743b4da133b459c0e00ffc606802bd2609fb31f12fee2895285582ffbb3"
+    },
+    "installed_runtime_inventory": {
+      "path": "analysis_results/movenet_compatibility_20261010_01/installed_runtime_inventory.json",
+      "sha256": "4b584c884a54e8f9de5358364d0b1e7c08cd81b2af1d003075d48d24ef8a81a1"
+    },
+    "export_plan": {
+      "path": "docs/evaluation_plans/phase2_movenet_cohort_export_20261011_01.json",
+      "sha256": "e46d8f23ada595ce3acd1e4807bb3210facb286f3999bda4087a427c2962d398"
+    },
+    "export_run": {
+      "path": "analysis_results/phase2_movenet_cohort_20261011_01/inputs/export_run.json",
+      "sha256": "991317ef026f23525a75ac4ec5985e79d5dc72080f9f9f7046514850e0e69730"
+    }
+  },
+  "clips": [
+    {
+      "target": {
+        "pitch_id": "pitch_001",
+        "total_frames": 87,
+        "width": 434,
+        "height": 616
+      },
+      "sources": {
+        "video": {
+          "path": "input/yoshinobu_yamamoto/phase1_final/pitch_001.mp4",
+          "sha256": "7c9fe20e39c1b5358aa8e13b739222aebb6bf3ebfadf3569ccb3042c64f10190"
+        },
+        "metadata": {
+          "path": "input/yoshinobu_yamamoto/phase1_final/pitch_001.json",
+          "sha256": "1b50d630f777d9897fed8c579ac60ff830a666e63452dafca2ce92649634549c"
+        },
+        "video_technical": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_001/video_metadata.json",
+          "sha256": "0a19c50d3032a65b1b1c0549c047780ad643cf75b7e59b1ebc240a1b5d18c070"
+        },
+        "export_receipt": {
+          "path": "analysis_results/phase2_movenet_cohort_20261011_01/inputs/pitch_001.json",
+          "sha256": "ea0bc4e4f20bc118eaeb59cd35f34054e05c617726c15eb01717ee62083cb7bd"
+        },
+        "frame_archive": {
+          "path": "analysis_results/phase2_movenet_cohort_20261011_01/inputs/pitch_001.npz",
+          "sha256": "49ab49d6bcc930143075b0c76ee64ffe7e7ed6b70a6406172bb65cb6932b3b6d"
+        }
+      }
+    },
+    {
+      "target": {
+        "pitch_id": "pitch_002",
+        "total_frames": 175,
+        "width": 460,
+        "height": 634
+      },
+      "sources": {
+        "video": {
+          "path": "input/yoshinobu_yamamoto/phase1_final/pitch_002.mp4",
+          "sha256": "b38258e682370349d085d0b43683f183afc632f682dc85b758604c9d1489f01a"
+        },
+        "metadata": {
+          "path": "input/yoshinobu_yamamoto/phase1_final/pitch_002.json",
+          "sha256": "10f453ac9733523b6a703f996411f112922b7ec25dd0766c6a88f32f23cda14d"
+        },
+        "video_technical": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_002/video_metadata.json",
+          "sha256": "92e0c293045b1ab117410d9b7d4a1f1596b17b4411220ef4687773f8103a7a74"
+        },
+        "export_receipt": {
+          "path": "analysis_results/phase2_movenet_cohort_20261011_01/inputs/pitch_002.json",
+          "sha256": "6e4f610c8d121e99aeb8b8cddfc5027beef40c149fdd2e03627dbb75878068ba"
+        },
+        "frame_archive": {
+          "path": "analysis_results/phase2_movenet_cohort_20261011_01/inputs/pitch_002.npz",
+          "sha256": "f0513cb72abb0b76c3ed23132850b6cf85bdc1a62728816254e85ee870b61be3"
+        }
+      }
+    },
+    {
+      "target": {
+        "pitch_id": "pitch_003",
+        "total_frames": 115,
+        "width": 510,
+        "height": 628
+      },
+      "sources": {
+        "video": {
+          "path": "input/yoshinobu_yamamoto/phase1_final/pitch_003.mp4",
+          "sha256": "5c08dba98504d998536dfd0f0fab598760400612c9049445a68120e68fdf024c"
+        },
+        "metadata": {
+          "path": "input/yoshinobu_yamamoto/phase1_final/pitch_003.json",
+          "sha256": "d6015e8e864f4a7d665e289587b692294d53680f61e016bd68d07f6d84a91da6"
+        },
+        "video_technical": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_003/video_metadata.json",
+          "sha256": "79bcd048187fd1901c5ab285119919aa82a78cc2eda4339a5da1228a2cce42c7"
+        },
+        "export_receipt": {
+          "path": "analysis_results/phase2_movenet_cohort_20261011_01/inputs/pitch_003.json",
+          "sha256": "1afb2f5898dec0607478167996d3af0888209769cefb2bfbd8d2d0389df8b085"
+        },
+        "frame_archive": {
+          "path": "analysis_results/phase2_movenet_cohort_20261011_01/inputs/pitch_003.npz",
+          "sha256": "1c7191f8fad3e9b5e5314fdc13f5819d6acb95f337a0a78e146c94d26830b158"
+        }
+      }
+    },
+    {
+      "target": {
+        "pitch_id": "pitch_004",
+        "total_frames": 114,
+        "width": 532,
+        "height": 676
+      },
+      "sources": {
+        "video": {
+          "path": "input/yoshinobu_yamamoto/phase1_final/pitch_004.mp4",
+          "sha256": "e5a57bfc2e0746bb19af2a073d94abb7265d8dfb9ad37de06cee1de29f63d11a"
+        },
+        "metadata": {
+          "path": "input/yoshinobu_yamamoto/phase1_final/pitch_004.json",
+          "sha256": "3804edec77d79590f949e8b5d9e9ba17a91341a4cf00672d2053d479a064c8ec"
+        },
+        "video_technical": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_004/video_metadata.json",
+          "sha256": "ccc237aa03f3e2f48dfd86ef0adf0856a05297033abc374a48d36c6e575786a4"
+        },
+        "export_receipt": {
+          "path": "analysis_results/phase2_movenet_cohort_20261011_01/inputs/pitch_004.json",
+          "sha256": "5eb0812652caf29e71920fad9455be677c4c1af7c48c3178608caba5072b301e"
+        },
+        "frame_archive": {
+          "path": "analysis_results/phase2_movenet_cohort_20261011_01/inputs/pitch_004.npz",
+          "sha256": "57800a40ae7f07d76edae8dec6e616ecbe9252420025828cf6ab2b4f8c1d3a31"
+        }
+      }
+    },
+    {
+      "target": {
+        "pitch_id": "pitch_005",
+        "total_frames": 101,
+        "width": 512,
+        "height": 598
+      },
+      "sources": {
+        "video": {
+          "path": "input/yoshinobu_yamamoto/phase1_final/pitch_005.mp4",
+          "sha256": "e289cb1159e5863583f85915214123d6afe03baa6f32ac6040040878093c873b"
+        },
+        "metadata": {
+          "path": "input/yoshinobu_yamamoto/phase1_final/pitch_005.json",
+          "sha256": "a9e9db2ccfe522159e8b771261403c31acbd7f218aadf5063fe32fc0bd89dba4"
+        },
+        "video_technical": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_005/video_metadata.json",
+          "sha256": "1e67779d8df3ae4cfb2f7d6c4d57bac7b6c02a2b28da669ede18613652e9a8a6"
+        },
+        "export_receipt": {
+          "path": "analysis_results/phase2_movenet_cohort_20261011_01/inputs/pitch_005.json",
+          "sha256": "48c9f1b94f5ebca3e596e64c3f65a7a6086ea021709094932dab286106c09b6a"
+        },
+        "frame_archive": {
+          "path": "analysis_results/phase2_movenet_cohort_20261011_01/inputs/pitch_005.npz",
+          "sha256": "a1cbc1c4b8baa39a74a04ce2b74a3ea75c8bbff7edd7937ac6ac85c22406caa9"
+        }
+      }
+    }
+  ],
+  "producer_sha256": "1a4552443f9a43cd0d1d5df642ad78b5798436febc7faed1e665f9a87c4837f6",
+  "output_directory": "analysis_results/phase2_movenet_cohort_20261011_01/measurements",
+  "launch_environment": {
+    "KERAS_HOME": "analysis_results/movenet_compatibility_20261010_01/keras_home"
+  },
+  "preprocessing": {
+    "whole_frame": true,
+    "resize_with_pad": [
+      256,
+      256
+    ],
+    "method": "bilinear",
+    "antialias": false,
+    "RGB": true,
+    "dtype": "int32",
+    "batch": 1,
+    "geometry": "Observed from resized all-ones mask, not assumed padding rounding."
+  },
+  "failure_policy": "Stop, preserve partial/attempts, never retry.",
+  "human_annotation_inputs": [],
+  "subject_selection_performed": false,
+  "phase2_automatic_reliability": "NOT PASSED"
+}

@@ -1,0 +1,286 @@
+{
+  "client_date_local": "2026-10-11",
+  "status": "completed_comparison_and_offline_warning_trial",
+  "sources": [
+    {
+      "path": "docs/evaluation_plans/phase2_movenet_cohort_export_20261011_01.json",
+      "sha256": "e46d8f23ada595ce3acd1e4807bb3210facb286f3999bda4087a427c2962d398"
+    },
+    {
+      "path": "docs/evaluation_plans/phase2_movenet_cohort_execution_20261011_01.json",
+      "sha256": "2995ab79ec4396bf52a3e0d3ee2b59f2a3643fda32ededf38d3bc14c6394b584"
+    },
+    {
+      "path": "docs/evaluation_plans/phase2_movenet_cohort_evaluation_20261011_01.json",
+      "sha256": "0c9e65ab83bad199e1ef28d861d77b352a909dde61d8be9f9ed230d345ae849e"
+    },
+    {
+      "path": "docs/evaluation_plans/phase2_movenet_support_execution_20261011_01.json",
+      "sha256": "ae470161b207e63953c9fdcab15d81c9bf48eeb788417a7b65abc10a8b60eb05"
+    },
+    {
+      "path": "docs/evaluation_plans/phase2_movenet_support_evaluation_20261011_01.json",
+      "sha256": "9ded3c71377d834136c8208d245a2ce9a610e72d1532985aa0152974d6e0225e"
+    },
+    {
+      "path": "docs/evaluation_plans/phase2_movenet_support_evaluation_20261011_02.json",
+      "sha256": "9eb377e0952dabd053961bdceb1dbbf4526a4c278ae2d21d86649d1a2a6a5a43"
+    },
+    {
+      "path": "docs/phase2_movenet_cohort_plan_20261011.md",
+      "sha256": "7a80dd1684a53531e9331474aac901f0a00a781381d3273b05e20de88b8125f6"
+    },
+    {
+      "path": "docs/phase2_movenet_support_plan_20261011.md",
+      "sha256": "5a0f2ede65c8b2e6682f04bc778328cec5a9581ab8618a288b342e26e4031c5f"
+    },
+    {
+      "path": "docs/phase2_movenet_cohort_results_20261011.md",
+      "sha256": "9823bcf255f45bdfc27a4c9341910f33c4db308d8149db615094342c2fa7b76c"
+    },
+    {
+      "path": "docs/phase2_movenet_support_results_20261011.md",
+      "sha256": "9aa768830c2e11f861d64d0546ae2eec6a6b04a538eaa23e2bea5d21af50f252"
+    },
+    {
+      "path": "scripts/export_movenet_inputs.py",
+      "sha256": "4bb0fa04a63247907e5c0433836985b39a51d408fdb193a3ae02d88f22b2c23c"
+    },
+    {
+      "path": "scripts/measure_movenet_cohort.py",
+      "sha256": "1a4552443f9a43cd0d1d5df642ad78b5798436febc7faed1e665f9a87c4837f6"
+    },
+    {
+      "path": "scripts/evaluate_movenet_cohort.py",
+      "sha256": "c8f5a6b6249b22ec67ae49da8e5bbff13d80149aed9443b6bbd06673c7507522"
+    },
+    {
+      "path": "scripts/measure_movenet_support.py",
+      "sha256": "a214e88c05ca7c5f43da438205fc7d73e3251622ae978fa0f3632e2146d6a815"
+    },
+    {
+      "path": "scripts/evaluate_movenet_support.py",
+      "sha256": "953b8f4bfdeac6e4090977b7361e698c3bfbab578a0c2e5b901ad3660ee229fc"
+    },
+    {
+      "path": "tests/test_movenet_cohort.py",
+      "sha256": "db164f72009b9a55f5599d6166a9452110f9f9a7406b4ab1275fbe82b0c56fbd"
+    },
+    {
+      "path": "tests/test_movenet_cohort_evaluation.py",
+      "sha256": "37167fe3bd9e8b8e2776c493bd2b3afd838bf37b3b1973f800a430d95f011023"
+    },
+    {
+      "path": "tests/test_movenet_support.py",
+      "sha256": "fa1915a6ff4d91cde2e0b48382d1c5ba4b4b88bc35ace0e9d28acb135a680507"
+    },
+    {
+      "path": "tests/test_movenet_support_evaluation.py",
+      "sha256": "6e072d006f065a14e72608b99fba0b1518a5d550814502971f1e85fe7ac9d229"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "analysis_results/phase2_movenet_cohort_20261011_01/input_preflight.json",
+      "sha256": "389616d2d2a92c23f5dc460f474396abecbd78667541cd769adac0206c84e286"
+    },
+    {
+      "path": "analysis_results/phase2_movenet_cohort_20261011_01/inputs/export_run.json",
+      "sha256": "991317ef026f23525a75ac4ec5985e79d5dc72080f9f9f7046514850e0e69730"
+    },
+    {
+      "path": "analysis_results/phase2_movenet_cohort_20261011_01/measurements/measurement_run.json",
+      "sha256": "de833b9c82ea72ffa188b4f53c6eee582f869115aff68244733a0a687308673e"
+    },
+    {
+      "path": "analysis_results/phase2_movenet_cohort_20261011_01/evaluation/movenet_cohort_evaluation.json",
+      "sha256": "9ce1a80fa1916f67ba18f80f83888597c8ae186a5443540ff96e18ea4fedb5f6"
+    },
+    {
+      "path": "analysis_results/phase2_movenet_cohort_20261011_01/engineering_review/manifest.json",
+      "sha256": "34ad9c5051c8fea772cf0192e655994c5a0227aaa72e529806b3de67ae3f1acc"
+    },
+    {
+      "path": "analysis_results/phase2_movenet_cohort_20261011_01/engineering_review/inspection.json",
+      "sha256": "62ede377d0deebc73529c5e78fba24f4c36f17b5f549c5dbe5cfd2cb27dd108b"
+    },
+    {
+      "path": "analysis_results/phase2_movenet_cohort_20261011_01/completion_audit.json",
+      "sha256": "56c19cc9988c1085466c8758648d32b2bcd22a44242c11e59eac73531b3dd018"
+    },
+    {
+      "path": "analysis_results/phase2_movenet_cohort_20261011_01/support_measurements/support_run.json",
+      "sha256": "11d3c1e8f17b07afc1eab4e522cca0b8cc9300b33b39c1df3c5564aabe92ca0a"
+    },
+    {
+      "path": "analysis_results/phase2_movenet_cohort_20261011_01/support_evaluation/support_evaluation.json",
+      "sha256": "bda075184fe272b53c552aa4dbf022ab7300d482c1dd2168985eff809ae09eb7"
+    },
+    {
+      "path": "analysis_results/phase2_movenet_cohort_20261011_01/existing_joint_cue_union.json",
+      "sha256": "5384c7dcc384e616bab409be12dc867826436c629af06979504ee989883f3242"
+    },
+    {
+      "path": "analysis_results/phase2_movenet_cohort_20261011_01/existing_joint_cue_union_02.json",
+      "sha256": "409cbe7fce2921d4a44fbd9068f7e74a092325122fc7af281bd13db036c7ce74"
+    },
+    {
+      "path": "analysis_results/phase2_movenet_cohort_20261011_01/check_joint_cue_union_01.py",
+      "sha256": "c84df191352aaae33632ed00f3aceebafab27aacfcc9a9db8879e5f152fe4b85"
+    },
+    {
+      "path": "analysis_results/phase2_movenet_cohort_20261011_01/check_joint_cue_union.py",
+      "sha256": "8d20edddc98ebfd5ab209b13da5b38d67df5b340739c751b6653a197c975e597"
+    },
+    {
+      "path": "analysis_results/phase2_movenet_cohort_20261011_01/final_audit.json",
+      "sha256": "00dacb03706cb492b02937ae059db804f2817df07f8fe36491c67f42fcc05da5"
+    },
+    {
+      "path": "analysis_results/phase2_movenet_cohort_20261011_01/support_evaluator_frozen_01.py",
+      "sha256": "3b744416b74fed35eca9419e0ce001f41ea2be42f8f66dd1b660868010f37414"
+    },
+    {
+      "path": "analysis_results/phase2_movenet_cohort_20261011_01/publish_results.py",
+      "sha256": "20835dabfef305c81f4d25946b079b68be2bfeb622c21b63f60c560dce9d7ea7"
+    },
+    {
+      "path": "analysis_results/phase2_movenet_cohort_20261011_01/measurement_run.log",
+      "sha256": "3d58c7de5a46877afcf5bbd050516ca71732e3a4dd89b6fdf3675d03fc192c4f"
+    },
+    {
+      "path": "analysis_results/phase2_movenet_cohort_20261011_01/evaluation_run.log",
+      "sha256": "a4994d725881b51bb14d42a049a293cd8873acb4b18082f788a0f49fc3fdb6bb"
+    },
+    {
+      "path": "analysis_results/phase2_movenet_cohort_20261011_01/evaluation_run_source_validation.log",
+      "sha256": "16a51a97bc955937eb457cbb39eeb54f45f401665bd5efef598e86d8b78d77fa"
+    },
+    {
+      "path": "analysis_results/phase2_movenet_cohort_20261011_01/support_evaluation_run.log",
+      "sha256": "b99d26f5c12efeb4d484f5ea92d1f38fa1ce2f184c3f657775b1bba58a35edea"
+    },
+    {
+      "path": "analysis_results/phase2_movenet_cohort_20261011_01/support_evaluation_amended_run.log",
+      "sha256": "a9c1204913359ac9cb284eba77e8f0d7d69a2a804936f8c858e9f8bf42393e4c"
+    },
+    {
+      "path": "analysis_results/phase2_movenet_cohort_20261011_01/full_test_suite_final_formal5.log",
+      "sha256": "ff3881825ba1fa64cbae146d708eca07c9ad8d6d9fcb54b8d95b35eb3d1c0c97"
+    }
+  ],
+  "tests": {
+    "run": 528,
+    "passed": 526,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 2,
+    "seconds": 117.824,
+    "formal_five_e2e_included": true,
+    "new_tests": 56,
+    "log": {
+      "path": "analysis_results/phase2_movenet_cohort_20261011_01/full_test_suite_final_formal5.log",
+      "sha256": "ff3881825ba1fa64cbae146d708eca07c9ad8d6d9fcb54b8d95b35eb3d1c0c97"
+    },
+    "skip_reasons": [
+      "Windows file-symlink creation unavailable",
+      "Windows source symbolic-link creation unavailable"
+    ]
+  },
+  "formal_movenet_calls": 592,
+  "additional_support_pose_calls": 0,
+  "source_frames": 592,
+  "non_seed_frames": 587,
+  "protected_source_files_unchanged": 374,
+  "production_adoption": false,
+  "phase2": "NOT PASSED",
+  "original_baseline_screen": {
+    "non_seed_frames": 587,
+    "human_positive": 21,
+    "human_negative": 566,
+    "human_excluded": 0,
+    "scorable_frames": 587,
+    "tp": 3,
+    "fn": 18,
+    "fp": 9,
+    "tn": 557,
+    "abstention_positive": 0,
+    "abstention_negative": 0,
+    "precision": 0.25,
+    "recall": 0.14285714285714285,
+    "fpr": 0.015901060070671377,
+    "decision_coverage": 1.0
+  },
+  "new_support_screen": {
+    "non_seed_frames": 587,
+    "human_positive": 21,
+    "human_negative": 566,
+    "human_excluded": 0,
+    "scorable_frames": 587,
+    "tp": 7,
+    "fn": 14,
+    "fp": 0,
+    "tn": 566,
+    "abstention_positive": 3,
+    "abstention_negative": 16,
+    "precision": 1.0,
+    "recall": 0.3333333333333333,
+    "fpr": 0.0,
+    "decision_coverage": 0.9676320272572402
+  },
+  "experimental_additive_screen": {
+    "non_seed_frames": 587,
+    "human_positive": 21,
+    "human_negative": 566,
+    "human_excluded": 0,
+    "scorable_frames": 587,
+    "tp": 10,
+    "fn": 11,
+    "fp": 9,
+    "tn": 557,
+    "abstention_positive": 0,
+    "abstention_negative": 15,
+    "precision": 0.5263157894736842,
+    "recall": 0.47619047619047616,
+    "fpr": 0.015901060070671377,
+    "decision_coverage": 0.9744463373083475
+  },
+  "diagnostic_jump_union": {
+    "unchanged_screen_plus_existing_jumps": {
+      "non_seed_frames": 587,
+      "human_positive": 21,
+      "human_negative": 566,
+      "human_excluded": 0,
+      "scorable_frames": 587,
+      "tp": 13,
+      "fn": 8,
+      "fp": 56,
+      "tn": 510,
+      "abstention_positive": 0,
+      "abstention_negative": 0,
+      "precision": 0.18840579710144928,
+      "recall": 0.6190476190476191,
+      "fpr": 0.0989399293286219,
+      "decision_coverage": 1.0
+    },
+    "same_cues_plus_new_geometry": {
+      "non_seed_frames": 587,
+      "human_positive": 21,
+      "human_negative": 566,
+      "human_excluded": 0,
+      "scorable_frames": 587,
+      "tp": 16,
+      "fn": 5,
+      "fp": 56,
+      "tn": 510,
+      "abstention_positive": 0,
+      "abstention_negative": 15,
+      "precision": 0.2222222222222222,
+      "recall": 0.7619047619047619,
+      "fpr": 0.0989399293286219,
+      "decision_coverage": 0.9744463373083475
+    }
+  },
+  "handoff_candidates_pending": 8,
+  "canonical_gt_reviewed": 5
+}

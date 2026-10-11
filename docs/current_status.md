@@ -10,7 +10,23 @@ reliability release. No new numeric acceptance bar, model, confidence gate,
 PitcherSelector, pose/tracking algorithm, interpolation or smoothing change.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-11 isolated MoveNet compatibility gate (latest; production unchanged)
+## 2026-10-11 full-frame comparison and additive support trial (latest)
+
+[Cohort comparison](phase2_movenet_cohort_results_20261011.md), [support warning trial](phase2_movenet_support_results_20261011.md).
+Exactly592 MoveNet calls,587non-seed frames;281unique geometric candidates/290ambiguous/16none.
+Only003 has visible manualXY:315 common points meanVIDEO16.9097→MoveNet10.8032px,162lower/153higher;880unassociated.
+No new-output XY accuracy for other4, no hiddenXY truth or identity proof.34fixed engineering figures inspected.
+GT-blind native-box support conflict sidecar,0extra inference: baseline screenTP3/FN18/FP9→additiveTP10/FN11/FP9.
+7new warning frames,0new FP on known data;19abstentions retained in primary denominators.
+Existing joint-jump diagnostic union separately13/8/56→16/5/56;5remaining frames90/92/96/102/103 in003.
+AutomaticPhase2 staysNOT PASSED; production model/core/thresholds unchanged, no adoption orPhase3.
+Finalsuite528run/526passed/0failed/0errors/2Windowslinkskips,117.824s,includingformal5E2E.
+374protected sources/62upstream unchanged,5of5GT reviewed,8handoff candidates pending.
+Support evaluator_01 failed on absent tracking timestamp field before output;_02 uses bound capture timestamps, preserves snapshot/log.
+No producer/policy/GT change or model rerun. Next: diagnose the11screen-plus-geometry misses and local-arm reliability.
+Output:`analysis_results/phase2_movenet_cohort_20261011_01/`.
+
+## 2026-10-11 isolated MoveNet compatibility gate (previous; production unchanged)
 
 [Result](phase2_movenet_compatibility_20261011.md),
 [frozen execution](evaluation_plans/phase2_movenet_compatibility_execution_20261011_01.json),

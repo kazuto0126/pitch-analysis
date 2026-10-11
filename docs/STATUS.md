@@ -2,7 +2,19 @@
 
 更新日期：2026-10-11（台灣）。
 
-## 最新：MoveNet 隔離相容性第一關
+## 最新：五球 MoveNet 比較與幾何支持警示試驗
+
+見[五球比較](phase2_movenet_cohort_results_20261011.md)及[警示結果](phase2_movenet_support_results_20261011.md)。
+592格各量測一次；587非seed格有281唯一／290歧義／16無候選。003共同315可見點均誤差16.9097→10.8032px，
+162改善／153惡化，另880未對應；其他四片新模型XY準確率仍null。34個固定圖已工程檢查，沒有新增人工GT。
+接續完成GT盲的全集幾何衝突sidecar，零額外推論：原screen TP3/FN18/FP9→聯集TP10/FN11/FP9，
+新增7格提示、0新增FP；新提示19格證據不足仍留主要分母。含原jump的診斷聯集13/8/56→16/5/56，另列不混用。
+仍有漏報與局部關節問題，**Phase2 = NOT PASSED**；未採用production、未進Phase3。
+完整最終suite **526 passed／0 failed／0 errors／2 skipped**（528項、117.824秒，含正式五球E2E）。
+374保護來源／62上游引用不變，GT5/5、正式五球與src不改；八顆交付片仍candidate／pending。
+輸出：`analysis_results/phase2_movenet_cohort_20261011_01/`。下一步針對原screen＋幾何仍漏的11格及局部手臂可靠性。
+
+## 前次：MoveNet 隔離相容性第一關
 
 見 [本輪結果](phase2_movenet_compatibility_20261011.md)。狀態 `compatible_synthetic_only`；
 最多一次的合成圖推論實際嘗試1次，MoveNet正式影片0次，未切換production。
