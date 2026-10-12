@@ -10,7 +10,25 @@ reliability release. No new numeric acceptance bar, model, confidence gate,
 PitcherSelector, pose/tracking algorithm, interpolation or smoothing change.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-12 same-joint disagreement validity evaluation (latest)
+## 2026-10-12 cross-clip disagreement warning repair (latest)
+
+[Result](phase2_disagreement_warning_results_20261012.md), [frozen protocol](phase2_disagreement_warning_plan_20261012.md).
+Implemented an offline warning candidate using the other clips' finite non-seed torso-RMS minima sample maximum.
+This is an experimental data-derived threshold, not a change to existing production gates; no human labels in producer/calibration.
+592sealed frames/587eligible;0new inference. Previous additive major screen TP10/FN11/FP9/TN557
+becomes developmental trial **TP20/FN1/FP9/TN557**;10newTP/0newFP, original warnings preserved.
+New warnings003frames87–103; added coverage87–92/96/101–103; remaining003frame104.
+93candidate-dependent/458within-reference/19insufficient states are explicit; none implies correct anatomy.
+104disagreement0.03128724 is inside reference0.05148073(from001frame25), despite raw torso mean visible error34.7994px.
+All data previously inspected; not untouched holdout or false-alarm guarantee;003major drift raises other folds' reference.
+Independent592ranges/5folds/states/587confusions verified;2engineering figures inspected;no newGT.
+Fullsuite621run/619passed/0failed/0errors/2Windowslinkskips,66.526s,includingformal5E2E;29newtests.
+374protected/62upstream unchanged;src/input/annotations/raw/GTpreserved;8handoff candidate/pending;592originalMoveNetattempts unchanged.
+No production adoption or coordinate correction;remainingmajor/local-arm errors and validation preventPhase2pass;noPhase3.
+Next: evidence for residual smaller misalignment/local-arm failures, then separate adoption/unseen-data verification;noGT-tunedbound.
+Output:`analysis_results/phase2_disagreement_warning_20261012_01/`.
+
+## 2026-10-12 same-joint disagreement validity evaluation (previous)
 
 [Result](phase2_joint_disagreement_results_20261012.md), [frozen protocol](phase2_joint_disagreement_plan_20261012.md).
 New12-joint per-slot distances, six-focus human-label/model-state/missing tables;592sealed/587non-seed frames,0new inference.

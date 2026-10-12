@@ -1,0 +1,181 @@
+{
+  "status": "sealed_offline_disagreement_warning_result",
+  "client_date_local": "2026-10-12",
+  "execution_plan": {
+    "path": "docs/evaluation_plans/phase2_disagreement_warning_execution_20261012_01.json",
+    "sha256": "b1bba112057cf557f11f416fd2249c7aed947d8e6b4e3f7fe2145ab062140ee5"
+  },
+  "evaluation_plan": {
+    "path": "docs/evaluation_plans/phase2_disagreement_warning_evaluation_20261012_01.json",
+    "sha256": "e66b7cefce48895ac84028708a89d169280284eb269a9a3882222794f26fed9f"
+  },
+  "producer_code": {
+    "producer_code": {
+      "path": "scripts/measure_disagreement_warning.py",
+      "sha256": "e1d6b808d694a7819ba053e93565df8b731d7fd7d17786a24218fbafaa242328"
+    },
+    "producer_tests": {
+      "path": "tests/test_disagreement_warning.py",
+      "sha256": "df8283ed43198331cd2781a704ee54b278cd1652bf54439e62a72a735552405b"
+    },
+    "native_helpers": {
+      "path": "scripts/check_movenet_compatibility.py",
+      "sha256": "f3b2ff2864d35ae37e7623c99fccba5689a3ee111b79658bed3b272f334b5fa9"
+    },
+    "study_plan": {
+      "path": "docs/phase2_disagreement_warning_plan_20261012.md",
+      "sha256": "97de27b38caac014fa76cfa19e9d7818665fa87037a34e424fc92a049cf1c72a"
+    },
+    "freeze_helper": {
+      "path": "analysis_results/phase2_disagreement_warning_20261012_01/freeze.py",
+      "sha256": "a316714d56cbf0934cb83d068d10f512292300af6ef2489d0048ebbab6e4166a"
+    }
+  },
+  "evaluator_code": {
+    "evaluator": {
+      "path": "scripts/evaluate_disagreement_warning.py",
+      "sha256": "df8728b45517fa25a0ac3c3840978aa4a6770cfc8685a2fd750520e56973a2e9"
+    },
+    "evaluator_tests": {
+      "path": "tests/test_disagreement_warning_evaluation.py",
+      "sha256": "6561d878104a8d4112a1842f8881166fc49ff4c3a8d05bcb0d5f52da3b782b24"
+    },
+    "support_evaluator": {
+      "path": "scripts/evaluate_movenet_support.py",
+      "sha256": "953b8f4bfdeac6e4090977b7361e698c3bfbab578a0c2e5b901ad3660ee229fc"
+    },
+    "ground_truth": {
+      "path": "src/pitch_analysis/ground_truth.py",
+      "sha256": "8d4f781726762492787c4a8cf1342b225d44911d86f518660f469f550d489603"
+    },
+    "evaluation_helpers": {
+      "path": "src/pitch_analysis/phase2_evaluation.py",
+      "sha256": "4ce6a468b980d790d45f07bbe952d436042b2c97b556384568b4b80305deccf5"
+    },
+    "native_helpers": {
+      "path": "scripts/check_movenet_compatibility.py",
+      "sha256": "f3b2ff2864d35ae37e7623c99fccba5689a3ee111b79658bed3b272f334b5fa9"
+    },
+    "study_plan": {
+      "path": "docs/phase2_disagreement_warning_plan_20261012.md",
+      "sha256": "97de27b38caac014fa76cfa19e9d7818665fa87037a34e424fc92a049cf1c72a"
+    },
+    "freeze_helper": {
+      "path": "analysis_results/phase2_disagreement_warning_20261012_01/freeze.py",
+      "sha256": "a316714d56cbf0934cb83d068d10f512292300af6ef2489d0048ebbab6e4166a"
+    }
+  },
+  "result_document": {
+    "path": "docs/phase2_disagreement_warning_results_20261012.md",
+    "sha256": "dc80ae812626a3952e9b3bc8ab480da5d435288b76c94a3db007ff7a4c70d6c8"
+  },
+  "outputs": {
+    "audit_helper.py": {
+      "path": "analysis_results/phase2_disagreement_warning_20261012_01/audit_helper.py",
+      "sha256": "2506b687e356389b6dc3ded7d5d0dadec1431c52174c40fc56ab00c772206adb"
+    },
+    "before_audit.json": {
+      "path": "analysis_results/phase2_disagreement_warning_20261012_01/before_audit.json",
+      "sha256": "bc2d4b016a4078b54029311676b18debf40c135ac182c24c4146c00552d020fd"
+    },
+    "evaluation/disagreement_warning_evaluation.json": {
+      "path": "analysis_results/phase2_disagreement_warning_20261012_01/evaluation/disagreement_warning_evaluation.json",
+      "sha256": "3bf28436ec98ce5b9214c91acd91ca0241033e535d293bd3bd733f16ff620bfd"
+    },
+    "execution_notes.json": {
+      "path": "analysis_results/phase2_disagreement_warning_20261012_01/execution_notes.json",
+      "sha256": "6bcf57fb21e285e38cc38dbfa4024417be212d007cd00d188e199d610b3f7a5c"
+    },
+    "figures/five_clip_warning_timeline.png": {
+      "path": "analysis_results/phase2_disagreement_warning_20261012_01/figures/five_clip_warning_timeline.png",
+      "sha256": "d7328fc29723cce74d34922ee1ec655c104fcfcbfe45a6621a7260d6dd142cc3"
+    },
+    "figures/inspection.json": {
+      "path": "analysis_results/phase2_disagreement_warning_20261012_01/figures/inspection.json",
+      "sha256": "d27db823d4e1cc0bb3d1630a34e8af1e4498c78e7d4316b54e1a4c7417c4c55b"
+    },
+    "figures/manifest.json": {
+      "path": "analysis_results/phase2_disagreement_warning_20261012_01/figures/manifest.json",
+      "sha256": "b7377b91786f0365da62cdb07482f46de45819f49b752eb682fd885ec360bf5b"
+    },
+    "figures/remaining_miss_and_reference.png": {
+      "path": "analysis_results/phase2_disagreement_warning_20261012_01/figures/remaining_miss_and_reference.png",
+      "sha256": "9f918b80088d570b1d73548c899e006b91f33ef09ea2453cb06b9f81c5548da1"
+    },
+    "final_audit.json": {
+      "path": "analysis_results/phase2_disagreement_warning_20261012_01/final_audit.json",
+      "sha256": "469809f845ccbec61aebd3a86f1dc7e062498f035b1f61d4b89f4547044cb054"
+    },
+    "finalize.py": {
+      "path": "analysis_results/phase2_disagreement_warning_20261012_01/finalize.py",
+      "sha256": "564b83d7dd36308725e5131e51a2f1ba417d2f3ecef4f285a6c21252fe1a4eb7"
+    },
+    "freeze.py": {
+      "path": "analysis_results/phase2_disagreement_warning_20261012_01/freeze.py",
+      "sha256": "a316714d56cbf0934cb83d068d10f512292300af6ef2489d0048ebbab6e4166a"
+    },
+    "full_test_suite.log": {
+      "path": "analysis_results/phase2_disagreement_warning_20261012_01/full_test_suite.log",
+      "sha256": "02a98bf53bf6a6119372791a67d6ea8669d643df43237e8d16f2b5c7b88dc51f"
+    },
+    "independent_audit.json": {
+      "path": "analysis_results/phase2_disagreement_warning_20261012_01/independent_audit.json",
+      "sha256": "a8adc5b44a2f96f4fb086b32859a0d5ad8d3e58f7b491990ab4a9b055d26c380"
+    },
+    "remaining_miss_diagnosis.json": {
+      "path": "analysis_results/phase2_disagreement_warning_20261012_01/remaining_miss_diagnosis.json",
+      "sha256": "a0fa9a33924b3b7e906f3281a7da67eaeced9e9a380b7758d564934ca2e372ba"
+    },
+    "render_results.py": {
+      "path": "analysis_results/phase2_disagreement_warning_20261012_01/render_results.py",
+      "sha256": "1b7b9e342dca546683612939a4b43de99b8fc5712655843d88de44d4de3d4ff7"
+    },
+    "warnings/pitch_001.json": {
+      "path": "analysis_results/phase2_disagreement_warning_20261012_01/warnings/pitch_001.json",
+      "sha256": "973265f6b4423c331a89bade514b86c9d49a8c69cc37910430b0577f0e48e326"
+    },
+    "warnings/pitch_002.json": {
+      "path": "analysis_results/phase2_disagreement_warning_20261012_01/warnings/pitch_002.json",
+      "sha256": "07a0637666da38121df88fbd1f4f870faee62a4a01a43d304a645266d921635d"
+    },
+    "warnings/pitch_003.json": {
+      "path": "analysis_results/phase2_disagreement_warning_20261012_01/warnings/pitch_003.json",
+      "sha256": "7707439ffb14cc5b47d5b75fafd33b06240c33cacf2744666ced911deb333bf6"
+    },
+    "warnings/pitch_004.json": {
+      "path": "analysis_results/phase2_disagreement_warning_20261012_01/warnings/pitch_004.json",
+      "sha256": "3e499c9ce0cc9a285f0164de412bb51aa87d9f247b369d8d4f89bcd32febf27e"
+    },
+    "warnings/pitch_005.json": {
+      "path": "analysis_results/phase2_disagreement_warning_20261012_01/warnings/pitch_005.json",
+      "sha256": "05a6cf60d5deb68eb4e544aee2dde95a25adb99dfa01ff115617c532fefc66b1"
+    },
+    "warnings/warning_run.json": {
+      "path": "analysis_results/phase2_disagreement_warning_20261012_01/warnings/warning_run.json",
+      "sha256": "fa6119e479b77cc522a748fb5d78c5b2b5e8947482800d0d951605ac57f75e63"
+    }
+  },
+  "tests": {
+    "run": 621,
+    "passed": 619,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 2,
+    "seconds": 66.526,
+    "new_tests": 29,
+    "formal_five_e2e_included": true,
+    "log": {
+      "path": "analysis_results/phase2_disagreement_warning_20261012_01/full_test_suite.log",
+      "sha256": "02a98bf53bf6a6119372791a67d6ea8669d643df43237e8d16f2b5c7b88dc51f"
+    }
+  },
+  "developmental_major_screen": {
+    "tp": 20,
+    "fn": 1,
+    "fp": 9,
+    "tn": 557
+  },
+  "production_adoption": false,
+  "coordinate_correction": false,
+  "phase2_status": "NOT PASSED"
+}

@@ -2,7 +2,19 @@
 
 更新日期：2026-10-12（台灣）。
 
-## 最新：同名關節分歧評估完成
+## 最新：跨片肩髖分歧警示修復
+
+見[本輪結果](phase2_disagreement_warning_results_20261012.md)。已實作獨立離線警示，
+每片以其他四片量測最大值作實驗性參考，不讀GT校準、不改正式核心或既有門檻。
+保留舊警示後，587格major **TP10→20、FN11→1，FP維持9**；新增抓回003／87–92、96、101–103，
+唯一剩餘major漏報003／104。93格候選相依、19格證據不足明列，不當作可靠。
+這是已檢視五片的開發LOO；未修座標、未正式採用，**Phase 2 = NOT PASSED**。
+完整suite **619 passed／0 failed／0 errors／2 skipped**（621項、66.526秒，含正式五球E2E）。
+獨立592格／5fold核對無差異；374保護／62上游不變，正式五球與GT原樣，8交付球仍candidate/pending。
+輸出：`analysis_results/phase2_disagreement_warning_20261012_01/`。下一步處理剩餘對位與局部肘腕證據，
+正式採用前另做未見資料驗證；未進Phase3。
+
+## 前次：同名關節分歧評估完成
 
 見[本輪結果](phase2_joint_disagreement_results_20261012.md)。實作12關節逐slot距離、六focus人工可靠性
 與model state／缺值比較；封存592格／587非seed格，零新推論。major同slot肩髖分歧下界

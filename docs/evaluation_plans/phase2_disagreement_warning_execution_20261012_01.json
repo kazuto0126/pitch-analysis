@@ -1,0 +1,127 @@
+{
+  "status": "frozen_before_disagreement_warning_trial",
+  "frozen_at_utc": "2026-10-12T10:38:11.981748+00:00",
+  "client_date_local": "2026-10-12",
+  "policy": {
+    "feature": "minimum_same_slot_four_torso_rms_fraction_of_image_diagonal",
+    "calibration": "all_finite_non_seed_frames_of_all_other_clips_without_human_filtering",
+    "experimental_threshold": "maximum_calibration_feature_strict_exceedance",
+    "warning": "query_min_strictly_greater_than_other_clip_sample_maximum",
+    "candidate_dependent": "query_min_at_or_below_bound_and_query_max_strictly_above_bound",
+    "within_reference_range": "query_max_at_or_below_bound_does_not_establish_alignment",
+    "missing": "no_candidates_or_raw_torso_missing_or_no_finite_reference_is_insufficient",
+    "seed": "retain_frame_zero_but_exclude_from_all_calibration_and_warning_decisions",
+    "candidate_selection": "none_preserve_all_compatible_slots_no_cross_slot_joint_assembly",
+    "temporal_expansion": false,
+    "human_calibration_or_query_labels": false,
+    "production_adoption": false,
+    "coordinate_correction": false,
+    "identity_claim": false,
+    "generalization_or_false_alarm_guarantee": false,
+    "validation_scope": "previously_inspected_development_cohort_leave_one_clip_out"
+  },
+  "code": {
+    "producer_code": {
+      "path": "scripts/measure_disagreement_warning.py",
+      "sha256": "e1d6b808d694a7819ba053e93565df8b731d7fd7d17786a24218fbafaa242328"
+    },
+    "producer_tests": {
+      "path": "tests/test_disagreement_warning.py",
+      "sha256": "df8283ed43198331cd2781a704ee54b278cd1652bf54439e62a72a735552405b"
+    },
+    "native_helpers": {
+      "path": "scripts/check_movenet_compatibility.py",
+      "sha256": "f3b2ff2864d35ae37e7623c99fccba5689a3ee111b79658bed3b272f334b5fa9"
+    },
+    "study_plan": {
+      "path": "docs/phase2_disagreement_warning_plan_20261012.md",
+      "sha256": "97de27b38caac014fa76cfa19e9d7818665fa87037a34e424fc92a049cf1c72a"
+    },
+    "freeze_helper": {
+      "path": "analysis_results/phase2_disagreement_warning_20261012_01/freeze.py",
+      "sha256": "a316714d56cbf0934cb83d068d10f512292300af6ef2489d0048ebbab6e4166a"
+    }
+  },
+  "measurement_plan": {
+    "path": "docs/evaluation_plans/phase2_joint_disagreement_execution_20261012_01.json",
+    "sha256": "6b203c8580cce4b1da137673fa73b698237f1067901e601ed811ac47f4daa09b"
+  },
+  "measurement_run": {
+    "path": "analysis_results/phase2_joint_disagreement_20261012_01/measurements/measurement_run.json",
+    "sha256": "15c5e3aaa656d6727c41db918a33ec0225a76ab6ac7879d216fcda718373b35e"
+  },
+  "clips": [
+    {
+      "target": {
+        "pitch_id": "pitch_001",
+        "total_frames": 87,
+        "width": 434,
+        "height": 616
+      },
+      "source": {
+        "pitch_id": "pitch_001",
+        "path": "analysis_results/phase2_joint_disagreement_20261012_01/measurements/pitch_001.json",
+        "sha256": "024662fc300ba007bcdcaa26d1cfc39ac7480f942d8b37e8064d33a4ba506a3c"
+      }
+    },
+    {
+      "target": {
+        "pitch_id": "pitch_002",
+        "total_frames": 175,
+        "width": 460,
+        "height": 634
+      },
+      "source": {
+        "pitch_id": "pitch_002",
+        "path": "analysis_results/phase2_joint_disagreement_20261012_01/measurements/pitch_002.json",
+        "sha256": "cb35ea88bec4428592de79e9e5259538f3a533c85a69bb2345d98e30a2e48381"
+      }
+    },
+    {
+      "target": {
+        "pitch_id": "pitch_003",
+        "total_frames": 115,
+        "width": 510,
+        "height": 628
+      },
+      "source": {
+        "pitch_id": "pitch_003",
+        "path": "analysis_results/phase2_joint_disagreement_20261012_01/measurements/pitch_003.json",
+        "sha256": "e86a95f552c51fda35d486495ee61b3376bb2ea7bc446b04250585270048be87"
+      }
+    },
+    {
+      "target": {
+        "pitch_id": "pitch_004",
+        "total_frames": 114,
+        "width": 532,
+        "height": 676
+      },
+      "source": {
+        "pitch_id": "pitch_004",
+        "path": "analysis_results/phase2_joint_disagreement_20261012_01/measurements/pitch_004.json",
+        "sha256": "97fcb75724d752ff1c3308aa7e6dbf2c465bc2bb139a9ca3975abe25c6017041"
+      }
+    },
+    {
+      "target": {
+        "pitch_id": "pitch_005",
+        "total_frames": 101,
+        "width": 512,
+        "height": 598
+      },
+      "source": {
+        "pitch_id": "pitch_005",
+        "path": "analysis_results/phase2_joint_disagreement_20261012_01/measurements/pitch_005.json",
+        "sha256": "d4eddb857b6b28a7ac129ec615ef40bb3116dd153ea900db2b02fa76e9c400a0"
+      }
+    }
+  ],
+  "source_frames": 592,
+  "non_seed_frames": 587,
+  "output_directory": "analysis_results/phase2_disagreement_warning_20261012_01/warnings",
+  "human_annotation_inputs": [],
+  "pose_inference_budget": 0,
+  "tracker_inference_budget": 0,
+  "production_adoption": false
+}
