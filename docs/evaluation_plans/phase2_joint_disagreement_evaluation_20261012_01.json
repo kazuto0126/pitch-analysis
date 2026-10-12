@@ -1,0 +1,142 @@
+{
+  "status": "frozen_before_disagreement_evaluation",
+  "frozen_at_utc": "2026-10-12T06:12:16.728161+00:00",
+  "producer_plan": {
+    "path": "docs/evaluation_plans/phase2_joint_disagreement_execution_20261012_01.json",
+    "sha256": "6b203c8580cce4b1da137673fa73b698237f1067901e601ed811ac47f4daa09b"
+  },
+  "code": {
+    "evaluator": {
+      "path": "scripts/evaluate_joint_disagreement.py",
+      "sha256": "26c86c26e71cf1360770ee7f22c87190a08306be8ac71397f850a446bf187550"
+    },
+    "evaluator_tests": {
+      "path": "tests/test_joint_disagreement_evaluation.py",
+      "sha256": "28746363dd258f88130e72f526eb8b4d33c927ad0f920e38e9cf319f8797c2ca"
+    },
+    "statistics": {
+      "path": "scripts/disagreement_statistics.py",
+      "sha256": "5b51a2f808c154a073886a2ed61b87b2d85043c8b1cbbfdfca4b610ae0a64a93"
+    },
+    "statistics_tests": {
+      "path": "tests/test_disagreement_statistics.py",
+      "sha256": "b24f32615c0a89be439888e55b0d3adb08f4714f9b98788aa82810d9f4306635"
+    },
+    "ground_truth": {
+      "path": "src/pitch_analysis/ground_truth.py",
+      "sha256": "8d4f781726762492787c4a8cf1342b225d44911d86f518660f469f550d489603"
+    },
+    "manual_keypoints": {
+      "path": "src/pitch_analysis/manual_keypoints.py",
+      "sha256": "31e219dcec595f5bda943ed6456c65ec27632b7e2a401322c44ab0b969473066"
+    },
+    "native_helpers": {
+      "path": "scripts/check_movenet_compatibility.py",
+      "sha256": "f3b2ff2864d35ae37e7623c99fccba5689a3ee111b79658bed3b272f334b5fa9"
+    },
+    "study_plan": {
+      "path": "docs/phase2_joint_disagreement_plan_20261012.md",
+      "sha256": "056ad92e5d9a40642155c596ff9ddcfdf8bca5996a7f39bd4b457a9c6e3d00c6"
+    },
+    "freeze_helper": {
+      "path": "analysis_results/phase2_joint_disagreement_20261012_01/freeze.py",
+      "sha256": "59704f10621742366d0191407aa115ee19bb8bd1c8a8d69356a5e68cd81475cd"
+    }
+  },
+  "clips": [
+    {
+      "target": {
+        "pitch_id": "pitch_001",
+        "total_frames": 87,
+        "width": 434,
+        "height": 616
+      },
+      "sources": {
+        "canonical_review": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/ground_truth/pitch_001/ground_truth.json",
+          "sha256": "0efe2f4c63417e1f5744cec5fac7d375e0a0ec5060c870a36cec720a7a4b8d81"
+        },
+        "video": {
+          "path": "input/yoshinobu_yamamoto/phase1_final/pitch_001.mp4",
+          "sha256": "7c9fe20e39c1b5358aa8e13b739222aebb6bf3ebfadf3569ccb3042c64f10190"
+        }
+      }
+    },
+    {
+      "target": {
+        "pitch_id": "pitch_002",
+        "total_frames": 175,
+        "width": 460,
+        "height": 634
+      },
+      "sources": {
+        "canonical_review": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/ground_truth/pitch_002/ground_truth.json",
+          "sha256": "2b682738812d78ef433027b7002ed3787d022eb288453ed157d91eaca74651c7"
+        },
+        "video": {
+          "path": "input/yoshinobu_yamamoto/phase1_final/pitch_002.mp4",
+          "sha256": "b38258e682370349d085d0b43683f183afc632f682dc85b758604c9d1489f01a"
+        }
+      }
+    },
+    {
+      "target": {
+        "pitch_id": "pitch_003",
+        "total_frames": 115,
+        "width": 510,
+        "height": 628
+      },
+      "sources": {
+        "canonical_review": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/ground_truth/pitch_003/ground_truth.json",
+          "sha256": "c839f5bd767c82d8be0506c15bb83a22230f4ea7bf83dc240c321bfa3876b240"
+        },
+        "video": {
+          "path": "input/yoshinobu_yamamoto/phase1_final/pitch_003.mp4",
+          "sha256": "5c08dba98504d998536dfd0f0fab598760400612c9049445a68120e68fdf024c"
+        },
+        "manual_xy": {
+          "path": "annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_42/pitch_003/manual_keypoints.json",
+          "sha256": "a970354b14f728d38af97336d6872900625c956e7a105f75ab9cdcff0aa77735"
+        }
+      }
+    },
+    {
+      "target": {
+        "pitch_id": "pitch_004",
+        "total_frames": 114,
+        "width": 532,
+        "height": 676
+      },
+      "sources": {
+        "canonical_review": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/ground_truth/pitch_004/ground_truth.json",
+          "sha256": "ee721b91ce340ce29899e40854712e2d5d9c770d09d154c913489f17f1b4408a"
+        },
+        "video": {
+          "path": "input/yoshinobu_yamamoto/phase1_final/pitch_004.mp4",
+          "sha256": "e5a57bfc2e0746bb19af2a073d94abb7265d8dfb9ad37de06cee1de29f63d11a"
+        }
+      }
+    },
+    {
+      "target": {
+        "pitch_id": "pitch_005",
+        "total_frames": 101,
+        "width": 512,
+        "height": 598
+      },
+      "sources": {
+        "canonical_review": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/ground_truth/pitch_005/ground_truth.json",
+          "sha256": "885986e1e150bd343968898899cfda5f5457b55a0c244d4c95c3f68daf33a66a"
+        },
+        "video": {
+          "path": "input/yoshinobu_yamamoto/phase1_final/pitch_005.mp4",
+          "sha256": "e289cb1159e5863583f85915214123d6afe03baa6f32ac6040040878093c873b"
+        }
+      }
+    }
+  ]
+}

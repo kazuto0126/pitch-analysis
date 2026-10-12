@@ -1,0 +1,255 @@
+{
+  "status": "frozen_before_disagreement_measurement",
+  "frozen_at_utc": "2026-10-12T06:12:15.463596+00:00",
+  "client_date_local": "2026-10-12",
+  "policy": {
+    "joint_order": [
+      "LEFT_SHOULDER",
+      "RIGHT_SHOULDER",
+      "LEFT_ELBOW",
+      "RIGHT_ELBOW",
+      "LEFT_WRIST",
+      "RIGHT_WRIST",
+      "LEFT_HIP",
+      "RIGHT_HIP",
+      "LEFT_KNEE",
+      "RIGHT_KNEE",
+      "LEFT_ANKLE",
+      "RIGHT_ANKLE"
+    ],
+    "candidate_association": {
+      "rule": "unique_positive_box_intersection_and_all_four_torso_inside_source_and_csrt",
+      "candidate_requirements": [
+        "native_box_has_positive_width_and_height",
+        "native_box_has_positive_area_intersection_with_sealed_csrt",
+        "all_four_native_torso_points_inside_half_open_source_image",
+        "all_four_native_torso_points_inside_half_open_sealed_csrt"
+      ],
+      "one_candidate": "unique_geometric_candidate",
+      "zero_candidates": "none",
+      "multiple_candidates": "ambiguous",
+      "native_score_cutoff": null,
+      "iou_resolves_ambiguity": false,
+      "temporal_slot_identity": false,
+      "subject_alignment_verified": false
+    },
+    "distance": "euclidean_same_named_native_source_xy_minus_original_raw_source_xy",
+    "units": [
+      "source_pixels",
+      "fraction_of_source_image_diagonal"
+    ],
+    "candidate_summary": "minimum_and_maximum_across_all_compatible_slots_no_winner",
+    "torso_summary": "same_single_slot_four_joint_rms_then_candidate_minimum_and_maximum",
+    "finite_out_of_bounds": "retain_distance_and_explicit_in_source_flag",
+    "raw_rule": "existing_finite_point_no_new_visibility_or_presence_gate",
+    "model_state": "copy_original_pose_reliability_frame_states_without_reclassification",
+    "score_cutoff": null,
+    "new_warning_threshold": null,
+    "identity_selected": false,
+    "coordinate_correctness_claimed": false,
+    "new_binary_warning": false,
+    "temporal_slot_identity": false
+  },
+  "code": {
+    "producer_code": {
+      "path": "scripts/measure_joint_disagreement.py",
+      "sha256": "235c496611311a5c8f92ac39c0e6e93cdc61e79a30fd525d2966cc48400c2e8b"
+    },
+    "producer_tests": {
+      "path": "tests/test_joint_disagreement.py",
+      "sha256": "f53ba839eec237f794ef5dbeafb6b5781ca006d5ca18f83b39332798fbd79899"
+    },
+    "bbox_helpers": {
+      "path": "scripts/measure_movenet_support.py",
+      "sha256": "a214e88c05ca7c5f43da438205fc7d73e3251622ae978fa0f3632e2146d6a815"
+    },
+    "association_helpers": {
+      "path": "scripts/evaluate_movenet_cohort.py",
+      "sha256": "c8f5a6b6249b22ec67ae49da8e5bbff13d80149aed9443b6bbd06673c7507522"
+    },
+    "baseline_helpers": {
+      "path": "scripts/measure_pose_mode_countercheck.py",
+      "sha256": "a8007fe7b7b36e3e2404aaf5e42a56f7217d0f7c0ef2558b48e97ce6d912b519"
+    },
+    "native_helpers": {
+      "path": "scripts/check_movenet_compatibility.py",
+      "sha256": "f3b2ff2864d35ae37e7623c99fccba5689a3ee111b79658bed3b272f334b5fa9"
+    },
+    "joint_contract": {
+      "path": "src/pitch_analysis/manual_keypoints.py",
+      "sha256": "31e219dcec595f5bda943ed6456c65ec27632b7e2a401322c44ab0b969473066"
+    },
+    "study_plan": {
+      "path": "docs/phase2_joint_disagreement_plan_20261012.md",
+      "sha256": "056ad92e5d9a40642155c596ff9ddcfdf8bca5996a7f39bd4b457a9c6e3d00c6"
+    },
+    "freeze_helper": {
+      "path": "analysis_results/phase2_joint_disagreement_20261012_01/freeze.py",
+      "sha256": "59704f10621742366d0191407aa115ee19bb8bd1c8a8d69356a5e68cd81475cd"
+    }
+  },
+  "clips": [
+    {
+      "target": {
+        "pitch_id": "pitch_001",
+        "total_frames": 87,
+        "width": 434,
+        "height": 616
+      },
+      "sources": {
+        "native_measurement": {
+          "pitch_id": "pitch_001",
+          "path": "analysis_results/phase2_movenet_cohort_20261011_01/measurements/pitch_001.json",
+          "sha256": "e088e3b1e74e28fdea56338697afd1abfaa2b4370045488429a13ad741949453"
+        },
+        "tracked_roi": {
+          "path": "analysis_results/phase2_assisted_roi_cohort_20261010_01/pitch_001/seeded_subject_measurements.json",
+          "sha256": "21a089cf51c3bb266c1289fcd416da3efffdce3990d6b599fbbf2129ba5d7a8f"
+        },
+        "original_raw": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_001/pose_raw.csv",
+          "sha256": "67e064073604a7b66d59136f06f93b6b0bba42a74faa5d757595666e4faf4781"
+        },
+        "capture": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_001/pose_raw.capture.json",
+          "sha256": "58c69f79ee2b99e4c9f22026ac3f735e60fec84905192d478e69003c08a69267"
+        },
+        "pose_reliability": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/reliability/pitch_001/pose_reliability.json",
+          "sha256": "a0fb5e0334d5db0b864fc710889877d7671bb5928d0c29e54cbbe2045735ec07"
+        }
+      }
+    },
+    {
+      "target": {
+        "pitch_id": "pitch_002",
+        "total_frames": 175,
+        "width": 460,
+        "height": 634
+      },
+      "sources": {
+        "native_measurement": {
+          "pitch_id": "pitch_002",
+          "path": "analysis_results/phase2_movenet_cohort_20261011_01/measurements/pitch_002.json",
+          "sha256": "1eab02e9a2164fb82b01b99e9b0117595d044de3a71f03bf25fb707462b7cd4f"
+        },
+        "tracked_roi": {
+          "path": "analysis_results/phase2_assisted_roi_cohort_20261010_01/pitch_002/seeded_subject_measurements.json",
+          "sha256": "c01181c98fca19eb9c6d04d76ca383095fec8f5cd02164a6f4411f2f97c45b4e"
+        },
+        "original_raw": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_002/pose_raw.csv",
+          "sha256": "efc05874349820533b407d0722d002fb14e0b60533d2999e1cbcb75b7f929df2"
+        },
+        "capture": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_002/pose_raw.capture.json",
+          "sha256": "d53b9bbc186436300c3e17d9a23f57a17a46cf94753dad69023532de707db7cc"
+        },
+        "pose_reliability": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/reliability/pitch_002/pose_reliability.json",
+          "sha256": "16b26b633329609e190672115f2a3ab31efb33d363f5c9ebe691a6637f470ed1"
+        }
+      }
+    },
+    {
+      "target": {
+        "pitch_id": "pitch_003",
+        "total_frames": 115,
+        "width": 510,
+        "height": 628
+      },
+      "sources": {
+        "native_measurement": {
+          "pitch_id": "pitch_003",
+          "path": "analysis_results/phase2_movenet_cohort_20261011_01/measurements/pitch_003.json",
+          "sha256": "438305c9d996edde67e944b2fe440712ceaccec3182d3ceba3e1e58b2f7debea"
+        },
+        "tracked_roi": {
+          "path": "analysis_results/phase2_subject_assignment_20261010_01/seeded_subject_measurements.json",
+          "sha256": "27c503042abbe0fef3a04191f325735b019954db3289206722becae333296997"
+        },
+        "original_raw": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_003/pose_raw.csv",
+          "sha256": "ff55b5aaf78f01e686a1f0e44b32401837ddddf771bfcadb0e213062ed54c85f"
+        },
+        "capture": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_003/pose_raw.capture.json",
+          "sha256": "2ff595a3e58eeffd8ce072ed5d9a8bbc982694474b633cbec92fc15ca7ffd961"
+        },
+        "pose_reliability": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/reliability/pitch_003/pose_reliability.json",
+          "sha256": "4a1ed54c1287117cb4f802022fb71aba80f1238f86c47d4a47c9cf2a238126ec"
+        }
+      }
+    },
+    {
+      "target": {
+        "pitch_id": "pitch_004",
+        "total_frames": 114,
+        "width": 532,
+        "height": 676
+      },
+      "sources": {
+        "native_measurement": {
+          "pitch_id": "pitch_004",
+          "path": "analysis_results/phase2_movenet_cohort_20261011_01/measurements/pitch_004.json",
+          "sha256": "149a5bf37ae2aca164ca16f59f84e950a7e0eb87b6dabb449007e1f3e14aef7e"
+        },
+        "tracked_roi": {
+          "path": "analysis_results/phase2_assisted_roi_cohort_20261010_01/pitch_004/seeded_subject_measurements.json",
+          "sha256": "2c811c00fc5a9bb629ff09c7fd801a09f866b5b6611e7d58496b9c1b0e8dd62a"
+        },
+        "original_raw": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_004/pose_raw.csv",
+          "sha256": "0d75dea23fa65786fb73aaec26700f43645e1fa076542ec162b947121f90ad6c"
+        },
+        "capture": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_004/pose_raw.capture.json",
+          "sha256": "23799e6a5149509e1651c1393225d5693bce0e8cbfa2fb9c88ad321b4715e1a5"
+        },
+        "pose_reliability": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/reliability/pitch_004/pose_reliability.json",
+          "sha256": "c5332978d06fbb5d1931fe6d134bee4d68dc032bcd5540703850a1804751e8ac"
+        }
+      }
+    },
+    {
+      "target": {
+        "pitch_id": "pitch_005",
+        "total_frames": 101,
+        "width": 512,
+        "height": 598
+      },
+      "sources": {
+        "native_measurement": {
+          "pitch_id": "pitch_005",
+          "path": "analysis_results/phase2_movenet_cohort_20261011_01/measurements/pitch_005.json",
+          "sha256": "ec61ffaf72f8ae30c97ad96ce5704c20769621aaba0036c78729f5deafee3a74"
+        },
+        "tracked_roi": {
+          "path": "analysis_results/phase2_assisted_roi_cohort_20261010_01/pitch_005/seeded_subject_measurements.json",
+          "sha256": "d0272656b3faf26247967fd852d63a3bb76b9c589f5f5a9d62ea2395c0389e83"
+        },
+        "original_raw": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_005/pose_raw.csv",
+          "sha256": "2db3ad4087fe99d1bf5d35f48c7396d11f5f054496910851200459551f90c6ea"
+        },
+        "capture": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_005/pose_raw.capture.json",
+          "sha256": "72ac52c8c06a8545f5c8603d4e6ea1aa012bd895557220e4b0343172256a0269"
+        },
+        "pose_reliability": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/reliability/pitch_005/pose_reliability.json",
+          "sha256": "2c9a351ba579aaa2e442817fef5ac9329dec4f10ab59edf937943c84f50b1f9a"
+        }
+      }
+    }
+  ],
+  "source_frames": 592,
+  "non_seed_frames": 587,
+  "output_directory": "analysis_results/phase2_joint_disagreement_20261012_01/measurements",
+  "human_annotation_inputs": [],
+  "pose_inference_budget": 0,
+  "tracker_inference_budget": 0,
+  "production_adoption": false
+}

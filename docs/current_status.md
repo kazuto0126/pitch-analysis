@@ -10,7 +10,22 @@ reliability release. No new numeric acceptance bar, model, confidence gate,
 PitcherSelector, pose/tracking algorithm, interpolation or smoothing change.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-12 torso-overlap trial closed (latest)
+## 2026-10-12 same-joint disagreement validity evaluation (latest)
+
+[Result](phase2_joint_disagreement_results_20261012.md), [frozen protocol](phase2_joint_disagreement_plan_20261012.md).
+New12-joint per-slot distances, six-focus human-label/model-state/missing tables;592sealed/587non-seed frames,0new inference.
+Same-slot torsoRMS min conditionalAUROC0.997576 on568available rows(18positive/550negative),19unavailable remain explicit.
+All measurable major positives belong to one known003drift; no held-out generalization or99.76%accuracy claim.
+Throwing elbow/wrist minAUROC0.793277/0.828164, clip-specific failures retained; lead-leg positive counts too small.
+003visibleXY1195pairs Spearman min0.592146/max0.110261;100left-wrist min disagreement3.563px despite raw error151.056px.
+Three figures inspected; independent42624distances/3552torsoRMS/7104states/GTdenominators verified.
+Fullsuite592run/590passed/0failed/0errors/2Windowslinkskips,58.844s,includingformal5E2E;39newtests.
+374protected/62upstream unchanged;formal5/raw/src/GT5of5 preserved;8handoff candidate/pending;originalMoveNet592attempts unchanged.
+No new binary warning, threshold or production adoption;originaladditiveTP10/FN11/FP9 unchanged,automaticPhase2NOT PASSED.
+Next: separately freeze ambiguity/missing warning semantics and calibration-validation split;noPhase3.
+Output:`analysis_results/phase2_joint_disagreement_20261012_01/`.
+
+## 2026-10-12 torso-overlap trial closed (previous)
 
 [Result](phase2_torso_support_results_20261012.md), [frozen protocol](phase2_torso_support_plan_20261011.md).
 New offline torso hull/per-joint residual diagnostics and25regressions;592sealed frames,0new pose/tracker calls.

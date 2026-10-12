@@ -2,7 +2,20 @@
 
 更新日期：2026-10-12（台灣）。
 
-## 最新：軀幹重疊試驗收尾，未增加有效警示
+## 最新：同名關節分歧評估完成
+
+見[本輪結果](phase2_joint_disagreement_results_20261012.md)。實作12關節逐slot距離、六focus人工可靠性
+與model state／缺值比較；封存592格／587非seed格，零新推論。major同slot肩髖分歧下界
+conditional AUROC0.997576（568有值格，18正／550負），完整587格的19缺值仍列明；
+不能解讀為正確率或泛化。投球肘／腕分歧min AUROC0.793277／0.828164，逐片效果不一致。
+003可見XY1,195點Spearman min0.592146／max0.110261；100左腕顯示模型接近仍可能一起錯。
+新增39項測試，完整suite **590 passed／0 failed／0 errors／2 skipped**（592項、58.844秒，含正式五球E2E）。
+42,624距離與GT分母已獨立核對；374保護／62上游不變，GT與正式核心原樣，8交付球仍candidate／pending。
+沒有新增二元警示或調門檻，原聯集TP10／FN11／FP9不變，**Phase 2 = NOT PASSED**。
+下一步固定具歧義／缺值處理的警示政策及校準／驗證分離；未進Phase3。
+輸出：`analysis_results/phase2_joint_disagreement_20261012_01/`。
+
+## 前次：軀幹重疊試驗收尾，未增加有效警示
 
 見[本輪結果](phase2_torso_support_results_20261012.md)。新增離線肩髖凸包／逐點殘差診斷及25項回歸，
 沿用封存592格，模型／tracker新增呼叫0。587非seed格的提示與上輪完全相同：
