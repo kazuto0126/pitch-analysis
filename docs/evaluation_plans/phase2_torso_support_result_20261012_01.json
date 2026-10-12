@@ -1,0 +1,139 @@
+{
+  "status": "sealed_offline_torso_support_result",
+  "client_date_local": "2026-10-12",
+  "execution_plan": {
+    "path": "docs/evaluation_plans/phase2_torso_support_execution_20261011_01.json",
+    "sha256": "722410c055cd3e0c943c3c317aaa3fa45721b16d92c688e99afb0b95193bf59b"
+  },
+  "evaluation_plan": {
+    "path": "docs/evaluation_plans/phase2_torso_support_evaluation_20261011_01.json",
+    "sha256": "9a3318c89f2d2eb7cc69f6430947d639d2485c413e5e19b67cc2bcb6557a5ac7"
+  },
+  "code": {
+    "producer_code": {
+      "path": "scripts/measure_torso_support.py",
+      "sha256": "f1c08729ca2eb5be8090d633178cf433e8fa3e67120c52239d3b054219bcbc53"
+    },
+    "producer_tests": {
+      "path": "tests/test_torso_support.py",
+      "sha256": "b83e8c43e373a68f7de4fe48342e77159ef1914ad609e602acadf8dc1a38d3b0"
+    },
+    "hull_helpers": {
+      "path": "scripts/torso_geometry.py",
+      "sha256": "d3c56b5f4e6044bc336eb93b039920cde7f42d7cffdc11c9eb81ef981c991cd1"
+    },
+    "hull_tests": {
+      "path": "tests/test_torso_geometry.py",
+      "sha256": "ec235f31ae603f3ddb6275640fa9aa88f4ba95dd4ddc85d997223c36e5e4ba5b"
+    },
+    "bbox_helpers": {
+      "path": "scripts/measure_movenet_support.py",
+      "sha256": "a214e88c05ca7c5f43da438205fc7d73e3251622ae978fa0f3632e2146d6a815"
+    },
+    "association_helpers": {
+      "path": "scripts/evaluate_movenet_cohort.py",
+      "sha256": "c8f5a6b6249b22ec67ae49da8e5bbff13d80149aed9443b6bbd06673c7507522"
+    },
+    "baseline_helpers": {
+      "path": "scripts/measure_pose_mode_countercheck.py",
+      "sha256": "a8007fe7b7b36e3e2404aaf5e42a56f7217d0f7c0ef2558b48e97ce6d912b519"
+    },
+    "native_helpers": {
+      "path": "scripts/check_movenet_compatibility.py",
+      "sha256": "f3b2ff2864d35ae37e7623c99fccba5689a3ee111b79658bed3b272f334b5fa9"
+    },
+    "study_plan": {
+      "path": "docs/phase2_torso_support_plan_20261011.md",
+      "sha256": "b59d561d31cc07735963ca1366dfc4d716333b1cd6fb679d9c189dcaca424dd9"
+    },
+    "freeze_helper": {
+      "path": "analysis_results/phase2_torso_support_20261011_01/freeze.py",
+      "sha256": "b8aa4b9cdaef2fd886c31e1c3f83f6bbc7e3799496bf61b259cb43d0a787cd21"
+    }
+  },
+  "outputs": {
+    "before_audit.json": {
+      "path": "analysis_results/phase2_torso_support_20261011_01/before_audit.json",
+      "sha256": "406e7643007805c2b444f1e812b21af51c0cf08a0ddbc2eea29a663f34d9833a"
+    },
+    "source_audit.json": {
+      "path": "analysis_results/phase2_torso_support_20261011_01/source_audit.json",
+      "sha256": "3d80c4b54b23d077979b67a7fd7c6ec623de0e5cd22a1778ccc43ed579fe6d51"
+    },
+    "independent_audit.json": {
+      "path": "analysis_results/phase2_torso_support_20261011_01/independent_audit.json",
+      "sha256": "083694f4c13e606b1f03589c0e350e17b0a044898e4c9ab20738a1228ae7835c"
+    },
+    "final_audit.json": {
+      "path": "analysis_results/phase2_torso_support_20261011_01/final_audit.json",
+      "sha256": "95fcb75e14543bf42507f7ebfd0f66107c6e76be81bb33452da9f038045587ab"
+    },
+    "measurements/support_run.json": {
+      "path": "analysis_results/phase2_torso_support_20261011_01/measurements/support_run.json",
+      "sha256": "239efbdb633c0f014ed6780823082d939db4f82644838708b16078bc1088dbeb"
+    },
+    "evaluation/support_evaluation.json": {
+      "path": "analysis_results/phase2_torso_support_20261011_01/evaluation/support_evaluation.json",
+      "sha256": "eb109a034ebba53c8abf3db234bdfe3951c01887a887b25da46baeea5a30b7ad"
+    },
+    "visible_torso_diagnosis.json": {
+      "path": "analysis_results/phase2_torso_support_20261011_01/visible_torso_diagnosis.json",
+      "sha256": "249030f2a2fbfd414ef43be1a032fae3b12c711997086eee78aa3396d4d1ff02"
+    },
+    "engineering_review/manifest.json": {
+      "path": "analysis_results/phase2_torso_support_20261011_01/engineering_review/manifest.json",
+      "sha256": "5c42e577e25cfcbcaeb874ed8337b3387a9df7a0771ea4b329774792c10110af"
+    },
+    "engineering_review/inspection.json": {
+      "path": "analysis_results/phase2_torso_support_20261011_01/engineering_review/inspection.json",
+      "sha256": "c9da003749d075cf8201ab751a5cd9000d5056b7d4f07c7dfe35bcc316c3046d"
+    },
+    "full_test_suite.log": {
+      "path": "analysis_results/phase2_torso_support_20261011_01/full_test_suite.log",
+      "sha256": "7f29274aa62ef2ab9ca5366dd670cb4d8111cc2a83191018e766b544d5d4407b"
+    },
+    "freeze.py": {
+      "path": "analysis_results/phase2_torso_support_20261011_01/freeze.py",
+      "sha256": "b8aa4b9cdaef2fd886c31e1c3f83f6bbc7e3799496bf61b259cb43d0a787cd21"
+    },
+    "audit_helper.py": {
+      "path": "analysis_results/phase2_torso_support_20261011_01/audit_helper.py",
+      "sha256": "69fb63626b608b0b877543a68a61005e9ba4d1f530a3a6e245c7a17bbd1b3031"
+    },
+    "engineering_review.py": {
+      "path": "analysis_results/phase2_torso_support_20261011_01/engineering_review.py",
+      "sha256": "c7784563674ab976acd4fd11883767b39d997a97249ba1ce1e9a4c61a60ddbbe"
+    },
+    "diagnose_visible_torso.py": {
+      "path": "analysis_results/phase2_torso_support_20261011_01/diagnose_visible_torso.py",
+      "sha256": "14df19950358db4ef72fc6745b84d565056fbfe69642d7676003395c73324bd0"
+    },
+    "finalize.py": {
+      "path": "analysis_results/phase2_torso_support_20261011_01/finalize.py",
+      "sha256": "d94e7691be83c81b1a53cc6cbb2cb0fa4f5918c3d9a79293224d35e47be0cc72"
+    }
+  },
+  "result_document": {
+    "path": "docs/phase2_torso_support_results_20261012.md",
+    "sha256": "6d0176dd863dd91b3f9aa2dbf5bf3c995038bfc7e5f8e74b5060f1b395945d0b"
+  },
+  "source_frames": 592,
+  "non_seed_frames": 587,
+  "additional_warning_frames": 0,
+  "production_adoption": false,
+  "phase2_status": "NOT PASSED",
+  "tests": {
+    "run": 553,
+    "passed": 551,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 2,
+    "seconds": 91.495,
+    "new_tests": 25,
+    "formal_five_e2e_included": true,
+    "log": {
+      "path": "analysis_results/phase2_torso_support_20261011_01/full_test_suite.log",
+      "sha256": "7f29274aa62ef2ab9ca5366dd670cb4d8111cc2a83191018e766b544d5d4407b"
+    }
+  }
+}

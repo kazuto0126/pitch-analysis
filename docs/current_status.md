@@ -1,6 +1,6 @@
 # Current status — Phase 2 repair checkpoint; candidate intake isolated
 
-Updated: 2026-10-11
+Updated: 2026-10-12
 
 **Phase 1 = PASSED.**
 **Phase 2 evaluation = COMPLETE; Phase 2 = NOT PASSED (automatic reliability degraded).**
@@ -10,7 +10,20 @@ reliability release. No new numeric acceptance bar, model, confidence gate,
 PitcherSelector, pose/tracking algorithm, interpolation or smoothing change.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-11 full-frame comparison and additive support trial (latest)
+## 2026-10-12 torso-overlap trial closed (latest)
+
+[Result](phase2_torso_support_results_20261012.md), [frozen protocol](phase2_torso_support_plan_20261011.md).
+New offline torso hull/per-joint residual diagnostics and25regressions;592sealed frames,0new pose/tracker calls.
+587non-seed major evaluation exactly matches previous bbox screen: additiveTP10/FN11/FP9/TN557.
+Zero additional warnings;all11misses retain overlap with every compatible torso hull, despite raw mean60.1448px error.
+Overlap does not establish same-named joint alignment; this rule is not adopted or retuned after GT.
+20engineering figures/5pages inspected, independent exactSAT/frame/GT audit matches592frames; no new human labels.
+Fullsuite553run/551passed/0failed/0errors/2Windowslinkskips,91.495s,includingformal5E2E.
+374protected/62upstream unchanged; formal5/raw/src/GT5of5 preserved;8handoff candidate/pending.
+AutomaticPhase2 remainsNOT PASSED; noPhase3. Next: joint-alignment evidence/reliability semantics under a separately frozen plan.
+Output:`analysis_results/phase2_torso_support_20261011_01/` (study began10/11,closed10/12Taipei).
+
+## 2026-10-11 full-frame comparison and additive support trial (previous)
 
 [Cohort comparison](phase2_movenet_cohort_results_20261011.md), [support warning trial](phase2_movenet_support_results_20261011.md).
 Exactly592 MoveNet calls,587non-seed frames;281unique geometric candidates/290ambiguous/16none.
