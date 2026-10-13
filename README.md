@@ -53,6 +53,8 @@ Phase 2 baseline與本次有限修復已收尾：**evaluation = COMPLETE WITH KN
 最新結果見 [Phase 2收尾](docs/phase2_closeout_20261013.md)：五球人工覆核／可用性已重核，
 離線警示聯集major TP20/FN1/FP9，尚未正式採用；完整測試619 passed、2 skipped。
 原正式流程與局部肘腕限制仍保留；沒有開始Phase3。
+使用者隨後要求繼續，最新[六關節局部警示試驗](docs/phase2_local_joint_warnings_results_20261013.md)
+已完成並維持不採用：肘腕涵蓋不足，局部定性GT與可見人工XY的評估用途需分開；完整測試648 passed、2 skipped。
 使用者另核准的 [交付資料夾候選讀取器](docs/handoff_reader.md) 已接入 contract v2：
 驗 hash、完整解碼、分數 FPS 逐格時間與去重，保存本地待人工覆核候選。
 它不自動分析、轉換正式 metadata 或取代山本正式五球，也不改 Phase 2 核心。

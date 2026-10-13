@@ -1,0 +1,139 @@
+{
+  "status": "frozen_before_local_joint_warning_trial",
+  "client_date_local": "2026-10-13",
+  "frozen_at_utc": "2026-10-13T08:16:01.155195+00:00",
+  "policy": {
+    "scope": "local_extreme_positional_disagreement_not_major_failure_or_visibility",
+    "roles": [
+      "throwing_shoulder",
+      "throwing_elbow",
+      "throwing_wrist",
+      "lead_hip",
+      "lead_knee",
+      "lead_ankle"
+    ],
+    "feature": "minimum_same_named_joint_raw_native_distance_fraction_of_image_diagonal",
+    "calibration": "all_finite_non_seed_frames_of_same_anatomical_joint_in_all_other_clips_without_human_filtering",
+    "experimental_threshold": "other_clip_sample_maximum_strict_exceedance",
+    "mapping": "saved_anatomical_mapping_must_be_identical_across_cohort",
+    "states": "query_min_strictly_greater_than_other_clip_sample_maximum; candidate_dependent,within_reference_range,insufficient_evidence,seed_excluded",
+    "decision_rule": "apply_existing_frozen_torso_classify_to_each_joint_range_and_own_reference",
+    "within_range_means_reliable": false,
+    "missing_means_occluded": false,
+    "native_score_cutoff": null,
+    "identity_selection": false,
+    "cross_slot_joint_assembly": false,
+    "raw_processed_state": "copy_original_state_as_context_never_convert_missing_to_positional_warning",
+    "major_warning_generated": false,
+    "temporal_expansion": false,
+    "human_annotation_inputs": [],
+    "production_adoption": false,
+    "calibration_limitation": "only_clips_containing_cohort_extreme_min_disagreement_can_exceed_other_clip_maximum",
+    "validation_scope": "previously_inspected_development_cohort_no_generalization_or_false_alarm_guarantee"
+  },
+  "code": {
+    "producer_code": {
+      "path": "scripts/measure_local_joint_warnings.py",
+      "sha256": "4a89b9520054199efff5d745bd6a66094415d53c1b47fe0bf5b7790248b5c0b7"
+    },
+    "producer_tests": {
+      "path": "tests/test_local_joint_warnings.py",
+      "sha256": "48a4fd1eeee6fc29d0d187c1e41f5fcbf5a6088cf2a7602feab4e9d9b667dba4"
+    },
+    "torso_policy_helpers": {
+      "path": "scripts/measure_disagreement_warning.py",
+      "sha256": "e1d6b808d694a7819ba053e93565df8b731d7fd7d17786a24218fbafaa242328"
+    },
+    "native_helpers": {
+      "path": "scripts/check_movenet_compatibility.py",
+      "sha256": "f3b2ff2864d35ae37e7623c99fccba5689a3ee111b79658bed3b272f334b5fa9"
+    },
+    "study_plan": {
+      "path": "docs/phase2_local_joint_warnings_plan_20261013.md",
+      "sha256": "a216de1dc1adbf4107bde01b4f317e8714fb87e0831529d475eadc0c91f1b8b7"
+    },
+    "freeze_helper": {
+      "path": "analysis_results/phase2_local_joint_warnings_20261013_01/freeze.py",
+      "sha256": "7123f33dabaa5045f3f6892d951a13249a622f354100b9311ddbaa2291511e3d"
+    }
+  },
+  "parent_evidence_plan": {
+    "path": "docs/evaluation_plans/phase2_disagreement_warning_execution_20261012_01.json",
+    "sha256": "b1bba112057cf557f11f416fd2249c7aed947d8e6b4e3f7fe2145ab062140ee5"
+  },
+  "clips": [
+    {
+      "target": {
+        "pitch_id": "pitch_001",
+        "total_frames": 87,
+        "width": 434,
+        "height": 616
+      },
+      "source": {
+        "pitch_id": "pitch_001",
+        "path": "analysis_results/phase2_joint_disagreement_20261012_01/measurements/pitch_001.json",
+        "sha256": "024662fc300ba007bcdcaa26d1cfc39ac7480f942d8b37e8064d33a4ba506a3c"
+      }
+    },
+    {
+      "target": {
+        "pitch_id": "pitch_002",
+        "total_frames": 175,
+        "width": 460,
+        "height": 634
+      },
+      "source": {
+        "pitch_id": "pitch_002",
+        "path": "analysis_results/phase2_joint_disagreement_20261012_01/measurements/pitch_002.json",
+        "sha256": "cb35ea88bec4428592de79e9e5259538f3a533c85a69bb2345d98e30a2e48381"
+      }
+    },
+    {
+      "target": {
+        "pitch_id": "pitch_003",
+        "total_frames": 115,
+        "width": 510,
+        "height": 628
+      },
+      "source": {
+        "pitch_id": "pitch_003",
+        "path": "analysis_results/phase2_joint_disagreement_20261012_01/measurements/pitch_003.json",
+        "sha256": "e86a95f552c51fda35d486495ee61b3376bb2ea7bc446b04250585270048be87"
+      }
+    },
+    {
+      "target": {
+        "pitch_id": "pitch_004",
+        "total_frames": 114,
+        "width": 532,
+        "height": 676
+      },
+      "source": {
+        "pitch_id": "pitch_004",
+        "path": "analysis_results/phase2_joint_disagreement_20261012_01/measurements/pitch_004.json",
+        "sha256": "97fcb75724d752ff1c3308aa7e6dbf2c465bc2bb139a9ca3975abe25c6017041"
+      }
+    },
+    {
+      "target": {
+        "pitch_id": "pitch_005",
+        "total_frames": 101,
+        "width": 512,
+        "height": 598
+      },
+      "source": {
+        "pitch_id": "pitch_005",
+        "path": "analysis_results/phase2_joint_disagreement_20261012_01/measurements/pitch_005.json",
+        "sha256": "d4eddb857b6b28a7ac129ec615ef40bb3116dd153ea900db2b02fa76e9c400a0"
+      }
+    }
+  ],
+  "source_frames": 592,
+  "non_seed_frames": 587,
+  "output_directory": "analysis_results/phase2_local_joint_warnings_20261013_01/warnings",
+  "human_annotation_inputs": [],
+  "pose_inference_budget": 0,
+  "tracker_inference_budget": 0,
+  "production_adoption": false,
+  "major_warning_generated": false
+}

@@ -2,7 +2,19 @@
 
 更新日期：2026-10-13（台灣）。
 
-## 最新：Phase 2 baseline與本次有限修復已收尾
+## 最新：六關節局部警示試驗，規則不採用
+
+使用者在前輪收尾後要求繼續修復。見[局部提示結果](phase2_local_joint_warnings_results_20261013.md)。
+實作六關節獨立sidecar與完整評估，零新推論；3,552保存列／3,522非seed成效列。
+新肩／肘／腕TP/FN/FP為8/13/0、1/83/0、5/66/0；髖／膝／踝為0/4/15、0/8/2、0/5/2。
+肘腕涵蓋不足，other-clip maximum只能篩極端分歧，**不作一般可靠性分類、不正式採用**。
+19筆前導腿FP全在003major區段，且raw對可見人工XY距離大；主要計數與原GT仍原樣，另列參考語意差異。
+完整suite **648 passed／0 failed／0 errors／2 skipped**（650項、58.123秒，含正式五球E2E）。
+374／62保護不變，8交付球仍candidate/pending；major聯集20/1/9不變，**Phase2NOT PASSED**。
+下一步先釐清局部定性GT與可見XY的評估用途，不繼續調本規則；未進Phase3。
+輸出：`analysis_results/phase2_local_joint_warnings_20261013_01/`。
+
+## 前次：Phase 2 baseline與本次有限修復已收尾
 
 見[Phase 2收尾報告](phase2_closeout_20261013.md)。五球592格／3,552重點關節紀錄、覆核後角度與
 人工可見XY比較均重建一致；最新離線警示比較完整重現，沒有新推論或核心修改。

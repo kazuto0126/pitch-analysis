@@ -1,4 +1,4 @@
-# Current status — Phase 2 baseline closeout; automatic release blocked
+# Current status — Phase 2 local warning trial; automatic release blocked
 
 Updated: 2026-10-13
 
@@ -10,7 +10,22 @@ reliability release. No new numeric acceptance bar, model, confidence gate,
 PitcherSelector, pose/tracking algorithm, interpolation or smoothing change.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-13 Phase 2 finite closeout (latest)
+## 2026-10-13 six-joint local warning trial (latest; not adopted)
+
+User resumed repair after the preceding finite closeout. [Result](phase2_local_joint_warnings_results_20261013.md),
+[frozen protocol](phase2_local_joint_warnings_plan_20261013.md). Six-joint sidecars/evaluator implemented;
+592frames/3552saved rows/3522nonseed rows,0new inference;GTonlyevaluator,existing gates/raw/core preserved.
+Newshoulder/elbow/wrist TP/FN/FP=8/13/0,1/83/0,5/66/0;leadhip/knee/ankle=0/4/15,0/8/2,0/5/2.
+Coverage too low;other-clip samplemax is an extreme screen,not a general reliability classifier;not adopted or retuned.
+All19localFP occur in003major spans with visible manualXY and large raw error;canonical labels unchanged,reference targets keptdistinct.
+Oldjump/localunion scores,unknownwarningburden andmodel×human×evidence strata saved;local warnings never promoted to major.
+Fullsuite650run/648passed/0failures/0errors/2Windowslinkskips,58.123s,includingformal5E2E;29newtests.
+Independent21312distances/30folds/states/scores verified;374protected/62upstream unchanged,GT5reviewed,592modelattemptsunchanged.
+8handoffcandidatepending/unanalysed;majortrial20/1/9 unchanged;Phase2NOT PASSED,noPhase3.
+Next: clarify qualitative joint labels versus reviewed visible-XY evaluation targets before selecting calibration;no further tuning of this policy.
+Output:`analysis_results/phase2_local_joint_warnings_20261013_01/`.
+
+## 2026-10-13 Phase 2 finite closeout (previous)
 
 [Closeout report](phase2_closeout_20261013.md), [source plan](evaluation_plans/phase2_closeout_20261013_01.json).
 Five-clip human review, baseline evaluation and the authorized bounded warning-repair delivery are

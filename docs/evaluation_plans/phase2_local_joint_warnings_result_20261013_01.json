@@ -1,0 +1,175 @@
+{
+  "status": "sealed_offline_local_joint_warning_result_not_adopted",
+  "client_date_local": "2026-10-13",
+  "execution_plan": {
+    "path": "docs/evaluation_plans/phase2_local_joint_warnings_execution_20261013_01.json",
+    "sha256": "4ce4712109bfb70b49746b4cec7df956bb638779e62244974ccc9eacc8623c59"
+  },
+  "evaluation_plan": {
+    "path": "docs/evaluation_plans/phase2_local_joint_warnings_evaluation_20261013_01.json",
+    "sha256": "51ddf85238b4e83d9302970f8bf8240767a243f52ece50fdc14b5d9dc3f74fd7"
+  },
+  "producer_code": {
+    "producer_code": {
+      "path": "scripts/measure_local_joint_warnings.py",
+      "sha256": "4a89b9520054199efff5d745bd6a66094415d53c1b47fe0bf5b7790248b5c0b7"
+    },
+    "producer_tests": {
+      "path": "tests/test_local_joint_warnings.py",
+      "sha256": "48a4fd1eeee6fc29d0d187c1e41f5fcbf5a6088cf2a7602feab4e9d9b667dba4"
+    },
+    "torso_policy_helpers": {
+      "path": "scripts/measure_disagreement_warning.py",
+      "sha256": "e1d6b808d694a7819ba053e93565df8b731d7fd7d17786a24218fbafaa242328"
+    },
+    "native_helpers": {
+      "path": "scripts/check_movenet_compatibility.py",
+      "sha256": "f3b2ff2864d35ae37e7623c99fccba5689a3ee111b79658bed3b272f334b5fa9"
+    },
+    "study_plan": {
+      "path": "docs/phase2_local_joint_warnings_plan_20261013.md",
+      "sha256": "a216de1dc1adbf4107bde01b4f317e8714fb87e0831529d475eadc0c91f1b8b7"
+    },
+    "freeze_helper": {
+      "path": "analysis_results/phase2_local_joint_warnings_20261013_01/freeze.py",
+      "sha256": "7123f33dabaa5045f3f6892d951a13249a622f354100b9311ddbaa2291511e3d"
+    }
+  },
+  "evaluator_code": {
+    "evaluator": {
+      "path": "scripts/evaluate_local_joint_warnings.py",
+      "sha256": "402379d9e7b74658afd645e899cbdec59dc3e76abc590b8efef0def984902fc9"
+    },
+    "evaluator_tests": {
+      "path": "tests/test_local_joint_warning_evaluation.py",
+      "sha256": "3ad8333faf1ccfaec3e890c5f45fe52f0e2d63ee8cc09aa1b2bf1333152b43ea"
+    },
+    "joint_evaluator": {
+      "path": "scripts/evaluate_joint_disagreement.py",
+      "sha256": "26c86c26e71cf1360770ee7f22c87190a08306be8ac71397f850a446bf187550"
+    },
+    "ground_truth": {
+      "path": "src/pitch_analysis/ground_truth.py",
+      "sha256": "8d4f781726762492787c4a8cf1342b225d44911d86f518660f469f550d489603"
+    },
+    "native_helpers": {
+      "path": "scripts/check_movenet_compatibility.py",
+      "sha256": "f3b2ff2864d35ae37e7623c99fccba5689a3ee111b79658bed3b272f334b5fa9"
+    },
+    "study_plan": {
+      "path": "docs/phase2_local_joint_warnings_plan_20261013.md",
+      "sha256": "a216de1dc1adbf4107bde01b4f317e8714fb87e0831529d475eadc0c91f1b8b7"
+    },
+    "freeze_helper": {
+      "path": "analysis_results/phase2_local_joint_warnings_20261013_01/freeze.py",
+      "sha256": "7123f33dabaa5045f3f6892d951a13249a622f354100b9311ddbaa2291511e3d"
+    }
+  },
+  "result_document": {
+    "path": "docs/phase2_local_joint_warnings_results_20261013.md",
+    "sha256": "906c6d116749deaaf11607c379579b317a9ef66166b87971b0a5a8d887b940b1"
+  },
+  "outputs": {
+    "audit_helper.py": {
+      "path": "analysis_results/phase2_local_joint_warnings_20261013_01/audit_helper.py",
+      "sha256": "c731e71f7a61f71cd41ff77f174f95c2babbde3ee84b43aaf194daceb80d49cc"
+    },
+    "before_audit.json": {
+      "path": "analysis_results/phase2_local_joint_warnings_20261013_01/before_audit.json",
+      "sha256": "6d75cc1529211e4e4a721dc341b2ef88f291168c198d9f45aaf525545ddda28f"
+    },
+    "evaluation/local_joint_warning_evaluation.json": {
+      "path": "analysis_results/phase2_local_joint_warnings_20261013_01/evaluation/local_joint_warning_evaluation.json",
+      "sha256": "d6edda91cfb96fab6d9fb157daece56e636743aa344350feb0b3c84813e39d24"
+    },
+    "figures/inspection.json": {
+      "path": "analysis_results/phase2_local_joint_warnings_20261013_01/figures/inspection.json",
+      "sha256": "09e9e8f3c753a046c1bba6c0f5da4935dfa500a8927b775a260c63d46f9695ea"
+    },
+    "figures/manifest.json": {
+      "path": "analysis_results/phase2_local_joint_warnings_20261013_01/figures/manifest.json",
+      "sha256": "e178682a28f4e195028eacd612905c8c4526e8748aa75857617a75b100fa21f3"
+    },
+    "figures/reference_scope_examples.png": {
+      "path": "analysis_results/phase2_local_joint_warnings_20261013_01/figures/reference_scope_examples.png",
+      "sha256": "dcf3b714382a24d681e5c82343c02c0eb588d471e7437600c520693eb1e51a62"
+    },
+    "figures/six_joint_screen_comparison.png": {
+      "path": "analysis_results/phase2_local_joint_warnings_20261013_01/figures/six_joint_screen_comparison.png",
+      "sha256": "da6e0112f4224f5c627aac45edc4309296e64c112b7e47adb99518b9768e6fd5"
+    },
+    "final_audit.json": {
+      "path": "analysis_results/phase2_local_joint_warnings_20261013_01/final_audit.json",
+      "sha256": "dece44d73c0fb301c7b1074a5d6bd23a8aa4cc84a705a16b179961fda73a9246"
+    },
+    "finalize.py": {
+      "path": "analysis_results/phase2_local_joint_warnings_20261013_01/finalize.py",
+      "sha256": "a7872b2d0b1f78271bb1a95b3d1f072900b23e732d1b17063574d791a0ca0555"
+    },
+    "freeze.py": {
+      "path": "analysis_results/phase2_local_joint_warnings_20261013_01/freeze.py",
+      "sha256": "7123f33dabaa5045f3f6892d951a13249a622f354100b9311ddbaa2291511e3d"
+    },
+    "full_test_suite.log": {
+      "path": "analysis_results/phase2_local_joint_warnings_20261013_01/full_test_suite.log",
+      "sha256": "b34fd2d1ffb3c92763edbe681f2fbd010df9e35980f68a84fee8da36c49e2755"
+    },
+    "independent_audit.json": {
+      "path": "analysis_results/phase2_local_joint_warnings_20261013_01/independent_audit.json",
+      "sha256": "71fa49c17455b537b114773ad237bc1beebab9571d4a40babd77cfd8f10795a5"
+    },
+    "post_seal_scope_audit.json": {
+      "path": "analysis_results/phase2_local_joint_warnings_20261013_01/post_seal_scope_audit.json",
+      "sha256": "29dddbb97e4b731e6c2523d4ff1ca7a7da61a8ae4a3d22fe64d40171f23bab5e"
+    },
+    "post_seal_scope_comparison.json": {
+      "path": "analysis_results/phase2_local_joint_warnings_20261013_01/post_seal_scope_comparison.json",
+      "sha256": "1207644917d04eb62393480c583736b733fa5ba4f5e96be07812d1af59fafe2e"
+    },
+    "render_results.py": {
+      "path": "analysis_results/phase2_local_joint_warnings_20261013_01/render_results.py",
+      "sha256": "3ef7c5876796b356bdebd52e553a3595dbc420094436af7c36ef604a2e6938f0"
+    },
+    "warnings/local_joint_warning_run.json": {
+      "path": "analysis_results/phase2_local_joint_warnings_20261013_01/warnings/local_joint_warning_run.json",
+      "sha256": "34e2dbc087c0b4dce49c0e33ed179e3905a385f339ee8e08d1383ef18b7e2035"
+    },
+    "warnings/pitch_001.json": {
+      "path": "analysis_results/phase2_local_joint_warnings_20261013_01/warnings/pitch_001.json",
+      "sha256": "fe79d168590628d80fb5dcdecf5b22a2ef946168b31a73d229a83ddba89239ff"
+    },
+    "warnings/pitch_002.json": {
+      "path": "analysis_results/phase2_local_joint_warnings_20261013_01/warnings/pitch_002.json",
+      "sha256": "f9dd80ce2966f4823579c6c1b6dbd91e211ed8b82643a392d019c1c4423e2b7c"
+    },
+    "warnings/pitch_003.json": {
+      "path": "analysis_results/phase2_local_joint_warnings_20261013_01/warnings/pitch_003.json",
+      "sha256": "2b2ff4b7005581311226a3d426fac954657a2d20f4eeb8913bb048c6488ef430"
+    },
+    "warnings/pitch_004.json": {
+      "path": "analysis_results/phase2_local_joint_warnings_20261013_01/warnings/pitch_004.json",
+      "sha256": "e87f99b45f94941407b8251c762e11840f03f5c70a7023734bf0db1982499e2a"
+    },
+    "warnings/pitch_005.json": {
+      "path": "analysis_results/phase2_local_joint_warnings_20261013_01/warnings/pitch_005.json",
+      "sha256": "4f9cef40e665a6f9882d59adcab612f4c13af8dae1b9de3a3185b063f7f02b44"
+    }
+  },
+  "tests": {
+    "run": 650,
+    "passed": 648,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 2,
+    "seconds": 58.123,
+    "new_tests": 29,
+    "formal_five_e2e_included": true,
+    "log": {
+      "path": "analysis_results/phase2_local_joint_warnings_20261013_01/full_test_suite.log",
+      "sha256": "b34fd2d1ffb3c92763edbe681f2fbd010df9e35980f68a84fee8da36c49e2755"
+    }
+  },
+  "production_adoption": false,
+  "major_warning_generated": false,
+  "phase2_status": "NOT PASSED"
+}
