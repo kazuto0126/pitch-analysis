@@ -1,8 +1,20 @@
 # 進度摘要
 
-更新日期：2026-10-12（台灣）。
+更新日期：2026-10-13（台灣）。
 
-## 最新：跨片肩髖分歧警示修復
+## 最新：Phase 2 baseline與本次有限修復已收尾
+
+見[Phase 2收尾報告](phase2_closeout_20261013.md)。五球592格／3,552重點關節紀錄、覆核後角度與
+人工可見XY比較均重建一致；最新離線警示比較完整重現，沒有新推論或核心修改。
+**人工覆核／baseline評估／本次有限修復交付 = COMPLETE WITH KNOWN LIMITATIONS；
+Phase 2 = NOT PASSED，automatic_accepted=false。** 不再把這批評估維持為無限IN PROGRESS。
+原正式流程major TP3/FN18/FP9；離線587格聯集TP20/FN1/FP9，未正式採用。
+003／104、局部肘腕錯點與遮擋限制保留。手肘／前導膝角度覆核後可用246／530格，不代表準確率。
+本次完整suite **619 passed／0 failed／0 errors／2 skipped**（621項、68.712秒，含五球E2E）。
+輸出：`analysis_results/phase2_closeout_20261013_01/`；正式來源與GT不變，8交付球仍candidate/pending。
+自動可靠性發布阻擋；本次到結案commit停止，沒有開始Phase3或分析候選球。
+
+## 前次：跨片肩髖分歧警示修復
 
 見[本輪結果](phase2_disagreement_warning_results_20261012.md)。已實作獨立離線警示，
 每片以其他四片量測最大值作實驗性參考，不讀GT校準、不改正式核心或既有門檻。

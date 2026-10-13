@@ -1,0 +1,72 @@
+{
+  "status": "sealed_phase2_closeout_with_not_passed_automatic_reliability",
+  "client_date_local": "2026-10-13",
+  "source_plan": {
+    "path": "docs/evaluation_plans/phase2_closeout_20261013_01.json",
+    "sha256": "81fed98c41a22409ff6940c6093f609cce75703921cd4867cff10437404baff4"
+  },
+  "report": {
+    "path": "docs/phase2_closeout_20261013.md",
+    "sha256": "25d44f0c9d537eeee51316cf7979c6b82a624ee1988a112645122bc0860fcdc5"
+  },
+  "outputs": {
+    "audit_helper.py": {
+      "path": "analysis_results/phase2_closeout_20261013_01/audit_helper.py",
+      "sha256": "b0a58ef4a1f2c49e8bf964579ee05adb087ab6c24b1871480da1853c148d8549"
+    },
+    "closeout.py": {
+      "path": "analysis_results/phase2_closeout_20261013_01/closeout.py",
+      "sha256": "e06aa75f7808400ae565d9868a2e9f13194ec705c9c5182d336ee0b9cbd64a77"
+    },
+    "final_delivery.json": {
+      "path": "analysis_results/phase2_closeout_20261013_01/final_delivery.json",
+      "sha256": "74ca8fcc81f93e68ab42e5dea988005acfa30927213bc0b697b672c755f7f0c5"
+    },
+    "finalize.py": {
+      "path": "analysis_results/phase2_closeout_20261013_01/finalize.py",
+      "sha256": "abba457f09e31b4fdd33ba1cc5fc48905e6610bd671201bcf762954b0af3eada"
+    },
+    "full_test_suite.log": {
+      "path": "analysis_results/phase2_closeout_20261013_01/full_test_suite.log",
+      "sha256": "7c0e0950764565caf3fcda26e0a4d093ad64878b2e3a50628e158b67c8877723"
+    },
+    "full_test_suite_result.json": {
+      "path": "analysis_results/phase2_closeout_20261013_01/full_test_suite_result.json",
+      "sha256": "57f95d73cd9b95774abf8e5ad16ba6c4476788d27a61351e5bd8885fb6b38ca0"
+    },
+    "independent_audit.json": {
+      "path": "analysis_results/phase2_closeout_20261013_01/independent_audit.json",
+      "sha256": "cc762c39222048fcc4a31fffd47db411ed73f768167f8b0fe306ffc9364c6981"
+    },
+    "phase2_closeout.json": {
+      "path": "analysis_results/phase2_closeout_20261013_01/phase2_closeout.json",
+      "sha256": "9dd78e9a7c11a2228c41e580c9070fd9ac4e5ea06ee526e6ea62a8615f08ccb2"
+    },
+    "release_status.json": {
+      "path": "analysis_results/phase2_closeout_20261013_01/release_status.json",
+      "sha256": "20fa38f758fa55898f674baffd40381d08d064b0f6425146935c93107e7f3f33"
+    },
+    "START_HERE.md": {
+      "path": "analysis_results/phase2_closeout_20261013_01/START_HERE.md",
+      "sha256": "8738599e6c283b9ff26e5bf77979a4e1c8bba87a4319d50f36637d2722e1af77"
+    },
+    "warning_recheck/disagreement_warning_evaluation.json": {
+      "path": "analysis_results/phase2_closeout_20261013_01/warning_recheck/disagreement_warning_evaluation.json",
+      "sha256": "3bf28436ec98ce5b9214c91acd91ca0241033e535d293bd3bd733f16ff620bfd"
+    }
+  },
+  "tests": {
+    "tests_run": 621,
+    "passed": 619,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 2,
+    "seconds": 68.712,
+    "formal_five_video_e2e_enabled": true
+  },
+  "reviewed_baseline_evaluation": "COMPLETE",
+  "bounded_repair_delivery": "COMPLETE_WITH_KNOWN_LIMITATIONS",
+  "phase2_status": "NOT PASSED",
+  "automatic_accepted": false,
+  "phase3_started": false
+}

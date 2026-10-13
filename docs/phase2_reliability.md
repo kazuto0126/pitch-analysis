@@ -1,5 +1,10 @@
 # Phase 2 — Pitcher tracking and pose reliability
 
+2026-10-13 closeout: five-clip baseline review/evaluation and the authorized bounded repair delivery
+are COMPLETE WITH KNOWN LIMITATIONS; automatic reliability remains NOT PASSED.
+See the [current closeout](phase2_closeout_20261013.md) for the latest source-bound results and use limits.
+The baseline and provisional policy below remain historical and unchanged.
+
 2026-10-08 final outcome: **evaluation COMPLETE; automatic reliability NOT PASSED**.
 Canonical human GT is now5/5 reviewed; the initial blank-template snapshot below
 is historical. See [final report](phase2_final_report.md) for current results and

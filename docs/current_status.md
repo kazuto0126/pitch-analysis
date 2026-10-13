@@ -1,6 +1,6 @@
-# Current status — Phase 2 repair checkpoint; candidate intake isolated
+# Current status — Phase 2 baseline closeout; automatic release blocked
 
-Updated: 2026-10-12
+Updated: 2026-10-13
 
 **Phase 1 = PASSED.**
 **Phase 2 evaluation = COMPLETE; Phase 2 = NOT PASSED (automatic reliability degraded).**
@@ -10,7 +10,24 @@ reliability release. No new numeric acceptance bar, model, confidence gate,
 PitcherSelector, pose/tracking algorithm, interpolation or smoothing change.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-12 cross-clip disagreement warning repair (latest)
+## 2026-10-13 Phase 2 finite closeout (latest)
+
+[Closeout report](phase2_closeout_20261013.md), [source plan](evaluation_plans/phase2_closeout_20261013_01.json).
+Five-clip human review, baseline evaluation and the authorized bounded warning-repair delivery are
+**COMPLETE WITH KNOWN LIMITATIONS**. **Phase 2 acceptance remains NOT PASSED; automatic_accepted=false.**
+Reproduced all five reviewed-reliability/feature/cue artifacts exactly, plus the saved visible-XY assessment
+and latest sealed warning evaluation.592frames/3552focus-joint rows;manualXY1205visible/173notobservable/2uncertain.
+Reviewed unsmoothed2D feature eligibility remains elbow246/592,knee530/592;not numeric angle accuracy.
+Production screen across592frames remainsTP3/FN18/FP9/TN562;offline587nonseedtrial20/1/9/557 is not adopted.
+Remaining003/104,local-arm errors,occlusion and9major-targetFP remain explicit;no invented zero-FN or pass threshold.
+Fullsuite621run/619passed/0failed/0errors/2Windowslinkskips,68.712s,includingformal5E2E.
+Source protections374/62,formal5/raw/GT unchanged;handoffreader already authorized/completed,8candidatespending/unanalysed.
+005independentpeer event supplement remains separatepending;canonicaluncertain is valid and review5/5 complete.
+Output:`analysis_results/phase2_closeout_20261013_01/`,including machine-readable release status and full evidence.
+Stop at this closeout;noPhase3,noautomaticpromotion,newmodels or additional small warning rules.
+Later automatic-reliability changes require a concrete scope and acceptance agreement;no claim of stability or release.
+
+## 2026-10-12 cross-clip disagreement warning repair (previous)
 
 [Result](phase2_disagreement_warning_results_20261012.md), [frozen protocol](phase2_disagreement_warning_plan_20261012.md).
 Implemented an offline warning candidate using the other clips' finite non-seed torso-RMS minima sample maximum.

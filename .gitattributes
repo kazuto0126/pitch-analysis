@@ -65,3 +65,5 @@ scripts/evaluate_disagreement_warning.py text eol=lf
 tests/test_disagreement_warning*.py text eol=lf
 docs/phase2_disagreement_warning*.md text eol=lf
 docs/evaluation_plans/phase2_disagreement_warning*.json text eol=lf
+docs/phase2_closeout_*.md text eol=lf
+docs/evaluation_plans/phase2_closeout_*.json text eol=lf

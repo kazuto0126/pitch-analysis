@@ -1,4 +1,8 @@
-# Phase 2 最終評估
+> 2026-10-13：最新[Phase 2收尾報告](phase2_closeout_20261013.md)已納入後續核准的修復結果。
+> baseline／本次有限修復交付已收尾；自動可靠性仍NOT PASSED、未正式採用新警示。
+> 下文完整保留2026-10-08歷史評估，其交付接入待辦已由後續另行核准的讀取器完成。
+
+# Phase 2 最終評估（2026-10-08歷史紀錄）
 
 **Phase 2 evaluation = COMPLETE**
 **Phase 2 = NOT PASSED；automatic reliability = NOT PASSED**

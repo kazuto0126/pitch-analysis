@@ -1,0 +1,51 @@
+{
+  "status": "frozen_before_existing_evidence_closeout",
+  "client_date_local": "2026-10-13",
+  "prepared_at_utc": "2026-10-13T07:56:26.469781+00:00",
+  "scope": "Five-clip human-reviewed baseline and bounded offline warning research terminal assessment",
+  "phase2_acceptance": "NOT PASSED",
+  "automatic_accepted": false,
+  "new_inference_or_numeric_acceptance_policy": false,
+  "bindings": {
+    "historical_plan": {
+      "path": "docs/evaluation_plans/phase2_final_evaluation_20261008_02.json",
+      "sha256": "31d2d5814acb3c1121fb73a1be4e0b37ae47115e367ca73a204a20d20e34497f"
+    },
+    "historical_assessment": {
+      "path": "analysis_results/phase2_final_yamamoto_20261008_02/phase2_final_assessment.json",
+      "sha256": "db7abed43dfb3be4b8a81340cf6ee9c688611ca670cff73615e722f6745962b6"
+    },
+    "latest_warning_seal": {
+      "path": "docs/evaluation_plans/phase2_disagreement_warning_result_20261012_01.json",
+      "sha256": "a0922b5149597c5c039713dac1d664adfb56f6c2372adb20df033844510cd54e"
+    },
+    "warning_plan": {
+      "path": "docs/evaluation_plans/phase2_disagreement_warning_evaluation_20261012_01.json",
+      "sha256": "e66b7cefce48895ac84028708a89d169280284eb269a9a3882222794f26fed9f"
+    },
+    "warning_run": {
+      "path": "analysis_results/phase2_disagreement_warning_20261012_01/warnings/warning_run.json",
+      "sha256": "fa6119e479b77cc522a748fb5d78c5b2b5e8947482800d0d951605ac57f75e63"
+    },
+    "warning_evaluation": {
+      "path": "analysis_results/phase2_disagreement_warning_20261012_01/evaluation/disagreement_warning_evaluation.json",
+      "sha256": "3bf28436ec98ce5b9214c91acd91ca0241033e535d293bd3bd733f16ff620bfd"
+    },
+    "protected_inventory": {
+      "path": "docs/evaluation_plans/phase2_pose_mode_countercheck_20261009.json",
+      "sha256": "587d7df4e91e279262be408607c8bdc13d73b6f11c1a28e5f874ab0af3c3bb69"
+    },
+    "upstream_inventory": {
+      "path": "docs/evaluation_plans/phase2_assisted_roi_cohort_proposal_20261010.json",
+      "sha256": "d710bb07c10efa3f01af33d6ab2bef72e8452245715c9669d4cc973ef082aaa6"
+    },
+    "manual_xy": {
+      "path": "annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_42/pitch_003/manual_keypoints.json",
+      "sha256": "a970354b14f728d38af97336d6872900625c956e7a105f75ab9cdcff0aa77735"
+    },
+    "closeout_runner": {
+      "path": "analysis_results/phase2_closeout_20261013_01/closeout.py",
+      "sha256": "e06aa75f7808400ae565d9868a2e9f13194ec705c9c5182d336ee0b9cbd64a77"
+    }
+  }
+}
