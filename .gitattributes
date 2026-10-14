@@ -83,3 +83,7 @@ scripts/evaluate_chain_reliability.py text eol=lf
 tests/test_chain_reliability*.py text eol=lf
 docs/phase2_chain_reliability*.md text eol=lf
 docs/evaluation_plans/phase2_chain_reliability*.json text eol=lf
+scripts/assess_manual_feature_angles.py text eol=lf
+tests/test_manual_feature_angles.py text eol=lf
+docs/phase2_manual_angle_assessment*.md text eol=lf
+docs/evaluation_plans/phase2_manual_angle_assessment*.json text eol=lf

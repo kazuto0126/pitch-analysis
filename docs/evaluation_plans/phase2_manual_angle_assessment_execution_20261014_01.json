@@ -1,0 +1,80 @@
+{
+  "status": "frozen_before_manual_angle_assessment",
+  "client_date_local": "2026-10-14",
+  "frozen_at_utc": "2026-10-14T06:31:05.430525+00:00",
+  "policy": {
+    "scope": "existing_two_2d_angles_relative_to_visible_manual_reference",
+    "reference": "all_three_points_visible_finite_nondegenerate_source_pixels",
+    "include_frame_zero": true,
+    "streams": [
+      "raw_unfiltered",
+      "processed_base",
+      "feature_interpolated",
+      "feature_smoothed"
+    ],
+    "numerical_tie_tolerance_deg_not_accuracy_gate": 1e-08,
+    "percentile": "linear_interpolation_at_(n-1)*p",
+    "held_frames_retained": true,
+    "coordinate_correction": false,
+    "new_warning": false,
+    "production_adoption": false,
+    "pose_inference_calls": 0,
+    "tracker_inference_calls": 0,
+    "three_dimensional_claim": false
+  },
+  "code": {
+    "evaluator": {
+      "path": "scripts/assess_manual_feature_angles.py",
+      "sha256": "04c35e8b048c4db8f1a61cdbc4e43b79d241f9669acd2d14e360173dd9ee4911"
+    },
+    "tests": {
+      "path": "tests/test_manual_feature_angles.py",
+      "sha256": "256d79c1b12e921c56d5697df5df5e98182d72fe5a284c1d8c2bdc88f67b280c"
+    },
+    "parent_helpers": {
+      "path": "scripts/calibrate_joint_reliability.py",
+      "sha256": "c4b64c0f62506b9d45144a63ede4daf7b0e6590a7d34b70b091fb07cd3dc29b2"
+    },
+    "feature_helpers": {
+      "path": "scripts/export_reviewed_feature_quality.py",
+      "sha256": "740620802e13dbb6e36f8f06d71318f8a554bd83b73be1bd7db628efcc69a0ee"
+    },
+    "geometry": {
+      "path": "src/pitch_analysis/geometry.py",
+      "sha256": "6a01f5707ed57c7c0b2d4c386d82a6e814b075c1025609cf3d8a0acfb41137f1"
+    },
+    "manual_validator": {
+      "path": "src/pitch_analysis/manual_keypoints.py",
+      "sha256": "31e219dcec595f5bda943ed6456c65ec27632b7e2a401322c44ab0b969473066"
+    },
+    "native_helpers": {
+      "path": "scripts/check_movenet_compatibility.py",
+      "sha256": "f3b2ff2864d35ae37e7623c99fccba5689a3ee111b79658bed3b272f334b5fa9"
+    },
+    "study_plan": {
+      "path": "docs/phase2_manual_angle_assessment_plan_20261014.md",
+      "sha256": "97418baf6c72f796ebffe94fb7281eb374be37757e756e15159a1ec88cd49bb0"
+    },
+    "freeze_helper": {
+      "path": "analysis_results/phase2_manual_angle_assessment_20261014_01/freeze.py",
+      "sha256": "8b5af119f2b9f1801894070d19bb45f421eb7c6c498b97b31c8eb4a2d4c98aa5"
+    }
+  },
+  "target_pitch_id": "pitch_003",
+  "parent_fit_plan": {
+    "path": "docs/evaluation_plans/phase2_supervised_joint_reference_fit_20261013_01.json",
+    "sha256": "b578a6fd8d79c27d6bc102cd04f7b78eb4a51d5ca70d5152df09eb5e9953b3d7"
+  },
+  "manual_coordinates": {
+    "path": "annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_42/pitch_003/manual_keypoints.json",
+    "sha256": "a970354b14f728d38af97336d6872900625c956e7a105f75ab9cdcff0aa77735"
+  },
+  "reviewed_feature_quality": {
+    "path": "analysis_results/phase2_reviewed_features_20261007_02/pitch_003/reviewed_feature_quality.json",
+    "sha256": "5f5ad0f62e9df579344da77db53dbfcedd943bd53af16db3b87d6f9a14773af8"
+  },
+  "pose_inference_budget": 0,
+  "tracker_inference_budget": 0,
+  "production_adoption": false,
+  "output_directory": "analysis_results/phase2_manual_angle_assessment_20261014_01/assessment"
+}

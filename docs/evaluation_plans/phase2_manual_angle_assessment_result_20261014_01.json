@@ -1,0 +1,125 @@
+{
+  "status": "sealed_visible_manual_angle_assessment_with_known_limits",
+  "client_date_local": "2026-10-14",
+  "execution_plan": {
+    "path": "docs/evaluation_plans/phase2_manual_angle_assessment_execution_20261014_01.json",
+    "sha256": "e813d085bd1417d083bcde74fae6f52a8534764eab0aa5a081ac2f9b677143b9"
+  },
+  "evaluator_code": {
+    "evaluator": {
+      "path": "scripts/assess_manual_feature_angles.py",
+      "sha256": "04c35e8b048c4db8f1a61cdbc4e43b79d241f9669acd2d14e360173dd9ee4911"
+    },
+    "tests": {
+      "path": "tests/test_manual_feature_angles.py",
+      "sha256": "256d79c1b12e921c56d5697df5df5e98182d72fe5a284c1d8c2bdc88f67b280c"
+    },
+    "parent_helpers": {
+      "path": "scripts/calibrate_joint_reliability.py",
+      "sha256": "c4b64c0f62506b9d45144a63ede4daf7b0e6590a7d34b70b091fb07cd3dc29b2"
+    },
+    "feature_helpers": {
+      "path": "scripts/export_reviewed_feature_quality.py",
+      "sha256": "740620802e13dbb6e36f8f06d71318f8a554bd83b73be1bd7db628efcc69a0ee"
+    },
+    "geometry": {
+      "path": "src/pitch_analysis/geometry.py",
+      "sha256": "6a01f5707ed57c7c0b2d4c386d82a6e814b075c1025609cf3d8a0acfb41137f1"
+    },
+    "manual_validator": {
+      "path": "src/pitch_analysis/manual_keypoints.py",
+      "sha256": "31e219dcec595f5bda943ed6456c65ec27632b7e2a401322c44ab0b969473066"
+    },
+    "native_helpers": {
+      "path": "scripts/check_movenet_compatibility.py",
+      "sha256": "f3b2ff2864d35ae37e7623c99fccba5689a3ee111b79658bed3b272f334b5fa9"
+    },
+    "study_plan": {
+      "path": "docs/phase2_manual_angle_assessment_plan_20261014.md",
+      "sha256": "97418baf6c72f796ebffe94fb7281eb374be37757e756e15159a1ec88cd49bb0"
+    },
+    "freeze_helper": {
+      "path": "analysis_results/phase2_manual_angle_assessment_20261014_01/freeze.py",
+      "sha256": "8b5af119f2b9f1801894070d19bb45f421eb7c6c498b97b31c8eb4a2d4c98aa5"
+    }
+  },
+  "result_document": {
+    "path": "docs/phase2_manual_angle_assessment_results_20261014.md",
+    "sha256": "d722178d088afd337bb0790b540ca7c96b31212797b5c9974dab572641d46cc7"
+  },
+  "prior_chain_result": {
+    "path": "docs/evaluation_plans/phase2_chain_reliability_result_20261014_01.json",
+    "sha256": "0593a42b89d24457e54bbb3bc4142eda1e303e21b7a6c9ca1e94f25e308e9d0a"
+  },
+  "outputs": {
+    "assessment/angle_assessment.json": {
+      "path": "analysis_results/phase2_manual_angle_assessment_20261014_01/assessment/angle_assessment.json",
+      "sha256": "1fb519254671682ad9e94c41d66a621894f61554cab267911fad1c423e019805"
+    },
+    "assessment/per_frame_angle_comparison.json": {
+      "path": "analysis_results/phase2_manual_angle_assessment_20261014_01/assessment/per_frame_angle_comparison.json",
+      "sha256": "7aa2784e64b42bafac1eb38bb2a9830910244790a087db0b2229836f34678f91"
+    },
+    "audit_helper.py": {
+      "path": "analysis_results/phase2_manual_angle_assessment_20261014_01/audit_helper.py",
+      "sha256": "313466180ab1371cfb9c4b8e57dbc29bac6a382e12d774b0e493c0797cc07a28"
+    },
+    "before_assessment_audit.json": {
+      "path": "analysis_results/phase2_manual_angle_assessment_20261014_01/before_assessment_audit.json",
+      "sha256": "afef5badb23182ff4080b863547b50957693e7c2776e9eb432261a2f87a4eea6"
+    },
+    "figures/inspection.json": {
+      "path": "analysis_results/phase2_manual_angle_assessment_20261014_01/figures/inspection.json",
+      "sha256": "36962eed8facc7fe41360dae669eb4abe1a7aaf8a9fec09b73a72eae57390c3f"
+    },
+    "figures/manifest.json": {
+      "path": "analysis_results/phase2_manual_angle_assessment_20261014_01/figures/manifest.json",
+      "sha256": "d23a2b2fca8a8ecfbf9ce9b0b84ff69c0be05649034f57d0fd46f2110715c75c"
+    },
+    "figures/manual_angle_examples.png": {
+      "path": "analysis_results/phase2_manual_angle_assessment_20261014_01/figures/manual_angle_examples.png",
+      "sha256": "4cb7cbad70e3369dd1af7194596dfdb5bb0218ffe2ac2df6483f3b18f046131e"
+    },
+    "figures/manual_angle_timeline.png": {
+      "path": "analysis_results/phase2_manual_angle_assessment_20261014_01/figures/manual_angle_timeline.png",
+      "sha256": "0a58a0bae29c4da093443acdf45aebb442038524b684375bed73052998116475"
+    },
+    "final_audit.json": {
+      "path": "analysis_results/phase2_manual_angle_assessment_20261014_01/final_audit.json",
+      "sha256": "17096eed81032a0d636cf7447073d10aadc4884113b0fa2f33dbaa108056ce96"
+    },
+    "finalize.py": {
+      "path": "analysis_results/phase2_manual_angle_assessment_20261014_01/finalize.py",
+      "sha256": "713681aa32eb6ecaf1f2750ff74498bc1abeb1ccca29fe2ca1d25f53b9599501"
+    },
+    "freeze.py": {
+      "path": "analysis_results/phase2_manual_angle_assessment_20261014_01/freeze.py",
+      "sha256": "8b5af119f2b9f1801894070d19bb45f421eb7c6c498b97b31c8eb4a2d4c98aa5"
+    },
+    "full_test_suite.log": {
+      "path": "analysis_results/phase2_manual_angle_assessment_20261014_01/full_test_suite.log",
+      "sha256": "42612c18430f3754cf80fdd08e858d4b03619ab2a56996eb29524d1860c4a681"
+    },
+    "independent_audit.json": {
+      "path": "analysis_results/phase2_manual_angle_assessment_20261014_01/independent_audit.json",
+      "sha256": "2ca8afa07d82b310e88a73af5d7abf3f5636d29b7407dc4d991346188deb9f69"
+    },
+    "make_figures.py": {
+      "path": "analysis_results/phase2_manual_angle_assessment_20261014_01/make_figures.py",
+      "sha256": "1c1fe94b352c7e7aace3b741e68298c22ecc81036740dda6c1baf41e9ac42372"
+    }
+  },
+  "tests": {
+    "run": 709,
+    "passed": 707,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 2,
+    "seconds": 53.189,
+    "formal_five_e2e": true,
+    "log_sha256": "42612c18430f3754cf80fdd08e858d4b03619ab2a56996eb29524d1860c4a681"
+  },
+  "production_adoption": false,
+  "original_use_restrictions_changed": false,
+  "phase2_status": "NOT PASSED"
+}

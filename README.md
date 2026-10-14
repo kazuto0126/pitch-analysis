@@ -55,9 +55,13 @@ Phase 2 baseline與本次有限修復已收尾：**evaluation = COMPLETE WITH KN
 原正式流程與局部肘腕限制仍保留；沒有開始Phase3。
 使用者隨後要求繼續，[六關節局部警示試驗](docs/phase2_local_joint_warnings_results_20261013.md)
 已完成並維持不採用：肘腕涵蓋不足，局部定性GT與可見人工XY的評估用途需分開；完整測試648 passed、2 skipped。
-最新[人工參考校準](docs/phase2_supervised_joint_reference_results_20261013.md)完成五球交叉驗證，
+[人工參考校準](docs/phase2_supervised_joint_reference_results_20261013.md)完成五球交叉驗證，
 肘 TP/FN/FP 為8/76/1、腕8/63/1；有有限增益，漏報仍多、未正式採用，Phase 2仍NOT PASSED。
 完整測試669 passed、0 failed、2 skipped，包含正式五球E2E；正式核心、raw與GT保持原樣。
+最新[人工座標角度評估](docs/phase2_manual_angle_assessment_results_20261014.md)補上003的數值誤差：
+processed肘50可比格MAE25.0452°、膝106格MAE7.1532°，遮擋不補角度；其他四球未套用這些數字。
+定性eligible不代表數值準確；[肢體鏈幾何試驗](docs/phase2_chain_reliability_results_20261014.md)0新增TP、不採用。
+最新完整測試707 passed、0 failed、2 skipped，Phase2仍NOT PASSED、未進Phase3。
 使用者另核准的 [交付資料夾候選讀取器](docs/handoff_reader.md) 已接入 contract v2：
 驗 hash、完整解碼、分數 FPS 逐格時間與去重，保存本地待人工覆核候選。
 它不自動分析、轉換正式 metadata 或取代山本正式五球，也不改 Phase 2 核心。

@@ -1,4 +1,4 @@
-# Current status — Phase 2 supervised calibration evaluated; automatic release blocked
+# Current status — Phase 2 manual angle errors quantified; automatic release blocked
 
 Updated: 2026-10-14
 
@@ -10,7 +10,32 @@ Automatic reliability remains unaccepted. Existing acceptance thresholds, confid
 gates, PitcherSelector, pose/tracking, interpolation and smoothing are unchanged.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-14 supervised joint reference calibration (latest; not adopted)
+## 2026-10-14 visible manual reference angle assessment (latest)
+
+[Result](phase2_manual_angle_assessment_results_20261014.md). Evaluated two existing 2D features
+against reviewed visible manual coordinates for all 115 frames of pitch_003. Elbow reference
+exists on 51 frames, base pairs on 50 (MAE25.0452 degrees); knee reference exists on 114,
+base pairs on 106 (MAE7.1532). Missing references and predictions are explicit; other four
+clips are not assessed against coordinates here. No hidden points or angles reconstructed.
+
+Existing qualitatively eligible subsets still show elbow MAE15.9595 on 37 comparable frames
+and knee MAE3.4391 on 86. These are relative-to-manual errors, with unquantified annotation
+uncertainty. Same-frame base-to-smoothed elbow MAE25.0452→27.0793 (50frames); knee
+7.1532→7.1483 (106frames). Different stream denominators are not treated as improvement.
+Original GT, eligibility and all major use holds remain unchanged; no binary accuracy cutoff.
+
+The separate [chain geometry trial](phase2_chain_reliability_results_20261014.md) produced
+0 added TP and 9 primary-target FP; rejected. Chain cues are not joint/major improvements.
+Full suite709run/707passed/0failed/0errors/2Windowslinkskips,53.189s,includingformal5E2E;
+38tests added across chain and angle work. Independent recomputation of115frames/230feature
+rows/all summaries and paired strata agrees; max floating difference6.97e-12 degree.
+374protected/62upstream unchanged; formal5/raw/GT/core/gates unchanged, original592MoveNet
+attempts unchanged,8handoff candidate/pending/unanalysed. Phase2NOTPASSED; noPhase3.
+Next: use visible-reference errors to locate the reliability gap and clarify qualitative
+eligibility versus numeric feature error; do not add more disproven ratio rules.
+Output:`analysis_results/phase2_manual_angle_assessment_20261014_01/`.
+
+## 2026-10-14 supervised joint reference calibration (previous; not adopted)
 
 [Result](phase2_supervised_joint_reference_results_20261013.md),
 [frozen protocol](phase2_supervised_joint_reference_plan_20261013.md).
