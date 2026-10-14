@@ -1,0 +1,198 @@
+{
+  "status": "sealed_chain_trial_rejected_no_added_true_positives",
+  "client_date_local": "2026-10-14",
+  "stage_plans": {
+    "fit": {
+      "path": "docs/evaluation_plans/phase2_chain_reliability_fit_20261014_01.json",
+      "sha256": "a0d9426d739ce10ce967b1d6c6ee3a9e5bfcb7959f070b77d68620cd18b9727f"
+    },
+    "apply": {
+      "path": "docs/evaluation_plans/phase2_chain_reliability_apply_20261014_01.json",
+      "sha256": "7d62b45b611d9347922b02e419705508cdf0c0da20a06fb99d476bdc61cf306f"
+    },
+    "evaluation": {
+      "path": "docs/evaluation_plans/phase2_chain_reliability_evaluation_20261014_01.json",
+      "sha256": "a8db62e0e7cb0a4095d5728ddfb189775b6cb368556e09ddec115e6ac10712b8"
+    }
+  },
+  "fit_code": {
+    "producer_code": {
+      "path": "scripts/measure_chain_reliability.py",
+      "sha256": "2cf5fbe982173918cac1cd13860d6b7065ec99b08e26b16a82f1a39b337e7c44"
+    },
+    "producer_tests": {
+      "path": "tests/test_chain_reliability.py",
+      "sha256": "1ea7eeb28af31acc3c5bb1fc18af090d35eb7a6494644ec8046ff7a949e6b0db"
+    },
+    "parent_helpers": {
+      "path": "scripts/calibrate_joint_reliability.py",
+      "sha256": "c4b64c0f62506b9d45144a63ede4daf7b0e6590a7d34b70b091fb07cd3dc29b2"
+    },
+    "native_helpers": {
+      "path": "scripts/check_movenet_compatibility.py",
+      "sha256": "f3b2ff2864d35ae37e7623c99fccba5689a3ee111b79658bed3b272f334b5fa9"
+    },
+    "study_plan": {
+      "path": "docs/phase2_chain_reliability_plan_20261014.md",
+      "sha256": "0d343b1085ff09b637635629ca083517eb8a9bfaf1d034d5f3a04100055e119f"
+    },
+    "freeze_helper": {
+      "path": "analysis_results/phase2_chain_reliability_20261014_01/freeze.py",
+      "sha256": "f20d608854b4ac32655d3c89772ddd67db15bd8c1fb52b8e7bf759ae6b92acc4"
+    },
+    "evaluator_snapshot": {
+      "path": "scripts/evaluate_chain_reliability.py",
+      "sha256": "6e354527209e97ab5b112ef436434267ae0a12c8c8e9a19c11e4001fba4049fd"
+    },
+    "evaluator_test_snapshot": {
+      "path": "tests/test_chain_reliability_evaluation.py",
+      "sha256": "8b926c18f18796ac2b42309f3bad0e88b469d629d9287a07263a2c790bff95ec"
+    }
+  },
+  "evaluator_code": {
+    "evaluator": {
+      "path": "scripts/evaluate_chain_reliability.py",
+      "sha256": "6e354527209e97ab5b112ef436434267ae0a12c8c8e9a19c11e4001fba4049fd"
+    },
+    "evaluator_tests": {
+      "path": "tests/test_chain_reliability_evaluation.py",
+      "sha256": "8b926c18f18796ac2b42309f3bad0e88b469d629d9287a07263a2c790bff95ec"
+    },
+    "label_helpers": {
+      "path": "scripts/evaluate_joint_disagreement.py",
+      "sha256": "26c86c26e71cf1360770ee7f22c87190a08306be8ac71397f850a446bf187550"
+    },
+    "previous_receipt_helpers": {
+      "path": "scripts/evaluate_supervised_joint_warnings.py",
+      "sha256": "221537c72be8f5c01e8978ffdb29c21a330614404607bd71b4f98c41714118b6"
+    },
+    "ground_truth": {
+      "path": "src/pitch_analysis/ground_truth.py",
+      "sha256": "8d4f781726762492787c4a8cf1342b225d44911d86f518660f469f550d489603"
+    },
+    "native_helpers": {
+      "path": "scripts/check_movenet_compatibility.py",
+      "sha256": "f3b2ff2864d35ae37e7623c99fccba5689a3ee111b79658bed3b272f334b5fa9"
+    },
+    "study_plan": {
+      "path": "docs/phase2_chain_reliability_plan_20261014.md",
+      "sha256": "0d343b1085ff09b637635629ca083517eb8a9bfaf1d034d5f3a04100055e119f"
+    },
+    "freeze_helper": {
+      "path": "analysis_results/phase2_chain_reliability_20261014_01/freeze.py",
+      "sha256": "f20d608854b4ac32655d3c89772ddd67db15bd8c1fb52b8e7bf759ae6b92acc4"
+    }
+  },
+  "result_document": {
+    "path": "docs/phase2_chain_reliability_results_20261014.md",
+    "sha256": "44708e3c99291d374d5bcecc94464c8dc38829a98bd89d74244a00dd94581ab1"
+  },
+  "outputs": {
+    "audit_helper.py": {
+      "path": "analysis_results/phase2_chain_reliability_20261014_01/audit_helper.py",
+      "sha256": "99a8a77053d34644c4d8ebc68f230b9112185fdfac14efd762502baac6c086ce"
+    },
+    "before_apply_audit.json": {
+      "path": "analysis_results/phase2_chain_reliability_20261014_01/before_apply_audit.json",
+      "sha256": "66e5915b81fb9f97107a8027cb05806f1b595b8a5f4a435822693b279a9fbc1a"
+    },
+    "before_fit_audit.json": {
+      "path": "analysis_results/phase2_chain_reliability_20261014_01/before_fit_audit.json",
+      "sha256": "c01babbec0d998e24a83f41ca229dc9e1dd505fb73cebdf78eb5204b7db4951d"
+    },
+    "calibration/chain_reference.json": {
+      "path": "analysis_results/phase2_chain_reliability_20261014_01/calibration/chain_reference.json",
+      "sha256": "c36d4e81ccd1cb4a7bfd916be88f909308dcb159c965799c0e2506123c2b097d"
+    },
+    "calibration/fit_run.json": {
+      "path": "analysis_results/phase2_chain_reliability_20261014_01/calibration/fit_run.json",
+      "sha256": "a13b6b1b33271129bb58f4eb2b6b416d6a0e3c9ffe4b4296c52c742e2100f8e5"
+    },
+    "evaluation/chain_warning_evaluation.json": {
+      "path": "analysis_results/phase2_chain_reliability_20261014_01/evaluation/chain_warning_evaluation.json",
+      "sha256": "bc989f2b11b9612bb50111f378688fc854ee2e7a7a35b4a3b67d7464f733d8a3"
+    },
+    "evaluation/per_frame_chain_evaluation.json": {
+      "path": "analysis_results/phase2_chain_reliability_20261014_01/evaluation/per_frame_chain_evaluation.json",
+      "sha256": "dfd61c6f9e9b00e86c814b9182695fa7e0b54fd3b9406c4fb8ae4a31dfc3d84b"
+    },
+    "figures/chain_cue_comparison.png": {
+      "path": "analysis_results/phase2_chain_reliability_20261014_01/figures/chain_cue_comparison.png",
+      "sha256": "9181c4efbeb66314d1ae655b7f1a624d73a683bc3299b3ea2f1578734393b14e"
+    },
+    "figures/five_clip_chain_timelines.png": {
+      "path": "analysis_results/phase2_chain_reliability_20261014_01/figures/five_clip_chain_timelines.png",
+      "sha256": "87d0581f6ff2bd19c86eab45fc87715d6c9a0e019d9dcda88d35e22323f90763"
+    },
+    "figures/inspection.json": {
+      "path": "analysis_results/phase2_chain_reliability_20261014_01/figures/inspection.json",
+      "sha256": "c5529baaffeddf9b4768d23ab39cad614f7369bd49146f7c8618c01bbbfce1f8"
+    },
+    "figures/manifest.json": {
+      "path": "analysis_results/phase2_chain_reliability_20261014_01/figures/manifest.json",
+      "sha256": "2d3abb4186f2019d65d07e816e3c8c53a935f6337a915271880b5fb51403a187"
+    },
+    "final_audit.json": {
+      "path": "analysis_results/phase2_chain_reliability_20261014_01/final_audit.json",
+      "sha256": "2f0b7f431156b1f9551d09522a2cdf1a6db8c2b29756d30fa23de4ffe15e1aef"
+    },
+    "finalize.py": {
+      "path": "analysis_results/phase2_chain_reliability_20261014_01/finalize.py",
+      "sha256": "6e90734501b8ae38aa2b9aca7ef45478bc4ae8d8161ea8a72a2fbd94dfcf8348"
+    },
+    "freeze.py": {
+      "path": "analysis_results/phase2_chain_reliability_20261014_01/freeze.py",
+      "sha256": "f20d608854b4ac32655d3c89772ddd67db15bd8c1fb52b8e7bf759ae6b92acc4"
+    },
+    "full_test_suite.log": {
+      "path": "analysis_results/phase2_chain_reliability_20261014_01/full_test_suite.log",
+      "sha256": "d7a401628d736e54da1a23432bf3ae50edd953b503303cad28170ba0ea190209"
+    },
+    "independent_audit.json": {
+      "path": "analysis_results/phase2_chain_reliability_20261014_01/independent_audit.json",
+      "sha256": "0c8e93699f7b41e8c2163f10c79d867fb1b84aff860fab85195a2cf7445e9435"
+    },
+    "make_figures.py": {
+      "path": "analysis_results/phase2_chain_reliability_20261014_01/make_figures.py",
+      "sha256": "ae097e63f24d702020465b2319422a99c782cc3fb3deeaae0a08b2cbf33e2158"
+    },
+    "warnings/chain_warning_run.json": {
+      "path": "analysis_results/phase2_chain_reliability_20261014_01/warnings/chain_warning_run.json",
+      "sha256": "34f6a3796662797d33141e12107a5288b906d59e81f93cd7fa15c2dfe9d55913"
+    },
+    "warnings/pitch_001.json": {
+      "path": "analysis_results/phase2_chain_reliability_20261014_01/warnings/pitch_001.json",
+      "sha256": "66b7c938566962fdcb1ce7ae581901e2a60c9c53a316781a6385a56217b7e9a6"
+    },
+    "warnings/pitch_002.json": {
+      "path": "analysis_results/phase2_chain_reliability_20261014_01/warnings/pitch_002.json",
+      "sha256": "1efd5d0bc2c80b11411b1520a6da1365af78c30547b891e50cb8c9e23fc9d0cb"
+    },
+    "warnings/pitch_003.json": {
+      "path": "analysis_results/phase2_chain_reliability_20261014_01/warnings/pitch_003.json",
+      "sha256": "b1133edf341e96c43255894ae1a04c8d610be48f1d54339cfa2e608a31c3303a"
+    },
+    "warnings/pitch_004.json": {
+      "path": "analysis_results/phase2_chain_reliability_20261014_01/warnings/pitch_004.json",
+      "sha256": "b01fff7c604fe30af224e01b82c60b1ba1976f28229ae9e2d9aadd1abd7d0b76"
+    },
+    "warnings/pitch_005.json": {
+      "path": "analysis_results/phase2_chain_reliability_20261014_01/warnings/pitch_005.json",
+      "sha256": "4e8dc4154df1ff39f8e67c3e79fa535195b0c34a83376efc6be3a5bc36d24df8"
+    }
+  },
+  "tests": {
+    "run": 699,
+    "passed": 697,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 2,
+    "seconds": 59.79,
+    "formal_five_e2e": true,
+    "log_sha256": "d7a401628d736e54da1a23432bf3ae50edd953b503303cad28170ba0ea190209"
+  },
+  "production_adoption": false,
+  "major_warning_generated": false,
+  "joint_warning_generated": false,
+  "phase2_status": "NOT PASSED"
+}

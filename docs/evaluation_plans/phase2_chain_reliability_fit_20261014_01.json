@@ -1,0 +1,117 @@
+{
+  "client_date_local": "2026-10-14",
+  "frozen_at_utc": "2026-10-14T01:30:47.808844+00:00",
+  "policy": {
+    "scope": "raw_2d_chain_relative_stretch_not_joint_major_identity_or_occlusion",
+    "chains": {
+      "arm_chain": [
+        "throwing_shoulder",
+        "throwing_elbow",
+        "throwing_wrist"
+      ],
+      "lead_leg_chain": [
+        "lead_hip",
+        "lead_knee",
+        "lead_ankle"
+      ]
+    },
+    "anchors": [
+      "throwing_shoulder",
+      "lead_hip"
+    ],
+    "feature": "sum_two_raw_source_pixel_segment_lengths_divided_by_same_frame_anchor_distance",
+    "calibration": "all_unique_dependencies_existing_reviewed_raw_observation_other_clips_non_seed_only",
+    "bound": "maximum_finite_eligible_reference_ratio_strict_exceedance_only",
+    "no_lower_bound": true,
+    "positive_denominator_floor_or_clamp": null,
+    "native_coordinates_or_scores_used_by_feature": false,
+    "query_human_labels_in_own_reference": false,
+    "application_reads_annotations": false,
+    "within_range_means_reliable": false,
+    "coordinate_correction": false,
+    "temporal_expansion": false,
+    "joint_warning_generated": false,
+    "major_warning_generated": false,
+    "production_adoption": false,
+    "validation_scope": "previously_reviewed_development_cohort_not_true_bone_length_or_generalization"
+  },
+  "code": {
+    "producer_code": {
+      "path": "scripts/measure_chain_reliability.py",
+      "sha256": "2cf5fbe982173918cac1cd13860d6b7065ec99b08e26b16a82f1a39b337e7c44"
+    },
+    "producer_tests": {
+      "path": "tests/test_chain_reliability.py",
+      "sha256": "1ea7eeb28af31acc3c5bb1fc18af090d35eb7a6494644ec8046ff7a949e6b0db"
+    },
+    "parent_helpers": {
+      "path": "scripts/calibrate_joint_reliability.py",
+      "sha256": "c4b64c0f62506b9d45144a63ede4daf7b0e6590a7d34b70b091fb07cd3dc29b2"
+    },
+    "native_helpers": {
+      "path": "scripts/check_movenet_compatibility.py",
+      "sha256": "f3b2ff2864d35ae37e7623c99fccba5689a3ee111b79658bed3b272f334b5fa9"
+    },
+    "study_plan": {
+      "path": "docs/phase2_chain_reliability_plan_20261014.md",
+      "sha256": "0d343b1085ff09b637635629ca083517eb8a9bfaf1d034d5f3a04100055e119f"
+    },
+    "freeze_helper": {
+      "path": "analysis_results/phase2_chain_reliability_20261014_01/freeze.py",
+      "sha256": "f20d608854b4ac32655d3c89772ddd67db15bd8c1fb52b8e7bf759ae6b92acc4"
+    },
+    "evaluator_snapshot": {
+      "path": "scripts/evaluate_chain_reliability.py",
+      "sha256": "6e354527209e97ab5b112ef436434267ae0a12c8c8e9a19c11e4001fba4049fd"
+    },
+    "evaluator_test_snapshot": {
+      "path": "tests/test_chain_reliability_evaluation.py",
+      "sha256": "8b926c18f18796ac2b42309f3bad0e88b469d629d9287a07263a2c790bff95ec"
+    }
+  },
+  "parent_apply_plan": {
+    "path": "docs/evaluation_plans/phase2_supervised_joint_reference_apply_20261013_01.json",
+    "sha256": "313c1e39f3e6a95ce9b7af7e9faca2c4153808448e83ce10da52e0b90f08fa12"
+  },
+  "source_frames": 592,
+  "non_seed_frames": 587,
+  "pose_inference_budget": 0,
+  "tracker_inference_budget": 0,
+  "production_adoption": false,
+  "major_warning_generated": false,
+  "joint_warning_generated": false,
+  "supervised_calibration_used": true,
+  "human_training_inputs": [
+    {
+      "path": "analysis_results/phase2_yamamoto_20260925_01/ground_truth/pitch_001/ground_truth.json",
+      "sha256": "0efe2f4c63417e1f5744cec5fac7d375e0a0ec5060c870a36cec720a7a4b8d81",
+      "pitch_id": "pitch_001"
+    },
+    {
+      "path": "analysis_results/phase2_yamamoto_20260925_01/ground_truth/pitch_002/ground_truth.json",
+      "sha256": "2b682738812d78ef433027b7002ed3787d022eb288453ed157d91eaca74651c7",
+      "pitch_id": "pitch_002"
+    },
+    {
+      "path": "analysis_results/phase2_yamamoto_20260925_01/ground_truth/pitch_003/ground_truth.json",
+      "sha256": "c839f5bd767c82d8be0506c15bb83a22230f4ea7bf83dc240c321bfa3876b240",
+      "pitch_id": "pitch_003"
+    },
+    {
+      "path": "analysis_results/phase2_yamamoto_20260925_01/ground_truth/pitch_004/ground_truth.json",
+      "sha256": "ee721b91ce340ce29899e40854712e2d5d9c770d09d154c913489f17f1b4408a",
+      "pitch_id": "pitch_004"
+    },
+    {
+      "path": "analysis_results/phase2_yamamoto_20260925_01/ground_truth/pitch_005/ground_truth.json",
+      "sha256": "885986e1e150bd343968898899cfda5f5457b55a0c244d4c95c3f68daf33a66a",
+      "pitch_id": "pitch_005"
+    }
+  ],
+  "status": "frozen_before_chain_reference_fit",
+  "parent_fit_plan": {
+    "path": "docs/evaluation_plans/phase2_supervised_joint_reference_fit_20261013_01.json",
+    "sha256": "b578a6fd8d79c27d6bc102cd04f7b78eb4a51d5ca70d5152df09eb5e9953b3d7"
+  },
+  "output_directory": "analysis_results/phase2_chain_reliability_20261014_01/calibration"
+}
