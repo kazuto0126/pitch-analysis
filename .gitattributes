@@ -87,3 +87,7 @@ scripts/assess_manual_feature_angles.py text eol=lf
 tests/test_manual_feature_angles.py text eol=lf
 docs/phase2_manual_angle_assessment*.md text eol=lf
 docs/evaluation_plans/phase2_manual_angle_assessment*.json text eol=lf
+scripts/diagnose_angle_reference_gaps.py text eol=lf
+tests/test_angle_reference_gaps.py text eol=lf
+docs/phase2_angle_reference_gaps*.md text eol=lf
+docs/evaluation_plans/phase2_angle_reference_gaps*.json text eol=lf

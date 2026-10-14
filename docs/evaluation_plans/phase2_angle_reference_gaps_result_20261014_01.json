@@ -1,0 +1,139 @@
+{
+  "status": "sealed_angle_reference_gap_diagnosis_with_known_limits",
+  "client_date_local": "2026-10-14",
+  "execution_plan": {
+    "path": "docs/evaluation_plans/phase2_angle_reference_gaps_execution_20261014_01.json",
+    "sha256": "2ce6a70bfdf868253114c7d421f2378bd796979306372e2725942a23960f4a26"
+  },
+  "diagnoser_code": {
+    "diagnoser": {
+      "path": "scripts/diagnose_angle_reference_gaps.py",
+      "sha256": "a6ba9fe39e380eb18db90707ffad56a50eda0554234320abf8afb07b66b7137f"
+    },
+    "tests": {
+      "path": "tests/test_angle_reference_gaps.py",
+      "sha256": "ae85aa988603ef889458849bab5dbe9bdf0e3c5193f7da7d29e339c9e7f1818a"
+    },
+    "previous_assessor": {
+      "path": "scripts/assess_manual_feature_angles.py",
+      "sha256": "04c35e8b048c4db8f1a61cdbc4e43b79d241f9669acd2d14e360173dd9ee4911"
+    },
+    "parent_helpers": {
+      "path": "scripts/calibrate_joint_reliability.py",
+      "sha256": "c4b64c0f62506b9d45144a63ede4daf7b0e6590a7d34b70b091fb07cd3dc29b2"
+    },
+    "feature_helpers": {
+      "path": "scripts/export_reviewed_feature_quality.py",
+      "sha256": "740620802e13dbb6e36f8f06d71318f8a554bd83b73be1bd7db628efcc69a0ee"
+    },
+    "geometry": {
+      "path": "src/pitch_analysis/geometry.py",
+      "sha256": "6a01f5707ed57c7c0b2d4c386d82a6e814b075c1025609cf3d8a0acfb41137f1"
+    },
+    "manual_validator": {
+      "path": "src/pitch_analysis/manual_keypoints.py",
+      "sha256": "31e219dcec595f5bda943ed6456c65ec27632b7e2a401322c44ab0b969473066"
+    },
+    "native_helpers": {
+      "path": "scripts/check_movenet_compatibility.py",
+      "sha256": "f3b2ff2864d35ae37e7623c99fccba5689a3ee111b79658bed3b272f334b5fa9"
+    },
+    "study_plan": {
+      "path": "docs/phase2_angle_reference_gaps_plan_20261014.md",
+      "sha256": "6afedd938b39e45759b60e98cd1260313c404d1271fee4deb36bfac1383d6187"
+    },
+    "freeze_helper": {
+      "path": "analysis_results/phase2_angle_reference_gaps_20261014_01/freeze.py",
+      "sha256": "530f6121c82988bb9150eeae17c44314a4f4260f433476eafd4287e229cc2453"
+    }
+  },
+  "result_document": {
+    "path": "docs/phase2_angle_reference_gaps_results_20261014.md",
+    "sha256": "bfa6972d5723ee3d077bc7bb86fff35ab1ea5d29b4117cac826cd466f4ff0b81"
+  },
+  "prior_assessment_result": {
+    "path": "docs/evaluation_plans/phase2_manual_angle_assessment_result_20261014_01.json",
+    "sha256": "5f7693a279b5e2fbf8c69e312b28ee588369a5db1fabb0d8eddfc22993d76671"
+  },
+  "outputs": {
+    "before_diagnosis_audit.json": {
+      "path": "analysis_results/phase2_angle_reference_gaps_20261014_01/before_diagnosis_audit.json",
+      "sha256": "a99a349ff3494cbc2bcea4e67b26d4f5f4e19d313a5fd10980618e75ef2d8d37"
+    },
+    "diagnosis/diagnosis_summary.json": {
+      "path": "analysis_results/phase2_angle_reference_gaps_20261014_01/diagnosis/diagnosis_summary.json",
+      "sha256": "9052dc2a17c375126920cd22044d0a9856534da1a8ad448ced04e60d60b62b6f"
+    },
+    "diagnosis/per_frame_angle_reference_gaps.json": {
+      "path": "analysis_results/phase2_angle_reference_gaps_20261014_01/diagnosis/per_frame_angle_reference_gaps.json",
+      "sha256": "d6f1a6f719fd32ed4ad3c0768d7e626e66431292d138b20205170de27d2d05a5"
+    },
+    "figures/all_frame_reference_gap_diagnosis.png": {
+      "path": "analysis_results/phase2_angle_reference_gaps_20261014_01/figures/all_frame_reference_gap_diagnosis.png",
+      "sha256": "2133106ef871b966bf2b83c7fcae0445a98941982a81e93a0c91aeb6f206d7eb"
+    },
+    "figures/inspection.json": {
+      "path": "analysis_results/phase2_angle_reference_gaps_20261014_01/figures/inspection.json",
+      "sha256": "50597d418c259652e27560c2e7e101eb912e5553e714efa4524f6aae853e069e"
+    },
+    "figures/manifest.json": {
+      "path": "analysis_results/phase2_angle_reference_gaps_20261014_01/figures/manifest.json",
+      "sha256": "bac48c7ed82fbe0649ccdc767ab400043a773fed65e78cbde8caf001410c4b3d"
+    },
+    "figures/predeclared_elbow_cases.png": {
+      "path": "analysis_results/phase2_angle_reference_gaps_20261014_01/figures/predeclared_elbow_cases.png",
+      "sha256": "bde0483c6578115c8b73224d6aa6b1bdcb37946e97d7dff16e04ccb9ff4f5b02"
+    },
+    "final_audit.json": {
+      "path": "analysis_results/phase2_angle_reference_gaps_20261014_01/final_audit.json",
+      "sha256": "e34a8f73a03f93047a69fa1f1a5277bd5abd1632495943ef3243eff6f0889516"
+    },
+    "finalize.py": {
+      "path": "analysis_results/phase2_angle_reference_gaps_20261014_01/finalize.py",
+      "sha256": "8443faf509015fc69c36917c909fb44535b4356f5ab10326e04163acb09d3265"
+    },
+    "freeze.py": {
+      "path": "analysis_results/phase2_angle_reference_gaps_20261014_01/freeze.py",
+      "sha256": "530f6121c82988bb9150eeae17c44314a4f4260f433476eafd4287e229cc2453"
+    },
+    "full_test_suite.log": {
+      "path": "analysis_results/phase2_angle_reference_gaps_20261014_01/full_test_suite.log",
+      "sha256": "19e8871e62c006b21b11b81c7442493e444f7af154ee57de0b54173f3b890033"
+    },
+    "independent_diagnosis_audit.json": {
+      "path": "analysis_results/phase2_angle_reference_gaps_20261014_01/independent_diagnosis_audit.json",
+      "sha256": "fbe15430103a6e728a0eda625aa5a4bae4b1162d91d31b9b3ef541fc92c79a0d"
+    },
+    "independent_diagnosis_audit_helper.py": {
+      "path": "analysis_results/phase2_angle_reference_gaps_20261014_01/independent_diagnosis_audit_helper.py",
+      "sha256": "bd6bce69042d383ca7cb82de875247672519e9be93e0ad47067ac1b41e26a76c"
+    },
+    "make_figures.py": {
+      "path": "analysis_results/phase2_angle_reference_gaps_20261014_01/make_figures.py",
+      "sha256": "bbab730869acffcc73a341b42151192c850f6e8ee4c74e10fd046b59552beb08"
+    },
+    "source_alignment_audit.json": {
+      "path": "analysis_results/phase2_angle_reference_gaps_20261014_01/source_alignment_audit.json",
+      "sha256": "3378967a40a2c876d5a1b8a63ca315d7631926dd319434e20f2398a13c9d9cba"
+    },
+    "source_alignment_audit_helper.py": {
+      "path": "analysis_results/phase2_angle_reference_gaps_20261014_01/source_alignment_audit_helper.py",
+      "sha256": "24b1a109629a72d07ada82053d0922846ca8717085476d4f84fbcb406164537f"
+    }
+  },
+  "tests": {
+    "run": 725,
+    "passed": 723,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 2,
+    "seconds": 56.164,
+    "formal_five_e2e": true,
+    "skip_reason": "Windows symbolic link creation unavailable",
+    "log_sha256": "19e8871e62c006b21b11b81c7442493e444f7af154ee57de0b54173f3b890033"
+  },
+  "production_adoption": false,
+  "coordinate_correction": false,
+  "original_use_restrictions_changed": false,
+  "phase2_status": "NOT PASSED"
+}

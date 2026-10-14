@@ -1,4 +1,4 @@
-# Current status — Phase 2 manual angle errors quantified; automatic release blocked
+# Current status — Phase 2 angle gaps source-aligned and decomposed; automatic release blocked
 
 Updated: 2026-10-14
 
@@ -10,7 +10,29 @@ Automatic reliability remains unaccepted. Existing acceptance thresholds, confid
 gates, PitcherSelector, pose/tracking, interpolation and smoothing are unchanged.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-14 visible manual reference angle assessment (latest)
+## 2026-10-14 angle gap source audit and decomposition (latest)
+
+[Result](phase2_angle_reference_gaps_results_20261014.md). All115 original decoded RGB frames,
+sealed NPZ, manual PNG/ZIP/review copies, names/hashes/timestamps and original XML coordinates
+agree; maximum time difference0ms. Same RIGHT-throwing/LEFT-lead mapping, no engineering
+frame/crop/pixel mismatch found. This does not adjudicate human or model point correctness.
+
+Preserved230feature rows:50elbow/106knee base/manual pairs,65/9unpaired,0degenerate hybrids.
+Eight subsets/six orders decompose relative-to-manual absolute error; negative contributions
+and all original holds remain. Predeclared69/105 wrist displacement46.9752/91.1373px;
+all three raw-to-processed distances0px on both frames. Wrist-reference contribution58.8904/
+96.8221degrees;105elbow−15.2376 shows interaction, not point correctness. Short projected rays
+amplify local sensitivity; derivatives are not annotation confidence intervals or a new gate.
+
+16newtests; full725run/723passed/0failed/0errors/2Windowslinkskips,56.164s,formal5E2E.
+374protected/62upstream unchanged; original592MoveNetattempts,8candidatepending/unanalysed,
+formal5/raw/GT/core/gates preserved.0newexperimentinference,0coordinatecorrection/adoption.
+Source and mathematical diagnosis complete; automatic reliability NOT PASSED, noPhase3.
+Next: compare already sealed tracked-ROI predictions against the same visible coordinate/angle
+reference, preserving common-pair and missing/gate/crop denominators; no more ratio-rule tuning.
+Output:`analysis_results/phase2_angle_reference_gaps_20261014_01/`.
+
+## 2026-10-14 visible manual reference angle assessment (previous)
 
 [Result](phase2_manual_angle_assessment_results_20261014.md). Evaluated two existing 2D features
 against reviewed visible manual coordinates for all 115 frames of pitch_003. Elbow reference
