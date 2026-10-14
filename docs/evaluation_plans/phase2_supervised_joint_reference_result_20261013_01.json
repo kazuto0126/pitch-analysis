@@ -1,0 +1,210 @@
+{
+  "status": "sealed_supervised_joint_reference_result_not_adopted",
+  "client_date_local": "2026-10-14",
+  "stage_plans": {
+    "fit": {
+      "path": "docs/evaluation_plans/phase2_supervised_joint_reference_fit_20261013_01.json",
+      "sha256": "b578a6fd8d79c27d6bc102cd04f7b78eb4a51d5ca70d5152df09eb5e9953b3d7"
+    },
+    "apply": {
+      "path": "docs/evaluation_plans/phase2_supervised_joint_reference_apply_20261013_01.json",
+      "sha256": "313c1e39f3e6a95ce9b7af7e9faca2c4153808448e83ce10da52e0b90f08fa12"
+    },
+    "evaluation": {
+      "path": "docs/evaluation_plans/phase2_supervised_joint_reference_evaluation_20261013_01.json",
+      "sha256": "649836daec262ced097a7ae1909619fcd5837a9ea38cb80d8aa6d24dbbf1ee52"
+    }
+  },
+  "fit_code": {
+    "producer_code": {
+      "path": "scripts/calibrate_joint_reliability.py",
+      "sha256": "c4b64c0f62506b9d45144a63ede4daf7b0e6590a7d34b70b091fb07cd3dc29b2"
+    },
+    "producer_tests": {
+      "path": "tests/test_joint_reliability_calibration.py",
+      "sha256": "ac5cce954f41b247476e64ad66356ba8719abd91ca1733eea45d4286d73e3e14"
+    },
+    "local_helpers": {
+      "path": "scripts/measure_local_joint_warnings.py",
+      "sha256": "4a89b9520054199efff5d745bd6a66094415d53c1b47fe0bf5b7790248b5c0b7"
+    },
+    "review_helpers": {
+      "path": "scripts/export_reviewed_reliability.py",
+      "sha256": "af30f6ab6c7352d0fe64b5d4919db63ad473699ad1b622c4b5839e3facdd9369"
+    },
+    "native_helpers": {
+      "path": "scripts/check_movenet_compatibility.py",
+      "sha256": "f3b2ff2864d35ae37e7623c99fccba5689a3ee111b79658bed3b272f334b5fa9"
+    },
+    "study_plan": {
+      "path": "docs/phase2_supervised_joint_reference_plan_20261013.md",
+      "sha256": "6a5c4f1f2943d99eeb8b1f5944974b2b3a967fb1acfb6efa59e9e56b4f1aa2b9"
+    },
+    "freeze_helper": {
+      "path": "analysis_results/phase2_supervised_joint_reference_20261013_01/freeze.py",
+      "sha256": "c5488bb17c36c7307e1dba5fd27acaa64fd63fdebc5fbefab6adf10e2c010c56"
+    },
+    "evaluator_snapshot": {
+      "path": "scripts/evaluate_supervised_joint_warnings.py",
+      "sha256": "221537c72be8f5c01e8978ffdb29c21a330614404607bd71b4f98c41714118b6"
+    },
+    "evaluator_test_snapshot": {
+      "path": "tests/test_supervised_joint_warning_evaluation.py",
+      "sha256": "e7800b0f162bd9a6c7bb5c14aaee5feb7550a810e57268c9ab12cf55da3d092e"
+    },
+    "local_evaluator_snapshot": {
+      "path": "scripts/evaluate_local_joint_warnings.py",
+      "sha256": "402379d9e7b74658afd645e899cbdec59dc3e76abc590b8efef0def984902fc9"
+    }
+  },
+  "evaluator_code": {
+    "evaluator": {
+      "path": "scripts/evaluate_supervised_joint_warnings.py",
+      "sha256": "221537c72be8f5c01e8978ffdb29c21a330614404607bd71b4f98c41714118b6"
+    },
+    "evaluator_tests": {
+      "path": "tests/test_supervised_joint_warning_evaluation.py",
+      "sha256": "e7800b0f162bd9a6c7bb5c14aaee5feb7550a810e57268c9ab12cf55da3d092e"
+    },
+    "local_evaluator": {
+      "path": "scripts/evaluate_local_joint_warnings.py",
+      "sha256": "402379d9e7b74658afd645e899cbdec59dc3e76abc590b8efef0def984902fc9"
+    },
+    "ground_truth": {
+      "path": "src/pitch_analysis/ground_truth.py",
+      "sha256": "8d4f781726762492787c4a8cf1342b225d44911d86f518660f469f550d489603"
+    },
+    "native_helpers": {
+      "path": "scripts/check_movenet_compatibility.py",
+      "sha256": "f3b2ff2864d35ae37e7623c99fccba5689a3ee111b79658bed3b272f334b5fa9"
+    },
+    "study_plan": {
+      "path": "docs/phase2_supervised_joint_reference_plan_20261013.md",
+      "sha256": "6a5c4f1f2943d99eeb8b1f5944974b2b3a967fb1acfb6efa59e9e56b4f1aa2b9"
+    },
+    "freeze_helper": {
+      "path": "analysis_results/phase2_supervised_joint_reference_20261013_01/freeze.py",
+      "sha256": "c5488bb17c36c7307e1dba5fd27acaa64fd63fdebc5fbefab6adf10e2c010c56"
+    }
+  },
+  "result_document": {
+    "path": "docs/phase2_supervised_joint_reference_results_20261013.md",
+    "sha256": "e2e69c7346b3734fbc2d60a860d644ae326eaa95d91f0c7587f4ad80944a7184"
+  },
+  "outputs": {
+    "audit_helper.py": {
+      "path": "analysis_results/phase2_supervised_joint_reference_20261013_01/audit_helper.py",
+      "sha256": "51e0e6be0b085bb286a910a8dc0eeed064deb5730b99574ccc805581bc0cbcba"
+    },
+    "before_apply_audit.json": {
+      "path": "analysis_results/phase2_supervised_joint_reference_20261013_01/before_apply_audit.json",
+      "sha256": "784e9373b99228305d1670d673639bad2e6aa272a99b68a2cf9ac7a9d1546365"
+    },
+    "before_fit_audit.json": {
+      "path": "analysis_results/phase2_supervised_joint_reference_20261013_01/before_fit_audit.json",
+      "sha256": "e64a37b42e9777f96dc230ef3331e02d0012368ca5b0b1f9e6452a10c83b7771"
+    },
+    "calibration/fit_run.json": {
+      "path": "analysis_results/phase2_supervised_joint_reference_20261013_01/calibration/fit_run.json",
+      "sha256": "db0fce4b2c5db10b7dacbc4a55317243b19ae2f80515fdb6f7b1321deac89c60"
+    },
+    "calibration/joint_reference.json": {
+      "path": "analysis_results/phase2_supervised_joint_reference_20261013_01/calibration/joint_reference.json",
+      "sha256": "248cad40b9943344a9cd321bc7300e07801c2714162ea3010b521fbd7a2ede79"
+    },
+    "diagnose_reference_limits.py": {
+      "path": "analysis_results/phase2_supervised_joint_reference_20261013_01/diagnose_reference_limits.py",
+      "sha256": "6030da5476909a14fac6dd71e40c50072e9a89dfc4e4db286035910163e2f845"
+    },
+    "evaluation/supervised_joint_warning_evaluation.json": {
+      "path": "analysis_results/phase2_supervised_joint_reference_20261013_01/evaluation/supervised_joint_warning_evaluation.json",
+      "sha256": "9a8ae0c0c66b081278ee3a1977478b00345ada7b38584d86cfaa4390534c9eb2"
+    },
+    "figures/inspection.json": {
+      "path": "analysis_results/phase2_supervised_joint_reference_20261013_01/figures/inspection.json",
+      "sha256": "e7e35141599ced68eab6d8a0075c3d20184229af681902e03ec5437d8df3a772"
+    },
+    "figures/manifest.json": {
+      "path": "analysis_results/phase2_supervised_joint_reference_20261013_01/figures/manifest.json",
+      "sha256": "1eabc8461a0953219d1d5cf2866814b291aacf2f53bba25488004fe9c6698a48"
+    },
+    "figures/reference_and_remaining_misses.png": {
+      "path": "analysis_results/phase2_supervised_joint_reference_20261013_01/figures/reference_and_remaining_misses.png",
+      "sha256": "115175367982da5d1d221ca58ed281d2a789bd1b2645caada4862614cc830b73"
+    },
+    "figures/six_joint_calibration_comparison.png": {
+      "path": "analysis_results/phase2_supervised_joint_reference_20261013_01/figures/six_joint_calibration_comparison.png",
+      "sha256": "77258c9420991120a2486999a92e5259bb799f2338e9648d80b9cde07a1d54e7"
+    },
+    "final_audit.json": {
+      "path": "analysis_results/phase2_supervised_joint_reference_20261013_01/final_audit.json",
+      "sha256": "b0f45a548d18c95da7b23bbba19d5839a204c64db834b17ee3c06a09e3a47d50"
+    },
+    "finalize.py": {
+      "path": "analysis_results/phase2_supervised_joint_reference_20261013_01/finalize.py",
+      "sha256": "8599b06f5d9e7e59da974f8f1c468b2e68a7c9af1744d21fd0abbc34bac3ca8e"
+    },
+    "freeze.py": {
+      "path": "analysis_results/phase2_supervised_joint_reference_20261013_01/freeze.py",
+      "sha256": "c5488bb17c36c7307e1dba5fd27acaa64fd63fdebc5fbefab6adf10e2c010c56"
+    },
+    "full_test_suite.log": {
+      "path": "analysis_results/phase2_supervised_joint_reference_20261013_01/full_test_suite.log",
+      "sha256": "14ae3dbaf6f3bde9803f80c6b930e552c8474d9e9a24f285b490b66ce4a4b2da"
+    },
+    "independent_audit.json": {
+      "path": "analysis_results/phase2_supervised_joint_reference_20261013_01/independent_audit.json",
+      "sha256": "720614599043900c955b6c78bc7d2e064ecb66433915224a585bfa574a041798"
+    },
+    "make_figures.py": {
+      "path": "analysis_results/phase2_supervised_joint_reference_20261013_01/make_figures.py",
+      "sha256": "b8fbdb0c4e6fcd5b627f431a1e7b958c602aa193545f6ce7a75ce15623d9758b"
+    },
+    "reference_limit_diagnosis.json": {
+      "path": "analysis_results/phase2_supervised_joint_reference_20261013_01/reference_limit_diagnosis.json",
+      "sha256": "a104f4cd501958de6c2534eed2ba122e05911658b67f2e50326931b0a386b37d"
+    },
+    "warnings/pitch_001.json": {
+      "path": "analysis_results/phase2_supervised_joint_reference_20261013_01/warnings/pitch_001.json",
+      "sha256": "6526c1a2c6911fcb2d2014b495049fabe5188de4f08a59e9c146af5c0fd09b52"
+    },
+    "warnings/pitch_002.json": {
+      "path": "analysis_results/phase2_supervised_joint_reference_20261013_01/warnings/pitch_002.json",
+      "sha256": "0dc2c016387164b3ea58ee523ce74d1c762beeeee57417b19786e7be5939d6ac"
+    },
+    "warnings/pitch_003.json": {
+      "path": "analysis_results/phase2_supervised_joint_reference_20261013_01/warnings/pitch_003.json",
+      "sha256": "f80f53b273e90b2e0f09e75640cf4a03d8f7de88788548c3ef034cd0734c5878"
+    },
+    "warnings/pitch_004.json": {
+      "path": "analysis_results/phase2_supervised_joint_reference_20261013_01/warnings/pitch_004.json",
+      "sha256": "95caa12ee33669c306363a21ab69cd3029257ec383664656cd7850e2490cb747"
+    },
+    "warnings/pitch_005.json": {
+      "path": "analysis_results/phase2_supervised_joint_reference_20261013_01/warnings/pitch_005.json",
+      "sha256": "e1419990ec3988bafe61e599d9a75849a70267ded26dd399c366876d13ad2321"
+    },
+    "warnings/supervised_local_joint_warning_run.json": {
+      "path": "analysis_results/phase2_supervised_joint_reference_20261013_01/warnings/supervised_local_joint_warning_run.json",
+      "sha256": "6a337ba68456b7970ccadd691d8e933d20b61a49c2304699072dadc5f55505e4"
+    }
+  },
+  "tests": {
+    "run": 671,
+    "passed": 669,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 2,
+    "seconds": 66.016,
+    "new_tests": 21,
+    "formal_five_e2e_included": true,
+    "log": {
+      "path": "analysis_results/phase2_supervised_joint_reference_20261013_01/full_test_suite.log",
+      "sha256": "14ae3dbaf6f3bde9803f80c6b930e552c8474d9e9a24f285b490b66ce4a4b2da"
+    }
+  },
+  "supervised_calibration_used": true,
+  "production_adoption": false,
+  "major_warning_generated": false,
+  "phase2_status": "NOT PASSED"
+}

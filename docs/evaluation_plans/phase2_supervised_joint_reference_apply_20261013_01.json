@@ -1,0 +1,146 @@
+{
+  "status": "frozen_before_supervised_joint_reference_apply",
+  "client_date_local": "2026-10-13",
+  "frozen_at_utc": "2026-10-13T13:18:03.880078+00:00",
+  "policy": {
+    "stage": "annotation_free_application_of_explicit_supervised_reference",
+    "feature": "same_named_joint_all_compatible_slot_min_distance_fraction_of_image_diagonal",
+    "supervised_calibration_used": true,
+    "decision": "existing_strict_exceedance_and_straddle_rule_using_frozen_supervised_numeric_bound",
+    "application_reads_annotations": false,
+    "within_range_means_reliable": false,
+    "missing_means_occluded": false,
+    "native_score_cutoff": null,
+    "identity_selection": false,
+    "cross_slot_joint_assembly": false,
+    "temporal_expansion": false,
+    "coordinate_correction": false,
+    "production_adoption": false,
+    "major_warning_generated": false,
+    "validation_scope": "previously_reviewed_development_cross_validation_no_generalization_guarantee"
+  },
+  "code": {
+    "producer_code": {
+      "path": "scripts/calibrate_joint_reliability.py",
+      "sha256": "c4b64c0f62506b9d45144a63ede4daf7b0e6590a7d34b70b091fb07cd3dc29b2"
+    },
+    "producer_tests": {
+      "path": "tests/test_joint_reliability_calibration.py",
+      "sha256": "ac5cce954f41b247476e64ad66356ba8719abd91ca1733eea45d4286d73e3e14"
+    },
+    "local_helpers": {
+      "path": "scripts/measure_local_joint_warnings.py",
+      "sha256": "4a89b9520054199efff5d745bd6a66094415d53c1b47fe0bf5b7790248b5c0b7"
+    },
+    "review_helpers": {
+      "path": "scripts/export_reviewed_reliability.py",
+      "sha256": "af30f6ab6c7352d0fe64b5d4919db63ad473699ad1b622c4b5839e3facdd9369"
+    },
+    "native_helpers": {
+      "path": "scripts/check_movenet_compatibility.py",
+      "sha256": "f3b2ff2864d35ae37e7623c99fccba5689a3ee111b79658bed3b272f334b5fa9"
+    },
+    "study_plan": {
+      "path": "docs/phase2_supervised_joint_reference_plan_20261013.md",
+      "sha256": "6a5c4f1f2943d99eeb8b1f5944974b2b3a967fb1acfb6efa59e9e56b4f1aa2b9"
+    },
+    "freeze_helper": {
+      "path": "analysis_results/phase2_supervised_joint_reference_20261013_01/freeze.py",
+      "sha256": "c5488bb17c36c7307e1dba5fd27acaa64fd63fdebc5fbefab6adf10e2c010c56"
+    },
+    "evaluator_snapshot": {
+      "path": "scripts/evaluate_supervised_joint_warnings.py",
+      "sha256": "221537c72be8f5c01e8978ffdb29c21a330614404607bd71b4f98c41714118b6"
+    },
+    "evaluator_test_snapshot": {
+      "path": "tests/test_supervised_joint_warning_evaluation.py",
+      "sha256": "e7800b0f162bd9a6c7bb5c14aaee5feb7550a810e57268c9ab12cf55da3d092e"
+    },
+    "local_evaluator_snapshot": {
+      "path": "scripts/evaluate_local_joint_warnings.py",
+      "sha256": "402379d9e7b74658afd645e899cbdec59dc3e76abc590b8efef0def984902fc9"
+    }
+  },
+  "fit_plan": {
+    "path": "docs/evaluation_plans/phase2_supervised_joint_reference_fit_20261013_01.json",
+    "sha256": "b578a6fd8d79c27d6bc102cd04f7b78eb4a51d5ca70d5152df09eb5e9953b3d7"
+  },
+  "calibration_artifact": {
+    "path": "analysis_results/phase2_supervised_joint_reference_20261013_01/calibration/joint_reference.json",
+    "sha256": "248cad40b9943344a9cd321bc7300e07801c2714162ea3010b521fbd7a2ede79"
+  },
+  "clips": [
+    {
+      "target": {
+        "pitch_id": "pitch_001",
+        "total_frames": 87,
+        "width": 434,
+        "height": 616
+      },
+      "source": {
+        "pitch_id": "pitch_001",
+        "path": "analysis_results/phase2_joint_disagreement_20261012_01/measurements/pitch_001.json",
+        "sha256": "024662fc300ba007bcdcaa26d1cfc39ac7480f942d8b37e8064d33a4ba506a3c"
+      }
+    },
+    {
+      "target": {
+        "pitch_id": "pitch_002",
+        "total_frames": 175,
+        "width": 460,
+        "height": 634
+      },
+      "source": {
+        "pitch_id": "pitch_002",
+        "path": "analysis_results/phase2_joint_disagreement_20261012_01/measurements/pitch_002.json",
+        "sha256": "cb35ea88bec4428592de79e9e5259538f3a533c85a69bb2345d98e30a2e48381"
+      }
+    },
+    {
+      "target": {
+        "pitch_id": "pitch_003",
+        "total_frames": 115,
+        "width": 510,
+        "height": 628
+      },
+      "source": {
+        "pitch_id": "pitch_003",
+        "path": "analysis_results/phase2_joint_disagreement_20261012_01/measurements/pitch_003.json",
+        "sha256": "e86a95f552c51fda35d486495ee61b3376bb2ea7bc446b04250585270048be87"
+      }
+    },
+    {
+      "target": {
+        "pitch_id": "pitch_004",
+        "total_frames": 114,
+        "width": 532,
+        "height": 676
+      },
+      "source": {
+        "pitch_id": "pitch_004",
+        "path": "analysis_results/phase2_joint_disagreement_20261012_01/measurements/pitch_004.json",
+        "sha256": "97fcb75724d752ff1c3308aa7e6dbf2c465bc2bb139a9ca3975abe25c6017041"
+      }
+    },
+    {
+      "target": {
+        "pitch_id": "pitch_005",
+        "total_frames": 101,
+        "width": 512,
+        "height": 598
+      },
+      "source": {
+        "pitch_id": "pitch_005",
+        "path": "analysis_results/phase2_joint_disagreement_20261012_01/measurements/pitch_005.json",
+        "sha256": "d4eddb857b6b28a7ac129ec615ef40bb3116dd153ea900db2b02fa76e9c400a0"
+      }
+    }
+  ],
+  "output_directory": "analysis_results/phase2_supervised_joint_reference_20261013_01/warnings",
+  "supervised_calibration_used": true,
+  "application_human_annotation_inputs": [],
+  "pose_inference_budget": 0,
+  "tracker_inference_budget": 0,
+  "production_adoption": false,
+  "major_warning_generated": false
+}

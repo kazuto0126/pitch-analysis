@@ -1,16 +1,46 @@
-# Current status — Phase 2 local warning trial; automatic release blocked
+# Current status — Phase 2 supervised calibration evaluated; automatic release blocked
 
-Updated: 2026-10-13
+Updated: 2026-10-14
 
 **Phase 1 = PASSED.**
 **Phase 2 evaluation = COMPLETE; Phase 2 = NOT PASSED (automatic reliability degraded).**
 
-This is the terminal result of the existing baseline evaluation, not an automatic
-reliability release. No new numeric acceptance bar, model, confidence gate,
-PitcherSelector, pose/tracking algorithm, interpolation or smoothing change.
+The baseline evaluation is complete; the latest resumed repair is recorded below.
+Automatic reliability remains unaccepted. Existing acceptance thresholds, confidence
+gates, PitcherSelector, pose/tracking, interpolation and smoothing are unchanged.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-13 six-joint local warning trial (latest; not adopted)
+## 2026-10-14 supervised joint reference calibration (latest; not adopted)
+
+[Result](phase2_supervised_joint_reference_results_20261013.md),
+[frozen protocol](phase2_supervised_joint_reference_plan_20261013.md).
+Implemented separate FIT, APPLY and EVALUATE stages. FIT explicitly uses existing
+human-reviewed raw observations from the other four clips; each query's own GT is
+excluded from its bound. APPLY uses only sealed numeric evidence and does not read GT/views.
+This is supervised developmental cross-validation on the previously inspected five clips.
+
+Same canonical local targets and full denominators: 592 frames, 3552 saved joint rows,
+3522 non-seed evaluation rows. Elbow TP/FN/FP improves 1/83/0 to 8/76/1; wrist
+5/66/0 to 8/63/1, plus one warning on a not-observable wrist. Shoulder is 8/13/1;
+lead hip/knee/ankle are 0/4/17, 0/8/6 and 0/5/3. All missing/excluded rows remain explicit.
+Large remaining FN and increased leg FP prevent adoption as a general reliability classifier.
+Human-reviewed raw correctness does not establish native-reference correctness;
+within-reference and candidate-dependent states do not imply reliable anatomy.
+
+21 new tests; full suite 671 run / 669 passed / 0 failed / 0 errors / 2 Windows
+symlink skips, 66.016 seconds, including formal-five E2E. Independent reconstruction
+of 21312 distances, 30 folds, 3552 states and 3522 evaluation rows found no mismatches.
+374 protected sources / 62 upstream references unchanged; original 592 MoveNet attempts
+unchanged. Formal videos, raw predictions, GT and core preserved; eight handoff clips
+remain candidate/pending and unanalysed. Local warnings are not promoted to major.
+Prior offline major union remains TP20/FN1/FP9/TN557; unresolved 003/104 remains withheld
+by existing human use restrictions. Phase 2 NOT PASSED; no Phase 3.
+
+Next: establish reference-model position quality and keep qualitative labels, whole-frame
+use restrictions and visible-XY targets distinct; do not retune this sealed policy.
+Output: `analysis_results/phase2_supervised_joint_reference_20261013_01/`.
+
+## 2026-10-13 six-joint local warning trial (previous; not adopted)
 
 User resumed repair after the preceding finite closeout. [Result](phase2_local_joint_warnings_results_20261013.md),
 [frozen protocol](phase2_local_joint_warnings_plan_20261013.md). Six-joint sidecars/evaluator implemented;

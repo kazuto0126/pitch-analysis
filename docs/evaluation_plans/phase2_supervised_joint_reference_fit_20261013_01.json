@@ -1,0 +1,186 @@
+{
+  "status": "frozen_before_supervised_joint_reference_fit",
+  "client_date_local": "2026-10-13",
+  "frozen_at_utc": "2026-10-13T13:14:26.023855+00:00",
+  "policy": {
+    "stage": "explicit_supervised_qualitative_reference_fit",
+    "reference": "other_clips_existing_use_disposition_exact_reviewed_raw_observation",
+    "feature": "same_named_joint_all_compatible_slot_min_distance_fraction_of_image_diagonal",
+    "bound": "maximum_finite_eligible_non_seed_reference_value",
+    "query_clip_human_labels_in_own_fold": false,
+    "source_view": "rebuild_existing_derive_clip_and_compare_without_overlay_export",
+    "original_view_semantics": "confirmed_frame_holds_only_no_new_uncertainty_filter",
+    "precision_claim": "qualitative_raw_review_not_exact_xy_or_native_accuracy",
+    "production_adoption": false,
+    "major_warning_generated": false,
+    "pose_model_training": false,
+    "validation_scope": "previously_reviewed_development_cross_validation"
+  },
+  "code": {
+    "producer_code": {
+      "path": "scripts/calibrate_joint_reliability.py",
+      "sha256": "c4b64c0f62506b9d45144a63ede4daf7b0e6590a7d34b70b091fb07cd3dc29b2"
+    },
+    "producer_tests": {
+      "path": "tests/test_joint_reliability_calibration.py",
+      "sha256": "ac5cce954f41b247476e64ad66356ba8719abd91ca1733eea45d4286d73e3e14"
+    },
+    "local_helpers": {
+      "path": "scripts/measure_local_joint_warnings.py",
+      "sha256": "4a89b9520054199efff5d745bd6a66094415d53c1b47fe0bf5b7790248b5c0b7"
+    },
+    "review_helpers": {
+      "path": "scripts/export_reviewed_reliability.py",
+      "sha256": "af30f6ab6c7352d0fe64b5d4919db63ad473699ad1b622c4b5839e3facdd9369"
+    },
+    "native_helpers": {
+      "path": "scripts/check_movenet_compatibility.py",
+      "sha256": "f3b2ff2864d35ae37e7623c99fccba5689a3ee111b79658bed3b272f334b5fa9"
+    },
+    "study_plan": {
+      "path": "docs/phase2_supervised_joint_reference_plan_20261013.md",
+      "sha256": "6a5c4f1f2943d99eeb8b1f5944974b2b3a967fb1acfb6efa59e9e56b4f1aa2b9"
+    },
+    "freeze_helper": {
+      "path": "analysis_results/phase2_supervised_joint_reference_20261013_01/freeze.py",
+      "sha256": "c5488bb17c36c7307e1dba5fd27acaa64fd63fdebc5fbefab6adf10e2c010c56"
+    },
+    "evaluator_snapshot": {
+      "path": "scripts/evaluate_supervised_joint_warnings.py",
+      "sha256": "221537c72be8f5c01e8978ffdb29c21a330614404607bd71b4f98c41714118b6"
+    },
+    "evaluator_test_snapshot": {
+      "path": "tests/test_supervised_joint_warning_evaluation.py",
+      "sha256": "e7800b0f162bd9a6c7bb5c14aaee5feb7550a810e57268c9ab12cf55da3d092e"
+    },
+    "local_evaluator_snapshot": {
+      "path": "scripts/evaluate_local_joint_warnings.py",
+      "sha256": "402379d9e7b74658afd645e899cbdec59dc3e76abc590b8efef0def984902fc9"
+    }
+  },
+  "parent_evidence_plan": {
+    "path": "docs/evaluation_plans/phase2_local_joint_warnings_execution_20261013_01.json",
+    "sha256": "4ce4712109bfb70b49746b4cec7df956bb638779e62244974ccc9eacc8623c59"
+  },
+  "clips": [
+    {
+      "target": {
+        "pitch_id": "pitch_001",
+        "total_frames": 87,
+        "width": 434,
+        "height": 616
+      },
+      "measurement": {
+        "pitch_id": "pitch_001",
+        "path": "analysis_results/phase2_joint_disagreement_20261012_01/measurements/pitch_001.json",
+        "sha256": "024662fc300ba007bcdcaa26d1cfc39ac7480f942d8b37e8064d33a4ba506a3c"
+      },
+      "reviewed_reliability": {
+        "path": "analysis_results/phase2_reviewed_baseline_20261007_01/pitch_001/reviewed_reliability.json",
+        "sha256": "376c25eddd2580c928b0299489d13ce8a7f283e97c77b9e5a570cbe2a1231ee9"
+      }
+    },
+    {
+      "target": {
+        "pitch_id": "pitch_002",
+        "total_frames": 175,
+        "width": 460,
+        "height": 634
+      },
+      "measurement": {
+        "pitch_id": "pitch_002",
+        "path": "analysis_results/phase2_joint_disagreement_20261012_01/measurements/pitch_002.json",
+        "sha256": "cb35ea88bec4428592de79e9e5259538f3a533c85a69bb2345d98e30a2e48381"
+      },
+      "reviewed_reliability": {
+        "path": "analysis_results/phase2_reviewed_baseline_20261007_01/pitch_002/reviewed_reliability.json",
+        "sha256": "b2f510d9d52a8dd2d1939fc37e5829b479716ac962b4ea72fc3b2b9396748569"
+      }
+    },
+    {
+      "target": {
+        "pitch_id": "pitch_003",
+        "total_frames": 115,
+        "width": 510,
+        "height": 628
+      },
+      "measurement": {
+        "pitch_id": "pitch_003",
+        "path": "analysis_results/phase2_joint_disagreement_20261012_01/measurements/pitch_003.json",
+        "sha256": "e86a95f552c51fda35d486495ee61b3376bb2ea7bc446b04250585270048be87"
+      },
+      "reviewed_reliability": {
+        "path": "analysis_results/phase2_reviewed_baseline_20261007_01/pitch_003/reviewed_reliability.json",
+        "sha256": "11bda72ebc85911bbf473f95f3a63fcf67443a33f13021cb2d36a889eca4f915"
+      }
+    },
+    {
+      "target": {
+        "pitch_id": "pitch_004",
+        "total_frames": 114,
+        "width": 532,
+        "height": 676
+      },
+      "measurement": {
+        "pitch_id": "pitch_004",
+        "path": "analysis_results/phase2_joint_disagreement_20261012_01/measurements/pitch_004.json",
+        "sha256": "97fcb75724d752ff1c3308aa7e6dbf2c465bc2bb139a9ca3975abe25c6017041"
+      },
+      "reviewed_reliability": {
+        "path": "analysis_results/phase2_reviewed_baseline_20261007_01/pitch_004/reviewed_reliability.json",
+        "sha256": "800230fbafbe264e0d4c8bda66d57f101f9c18544ef76bf5a8b7709d48f5476a"
+      }
+    },
+    {
+      "target": {
+        "pitch_id": "pitch_005",
+        "total_frames": 101,
+        "width": 512,
+        "height": 598
+      },
+      "measurement": {
+        "pitch_id": "pitch_005",
+        "path": "analysis_results/phase2_joint_disagreement_20261012_01/measurements/pitch_005.json",
+        "sha256": "d4eddb857b6b28a7ac129ec615ef40bb3116dd153ea900db2b02fa76e9c400a0"
+      },
+      "reviewed_reliability": {
+        "path": "analysis_results/phase2_reviewed_baseline_20261007_01/pitch_005/reviewed_reliability.json",
+        "sha256": "cb7e308708cd5268d3ae59722a69ba62a9341e135c485d2803fe242c48d8f36c"
+      }
+    }
+  ],
+  "human_training_inputs": [
+    {
+      "path": "analysis_results/phase2_yamamoto_20260925_01/ground_truth/pitch_001/ground_truth.json",
+      "sha256": "0efe2f4c63417e1f5744cec5fac7d375e0a0ec5060c870a36cec720a7a4b8d81",
+      "pitch_id": "pitch_001"
+    },
+    {
+      "path": "analysis_results/phase2_yamamoto_20260925_01/ground_truth/pitch_002/ground_truth.json",
+      "sha256": "2b682738812d78ef433027b7002ed3787d022eb288453ed157d91eaca74651c7",
+      "pitch_id": "pitch_002"
+    },
+    {
+      "path": "analysis_results/phase2_yamamoto_20260925_01/ground_truth/pitch_003/ground_truth.json",
+      "sha256": "c839f5bd767c82d8be0506c15bb83a22230f4ea7bf83dc240c321bfa3876b240",
+      "pitch_id": "pitch_003"
+    },
+    {
+      "path": "analysis_results/phase2_yamamoto_20260925_01/ground_truth/pitch_004/ground_truth.json",
+      "sha256": "ee721b91ce340ce29899e40854712e2d5d9c770d09d154c913489f17f1b4408a",
+      "pitch_id": "pitch_004"
+    },
+    {
+      "path": "analysis_results/phase2_yamamoto_20260925_01/ground_truth/pitch_005/ground_truth.json",
+      "sha256": "885986e1e150bd343968898899cfda5f5457b55a0c244d4c95c3f68daf33a66a",
+      "pitch_id": "pitch_005"
+    }
+  ],
+  "source_frames": 592,
+  "non_seed_frames": 587,
+  "output_directory": "analysis_results/phase2_supervised_joint_reference_20261013_01/calibration",
+  "pose_inference_budget": 0,
+  "tracker_inference_budget": 0,
+  "production_adoption": false,
+  "major_warning_generated": false
+}

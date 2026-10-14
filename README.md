@@ -50,11 +50,14 @@ HSU 已完成 `pitch_003` 全115格12關節覆核，並提供2026-10-05 10:14（
 [八點人工特徵覆核與下一步方案](docs/phase2_subject_support_proposal_20261006.md)已完成局部對照：
 HSU確認003兩格中6點屬其他人／背景、2點屬投手其他部位；小往返誤差仍不保證抓對投手。
 Phase 2 baseline與本次有限修復已收尾：**evaluation = COMPLETE WITH KNOWN LIMITATIONS；自動可靠性 = NOT PASSED**。
-最新結果見 [Phase 2收尾](docs/phase2_closeout_20261013.md)：五球人工覆核／可用性已重核，
+前次結果見 [Phase 2收尾](docs/phase2_closeout_20261013.md)：五球人工覆核／可用性已重核，
 離線警示聯集major TP20/FN1/FP9，尚未正式採用；完整測試619 passed、2 skipped。
 原正式流程與局部肘腕限制仍保留；沒有開始Phase3。
-使用者隨後要求繼續，最新[六關節局部警示試驗](docs/phase2_local_joint_warnings_results_20261013.md)
+使用者隨後要求繼續，[六關節局部警示試驗](docs/phase2_local_joint_warnings_results_20261013.md)
 已完成並維持不採用：肘腕涵蓋不足，局部定性GT與可見人工XY的評估用途需分開；完整測試648 passed、2 skipped。
+最新[人工參考校準](docs/phase2_supervised_joint_reference_results_20261013.md)完成五球交叉驗證，
+肘 TP/FN/FP 為8/76/1、腕8/63/1；有有限增益，漏報仍多、未正式採用，Phase 2仍NOT PASSED。
+完整測試669 passed、0 failed、2 skipped，包含正式五球E2E；正式核心、raw與GT保持原樣。
 使用者另核准的 [交付資料夾候選讀取器](docs/handoff_reader.md) 已接入 contract v2：
 驗 hash、完整解碼、分數 FPS 逐格時間與去重，保存本地待人工覆核候選。
 它不自動分析、轉換正式 metadata 或取代山本正式五球，也不改 Phase 2 核心。
