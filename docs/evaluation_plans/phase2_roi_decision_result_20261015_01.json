@@ -1,0 +1,177 @@
+{
+  "status": "sealed_roi_transition_audit_and_integration_decision",
+  "client_date_local": "2026-10-15",
+  "execution_plan": {
+    "path": "docs/evaluation_plans/phase2_roi_decision_execution_20261015_01.json",
+    "sha256": "596cfaa0b1d01f23c54f36637a54b1f3aab20554051c6da4daeaf2a7dad0e79d"
+  },
+  "auditor_code": {
+    "auditor": {
+      "path": "scripts/audit_saved_roi_transitions.py",
+      "sha256": "1536e6a8e69b51b8d708ee0cd3f68d371e31656b7ab032983da1bcdb60f140ab"
+    },
+    "tests": {
+      "path": "tests/test_saved_roi_transitions.py",
+      "sha256": "f89fc2b3f87733d71faa285fab62301457cbf25661ab106eda9deadacbe9bc60"
+    },
+    "parent_assessor": {
+      "path": "scripts/assess_saved_roi_angles.py",
+      "sha256": "e0d6c3535e9482d65d951071e35c565cda45df41d625d89ac9225ddc489e571c"
+    },
+    "angle_assessor": {
+      "path": "scripts/assess_manual_feature_angles.py",
+      "sha256": "04c35e8b048c4db8f1a61cdbc4e43b79d241f9669acd2d14e360173dd9ee4911"
+    },
+    "angle_integrity_helpers": {
+      "path": "scripts/diagnose_angle_reference_gaps.py",
+      "sha256": "a6ba9fe39e380eb18db90707ffad56a50eda0554234320abf8afb07b66b7137f"
+    },
+    "roi_evaluator": {
+      "path": "scripts/evaluate_tracked_roi_pose.py",
+      "sha256": "d4448023e6461c9a2c879c7a4290f3182eab52494ca64a7dc526a33b3b19828f"
+    },
+    "roi_producer": {
+      "path": "scripts/measure_tracked_roi_pose.py",
+      "sha256": "4c271070df6f10449455ffd1a88680adee51c13edbc44ea31143666aadbb0c9e"
+    },
+    "mode_helpers": {
+      "path": "scripts/measure_pose_mode_countercheck.py",
+      "sha256": "a8007fe7b7b36e3e2404aaf5e42a56f7217d0f7c0ef2558b48e97ce6d912b519"
+    },
+    "selector": {
+      "path": "src/pitch_analysis/subject.py",
+      "sha256": "c5cae1ace96db5b9f3229f4f5e41870d420370676d99dea0abd03dcad3748276"
+    },
+    "pose_capture": {
+      "path": "src/pitch_analysis/pose_capture.py",
+      "sha256": "02f071811a2de83011e6927e2bd933623f918b8338dfe364888c6050e6ba3061"
+    },
+    "parent_helpers": {
+      "path": "scripts/calibrate_joint_reliability.py",
+      "sha256": "c4b64c0f62506b9d45144a63ede4daf7b0e6590a7d34b70b091fb07cd3dc29b2"
+    },
+    "feature_helpers": {
+      "path": "scripts/export_reviewed_feature_quality.py",
+      "sha256": "740620802e13dbb6e36f8f06d71318f8a554bd83b73be1bd7db628efcc69a0ee"
+    },
+    "geometry": {
+      "path": "src/pitch_analysis/geometry.py",
+      "sha256": "6a01f5707ed57c7c0b2d4c386d82a6e814b075c1025609cf3d8a0acfb41137f1"
+    },
+    "manual_validator": {
+      "path": "src/pitch_analysis/manual_keypoints.py",
+      "sha256": "31e219dcec595f5bda943ed6456c65ec27632b7e2a401322c44ab0b969473066"
+    },
+    "native_helpers": {
+      "path": "scripts/check_movenet_compatibility.py",
+      "sha256": "f3b2ff2864d35ae37e7623c99fccba5689a3ee111b79658bed3b272f334b5fa9"
+    },
+    "study_plan": {
+      "path": "docs/phase2_roi_decision_plan_20261015.md",
+      "sha256": "215cc43f5513fc486e53b77f1e63fc2849d5337f04e60ad321f5747b24a96375"
+    },
+    "freeze_helper": {
+      "path": "analysis_results/phase2_roi_decision_20261015_01/freeze.py",
+      "sha256": "3e4eb212aeddfddf66070caebb173a45232583cae480dcf5733c1c273eabc847"
+    }
+  },
+  "result_document": {
+    "path": "docs/phase2_roi_decision_results_20261015.md",
+    "sha256": "c0356b6bc1ff71d5038b7dc076348696095fa7141dce8dc3ae97015cd5624fb2"
+  },
+  "integration_decision_document": {
+    "path": "docs/phase2_roi_integration_decision_20261015.md",
+    "sha256": "ed7bc6abf8fb7a03c90354b4dcc0f879bef2437f6cb9b08c8c809549a953e2fc"
+  },
+  "prior_saved_roi_result": {
+    "path": "docs/evaluation_plans/phase2_saved_roi_angles_result_20261014_01.json",
+    "sha256": "6e25af4b97d15adb31af7b1c3a6c96dfa199799f09d4126f890a8b73e5b650cf"
+  },
+  "outputs": {
+    "before_audit.json": {
+      "path": "analysis_results/phase2_roi_decision_20261015_01/before_audit.json",
+      "sha256": "f0e6275ff6142639eb249cbac6df6b55f5620098944d6af21823ce37079494bc"
+    },
+    "figures/all_frame_support_transitions.png": {
+      "path": "analysis_results/phase2_roi_decision_20261015_01/figures/all_frame_support_transitions.png",
+      "sha256": "b5c55d5109ec27ae67f7144b626ab8c1f4080a0c5b8659d15810b37e053d447f"
+    },
+    "figures/angle_worse_point_patterns.png": {
+      "path": "analysis_results/phase2_roi_decision_20261015_01/figures/angle_worse_point_patterns.png",
+      "sha256": "860a12cfc24160cdf5a52f6fc76d246ec3b3c9edfe2c6a37c994da5f0f0fa05f"
+    },
+    "figures/inspection.json": {
+      "path": "analysis_results/phase2_roi_decision_20261015_01/figures/inspection.json",
+      "sha256": "ddf6ee006aff916750ab40d8b8683df76b5d7662a07f3332ea0f10aac624ccf1"
+    },
+    "figures/manifest.json": {
+      "path": "analysis_results/phase2_roi_decision_20261015_01/figures/manifest.json",
+      "sha256": "48c3b8a38b7385e473aca8129c141cbf7920ee8735e4c9031c833b9f0ca762a3"
+    },
+    "final_audit.json": {
+      "path": "analysis_results/phase2_roi_decision_20261015_01/final_audit.json",
+      "sha256": "eeb6d17791148391e2fc435ff6a41a7cca6f4b705ec4e9b0dffdc18964ea2583"
+    },
+    "finalize.py": {
+      "path": "analysis_results/phase2_roi_decision_20261015_01/finalize.py",
+      "sha256": "ea710f98b2de9a01fd01b83ca81d7e42b52436f5d2d9143724653badb7ea7ead"
+    },
+    "freeze.py": {
+      "path": "analysis_results/phase2_roi_decision_20261015_01/freeze.py",
+      "sha256": "3e4eb212aeddfddf66070caebb173a45232583cae480dcf5733c1c273eabc847"
+    },
+    "full_test_suite.log": {
+      "path": "analysis_results/phase2_roi_decision_20261015_01/full_test_suite.log",
+      "sha256": "47c5a6c0d7bd2763c0257339a323ea0faa0af212f79cbeb13dab215af540a146"
+    },
+    "independent_audit.json": {
+      "path": "analysis_results/phase2_roi_decision_20261015_01/independent_audit.json",
+      "sha256": "0a4f879687a477a50fb1e235d3dd269118ec7999269098bb22b2e0ce74c70928"
+    },
+    "independent_audit_helper.py": {
+      "path": "analysis_results/phase2_roi_decision_20261015_01/independent_audit_helper.py",
+      "sha256": "2420b0e70daba445237ea85882c84d177feb8b5a1be8c927dd71ce8937ea9ab6"
+    },
+    "make_figures.py": {
+      "path": "analysis_results/phase2_roi_decision_20261015_01/make_figures.py",
+      "sha256": "b0aa17b83097b40332d52364766455b6e427f82da315d735672350ebe920397c"
+    },
+    "transitions/transition_rows.json": {
+      "path": "analysis_results/phase2_roi_decision_20261015_01/transitions/transition_rows.json",
+      "sha256": "a6de5353a5355683d3848bbb75638255dc0abf5b6e4253becc73d995bb0b05c8"
+    },
+    "transitions/transition_summary.json": {
+      "path": "analysis_results/phase2_roi_decision_20261015_01/transitions/transition_summary.json",
+      "sha256": "4cd737987267d841482fd98c8a7565daa824962aca2db0db12c1f2d4063f3a69"
+    }
+  },
+  "tests": {
+    "run": 753,
+    "passed": 751,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 2,
+    "seconds": 54.578,
+    "formal_five_e2e": true,
+    "skip_reason": "Windows symbolic link creation unavailable",
+    "log_sha256": "47c5a6c0d7bd2763c0257339a323ea0faa0af212f79cbeb13dab215af540a146"
+  },
+  "decision": {
+    "current_fixed_narrow_roi": "NOT_ADOPTED",
+    "formal_video_baseline": "UNCHANGED",
+    "expanded_roi_proposal_status": "PROPOSED_NOT_STARTED",
+    "expanded_roi_experiment_started": false,
+    "new_experiment_pose_calls": 0,
+    "new_experiment_tracker_calls": 0,
+    "proposed_future_call_limits": {
+      "pose": 592,
+      "tracker": 0
+    },
+    "production_adoption": false,
+    "coordinate_correction": false,
+    "original_use_restrictions_changed": false,
+    "automatic_accepted": false,
+    "phase2_status": "NOT PASSED",
+    "phase3_started": false
+  }
+}

@@ -1,6 +1,6 @@
-# Current status — Phase 2 saved ROI angle improvements measured; automatic release blocked
+# Current status — Phase 2 fixed narrow ROI rejected for integration; bounded next proposal prepared
 
-Updated: 2026-10-14
+Updated: 2026-10-15
 
 **Phase 1 = PASSED.**
 **Phase 2 evaluation = COMPLETE; Phase 2 = NOT PASSED (automatic reliability degraded).**
@@ -10,7 +10,33 @@ Automatic reliability remains unaccepted. Existing acceptance thresholds, confid
 gates, PitcherSelector, pose/tracking, interpolation and smoothing are unchanged.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-14 saved ROI angle comparison (latest)
+## 2026-10-15 ROI transitions and integration decision (latest)
+
+[Result](phase2_roi_decision_results_20261015.md),
+[integration decision and bounded next proposal](phase2_roi_integration_decision_20261015.md).
+Preserved690feature/baseline/frame records,684nonseed. Original support transitions remain
+independent of manual reference availability. Rebuilt prior230angle/1368point rows and summaries;
+new audit keeps all missing reasons and original processed coordinates (never raw substitution).
+
+Controlled IMAGE comparison with visible reference: elbow4loss/3gain,knee3loss/18gain.
+All7loss frames have all manual members inside crop and a selected pose but original low gates;
+do not infer that all losses are clipped limbs. VIDEOraw comparison elbow8loss/0gain,knee8loss/3gain.
+Angle worsening and XY worsening are distinct: elbow46/55/61,knee50/94/111 have all3point errors
+decreased while angle error increases. Original GT/major/eligibility unchanged; no oracle fallback.
+
+Fixed narrow ROI is NOT_ADOPTED for production. Existing fiveclip evidence remains decisive:
+587nonseed selected552crop/555IMAGE/584VIDEO,new4clips lose22vsIMAGE;003mean gains do not
+establish full-cohort suitability. No new arbitrary pass thresholds,zero-FN gates or mandatory GT redo.
+Next2xcenter-expanded-input proposal is prepared but NOT_STARTED: sameMediaPipeIMAGE,
+savedfloatCSRTrect,sourceclip,no pad/resize/fallback;max592pose/0tracker;no core change or Phase3.
+
+13newtests; full753run/751passed/0failed/0errors/2Windowslinkskips,54.578s,formal5E2E.
+Independent690row/context recomputation;374protected/62upstream/formal5/raw/GT/core/gates
+unchanged,original592MoveNetattempts unchanged,8candidatepending/unanalysed.0newinference.
+Phase2evaluationCOMPLETEwithknownlimits;automaticNOTPASSED.
+Output:`analysis_results/phase2_roi_decision_20261015_01/`.
+
+## 2026-10-14 saved ROI angle comparison (previous)
 
 [Result](phase2_saved_roi_angles_results_20261014.md). Re-evaluated already sealed crop/full IMAGE,
 formal VIDEO raw and original processed base against the same visible manual 2D reference.
