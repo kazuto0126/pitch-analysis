@@ -63,7 +63,10 @@ processed肘50可比格MAE25.0452°、膝106格MAE7.1532°，遮擋不補角度�
 定性eligible不代表數值準確；[肢體鏈幾何試驗](docs/phase2_chain_reliability_results_20261014.md)0新增TP、不採用。
 續行的[角度差異診斷](docs/phase2_angle_reference_gaps_results_20261014.md)確認003全115格原影片／封存影像／人工圖與XML來源一致，
 並保存50肘／106膝共同可比格的三點誤差分解、ray方向與局部敏感度。69／105格腕位移約47／91px已存在於raw；
-沒有修改座標、人工GT、門檻或正式核心。最新完整測試723 passed、0 failed、2 skipped，Phase2仍NOT PASSED、未進Phase3。
+沒有修改座標、人工GT、門檻或正式核心。
+最新[封存ROI角度比較](docs/phase2_saved_roi_angles_results_20261014.md)以同格比較取得局部增益：
+VIDEO raw→ROI肘41共同格MAE23.8410°→11.2361°、膝95格7.2015°→4.6703°，同時保留18／40格變差與coverage損失。
+ROI需人工初始化，尚未正式採用；最新完整測試738 passed、0 failed、2 skipped，Phase2仍NOT PASSED、未進Phase3。
 使用者另核准的 [交付資料夾候選讀取器](docs/handoff_reader.md) 已接入 contract v2：
 驗 hash、完整解碼、分數 FPS 逐格時間與去重，保存本地待人工覆核候選。
 它不自動分析、轉換正式 metadata 或取代山本正式五球，也不改 Phase 2 核心。

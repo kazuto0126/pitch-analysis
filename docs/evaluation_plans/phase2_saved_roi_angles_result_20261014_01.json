@@ -1,0 +1,159 @@
+{
+  "status": "sealed_saved_roi_angle_assessment_with_known_limits",
+  "client_date_local": "2026-10-14",
+  "execution_plan": {
+    "path": "docs/evaluation_plans/phase2_saved_roi_angles_execution_20261014_01.json",
+    "sha256": "7ea394dbfdd1426d48da36f98a838c52970b6a0d83a8fd13641d0e1383a84667"
+  },
+  "evaluator_code": {
+    "assessor": {
+      "path": "scripts/assess_saved_roi_angles.py",
+      "sha256": "e0d6c3535e9482d65d951071e35c565cda45df41d625d89ac9225ddc489e571c"
+    },
+    "tests": {
+      "path": "tests/test_saved_roi_angles.py",
+      "sha256": "ad0c7140b49012aa21e288edf844e8fc2b42e4dce178e2dd809c13300e01d5ca"
+    },
+    "angle_assessor": {
+      "path": "scripts/assess_manual_feature_angles.py",
+      "sha256": "04c35e8b048c4db8f1a61cdbc4e43b79d241f9669acd2d14e360173dd9ee4911"
+    },
+    "angle_integrity_helpers": {
+      "path": "scripts/diagnose_angle_reference_gaps.py",
+      "sha256": "a6ba9fe39e380eb18db90707ffad56a50eda0554234320abf8afb07b66b7137f"
+    },
+    "roi_evaluator": {
+      "path": "scripts/evaluate_tracked_roi_pose.py",
+      "sha256": "d4448023e6461c9a2c879c7a4290f3182eab52494ca64a7dc526a33b3b19828f"
+    },
+    "roi_producer": {
+      "path": "scripts/measure_tracked_roi_pose.py",
+      "sha256": "4c271070df6f10449455ffd1a88680adee51c13edbc44ea31143666aadbb0c9e"
+    },
+    "mode_helpers": {
+      "path": "scripts/measure_pose_mode_countercheck.py",
+      "sha256": "a8007fe7b7b36e3e2404aaf5e42a56f7217d0f7c0ef2558b48e97ce6d912b519"
+    },
+    "selector": {
+      "path": "src/pitch_analysis/subject.py",
+      "sha256": "c5cae1ace96db5b9f3229f4f5e41870d420370676d99dea0abd03dcad3748276"
+    },
+    "pose_capture": {
+      "path": "src/pitch_analysis/pose_capture.py",
+      "sha256": "02f071811a2de83011e6927e2bd933623f918b8338dfe364888c6050e6ba3061"
+    },
+    "parent_helpers": {
+      "path": "scripts/calibrate_joint_reliability.py",
+      "sha256": "c4b64c0f62506b9d45144a63ede4daf7b0e6590a7d34b70b091fb07cd3dc29b2"
+    },
+    "feature_helpers": {
+      "path": "scripts/export_reviewed_feature_quality.py",
+      "sha256": "740620802e13dbb6e36f8f06d71318f8a554bd83b73be1bd7db628efcc69a0ee"
+    },
+    "geometry": {
+      "path": "src/pitch_analysis/geometry.py",
+      "sha256": "6a01f5707ed57c7c0b2d4c386d82a6e814b075c1025609cf3d8a0acfb41137f1"
+    },
+    "manual_validator": {
+      "path": "src/pitch_analysis/manual_keypoints.py",
+      "sha256": "31e219dcec595f5bda943ed6456c65ec27632b7e2a401322c44ab0b969473066"
+    },
+    "native_helpers": {
+      "path": "scripts/check_movenet_compatibility.py",
+      "sha256": "f3b2ff2864d35ae37e7623c99fccba5689a3ee111b79658bed3b272f334b5fa9"
+    },
+    "study_plan": {
+      "path": "docs/phase2_saved_roi_angles_plan_20261014.md",
+      "sha256": "97726aa83f3fd6eeab920f358c35ec38da78629c868f4e2da959b87f99d8d3b9"
+    },
+    "freeze_helper": {
+      "path": "analysis_results/phase2_saved_roi_angles_20261014_01/freeze.py",
+      "sha256": "7729c0d695197f3b7218d3b69378ecf67b4ebf4acc9cc588921a9867bc34629d"
+    }
+  },
+  "result_document": {
+    "path": "docs/phase2_saved_roi_angles_results_20261014.md",
+    "sha256": "af678396963f2765ab60d802c072fa8a89b90957ba0ac052c8f1fde6b795892b"
+  },
+  "prior_diagnosis_result": {
+    "path": "docs/evaluation_plans/phase2_angle_reference_gaps_result_20261014_01.json",
+    "sha256": "adccb498ec58bfe521d10fc0545b3261a4eb7677ce421bd9af5f758a8486aac9"
+  },
+  "outputs": {
+    "assessment/per_frame_saved_roi_angles.json": {
+      "path": "analysis_results/phase2_saved_roi_angles_20261014_01/assessment/per_frame_saved_roi_angles.json",
+      "sha256": "9f7335c6a26d260853277f1738fec31301af03dd2b87ebc539d80711fbdea53f"
+    },
+    "assessment/saved_roi_angle_assessment.json": {
+      "path": "analysis_results/phase2_saved_roi_angles_20261014_01/assessment/saved_roi_angle_assessment.json",
+      "sha256": "ed84dc01a2c14988371e2aee4b5ecfc4926c74a1656ed8a32ead8578986bb214"
+    },
+    "assessment_run.log": {
+      "path": "analysis_results/phase2_saved_roi_angles_20261014_01/assessment_run.log",
+      "sha256": "2882c1aed26d66bb68052b893518b77b5677e72c956c74b6749f3d51b8d4fd6a"
+    },
+    "before_assessment_audit.json": {
+      "path": "analysis_results/phase2_saved_roi_angles_20261014_01/before_assessment_audit.json",
+      "sha256": "1c4adecf737442c2bdcaf71e84b9dee6a79ea620def02fd9e70340dec225663b"
+    },
+    "figures/inspection.json": {
+      "path": "analysis_results/phase2_saved_roi_angles_20261014_01/figures/inspection.json",
+      "sha256": "36ecb968f2b4a169bccf6e87a7562ce7d6243a6da7b92db72161bd50375e066f"
+    },
+    "figures/manifest.json": {
+      "path": "analysis_results/phase2_saved_roi_angles_20261014_01/figures/manifest.json",
+      "sha256": "ab3494ac7b6d56f0b4cc176380810b64e6f63eab59ebe29b695195f7ba06e13b"
+    },
+    "figures/paired_angles_and_missing.png": {
+      "path": "analysis_results/phase2_saved_roi_angles_20261014_01/figures/paired_angles_and_missing.png",
+      "sha256": "9f935394f695706da578f0e87cb68819a62f5f3825f9d92f80c08074d2757dcb"
+    },
+    "figures/predeclared_saved_output_cases.png": {
+      "path": "analysis_results/phase2_saved_roi_angles_20261014_01/figures/predeclared_saved_output_cases.png",
+      "sha256": "2108f90c398da4a5bcd8e26a49cbc0a9bfc037b64151735695eb1e686aaa6a5a"
+    },
+    "final_audit.json": {
+      "path": "analysis_results/phase2_saved_roi_angles_20261014_01/final_audit.json",
+      "sha256": "20c417308eca8479262a3cbd55ab0aea2b3f3a17bfa2dd276714bf5e2ff4a592"
+    },
+    "finalize.py": {
+      "path": "analysis_results/phase2_saved_roi_angles_20261014_01/finalize.py",
+      "sha256": "041bf938a53d8d61119036c273bbf5ca9335959af3e46a44a081315eed238bbf"
+    },
+    "freeze.py": {
+      "path": "analysis_results/phase2_saved_roi_angles_20261014_01/freeze.py",
+      "sha256": "7729c0d695197f3b7218d3b69378ecf67b4ebf4acc9cc588921a9867bc34629d"
+    },
+    "full_test_suite.log": {
+      "path": "analysis_results/phase2_saved_roi_angles_20261014_01/full_test_suite.log",
+      "sha256": "5d471e5f24f29c84f313bab2b5da2f8bb182ceab5a1c5c1bb481b0e63e9354ac"
+    },
+    "independent_audit.json": {
+      "path": "analysis_results/phase2_saved_roi_angles_20261014_01/independent_audit.json",
+      "sha256": "1cdadb822d0b9676bde566b9e690b077bd0fea3e0f49cbb4d0a40e484df9b0b3"
+    },
+    "independent_audit_helper.py": {
+      "path": "analysis_results/phase2_saved_roi_angles_20261014_01/independent_audit_helper.py",
+      "sha256": "df5ddde0861038860845983813ff73e0b369c5c26387eadd6d9c218f910c28ca"
+    },
+    "make_figures.py": {
+      "path": "analysis_results/phase2_saved_roi_angles_20261014_01/make_figures.py",
+      "sha256": "10c8a459a1e129f4ba239181beda9de7d4d6f15c34c309c8c1c905d98be4a80b"
+    }
+  },
+  "tests": {
+    "run": 740,
+    "passed": 738,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 2,
+    "seconds": 72.758,
+    "formal_five_e2e": true,
+    "skip_reason": "Windows symbolic link creation unavailable",
+    "log_sha256": "5d471e5f24f29c84f313bab2b5da2f8bb182ceab5a1c5c1bb481b0e63e9354ac"
+  },
+  "production_adoption": false,
+  "coordinate_correction": false,
+  "original_use_restrictions_changed": false,
+  "phase2_status": "NOT PASSED"
+}

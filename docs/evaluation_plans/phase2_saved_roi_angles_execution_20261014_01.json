@@ -1,0 +1,140 @@
+{
+  "status": "frozen_before_saved_roi_angle_assessment",
+  "client_date_local": "2026-10-14",
+  "frozen_at_utc": "2026-10-14T11:34:11.198395+00:00",
+  "policy": {
+    "scope": "saved_roi_image_video_angles_relative_to_same_visible_manual_2d_reference",
+    "features": [
+      "throwing_elbow_angle",
+      "lead_knee_angle"
+    ],
+    "streams": [
+      "crop",
+      "image",
+      "video_raw",
+      "video_processed"
+    ],
+    "primary_support": "selected_all_three_original_gates_finite_in_source_crop_predictions_also_in_crop",
+    "reference": "three_visible_finite_nondegenerate_source_pixel_manual_points",
+    "manual_reference_in_crop": "stratum_only_never_primary_filter",
+    "ungated_angles": "diagnostic_only_not_numerical_support_or_reliability",
+    "video_processed": "original_saved_base_secondary_only_original_holds_retained",
+    "seed": "save_frame_zero_exclude_from_main_effectiveness",
+    "pairing": "identical_frames_with_reference_and_both_numerically_supported_angles",
+    "numerical_tie_tolerance_deg_not_accuracy_gate": 1e-08,
+    "percentile": "linear_interpolation_at_(n-1)*p",
+    "new_binary_warning": false,
+    "coordinate_correction": false,
+    "production_adoption": false,
+    "pose_inference_calls": 0,
+    "tracker_inference_calls": 0,
+    "three_dimensional_claim": false
+  },
+  "code": {
+    "assessor": {
+      "path": "scripts/assess_saved_roi_angles.py",
+      "sha256": "e0d6c3535e9482d65d951071e35c565cda45df41d625d89ac9225ddc489e571c"
+    },
+    "tests": {
+      "path": "tests/test_saved_roi_angles.py",
+      "sha256": "ad0c7140b49012aa21e288edf844e8fc2b42e4dce178e2dd809c13300e01d5ca"
+    },
+    "angle_assessor": {
+      "path": "scripts/assess_manual_feature_angles.py",
+      "sha256": "04c35e8b048c4db8f1a61cdbc4e43b79d241f9669acd2d14e360173dd9ee4911"
+    },
+    "angle_integrity_helpers": {
+      "path": "scripts/diagnose_angle_reference_gaps.py",
+      "sha256": "a6ba9fe39e380eb18db90707ffad56a50eda0554234320abf8afb07b66b7137f"
+    },
+    "roi_evaluator": {
+      "path": "scripts/evaluate_tracked_roi_pose.py",
+      "sha256": "d4448023e6461c9a2c879c7a4290f3182eab52494ca64a7dc526a33b3b19828f"
+    },
+    "roi_producer": {
+      "path": "scripts/measure_tracked_roi_pose.py",
+      "sha256": "4c271070df6f10449455ffd1a88680adee51c13edbc44ea31143666aadbb0c9e"
+    },
+    "mode_helpers": {
+      "path": "scripts/measure_pose_mode_countercheck.py",
+      "sha256": "a8007fe7b7b36e3e2404aaf5e42a56f7217d0f7c0ef2558b48e97ce6d912b519"
+    },
+    "selector": {
+      "path": "src/pitch_analysis/subject.py",
+      "sha256": "c5cae1ace96db5b9f3229f4f5e41870d420370676d99dea0abd03dcad3748276"
+    },
+    "pose_capture": {
+      "path": "src/pitch_analysis/pose_capture.py",
+      "sha256": "02f071811a2de83011e6927e2bd933623f918b8338dfe364888c6050e6ba3061"
+    },
+    "parent_helpers": {
+      "path": "scripts/calibrate_joint_reliability.py",
+      "sha256": "c4b64c0f62506b9d45144a63ede4daf7b0e6590a7d34b70b091fb07cd3dc29b2"
+    },
+    "feature_helpers": {
+      "path": "scripts/export_reviewed_feature_quality.py",
+      "sha256": "740620802e13dbb6e36f8f06d71318f8a554bd83b73be1bd7db628efcc69a0ee"
+    },
+    "geometry": {
+      "path": "src/pitch_analysis/geometry.py",
+      "sha256": "6a01f5707ed57c7c0b2d4c386d82a6e814b075c1025609cf3d8a0acfb41137f1"
+    },
+    "manual_validator": {
+      "path": "src/pitch_analysis/manual_keypoints.py",
+      "sha256": "31e219dcec595f5bda943ed6456c65ec27632b7e2a401322c44ab0b969473066"
+    },
+    "native_helpers": {
+      "path": "scripts/check_movenet_compatibility.py",
+      "sha256": "f3b2ff2864d35ae37e7623c99fccba5689a3ee111b79658bed3b272f334b5fa9"
+    },
+    "study_plan": {
+      "path": "docs/phase2_saved_roi_angles_plan_20261014.md",
+      "sha256": "97726aa83f3fd6eeab920f358c35ec38da78629c868f4e2da959b87f99d8d3b9"
+    },
+    "freeze_helper": {
+      "path": "analysis_results/phase2_saved_roi_angles_20261014_01/freeze.py",
+      "sha256": "7729c0d695197f3b7218d3b69378ecf67b4ebf4acc9cc588921a9867bc34629d"
+    }
+  },
+  "target_pitch_id": "pitch_003",
+  "parent_angle_execution": {
+    "path": "docs/evaluation_plans/phase2_manual_angle_assessment_execution_20261014_01.json",
+    "sha256": "e813d085bd1417d083bcde74fae6f52a8534764eab0aa5a081ac2f9b677143b9"
+  },
+  "parent_angle_assessment": {
+    "path": "analysis_results/phase2_manual_angle_assessment_20261014_01/assessment/angle_assessment.json",
+    "sha256": "1fb519254671682ad9e94c41d66a621894f61554cab267911fad1c423e019805"
+  },
+  "roi_execution": {
+    "path": "docs/evaluation_plans/phase2_tracked_roi_pose_execution_20261010_01.json",
+    "sha256": "18596af448baa8442ca97e2a3818f67a6286fc6596aff780a684067796cf0070"
+  },
+  "roi_measurements": {
+    "path": "analysis_results/phase2_tracked_roi_pose_20261010_01/roi_pose_measurements.json",
+    "sha256": "73b309969ad1dc371a029b6a6135f3e412c8683b7c849feb0f1996d9511658c1"
+  },
+  "roi_evaluation": {
+    "path": "analysis_results/phase2_tracked_roi_pose_20261010_01/evaluation/roi_pose_evaluation.json",
+    "sha256": "a4c1f9c8dc1b16d777699576232c3d92595af1c6e6311679e7dd4d04a21e7b49"
+  },
+  "roi_point_comparisons": {
+    "path": "analysis_results/phase2_tracked_roi_pose_20261010_01/evaluation/point_comparisons.json",
+    "sha256": "d676f9aea7168397298230da3ef2f40535b217db030b8bf215901032f04107f4"
+  },
+  "image_measurements": {
+    "path": "analysis_results/phase2_pose_mode_countercheck_20261009_01/pitch_003.json",
+    "sha256": "653dad260e5f545b4b40561302335015fc880edc81e02eb6b29c98b58c5bd302"
+  },
+  "source_alignment_audit": {
+    "path": "analysis_results/phase2_angle_reference_gaps_20261014_01/source_alignment_audit.json",
+    "sha256": "3378967a40a2c876d5a1b8a63ca315d7631926dd319434e20f2398a13c9d9cba"
+  },
+  "predeclared_case_frames": [
+    69,
+    105
+  ],
+  "pose_inference_budget": 0,
+  "tracker_inference_budget": 0,
+  "production_adoption": false,
+  "output_directory": "analysis_results/phase2_saved_roi_angles_20261014_01/assessment"
+}

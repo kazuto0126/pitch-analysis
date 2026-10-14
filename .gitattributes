@@ -91,3 +91,7 @@ scripts/diagnose_angle_reference_gaps.py text eol=lf
 tests/test_angle_reference_gaps.py text eol=lf
 docs/phase2_angle_reference_gaps*.md text eol=lf
 docs/evaluation_plans/phase2_angle_reference_gaps*.json text eol=lf
+scripts/assess_saved_roi_angles.py text eol=lf
+tests/test_saved_roi_angles.py text eol=lf
+docs/phase2_saved_roi_angles*.md text eol=lf
+docs/evaluation_plans/phase2_saved_roi_angles*.json text eol=lf

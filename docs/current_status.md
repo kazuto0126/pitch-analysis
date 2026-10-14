@@ -1,4 +1,4 @@
-# Current status — Phase 2 angle gaps source-aligned and decomposed; automatic release blocked
+# Current status — Phase 2 saved ROI angle improvements measured; automatic release blocked
 
 Updated: 2026-10-14
 
@@ -10,7 +10,30 @@ Automatic reliability remains unaccepted. Existing acceptance thresholds, confid
 gates, PitcherSelector, pose/tracking, interpolation and smoothing are unchanged.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-14 angle gap source audit and decomposition (latest)
+## 2026-10-14 saved ROI angle comparison (latest)
+
+[Result](phase2_saved_roi_angles_results_20261014.md). Re-evaluated already sealed crop/full IMAGE,
+formal VIDEO raw and original processed base against the same visible manual 2D reference.
+All115frames/230rows saved,114nonseed main denominator;51elbow/113knee manual references.
+Original gates/selector/core/GT/holds preserved; human-initialized ROI,0newinference or adoption.
+
+Same-frame VIDEOraw→ROI elbow41pairs MAE23.8410→11.2361degrees,23improve/18worsen;
+knee95pairs7.2015→4.6703,55improve/40worsen. Medians increase8.3729→9.2919 /2.7556→3.3081.
+Knee major18pairs24.2432→10.6508;other77pairs3.2177→3.2723,so gains concentrate on old drift.
+Reference+supported elbow ROI41/51 vs VIDEOraw49/51; knee98/113 vs103/113; missing retained.
+Manual reference outside crop on elbow69/knee54–55 remains in primary pairs.69still62.5092degrees
+error;105ROI below original elbow gate,keptnull,not a successful repair. Major holds unchanged.
+
+15newtests; full740run/738passed/0failed/0errors/2Windowslinkskips,72.758s,formal5E2E.
+Replayed115source/crop/selector frames and1368old pointrows; independent four-stream audit.
+374protected/62upstream/formal5/raw/GT/core/gates unchanged;592MoveNetattempts unchanged,
+8candidatepending/unanalysed. Source diagnosis and saved comparison complete; automatic
+reliability NOT PASSED,noPhase3. ROI has bounded developmental evidence,not production release.
+Next: a concrete integration decision must retain human-init scope,missing/crop tradeoffs,
+original gates/source isolation and same-frame evaluation;no silent core or threshold change.
+Output:`analysis_results/phase2_saved_roi_angles_20261014_01/`.
+
+## 2026-10-14 angle gap source audit and decomposition (previous)
 
 [Result](phase2_angle_reference_gaps_results_20261014.md). All115 original decoded RGB frames,
 sealed NPZ, manual PNG/ZIP/review copies, names/hashes/timestamps and original XML coordinates
