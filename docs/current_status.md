@@ -1,4 +1,4 @@
-# Current status — Phase 2 fixed narrow ROI rejected for integration; bounded next proposal prepared
+# Current status — Phase 2 bounded repair delivered; fixed 2x ROI not adopted
 
 Updated: 2026-10-15
 
@@ -10,7 +10,42 @@ Automatic reliability remains unaccepted. Existing acceptance thresholds, confid
 gates, PitcherSelector, pose/tracking, interpolation and smoothing are unchanged.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-15 ROI transitions and integration decision (latest)
+## 2026-10-15 fixed 2x ROI experiment and delivery (latest)
+
+[Results and acceptance summary](phase2_expanded_roi_results_20261015.md).
+The previously proposed single 2x arm is now complete: 592 saved source frames,
+587 nonseed frames, 592 durable pose attempts/completions, 0 tracker calls.
+An actual resume verified 0 additional inference calls. Same MediaPipe Full IMAGE,
+original selector and gates, no production or GT modifications.
+
+Nonseed selected frames (narrow / expanded / full IMAGE / VIDEO):
+001: 81/81/84/86; 002: 174/174/174/174; 003: 108/88/89/114;
+004: 102/108/109/111; 005: 87/99/99/99. Totals: 552/550/555/584.
+003 same-frame narrow-to-expanded elbow MAE 11.0391→20.4522 degrees (35 frames),
+knee 4.0257→5.5399 (73 frames). Visible-reference supported elbow 40/51,
+knee 81/113, versus narrow 41/51 and 98/113. Other four precise errors remain null.
+All missing/lost/gained records and original major/eligibility context are retained.
+
+Decision: fixed 2x NOT_ADOPTED. Restored selection on 004/005 cannot erase the
+003 losses or certify corrected joint locations. Five comparison sheets / 11 cases
+were inspected as engineering evidence, without generating new human labels.
+
+Full suite: 771 run, 769 passed, 0 failed/errors, 2 Windows symlink skips,
+58.508 seconds, exit 0, including the formal five-clip E2E. The initial sandbox run
+skipped 8 additional junction checks; the final ordinary-environment run covers them.
+Independent arithmetic audit: 592 frames, 19,866 mapped landmarks, 28,416 joint states,
+1,380 human records, 920 angle streams; maximum angle difference below 9.55e-12 degrees.
+374 protected files and 62 upstream sources unchanged; original MoveNet attempts
+unchanged; 8 handoff candidates remain pending/unanalysed, SQLite counts 1/8/45.
+
+The agreed evaluation and this bounded repair delivery are complete. Automatic
+reliability remains NOT PASSED because known joint errors and missed warnings remain.
+No extra ROI ratios, model changes, minor warning rules, mandatory additional XY
+annotations, exact uncertain events, zero-FN/FP or holdout requirement are added to
+this closeout. Further automatic-reliability repair is outstanding, not silently waived.
+No Phase 3. Output: `analysis_results/phase2_expanded_roi_20261015_01/`.
+
+## 2026-10-15 ROI transitions and integration decision (previous)
 
 [Result](phase2_roi_decision_results_20261015.md),
 [integration decision and bounded next proposal](phase2_roi_integration_decision_20261015.md).

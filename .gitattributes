@@ -100,3 +100,7 @@ tests/test_saved_roi_transitions.py text eol=lf
 docs/phase2_roi_decision*.md text eol=lf
 docs/phase2_roi_integration_decision*.md text eol=lf
 docs/evaluation_plans/phase2_roi_decision*.json text eol=lf
+scripts/*expanded_roi*.py text eol=lf
+tests/*expanded_roi*.py text eol=lf
+docs/phase2_expanded_roi*.md text eol=lf
+docs/evaluation_plans/phase2_expanded_roi*.json text eol=lf

@@ -69,8 +69,10 @@ VIDEO raw→ROI肘41共同格MAE23.8410°→11.2361°、膝95格7.2015°→4.670
 ROI需人工初始化，未正式採用。
 最新[ROI角度轉換與整合決策](docs/phase2_roi_decision_results_20261015.md)保存690列完整缺值／退步清單，
 確認7個同模式有人工參考的新流失皆仍在crop內且低於原gate；角度與逐點誤差亦可能不同方向。
-現有固定窄ROI正式不採用，[2×輸入範圍方案](docs/phase2_roi_integration_decision_20261015.md)僅提出、未開始。
-最新完整測試751 passed、0 failed、2 skipped，Phase2仍NOT PASSED、未進Phase3；原核心、門檻與GT維持。
+現有固定窄ROI正式不採用；[2×輸入範圍實測](docs/phase2_expanded_roi_results_20261015.md)已完成五球592格，亦不採用。
+擴框 selected 550/587（窄框552、全圖IMAGE555）；003共同格肘／膝角度誤差比窄框增加，恢復coverage不代表修正錯位。
+Phase 2約定的評估與本次有限修復已交付，停止追加倍率／小規則實驗；自動可靠性仍NOT PASSED，保留已知限制。
+最新完整測試769 passed、0 failed、2 skipped（771項，含正式五球E2E）；未進Phase3，原核心、門檻與GT維持。
 使用者另核准的 [交付資料夾候選讀取器](docs/handoff_reader.md) 已接入 contract v2：
 驗 hash、完整解碼、分數 FPS 逐格時間與去重，保存本地待人工覆核候選。
 它不自動分析、轉換正式 metadata 或取代山本正式五球，也不改 Phase 2 核心。
