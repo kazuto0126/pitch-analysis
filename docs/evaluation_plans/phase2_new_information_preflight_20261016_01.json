@@ -1,0 +1,209 @@
+{
+  "status": "completed_read_only_information_gap_audit",
+  "created_at_utc": "2026-10-16T07:58:38.757284+00:00",
+  "baseline_commit": "0222673dbb28bc1882c4c3d4c81fe62e6e0c0201",
+  "scope": "sealed original-baseline evaluations only; no new prediction judgments",
+  "source_frames": 592,
+  "saved_joint_rows": 1184,
+  "roles": {
+    "throwing_elbow": {
+      "non_seed_frames": 587,
+      "human_labels": {
+        "reliable": 444,
+        "unreliable": 84,
+        "not_observable": 59
+      },
+      "original_gate_pass_frames": 477,
+      "original_gate_passed_wrong": 72,
+      "original_gate_passed_wrong_min_visibility_presence_quantiles": {
+        "0.0": 0.5299856662750244,
+        "0.25": 0.7801019996404648,
+        "0.5": 0.9002281129360199,
+        "0.75": 0.9734886288642883,
+        "1.0": 0.9988616704940796
+      },
+      "by_clip": {
+        "pitch_001": {
+          "original_gate_passed_wrong": 11,
+          "sample_maximum_hinted_wrong": 6,
+          "rejected_classifier_unhinted_wrong": 1
+        },
+        "pitch_002": {
+          "original_gate_passed_wrong": 0,
+          "sample_maximum_hinted_wrong": 0,
+          "rejected_classifier_unhinted_wrong": 0
+        },
+        "pitch_003": {
+          "original_gate_passed_wrong": 29,
+          "sample_maximum_hinted_wrong": 1,
+          "rejected_classifier_unhinted_wrong": 26
+        },
+        "pitch_004": {
+          "original_gate_passed_wrong": 6,
+          "sample_maximum_hinted_wrong": 0,
+          "rejected_classifier_unhinted_wrong": 6
+        },
+        "pitch_005": {
+          "original_gate_passed_wrong": 26,
+          "sample_maximum_hinted_wrong": 0,
+          "rejected_classifier_unhinted_wrong": 26
+        }
+      },
+      "screens": {
+        "score_only": {
+          "hinted_gate_passed_wrong": 0,
+          "hinted_gate_passed_good": 0,
+          "remaining_gate_passed_wrong": 72
+        },
+        "sample_maximum": {
+          "hinted_gate_passed_wrong": 7,
+          "hinted_gate_passed_good": 1,
+          "remaining_gate_passed_wrong": 65
+        },
+        "classifier": {
+          "hinted_gate_passed_wrong": 13,
+          "hinted_gate_passed_good": 9,
+          "remaining_gate_passed_wrong": 59
+        }
+      }
+    },
+    "throwing_wrist": {
+      "non_seed_frames": 587,
+      "human_labels": {
+        "not_observable": 136,
+        "reliable": 380,
+        "unreliable": 71
+      },
+      "original_gate_pass_frames": 350,
+      "original_gate_passed_wrong": 49,
+      "original_gate_passed_wrong_min_visibility_presence_quantiles": {
+        "0.0": 0.5001516342163086,
+        "0.25": 0.8235155940055847,
+        "0.5": 0.9022590517997742,
+        "0.75": 0.9504119753837585,
+        "1.0": 0.9952861666679382
+      },
+      "by_clip": {
+        "pitch_001": {
+          "original_gate_passed_wrong": 9,
+          "sample_maximum_hinted_wrong": 8,
+          "rejected_classifier_unhinted_wrong": 1
+        },
+        "pitch_002": {
+          "original_gate_passed_wrong": 0,
+          "sample_maximum_hinted_wrong": 0,
+          "rejected_classifier_unhinted_wrong": 0
+        },
+        "pitch_003": {
+          "original_gate_passed_wrong": 12,
+          "sample_maximum_hinted_wrong": 0,
+          "rejected_classifier_unhinted_wrong": 11
+        },
+        "pitch_004": {
+          "original_gate_passed_wrong": 20,
+          "sample_maximum_hinted_wrong": 0,
+          "rejected_classifier_unhinted_wrong": 15
+        },
+        "pitch_005": {
+          "original_gate_passed_wrong": 8,
+          "sample_maximum_hinted_wrong": 0,
+          "rejected_classifier_unhinted_wrong": 6
+        }
+      },
+      "screens": {
+        "score_only": {
+          "hinted_gate_passed_wrong": 0,
+          "hinted_gate_passed_good": 0,
+          "remaining_gate_passed_wrong": 49
+        },
+        "sample_maximum": {
+          "hinted_gate_passed_wrong": 8,
+          "hinted_gate_passed_good": 1,
+          "remaining_gate_passed_wrong": 41
+        },
+        "classifier": {
+          "hinted_gate_passed_wrong": 16,
+          "hinted_gate_passed_good": 21,
+          "remaining_gate_passed_wrong": 33
+        }
+      }
+    }
+  },
+  "protected": {
+    "current_checked": 380,
+    "current_mismatches": [],
+    "upstream_checked": 62,
+    "upstream_mismatches": []
+  },
+  "handoff_sqlite": {
+    "counts": {
+      "batches": 1,
+      "pitches": 8,
+      "events": 45
+    },
+    "import_record_statuses": {
+      "imported": 8
+    },
+    "note": "imported is an intake-record status, not formal-material approval"
+  },
+  "local_model_assets": [
+    {
+      "path": "models/pose_landmarker_full.task",
+      "sha256": "5134a3aad27a58b93da0088d431f366da362b44e3ccfbe3462b3827a839011b1",
+      "bytes": 9398198
+    }
+  ],
+  "sources": [
+    {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/protected_before.json",
+      "sha256": "623e49ff22a546e50b53e577e3931b939510568363ff7dc127c326492cafbbf2"
+    },
+    {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/evaluation/evaluation.json",
+      "sha256": "db9dcef4adf4573143f3b33f98a41f47a07b48e071c857a8d7e116b8eda7b9fd"
+    },
+    {
+      "path": "src/pitch_analysis/pose_estimator.py",
+      "sha256": "beb8a3a295712f16ed75bbd9545e0a2acb286c325ae4ae62d1ad8f1631250046"
+    },
+    {
+      "path": "src/pitch_analysis/subject.py",
+      "sha256": "c5cae1ace96db5b9f3229f4f5e41870d420370676d99dea0abd03dcad3748276"
+    },
+    {
+      "path": "data/intake/handoff/state.sqlite3",
+      "sha256": "482be22ebb85334a964f27fd8693554462bdfd1f768f97224489dce8a762876f"
+    },
+    {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/features/pitch_001.json",
+      "sha256": "8462dfab43a0a1b92fbd8cb4b682dbdcaa35b053c5a3d103405827a4099d4c74"
+    },
+    {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/features/pitch_002.json",
+      "sha256": "b727a219ab97c820a68003b23c81909bb38a02f68e53406c3cd0932091a7e34a"
+    },
+    {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/features/pitch_003.json",
+      "sha256": "7d7c61a4cc7e0ed80ce4be83ed09c56c5ea9c38226c1cf121252dc14c4a27cd7"
+    },
+    {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/features/pitch_004.json",
+      "sha256": "cba9373114c861df84d1cba05064b0a169ac2c1c44b14175010153faeb7f5c51"
+    },
+    {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/features/pitch_005.json",
+      "sha256": "3aeab340af511dac0bd34ab19cd4e3a5daebefd1ef08f2431ceb68b53acc3c11"
+    },
+    {
+      "path": "analysis_results/phase2_new_information_preflight_20261016_01/audit.py",
+      "sha256": "268a458bd3df27888486fe766e6d579f9afd9e4d0dd46c4fe14189e5ea1e9600"
+    }
+  ],
+  "new_pose_inference_calls": 0,
+  "new_tracker_inference_calls": 0,
+  "classifier_fit_calls": 0,
+  "new_human_annotations": 0,
+  "model_downloads": 0,
+  "phase2_automatic_accepted": false,
+  "next_model_trial_status": "proposal_only_awaiting_user_confirmation"
+}

@@ -118,3 +118,5 @@ scripts/*joint_quality*.py text eol=lf
 tests/test_joint_quality*.py text eol=lf
 docs/phase2_joint_quality*.md text eol=lf
 docs/evaluation_plans/phase2_joint_quality*.json text eol=lf
+docs/phase2_new_information*.md text eol=lf
+docs/evaluation_plans/phase2_new_information*.json text eol=lf

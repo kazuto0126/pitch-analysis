@@ -10,7 +10,21 @@ Automatic reliability remains unaccepted. Existing acceptance thresholds, confid
 gates, PitcherSelector, pose/tracking, interpolation and smoothing are unchanged.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-16 approved single joint-quality trial (latest)
+## 2026-10-16 new-information preflight (latest; proposal only)
+
+After the user requested continuation, completed a read-only audit and
+[bounded Heavy-model proposal](phase2_new_information_proposal_20261016.md).
+Recounted original-gate-passed human-unreliable points: elbow72, wrist49;
+by-clip counts and source receipts are in the new preflight JSON.
+380 current protected and62 upstream hashes match. Intake SQLite remains
+1batch/8pitches/45events; imported records do not imply formal acceptance.
+New inference/FIT/downloads/human annotations=0. The rejected13-feature
+classifier remains sealed and closed. A single offline MediaPipe Heavy
+comparison with fixed calibration and decisions is proposed, not executed;
+await user confirmation as required for a new-model benchmark. Phase2
+automatic reliability remains NOT PASSED. No core changes or Phase3 work.
+
+## 2026-10-16 approved single joint-quality trial (previous)
 
 User confirmed the fixed plan with “可以”. [Results](phase2_joint_quality_classifier_results_20261016.md).
 Completed FEATURE / four-train-one-test FIT / annotation-free APPLY / sealed-OOF
