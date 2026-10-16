@@ -1,0 +1,42 @@
+{
+  "status": "frozen_before_major_review_hint_delivery_verification",
+  "client_date_local": "2026-10-16",
+  "frozen_at_utc": "2026-10-16T02:16:46.499090+00:00",
+  "user_scope": "Step 1 additive human-review hints only; Step 2 awaits confirmation",
+  "code_and_protocol": {
+    "src/pitch_analysis/major_review_hints.py": "fb9ee15a332876ef99f593081f6cb103a5ad8f1ac3f6a9b491e01245af55ec5c",
+    "src/pitch_analysis/analysis/pitch.py": "28a4242aa240a26dd4ee243fafaabd51574803319704224b5337f45b6d64fae2",
+    "src/pitch_analysis/review_evidence/major_review_development_v1.json": "0d14a463306c3936e881a8eb719a4fcf3640e2f7e097cec6223580e8b06e241e",
+    "scripts/build_major_review_evidence.py": "4eb9fc0dbe5b53f4f62f63c08da0978c5693556f211edb3ba8364a3ab1eb1718",
+    "tests/test_major_review_hints.py": "885573558a445768a5b70710718f3668bd483109a0628b573b6a2037243b82dc",
+    "tests/test_major_review_hint_integration.py": "0fd6f6ed63f99d80c6b1f0a1267e42dd25f1177861ce9a0d7891292a3b12848d",
+    "tests/test_real_mlb_e2e.py": "e5e9b48145e2450c95f612b317b6ea73f2673e14c830ff8bb7ff9eb9cda9540f",
+    "pyproject.toml": "871fda0887291ec378ad8bc6a24f275daa1be7e0483308ac7ba228e219425bb5",
+    "docs/phase2_major_review_hints_20261016.md": "8a8cb3fa03b7cb848e116207d1d5b113c930208c85650210177fa41f7db59f37"
+  },
+  "expected_source_frames": 592,
+  "evaluation_non_seed_frames": 587,
+  "expected_major": {
+    "tp": 20,
+    "fn": 1,
+    "fp": 9,
+    "tn": 557
+  },
+  "expected_non_seed_hints": [
+    2,
+    0,
+    19,
+    5,
+    3
+  ],
+  "known_unrepaired_miss": {
+    "pitch_id": "pitch_003",
+    "frame_index": 104
+  },
+  "authorized_protected_file_change": "src/pitch_analysis/analysis/pitch.py",
+  "production_scope": "additional artifact only; exact frozen source/prediction match; unknown inputs explicitly not_evaluated",
+  "new_pose_or_tracker_experiment_calls": 0,
+  "formal_five_clip_e2e_test_inference": "separate isolated test output",
+  "step2_training_runs": 0,
+  "output_directory": "analysis_results/phase2_major_review_hints_20261016_01"
+}

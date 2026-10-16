@@ -25,3 +25,4 @@ include = ["pitch_analysis*"]
 
 [tool.setuptools.package-data]
 "pitch_analysis.contracts" = ["schemas/*.json"]
+"pitch_analysis" = ["review_evidence/*.json"]

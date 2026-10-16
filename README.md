@@ -72,7 +72,11 @@ ROI需人工初始化，未正式採用。
 現有固定窄ROI正式不採用；[2×輸入範圍實測](docs/phase2_expanded_roi_results_20261015.md)已完成五球592格，亦不採用。
 擴框 selected 550/587（窄框552、全圖IMAGE555）；003共同格肘／膝角度誤差比窄框增加，恢復coverage不代表修正錯位。
 Phase 2約定的評估與本次有限修復已交付，停止追加倍率／小規則實驗；自動可靠性仍NOT PASSED，保留已知限制。
-最新完整測試769 passed、0 failed、2 skipped（771項，含正式五球E2E）；未進Phase3，原核心、門檻與GT維持。
+2026-10-16 已依授權提供[重大錯位覆核提示](docs/phase2_major_review_hints_20261016.md)：
+`analyze-pitch` 新增 `major_review_hints.json`，五球非seed提示2/0/19/5/3，維持major TP20/FN1/FP9。
+只適用SHA吻合的封存來源／預測；其他輸入明列未評估，沒有提示不代表可靠，003/104漏報保留。
+[肘腕判斷器單次計畫](docs/phase2_joint_quality_classifier_plan_20261016.md)待確認，尚未訓練。
+最新完整測試787 passed、0 failed、2 skipped（789項，含正式五球E2E）；未進Phase3，原核心、門檻與GT維持。
 使用者另核准的 [交付資料夾候選讀取器](docs/handoff_reader.md) 已接入 contract v2：
 驗 hash、完整解碼、分數 FPS 逐格時間與去重，保存本地待人工覆核候選。
 它不自動分析、轉換正式 metadata 或取代山本正式五球，也不改 Phase 2 核心。

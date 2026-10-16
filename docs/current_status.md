@@ -1,6 +1,6 @@
-# Current status — Phase 2 bounded repair delivered; fixed 2x ROI not adopted
+# Current status — Major review hints delivered; joint-quality plan awaiting confirmation
 
-Updated: 2026-10-15
+Updated: 2026-10-16
 
 **Phase 1 = PASSED.**
 **Phase 2 evaluation = COMPLETE; Phase 2 = NOT PASSED (automatic reliability degraded).**
@@ -10,7 +10,41 @@ Automatic reliability remains unaccepted. Existing acceptance thresholds, confid
 gates, PitcherSelector, pose/tracking, interpolation and smoothing are unchanged.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-15 fixed 2x ROI experiment and delivery (latest)
+## 2026-10-16 additive major review hints (latest)
+
+User-authorized Step 1 is delivered: `analyze-pitch` now writes an additional
+`major_review_hints.json` and registers it in the new analysis manifest.
+It preserves all existing statuses, gates, predictions and coordinates. The union
+is the original tracking screen + existing bbox support + cross-clip shoulder/hip
+disagreement, exactly matching the sealed major TP20/FN1/FP9/TN557 on 587 nonseed
+development frames. All 592 source frames and diagnostics remain present.
+003/104 is still unflagged and explicitly recorded as a known miss.
+
+The packaged evidence is bound to exact video/identity/model/raw/capture/timeline.
+Unknown or changed inputs are `not_evaluated`, with null review flags; missing or
+corrupt evidence is `evidence_unavailable`. No hint implies no accuracy guarantee.
+These are review prompts developed on five already inspected clips, not new-video
+validation, corrected coordinates or automatic frame rejection.
+
+The formal five-clip E2E actually matched all five fresh outputs to the evidence:
+nonseed hints 2/0/19/5/3. Full suite 789 run, 787 passed, 0 failed/errors,
+2 Windows symlink skips, 64.452 seconds, exit 0. Wheel packaging contains the exact
+module and frozen evidence. New tests: 18. Historical protected files: 373 unchanged;
+the only authorized change among 374 is the analysis artifact hook. Pose/tracking,
+selector, original gates, raw and human GT remain unchanged; 62 upstream refs match.
+
+Output: `analysis_results/phase2_major_review_hints_20261016_01/`.
+[Step 1 contract and limits](phase2_major_review_hints_20261016.md).
+
+Step 2 [classifier plan](phase2_joint_quality_classifier_plan_20261016.md) is
+AWAITING_USER_CONFIRMATION. No classifier training or application has run.
+Proposed per-joint decision: elbow TP>=17/FP<=1/non003 TP>=10;
+wrist TP>=27/FP<=1/non003 TP>=23, each with improvement on at least two non003 clips.
+All five folds must be valid; unknown/missing states remain in their proper denominators.
+Only a passing joint would be proposed for user-approved review-hint adoption.
+Automatic Phase 2 acceptance remains NOT PASSED; no Phase 3.
+
+## 2026-10-15 fixed 2x ROI experiment and delivery (previous)
 
 [Results and acceptance summary](phase2_expanded_roi_results_20261015.md).
 The previously proposed single 2x arm is now complete: 592 saved source frames,

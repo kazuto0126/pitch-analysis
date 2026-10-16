@@ -48,6 +48,17 @@ class RealMlbBaselineTests(unittest.TestCase):
                                      report["total_frames"])
                     self.assertEqual(len((output / "processed_keypoints.jsonl").read_text(encoding="utf-8").splitlines()),
                                      report["total_frames"])
+                    hints = json.loads((output / "major_review_hints.json").read_text(encoding="utf-8"))
+                    manifest = json.loads((output / "analysis.json").read_text(encoding="utf-8"))
+                    self.assertEqual(manifest["artifacts"]["major_review_hints.json"], "major_review_hints.json")
+                    self.assertEqual(len(hints["frames"]), report["total_frames"])
+                    self.assertIn(hints["status"], ("evaluated_development_evidence", "not_evaluated"))
+                    if hints["status"] == "not_evaluated":
+                        self.assertTrue(all(f["review_required"] is None for f in hints["frames"]))
+                    print("MAJOR_REVIEW_E2E " + json.dumps({"pitch_id": video.stem,
+                        "status": hints["status"], "source_frames": report["total_frames"],
+                        "review_frames_non_seed": sum(f["review_required"] is True for f in hints["frames"][1:])
+                        if hints["status"] == "evaluated_development_evidence" else None}), flush=True)
 
 
 if __name__ == "__main__":

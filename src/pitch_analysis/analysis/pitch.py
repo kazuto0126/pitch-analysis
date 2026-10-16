@@ -16,6 +16,7 @@ from ..video.standardization import standardize_mp4
 from ..video.validation import sha256_file, validate_mp4
 from ..video.input_quality import scan_input_quality, refine_input_quality
 from ..workflow import prepare_segment
+from ..major_review_hints import write_major_review_hints
 from .debug import write_pose_debug
 
 
@@ -149,6 +150,10 @@ def analyze_pitch(video_path: str | Path, metadata_path: str | Path, *, output_r
                                              throwing_side=payload["pitcher"]["throws"],
                                              quality_gate_passed=prepared["quality_gate_passed"])
         save("input_quality.json", final_quality, "input-quality-v1")
+        hint_path = write_major_review_hints(output, input_metadata=payload,
+            video_metadata=video, capture=capture,
+            model_sha256=manifest["provenance"]["model_sha256"])
+        manifest["artifacts"][hint_path.name] = hint_path.name
         for name in ("keypoints.jsonl", "processed_keypoints.jsonl", "keypoint_quality.json", "wrist_trajectory.json", "overlay.mp4",
                      "review/human_validation_template.json"):
             manifest["artifacts"][name] = name
