@@ -120,3 +120,7 @@ docs/phase2_joint_quality*.md text eol=lf
 docs/evaluation_plans/phase2_joint_quality*.json text eol=lf
 docs/phase2_new_information*.md text eol=lf
 docs/evaluation_plans/phase2_new_information*.json text eol=lf
+scripts/*heavy_information*.py text eol=lf
+tests/test_heavy_information*.py text eol=lf
+docs/phase2_heavy_information*.md text eol=lf
+docs/evaluation_plans/phase2_heavy_information*.json text eol=lf

@@ -1,4 +1,4 @@
-# Current status — Two-step delivery complete; fixed joint-quality trial rejected
+# Current status — Single Heavy trial rejected; automatic Phase 2 remains NOT PASSED
 
 Updated: 2026-10-16
 
@@ -10,7 +10,43 @@ Automatic reliability remains unaccepted. Existing acceptance thresholds, confid
 gates, PitcherSelector, pose/tracking, interpolation and smoothing are unchanged.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-16 new-information preflight (latest; proposal only)
+## 2026-10-16 single Heavy information benchmark (latest)
+
+User requested “繼續修正直到phase2通過” after the bounded proposal. Completed
+the proposed single offline Heavy float16/version1 trial under its fixed
+scope and stopping rules; [results](phase2_heavy_information_results_20261016.md).
+592 new pose calls, complete native candidates and durable journals; zero new
+tracker inference, classifier FIT or human annotations. Original VIDEO options,
+selector and all production algorithms/gates/predictions are unchanged.
+
+Four-training-video reliable maximum distance calibration, strict greater-than,
+sealed whole-video OOF application and evaluation are complete. ElbowTP/FN/FP
+=2/82/1; wrist=2/69/1. Both fail the agreed17/27TP, non003 and cross-clip improvement
+criteria. Original-gate-passed wrong points caught=1/2, worse than sample-maximum7/8;
+each joint adds one gate-supported good-point hint. Remaining support475/477 and
+347/350, still including71/47human wrong points. These are burden estimates only.
+003/104 remains unhinted; no known answer was patched into predictions.
+
+003 paired visible XY has limited improvements and elbow tail-error regression;
+other four precise accuracy stays null. Canonical labels evaluate original Full,
+not Heavy correctness. This trial rejects the new distance signal, not every
+possible model or image source. The previous13-feature classifier remains closed.
+
+Full suite884run/882passed/0failed/0errors/2Windows file-symlink skips,133.986s,exit0;
+formal5E2E existing major hints still match2/0/19/5/3.436current protected sources
+and62upstream hashes remain; raw/GT/manualXY,originalFull/MoveNet/core/gates and
+eight pending/unanalysed candidates preserved. Output:
+`analysis_results/phase2_heavy_information_20261016_01/`.
+
+Both joints rejected: no adoption proposal, no integration or threshold adjustment.
+This approved single trial is complete; stop at its predeclared decision. Phase2
+evaluation is complete with known limitations; automatic reliability remains NOT
+PASSED. The requested passing objective has not been achieved. No Phase3 work.
+
+## 2026-10-16 new-information preflight (previous; subsequently executed)
+
+The paragraph below records the historical preflight state; the completed
+approved execution and decision are recorded above.
 
 After the user requested continuation, completed a read-only audit and
 [bounded Heavy-model proposal](phase2_new_information_proposal_20261016.md).

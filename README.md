@@ -79,6 +79,10 @@ Phase 2約定的評估與本次有限修復已交付，停止追加倍率／小�
 肘TP/FN/FP為13/71/13、腕20/51/24，兩者皆未達事先規則，不採用，停止調整這組訊號。
 兩步授權工作已交付；剩餘缺口記為需要更好的影像或模型資訊，Phase2自動可靠性仍NOT PASSED。
 最新完整測試842 passed、0 failed、2 skipped（844項，含正式五球E2E）；未進Phase3，原核心、門檻與GT維持。
+使用者隨後核准的[單次Heavy新資訊試驗](docs/phase2_heavy_information_results_20261016.md)已完成：
+肘TP/FN/FP為2/82/1、腕2/69/1，原gate通過錯點只抓回1／2，兩者皆不採用。
+正式Full維持，沒有降低門檻、改座標或重訓原分類器；依固定規則停止本輪，Phase2仍NOT PASSED。
+最新完整測試882 passed、0 failed、2 skipped（884項）；新模型對照並不等於自動可靠性通過。
 使用者另核准的 [交付資料夾候選讀取器](docs/handoff_reader.md) 已接入 contract v2：
 驗 hash、完整解碼、分數 FPS 逐格時間與去重，保存本地待人工覆核候選。
 它不自動分析、轉換正式 metadata 或取代山本正式五球，也不改 Phase 2 核心。

@@ -1,16 +1,21 @@
 # 進度摘要
 
-更新：2026-10-16（台灣）。[完整狀態](current_status.md)；[第二步單次結果](phase2_joint_quality_classifier_results_20261016.md)。
+更新：2026-10-16（台灣）。[完整狀態](current_status.md)；[Heavy單次結果](phase2_heavy_information_results_20261016.md)。
 
 **兩步授權工作已完成。Phase 1 = PASSED；Phase 2 自動可靠性仍 NOT PASSED。**
 
-## 最新：新增資訊的前置檢查
+## 最新：Heavy新資訊單次驗證已完成，不採用
 
-使用者要求續行後，已完成[只讀核對與新模型提案](phase2_new_information_proposal_20261016.md)。
-原gate通過但人工錯位的肘72／腕49格已按片重數；380保護來源及62上游SHA維持，
-匯入資料仍1批／8球／45事件。新推論、FIT、下載與人工標註皆0。
-建議只做一次MediaPipe Heavy離線對照，以新權重分歧驗證原錯點提示能力；
-既有13特徵分類器維持拒絕與封存。**新模型試驗待使用者確認，尚未執行**。
+使用者要求「繼續修正直到phase2通過」後，已按[固定範圍](phase2_new_information_proposal_20261016.md)
+完成五球592格單次MediaPipe Heavy離線量測與整片五折；沒有更換正式模型。
+肘TP/FN/FP **2/82/1**、腕 **2/69/1**，皆未達事先規則。
+原gate通過錯點只抓回1／2，同時各提示1個好點，少於原sample-maximum的7／8。
+003/104仍漏報；新資訊不足以讓Phase2通過，依規則停止本輪，不追加界線或模型搜尋。
+
+最新完整suite：**882 passed、0 failed、0 errors、2 skipped**（884項，含正式五球E2E）。
+436保護來源及62上游SHA維持；原13特徵分類器、raw、GT、core與8顆候選保持。
+新輸出：`analysis_results/phase2_heavy_information_20261016_01/`。
+歷史提案保留原SHA；核准與實際執行另存manifest，不再待核准。
 
 ## 已交付
 
@@ -19,7 +24,7 @@
 - 第二步：固定13特徵＋9missing indicators、L2邏輯迴歸、整片五折一次驗證；10模型均正常收斂，未調參或重FIT。
 - 第一階段提示繼續提供；第二步分類器只保存離線結果，不接正式流程。
 
-## 唯一決策：兩關節皆不採用
+## 前輪13特徵分類器決策：兩關節皆不採用
 
 肘TP/FN/FP **13/71/13**，腕 **20/51/24**。
 肘未達TP≥17／FP≤1，改善也未分布兩支非003；腕未達TP≥27／FP≤1／非003TP≥23。
@@ -29,7 +34,7 @@
 原gate支持中未被新提示標出的數目為453/477、309/350；人工可靠保留376、245。
 這是覆核負擔試算，原資料、座標與可用狀態未被修改。
 
-## 驗證與保存
+## 前輪13特徵分類器驗證與保存
 
 - **842 passed、0 failed、0 errors、2 skipped**；844項／56.411秒／exit0，含正式五球E2E。
 - 55項新增合成測試；2skip為Windows符號連結能力。
@@ -37,11 +42,11 @@
 - FEATURE讀GT0、APPLY讀人工檔0，每fold FIT只讀另外4片GT。
 - 380目前保護來源及62上游SHA維持；原pose/tracking、gate、raw、GT、正式五球與第一步證據保留。
 - 8交付候選仍candidate/pending，未分析／升格。
-- 最新輸出：`analysis_results/phase2_joint_quality_classifier_20261016_01/`。
+- 前輪輸出：`analysis_results/phase2_joint_quality_classifier_20261016_01/`。
 
 ## 尚未通過與停止點
 
 自動提示仍會漏掉已知關節錯位，003/104也仍未修復；無提示不能當成可靠。
 依既有Phase2要求維持NOT PASSED，沒有新增零錯誤、更多標註或新資料集的收尾條件。
-本次兩步工作已停止，不再調整這組訊號；續行僅完成新資訊前置檢查與提案，
-尚未啟動其他模型或小規則，也未進Phase3。
+本次兩步工作及後續核准的單次Heavy試驗均已收尾，沒有降低門檻或冒稱通過。
+不再調整這些訊號或追加小規則，未進Phase3。
