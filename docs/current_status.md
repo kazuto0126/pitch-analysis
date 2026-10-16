@@ -1,4 +1,4 @@
-# Current status — Major review hints delivered; joint-quality plan awaiting confirmation
+# Current status — Two-step delivery complete; fixed joint-quality trial rejected
 
 Updated: 2026-10-16
 
@@ -10,7 +10,43 @@ Automatic reliability remains unaccepted. Existing acceptance thresholds, confid
 gates, PitcherSelector, pose/tracking, interpolation and smoothing are unchanged.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-16 additive major review hints (latest)
+## 2026-10-16 approved single joint-quality trial (latest)
+
+User confirmed the fixed plan with “可以”. [Results](phase2_joint_quality_classifier_results_20261016.md).
+Completed FEATURE / four-train-one-test FIT / annotation-free APPLY / sealed-OOF
+EVALUATE once, 592 saved source frames, 587 per-joint effectiveness frames,
+10 genuine classifier fits, all converged in 5–6 iterations; no refit or tuning.
+The approved proposal text stays at its historical SHA; approval and fixed execution
+are recorded in the new execution manifest. It is no longer awaiting confirmation.
+
+Classifier major comparison is not claimed. Local elbow TP/FN/FP=13/71/13,
+wrist=20/51/24. Score-only baselines=9/75/59 and19/52/114; sample-maximum=8/76/1
+and8/63/1. Elbow misses TP>=17, FP<=1 and two-non003-clip improvement; wrist misses
+TP>=27, FP<=1 and non003TP>=23. Neither joint qualifies: no adoption is proposed.
+Stop adjusting these signals; record need for better images or model information.
+
+Under unchanged original gates, classifier hypothetically flags13elbow/16wrist
+previously supported wrong points, while flagging9/21supported good points.
+Support without the new hint=453/477elbow,309/350wrist; reviewed good support
+remaining376/245. These are burden/support estimates; no records or gates were changed.
+003 held out: elbow3/33/1,wrist1/11/0;104elbow still unflagged and original major hold
+preserved. Unknown human labels and each joint's3missing raw frames stay explicit.
+Other four precise accuracy remains null;003XY is auxiliary only.
+
+55new tests; full844run/842passed/0failed/0errors/2Windows symlink skips,
+56.411s,exit0,formal5E2E. Independent1184feature rows/15392values match exactly;
+10training preprocessing/gradients and1168probabilities verified, max score difference
+6.11e-16. FEATURE GT reads0,APPLY annotation reads0,each FIT reads only4other GTs.
+380current protected sources and62upstream hashes unchanged; original raw/GT/core,
+first-step review evidence,MoveNetattempts and8pending/unanalysed candidates preserved.
+
+Output:`analysis_results/phase2_joint_quality_classifier_20261016_01/`.
+The two authorized steps are now complete. First-step major review hints remain
+available; the second-step classifier stays offline and unadopted. Automatic
+Phase2 reliability remains NOT PASSED under the existing requirements. No additional
+small rules, model trials, new annotations or Phase3 work are started.
+
+## 2026-10-16 additive major review hints (previous)
 
 User-authorized Step 1 is delivered: `analyze-pitch` now writes an additional
 `major_review_hints.json` and registers it in the new analysis manifest.

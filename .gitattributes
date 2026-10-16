@@ -114,3 +114,7 @@ docs/evaluation_plans/phase2_major_review*.json text eol=lf
 src/pitch_analysis/analysis/pitch.py text eol=lf
 tests/test_real_mlb_e2e.py text eol=lf
 pyproject.toml text eol=lf
+scripts/*joint_quality*.py text eol=lf
+tests/test_joint_quality*.py text eol=lf
+docs/phase2_joint_quality*.md text eol=lf
+docs/evaluation_plans/phase2_joint_quality*.json text eol=lf

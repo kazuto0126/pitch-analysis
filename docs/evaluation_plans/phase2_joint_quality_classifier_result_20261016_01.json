@@ -1,0 +1,619 @@
+{
+  "status": "completed_once_both_joints_not_adopted",
+  "client_date_local": "2026-10-16",
+  "sealed_at_utc": "2026-10-16T07:47:23.933819+00:00",
+  "approved_execution": {
+    "path": "docs/evaluation_plans/phase2_joint_quality_classifier_execution_20261016_01.json",
+    "sha256": "6d11d50eba6bb0d5c63f9dcfb7ce669154d90892a324f4b1176097de3d188b1d"
+  },
+  "source_frames": 592,
+  "non_seed_frames_per_joint": 587,
+  "saved_joint_rows": 1184,
+  "effectiveness_joint_rows": 1174,
+  "models": [
+    {
+      "query": "pitch_001",
+      "role": "throwing_elbow",
+      "training": [
+        "pitch_002",
+        "pitch_003",
+        "pitch_004",
+        "pitch_005"
+      ],
+      "iterations": 5
+    },
+    {
+      "query": "pitch_001",
+      "role": "throwing_wrist",
+      "training": [
+        "pitch_002",
+        "pitch_003",
+        "pitch_004",
+        "pitch_005"
+      ],
+      "iterations": 6
+    },
+    {
+      "query": "pitch_002",
+      "role": "throwing_elbow",
+      "training": [
+        "pitch_001",
+        "pitch_003",
+        "pitch_004",
+        "pitch_005"
+      ],
+      "iterations": 5
+    },
+    {
+      "query": "pitch_002",
+      "role": "throwing_wrist",
+      "training": [
+        "pitch_001",
+        "pitch_003",
+        "pitch_004",
+        "pitch_005"
+      ],
+      "iterations": 6
+    },
+    {
+      "query": "pitch_003",
+      "role": "throwing_elbow",
+      "training": [
+        "pitch_001",
+        "pitch_002",
+        "pitch_004",
+        "pitch_005"
+      ],
+      "iterations": 6
+    },
+    {
+      "query": "pitch_003",
+      "role": "throwing_wrist",
+      "training": [
+        "pitch_001",
+        "pitch_002",
+        "pitch_004",
+        "pitch_005"
+      ],
+      "iterations": 6
+    },
+    {
+      "query": "pitch_004",
+      "role": "throwing_elbow",
+      "training": [
+        "pitch_001",
+        "pitch_002",
+        "pitch_003",
+        "pitch_005"
+      ],
+      "iterations": 5
+    },
+    {
+      "query": "pitch_004",
+      "role": "throwing_wrist",
+      "training": [
+        "pitch_001",
+        "pitch_002",
+        "pitch_003",
+        "pitch_005"
+      ],
+      "iterations": 6
+    },
+    {
+      "query": "pitch_005",
+      "role": "throwing_elbow",
+      "training": [
+        "pitch_001",
+        "pitch_002",
+        "pitch_003",
+        "pitch_004"
+      ],
+      "iterations": 6
+    },
+    {
+      "query": "pitch_005",
+      "role": "throwing_wrist",
+      "training": [
+        "pitch_001",
+        "pitch_002",
+        "pitch_003",
+        "pitch_004"
+      ],
+      "iterations": 6
+    }
+  ],
+  "genuine_classifier_fits": 10,
+  "refits": 0,
+  "model_or_threshold_searches": 0,
+  "pose_experiment_calls": 0,
+  "tracker_experiment_calls": 0,
+  "metrics": {
+    "throwing_elbow": {
+      "classifier": {
+        "tp": 13,
+        "fn": 71,
+        "fp": 13,
+        "tn": 431,
+        "unknown_label_warning_counts": {
+          "not_observable": 2,
+          "uncertain": 0
+        },
+        "abstain_frames": 3,
+        "retention": {
+          "original_support": 477,
+          "newly_flagged": 24,
+          "remaining_without_this_hint": 453,
+          "reliable_remaining": 376,
+          "unreliable_remaining_unflagged": 59,
+          "not_observable_remaining": 18,
+          "uncertain_remaining": 0,
+          "newly_caught_gate_pass_wrong_points": 13,
+          "newly_flagged_gate_pass_good_points": 9,
+          "duplicate_hint_on_gate_blocked_finite_raw": 4
+        }
+      },
+      "score_only": {
+        "tp": 9,
+        "fn": 75,
+        "fp": 59,
+        "tn": 385,
+        "unknown_label_warning_counts": {
+          "not_observable": 39,
+          "uncertain": 0
+        },
+        "abstain_frames": 3,
+        "retention": {
+          "original_support": 477,
+          "newly_flagged": 0,
+          "remaining_without_this_hint": 477,
+          "reliable_remaining": 385,
+          "unreliable_remaining_unflagged": 72,
+          "not_observable_remaining": 20,
+          "uncertain_remaining": 0,
+          "newly_caught_gate_pass_wrong_points": 0,
+          "newly_flagged_gate_pass_good_points": 0,
+          "duplicate_hint_on_gate_blocked_finite_raw": 107
+        }
+      },
+      "sample_maximum": {
+        "tp": 8,
+        "fn": 76,
+        "fp": 1,
+        "tn": 443,
+        "unknown_label_warning_counts": {
+          "not_observable": 0,
+          "uncertain": 0
+        },
+        "abstain_frames": 19,
+        "retention": {
+          "original_support": 477,
+          "newly_flagged": 8,
+          "remaining_without_this_hint": 469,
+          "reliable_remaining": 384,
+          "unreliable_remaining_unflagged": 65,
+          "not_observable_remaining": 20,
+          "uncertain_remaining": 0,
+          "newly_caught_gate_pass_wrong_points": 7,
+          "newly_flagged_gate_pass_good_points": 1,
+          "duplicate_hint_on_gate_blocked_finite_raw": 1
+        }
+      }
+    },
+    "throwing_wrist": {
+      "classifier": {
+        "tp": 20,
+        "fn": 51,
+        "fp": 24,
+        "tn": 356,
+        "unknown_label_warning_counts": {
+          "not_observable": 14,
+          "uncertain": 0
+        },
+        "abstain_frames": 3,
+        "retention": {
+          "original_support": 350,
+          "newly_flagged": 41,
+          "remaining_without_this_hint": 309,
+          "reliable_remaining": 245,
+          "unreliable_remaining_unflagged": 33,
+          "not_observable_remaining": 31,
+          "uncertain_remaining": 0,
+          "newly_caught_gate_pass_wrong_points": 16,
+          "newly_flagged_gate_pass_good_points": 21,
+          "duplicate_hint_on_gate_blocked_finite_raw": 17
+        }
+      },
+      "score_only": {
+        "tp": 19,
+        "fn": 52,
+        "fp": 114,
+        "tn": 266,
+        "unknown_label_warning_counts": {
+          "not_observable": 101,
+          "uncertain": 0
+        },
+        "abstain_frames": 3,
+        "retention": {
+          "original_support": 350,
+          "newly_flagged": 0,
+          "remaining_without_this_hint": 350,
+          "reliable_remaining": 266,
+          "unreliable_remaining_unflagged": 49,
+          "not_observable_remaining": 35,
+          "uncertain_remaining": 0,
+          "newly_caught_gate_pass_wrong_points": 0,
+          "newly_flagged_gate_pass_good_points": 0,
+          "duplicate_hint_on_gate_blocked_finite_raw": 234
+        }
+      },
+      "sample_maximum": {
+        "tp": 8,
+        "fn": 63,
+        "fp": 1,
+        "tn": 379,
+        "unknown_label_warning_counts": {
+          "not_observable": 1,
+          "uncertain": 0
+        },
+        "abstain_frames": 19,
+        "retention": {
+          "original_support": 350,
+          "newly_flagged": 10,
+          "remaining_without_this_hint": 340,
+          "reliable_remaining": 265,
+          "unreliable_remaining_unflagged": 41,
+          "not_observable_remaining": 34,
+          "uncertain_remaining": 0,
+          "newly_caught_gate_pass_wrong_points": 8,
+          "newly_flagged_gate_pass_good_points": 1,
+          "duplicate_hint_on_gate_blocked_finite_raw": 0
+        }
+      }
+    }
+  },
+  "decision": {
+    "roles": {
+      "throwing_elbow": {
+        "fixed_rule": {
+          "minimum_tp": 17,
+          "maximum_fp": 1,
+          "minimum_non003_tp": 10
+        },
+        "checks": {
+          "all_five_folds_converged": true,
+          "tp_minimum": false,
+          "fp_at_most_one_and_no_higher_than_either_baseline": false,
+          "non003_tp_minimum": true,
+          "at_least_two_non003_clips_improve_both_baselines": false
+        },
+        "non003_tp": 10,
+        "improved_non003_clips": [
+          "pitch_001"
+        ],
+        "meets_proposal_rule": false,
+        "action": "do_not_propose_adoption_stop_adjusting_these_signals"
+      },
+      "throwing_wrist": {
+        "fixed_rule": {
+          "minimum_tp": 27,
+          "maximum_fp": 1,
+          "minimum_non003_tp": 23
+        },
+        "checks": {
+          "all_five_folds_converged": true,
+          "tp_minimum": false,
+          "fp_at_most_one_and_no_higher_than_either_baseline": false,
+          "non003_tp_minimum": false,
+          "at_least_two_non003_clips_improve_both_baselines": true
+        },
+        "non003_tp": 19,
+        "improved_non003_clips": [
+          "pitch_004",
+          "pitch_005"
+        ],
+        "meets_proposal_rule": false,
+        "action": "do_not_propose_adoption_stop_adjusting_these_signals"
+      }
+    },
+    "proposed_roles": [],
+    "automatic_adoption": false,
+    "next_action": "stop_signal_adjustment_need_better_images_or_model_information",
+    "phase2_automatic_reliability": "NOT PASSED",
+    "interpretation": "This fixed developmental screening decision does not replace existing Phase 2 acceptance criteria."
+  },
+  "phase2_status": "NOT PASSED",
+  "two_authorized_steps_complete": true,
+  "first_step_review_hints_preserved": true,
+  "remaining_gap": "需要更好的影像或模型資訊",
+  "further_signal_adjustment_stopped": true,
+  "phase3_started": false,
+  "tests": {
+    "run": 844,
+    "passed": 842,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 2,
+    "seconds": 56.411,
+    "exit_code": 0,
+    "skips": "Windows file symbolic link creation unavailable",
+    "formal_five_clip_e2e": true
+  },
+  "independent_audit": {
+    "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/independent_audit.json",
+    "sha256": "3b1b8a345ff36176cce19363935bbb1ea37e4c770d3a966cec5a7c6f094741c8"
+  },
+  "protected_current_files": 380,
+  "protected_hashes_unchanged": true,
+  "upstream_unchanged": 62,
+  "sqlite_counts": {
+    "batches": 1,
+    "pitches": 8,
+    "events": 45
+  },
+  "eight_candidates_status": "candidate_pending_unanalysed",
+  "source_or_annotation_or_core_modifications": false,
+  "output_directory": "analysis_results/phase2_joint_quality_classifier_20261016_01",
+  "report": {
+    "path": "docs/phase2_joint_quality_classifier_results_20261016.md",
+    "sha256": "2516c51103189f0fb66ee894c37c1eafc3253b65317e796f0efd4645ca044649"
+  },
+  "delivery_summary": {
+    "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/delivery_summary.json",
+    "sha256": "7222e716a248e9f2e6fc2459f551c235843ff4dceed29977e0a6727b15b78c8c"
+  },
+  "code_hashes": {
+    "scripts/joint_quality_features.py": "86bd7fcdcdc264d24f415495b727611add2f85339ef814ff13950523f4f57469",
+    "scripts/joint_quality_model.py": "2d3326747d5e882815ec9966cb2a19255858f81f7e2180e065e9dc00d9ed95c8",
+    "scripts/evaluate_joint_quality_classifier.py": "008032f4b3b57fa667a66fed49c9e8a2995ad8378c7fbf5771f154b432664263",
+    "scripts/run_joint_quality_classifier.py": "6c23cc1b064e97d4b2105b2b48ca565734ce32b206fa95e0d78412174e853368",
+    "tests/test_joint_quality_features.py": "56f3be34a28318fa5f1c55bb743485459e79e825acfa968a0f869ef280d921b9",
+    "tests/test_joint_quality_model.py": "c1638d90a6e4cfb64ebb11400ad7c3a6c1d4e821d103ca99dfc4a6c2e8f0f2b0",
+    "tests/test_joint_quality_classifier_evaluation.py": "fac5ea788efb8dfbc88f96e59a98c4dc49160f94f4c15ebaf6699087ea8771ee",
+    "tests/test_joint_quality_execution.py": "d63d7590a65b213aaaa83963f88105056391234523387c2a1c57e5ffb79bff37",
+    "scripts/measure_seeded_subject.py": "70be947491df5535ac769dcc97ab9c528bc8e279b0e2317c01e1762dbda7a644",
+    "scripts/measure_expanded_roi_pose.py": "dccfcb27b7205004286168ae8b0decdd2a9e2ffb6df2c92b7a7c45e5508a4306",
+    "scripts/measure_tracked_roi_pose.py": "4c271070df6f10449455ffd1a88680adee51c13edbc44ea31143666aadbb0c9e",
+    "scripts/measure_pose_mode_countercheck.py": "a8007fe7b7b36e3e2404aaf5e42a56f7217d0f7c0ef2558b48e97ce6d912b519",
+    "src/pitch_analysis/subject.py": "c5cae1ace96db5b9f3229f4f5e41870d420370676d99dea0abd03dcad3748276",
+    "src/pitch_analysis/pose_capture.py": "02f071811a2de83011e6927e2bd933623f918b8338dfe364888c6050e6ba3061",
+    "src/pitch_analysis/pose_estimator.py": "beb8a3a295712f16ed75bbd9545e0a2acb286c325ae4ae62d1ad8f1631250046"
+  },
+  "artifacts": {
+    "delivery_summary.json": {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/delivery_summary.json",
+      "sha256": "7222e716a248e9f2e6fc2459f551c235843ff4dceed29977e0a6727b15b78c8c"
+    },
+    "document_results.py": {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/document_results.py",
+      "sha256": "1daa701a364a769041dbe3aa3c396f46a91b9dcee7579e87e7aec96bb26c599b"
+    },
+    "evaluation/evaluation.json": {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/evaluation/evaluation.json",
+      "sha256": "db9dcef4adf4573143f3b33f98a41f47a07b48e071c857a8d7e116b8eda7b9fd"
+    },
+    "features/feature_run.json": {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/features/feature_run.json",
+      "sha256": "4edf4d449b3fd4a9cf46af26b5b5bcfc844331e86ffd65ef84b325933ebd7d55"
+    },
+    "features/pitch_001.json": {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/features/pitch_001.json",
+      "sha256": "8462dfab43a0a1b92fbd8cb4b682dbdcaa35b053c5a3d103405827a4099d4c74"
+    },
+    "features/pitch_002.json": {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/features/pitch_002.json",
+      "sha256": "b727a219ab97c820a68003b23c81909bb38a02f68e53406c3cd0932091a7e34a"
+    },
+    "features/pitch_003.json": {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/features/pitch_003.json",
+      "sha256": "7d7c61a4cc7e0ed80ce4be83ed09c56c5ea9c38226c1cf121252dc14c4a27cd7"
+    },
+    "features/pitch_004.json": {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/features/pitch_004.json",
+      "sha256": "cba9373114c861df84d1cba05064b0a169ac2c1c44b14175010153faeb7f5c51"
+    },
+    "features/pitch_005.json": {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/features/pitch_005.json",
+      "sha256": "3aeab340af511dac0bd34ab19cd4e3a5daebefd1ef08f2431ceb68b53acc3c11"
+    },
+    "features.log": {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/features.log",
+      "sha256": "43c690a3042f62a2b572a51e94ff42e572db063ff15729a2d7207d5827772817"
+    },
+    "folds/pitch_001/fit_run.json": {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/folds/pitch_001/fit_run.json",
+      "sha256": "b050323e8272f0b19a92b8d6ddf58b2db4bbb48f7278b865f85b082602cdf08a"
+    },
+    "folds/pitch_001/throwing_elbow_attempt.json": {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/folds/pitch_001/throwing_elbow_attempt.json",
+      "sha256": "23cd016823125a8ebb3bfa9e1c599758f8f04e9fd3c5cd81f7e85f24c66381a2"
+    },
+    "folds/pitch_001/throwing_elbow_model.json": {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/folds/pitch_001/throwing_elbow_model.json",
+      "sha256": "0293c44f2a944720a1b3cf23e04c7fc05e5267a08dcd52eb55ad424548b76175"
+    },
+    "folds/pitch_001/throwing_elbow_training_trace.json": {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/folds/pitch_001/throwing_elbow_training_trace.json",
+      "sha256": "7b802a0f97ae05bba2b4abc52186968bb9f015503d9a61d73ce52fb046e8ae90"
+    },
+    "folds/pitch_001/throwing_wrist_attempt.json": {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/folds/pitch_001/throwing_wrist_attempt.json",
+      "sha256": "967f22b70ef34ee2a113d37a31e20932b5809197f42c7947b5a24bc9b122a2cb"
+    },
+    "folds/pitch_001/throwing_wrist_model.json": {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/folds/pitch_001/throwing_wrist_model.json",
+      "sha256": "49a25b50ba1278dc35be5ab15437da240a6a6d4f59efb4f9e8fe33bc4a047900"
+    },
+    "folds/pitch_001/throwing_wrist_training_trace.json": {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/folds/pitch_001/throwing_wrist_training_trace.json",
+      "sha256": "ab8f0d8f30c00d7ff77d21e3ac47399c49f00376af7265cc1f4c9baab86be5b7"
+    },
+    "folds/pitch_002/fit_run.json": {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/folds/pitch_002/fit_run.json",
+      "sha256": "6d281cf558fd63001274bbc9dc91d5277399362243b6c521b1e226c48bbff295"
+    },
+    "folds/pitch_002/throwing_elbow_attempt.json": {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/folds/pitch_002/throwing_elbow_attempt.json",
+      "sha256": "cd31702653b7b3b50b92d2523c2cc9bdad68e17ea1874a3e3c810998ca7d3fa4"
+    },
+    "folds/pitch_002/throwing_elbow_model.json": {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/folds/pitch_002/throwing_elbow_model.json",
+      "sha256": "06dcb6485760c35d450954e28e2a89bae99dd08ed16836361143558311e8d7c2"
+    },
+    "folds/pitch_002/throwing_elbow_training_trace.json": {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/folds/pitch_002/throwing_elbow_training_trace.json",
+      "sha256": "ccedfe77f60610257ab2ce69226053b31c31883210314794264e8208b2f1164f"
+    },
+    "folds/pitch_002/throwing_wrist_attempt.json": {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/folds/pitch_002/throwing_wrist_attempt.json",
+      "sha256": "0f7d3383b9c607a086122db124df9025d350d891f211943c9091589305e73561"
+    },
+    "folds/pitch_002/throwing_wrist_model.json": {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/folds/pitch_002/throwing_wrist_model.json",
+      "sha256": "262924fdd90520c6265c7a79b88b06e37e90fd8105281b8fa795950eeb6185bd"
+    },
+    "folds/pitch_002/throwing_wrist_training_trace.json": {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/folds/pitch_002/throwing_wrist_training_trace.json",
+      "sha256": "c7a6244439d76cd353a1c44984bba67ac890125eb22112e2648a2f6210a296dc"
+    },
+    "folds/pitch_003/fit_run.json": {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/folds/pitch_003/fit_run.json",
+      "sha256": "42cd08c94ae5e98b242a2aa8e40017119396dda7a366a507713173608866dc3b"
+    },
+    "folds/pitch_003/throwing_elbow_attempt.json": {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/folds/pitch_003/throwing_elbow_attempt.json",
+      "sha256": "579f0808382314a7e4bb65fa1268326b301552fbd01ea20c17e494fa35dbe431"
+    },
+    "folds/pitch_003/throwing_elbow_model.json": {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/folds/pitch_003/throwing_elbow_model.json",
+      "sha256": "4b5611e49dd7cd58d655355dd0b470ef07b40bcb2a5498074e0faf83cf88d6c3"
+    },
+    "folds/pitch_003/throwing_elbow_training_trace.json": {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/folds/pitch_003/throwing_elbow_training_trace.json",
+      "sha256": "2c1ad31f485e7b2cfc41fef3a52223874b10a8b173963835919f5bb8cd7c6382"
+    },
+    "folds/pitch_003/throwing_wrist_attempt.json": {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/folds/pitch_003/throwing_wrist_attempt.json",
+      "sha256": "94d679f0bd6b39a616470ae01c7441599a2f07029b99bae7fb315a8d4c28d66d"
+    },
+    "folds/pitch_003/throwing_wrist_model.json": {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/folds/pitch_003/throwing_wrist_model.json",
+      "sha256": "024beedcd0b0ece8d95cb67605d4770db1d9faee4fb77bc4687843a0d1e2a3fe"
+    },
+    "folds/pitch_003/throwing_wrist_training_trace.json": {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/folds/pitch_003/throwing_wrist_training_trace.json",
+      "sha256": "26b8d08e8816f85873b5b79b4fd8373309c95775586daf67c43185069a94466e"
+    },
+    "folds/pitch_004/fit_run.json": {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/folds/pitch_004/fit_run.json",
+      "sha256": "50063ca12e12c456e9fdcf0b7c4235751f239d6c01b8e9774c4933773a366bb6"
+    },
+    "folds/pitch_004/throwing_elbow_attempt.json": {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/folds/pitch_004/throwing_elbow_attempt.json",
+      "sha256": "198906881ecb2a97dec960b20183b573999ff27608a40f6ae3059a0e46032824"
+    },
+    "folds/pitch_004/throwing_elbow_model.json": {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/folds/pitch_004/throwing_elbow_model.json",
+      "sha256": "33b1427d33646feabc7ef5d29fffcaa0833e26a5ab3a77b049ccdb358dcb2662"
+    },
+    "folds/pitch_004/throwing_elbow_training_trace.json": {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/folds/pitch_004/throwing_elbow_training_trace.json",
+      "sha256": "0e37e23bb3c2dcdffa7a40f027405eac57264495ec45c1dea24869daa626a03c"
+    },
+    "folds/pitch_004/throwing_wrist_attempt.json": {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/folds/pitch_004/throwing_wrist_attempt.json",
+      "sha256": "3da1b3d436ee7f657e8683de0770cb3f29e226f5b8e6faaeee682eb5dfbd9e4b"
+    },
+    "folds/pitch_004/throwing_wrist_model.json": {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/folds/pitch_004/throwing_wrist_model.json",
+      "sha256": "5b131b18b84195f3548d5375dfa4557cd7ee70e1adc3369378d946c72b23912c"
+    },
+    "folds/pitch_004/throwing_wrist_training_trace.json": {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/folds/pitch_004/throwing_wrist_training_trace.json",
+      "sha256": "260f5d669a5fd99453a2221a5c74029075315ebefe3149e7aaa19ee8fdd8c34b"
+    },
+    "folds/pitch_005/fit_run.json": {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/folds/pitch_005/fit_run.json",
+      "sha256": "0bb0415cb24aabd7aa942bd851e9facfded1c35052f392d7664675732d2da181"
+    },
+    "folds/pitch_005/throwing_elbow_attempt.json": {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/folds/pitch_005/throwing_elbow_attempt.json",
+      "sha256": "2454ba77c90b06fb584dd67a12cb77c4b576af6a111d03f99ac2a5fc6cee4224"
+    },
+    "folds/pitch_005/throwing_elbow_model.json": {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/folds/pitch_005/throwing_elbow_model.json",
+      "sha256": "00a65e049b2ee1597ea0beded50f310a359a486090a0d2c9a689dc14c1216278"
+    },
+    "folds/pitch_005/throwing_elbow_training_trace.json": {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/folds/pitch_005/throwing_elbow_training_trace.json",
+      "sha256": "cc6b04d84fd110351b20fc5c0dd4ec2dc55b43ad038047adf4c9fb29e6fb7d81"
+    },
+    "folds/pitch_005/throwing_wrist_attempt.json": {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/folds/pitch_005/throwing_wrist_attempt.json",
+      "sha256": "391728c650c7559cc8318c850d522da23f123ab1cbd139c5cc019e6772aba637"
+    },
+    "folds/pitch_005/throwing_wrist_model.json": {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/folds/pitch_005/throwing_wrist_model.json",
+      "sha256": "af082435f2dc2cf08ebbd1cecd19ab80c4fc54894820ea05495201d59e0bf8b2"
+    },
+    "folds/pitch_005/throwing_wrist_training_trace.json": {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/folds/pitch_005/throwing_wrist_training_trace.json",
+      "sha256": "bf8782220bc8c63557c9d7c6f48ecdd5e72e57a3fb9f6fb899c142378527559a"
+    },
+    "freeze.py": {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/freeze.py",
+      "sha256": "396e33cefbeca224270b8b222aaf99dff8313c40cb63544f530e85f188bfc6fc"
+    },
+    "full_test_suite.log": {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/full_test_suite.log",
+      "sha256": "85b8a466b2d92c4be08e665f3c9c584d6a540ebda191865c426e21aa6926dfeb"
+    },
+    "independent_audit.json": {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/independent_audit.json",
+      "sha256": "3b1b8a345ff36176cce19363935bbb1ea37e4c770d3a966cec5a7c6f094741c8"
+    },
+    "independent_audit.py": {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/independent_audit.py",
+      "sha256": "556de0ade920a0186374781522a2c0567d53fc827a9f497b433a73b248dad4ae"
+    },
+    "predictions/pitch_001.json": {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/predictions/pitch_001.json",
+      "sha256": "9aad07be262ad876e0f06fd317166bf22ce4ab077218b0e3f62d34495621a7a2"
+    },
+    "predictions/pitch_002.json": {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/predictions/pitch_002.json",
+      "sha256": "4b84032c3145f3d826cb589276cea6aeb7c99b24e85d5d9cf6dd079e57177ed2"
+    },
+    "predictions/pitch_003.json": {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/predictions/pitch_003.json",
+      "sha256": "1d337813c9e08e19d6cb32d261eadd78481bdc7fb21505c512c0411e6ee1d3e6"
+    },
+    "predictions/pitch_004.json": {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/predictions/pitch_004.json",
+      "sha256": "7d29d8ff7e5ff8936f77646b45ba02467427d033242a6cab1ba44ac10c03aa84"
+    },
+    "predictions/pitch_005.json": {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/predictions/pitch_005.json",
+      "sha256": "1c97ce44dfab67c6cabdc71f96fa744be1dcc14b70ae21da0eaf1b24f38753af"
+    },
+    "predictions/prediction_run.json": {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/predictions/prediction_run.json",
+      "sha256": "97a87a5e24a73d15b7311f196405e2ae35ce1bff348766c8cc939e14efd2ff35"
+    },
+    "protected_before.json": {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/protected_before.json",
+      "sha256": "623e49ff22a546e50b53e577e3931b939510568363ff7dc127c326492cafbbf2"
+    },
+    "seal.py": {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/seal.py",
+      "sha256": "e8ab1a35e325dec104dcc7aff25427701e2ff71cfb38912158e3edc9fa9a1297"
+    },
+    "test_exit.txt": {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/test_exit.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    "trial.log": {
+      "path": "analysis_results/phase2_joint_quality_classifier_20261016_01/trial.log",
+      "sha256": "7d4fd41de81189ddc8def3199bb2c1ef1e0f6466b7031406ceb6762f9087e983"
+    }
+  }
+}
