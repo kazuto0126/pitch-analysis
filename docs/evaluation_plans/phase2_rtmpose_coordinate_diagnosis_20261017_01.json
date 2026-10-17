@@ -1,0 +1,2514 @@
+{
+  "status": "complete_saved_outputs_diagnostic_no_new_trial",
+  "source_rows": 1380,
+  "source_video": "pitch_003",
+  "all_frames": {
+    "rows": 1380,
+    "human_status_counts": {
+      "visible": 1205,
+      "not_observable": 173,
+      "uncertain": 2
+    }
+  },
+  "non_seed": {
+    "LEFT_SHOULDER": {
+      "source_rows": 114,
+      "human_status_counts": {
+        "visible": 114
+      },
+      "visible_full_missing": 0,
+      "visible_rtmpose_missing": 0,
+      "visible_full_gate_pass": 114,
+      "same_frame_same_joint_paired": {
+        "full": {
+          "n": 114,
+          "mean_px": 23.49665889637646,
+          "median_px": 11.04164922456139,
+          "p95_px": 109.69474446961347,
+          "maximum_px": 145.53758133567806
+        },
+        "rtmpose": {
+          "n": 114,
+          "mean_px": 7.190844126067368,
+          "median_px": 5.809053035301163,
+          "p95_px": 16.46753403413234,
+          "maximum_px": 20.26680069331141
+        },
+        "rtmpose_closer": 84,
+        "rtmpose_farther": 30,
+        "exactly_equal": 0
+      },
+      "native_coordinate_without_visible_human_reference": 0
+    },
+    "RIGHT_SHOULDER": {
+      "source_rows": 114,
+      "human_status_counts": {
+        "visible": 105,
+        "not_observable": 9
+      },
+      "visible_full_missing": 0,
+      "visible_rtmpose_missing": 0,
+      "visible_full_gate_pass": 105,
+      "same_frame_same_joint_paired": {
+        "full": {
+          "n": 105,
+          "mean_px": 20.930651527633334,
+          "median_px": 7.479729026870646,
+          "p95_px": 124.95974124366826,
+          "maximum_px": 147.37031016491628
+        },
+        "rtmpose": {
+          "n": 105,
+          "mean_px": 6.8231986610365505,
+          "median_px": 6.318468225522189,
+          "p95_px": 14.33704210027655,
+          "maximum_px": 25.438675416285328
+        },
+        "rtmpose_closer": 63,
+        "rtmpose_farther": 42,
+        "exactly_equal": 0
+      },
+      "native_coordinate_without_visible_human_reference": 9
+    },
+    "LEFT_ELBOW": {
+      "source_rows": 114,
+      "human_status_counts": {
+        "visible": 82,
+        "not_observable": 32
+      },
+      "visible_full_missing": 0,
+      "visible_rtmpose_missing": 0,
+      "visible_full_gate_pass": 66,
+      "same_frame_same_joint_paired": {
+        "full": {
+          "n": 82,
+          "mean_px": 36.51709933478835,
+          "median_px": 15.440500116615892,
+          "p95_px": 132.56799832998928,
+          "maximum_px": 150.69203263207507
+        },
+        "rtmpose": {
+          "n": 82,
+          "mean_px": 8.792216574221401,
+          "median_px": 7.257921015332874,
+          "p95_px": 18.85248613067662,
+          "maximum_px": 45.897366454009486
+        },
+        "rtmpose_closer": 66,
+        "rtmpose_farther": 16,
+        "exactly_equal": 0
+      },
+      "native_coordinate_without_visible_human_reference": 32
+    },
+    "RIGHT_ELBOW": {
+      "source_rows": 114,
+      "human_status_counts": {
+        "visible": 92,
+        "not_observable": 22
+      },
+      "visible_full_missing": 0,
+      "visible_rtmpose_missing": 0,
+      "visible_full_gate_pass": 86,
+      "same_frame_same_joint_paired": {
+        "full": {
+          "n": 92,
+          "mean_px": 27.746080937394655,
+          "median_px": 10.902625857419137,
+          "p95_px": 106.5538152684173,
+          "maximum_px": 166.56301746029152
+        },
+        "rtmpose": {
+          "n": 92,
+          "mean_px": 7.31008327414407,
+          "median_px": 5.446079598257599,
+          "p95_px": 14.916667390555146,
+          "maximum_px": 57.71662763714475
+        },
+        "rtmpose_closer": 75,
+        "rtmpose_farther": 17,
+        "exactly_equal": 0
+      },
+      "native_coordinate_without_visible_human_reference": 22
+    },
+    "LEFT_WRIST": {
+      "source_rows": 114,
+      "human_status_counts": {
+        "not_observable": 51,
+        "visible": 61,
+        "uncertain": 2
+      },
+      "visible_full_missing": 0,
+      "visible_rtmpose_missing": 0,
+      "visible_full_gate_pass": 52,
+      "same_frame_same_joint_paired": {
+        "full": {
+          "n": 61,
+          "mean_px": 44.566844983462076,
+          "median_px": 21.749711196159385,
+          "p95_px": 136.75508431501493,
+          "maximum_px": 252.36739808148587
+        },
+        "rtmpose": {
+          "n": 61,
+          "mean_px": 11.839653770645661,
+          "median_px": 8.517073373458567,
+          "p95_px": 25.731509319000335,
+          "maximum_px": 101.20495840636129
+        },
+        "rtmpose_closer": 45,
+        "rtmpose_farther": 16,
+        "exactly_equal": 0
+      },
+      "native_coordinate_without_visible_human_reference": 53
+    },
+    "RIGHT_WRIST": {
+      "source_rows": 114,
+      "human_status_counts": {
+        "not_observable": 56,
+        "visible": 58
+      },
+      "visible_full_missing": 0,
+      "visible_rtmpose_missing": 0,
+      "visible_full_gate_pass": 49,
+      "same_frame_same_joint_paired": {
+        "full": {
+          "n": 58,
+          "mean_px": 26.65564895919292,
+          "median_px": 14.38916227207325,
+          "p95_px": 84.57410925209847,
+          "maximum_px": 108.06672967680133
+        },
+        "rtmpose": {
+          "n": 58,
+          "mean_px": 16.840482634824838,
+          "median_px": 9.36605048916483,
+          "p95_px": 73.49500112966938,
+          "maximum_px": 127.9341836591818
+        },
+        "rtmpose_closer": 33,
+        "rtmpose_farther": 25,
+        "exactly_equal": 0
+      },
+      "native_coordinate_without_visible_human_reference": 56
+    },
+    "LEFT_HIP": {
+      "source_rows": 114,
+      "human_status_counts": {
+        "visible": 114
+      },
+      "visible_full_missing": 0,
+      "visible_rtmpose_missing": 0,
+      "visible_full_gate_pass": 114,
+      "same_frame_same_joint_paired": {
+        "full": {
+          "n": 114,
+          "mean_px": 19.77566727447362,
+          "median_px": 10.567128034784265,
+          "p95_px": 94.44163815087646,
+          "maximum_px": 114.32433744297836
+        },
+        "rtmpose": {
+          "n": 114,
+          "mean_px": 14.266490264857326,
+          "median_px": 14.013542466644846,
+          "p95_px": 25.275247564686396,
+          "maximum_px": 30.171731219010262
+        },
+        "rtmpose_closer": 47,
+        "rtmpose_farther": 67,
+        "exactly_equal": 0
+      },
+      "native_coordinate_without_visible_human_reference": 0
+    },
+    "RIGHT_HIP": {
+      "source_rows": 114,
+      "human_status_counts": {
+        "visible": 114
+      },
+      "visible_full_missing": 0,
+      "visible_rtmpose_missing": 0,
+      "visible_full_gate_pass": 114,
+      "same_frame_same_joint_paired": {
+        "full": {
+          "n": 114,
+          "mean_px": 18.202113742574895,
+          "median_px": 8.025378029942445,
+          "p95_px": 86.80085223293835,
+          "maximum_px": 118.73435615919627
+        },
+        "rtmpose": {
+          "n": 114,
+          "mean_px": 12.449904351433334,
+          "median_px": 12.690625824610013,
+          "p95_px": 19.587236947708533,
+          "maximum_px": 27.53020100992344
+        },
+        "rtmpose_closer": 42,
+        "rtmpose_farther": 72,
+        "exactly_equal": 0
+      },
+      "native_coordinate_without_visible_human_reference": 0
+    },
+    "LEFT_KNEE": {
+      "source_rows": 114,
+      "human_status_counts": {
+        "visible": 114
+      },
+      "visible_full_missing": 0,
+      "visible_rtmpose_missing": 0,
+      "visible_full_gate_pass": 103,
+      "same_frame_same_joint_paired": {
+        "full": {
+          "n": 114,
+          "mean_px": 15.670044923606618,
+          "median_px": 7.5996604794844345,
+          "p95_px": 79.27591740429136,
+          "maximum_px": 109.27465899945902
+        },
+        "rtmpose": {
+          "n": 114,
+          "mean_px": 6.626311990085829,
+          "median_px": 5.487680462594593,
+          "p95_px": 14.985936083992192,
+          "maximum_px": 26.760925149734476
+        },
+        "rtmpose_closer": 85,
+        "rtmpose_farther": 29,
+        "exactly_equal": 0
+      },
+      "native_coordinate_without_visible_human_reference": 0
+    },
+    "RIGHT_KNEE": {
+      "source_rows": 114,
+      "human_status_counts": {
+        "visible": 114
+      },
+      "visible_full_missing": 0,
+      "visible_rtmpose_missing": 0,
+      "visible_full_gate_pass": 114,
+      "same_frame_same_joint_paired": {
+        "full": {
+          "n": 114,
+          "mean_px": 14.448734985632997,
+          "median_px": 7.618580570819832,
+          "p95_px": 66.63640259172534,
+          "maximum_px": 85.18899618665928
+        },
+        "rtmpose": {
+          "n": 114,
+          "mean_px": 6.854816133342191,
+          "median_px": 5.732646249689328,
+          "p95_px": 16.667654397727166,
+          "maximum_px": 24.248948215673735
+        },
+        "rtmpose_closer": 84,
+        "rtmpose_farther": 30,
+        "exactly_equal": 0
+      },
+      "native_coordinate_without_visible_human_reference": 0
+    },
+    "LEFT_ANKLE": {
+      "source_rows": 114,
+      "human_status_counts": {
+        "visible": 113,
+        "not_observable": 1
+      },
+      "visible_full_missing": 0,
+      "visible_rtmpose_missing": 0,
+      "visible_full_gate_pass": 110,
+      "same_frame_same_joint_paired": {
+        "full": {
+          "n": 113,
+          "mean_px": 20.021823181308736,
+          "median_px": 9.96755116607587,
+          "p95_px": 108.19032022156938,
+          "maximum_px": 128.58318538199086
+        },
+        "rtmpose": {
+          "n": 113,
+          "mean_px": 8.657167231953583,
+          "median_px": 8.422919682786073,
+          "p95_px": 14.954191870336448,
+          "maximum_px": 23.042499211847044
+        },
+        "rtmpose_closer": 61,
+        "rtmpose_farther": 52,
+        "exactly_equal": 0
+      },
+      "native_coordinate_without_visible_human_reference": 1
+    },
+    "RIGHT_ANKLE": {
+      "source_rows": 114,
+      "human_status_counts": {
+        "visible": 114
+      },
+      "visible_full_missing": 0,
+      "visible_rtmpose_missing": 0,
+      "visible_full_gate_pass": 113,
+      "same_frame_same_joint_paired": {
+        "full": {
+          "n": 114,
+          "mean_px": 17.532510604952577,
+          "median_px": 10.127230982872279,
+          "p95_px": 72.57280103487848,
+          "maximum_px": 120.4054645124373
+        },
+        "rtmpose": {
+          "n": 114,
+          "mean_px": 9.618616336919244,
+          "median_px": 8.74878859719498,
+          "p95_px": 18.924801160871613,
+          "maximum_px": 50.68456306035114
+        },
+        "rtmpose_closer": 66,
+        "rtmpose_farther": 48,
+        "exactly_equal": 0
+      },
+      "native_coordinate_without_visible_human_reference": 0
+    }
+  },
+  "original_major_hold_subset": {
+    "LEFT_SHOULDER": {
+      "source_rows": 18,
+      "human_status_counts": {
+        "visible": 18
+      },
+      "visible_full_missing": 0,
+      "visible_rtmpose_missing": 0,
+      "visible_full_gate_pass": 18,
+      "same_frame_same_joint_paired": {
+        "full": {
+          "n": 18,
+          "mean_px": 85.88877048985512,
+          "median_px": 96.71767658318998,
+          "p95_px": 141.4286856581561,
+          "maximum_px": 145.53758133567806
+        },
+        "rtmpose": {
+          "n": 18,
+          "mean_px": 6.102047771253256,
+          "median_px": 5.7073286066462305,
+          "p95_px": 10.17885318357794,
+          "maximum_px": 10.58215212181005
+        },
+        "rtmpose_closer": 18,
+        "rtmpose_farther": 0,
+        "exactly_equal": 0
+      },
+      "native_coordinate_without_visible_human_reference": 0
+    },
+    "RIGHT_SHOULDER": {
+      "source_rows": 18,
+      "human_status_counts": {
+        "visible": 18
+      },
+      "visible_full_missing": 0,
+      "visible_rtmpose_missing": 0,
+      "visible_full_gate_pass": 18,
+      "same_frame_same_joint_paired": {
+        "full": {
+          "n": 18,
+          "mean_px": 82.2809795280791,
+          "median_px": 75.20458663900247,
+          "p95_px": 140.13230076137316,
+          "maximum_px": 147.37031016491628
+        },
+        "rtmpose": {
+          "n": 18,
+          "mean_px": 8.535426940360729,
+          "median_px": 6.273165336807918,
+          "p95_px": 20.530429262540714,
+          "maximum_px": 25.438675416285328
+        },
+        "rtmpose_closer": 18,
+        "rtmpose_farther": 0,
+        "exactly_equal": 0
+      },
+      "native_coordinate_without_visible_human_reference": 0
+    },
+    "LEFT_ELBOW": {
+      "source_rows": 18,
+      "human_status_counts": {
+        "visible": 18
+      },
+      "visible_full_missing": 0,
+      "visible_rtmpose_missing": 0,
+      "visible_full_gate_pass": 14,
+      "same_frame_same_joint_paired": {
+        "full": {
+          "n": 18,
+          "mean_px": 100.62834357567323,
+          "median_px": 103.21263800345127,
+          "p95_px": 142.02046526335195,
+          "maximum_px": 148.3461527543454
+        },
+        "rtmpose": {
+          "n": 18,
+          "mean_px": 6.253823099860298,
+          "median_px": 6.161461746642942,
+          "p95_px": 10.663058054042017,
+          "maximum_px": 10.781144492520406
+        },
+        "rtmpose_closer": 18,
+        "rtmpose_farther": 0,
+        "exactly_equal": 0
+      },
+      "native_coordinate_without_visible_human_reference": 0
+    },
+    "RIGHT_ELBOW": {
+      "source_rows": 18,
+      "human_status_counts": {
+        "visible": 10,
+        "not_observable": 8
+      },
+      "visible_full_missing": 0,
+      "visible_rtmpose_missing": 0,
+      "visible_full_gate_pass": 6,
+      "same_frame_same_joint_paired": {
+        "full": {
+          "n": 10,
+          "mean_px": 110.92307013199513,
+          "median_px": 106.91332544775273,
+          "p95_px": 166.4721655481696,
+          "maximum_px": 166.56301746029152
+        },
+        "rtmpose": {
+          "n": 10,
+          "mean_px": 15.995888416868064,
+          "median_px": 7.850369058428508,
+          "p95_px": 55.447293840964676,
+          "maximum_px": 57.71662763714475
+        },
+        "rtmpose_closer": 10,
+        "rtmpose_farther": 0,
+        "exactly_equal": 0
+      },
+      "native_coordinate_without_visible_human_reference": 8
+    },
+    "LEFT_WRIST": {
+      "source_rows": 18,
+      "human_status_counts": {
+        "visible": 18
+      },
+      "visible_full_missing": 0,
+      "visible_rtmpose_missing": 0,
+      "visible_full_gate_pass": 14,
+      "same_frame_same_joint_paired": {
+        "full": {
+          "n": 18,
+          "mean_px": 94.26261864286623,
+          "median_px": 104.08416212014339,
+          "p95_px": 149.95463936988568,
+          "maximum_px": 151.05625263050686
+        },
+        "rtmpose": {
+          "n": 18,
+          "mean_px": 7.050736486223081,
+          "median_px": 7.499275101362063,
+          "p95_px": 10.092996855075564,
+          "maximum_px": 11.518161183798805
+        },
+        "rtmpose_closer": 18,
+        "rtmpose_farther": 0,
+        "exactly_equal": 0
+      },
+      "native_coordinate_without_visible_human_reference": 0
+    },
+    "RIGHT_WRIST": {
+      "source_rows": 18,
+      "human_status_counts": {
+        "not_observable": 18
+      },
+      "visible_full_missing": 0,
+      "visible_rtmpose_missing": 0,
+      "visible_full_gate_pass": 0,
+      "same_frame_same_joint_paired": {
+        "full": {
+          "n": 0,
+          "mean_px": null,
+          "median_px": null,
+          "p95_px": null,
+          "maximum_px": null
+        },
+        "rtmpose": {
+          "n": 0,
+          "mean_px": null,
+          "median_px": null,
+          "p95_px": null,
+          "maximum_px": null
+        },
+        "rtmpose_closer": 0,
+        "rtmpose_farther": 0,
+        "exactly_equal": 0
+      },
+      "native_coordinate_without_visible_human_reference": 18
+    },
+    "LEFT_HIP": {
+      "source_rows": 18,
+      "human_status_counts": {
+        "visible": 18
+      },
+      "visible_full_missing": 0,
+      "visible_rtmpose_missing": 0,
+      "visible_full_gate_pass": 18,
+      "same_frame_same_joint_paired": {
+        "full": {
+          "n": 18,
+          "mean_px": 76.42749159149766,
+          "median_px": 76.93031458241734,
+          "p95_px": 110.50579249135266,
+          "maximum_px": 114.32433744297836
+        },
+        "rtmpose": {
+          "n": 18,
+          "mean_px": 19.12097594403649,
+          "median_px": 20.289633160498404,
+          "p95_px": 24.741658418644814,
+          "maximum_px": 25.691769443135247
+        },
+        "rtmpose_closer": 18,
+        "rtmpose_farther": 0,
+        "exactly_equal": 0
+      },
+      "native_coordinate_without_visible_human_reference": 0
+    },
+    "RIGHT_HIP": {
+      "source_rows": 18,
+      "human_status_counts": {
+        "visible": 18
+      },
+      "visible_full_missing": 0,
+      "visible_rtmpose_missing": 0,
+      "visible_full_gate_pass": 18,
+      "same_frame_same_joint_paired": {
+        "full": {
+          "n": 18,
+          "mean_px": 75.41119560173007,
+          "median_px": 69.14268491651501,
+          "p95_px": 118.13932400310692,
+          "maximum_px": 118.73435615919627
+        },
+        "rtmpose": {
+          "n": 18,
+          "mean_px": 16.344138909876342,
+          "median_px": 17.301638203860378,
+          "p95_px": 24.136410041614585,
+          "maximum_px": 27.53020100992344
+        },
+        "rtmpose_closer": 18,
+        "rtmpose_farther": 0,
+        "exactly_equal": 0
+      },
+      "native_coordinate_without_visible_human_reference": 0
+    },
+    "LEFT_KNEE": {
+      "source_rows": 18,
+      "human_status_counts": {
+        "visible": 18
+      },
+      "visible_full_missing": 0,
+      "visible_rtmpose_missing": 0,
+      "visible_full_gate_pass": 18,
+      "same_frame_same_joint_paired": {
+        "full": {
+          "n": 18,
+          "mean_px": 58.57078889955442,
+          "median_px": 40.2096606448903,
+          "p95_px": 105.57335165523958,
+          "maximum_px": 109.27465899945902
+        },
+        "rtmpose": {
+          "n": 18,
+          "mean_px": 11.221468961784389,
+          "median_px": 9.078408766893313,
+          "p95_px": 25.167324256658787,
+          "maximum_px": 26.760925149734476
+        },
+        "rtmpose_closer": 17,
+        "rtmpose_farther": 1,
+        "exactly_equal": 0
+      },
+      "native_coordinate_without_visible_human_reference": 0
+    },
+    "RIGHT_KNEE": {
+      "source_rows": 18,
+      "human_status_counts": {
+        "visible": 18
+      },
+      "visible_full_missing": 0,
+      "visible_rtmpose_missing": 0,
+      "visible_full_gate_pass": 18,
+      "same_frame_same_joint_paired": {
+        "full": {
+          "n": 18,
+          "mean_px": 48.02878388801784,
+          "median_px": 40.321842209896886,
+          "p95_px": 80.38505200638774,
+          "maximum_px": 85.18899618665928
+        },
+        "rtmpose": {
+          "n": 18,
+          "mean_px": 12.1760898751098,
+          "median_px": 9.652875994151119,
+          "p95_px": 23.851431764410677,
+          "maximum_px": 24.248948215673735
+        },
+        "rtmpose_closer": 17,
+        "rtmpose_farther": 1,
+        "exactly_equal": 0
+      },
+      "native_coordinate_without_visible_human_reference": 0
+    },
+    "LEFT_ANKLE": {
+      "source_rows": 18,
+      "human_status_counts": {
+        "visible": 18
+      },
+      "visible_full_missing": 0,
+      "visible_rtmpose_missing": 0,
+      "visible_full_gate_pass": 18,
+      "same_frame_same_joint_paired": {
+        "full": {
+          "n": 18,
+          "mean_px": 75.25122996741396,
+          "median_px": 97.75814774235778,
+          "p95_px": 127.90051474715209,
+          "maximum_px": 128.58318538199086
+        },
+        "rtmpose": {
+          "n": 18,
+          "mean_px": 5.652837635868141,
+          "median_px": 4.9952293485802315,
+          "p95_px": 9.333909451113165,
+          "maximum_px": 11.971520744736194
+        },
+        "rtmpose_closer": 18,
+        "rtmpose_farther": 0,
+        "exactly_equal": 0
+      },
+      "native_coordinate_without_visible_human_reference": 0
+    },
+    "RIGHT_ANKLE": {
+      "source_rows": 18,
+      "human_status_counts": {
+        "visible": 18
+      },
+      "visible_full_missing": 0,
+      "visible_rtmpose_missing": 0,
+      "visible_full_gate_pass": 18,
+      "same_frame_same_joint_paired": {
+        "full": {
+          "n": 18,
+          "mean_px": 53.35160568549558,
+          "median_px": 49.60731969457659,
+          "p95_px": 116.39525836602903,
+          "maximum_px": 120.4054645124373
+        },
+        "rtmpose": {
+          "n": 18,
+          "mean_px": 8.772777204207621,
+          "median_px": 8.978634523399055,
+          "p95_px": 13.47090983925377,
+          "maximum_px": 14.01893456278458
+        },
+        "rtmpose_closer": 17,
+        "rtmpose_farther": 1,
+        "exactly_equal": 0
+      },
+      "native_coordinate_without_visible_human_reference": 0
+    }
+  },
+  "saved_threshold_sources": [
+    {
+      "query_pitch_id": "pitch_001",
+      "role": "throwing_elbow",
+      "saved_threshold": 2.2274395525455475,
+      "suppliers": [
+        {
+          "pitch_id": "pitch_005",
+          "frame_index": 94,
+          "canonical_label_of_original_full": "reliable",
+          "response_deficit": 2.2274395525455475,
+          "full_xy_px": [
+            372.772216796875,
+            156.79417300224304
+          ],
+          "full_input_xy": [
+            119.69341085271319,
+            69.41459077741442
+          ],
+          "bins": [
+            239,
+            139
+          ],
+          "native_score": 0.8911916017532349,
+          "native_xy_px": [
+            393.19287109375,
+            120.107421875
+          ]
+        }
+      ]
+    },
+    {
+      "query_pitch_id": "pitch_001",
+      "role": "throwing_wrist",
+      "saved_threshold": 1.3032971024513245,
+      "suppliers": [
+        {
+          "pitch_id": "pitch_005",
+          "frame_index": 67,
+          "canonical_label_of_original_full": "reliable",
+          "response_deficit": 1.3032971024513245,
+          "full_xy_px": [
+            286.45159912109375,
+            264.578016936779
+          ],
+          "full_input_xy": [
+            90.38532878411911,
+            119.90862994702815
+          ],
+          "bins": [
+            181,
+            240
+          ],
+          "native_score": 0.6631945967674255,
+          "native_xy_px": [
+            232.5634765625,
+            364.13037109375
+          ]
+        }
+      ]
+    },
+    {
+      "query_pitch_id": "pitch_002",
+      "role": "throwing_elbow",
+      "saved_threshold": 2.2274395525455475,
+      "suppliers": [
+        {
+          "pitch_id": "pitch_005",
+          "frame_index": 94,
+          "canonical_label_of_original_full": "reliable",
+          "response_deficit": 2.2274395525455475,
+          "full_xy_px": [
+            372.772216796875,
+            156.79417300224304
+          ],
+          "full_input_xy": [
+            119.69341085271319,
+            69.41459077741442
+          ],
+          "bins": [
+            239,
+            139
+          ],
+          "native_score": 0.8911916017532349,
+          "native_xy_px": [
+            393.19287109375,
+            120.107421875
+          ]
+        }
+      ]
+    },
+    {
+      "query_pitch_id": "pitch_002",
+      "role": "throwing_wrist",
+      "saved_threshold": 1.517179329879582,
+      "suppliers": [
+        {
+          "pitch_id": "pitch_001",
+          "frame_index": 25,
+          "canonical_label_of_original_full": "reliable",
+          "response_deficit": 1.517179329879582,
+          "full_xy_px": [
+            319.7109589576721,
+            224.3616087436676
+          ],
+          "full_input_xy": [
+            158.1886124210654,
+            87.86854267021535
+          ],
+          "bins": [
+            316,
+            176
+          ],
+          "native_score": 0.6490221619606018,
+          "native_xy_px": [
+            182.7099609375,
+            300.9423828125
+          ]
+        }
+      ]
+    },
+    {
+      "query_pitch_id": "pitch_003",
+      "role": "throwing_elbow",
+      "saved_threshold": 2.2274395525455475,
+      "suppliers": [
+        {
+          "pitch_id": "pitch_005",
+          "frame_index": 94,
+          "canonical_label_of_original_full": "reliable",
+          "response_deficit": 2.2274395525455475,
+          "full_xy_px": [
+            372.772216796875,
+            156.79417300224304
+          ],
+          "full_input_xy": [
+            119.69341085271319,
+            69.41459077741442
+          ],
+          "bins": [
+            239,
+            139
+          ],
+          "native_score": 0.8911916017532349,
+          "native_xy_px": [
+            393.19287109375,
+            120.107421875
+          ]
+        }
+      ]
+    },
+    {
+      "query_pitch_id": "pitch_003",
+      "role": "throwing_wrist",
+      "saved_threshold": 1.517179329879582,
+      "suppliers": [
+        {
+          "pitch_id": "pitch_001",
+          "frame_index": 25,
+          "canonical_label_of_original_full": "reliable",
+          "response_deficit": 1.517179329879582,
+          "full_xy_px": [
+            319.7109589576721,
+            224.3616087436676
+          ],
+          "full_input_xy": [
+            158.1886124210654,
+            87.86854267021535
+          ],
+          "bins": [
+            316,
+            176
+          ],
+          "native_score": 0.6490221619606018,
+          "native_xy_px": [
+            182.7099609375,
+            300.9423828125
+          ]
+        }
+      ]
+    },
+    {
+      "query_pitch_id": "pitch_004",
+      "role": "throwing_elbow",
+      "saved_threshold": 2.2274395525455475,
+      "suppliers": [
+        {
+          "pitch_id": "pitch_005",
+          "frame_index": 94,
+          "canonical_label_of_original_full": "reliable",
+          "response_deficit": 2.2274395525455475,
+          "full_xy_px": [
+            372.772216796875,
+            156.79417300224304
+          ],
+          "full_input_xy": [
+            119.69341085271319,
+            69.41459077741442
+          ],
+          "bins": [
+            239,
+            139
+          ],
+          "native_score": 0.8911916017532349,
+          "native_xy_px": [
+            393.19287109375,
+            120.107421875
+          ]
+        }
+      ]
+    },
+    {
+      "query_pitch_id": "pitch_004",
+      "role": "throwing_wrist",
+      "saved_threshold": 1.517179329879582,
+      "suppliers": [
+        {
+          "pitch_id": "pitch_001",
+          "frame_index": 25,
+          "canonical_label_of_original_full": "reliable",
+          "response_deficit": 1.517179329879582,
+          "full_xy_px": [
+            319.7109589576721,
+            224.3616087436676
+          ],
+          "full_input_xy": [
+            158.1886124210654,
+            87.86854267021535
+          ],
+          "bins": [
+            316,
+            176
+          ],
+          "native_score": 0.6490221619606018,
+          "native_xy_px": [
+            182.7099609375,
+            300.9423828125
+          ]
+        }
+      ]
+    },
+    {
+      "query_pitch_id": "pitch_005",
+      "role": "throwing_elbow",
+      "saved_threshold": 1.6503730416297913,
+      "suppliers": [
+        {
+          "pitch_id": "pitch_004",
+          "frame_index": 90,
+          "canonical_label_of_original_full": "reliable",
+          "response_deficit": 1.6503730416297913,
+          "full_xy_px": [
+            384.6142418384552,
+            302.2800227403641
+          ],
+          "full_input_xy": [
+            113.44245589918393,
+            95.72770415547043
+          ],
+          "bins": [
+            227,
+            191
+          ],
+          "native_score": 0.7119607329368591,
+          "native_xy_px": [
+            423.8432617187499,
+            261.50976562499994
+          ]
+        }
+      ]
+    },
+    {
+      "query_pitch_id": "pitch_005",
+      "role": "throwing_wrist",
+      "saved_threshold": 1.517179329879582,
+      "suppliers": [
+        {
+          "pitch_id": "pitch_001",
+          "frame_index": 25,
+          "canonical_label_of_original_full": "reliable",
+          "response_deficit": 1.517179329879582,
+          "full_xy_px": [
+            319.7109589576721,
+            224.3616087436676
+          ],
+          "full_input_xy": [
+            158.1886124210654,
+            87.86854267021535
+          ],
+          "bins": [
+            316,
+            176
+          ],
+          "native_score": 0.6490221619606018,
+          "native_xy_px": [
+            182.7099609375,
+            300.9423828125
+          ]
+        }
+      ]
+    }
+  ],
+  "missed_original_wrong_points": {
+    "throwing_elbow": {
+      "count": 84,
+      "reason_counts": {
+        "measured_not_above_saved_threshold": 81,
+        "missing_or_nonfinite_full_point": 3
+      },
+      "original_gate_pass": 72,
+      "covered_by_existing_major_hint": 21
+    },
+    "throwing_wrist": {
+      "count": 68,
+      "reason_counts": {
+        "measured_not_above_saved_threshold": 59,
+        "full_point_outside_simcc_bins": 6,
+        "missing_or_nonfinite_full_point": 3
+      },
+      "original_gate_pass": 46,
+      "covered_by_existing_major_hint": 5
+    }
+  },
+  "new_inference_calls": 0,
+  "new_calibrations": 0,
+  "new_labels": 0,
+  "threshold_or_decision_changes": false,
+  "adoption_decision": "remains_rejected",
+  "phase2_automatic_reliability": "NOT_PASSED",
+  "scope": "Post-decision continuous XY diagnosis only. No classifier, new hint, normalization, threshold search or model replacement.",
+  "limitations": [
+    "Exact XY accuracy applies only to the existing visible manual points in pitch_003.",
+    "Canonical reliability labels target original Full, not RTMPose.",
+    "Native coordinates on occluded points are model estimates, not observed truth.",
+    "Existing human-initialized CSRT ROI is a prerequisite."
+  ],
+  "source_refs": [
+    {
+      "path": "analysis_results/phase2_rtmpose_response_20261016_01/evaluation/evaluation.json",
+      "sha256": "0aabb0e533e3a5ce2923e18eea60b1fb2f8d1f62c8415a0099d560ed96254a77"
+    },
+    {
+      "path": "analysis_results/phase2_rtmpose_response_20261016_01/measurements/measurement_run.json",
+      "sha256": "677c9bce1542e8e4e2c47c2625da3b0900ce897fdb7c7171eda3ac263a163897"
+    },
+    {
+      "path": "analysis_results/phase2_rtmpose_response_20261016_01/exports/export_run.json",
+      "sha256": "94bac0092209fb170fcc1fbdba78ae0590edda7a515874378c8db6ada7b08d66"
+    },
+    {
+      "path": "annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_42/pitch_003/manual_keypoints.json",
+      "sha256": "a970354b14f728d38af97336d6872900625c956e7a105f75ab9cdcff0aa77735"
+    },
+    {
+      "path": "analysis_results/phase2_rtmpose_response_20261016_01/measurements/pitch_001.json",
+      "sha256": "3fbfc72629676b187b15d4de25dce680275664c7bda740025e919711fc2a46a8"
+    },
+    {
+      "path": "analysis_results/phase2_rtmpose_response_20261016_01/measurements/pitch_002.json",
+      "sha256": "385b669be78711af65230dd98f2180df78d869813346d8d9a725d6dd6dcfb699"
+    },
+    {
+      "path": "analysis_results/phase2_rtmpose_response_20261016_01/measurements/pitch_003.json",
+      "sha256": "9aa11f7bd777b9b3777c1db2165e0848c69d630a2e3901cd665ed60912aa9d8a"
+    },
+    {
+      "path": "analysis_results/phase2_rtmpose_response_20261016_01/measurements/pitch_004.json",
+      "sha256": "d21820a12adb46abf8595f5afa5f67d5fd02bc721cc44bc01bfaa8155c026796"
+    },
+    {
+      "path": "analysis_results/phase2_rtmpose_response_20261016_01/measurements/pitch_005.json",
+      "sha256": "155cccfe09f3c67ad5a053c605dbfa5d16df753ea9df28beae1e22d3ffd705d4"
+    },
+    {
+      "path": "analysis_results/phase2_rtmpose_response_20261016_01/exports/pitch_003.json",
+      "sha256": "f351f6f39cc3f5d37c000d2ae317e630c2ac7995dc5293a11d90d1a8f5e54b57"
+    },
+    {
+      "path": "analysis_results/phase2_rtmpose_response_20261016_01/folds/pitch_001/calibration.json",
+      "sha256": "959163e1683ea5a33a61804029d13e217b1c0a91be54669e64fd286fe42b28dd"
+    },
+    {
+      "path": "analysis_results/phase2_rtmpose_response_20261016_01/folds/pitch_001/training_trace.json",
+      "sha256": "a0aeac8c5d4f4fcf0f7a4b981ef97c8e274bbe20ebd8c732968515774f1c3c64"
+    },
+    {
+      "path": "analysis_results/phase2_rtmpose_response_20261016_01/folds/pitch_002/calibration.json",
+      "sha256": "46a0dd5e52f51f5ede5e6df465fcf57ed5843eebf0678c9e51206efd9c369e9b"
+    },
+    {
+      "path": "analysis_results/phase2_rtmpose_response_20261016_01/folds/pitch_002/training_trace.json",
+      "sha256": "02295914fafda8b7cc30545fbbae928776b97b1bd4b6b60941d2e0f2b15dc6f6"
+    },
+    {
+      "path": "analysis_results/phase2_rtmpose_response_20261016_01/folds/pitch_003/calibration.json",
+      "sha256": "82759c2ef381ce6c266a8da051f33ab1e9c71ae3fe51b969425d4330e8e67518"
+    },
+    {
+      "path": "analysis_results/phase2_rtmpose_response_20261016_01/folds/pitch_003/training_trace.json",
+      "sha256": "a10eb554950653bf307addf8af10238f21c1af1b5985363d9d7ee2bcf417ea83"
+    },
+    {
+      "path": "analysis_results/phase2_rtmpose_response_20261016_01/folds/pitch_004/calibration.json",
+      "sha256": "d0adf21c07562267cc5a7e5df7361f8b0e9028742fdf1492b1eaf59b3bda08b0"
+    },
+    {
+      "path": "analysis_results/phase2_rtmpose_response_20261016_01/folds/pitch_004/training_trace.json",
+      "sha256": "0e0796cd675743586cf8d9e068f57906a8fb9e47fe96441e13ab95314c2c0a33"
+    },
+    {
+      "path": "analysis_results/phase2_rtmpose_response_20261016_01/folds/pitch_005/calibration.json",
+      "sha256": "70ba929915851d0b35b5b6bd6184aba645dea1a6e985bd333a9f1dc14d3b3044"
+    },
+    {
+      "path": "analysis_results/phase2_rtmpose_response_20261016_01/folds/pitch_005/training_trace.json",
+      "sha256": "e459989b7bed070ed2364ef29069ed328509133c83a9452e6992ffccbb18e89e"
+    }
+  ],
+  "read_paths": [
+    "analysis_results/phase2_rtmpose_response_20261016_01/evaluation/evaluation.json",
+    "analysis_results/phase2_rtmpose_response_20261016_01/measurements/pitch_001.json",
+    "analysis_results/phase2_rtmpose_response_20261016_01/measurements/pitch_002.json",
+    "analysis_results/phase2_rtmpose_response_20261016_01/measurements/pitch_003.json",
+    "analysis_results/phase2_rtmpose_response_20261016_01/measurements/pitch_004.json",
+    "analysis_results/phase2_rtmpose_response_20261016_01/measurements/pitch_005.json",
+    "analysis_results/phase2_rtmpose_response_20261016_01/exports/pitch_003.json",
+    "annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_42/pitch_003/manual_keypoints.json",
+    "analysis_results/phase2_rtmpose_response_20261016_01/folds/pitch_001/calibration.json",
+    "analysis_results/phase2_rtmpose_response_20261016_01/folds/pitch_001/training_trace.json",
+    "analysis_results/phase2_rtmpose_response_20261016_01/folds/pitch_002/calibration.json",
+    "analysis_results/phase2_rtmpose_response_20261016_01/folds/pitch_002/training_trace.json",
+    "analysis_results/phase2_rtmpose_response_20261016_01/folds/pitch_003/calibration.json",
+    "analysis_results/phase2_rtmpose_response_20261016_01/folds/pitch_003/training_trace.json",
+    "analysis_results/phase2_rtmpose_response_20261016_01/folds/pitch_004/calibration.json",
+    "analysis_results/phase2_rtmpose_response_20261016_01/folds/pitch_004/training_trace.json",
+    "analysis_results/phase2_rtmpose_response_20261016_01/folds/pitch_005/calibration.json",
+    "analysis_results/phase2_rtmpose_response_20261016_01/folds/pitch_005/training_trace.json"
+  ],
+  "helper": {
+    "path": "scripts/diagnose_saved_rtmpose.py",
+    "sha256": "37ca6d64abfe64796fce5373d90708cf7e1adb247a70b538309107c97f9501bf"
+  },
+  "frame_joint_rows": {
+    "path": "analysis_results/phase2_rtmpose_coordinate_diagnosis_20261017_01/frame_joint_rows.json",
+    "sha256": "e7b270e661f4d487c1bf24d8d606c2c6d3afbaa1dd2780dcb2645d17cc903cb0"
+  },
+  "sealed_at_utc": "2026-10-17T07:36:07.732506+00:00",
+  "previous_trial_result": {
+    "path": "docs/evaluation_plans/phase2_rtmpose_response_result_20261017_01.json",
+    "sha256": "577a7e1979d256375c27d02f884a89681595b5810ca4d0ba74521ca42146664b"
+  },
+  "diagnostic_audit": {
+    "status": "independent_coordinate_diagnostic_audit_complete_no_differences",
+    "created_at_utc": "2026-10-17T02:33:30.178941+00:00",
+    "summary_sha256": "d6e859b2e7cc093f68fc726172389033e7cefee2e8faec051ad688fba696e2f5",
+    "frame_joint_rows_sha256": "e7b270e661f4d487c1bf24d8d606c2c6d3afbaa1dd2780dcb2645d17cc903cb0",
+    "source_sha256_before_and_after": {
+      "analysis_results/phase2_rtmpose_response_20261016_01/evaluation/evaluation.json": "0aabb0e533e3a5ce2923e18eea60b1fb2f8d1f62c8415a0099d560ed96254a77",
+      "analysis_results/phase2_rtmpose_response_20261016_01/measurements/measurement_run.json": "677c9bce1542e8e4e2c47c2625da3b0900ce897fdb7c7171eda3ac263a163897",
+      "analysis_results/phase2_rtmpose_response_20261016_01/exports/export_run.json": "94bac0092209fb170fcc1fbdba78ae0590edda7a515874378c8db6ada7b08d66",
+      "annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_42/pitch_003/manual_keypoints.json": "a970354b14f728d38af97336d6872900625c956e7a105f75ab9cdcff0aa77735",
+      "analysis_results/phase2_rtmpose_response_20261016_01/measurements/pitch_001.json": "3fbfc72629676b187b15d4de25dce680275664c7bda740025e919711fc2a46a8",
+      "analysis_results/phase2_rtmpose_response_20261016_01/measurements/pitch_002.json": "385b669be78711af65230dd98f2180df78d869813346d8d9a725d6dd6dcfb699",
+      "analysis_results/phase2_rtmpose_response_20261016_01/measurements/pitch_003.json": "9aa11f7bd777b9b3777c1db2165e0848c69d630a2e3901cd665ed60912aa9d8a",
+      "analysis_results/phase2_rtmpose_response_20261016_01/measurements/pitch_004.json": "d21820a12adb46abf8595f5afa5f67d5fd02bc721cc44bc01bfaa8155c026796",
+      "analysis_results/phase2_rtmpose_response_20261016_01/measurements/pitch_005.json": "155cccfe09f3c67ad5a053c605dbfa5d16df753ea9df28beae1e22d3ffd705d4",
+      "analysis_results/phase2_rtmpose_response_20261016_01/exports/pitch_003.json": "f351f6f39cc3f5d37c000d2ae317e630c2ac7995dc5293a11d90d1a8f5e54b57",
+      "analysis_results/phase2_rtmpose_response_20261016_01/folds/pitch_001/calibration.json": "959163e1683ea5a33a61804029d13e217b1c0a91be54669e64fd286fe42b28dd",
+      "analysis_results/phase2_rtmpose_response_20261016_01/folds/pitch_001/training_trace.json": "a0aeac8c5d4f4fcf0f7a4b981ef97c8e274bbe20ebd8c732968515774f1c3c64",
+      "analysis_results/phase2_rtmpose_response_20261016_01/folds/pitch_002/calibration.json": "46a0dd5e52f51f5ede5e6df465fcf57ed5843eebf0678c9e51206efd9c369e9b",
+      "analysis_results/phase2_rtmpose_response_20261016_01/folds/pitch_002/training_trace.json": "02295914fafda8b7cc30545fbbae928776b97b1bd4b6b60941d2e0f2b15dc6f6",
+      "analysis_results/phase2_rtmpose_response_20261016_01/folds/pitch_003/calibration.json": "82759c2ef381ce6c266a8da051f33ab1e9c71ae3fe51b969425d4330e8e67518",
+      "analysis_results/phase2_rtmpose_response_20261016_01/folds/pitch_003/training_trace.json": "a10eb554950653bf307addf8af10238f21c1af1b5985363d9d7ee2bcf417ea83",
+      "analysis_results/phase2_rtmpose_response_20261016_01/folds/pitch_004/calibration.json": "d0adf21c07562267cc5a7e5df7361f8b0e9028742fdf1492b1eaf59b3bda08b0",
+      "analysis_results/phase2_rtmpose_response_20261016_01/folds/pitch_004/training_trace.json": "0e0796cd675743586cf8d9e068f57906a8fb9e47fe96441e13ab95314c2c0a33",
+      "analysis_results/phase2_rtmpose_response_20261016_01/folds/pitch_005/calibration.json": "70ba929915851d0b35b5b6bd6184aba645dea1a6e985bd333a9f1dc14d3b3044",
+      "analysis_results/phase2_rtmpose_response_20261016_01/folds/pitch_005/training_trace.json": "e459989b7bed070ed2364ef29069ed328509133c83a9452e6992ffccbb18e89e",
+      "scripts/diagnose_saved_rtmpose.py": "37ca6d64abfe64796fce5373d90708cf7e1adb247a70b538309107c97f9501bf",
+      "analysis_results/phase2_rtmpose_coordinate_diagnosis_20261017_01/frame_joint_rows.json": "e7b270e661f4d487c1bf24d8d606c2c6d3afbaa1dd2780dcb2645d17cc903cb0"
+    },
+    "bound_source_count": 22,
+    "source_hashes_unchanged": true,
+    "source_rows": 1380,
+    "all_status_counts": {
+      "visible": 1205,
+      "not_observable": 173,
+      "uncertain": 2
+    },
+    "non_seed_status_counts": {
+      "visible": 1195,
+      "not_observable": 171,
+      "uncertain": 2
+    },
+    "non_seed_rows": 1368,
+    "joint_mapping_native17_manual12": {
+      "LEFT_SHOULDER": 5,
+      "RIGHT_SHOULDER": 6,
+      "LEFT_ELBOW": 7,
+      "RIGHT_ELBOW": 8,
+      "LEFT_WRIST": 9,
+      "RIGHT_WRIST": 10,
+      "LEFT_HIP": 11,
+      "RIGHT_HIP": 12,
+      "LEFT_KNEE": 13,
+      "RIGHT_KNEE": 14,
+      "LEFT_ANKLE": 15,
+      "RIGHT_ANKLE": 16
+    },
+    "maximum_error_replay_difference": 0.0,
+    "non_seed_joint_statistics": {
+      "LEFT_SHOULDER": {
+        "rows": 114,
+        "status_counts": {
+          "visible": 114
+        },
+        "paired": 114,
+        "full": {
+          "n": 114,
+          "mean_px": 23.49665889637646,
+          "median_px": 11.04164922456139,
+          "p95_px": 109.69474446961347,
+          "maximum_px": 145.53758133567806
+        },
+        "rtmpose": {
+          "n": 114,
+          "mean_px": 7.190844126067368,
+          "median_px": 5.809053035301163,
+          "p95_px": 16.46753403413234,
+          "maximum_px": 20.26680069331141
+        },
+        "closer": 84,
+        "farther": 30,
+        "equal": 0
+      },
+      "RIGHT_SHOULDER": {
+        "rows": 114,
+        "status_counts": {
+          "visible": 105,
+          "not_observable": 9
+        },
+        "paired": 105,
+        "full": {
+          "n": 105,
+          "mean_px": 20.93065152763333,
+          "median_px": 7.479729026870646,
+          "p95_px": 124.95974124366826,
+          "maximum_px": 147.37031016491628
+        },
+        "rtmpose": {
+          "n": 105,
+          "mean_px": 6.823198661036551,
+          "median_px": 6.318468225522189,
+          "p95_px": 14.33704210027655,
+          "maximum_px": 25.438675416285328
+        },
+        "closer": 63,
+        "farther": 42,
+        "equal": 0
+      },
+      "LEFT_ELBOW": {
+        "rows": 114,
+        "status_counts": {
+          "visible": 82,
+          "not_observable": 32
+        },
+        "paired": 82,
+        "full": {
+          "n": 82,
+          "mean_px": 36.51709933478835,
+          "median_px": 15.440500116615892,
+          "p95_px": 132.56799832998928,
+          "maximum_px": 150.69203263207507
+        },
+        "rtmpose": {
+          "n": 82,
+          "mean_px": 8.7922165742214,
+          "median_px": 7.257921015332874,
+          "p95_px": 18.85248613067662,
+          "maximum_px": 45.897366454009486
+        },
+        "closer": 66,
+        "farther": 16,
+        "equal": 0
+      },
+      "RIGHT_ELBOW": {
+        "rows": 114,
+        "status_counts": {
+          "visible": 92,
+          "not_observable": 22
+        },
+        "paired": 92,
+        "full": {
+          "n": 92,
+          "mean_px": 27.74608093739465,
+          "median_px": 10.902625857419137,
+          "p95_px": 106.5538152684173,
+          "maximum_px": 166.56301746029152
+        },
+        "rtmpose": {
+          "n": 92,
+          "mean_px": 7.3100832741440716,
+          "median_px": 5.446079598257599,
+          "p95_px": 14.916667390555146,
+          "maximum_px": 57.71662763714475
+        },
+        "closer": 75,
+        "farther": 17,
+        "equal": 0
+      },
+      "LEFT_WRIST": {
+        "rows": 114,
+        "status_counts": {
+          "not_observable": 51,
+          "visible": 61,
+          "uncertain": 2
+        },
+        "paired": 61,
+        "full": {
+          "n": 61,
+          "mean_px": 44.566844983462076,
+          "median_px": 21.749711196159385,
+          "p95_px": 136.75508431501493,
+          "maximum_px": 252.36739808148587
+        },
+        "rtmpose": {
+          "n": 61,
+          "mean_px": 11.839653770645663,
+          "median_px": 8.517073373458567,
+          "p95_px": 25.731509319000335,
+          "maximum_px": 101.20495840636129
+        },
+        "closer": 45,
+        "farther": 16,
+        "equal": 0
+      },
+      "RIGHT_WRIST": {
+        "rows": 114,
+        "status_counts": {
+          "not_observable": 56,
+          "visible": 58
+        },
+        "paired": 58,
+        "full": {
+          "n": 58,
+          "mean_px": 26.65564895919292,
+          "median_px": 14.38916227207325,
+          "p95_px": 84.57410925209847,
+          "maximum_px": 108.06672967680133
+        },
+        "rtmpose": {
+          "n": 58,
+          "mean_px": 16.84048263482484,
+          "median_px": 9.36605048916483,
+          "p95_px": 73.49500112966938,
+          "maximum_px": 127.9341836591818
+        },
+        "closer": 33,
+        "farther": 25,
+        "equal": 0
+      },
+      "LEFT_HIP": {
+        "rows": 114,
+        "status_counts": {
+          "visible": 114
+        },
+        "paired": 114,
+        "full": {
+          "n": 114,
+          "mean_px": 19.77566727447362,
+          "median_px": 10.567128034784265,
+          "p95_px": 94.44163815087646,
+          "maximum_px": 114.32433744297836
+        },
+        "rtmpose": {
+          "n": 114,
+          "mean_px": 14.26649026485733,
+          "median_px": 14.013542466644846,
+          "p95_px": 25.275247564686396,
+          "maximum_px": 30.171731219010262
+        },
+        "closer": 47,
+        "farther": 67,
+        "equal": 0
+      },
+      "RIGHT_HIP": {
+        "rows": 114,
+        "status_counts": {
+          "visible": 114
+        },
+        "paired": 114,
+        "full": {
+          "n": 114,
+          "mean_px": 18.202113742574895,
+          "median_px": 8.025378029942445,
+          "p95_px": 86.80085223293835,
+          "maximum_px": 118.73435615919627
+        },
+        "rtmpose": {
+          "n": 114,
+          "mean_px": 12.449904351433336,
+          "median_px": 12.690625824610013,
+          "p95_px": 19.587236947708533,
+          "maximum_px": 27.53020100992344
+        },
+        "closer": 42,
+        "farther": 72,
+        "equal": 0
+      },
+      "LEFT_KNEE": {
+        "rows": 114,
+        "status_counts": {
+          "visible": 114
+        },
+        "paired": 114,
+        "full": {
+          "n": 114,
+          "mean_px": 15.67004492360662,
+          "median_px": 7.5996604794844345,
+          "p95_px": 79.27591740429136,
+          "maximum_px": 109.27465899945902
+        },
+        "rtmpose": {
+          "n": 114,
+          "mean_px": 6.62631199008583,
+          "median_px": 5.487680462594593,
+          "p95_px": 14.985936083992192,
+          "maximum_px": 26.760925149734476
+        },
+        "closer": 85,
+        "farther": 29,
+        "equal": 0
+      },
+      "RIGHT_KNEE": {
+        "rows": 114,
+        "status_counts": {
+          "visible": 114
+        },
+        "paired": 114,
+        "full": {
+          "n": 114,
+          "mean_px": 14.448734985632997,
+          "median_px": 7.618580570819832,
+          "p95_px": 66.63640259172534,
+          "maximum_px": 85.18899618665928
+        },
+        "rtmpose": {
+          "n": 114,
+          "mean_px": 6.854816133342192,
+          "median_px": 5.732646249689328,
+          "p95_px": 16.667654397727166,
+          "maximum_px": 24.248948215673735
+        },
+        "closer": 84,
+        "farther": 30,
+        "equal": 0
+      },
+      "LEFT_ANKLE": {
+        "rows": 114,
+        "status_counts": {
+          "visible": 113,
+          "not_observable": 1
+        },
+        "paired": 113,
+        "full": {
+          "n": 113,
+          "mean_px": 20.021823181308733,
+          "median_px": 9.96755116607587,
+          "p95_px": 108.19032022156938,
+          "maximum_px": 128.58318538199086
+        },
+        "rtmpose": {
+          "n": 113,
+          "mean_px": 8.657167231953583,
+          "median_px": 8.422919682786073,
+          "p95_px": 14.954191870336448,
+          "maximum_px": 23.042499211847044
+        },
+        "closer": 61,
+        "farther": 52,
+        "equal": 0
+      },
+      "RIGHT_ANKLE": {
+        "rows": 114,
+        "status_counts": {
+          "visible": 114
+        },
+        "paired": 114,
+        "full": {
+          "n": 114,
+          "mean_px": 17.532510604952577,
+          "median_px": 10.127230982872279,
+          "p95_px": 72.57280103487848,
+          "maximum_px": 120.4054645124373
+        },
+        "rtmpose": {
+          "n": 114,
+          "mean_px": 9.61861633691924,
+          "median_px": 8.74878859719498,
+          "p95_px": 18.924801160871613,
+          "maximum_px": 50.68456306035114
+        },
+        "closer": 66,
+        "farther": 48,
+        "equal": 0
+      }
+    },
+    "major_hold_frames": [
+      87,
+      88,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96,
+      97,
+      98,
+      99,
+      100,
+      101,
+      102,
+      103,
+      104
+    ],
+    "major_hold_rows": 216,
+    "major_hold_joint_statistics": {
+      "LEFT_SHOULDER": {
+        "rows": 18,
+        "status_counts": {
+          "visible": 18
+        },
+        "paired": 18,
+        "full": {
+          "n": 18,
+          "mean_px": 85.88877048985512,
+          "median_px": 96.71767658318998,
+          "p95_px": 141.4286856581561,
+          "maximum_px": 145.53758133567806
+        },
+        "rtmpose": {
+          "n": 18,
+          "mean_px": 6.102047771253256,
+          "median_px": 5.7073286066462305,
+          "p95_px": 10.17885318357794,
+          "maximum_px": 10.58215212181005
+        },
+        "closer": 18,
+        "farther": 0,
+        "equal": 0
+      },
+      "RIGHT_SHOULDER": {
+        "rows": 18,
+        "status_counts": {
+          "visible": 18
+        },
+        "paired": 18,
+        "full": {
+          "n": 18,
+          "mean_px": 82.28097952807909,
+          "median_px": 75.20458663900247,
+          "p95_px": 140.13230076137316,
+          "maximum_px": 147.37031016491628
+        },
+        "rtmpose": {
+          "n": 18,
+          "mean_px": 8.535426940360729,
+          "median_px": 6.273165336807918,
+          "p95_px": 20.530429262540714,
+          "maximum_px": 25.438675416285328
+        },
+        "closer": 18,
+        "farther": 0,
+        "equal": 0
+      },
+      "LEFT_ELBOW": {
+        "rows": 18,
+        "status_counts": {
+          "visible": 18
+        },
+        "paired": 18,
+        "full": {
+          "n": 18,
+          "mean_px": 100.6283435756732,
+          "median_px": 103.21263800345127,
+          "p95_px": 142.02046526335195,
+          "maximum_px": 148.3461527543454
+        },
+        "rtmpose": {
+          "n": 18,
+          "mean_px": 6.253823099860299,
+          "median_px": 6.161461746642942,
+          "p95_px": 10.663058054042017,
+          "maximum_px": 10.781144492520406
+        },
+        "closer": 18,
+        "farther": 0,
+        "equal": 0
+      },
+      "RIGHT_ELBOW": {
+        "rows": 18,
+        "status_counts": {
+          "visible": 10,
+          "not_observable": 8
+        },
+        "paired": 10,
+        "full": {
+          "n": 10,
+          "mean_px": 110.92307013199515,
+          "median_px": 106.91332544775273,
+          "p95_px": 166.4721655481696,
+          "maximum_px": 166.56301746029152
+        },
+        "rtmpose": {
+          "n": 10,
+          "mean_px": 15.995888416868064,
+          "median_px": 7.850369058428508,
+          "p95_px": 55.447293840964676,
+          "maximum_px": 57.71662763714475
+        },
+        "closer": 10,
+        "farther": 0,
+        "equal": 0
+      },
+      "LEFT_WRIST": {
+        "rows": 18,
+        "status_counts": {
+          "visible": 18
+        },
+        "paired": 18,
+        "full": {
+          "n": 18,
+          "mean_px": 94.26261864286623,
+          "median_px": 104.08416212014339,
+          "p95_px": 149.95463936988568,
+          "maximum_px": 151.05625263050686
+        },
+        "rtmpose": {
+          "n": 18,
+          "mean_px": 7.050736486223081,
+          "median_px": 7.499275101362063,
+          "p95_px": 10.092996855075564,
+          "maximum_px": 11.518161183798805
+        },
+        "closer": 18,
+        "farther": 0,
+        "equal": 0
+      },
+      "RIGHT_WRIST": {
+        "rows": 18,
+        "status_counts": {
+          "not_observable": 18
+        },
+        "paired": 0,
+        "full": {
+          "n": 0,
+          "mean_px": null,
+          "median_px": null,
+          "p95_px": null,
+          "maximum_px": null
+        },
+        "rtmpose": {
+          "n": 0,
+          "mean_px": null,
+          "median_px": null,
+          "p95_px": null,
+          "maximum_px": null
+        },
+        "closer": 0,
+        "farther": 0,
+        "equal": 0
+      },
+      "LEFT_HIP": {
+        "rows": 18,
+        "status_counts": {
+          "visible": 18
+        },
+        "paired": 18,
+        "full": {
+          "n": 18,
+          "mean_px": 76.42749159149766,
+          "median_px": 76.93031458241734,
+          "p95_px": 110.50579249135266,
+          "maximum_px": 114.32433744297836
+        },
+        "rtmpose": {
+          "n": 18,
+          "mean_px": 19.120975944036495,
+          "median_px": 20.289633160498404,
+          "p95_px": 24.741658418644814,
+          "maximum_px": 25.691769443135247
+        },
+        "closer": 18,
+        "farther": 0,
+        "equal": 0
+      },
+      "RIGHT_HIP": {
+        "rows": 18,
+        "status_counts": {
+          "visible": 18
+        },
+        "paired": 18,
+        "full": {
+          "n": 18,
+          "mean_px": 75.41119560173007,
+          "median_px": 69.14268491651501,
+          "p95_px": 118.13932400310692,
+          "maximum_px": 118.73435615919627
+        },
+        "rtmpose": {
+          "n": 18,
+          "mean_px": 16.344138909876342,
+          "median_px": 17.301638203860378,
+          "p95_px": 24.136410041614585,
+          "maximum_px": 27.53020100992344
+        },
+        "closer": 18,
+        "farther": 0,
+        "equal": 0
+      },
+      "LEFT_KNEE": {
+        "rows": 18,
+        "status_counts": {
+          "visible": 18
+        },
+        "paired": 18,
+        "full": {
+          "n": 18,
+          "mean_px": 58.57078889955443,
+          "median_px": 40.2096606448903,
+          "p95_px": 105.57335165523958,
+          "maximum_px": 109.27465899945902
+        },
+        "rtmpose": {
+          "n": 18,
+          "mean_px": 11.221468961784389,
+          "median_px": 9.078408766893313,
+          "p95_px": 25.167324256658787,
+          "maximum_px": 26.760925149734476
+        },
+        "closer": 17,
+        "farther": 1,
+        "equal": 0
+      },
+      "RIGHT_KNEE": {
+        "rows": 18,
+        "status_counts": {
+          "visible": 18
+        },
+        "paired": 18,
+        "full": {
+          "n": 18,
+          "mean_px": 48.02878388801785,
+          "median_px": 40.321842209896886,
+          "p95_px": 80.38505200638774,
+          "maximum_px": 85.18899618665928
+        },
+        "rtmpose": {
+          "n": 18,
+          "mean_px": 12.1760898751098,
+          "median_px": 9.652875994151119,
+          "p95_px": 23.851431764410677,
+          "maximum_px": 24.248948215673735
+        },
+        "closer": 17,
+        "farther": 1,
+        "equal": 0
+      },
+      "LEFT_ANKLE": {
+        "rows": 18,
+        "status_counts": {
+          "visible": 18
+        },
+        "paired": 18,
+        "full": {
+          "n": 18,
+          "mean_px": 75.25122996741398,
+          "median_px": 97.75814774235778,
+          "p95_px": 127.90051474715209,
+          "maximum_px": 128.58318538199086
+        },
+        "rtmpose": {
+          "n": 18,
+          "mean_px": 5.65283763586814,
+          "median_px": 4.9952293485802315,
+          "p95_px": 9.333909451113165,
+          "maximum_px": 11.971520744736194
+        },
+        "closer": 18,
+        "farther": 0,
+        "equal": 0
+      },
+      "RIGHT_ANKLE": {
+        "rows": 18,
+        "status_counts": {
+          "visible": 18
+        },
+        "paired": 18,
+        "full": {
+          "n": 18,
+          "mean_px": 53.351605685495585,
+          "median_px": 49.60731969457659,
+          "p95_px": 116.39525836602903,
+          "maximum_px": 120.4054645124373
+        },
+        "rtmpose": {
+          "n": 18,
+          "mean_px": 8.772777204207621,
+          "median_px": 8.978634523399055,
+          "p95_px": 13.47090983925377,
+          "maximum_px": 14.01893456278458
+        },
+        "closer": 17,
+        "farther": 1,
+        "equal": 0
+      }
+    },
+    "saved_threshold_equal_supplier_checks": [
+      {
+        "query_pitch_id": "pitch_001",
+        "role": "throwing_elbow",
+        "saved_threshold": 2.2274395525455475,
+        "supplier_count": 1,
+        "suppliers": [
+          {
+            "pitch_id": "pitch_005",
+            "frame_index": 94
+          }
+        ]
+      },
+      {
+        "query_pitch_id": "pitch_001",
+        "role": "throwing_wrist",
+        "saved_threshold": 1.3032971024513245,
+        "supplier_count": 1,
+        "suppliers": [
+          {
+            "pitch_id": "pitch_005",
+            "frame_index": 67
+          }
+        ]
+      },
+      {
+        "query_pitch_id": "pitch_002",
+        "role": "throwing_elbow",
+        "saved_threshold": 2.2274395525455475,
+        "supplier_count": 1,
+        "suppliers": [
+          {
+            "pitch_id": "pitch_005",
+            "frame_index": 94
+          }
+        ]
+      },
+      {
+        "query_pitch_id": "pitch_002",
+        "role": "throwing_wrist",
+        "saved_threshold": 1.517179329879582,
+        "supplier_count": 1,
+        "suppliers": [
+          {
+            "pitch_id": "pitch_001",
+            "frame_index": 25
+          }
+        ]
+      },
+      {
+        "query_pitch_id": "pitch_003",
+        "role": "throwing_elbow",
+        "saved_threshold": 2.2274395525455475,
+        "supplier_count": 1,
+        "suppliers": [
+          {
+            "pitch_id": "pitch_005",
+            "frame_index": 94
+          }
+        ]
+      },
+      {
+        "query_pitch_id": "pitch_003",
+        "role": "throwing_wrist",
+        "saved_threshold": 1.517179329879582,
+        "supplier_count": 1,
+        "suppliers": [
+          {
+            "pitch_id": "pitch_001",
+            "frame_index": 25
+          }
+        ]
+      },
+      {
+        "query_pitch_id": "pitch_004",
+        "role": "throwing_elbow",
+        "saved_threshold": 2.2274395525455475,
+        "supplier_count": 1,
+        "suppliers": [
+          {
+            "pitch_id": "pitch_005",
+            "frame_index": 94
+          }
+        ]
+      },
+      {
+        "query_pitch_id": "pitch_004",
+        "role": "throwing_wrist",
+        "saved_threshold": 1.517179329879582,
+        "supplier_count": 1,
+        "suppliers": [
+          {
+            "pitch_id": "pitch_001",
+            "frame_index": 25
+          }
+        ]
+      },
+      {
+        "query_pitch_id": "pitch_005",
+        "role": "throwing_elbow",
+        "saved_threshold": 1.6503730416297913,
+        "supplier_count": 1,
+        "suppliers": [
+          {
+            "pitch_id": "pitch_004",
+            "frame_index": 90
+          }
+        ]
+      },
+      {
+        "query_pitch_id": "pitch_005",
+        "role": "throwing_wrist",
+        "saved_threshold": 1.517179329879582,
+        "supplier_count": 1,
+        "suppliers": [
+          {
+            "pitch_id": "pitch_001",
+            "frame_index": 25
+          }
+        ]
+      }
+    ],
+    "false_negative_decomposition": {
+      "throwing_elbow": {
+        "count": 84,
+        "reason_counts": {
+          "measured_not_above_saved_threshold": 81,
+          "missing_or_nonfinite_full_point": 3
+        },
+        "original_gate_pass": 72,
+        "covered_by_existing_major_hint": 21
+      },
+      "throwing_wrist": {
+        "count": 68,
+        "reason_counts": {
+          "measured_not_above_saved_threshold": 59,
+          "full_point_outside_simcc_bins": 6,
+          "missing_or_nonfinite_full_point": 3
+        },
+        "original_gate_pass": 46,
+        "covered_by_existing_major_hint": 5
+      }
+    },
+    "original_trial_decision": "rejected",
+    "new_inference_calls": 0,
+    "new_calibration_calls": 0,
+    "original_diagnose_function_calls": 0,
+    "original_evaluate_function_calls": 0,
+    "new_labels": 0,
+    "interpretation": "Read-only arithmetic and equality replay of sealed outputs. Native coordinates on nonvisible human references are estimates, not new truth. No threshold optimization or new adoption decision."
+  },
+  "outside_original_major_hold": {
+    "criterion": "existing original_major_hold is false; nonseed visible paired coordinates only; no new cutoff",
+    "source_rows": {
+      "path": "analysis_results/phase2_rtmpose_coordinate_diagnosis_20261017_01/frame_joint_rows.json",
+      "sha256": "e7b270e661f4d487c1bf24d8d606c2c6d3afbaa1dd2780dcb2645d17cc903cb0"
+    },
+    "summary": {
+      "LEFT_SHOULDER": {
+        "source_rows": 96,
+        "human_status_counts": {
+          "visible": 96
+        },
+        "visible_full_missing": 0,
+        "visible_rtmpose_missing": 0,
+        "visible_full_gate_pass": 96,
+        "same_frame_same_joint_paired": {
+          "full": {
+            "n": 96,
+            "mean_px": 11.798137972599212,
+            "median_px": 9.461301650384677,
+            "p95_px": 31.711780228574924,
+            "maximum_px": 39.466839435931654
+          },
+          "rtmpose": {
+            "n": 96,
+            "mean_px": 7.3949934425950135,
+            "median_px": 5.809053035301163,
+            "p95_px": 16.788134772946528,
+            "maximum_px": 20.26680069331141
+          },
+          "rtmpose_closer": 66,
+          "rtmpose_farther": 30,
+          "exactly_equal": 0
+        },
+        "native_coordinate_without_visible_human_reference": 0
+      },
+      "RIGHT_SHOULDER": {
+        "source_rows": 96,
+        "human_status_counts": {
+          "visible": 87,
+          "not_observable": 9
+        },
+        "visible_full_missing": 0,
+        "visible_rtmpose_missing": 0,
+        "visible_full_gate_pass": 87,
+        "same_frame_same_joint_paired": {
+          "full": {
+            "n": 87,
+            "mean_px": 8.237480217196275,
+            "median_px": 6.227845373169291,
+            "p95_px": 22.25670721264386,
+            "maximum_px": 34.873039120667734
+          },
+          "rtmpose": {
+            "n": 87,
+            "mean_px": 6.4689445342798235,
+            "median_px": 6.318468225522189,
+            "p95_px": 12.571751547362888,
+            "maximum_px": 18.691310858968308
+          },
+          "rtmpose_closer": 45,
+          "rtmpose_farther": 42,
+          "exactly_equal": 0
+        },
+        "native_coordinate_without_visible_human_reference": 9
+      },
+      "LEFT_ELBOW": {
+        "source_rows": 96,
+        "human_status_counts": {
+          "visible": 64,
+          "not_observable": 32
+        },
+        "visible_full_missing": 0,
+        "visible_rtmpose_missing": 0,
+        "visible_full_gate_pass": 52,
+        "same_frame_same_joint_paired": {
+          "full": {
+            "n": 64,
+            "mean_px": 18.485811892039486,
+            "median_px": 12.17979812773514,
+            "p95_px": 49.64007716898317,
+            "maximum_px": 150.69203263207507
+          },
+          "rtmpose": {
+            "n": 64,
+            "mean_px": 9.506139738885459,
+            "median_px": 7.478301244079166,
+            "p95_px": 21.529421010830045,
+            "maximum_px": 45.897366454009486
+          },
+          "rtmpose_closer": 48,
+          "rtmpose_farther": 16,
+          "exactly_equal": 0
+        },
+        "native_coordinate_without_visible_human_reference": 32
+      },
+      "RIGHT_ELBOW": {
+        "source_rows": 96,
+        "human_status_counts": {
+          "visible": 82,
+          "not_observable": 14
+        },
+        "visible_full_missing": 0,
+        "visible_rtmpose_missing": 0,
+        "visible_full_gate_pass": 80,
+        "same_frame_same_joint_paired": {
+          "full": {
+            "n": 82,
+            "mean_px": 17.602545669760445,
+            "median_px": 9.699678280418912,
+            "p95_px": 57.06036835358078,
+            "maximum_px": 90.77505009397284
+          },
+          "rtmpose": {
+            "n": 82,
+            "mean_px": 6.250838744543584,
+            "median_px": 5.270157885789441,
+            "p95_px": 12.195779694571414,
+            "maximum_px": 28.402741246810194
+          },
+          "rtmpose_closer": 65,
+          "rtmpose_farther": 17,
+          "exactly_equal": 0
+        },
+        "native_coordinate_without_visible_human_reference": 14
+      },
+      "LEFT_WRIST": {
+        "source_rows": 96,
+        "human_status_counts": {
+          "not_observable": 51,
+          "visible": 43,
+          "uncertain": 2
+        },
+        "visible_full_missing": 0,
+        "visible_rtmpose_missing": 0,
+        "visible_full_gate_pass": 38,
+        "same_frame_same_joint_paired": {
+          "full": {
+            "n": 43,
+            "mean_px": 23.7639629865022,
+            "median_px": 13.77664329514949,
+            "p95_px": 53.14008262719406,
+            "maximum_px": 252.36739808148587
+          },
+          "rtmpose": {
+            "n": 43,
+            "mean_px": 13.844316819938832,
+            "median_px": 9.606430625910061,
+            "p95_px": 31.766592428487275,
+            "maximum_px": 101.20495840636129
+          },
+          "rtmpose_closer": 27,
+          "rtmpose_farther": 16,
+          "exactly_equal": 0
+        },
+        "native_coordinate_without_visible_human_reference": 53
+      },
+      "RIGHT_WRIST": {
+        "source_rows": 96,
+        "human_status_counts": {
+          "not_observable": 38,
+          "visible": 58
+        },
+        "visible_full_missing": 0,
+        "visible_rtmpose_missing": 0,
+        "visible_full_gate_pass": 49,
+        "same_frame_same_joint_paired": {
+          "full": {
+            "n": 58,
+            "mean_px": 26.65564895919292,
+            "median_px": 14.38916227207325,
+            "p95_px": 84.57410925209847,
+            "maximum_px": 108.06672967680133
+          },
+          "rtmpose": {
+            "n": 58,
+            "mean_px": 16.840482634824838,
+            "median_px": 9.36605048916483,
+            "p95_px": 73.49500112966938,
+            "maximum_px": 127.9341836591818
+          },
+          "rtmpose_closer": 33,
+          "rtmpose_farther": 25,
+          "exactly_equal": 0
+        },
+        "native_coordinate_without_visible_human_reference": 38
+      },
+      "LEFT_HIP": {
+        "source_rows": 96,
+        "human_status_counts": {
+          "visible": 96
+        },
+        "visible_full_missing": 0,
+        "visible_rtmpose_missing": 0,
+        "visible_full_gate_pass": 96,
+        "same_frame_same_joint_paired": {
+          "full": {
+            "n": 96,
+            "mean_px": 9.153450215031613,
+            "median_px": 9.012052387198501,
+            "p95_px": 17.726626637143745,
+            "maximum_px": 23.303745530444587
+          },
+          "rtmpose": {
+            "n": 96,
+            "mean_px": 13.356274200011235,
+            "median_px": 13.345543569332708,
+            "p95_px": 25.22904402250598,
+            "maximum_px": 30.171731219010262
+          },
+          "rtmpose_closer": 29,
+          "rtmpose_farther": 67,
+          "exactly_equal": 0
+        },
+        "native_coordinate_without_visible_human_reference": 0
+      },
+      "RIGHT_HIP": {
+        "source_rows": 96,
+        "human_status_counts": {
+          "visible": 96
+        },
+        "visible_full_missing": 0,
+        "visible_rtmpose_missing": 0,
+        "visible_full_gate_pass": 96,
+        "same_frame_same_joint_paired": {
+          "full": {
+            "n": 96,
+            "mean_px": 7.475410893983299,
+            "median_px": 7.367488013009064,
+            "p95_px": 17.816683266140807,
+            "maximum_px": 25.48780866190309
+          },
+          "rtmpose": {
+            "n": 96,
+            "mean_px": 11.719735371725273,
+            "median_px": 12.08400483072412,
+            "p95_px": 17.411905110857077,
+            "maximum_px": 23.556392232342542
+          },
+          "rtmpose_closer": 24,
+          "rtmpose_farther": 72,
+          "exactly_equal": 0
+        },
+        "native_coordinate_without_visible_human_reference": 0
+      },
+      "LEFT_KNEE": {
+        "source_rows": 96,
+        "human_status_counts": {
+          "visible": 96
+        },
+        "visible_full_missing": 0,
+        "visible_rtmpose_missing": 0,
+        "visible_full_gate_pass": 85,
+        "same_frame_same_joint_paired": {
+          "full": {
+            "n": 96,
+            "mean_px": 7.626155428116405,
+            "median_px": 6.561655368543863,
+            "p95_px": 14.94763829182389,
+            "maximum_px": 44.19736831030393
+          },
+          "rtmpose": {
+            "n": 96,
+            "mean_px": 5.764720057892348,
+            "median_px": 4.704140563561348,
+            "p95_px": 12.181768533637586,
+            "maximum_px": 17.343236745291293
+          },
+          "rtmpose_closer": 68,
+          "rtmpose_farther": 28,
+          "exactly_equal": 0
+        },
+        "native_coordinate_without_visible_human_reference": 0
+      },
+      "RIGHT_KNEE": {
+        "source_rows": 96,
+        "human_status_counts": {
+          "visible": 96
+        },
+        "visible_full_missing": 0,
+        "visible_rtmpose_missing": 0,
+        "visible_full_gate_pass": 96,
+        "same_frame_same_joint_paired": {
+          "full": {
+            "n": 96,
+            "mean_px": 8.152475816435839,
+            "median_px": 6.668248472447733,
+            "p95_px": 19.617674260549734,
+            "maximum_px": 39.52808298920534
+          },
+          "rtmpose": {
+            "n": 96,
+            "mean_px": 5.857077306760765,
+            "median_px": 5.331174571649635,
+            "p95_px": 11.328947249369815,
+            "maximum_px": 16.264637545262385
+          },
+          "rtmpose_closer": 67,
+          "rtmpose_farther": 29,
+          "exactly_equal": 0
+        },
+        "native_coordinate_without_visible_human_reference": 0
+      },
+      "LEFT_ANKLE": {
+        "source_rows": 96,
+        "human_status_counts": {
+          "visible": 95,
+          "not_observable": 1
+        },
+        "visible_full_missing": 0,
+        "visible_rtmpose_missing": 0,
+        "visible_full_gate_pass": 92,
+        "same_frame_same_joint_paired": {
+          "full": {
+            "n": 95,
+            "mean_px": 9.557304000783532,
+            "median_px": 8.428818637222593,
+            "p95_px": 20.264227845133682,
+            "maximum_px": 40.87183366418159
+          },
+          "rtmpose": {
+            "n": 95,
+            "mean_px": 9.226408629106615,
+            "median_px": 9.571455644817329,
+            "p95_px": 15.387696384187258,
+            "maximum_px": 23.042499211847044
+          },
+          "rtmpose_closer": 43,
+          "rtmpose_farther": 52,
+          "exactly_equal": 0
+        },
+        "native_coordinate_without_visible_human_reference": 1
+      },
+      "RIGHT_ANKLE": {
+        "source_rows": 96,
+        "human_status_counts": {
+          "visible": 96
+        },
+        "visible_full_missing": 0,
+        "visible_rtmpose_missing": 0,
+        "visible_full_gate_pass": 95,
+        "same_frame_same_joint_paired": {
+          "full": {
+            "n": 96,
+            "mean_px": 10.816430277350767,
+            "median_px": 9.457248225186161,
+            "p95_px": 26.524588098786758,
+            "maximum_px": 60.04113482228465
+          },
+          "rtmpose": {
+            "n": 96,
+            "mean_px": 9.77721117430267,
+            "median_px": 8.583630158015627,
+            "p95_px": 20.02433627699216,
+            "maximum_px": 50.68456306035114
+          },
+          "rtmpose_closer": 49,
+          "rtmpose_farther": 47,
+          "exactly_equal": 0
+        },
+        "native_coordinate_without_visible_human_reference": 0
+      }
+    }
+  },
+  "outside_group_audit": {
+    "status": "independent_group_replay_matches",
+    "checks": {
+      "LEFT_SHOULDER": {
+        "n": 96,
+        "maximum_mean_replay_difference": 0.0,
+        "closer": 66,
+        "farther": 30
+      },
+      "RIGHT_SHOULDER": {
+        "n": 87,
+        "maximum_mean_replay_difference": 1.7763568394002505e-15,
+        "closer": 45,
+        "farther": 42
+      },
+      "LEFT_ELBOW": {
+        "n": 64,
+        "maximum_mean_replay_difference": 1.7763568394002505e-15,
+        "closer": 48,
+        "farther": 16
+      },
+      "RIGHT_ELBOW": {
+        "n": 82,
+        "maximum_mean_replay_difference": 8.881784197001252e-16,
+        "closer": 65,
+        "farther": 17
+      },
+      "LEFT_WRIST": {
+        "n": 43,
+        "maximum_mean_replay_difference": 3.552713678800501e-15,
+        "closer": 27,
+        "farther": 16
+      },
+      "RIGHT_WRIST": {
+        "n": 58,
+        "maximum_mean_replay_difference": 3.552713678800501e-15,
+        "closer": 33,
+        "farther": 25
+      },
+      "LEFT_HIP": {
+        "n": 96,
+        "maximum_mean_replay_difference": 0.0,
+        "closer": 29,
+        "farther": 67
+      },
+      "RIGHT_HIP": {
+        "n": 96,
+        "maximum_mean_replay_difference": 1.7763568394002505e-15,
+        "closer": 24,
+        "farther": 72
+      },
+      "LEFT_KNEE": {
+        "n": 96,
+        "maximum_mean_replay_difference": 1.7763568394002505e-15,
+        "closer": 68,
+        "farther": 28
+      },
+      "RIGHT_KNEE": {
+        "n": 96,
+        "maximum_mean_replay_difference": 1.7763568394002505e-15,
+        "closer": 67,
+        "farther": 29
+      },
+      "LEFT_ANKLE": {
+        "n": 95,
+        "maximum_mean_replay_difference": 3.552713678800501e-15,
+        "closer": 43,
+        "farther": 52
+      },
+      "RIGHT_ANKLE": {
+        "n": 96,
+        "maximum_mean_replay_difference": 3.552713678800501e-15,
+        "closer": 49,
+        "farther": 47
+      }
+    },
+    "excluded_existing_major_frames": [
+      87,
+      88,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96,
+      97,
+      98,
+      99,
+      100,
+      101,
+      102,
+      103,
+      104
+    ],
+    "new_inference_calls": 0,
+    "new_calibrations": 0,
+    "grouping_source": {
+      "path": "analysis_results/phase2_rtmpose_coordinate_diagnosis_20261017_01/outside_major_hold.json",
+      "sha256": "cfc6f7d46862f17eea6c5ad864f5598d663215ca012e6b5ded1bcea8fb60b9b1"
+    },
+    "helper": {
+      "path": "analysis_results/phase2_rtmpose_coordinate_diagnosis_20261017_01/audit_outside_major.py",
+      "sha256": "0c1c257272d9f6f7fc1bbe659a7c0e87eb51bd989b0e3a2e81957df30bb7b1d9"
+    }
+  },
+  "protected_source_inventory": {
+    "current_sources": 467,
+    "upstream": 62,
+    "changed": [],
+    "previous_trial_artifacts_changed": [],
+    "previous_frozen_code_sources_changed": []
+  },
+  "tests": {
+    "run": 918,
+    "passed": 916,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 2,
+    "seconds": 60.56,
+    "exit_code": 0,
+    "log": {
+      "path": "analysis_results/phase2_rtmpose_coordinate_diagnosis_20261017_01/full_suite.log",
+      "sha256": "75fe9f2a6ac74cb2faa74339ee1d472b999d41137e9d3286c525d7f2113ddae9"
+    },
+    "formal_five_e2e": [
+      {
+        "pitch_id": "pitch_001",
+        "status": "evaluated_development_evidence",
+        "source_frames": 87,
+        "review_frames_non_seed": 2
+      },
+      {
+        "pitch_id": "pitch_002",
+        "status": "evaluated_development_evidence",
+        "source_frames": 175,
+        "review_frames_non_seed": 0
+      },
+      {
+        "pitch_id": "pitch_003",
+        "status": "evaluated_development_evidence",
+        "source_frames": 115,
+        "review_frames_non_seed": 19
+      },
+      {
+        "pitch_id": "pitch_004",
+        "status": "evaluated_development_evidence",
+        "source_frames": 114,
+        "review_frames_non_seed": 5
+      },
+      {
+        "pitch_id": "pitch_005",
+        "status": "evaluated_development_evidence",
+        "source_frames": 101,
+        "review_frames_non_seed": 3
+      }
+    ],
+    "note": "Tests rerun existing MediaPipe E2E; diagnostic itself makes no RTMPose inference or calibration."
+  }
+}

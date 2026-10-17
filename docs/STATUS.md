@@ -1,10 +1,24 @@
 # 進度摘要
 
-更新：2026-10-17（台灣）。[完整狀態](current_status.md)；[RTMPose單次結果](phase2_rtmpose_response_results_20261017.md)。
+更新：2026-10-17（台灣）。[完整狀態](current_status.md)；[十二關節診斷](phase2_rtmpose_coordinate_diagnosis_20261017.md)。
 
 **兩步授權工作已完成。Phase 1 = PASSED；Phase 2 自動可靠性仍 NOT PASSED。**
 
-## 最新：RTMPose原生回應單次驗證完成，不採用
+## 最新：十二關節與漏報原因核對完成
+
+只讀既有輸出完成003全部115格×12關節的對照，沒有重開已拒絕訊號或再跑RTMPose。
+十二關節全片平均XY誤差均下降，但左髖67/114格、右髖72/114格退步。
+原major hold以外，左髖平均9.1535→13.3563px、右髖7.4754→11.7197px；不能宣稱全面改善。
+肘84個漏報中81個有可量測訊號，腕68個中59個有訊號；主要不是都缺座標或都被遮擋。
+十個既定界線的訓練來源已追查，沒有重校準、刪可靠列或改用分位數。
+
+1,380列／十二關節統計獨立重算一致；1,205可見／173不可觀測／2不確定維持。
+最新完整suite仍**916 passed、0 failed、0 errors、2 skipped**（918項，60.560秒，含正式五球E2E）。
+原trial決策、正式core／gate／raw／GT及8顆pending候選保持；Phase2仍NOT PASSED，未進Phase3。
+輸出：`analysis_results/phase2_rtmpose_coordinate_diagnosis_20261017_01/`。
+若下一段要使用原生17點座標，需先確認新的後端／contract工作範圍，不能偽裝成現行33點輸出。
+
+## 前段：RTMPose原生回應單次驗證完成，不採用
 
 已完成使用者核准的隔離相容性、五球592格原生SimCC量測、整片五折及獨立核對。
 相容性guard誤拒ONNX符號維度已在推論前修正並另存凍結；實際17點shape仍嚴格驗證。
@@ -15,7 +29,7 @@
 這是單片座標的局部改善；自動識別原錯點仍失敗，其他四片精確誤差保持null。
 003/104及[可見性來源差異](phase2_visibility_gap_audit_20261016.md)保留，沒有修改人工GT。
 
-最新完整suite：**916 passed、0 failed、0 errors、2 skipped**（918項，54.701秒，含正式五球E2E）。
+該輪完整suite：**916 passed、0 failed、0 errors、2 skipped**（918項，54.701秒，含正式五球E2E）。
 34項新合成測試；467目前保護來源及62上游SHA不變。
 正式MediaPipe／pose／tracking／gate／raw／GT與五球保持；8交付候選仍pending、未分析。
 輸出：`analysis_results/phase2_rtmpose_response_20261016_01/`。

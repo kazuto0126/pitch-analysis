@@ -1,4 +1,4 @@
-# Current status — Single RTMPose response trial rejected; automatic Phase 2 remains NOT PASSED
+# Current status — Saved RTMPose coordinate diagnosis complete; automatic Phase 2 remains NOT PASSED
 
 Updated: 2026-10-17
 
@@ -10,7 +10,38 @@ Automatic reliability remains unaccepted. Existing acceptance thresholds, confid
 gates, PitcherSelector, pose/tracking, interpolation and smoothing are unchanged.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-17 approved single RTMPose native-response benchmark (latest)
+## 2026-10-17 saved native-coordinate and missed-warning diagnosis (latest)
+
+After the user requested continuation, completed a bounded read-only diagnosis
+of the existing cached RTMPose outputs; [report](phase2_rtmpose_coordinate_diagnosis_20261017.md).
+No new RTMPose inference, calibration, thresholds, labels or adoption decision.
+All115x12manual pairs retained:1205visible/173not_observable/2uncertain;
+nonseed1195/171/2. Native17 same-name joint mapping, raw pixel transforms,
+1380point errors and12joint statistics independently replayed with zero differences.
+
+All12full-clip means improve, but left/right hip get farther on67/114 and72/114
+paired frames. Outside the existing major hold, mean hip errors worsen:
+left9.1535->13.3563px, right7.4754->11.7197px. This prevents a blanket claim of
+coordinate improvement; no per-frame model mixing or oracle selection is added.
+Other four clips still have no exact XY accuracy labels for RTMPose.
+
+ElbowFN84=81measurable-not-above-saved-threshold+3original-raw-missing;
+wristFN68=59measurable+6outside-bins+3original-raw-missing. Saved training-maximum
+suppliers are identified without recalibration or deleting original reliable rows.
+Original Full labels do not become new-model correctness labels.
+
+Full suite918run/916passed/0failed/0errors/2Windows file-symlink skips,60.560s,exit0,
+including formal5E2E major hints2/0/19/5/3. Diagnostic reads22bound sources without
+changes; the previous467+62protected inventory remains unchanged. Production
+core/gates/raw/GT and8pending/unanalysed candidates preserved.
+Output:`analysis_results/phase2_rtmpose_coordinate_diagnosis_20261017_01/`.
+
+The response signal remains rejected. Automatic Phase2 remains NOT PASSED.
+Native17 cannot be inserted into the current33-landmark/visibility/presence/Z
+contract by padding or fabricated confidence. A future backend integration
+requires a separately confirmed scope; none is implemented here. No Phase3.
+
+## 2026-10-17 approved single RTMPose native-response benchmark (previous)
 
 User explicitly approved the full one-time offline trial. Completed isolated
 ONNX CPU compatibility, 592 real frame calls, five whole-video folds and the
