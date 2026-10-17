@@ -1,10 +1,21 @@
 # 進度摘要
 
-更新：2026-10-17（台灣）。[完整狀態](current_status.md)；[十二關節診斷](phase2_rtmpose_coordinate_diagnosis_20261017.md)。
+更新：2026-10-17（台灣）。[完整狀態](current_status.md)；[原生後端接入方案](phase2_rtmpose_native_backend_plan_20261017.md)。
 
 **兩步授權工作已完成。Phase 1 = PASSED；Phase 2 自動可靠性仍 NOT PASSED。**
 
-## 最新：十二關節與漏報原因核對完成
+## 最新：原生後端介面方案已提出，實作待核准
+
+使用者確認「允許規劃後端介面改動」後，已完成接入與驗收方案；這是規劃授權，尚未實作。
+建議第一版只接已封存五球的MediaPipe33／RTMPose17資料，新增原生contract、來源adapter、
+獨立overlay與比較報告。正式MediaPipe、33點舊流程、selector、gate及人工GT保持。
+新模型推論／校準／標註皆0；不padding33或把native score當visibility／presence。
+介面接入驗收與Phase2自動可靠性分開；本版完成也不會自動讓Phase2 PASSED。
+最小版不需修改既有正式核心；live RTMPose及正式模型替換不在第一版範圍。
+本次只修改文件，未重跑測試；最近完整suite仍916 passed／0 failed／2 skipped。
+等待使用者確認方案後才實作，未進Phase3。
+
+## 前段：十二關節與漏報原因核對完成
 
 只讀既有輸出完成003全部115格×12關節的對照，沒有重開已拒絕訊號或再跑RTMPose。
 十二關節全片平均XY誤差均下降，但左髖67/114格、右髖72/114格退步。

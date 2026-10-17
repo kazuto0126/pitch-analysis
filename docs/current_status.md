@@ -1,4 +1,4 @@
-# Current status — Saved RTMPose coordinate diagnosis complete; automatic Phase 2 remains NOT PASSED
+# Current status — Native output interface proposed; implementation awaiting approval
 
 Updated: 2026-10-17
 
@@ -10,7 +10,30 @@ Automatic reliability remains unaccepted. Existing acceptance thresholds, confid
 gates, PitcherSelector, pose/tracking, interpolation and smoothing are unchanged.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-17 saved native-coordinate and missed-warning diagnosis (latest)
+## 2026-10-17 native backend interface plan (latest; not implemented)
+
+User confirmed “允許規劃後端介面改動”. Delivered the
+[native output integration and acceptance plan](phase2_rtmpose_native_backend_plan_20261017.md).
+This authorizes planning only; implementation awaits explicit confirmation.
+The proposed first version uses the saved five-video MediaPipe33/RTMPose17
+outputs, additive native contracts/readers, independent overlays and comparisons.
+It is a cached-output integration, not live RTMPose or a replacement backend
+inside analyze-pitch. Existing production core files need no changes for this
+minimal version; legacy33/v/p/Z semantics and MediaPipe defaults remain intact.
+
+The plan preserves native score and unsupported fields, differentiates missing
+coordinates from unsupported landmarks and human visibility, and blocks native
+outputs from borrowing the old gate. New inference/calibration/annotations are
+out of scope. Canonical Full reliability is not new-model correctness GT.
+
+Engineering compatibility and automatic Phase2 acceptance are separate.
+Completing the proposed interface would not resolve the known missed warnings
+or automatically pass Phase2; new native quality/adoption work requires a
+separately confirmed scope. This turn changes documents only, with no new
+tests/model runs. Latest existing suite remains916passed/0failed/2skipped.
+No implementation or Phase3 work has started.
+
+## 2026-10-17 saved native-coordinate and missed-warning diagnosis (previous)
 
 After the user requested continuation, completed a bounded read-only diagnosis
 of the existing cached RTMPose outputs; [report](phase2_rtmpose_coordinate_diagnosis_20261017.md).
