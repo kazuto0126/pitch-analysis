@@ -1,6 +1,6 @@
-# Current status — Single Heavy trial rejected; automatic Phase 2 remains NOT PASSED
+# Current status — Single RTMPose response trial rejected; automatic Phase 2 remains NOT PASSED
 
-Updated: 2026-10-16
+Updated: 2026-10-17
 
 **Phase 1 = PASSED.**
 **Phase 2 evaluation = COMPLETE; Phase 2 = NOT PASSED (automatic reliability degraded).**
@@ -10,7 +10,43 @@ Automatic reliability remains unaccepted. Existing acceptance thresholds, confid
 gates, PitcherSelector, pose/tracking, interpolation and smoothing are unchanged.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-16 single Heavy information benchmark (latest)
+## 2026-10-17 approved single RTMPose native-response benchmark (latest)
+
+User explicitly approved the full one-time offline trial. Completed isolated
+ONNX CPU compatibility, 592 real frame calls, five whole-video folds and the
+predeclared decision; [results](phase2_rtmpose_response_results_20261017.md).
+The original proposal remains at its historical SHA. Execution02 preserves01
+and records a pre-inference metadata-validator repair: a shared symbolic joint
+dimension was incorrectly rejected. Zero inference calls occurred before repair;
+the sole synthetic call subsequently returned exact float32[1,17,384/512].
+Model, preprocessing, signal, calibration and decision limits never changed.
+
+ElbowTP/FN/FP/TN=0/84/4/440; wrist=3/68/1/379. Both are rejected under the frozen
+rules. Gate-passed wrong points caught=0/3, below reference7/8; supported good
+points additionally hinted=4/1. Hypothetical support without this hint473/477
+and345/350 still includes72/46human wrong points. Unknown/missing rows stay
+explicit and in the applicable denominators; wrist004/83 is an unknown warning,
+not a TP or FP. No formal data/use decision was changed.
+
+003 held out: elbow0/36/0, wrist0/12/0;104 remains unhinted. Paired visible XY
+improves mean elbow27.7461->7.3101px(n92), wrist26.6556->16.8405px(n58), but wrist
+maximum error worsens108.0667->127.9342px. This auxiliary one-video accuracy result
+does not validate an automatic error screener, the other four videos or model
+replacement. Original canonical/manual-XY visibility differences are recorded
+[separately](phase2_visibility_gap_audit_20261016.md), without relabeling or exclusions.
+
+Full suite918run/916passed/0failed/0errors/2Windows file-symlink skips,54.701s,exit0,
+including formal5E2E major hints2/0/19/5/3.34new synthetic tests.467current protected
+source and62upstream hashes unchanged. Original core,raw,GT,Full/MoveNet/Heavy,
+classifier,formal5 and8pending/unanalysed handoff candidates remain preserved.
+Output:`analysis_results/phase2_rtmpose_response_20261016_01/`.
+
+No adoption is proposed. This approved trial is complete and sealed; stop this
+signal without another cutoff, feature or model-size search. Phase2 evaluation
+is COMPLETE WITH KNOWN LIMITATIONS; automatic reliability remains NOT PASSED.
+The passing objective remains unmet. No new annotations or Phase3 work.
+
+## 2026-10-16 single Heavy information benchmark (previous)
 
 User requested “繼續修正直到phase2通過” after the bounded proposal. Completed
 the proposed single offline Heavy float16/version1 trial under its fixed

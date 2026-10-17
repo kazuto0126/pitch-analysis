@@ -78,11 +78,15 @@ Phase 2約定的評估與本次有限修復已交付，停止追加倍率／小�
 [肘腕判斷器單次結果](docs/phase2_joint_quality_classifier_results_20261016.md)已完成核准的整片五折：
 肘TP/FN/FP為13/71/13、腕20/51/24，兩者皆未達事先規則，不採用，停止調整這組訊號。
 兩步授權工作已交付；剩餘缺口記為需要更好的影像或模型資訊，Phase2自動可靠性仍NOT PASSED。
-最新完整測試842 passed、0 failed、2 skipped（844項，含正式五球E2E）；未進Phase3，原核心、門檻與GT維持。
+該輪完整測試842 passed、0 failed、2 skipped（844項，含正式五球E2E）；未進Phase3，原核心、門檻與GT維持。
 使用者隨後核准的[單次Heavy新資訊試驗](docs/phase2_heavy_information_results_20261016.md)已完成：
 肘TP/FN/FP為2/82/1、腕2/69/1，原gate通過錯點只抓回1／2，兩者皆不採用。
 正式Full維持，沒有降低門檻、改座標或重訓原分類器；依固定規則停止本輪，Phase2仍NOT PASSED。
-最新完整測試882 passed、0 failed、2 skipped（884項）；新模型對照並不等於自動可靠性通過。
+該輪完整測試882 passed、0 failed、2 skipped（884項）；新模型對照並不等於自動可靠性通過。
+2026-10-17完成使用者核准的[RTMPose原生回應單次試驗](docs/phase2_rtmpose_response_results_20261017.md)：
+五球592格與整片五折，肘TP/FN/FP為0/84/4、腕3/68/1，皆未達固定採用規則，停止此訊號。
+003可見XY平均誤差有所下降，但自動識別原錯點仍不足；沒有更換正式MediaPipe或修改GT／門檻。
+最新完整測試916 passed、0 failed、2 skipped（918項，含正式五球E2E）；Phase2仍NOT PASSED，未進Phase3。
 使用者另核准的 [交付資料夾候選讀取器](docs/handoff_reader.md) 已接入 contract v2：
 驗 hash、完整解碼、分數 FPS 逐格時間與去重，保存本地待人工覆核候選。
 它不自動分析、轉換正式 metadata 或取代山本正式五球，也不改 Phase 2 核心。

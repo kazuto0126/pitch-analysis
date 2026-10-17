@@ -1,0 +1,2375 @@
+{
+  "status": "completed_once_both_rtmpose_response_hints_rejected",
+  "sealed_at_utc": "2026-10-17T02:25:00.528370+00:00",
+  "execution": {
+    "path": "docs/evaluation_plans/phase2_rtmpose_response_execution_20261017_02.json",
+    "sha256": "21f0ebea448be0b67546f0e28b7f9675f47627d8ace19b67f547fcec6134f553"
+  },
+  "approval": "核准完整單次離線驗證",
+  "decision": {
+    "schema": "heavy_information_fixed_decision_v1",
+    "roles": {
+      "throwing_elbow": {
+        "passed": false,
+        "checks": {
+          "five_folds_calibrated": true,
+          "minimum_tp": false,
+          "maximum_fp": false,
+          "minimum_non003_tp": false,
+          "minimum_two_improved_non003_clips": false,
+          "gate_passed_bad_hints_strictly_improve": false
+        },
+        "totals": {
+          "tp": 0,
+          "fn": 84,
+          "fp": 4,
+          "tn": 440,
+          "gate_passed_bad_hinted": 0
+        },
+        "non003_tp": 0,
+        "improved_non003_clips": [],
+        "frozen_limits": {
+          "minimum_tp": 17,
+          "maximum_fp": 1,
+          "minimum_non003_tp": 10,
+          "gate_passed_bad_hinted_must_exceed": 7,
+          "score_only_tp": [
+            1,
+            0,
+            7,
+            0,
+            1
+          ],
+          "sample_maximum_tp": [
+            6,
+            0,
+            2,
+            0,
+            0
+          ]
+        }
+      },
+      "throwing_wrist": {
+        "passed": false,
+        "checks": {
+          "five_folds_calibrated": true,
+          "minimum_tp": false,
+          "maximum_fp": true,
+          "minimum_non003_tp": false,
+          "minimum_two_improved_non003_clips": false,
+          "gate_passed_bad_hints_strictly_improve": false
+        },
+        "totals": {
+          "tp": 3,
+          "fn": 68,
+          "fp": 1,
+          "tn": 379,
+          "gate_passed_bad_hinted": 3
+        },
+        "non003_tp": 3,
+        "improved_non003_clips": [],
+        "frozen_limits": {
+          "minimum_tp": 27,
+          "maximum_fp": 1,
+          "minimum_non003_tp": 23,
+          "gate_passed_bad_hinted_must_exceed": 8,
+          "score_only_tp": [
+            8,
+            2,
+            0,
+            8,
+            1
+          ],
+          "sample_maximum_tp": [
+            8,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "proposed_roles": [],
+    "status": "rejected",
+    "next_action": "stop_this_trial_need_better_images_or_model_information",
+    "changes_formal_pose_tracking_or_gates": false,
+    "automatically_passes_phase2": false
+  },
+  "source_frames": 592,
+  "non_seed_frames_per_joint": 587,
+  "synthetic_pose_calls": 1,
+  "real_pose_calls": 592,
+  "new_tracker_calls": 0,
+  "classifier_fits": 0,
+  "new_human_annotations": 0,
+  "production_adoption": false,
+  "aggregate": {
+    "throwing_elbow": {
+      "canonical_label_counts": {
+        "reliable": 444,
+        "unreliable": 84,
+        "not_observable": 59,
+        "uncertain": 0
+      },
+      "raw_missing_frames": 3,
+      "native_decoded_finite_frames": 587,
+      "native_decoded_missing_frames": 0,
+      "native_vector_finite_frames": 587,
+      "nonpositive_native_score_frames": 0,
+      "measurable_response_deficit_frames": 584,
+      "full_point_outside_simcc_bins_frames": 0,
+      "evidence_status_counts": {
+        "insufficient_evidence": 3,
+        "measured": 584
+      },
+      "screens": {
+        "rtmpose_response": {
+          "tp": 0,
+          "fn": 84,
+          "fp": 4,
+          "tn": 440,
+          "warning_total": 4,
+          "unknown_label_warning_counts": {
+            "not_observable": 0,
+            "uncertain": 0
+          },
+          "state_counts": {
+            "insufficient_evidence": 3,
+            "no_warning": 580,
+            "warning": 4
+          },
+          "abstain_frames": 3,
+          "retention_on_original_raw_gate_pass": {
+            "original_support": 477,
+            "newly_flagged": 4,
+            "remaining_without_this_hint": 473,
+            "reliable_remaining": 381,
+            "unreliable_remaining_unflagged": 72,
+            "not_observable_remaining": 20,
+            "uncertain_remaining": 0,
+            "newly_caught_gate_pass_wrong_points": 0,
+            "newly_flagged_gate_pass_good_points": 4,
+            "duplicate_hint_on_gate_blocked_finite_raw": 0
+          }
+        },
+        "score_only": {
+          "tp": 9,
+          "fn": 75,
+          "fp": 59,
+          "tn": 385,
+          "warning_total": 107,
+          "unknown_label_warning_counts": {
+            "not_observable": 39,
+            "uncertain": 0
+          },
+          "state_counts": {
+            "insufficient_evidence": 3,
+            "no_warning": 477,
+            "warning": 107
+          },
+          "abstain_frames": 3,
+          "retention_on_original_raw_gate_pass": {
+            "original_support": 477,
+            "newly_flagged": 0,
+            "remaining_without_this_hint": 477,
+            "reliable_remaining": 385,
+            "unreliable_remaining_unflagged": 72,
+            "not_observable_remaining": 20,
+            "uncertain_remaining": 0,
+            "newly_caught_gate_pass_wrong_points": 0,
+            "newly_flagged_gate_pass_good_points": 0,
+            "duplicate_hint_on_gate_blocked_finite_raw": 107
+          }
+        },
+        "sample_maximum": {
+          "tp": 8,
+          "fn": 76,
+          "fp": 1,
+          "tn": 443,
+          "warning_total": 9,
+          "unknown_label_warning_counts": {
+            "not_observable": 0,
+            "uncertain": 0
+          },
+          "state_counts": {
+            "candidate_dependent": 36,
+            "insufficient_evidence": 19,
+            "warning": 9,
+            "within_reference_range": 523
+          },
+          "abstain_frames": 19,
+          "retention_on_original_raw_gate_pass": {
+            "original_support": 477,
+            "newly_flagged": 8,
+            "remaining_without_this_hint": 469,
+            "reliable_remaining": 384,
+            "unreliable_remaining_unflagged": 65,
+            "not_observable_remaining": 20,
+            "uncertain_remaining": 0,
+            "newly_caught_gate_pass_wrong_points": 7,
+            "newly_flagged_gate_pass_good_points": 1,
+            "duplicate_hint_on_gate_blocked_finite_raw": 1
+          }
+        },
+        "classifier": {
+          "tp": 13,
+          "fn": 71,
+          "fp": 13,
+          "tn": 431,
+          "warning_total": 28,
+          "unknown_label_warning_counts": {
+            "not_observable": 2,
+            "uncertain": 0
+          },
+          "state_counts": {
+            "insufficient_evidence": 3,
+            "no_warning": 556,
+            "warning": 28
+          },
+          "abstain_frames": 3,
+          "retention_on_original_raw_gate_pass": {
+            "original_support": 477,
+            "newly_flagged": 24,
+            "remaining_without_this_hint": 453,
+            "reliable_remaining": 376,
+            "unreliable_remaining_unflagged": 59,
+            "not_observable_remaining": 18,
+            "uncertain_remaining": 0,
+            "newly_caught_gate_pass_wrong_points": 13,
+            "newly_flagged_gate_pass_good_points": 9,
+            "duplicate_hint_on_gate_blocked_finite_raw": 4
+          }
+        }
+      },
+      "existing_major_hint_overlap": {
+        "existing_major_hint_frames": 29,
+        "rtmpose_hint_frames": 4,
+        "overlap_frames": 0,
+        "union_frames": 33,
+        "new_hint_union_increment": 4,
+        "new_hint_union_increment_by_canonical_label": {
+          "reliable": 4,
+          "unreliable": 0,
+          "not_observable": 0,
+          "uncertain": 0
+        },
+        "new_gate_pass_bad_hint_beyond_major": 0,
+        "new_gate_pass_good_hint_beyond_major": 4
+      }
+    },
+    "throwing_wrist": {
+      "canonical_label_counts": {
+        "reliable": 380,
+        "unreliable": 71,
+        "not_observable": 136,
+        "uncertain": 0
+      },
+      "raw_missing_frames": 3,
+      "native_decoded_finite_frames": 587,
+      "native_decoded_missing_frames": 0,
+      "native_vector_finite_frames": 587,
+      "nonpositive_native_score_frames": 0,
+      "measurable_response_deficit_frames": 578,
+      "full_point_outside_simcc_bins_frames": 6,
+      "evidence_status_counts": {
+        "insufficient_evidence": 9,
+        "measured": 578
+      },
+      "screens": {
+        "rtmpose_response": {
+          "tp": 3,
+          "fn": 68,
+          "fp": 1,
+          "tn": 379,
+          "warning_total": 5,
+          "unknown_label_warning_counts": {
+            "not_observable": 1,
+            "uncertain": 0
+          },
+          "state_counts": {
+            "insufficient_evidence": 9,
+            "no_warning": 573,
+            "warning": 5
+          },
+          "abstain_frames": 9,
+          "retention_on_original_raw_gate_pass": {
+            "original_support": 350,
+            "newly_flagged": 5,
+            "remaining_without_this_hint": 345,
+            "reliable_remaining": 265,
+            "unreliable_remaining_unflagged": 46,
+            "not_observable_remaining": 34,
+            "uncertain_remaining": 0,
+            "newly_caught_gate_pass_wrong_points": 3,
+            "newly_flagged_gate_pass_good_points": 1,
+            "duplicate_hint_on_gate_blocked_finite_raw": 0
+          }
+        },
+        "score_only": {
+          "tp": 19,
+          "fn": 52,
+          "fp": 114,
+          "tn": 266,
+          "warning_total": 234,
+          "unknown_label_warning_counts": {
+            "not_observable": 101,
+            "uncertain": 0
+          },
+          "state_counts": {
+            "insufficient_evidence": 3,
+            "no_warning": 350,
+            "warning": 234
+          },
+          "abstain_frames": 3,
+          "retention_on_original_raw_gate_pass": {
+            "original_support": 350,
+            "newly_flagged": 0,
+            "remaining_without_this_hint": 350,
+            "reliable_remaining": 266,
+            "unreliable_remaining_unflagged": 49,
+            "not_observable_remaining": 35,
+            "uncertain_remaining": 0,
+            "newly_caught_gate_pass_wrong_points": 0,
+            "newly_flagged_gate_pass_good_points": 0,
+            "duplicate_hint_on_gate_blocked_finite_raw": 234
+          }
+        },
+        "sample_maximum": {
+          "tp": 8,
+          "fn": 63,
+          "fp": 1,
+          "tn": 379,
+          "warning_total": 10,
+          "unknown_label_warning_counts": {
+            "not_observable": 1,
+            "uncertain": 0
+          },
+          "state_counts": {
+            "candidate_dependent": 25,
+            "insufficient_evidence": 19,
+            "warning": 10,
+            "within_reference_range": 533
+          },
+          "abstain_frames": 19,
+          "retention_on_original_raw_gate_pass": {
+            "original_support": 350,
+            "newly_flagged": 10,
+            "remaining_without_this_hint": 340,
+            "reliable_remaining": 265,
+            "unreliable_remaining_unflagged": 41,
+            "not_observable_remaining": 34,
+            "uncertain_remaining": 0,
+            "newly_caught_gate_pass_wrong_points": 8,
+            "newly_flagged_gate_pass_good_points": 1,
+            "duplicate_hint_on_gate_blocked_finite_raw": 0
+          }
+        },
+        "classifier": {
+          "tp": 20,
+          "fn": 51,
+          "fp": 24,
+          "tn": 356,
+          "warning_total": 58,
+          "unknown_label_warning_counts": {
+            "not_observable": 14,
+            "uncertain": 0
+          },
+          "state_counts": {
+            "insufficient_evidence": 3,
+            "no_warning": 526,
+            "warning": 58
+          },
+          "abstain_frames": 3,
+          "retention_on_original_raw_gate_pass": {
+            "original_support": 350,
+            "newly_flagged": 41,
+            "remaining_without_this_hint": 309,
+            "reliable_remaining": 245,
+            "unreliable_remaining_unflagged": 33,
+            "not_observable_remaining": 31,
+            "uncertain_remaining": 0,
+            "newly_caught_gate_pass_wrong_points": 16,
+            "newly_flagged_gate_pass_good_points": 21,
+            "duplicate_hint_on_gate_blocked_finite_raw": 17
+          }
+        }
+      },
+      "existing_major_hint_overlap": {
+        "existing_major_hint_frames": 29,
+        "rtmpose_hint_frames": 5,
+        "overlap_frames": 0,
+        "union_frames": 34,
+        "new_hint_union_increment": 5,
+        "new_hint_union_increment_by_canonical_label": {
+          "reliable": 1,
+          "unreliable": 3,
+          "not_observable": 1,
+          "uncertain": 0
+        },
+        "new_gate_pass_bad_hint_beyond_major": 3,
+        "new_gate_pass_good_hint_beyond_major": 1
+      }
+    }
+  },
+  "clips": [
+    {
+      "pitch_id": "pitch_001",
+      "source_frames": 87,
+      "non_seed_frames": 86,
+      "fold_status": {
+        "throwing_elbow": "calibrated",
+        "throwing_wrist": "calibrated"
+      },
+      "roles": {
+        "throwing_elbow": {
+          "canonical_label_counts": {
+            "reliable": 45,
+            "unreliable": 12,
+            "not_observable": 29,
+            "uncertain": 0
+          },
+          "raw_missing_frames": 0,
+          "native_decoded_finite_frames": 86,
+          "native_decoded_missing_frames": 0,
+          "native_vector_finite_frames": 86,
+          "nonpositive_native_score_frames": 0,
+          "measurable_response_deficit_frames": 86,
+          "full_point_outside_simcc_bins_frames": 0,
+          "evidence_status_counts": {
+            "measured": 86
+          },
+          "screens": {
+            "rtmpose_response": {
+              "tp": 0,
+              "fn": 12,
+              "fp": 0,
+              "tn": 45,
+              "warning_total": 0,
+              "unknown_label_warning_counts": {
+                "not_observable": 0,
+                "uncertain": 0
+              },
+              "state_counts": {
+                "no_warning": 86
+              },
+              "abstain_frames": 0,
+              "retention_on_original_raw_gate_pass": {
+                "original_support": 57,
+                "newly_flagged": 0,
+                "remaining_without_this_hint": 57,
+                "reliable_remaining": 44,
+                "unreliable_remaining_unflagged": 11,
+                "not_observable_remaining": 2,
+                "uncertain_remaining": 0,
+                "newly_caught_gate_pass_wrong_points": 0,
+                "newly_flagged_gate_pass_good_points": 0,
+                "duplicate_hint_on_gate_blocked_finite_raw": 0
+              }
+            },
+            "score_only": {
+              "tp": 1,
+              "fn": 11,
+              "fp": 1,
+              "tn": 44,
+              "warning_total": 29,
+              "unknown_label_warning_counts": {
+                "not_observable": 27,
+                "uncertain": 0
+              },
+              "state_counts": {
+                "no_warning": 57,
+                "warning": 29
+              },
+              "abstain_frames": 0,
+              "retention_on_original_raw_gate_pass": {
+                "original_support": 57,
+                "newly_flagged": 0,
+                "remaining_without_this_hint": 57,
+                "reliable_remaining": 44,
+                "unreliable_remaining_unflagged": 11,
+                "not_observable_remaining": 2,
+                "uncertain_remaining": 0,
+                "newly_caught_gate_pass_wrong_points": 0,
+                "newly_flagged_gate_pass_good_points": 0,
+                "duplicate_hint_on_gate_blocked_finite_raw": 29
+              }
+            },
+            "sample_maximum": {
+              "tp": 6,
+              "fn": 6,
+              "fp": 1,
+              "tn": 44,
+              "warning_total": 7,
+              "unknown_label_warning_counts": {
+                "not_observable": 0,
+                "uncertain": 0
+              },
+              "state_counts": {
+                "candidate_dependent": 7,
+                "insufficient_evidence": 3,
+                "warning": 7,
+                "within_reference_range": 69
+              },
+              "abstain_frames": 3,
+              "retention_on_original_raw_gate_pass": {
+                "original_support": 57,
+                "newly_flagged": 7,
+                "remaining_without_this_hint": 50,
+                "reliable_remaining": 43,
+                "unreliable_remaining_unflagged": 5,
+                "not_observable_remaining": 2,
+                "uncertain_remaining": 0,
+                "newly_caught_gate_pass_wrong_points": 6,
+                "newly_flagged_gate_pass_good_points": 1,
+                "duplicate_hint_on_gate_blocked_finite_raw": 0
+              }
+            },
+            "classifier": {
+              "tp": 10,
+              "fn": 2,
+              "fp": 2,
+              "tn": 43,
+              "warning_total": 12,
+              "unknown_label_warning_counts": {
+                "not_observable": 0,
+                "uncertain": 0
+              },
+              "state_counts": {
+                "no_warning": 74,
+                "warning": 12
+              },
+              "abstain_frames": 0,
+              "retention_on_original_raw_gate_pass": {
+                "original_support": 57,
+                "newly_flagged": 12,
+                "remaining_without_this_hint": 45,
+                "reliable_remaining": 42,
+                "unreliable_remaining_unflagged": 1,
+                "not_observable_remaining": 2,
+                "uncertain_remaining": 0,
+                "newly_caught_gate_pass_wrong_points": 10,
+                "newly_flagged_gate_pass_good_points": 2,
+                "duplicate_hint_on_gate_blocked_finite_raw": 0
+              }
+            }
+          },
+          "existing_major_hint_overlap": {
+            "existing_major_hint_frames": 2,
+            "rtmpose_hint_frames": 0,
+            "overlap_frames": 0,
+            "union_frames": 2,
+            "new_hint_union_increment": 0,
+            "new_hint_union_increment_by_canonical_label": {
+              "reliable": 0,
+              "unreliable": 0,
+              "not_observable": 0,
+              "uncertain": 0
+            },
+            "new_gate_pass_bad_hint_beyond_major": 0,
+            "new_gate_pass_good_hint_beyond_major": 0
+          }
+        },
+        "throwing_wrist": {
+          "canonical_label_counts": {
+            "reliable": 19,
+            "unreliable": 17,
+            "not_observable": 50,
+            "uncertain": 0
+          },
+          "raw_missing_frames": 0,
+          "native_decoded_finite_frames": 86,
+          "native_decoded_missing_frames": 0,
+          "native_vector_finite_frames": 86,
+          "nonpositive_native_score_frames": 0,
+          "measurable_response_deficit_frames": 81,
+          "full_point_outside_simcc_bins_frames": 5,
+          "evidence_status_counts": {
+            "insufficient_evidence": 5,
+            "measured": 81
+          },
+          "screens": {
+            "rtmpose_response": {
+              "tp": 3,
+              "fn": 14,
+              "fp": 1,
+              "tn": 18,
+              "warning_total": 4,
+              "unknown_label_warning_counts": {
+                "not_observable": 0,
+                "uncertain": 0
+              },
+              "state_counts": {
+                "insufficient_evidence": 5,
+                "no_warning": 77,
+                "warning": 4
+              },
+              "abstain_frames": 5,
+              "retention_on_original_raw_gate_pass": {
+                "original_support": 44,
+                "newly_flagged": 4,
+                "remaining_without_this_hint": 40,
+                "reliable_remaining": 17,
+                "unreliable_remaining_unflagged": 6,
+                "not_observable_remaining": 17,
+                "uncertain_remaining": 0,
+                "newly_caught_gate_pass_wrong_points": 3,
+                "newly_flagged_gate_pass_good_points": 1,
+                "duplicate_hint_on_gate_blocked_finite_raw": 0
+              }
+            },
+            "score_only": {
+              "tp": 8,
+              "fn": 9,
+              "fp": 1,
+              "tn": 18,
+              "warning_total": 42,
+              "unknown_label_warning_counts": {
+                "not_observable": 33,
+                "uncertain": 0
+              },
+              "state_counts": {
+                "no_warning": 44,
+                "warning": 42
+              },
+              "abstain_frames": 0,
+              "retention_on_original_raw_gate_pass": {
+                "original_support": 44,
+                "newly_flagged": 0,
+                "remaining_without_this_hint": 44,
+                "reliable_remaining": 18,
+                "unreliable_remaining_unflagged": 9,
+                "not_observable_remaining": 17,
+                "uncertain_remaining": 0,
+                "newly_caught_gate_pass_wrong_points": 0,
+                "newly_flagged_gate_pass_good_points": 0,
+                "duplicate_hint_on_gate_blocked_finite_raw": 42
+              }
+            },
+            "sample_maximum": {
+              "tp": 8,
+              "fn": 9,
+              "fp": 1,
+              "tn": 18,
+              "warning_total": 9,
+              "unknown_label_warning_counts": {
+                "not_observable": 0,
+                "uncertain": 0
+              },
+              "state_counts": {
+                "candidate_dependent": 6,
+                "insufficient_evidence": 3,
+                "warning": 9,
+                "within_reference_range": 68
+              },
+              "abstain_frames": 3,
+              "retention_on_original_raw_gate_pass": {
+                "original_support": 44,
+                "newly_flagged": 9,
+                "remaining_without_this_hint": 35,
+                "reliable_remaining": 17,
+                "unreliable_remaining_unflagged": 1,
+                "not_observable_remaining": 17,
+                "uncertain_remaining": 0,
+                "newly_caught_gate_pass_wrong_points": 8,
+                "newly_flagged_gate_pass_good_points": 1,
+                "duplicate_hint_on_gate_blocked_finite_raw": 0
+              }
+            },
+            "classifier": {
+              "tp": 8,
+              "fn": 9,
+              "fp": 1,
+              "tn": 18,
+              "warning_total": 12,
+              "unknown_label_warning_counts": {
+                "not_observable": 3,
+                "uncertain": 0
+              },
+              "state_counts": {
+                "no_warning": 74,
+                "warning": 12
+              },
+              "abstain_frames": 0,
+              "retention_on_original_raw_gate_pass": {
+                "original_support": 44,
+                "newly_flagged": 10,
+                "remaining_without_this_hint": 34,
+                "reliable_remaining": 17,
+                "unreliable_remaining_unflagged": 1,
+                "not_observable_remaining": 16,
+                "uncertain_remaining": 0,
+                "newly_caught_gate_pass_wrong_points": 8,
+                "newly_flagged_gate_pass_good_points": 1,
+                "duplicate_hint_on_gate_blocked_finite_raw": 2
+              }
+            }
+          },
+          "existing_major_hint_overlap": {
+            "existing_major_hint_frames": 2,
+            "rtmpose_hint_frames": 4,
+            "overlap_frames": 0,
+            "union_frames": 6,
+            "new_hint_union_increment": 4,
+            "new_hint_union_increment_by_canonical_label": {
+              "reliable": 1,
+              "unreliable": 3,
+              "not_observable": 0,
+              "uncertain": 0
+            },
+            "new_gate_pass_bad_hint_beyond_major": 3,
+            "new_gate_pass_good_hint_beyond_major": 1
+          }
+        }
+      }
+    },
+    {
+      "pitch_id": "pitch_002",
+      "source_frames": 175,
+      "non_seed_frames": 174,
+      "fold_status": {
+        "throwing_elbow": "calibrated",
+        "throwing_wrist": "calibrated"
+      },
+      "roles": {
+        "throwing_elbow": {
+          "canonical_label_counts": {
+            "reliable": 158,
+            "unreliable": 0,
+            "not_observable": 16,
+            "uncertain": 0
+          },
+          "raw_missing_frames": 0,
+          "native_decoded_finite_frames": 174,
+          "native_decoded_missing_frames": 0,
+          "native_vector_finite_frames": 174,
+          "nonpositive_native_score_frames": 0,
+          "measurable_response_deficit_frames": 174,
+          "full_point_outside_simcc_bins_frames": 0,
+          "evidence_status_counts": {
+            "measured": 174
+          },
+          "screens": {
+            "rtmpose_response": {
+              "tp": 0,
+              "fn": 0,
+              "fp": 0,
+              "tn": 158,
+              "warning_total": 0,
+              "unknown_label_warning_counts": {
+                "not_observable": 0,
+                "uncertain": 0
+              },
+              "state_counts": {
+                "no_warning": 174
+              },
+              "abstain_frames": 0,
+              "retention_on_original_raw_gate_pass": {
+                "original_support": 154,
+                "newly_flagged": 0,
+                "remaining_without_this_hint": 154,
+                "reliable_remaining": 150,
+                "unreliable_remaining_unflagged": 0,
+                "not_observable_remaining": 4,
+                "uncertain_remaining": 0,
+                "newly_caught_gate_pass_wrong_points": 0,
+                "newly_flagged_gate_pass_good_points": 0,
+                "duplicate_hint_on_gate_blocked_finite_raw": 0
+              }
+            },
+            "score_only": {
+              "tp": 0,
+              "fn": 0,
+              "fp": 8,
+              "tn": 150,
+              "warning_total": 20,
+              "unknown_label_warning_counts": {
+                "not_observable": 12,
+                "uncertain": 0
+              },
+              "state_counts": {
+                "no_warning": 154,
+                "warning": 20
+              },
+              "abstain_frames": 0,
+              "retention_on_original_raw_gate_pass": {
+                "original_support": 154,
+                "newly_flagged": 0,
+                "remaining_without_this_hint": 154,
+                "reliable_remaining": 150,
+                "unreliable_remaining_unflagged": 0,
+                "not_observable_remaining": 4,
+                "uncertain_remaining": 0,
+                "newly_caught_gate_pass_wrong_points": 0,
+                "newly_flagged_gate_pass_good_points": 0,
+                "duplicate_hint_on_gate_blocked_finite_raw": 20
+              }
+            },
+            "sample_maximum": {
+              "tp": 0,
+              "fn": 0,
+              "fp": 0,
+              "tn": 158,
+              "warning_total": 0,
+              "unknown_label_warning_counts": {
+                "not_observable": 0,
+                "uncertain": 0
+              },
+              "state_counts": {
+                "candidate_dependent": 14,
+                "insufficient_evidence": 2,
+                "within_reference_range": 158
+              },
+              "abstain_frames": 2,
+              "retention_on_original_raw_gate_pass": {
+                "original_support": 154,
+                "newly_flagged": 0,
+                "remaining_without_this_hint": 154,
+                "reliable_remaining": 150,
+                "unreliable_remaining_unflagged": 0,
+                "not_observable_remaining": 4,
+                "uncertain_remaining": 0,
+                "newly_caught_gate_pass_wrong_points": 0,
+                "newly_flagged_gate_pass_good_points": 0,
+                "duplicate_hint_on_gate_blocked_finite_raw": 0
+              }
+            },
+            "classifier": {
+              "tp": 0,
+              "fn": 0,
+              "fp": 2,
+              "tn": 156,
+              "warning_total": 2,
+              "unknown_label_warning_counts": {
+                "not_observable": 0,
+                "uncertain": 0
+              },
+              "state_counts": {
+                "no_warning": 172,
+                "warning": 2
+              },
+              "abstain_frames": 0,
+              "retention_on_original_raw_gate_pass": {
+                "original_support": 154,
+                "newly_flagged": 2,
+                "remaining_without_this_hint": 152,
+                "reliable_remaining": 148,
+                "unreliable_remaining_unflagged": 0,
+                "not_observable_remaining": 4,
+                "uncertain_remaining": 0,
+                "newly_caught_gate_pass_wrong_points": 0,
+                "newly_flagged_gate_pass_good_points": 2,
+                "duplicate_hint_on_gate_blocked_finite_raw": 0
+              }
+            }
+          },
+          "existing_major_hint_overlap": {
+            "existing_major_hint_frames": 0,
+            "rtmpose_hint_frames": 0,
+            "overlap_frames": 0,
+            "union_frames": 0,
+            "new_hint_union_increment": 0,
+            "new_hint_union_increment_by_canonical_label": {
+              "reliable": 0,
+              "unreliable": 0,
+              "not_observable": 0,
+              "uncertain": 0
+            },
+            "new_gate_pass_bad_hint_beyond_major": 0,
+            "new_gate_pass_good_hint_beyond_major": 0
+          }
+        },
+        "throwing_wrist": {
+          "canonical_label_counts": {
+            "reliable": 120,
+            "unreliable": 2,
+            "not_observable": 52,
+            "uncertain": 0
+          },
+          "raw_missing_frames": 0,
+          "native_decoded_finite_frames": 174,
+          "native_decoded_missing_frames": 0,
+          "native_vector_finite_frames": 174,
+          "nonpositive_native_score_frames": 0,
+          "measurable_response_deficit_frames": 174,
+          "full_point_outside_simcc_bins_frames": 0,
+          "evidence_status_counts": {
+            "measured": 174
+          },
+          "screens": {
+            "rtmpose_response": {
+              "tp": 0,
+              "fn": 2,
+              "fp": 0,
+              "tn": 120,
+              "warning_total": 0,
+              "unknown_label_warning_counts": {
+                "not_observable": 0,
+                "uncertain": 0
+              },
+              "state_counts": {
+                "no_warning": 174
+              },
+              "abstain_frames": 0,
+              "retention_on_original_raw_gate_pass": {
+                "original_support": 113,
+                "newly_flagged": 0,
+                "remaining_without_this_hint": 113,
+                "reliable_remaining": 111,
+                "unreliable_remaining_unflagged": 0,
+                "not_observable_remaining": 2,
+                "uncertain_remaining": 0,
+                "newly_caught_gate_pass_wrong_points": 0,
+                "newly_flagged_gate_pass_good_points": 0,
+                "duplicate_hint_on_gate_blocked_finite_raw": 0
+              }
+            },
+            "score_only": {
+              "tp": 2,
+              "fn": 0,
+              "fp": 9,
+              "tn": 111,
+              "warning_total": 61,
+              "unknown_label_warning_counts": {
+                "not_observable": 50,
+                "uncertain": 0
+              },
+              "state_counts": {
+                "no_warning": 113,
+                "warning": 61
+              },
+              "abstain_frames": 0,
+              "retention_on_original_raw_gate_pass": {
+                "original_support": 113,
+                "newly_flagged": 0,
+                "remaining_without_this_hint": 113,
+                "reliable_remaining": 111,
+                "unreliable_remaining_unflagged": 0,
+                "not_observable_remaining": 2,
+                "uncertain_remaining": 0,
+                "newly_caught_gate_pass_wrong_points": 0,
+                "newly_flagged_gate_pass_good_points": 0,
+                "duplicate_hint_on_gate_blocked_finite_raw": 61
+              }
+            },
+            "sample_maximum": {
+              "tp": 0,
+              "fn": 2,
+              "fp": 0,
+              "tn": 120,
+              "warning_total": 0,
+              "unknown_label_warning_counts": {
+                "not_observable": 0,
+                "uncertain": 0
+              },
+              "state_counts": {
+                "candidate_dependent": 12,
+                "insufficient_evidence": 2,
+                "within_reference_range": 160
+              },
+              "abstain_frames": 2,
+              "retention_on_original_raw_gate_pass": {
+                "original_support": 113,
+                "newly_flagged": 0,
+                "remaining_without_this_hint": 113,
+                "reliable_remaining": 111,
+                "unreliable_remaining_unflagged": 0,
+                "not_observable_remaining": 2,
+                "uncertain_remaining": 0,
+                "newly_caught_gate_pass_wrong_points": 0,
+                "newly_flagged_gate_pass_good_points": 0,
+                "duplicate_hint_on_gate_blocked_finite_raw": 0
+              }
+            },
+            "classifier": {
+              "tp": 0,
+              "fn": 2,
+              "fp": 2,
+              "tn": 118,
+              "warning_total": 4,
+              "unknown_label_warning_counts": {
+                "not_observable": 2,
+                "uncertain": 0
+              },
+              "state_counts": {
+                "no_warning": 170,
+                "warning": 4
+              },
+              "abstain_frames": 0,
+              "retention_on_original_raw_gate_pass": {
+                "original_support": 113,
+                "newly_flagged": 2,
+                "remaining_without_this_hint": 111,
+                "reliable_remaining": 109,
+                "unreliable_remaining_unflagged": 0,
+                "not_observable_remaining": 2,
+                "uncertain_remaining": 0,
+                "newly_caught_gate_pass_wrong_points": 0,
+                "newly_flagged_gate_pass_good_points": 2,
+                "duplicate_hint_on_gate_blocked_finite_raw": 2
+              }
+            }
+          },
+          "existing_major_hint_overlap": {
+            "existing_major_hint_frames": 0,
+            "rtmpose_hint_frames": 0,
+            "overlap_frames": 0,
+            "union_frames": 0,
+            "new_hint_union_increment": 0,
+            "new_hint_union_increment_by_canonical_label": {
+              "reliable": 0,
+              "unreliable": 0,
+              "not_observable": 0,
+              "uncertain": 0
+            },
+            "new_gate_pass_bad_hint_beyond_major": 0,
+            "new_gate_pass_good_hint_beyond_major": 0
+          }
+        }
+      }
+    },
+    {
+      "pitch_id": "pitch_003",
+      "source_frames": 115,
+      "non_seed_frames": 114,
+      "fold_status": {
+        "throwing_elbow": "calibrated",
+        "throwing_wrist": "calibrated"
+      },
+      "roles": {
+        "throwing_elbow": {
+          "canonical_label_counts": {
+            "reliable": 76,
+            "unreliable": 36,
+            "not_observable": 2,
+            "uncertain": 0
+          },
+          "raw_missing_frames": 0,
+          "native_decoded_finite_frames": 114,
+          "native_decoded_missing_frames": 0,
+          "native_vector_finite_frames": 114,
+          "nonpositive_native_score_frames": 0,
+          "measurable_response_deficit_frames": 114,
+          "full_point_outside_simcc_bins_frames": 0,
+          "evidence_status_counts": {
+            "measured": 114
+          },
+          "screens": {
+            "rtmpose_response": {
+              "tp": 0,
+              "fn": 36,
+              "fp": 0,
+              "tn": 76,
+              "warning_total": 0,
+              "unknown_label_warning_counts": {
+                "not_observable": 0,
+                "uncertain": 0
+              },
+              "state_counts": {
+                "no_warning": 114
+              },
+              "abstain_frames": 0,
+              "retention_on_original_raw_gate_pass": {
+                "original_support": 96,
+                "newly_flagged": 0,
+                "remaining_without_this_hint": 96,
+                "reliable_remaining": 65,
+                "unreliable_remaining_unflagged": 29,
+                "not_observable_remaining": 2,
+                "uncertain_remaining": 0,
+                "newly_caught_gate_pass_wrong_points": 0,
+                "newly_flagged_gate_pass_good_points": 0,
+                "duplicate_hint_on_gate_blocked_finite_raw": 0
+              }
+            },
+            "score_only": {
+              "tp": 7,
+              "fn": 29,
+              "fp": 11,
+              "tn": 65,
+              "warning_total": 18,
+              "unknown_label_warning_counts": {
+                "not_observable": 0,
+                "uncertain": 0
+              },
+              "state_counts": {
+                "no_warning": 96,
+                "warning": 18
+              },
+              "abstain_frames": 0,
+              "retention_on_original_raw_gate_pass": {
+                "original_support": 96,
+                "newly_flagged": 0,
+                "remaining_without_this_hint": 96,
+                "reliable_remaining": 65,
+                "unreliable_remaining_unflagged": 29,
+                "not_observable_remaining": 2,
+                "uncertain_remaining": 0,
+                "newly_caught_gate_pass_wrong_points": 0,
+                "newly_flagged_gate_pass_good_points": 0,
+                "duplicate_hint_on_gate_blocked_finite_raw": 18
+              }
+            },
+            "sample_maximum": {
+              "tp": 2,
+              "fn": 34,
+              "fp": 0,
+              "tn": 76,
+              "warning_total": 2,
+              "unknown_label_warning_counts": {
+                "not_observable": 0,
+                "uncertain": 0
+              },
+              "state_counts": {
+                "candidate_dependent": 6,
+                "warning": 2,
+                "within_reference_range": 106
+              },
+              "abstain_frames": 0,
+              "retention_on_original_raw_gate_pass": {
+                "original_support": 96,
+                "newly_flagged": 1,
+                "remaining_without_this_hint": 95,
+                "reliable_remaining": 65,
+                "unreliable_remaining_unflagged": 28,
+                "not_observable_remaining": 2,
+                "uncertain_remaining": 0,
+                "newly_caught_gate_pass_wrong_points": 1,
+                "newly_flagged_gate_pass_good_points": 0,
+                "duplicate_hint_on_gate_blocked_finite_raw": 1
+              }
+            },
+            "classifier": {
+              "tp": 3,
+              "fn": 33,
+              "fp": 1,
+              "tn": 75,
+              "warning_total": 4,
+              "unknown_label_warning_counts": {
+                "not_observable": 0,
+                "uncertain": 0
+              },
+              "state_counts": {
+                "no_warning": 110,
+                "warning": 4
+              },
+              "abstain_frames": 0,
+              "retention_on_original_raw_gate_pass": {
+                "original_support": 96,
+                "newly_flagged": 4,
+                "remaining_without_this_hint": 92,
+                "reliable_remaining": 64,
+                "unreliable_remaining_unflagged": 26,
+                "not_observable_remaining": 2,
+                "uncertain_remaining": 0,
+                "newly_caught_gate_pass_wrong_points": 3,
+                "newly_flagged_gate_pass_good_points": 1,
+                "duplicate_hint_on_gate_blocked_finite_raw": 0
+              }
+            }
+          },
+          "existing_major_hint_overlap": {
+            "existing_major_hint_frames": 19,
+            "rtmpose_hint_frames": 0,
+            "overlap_frames": 0,
+            "union_frames": 19,
+            "new_hint_union_increment": 0,
+            "new_hint_union_increment_by_canonical_label": {
+              "reliable": 0,
+              "unreliable": 0,
+              "not_observable": 0,
+              "uncertain": 0
+            },
+            "new_gate_pass_bad_hint_beyond_major": 0,
+            "new_gate_pass_good_hint_beyond_major": 0
+          }
+        },
+        "throwing_wrist": {
+          "canonical_label_counts": {
+            "reliable": 76,
+            "unreliable": 12,
+            "not_observable": 26,
+            "uncertain": 0
+          },
+          "raw_missing_frames": 0,
+          "native_decoded_finite_frames": 114,
+          "native_decoded_missing_frames": 0,
+          "native_vector_finite_frames": 114,
+          "nonpositive_native_score_frames": 0,
+          "measurable_response_deficit_frames": 113,
+          "full_point_outside_simcc_bins_frames": 1,
+          "evidence_status_counts": {
+            "insufficient_evidence": 1,
+            "measured": 113
+          },
+          "screens": {
+            "rtmpose_response": {
+              "tp": 0,
+              "fn": 12,
+              "fp": 0,
+              "tn": 76,
+              "warning_total": 0,
+              "unknown_label_warning_counts": {
+                "not_observable": 0,
+                "uncertain": 0
+              },
+              "state_counts": {
+                "insufficient_evidence": 1,
+                "no_warning": 113
+              },
+              "abstain_frames": 1,
+              "retention_on_original_raw_gate_pass": {
+                "original_support": 62,
+                "newly_flagged": 0,
+                "remaining_without_this_hint": 62,
+                "reliable_remaining": 38,
+                "unreliable_remaining_unflagged": 12,
+                "not_observable_remaining": 12,
+                "uncertain_remaining": 0,
+                "newly_caught_gate_pass_wrong_points": 0,
+                "newly_flagged_gate_pass_good_points": 0,
+                "duplicate_hint_on_gate_blocked_finite_raw": 0
+              }
+            },
+            "score_only": {
+              "tp": 0,
+              "fn": 12,
+              "fp": 38,
+              "tn": 38,
+              "warning_total": 52,
+              "unknown_label_warning_counts": {
+                "not_observable": 14,
+                "uncertain": 0
+              },
+              "state_counts": {
+                "no_warning": 62,
+                "warning": 52
+              },
+              "abstain_frames": 0,
+              "retention_on_original_raw_gate_pass": {
+                "original_support": 62,
+                "newly_flagged": 0,
+                "remaining_without_this_hint": 62,
+                "reliable_remaining": 38,
+                "unreliable_remaining_unflagged": 12,
+                "not_observable_remaining": 12,
+                "uncertain_remaining": 0,
+                "newly_caught_gate_pass_wrong_points": 0,
+                "newly_flagged_gate_pass_good_points": 0,
+                "duplicate_hint_on_gate_blocked_finite_raw": 52
+              }
+            },
+            "sample_maximum": {
+              "tp": 0,
+              "fn": 12,
+              "fp": 0,
+              "tn": 76,
+              "warning_total": 1,
+              "unknown_label_warning_counts": {
+                "not_observable": 1,
+                "uncertain": 0
+              },
+              "state_counts": {
+                "candidate_dependent": 3,
+                "warning": 1,
+                "within_reference_range": 110
+              },
+              "abstain_frames": 0,
+              "retention_on_original_raw_gate_pass": {
+                "original_support": 62,
+                "newly_flagged": 1,
+                "remaining_without_this_hint": 61,
+                "reliable_remaining": 38,
+                "unreliable_remaining_unflagged": 12,
+                "not_observable_remaining": 11,
+                "uncertain_remaining": 0,
+                "newly_caught_gate_pass_wrong_points": 0,
+                "newly_flagged_gate_pass_good_points": 0,
+                "duplicate_hint_on_gate_blocked_finite_raw": 0
+              }
+            },
+            "classifier": {
+              "tp": 1,
+              "fn": 11,
+              "fp": 0,
+              "tn": 76,
+              "warning_total": 5,
+              "unknown_label_warning_counts": {
+                "not_observable": 4,
+                "uncertain": 0
+              },
+              "state_counts": {
+                "no_warning": 109,
+                "warning": 5
+              },
+              "abstain_frames": 0,
+              "retention_on_original_raw_gate_pass": {
+                "original_support": 62,
+                "newly_flagged": 2,
+                "remaining_without_this_hint": 60,
+                "reliable_remaining": 38,
+                "unreliable_remaining_unflagged": 11,
+                "not_observable_remaining": 11,
+                "uncertain_remaining": 0,
+                "newly_caught_gate_pass_wrong_points": 1,
+                "newly_flagged_gate_pass_good_points": 0,
+                "duplicate_hint_on_gate_blocked_finite_raw": 3
+              }
+            }
+          },
+          "existing_major_hint_overlap": {
+            "existing_major_hint_frames": 19,
+            "rtmpose_hint_frames": 0,
+            "overlap_frames": 0,
+            "union_frames": 19,
+            "new_hint_union_increment": 0,
+            "new_hint_union_increment_by_canonical_label": {
+              "reliable": 0,
+              "unreliable": 0,
+              "not_observable": 0,
+              "uncertain": 0
+            },
+            "new_gate_pass_bad_hint_beyond_major": 0,
+            "new_gate_pass_good_hint_beyond_major": 0
+          }
+        }
+      }
+    },
+    {
+      "pitch_id": "pitch_004",
+      "source_frames": 114,
+      "non_seed_frames": 113,
+      "fold_status": {
+        "throwing_elbow": "calibrated",
+        "throwing_wrist": "calibrated"
+      },
+      "roles": {
+        "throwing_elbow": {
+          "canonical_label_counts": {
+            "reliable": 94,
+            "unreliable": 8,
+            "not_observable": 11,
+            "uncertain": 0
+          },
+          "raw_missing_frames": 2,
+          "native_decoded_finite_frames": 113,
+          "native_decoded_missing_frames": 0,
+          "native_vector_finite_frames": 113,
+          "nonpositive_native_score_frames": 0,
+          "measurable_response_deficit_frames": 111,
+          "full_point_outside_simcc_bins_frames": 0,
+          "evidence_status_counts": {
+            "insufficient_evidence": 2,
+            "measured": 111
+          },
+          "screens": {
+            "rtmpose_response": {
+              "tp": 0,
+              "fn": 8,
+              "fp": 0,
+              "tn": 94,
+              "warning_total": 0,
+              "unknown_label_warning_counts": {
+                "not_observable": 0,
+                "uncertain": 0
+              },
+              "state_counts": {
+                "insufficient_evidence": 2,
+                "no_warning": 111
+              },
+              "abstain_frames": 2,
+              "retention_on_original_raw_gate_pass": {
+                "original_support": 82,
+                "newly_flagged": 0,
+                "remaining_without_this_hint": 82,
+                "reliable_remaining": 65,
+                "unreliable_remaining_unflagged": 6,
+                "not_observable_remaining": 11,
+                "uncertain_remaining": 0,
+                "newly_caught_gate_pass_wrong_points": 0,
+                "newly_flagged_gate_pass_good_points": 0,
+                "duplicate_hint_on_gate_blocked_finite_raw": 0
+              }
+            },
+            "score_only": {
+              "tp": 0,
+              "fn": 8,
+              "fp": 29,
+              "tn": 65,
+              "warning_total": 29,
+              "unknown_label_warning_counts": {
+                "not_observable": 0,
+                "uncertain": 0
+              },
+              "state_counts": {
+                "insufficient_evidence": 2,
+                "no_warning": 82,
+                "warning": 29
+              },
+              "abstain_frames": 2,
+              "retention_on_original_raw_gate_pass": {
+                "original_support": 82,
+                "newly_flagged": 0,
+                "remaining_without_this_hint": 82,
+                "reliable_remaining": 65,
+                "unreliable_remaining_unflagged": 6,
+                "not_observable_remaining": 11,
+                "uncertain_remaining": 0,
+                "newly_caught_gate_pass_wrong_points": 0,
+                "newly_flagged_gate_pass_good_points": 0,
+                "duplicate_hint_on_gate_blocked_finite_raw": 29
+              }
+            },
+            "sample_maximum": {
+              "tp": 0,
+              "fn": 8,
+              "fp": 0,
+              "tn": 94,
+              "warning_total": 0,
+              "unknown_label_warning_counts": {
+                "not_observable": 0,
+                "uncertain": 0
+              },
+              "state_counts": {
+                "candidate_dependent": 6,
+                "insufficient_evidence": 2,
+                "within_reference_range": 105
+              },
+              "abstain_frames": 2,
+              "retention_on_original_raw_gate_pass": {
+                "original_support": 82,
+                "newly_flagged": 0,
+                "remaining_without_this_hint": 82,
+                "reliable_remaining": 65,
+                "unreliable_remaining_unflagged": 6,
+                "not_observable_remaining": 11,
+                "uncertain_remaining": 0,
+                "newly_caught_gate_pass_wrong_points": 0,
+                "newly_flagged_gate_pass_good_points": 0,
+                "duplicate_hint_on_gate_blocked_finite_raw": 0
+              }
+            },
+            "classifier": {
+              "tp": 0,
+              "fn": 8,
+              "fp": 5,
+              "tn": 89,
+              "warning_total": 7,
+              "unknown_label_warning_counts": {
+                "not_observable": 2,
+                "uncertain": 0
+              },
+              "state_counts": {
+                "insufficient_evidence": 2,
+                "no_warning": 104,
+                "warning": 7
+              },
+              "abstain_frames": 2,
+              "retention_on_original_raw_gate_pass": {
+                "original_support": 82,
+                "newly_flagged": 3,
+                "remaining_without_this_hint": 79,
+                "reliable_remaining": 64,
+                "unreliable_remaining_unflagged": 6,
+                "not_observable_remaining": 9,
+                "uncertain_remaining": 0,
+                "newly_caught_gate_pass_wrong_points": 0,
+                "newly_flagged_gate_pass_good_points": 1,
+                "duplicate_hint_on_gate_blocked_finite_raw": 4
+              }
+            }
+          },
+          "existing_major_hint_overlap": {
+            "existing_major_hint_frames": 5,
+            "rtmpose_hint_frames": 0,
+            "overlap_frames": 0,
+            "union_frames": 5,
+            "new_hint_union_increment": 0,
+            "new_hint_union_increment_by_canonical_label": {
+              "reliable": 0,
+              "unreliable": 0,
+              "not_observable": 0,
+              "uncertain": 0
+            },
+            "new_gate_pass_bad_hint_beyond_major": 0,
+            "new_gate_pass_good_hint_beyond_major": 0
+          }
+        },
+        "throwing_wrist": {
+          "canonical_label_counts": {
+            "reliable": 76,
+            "unreliable": 30,
+            "not_observable": 7,
+            "uncertain": 0
+          },
+          "raw_missing_frames": 2,
+          "native_decoded_finite_frames": 113,
+          "native_decoded_missing_frames": 0,
+          "native_vector_finite_frames": 113,
+          "nonpositive_native_score_frames": 0,
+          "measurable_response_deficit_frames": 111,
+          "full_point_outside_simcc_bins_frames": 0,
+          "evidence_status_counts": {
+            "insufficient_evidence": 2,
+            "measured": 111
+          },
+          "screens": {
+            "rtmpose_response": {
+              "tp": 0,
+              "fn": 30,
+              "fp": 0,
+              "tn": 76,
+              "warning_total": 1,
+              "unknown_label_warning_counts": {
+                "not_observable": 1,
+                "uncertain": 0
+              },
+              "state_counts": {
+                "insufficient_evidence": 2,
+                "no_warning": 110,
+                "warning": 1
+              },
+              "abstain_frames": 2,
+              "retention_on_original_raw_gate_pass": {
+                "original_support": 59,
+                "newly_flagged": 1,
+                "remaining_without_this_hint": 58,
+                "reliable_remaining": 36,
+                "unreliable_remaining_unflagged": 20,
+                "not_observable_remaining": 2,
+                "uncertain_remaining": 0,
+                "newly_caught_gate_pass_wrong_points": 0,
+                "newly_flagged_gate_pass_good_points": 0,
+                "duplicate_hint_on_gate_blocked_finite_raw": 0
+              }
+            },
+            "score_only": {
+              "tp": 8,
+              "fn": 22,
+              "fp": 40,
+              "tn": 36,
+              "warning_total": 52,
+              "unknown_label_warning_counts": {
+                "not_observable": 4,
+                "uncertain": 0
+              },
+              "state_counts": {
+                "insufficient_evidence": 2,
+                "no_warning": 59,
+                "warning": 52
+              },
+              "abstain_frames": 2,
+              "retention_on_original_raw_gate_pass": {
+                "original_support": 59,
+                "newly_flagged": 0,
+                "remaining_without_this_hint": 59,
+                "reliable_remaining": 36,
+                "unreliable_remaining_unflagged": 20,
+                "not_observable_remaining": 3,
+                "uncertain_remaining": 0,
+                "newly_caught_gate_pass_wrong_points": 0,
+                "newly_flagged_gate_pass_good_points": 0,
+                "duplicate_hint_on_gate_blocked_finite_raw": 52
+              }
+            },
+            "sample_maximum": {
+              "tp": 0,
+              "fn": 30,
+              "fp": 0,
+              "tn": 76,
+              "warning_total": 0,
+              "unknown_label_warning_counts": {
+                "not_observable": 0,
+                "uncertain": 0
+              },
+              "state_counts": {
+                "candidate_dependent": 2,
+                "insufficient_evidence": 2,
+                "within_reference_range": 109
+              },
+              "abstain_frames": 2,
+              "retention_on_original_raw_gate_pass": {
+                "original_support": 59,
+                "newly_flagged": 0,
+                "remaining_without_this_hint": 59,
+                "reliable_remaining": 36,
+                "unreliable_remaining_unflagged": 20,
+                "not_observable_remaining": 3,
+                "uncertain_remaining": 0,
+                "newly_caught_gate_pass_wrong_points": 0,
+                "newly_flagged_gate_pass_good_points": 0,
+                "duplicate_hint_on_gate_blocked_finite_raw": 0
+              }
+            },
+            "classifier": {
+              "tp": 9,
+              "fn": 21,
+              "fp": 14,
+              "tn": 62,
+              "warning_total": 28,
+              "unknown_label_warning_counts": {
+                "not_observable": 5,
+                "uncertain": 0
+              },
+              "state_counts": {
+                "insufficient_evidence": 2,
+                "no_warning": 83,
+                "warning": 28
+              },
+              "abstain_frames": 2,
+              "retention_on_original_raw_gate_pass": {
+                "original_support": 59,
+                "newly_flagged": 19,
+                "remaining_without_this_hint": 40,
+                "reliable_remaining": 24,
+                "unreliable_remaining_unflagged": 15,
+                "not_observable_remaining": 1,
+                "uncertain_remaining": 0,
+                "newly_caught_gate_pass_wrong_points": 5,
+                "newly_flagged_gate_pass_good_points": 12,
+                "duplicate_hint_on_gate_blocked_finite_raw": 9
+              }
+            }
+          },
+          "existing_major_hint_overlap": {
+            "existing_major_hint_frames": 5,
+            "rtmpose_hint_frames": 1,
+            "overlap_frames": 0,
+            "union_frames": 6,
+            "new_hint_union_increment": 1,
+            "new_hint_union_increment_by_canonical_label": {
+              "reliable": 0,
+              "unreliable": 0,
+              "not_observable": 1,
+              "uncertain": 0
+            },
+            "new_gate_pass_bad_hint_beyond_major": 0,
+            "new_gate_pass_good_hint_beyond_major": 0
+          }
+        }
+      }
+    },
+    {
+      "pitch_id": "pitch_005",
+      "source_frames": 101,
+      "non_seed_frames": 100,
+      "fold_status": {
+        "throwing_elbow": "calibrated",
+        "throwing_wrist": "calibrated"
+      },
+      "roles": {
+        "throwing_elbow": {
+          "canonical_label_counts": {
+            "reliable": 71,
+            "unreliable": 28,
+            "not_observable": 1,
+            "uncertain": 0
+          },
+          "raw_missing_frames": 1,
+          "native_decoded_finite_frames": 100,
+          "native_decoded_missing_frames": 0,
+          "native_vector_finite_frames": 100,
+          "nonpositive_native_score_frames": 0,
+          "measurable_response_deficit_frames": 99,
+          "full_point_outside_simcc_bins_frames": 0,
+          "evidence_status_counts": {
+            "insufficient_evidence": 1,
+            "measured": 99
+          },
+          "screens": {
+            "rtmpose_response": {
+              "tp": 0,
+              "fn": 28,
+              "fp": 4,
+              "tn": 67,
+              "warning_total": 4,
+              "unknown_label_warning_counts": {
+                "not_observable": 0,
+                "uncertain": 0
+              },
+              "state_counts": {
+                "insufficient_evidence": 1,
+                "no_warning": 95,
+                "warning": 4
+              },
+              "abstain_frames": 1,
+              "retention_on_original_raw_gate_pass": {
+                "original_support": 88,
+                "newly_flagged": 4,
+                "remaining_without_this_hint": 84,
+                "reliable_remaining": 57,
+                "unreliable_remaining_unflagged": 26,
+                "not_observable_remaining": 1,
+                "uncertain_remaining": 0,
+                "newly_caught_gate_pass_wrong_points": 0,
+                "newly_flagged_gate_pass_good_points": 4,
+                "duplicate_hint_on_gate_blocked_finite_raw": 0
+              }
+            },
+            "score_only": {
+              "tp": 1,
+              "fn": 27,
+              "fp": 10,
+              "tn": 61,
+              "warning_total": 11,
+              "unknown_label_warning_counts": {
+                "not_observable": 0,
+                "uncertain": 0
+              },
+              "state_counts": {
+                "insufficient_evidence": 1,
+                "no_warning": 88,
+                "warning": 11
+              },
+              "abstain_frames": 1,
+              "retention_on_original_raw_gate_pass": {
+                "original_support": 88,
+                "newly_flagged": 0,
+                "remaining_without_this_hint": 88,
+                "reliable_remaining": 61,
+                "unreliable_remaining_unflagged": 26,
+                "not_observable_remaining": 1,
+                "uncertain_remaining": 0,
+                "newly_caught_gate_pass_wrong_points": 0,
+                "newly_flagged_gate_pass_good_points": 0,
+                "duplicate_hint_on_gate_blocked_finite_raw": 11
+              }
+            },
+            "sample_maximum": {
+              "tp": 0,
+              "fn": 28,
+              "fp": 0,
+              "tn": 71,
+              "warning_total": 0,
+              "unknown_label_warning_counts": {
+                "not_observable": 0,
+                "uncertain": 0
+              },
+              "state_counts": {
+                "candidate_dependent": 3,
+                "insufficient_evidence": 12,
+                "within_reference_range": 85
+              },
+              "abstain_frames": 12,
+              "retention_on_original_raw_gate_pass": {
+                "original_support": 88,
+                "newly_flagged": 0,
+                "remaining_without_this_hint": 88,
+                "reliable_remaining": 61,
+                "unreliable_remaining_unflagged": 26,
+                "not_observable_remaining": 1,
+                "uncertain_remaining": 0,
+                "newly_caught_gate_pass_wrong_points": 0,
+                "newly_flagged_gate_pass_good_points": 0,
+                "duplicate_hint_on_gate_blocked_finite_raw": 0
+              }
+            },
+            "classifier": {
+              "tp": 0,
+              "fn": 28,
+              "fp": 3,
+              "tn": 68,
+              "warning_total": 3,
+              "unknown_label_warning_counts": {
+                "not_observable": 0,
+                "uncertain": 0
+              },
+              "state_counts": {
+                "insufficient_evidence": 1,
+                "no_warning": 96,
+                "warning": 3
+              },
+              "abstain_frames": 1,
+              "retention_on_original_raw_gate_pass": {
+                "original_support": 88,
+                "newly_flagged": 3,
+                "remaining_without_this_hint": 85,
+                "reliable_remaining": 58,
+                "unreliable_remaining_unflagged": 26,
+                "not_observable_remaining": 1,
+                "uncertain_remaining": 0,
+                "newly_caught_gate_pass_wrong_points": 0,
+                "newly_flagged_gate_pass_good_points": 3,
+                "duplicate_hint_on_gate_blocked_finite_raw": 0
+              }
+            }
+          },
+          "existing_major_hint_overlap": {
+            "existing_major_hint_frames": 3,
+            "rtmpose_hint_frames": 4,
+            "overlap_frames": 0,
+            "union_frames": 7,
+            "new_hint_union_increment": 4,
+            "new_hint_union_increment_by_canonical_label": {
+              "reliable": 4,
+              "unreliable": 0,
+              "not_observable": 0,
+              "uncertain": 0
+            },
+            "new_gate_pass_bad_hint_beyond_major": 0,
+            "new_gate_pass_good_hint_beyond_major": 4
+          }
+        },
+        "throwing_wrist": {
+          "canonical_label_counts": {
+            "reliable": 89,
+            "unreliable": 10,
+            "not_observable": 1,
+            "uncertain": 0
+          },
+          "raw_missing_frames": 1,
+          "native_decoded_finite_frames": 100,
+          "native_decoded_missing_frames": 0,
+          "native_vector_finite_frames": 100,
+          "nonpositive_native_score_frames": 0,
+          "measurable_response_deficit_frames": 99,
+          "full_point_outside_simcc_bins_frames": 0,
+          "evidence_status_counts": {
+            "insufficient_evidence": 1,
+            "measured": 99
+          },
+          "screens": {
+            "rtmpose_response": {
+              "tp": 0,
+              "fn": 10,
+              "fp": 0,
+              "tn": 89,
+              "warning_total": 0,
+              "unknown_label_warning_counts": {
+                "not_observable": 0,
+                "uncertain": 0
+              },
+              "state_counts": {
+                "insufficient_evidence": 1,
+                "no_warning": 99
+              },
+              "abstain_frames": 1,
+              "retention_on_original_raw_gate_pass": {
+                "original_support": 72,
+                "newly_flagged": 0,
+                "remaining_without_this_hint": 72,
+                "reliable_remaining": 63,
+                "unreliable_remaining_unflagged": 8,
+                "not_observable_remaining": 1,
+                "uncertain_remaining": 0,
+                "newly_caught_gate_pass_wrong_points": 0,
+                "newly_flagged_gate_pass_good_points": 0,
+                "duplicate_hint_on_gate_blocked_finite_raw": 0
+              }
+            },
+            "score_only": {
+              "tp": 1,
+              "fn": 9,
+              "fp": 26,
+              "tn": 63,
+              "warning_total": 27,
+              "unknown_label_warning_counts": {
+                "not_observable": 0,
+                "uncertain": 0
+              },
+              "state_counts": {
+                "insufficient_evidence": 1,
+                "no_warning": 72,
+                "warning": 27
+              },
+              "abstain_frames": 1,
+              "retention_on_original_raw_gate_pass": {
+                "original_support": 72,
+                "newly_flagged": 0,
+                "remaining_without_this_hint": 72,
+                "reliable_remaining": 63,
+                "unreliable_remaining_unflagged": 8,
+                "not_observable_remaining": 1,
+                "uncertain_remaining": 0,
+                "newly_caught_gate_pass_wrong_points": 0,
+                "newly_flagged_gate_pass_good_points": 0,
+                "duplicate_hint_on_gate_blocked_finite_raw": 27
+              }
+            },
+            "sample_maximum": {
+              "tp": 0,
+              "fn": 10,
+              "fp": 0,
+              "tn": 89,
+              "warning_total": 0,
+              "unknown_label_warning_counts": {
+                "not_observable": 0,
+                "uncertain": 0
+              },
+              "state_counts": {
+                "candidate_dependent": 2,
+                "insufficient_evidence": 12,
+                "within_reference_range": 86
+              },
+              "abstain_frames": 12,
+              "retention_on_original_raw_gate_pass": {
+                "original_support": 72,
+                "newly_flagged": 0,
+                "remaining_without_this_hint": 72,
+                "reliable_remaining": 63,
+                "unreliable_remaining_unflagged": 8,
+                "not_observable_remaining": 1,
+                "uncertain_remaining": 0,
+                "newly_caught_gate_pass_wrong_points": 0,
+                "newly_flagged_gate_pass_good_points": 0,
+                "duplicate_hint_on_gate_blocked_finite_raw": 0
+              }
+            },
+            "classifier": {
+              "tp": 2,
+              "fn": 8,
+              "fp": 7,
+              "tn": 82,
+              "warning_total": 9,
+              "unknown_label_warning_counts": {
+                "not_observable": 0,
+                "uncertain": 0
+              },
+              "state_counts": {
+                "insufficient_evidence": 1,
+                "no_warning": 90,
+                "warning": 9
+              },
+              "abstain_frames": 1,
+              "retention_on_original_raw_gate_pass": {
+                "original_support": 72,
+                "newly_flagged": 8,
+                "remaining_without_this_hint": 64,
+                "reliable_remaining": 57,
+                "unreliable_remaining_unflagged": 6,
+                "not_observable_remaining": 1,
+                "uncertain_remaining": 0,
+                "newly_caught_gate_pass_wrong_points": 2,
+                "newly_flagged_gate_pass_good_points": 6,
+                "duplicate_hint_on_gate_blocked_finite_raw": 1
+              }
+            }
+          },
+          "existing_major_hint_overlap": {
+            "existing_major_hint_frames": 3,
+            "rtmpose_hint_frames": 0,
+            "overlap_frames": 0,
+            "union_frames": 3,
+            "new_hint_union_increment": 0,
+            "new_hint_union_increment_by_canonical_label": {
+              "reliable": 0,
+              "unreliable": 0,
+              "not_observable": 0,
+              "uncertain": 0
+            },
+            "new_gate_pass_bad_hint_beyond_major": 0,
+            "new_gate_pass_good_hint_beyond_major": 0
+          }
+        }
+      }
+    }
+  ],
+  "pitch_003_visible_paired_xy": {
+    "throwing_elbow": {
+      "manual_status_counts_non_seed": {
+        "visible": 92,
+        "not_observable": 22
+      },
+      "same_frame_same_joint_paired_errors": {
+        "original_full": {
+          "n": 92,
+          "mean_px": 27.74608093739465,
+          "median_px": 10.902625857419137,
+          "p95_px": 106.5538152684173,
+          "maximum_px": 166.56301746029152
+        },
+        "rtmpose": {
+          "n": 92,
+          "mean_px": 7.3100832741440716,
+          "median_px": 5.446079598257599,
+          "p95_px": 14.916667390555146,
+          "maximum_px": 57.71662763714475
+        },
+        "difference_rtmpose_minus_original": {
+          "n": 92,
+          "mean_px": -20.435997663250582,
+          "median_px": -4.8962975069740295,
+          "p95_px": 3.3423925200507236,
+          "maximum_px": 8.07808759566564
+        }
+      },
+      "paired_original_gate_pass_errors": {
+        "original_full": {
+          "n": 86,
+          "mean_px": 24.007040570264575,
+          "median_px": 10.500444795246553,
+          "p95_px": 87.76353729553293,
+          "maximum_px": 166.56301746029152
+        },
+        "rtmpose": {
+          "n": 86,
+          "mean_px": 6.846886020964413,
+          "median_px": 5.446079598257599,
+          "p95_px": 13.674681473013742,
+          "maximum_px": 52.673663645633496
+        },
+        "difference_rtmpose_minus_original": {
+          "n": 86,
+          "mean_px": -17.160154549300163,
+          "median_px": -4.59702445646731,
+          "p95_px": 3.4959088851313505,
+          "maximum_px": 8.07808759566564
+        }
+      }
+    },
+    "throwing_wrist": {
+      "manual_status_counts_non_seed": {
+        "not_observable": 56,
+        "visible": 58
+      },
+      "same_frame_same_joint_paired_errors": {
+        "original_full": {
+          "n": 58,
+          "mean_px": 26.65564895919292,
+          "median_px": 14.38916227207325,
+          "p95_px": 84.57410925209847,
+          "maximum_px": 108.06672967680133
+        },
+        "rtmpose": {
+          "n": 58,
+          "mean_px": 16.84048263482484,
+          "median_px": 9.36605048916483,
+          "p95_px": 73.49500112966938,
+          "maximum_px": 127.9341836591818
+        },
+        "difference_rtmpose_minus_original": {
+          "n": 58,
+          "mean_px": -9.815166324368082,
+          "median_px": -1.1009326868348612,
+          "p95_px": 28.368419236144454,
+          "maximum_px": 59.515817659933234
+        }
+      },
+      "paired_original_gate_pass_errors": {
+        "original_full": {
+          "n": 49,
+          "mean_px": 23.017658249874774,
+          "median_px": 10.886510559521462,
+          "p95_px": 88.04873674688096,
+          "maximum_px": 108.06672967680133
+        },
+        "rtmpose": {
+          "n": 49,
+          "mean_px": 13.159453774223753,
+          "median_px": 8.198642479990797,
+          "p95_px": 39.111400552732526,
+          "maximum_px": 127.9341836591818
+        },
+        "difference_rtmpose_minus_original": {
+          "n": 49,
+          "mean_px": -9.858204475651021,
+          "median_px": -0.8603840924050896,
+          "p95_px": 7.249562169773183,
+          "maximum_px": 44.51828357201083
+        }
+      }
+    }
+  },
+  "visibility_source_audit": {
+    "path": "analysis_results/phase2_visibility_gap_audit_20261016_01/summary.json",
+    "sha256": "0034962ee9af90f075ea6d119980e2d65991ad2cd3ae8f2f035804d767eb6eca"
+  },
+  "metadata_guard_amendment": {
+    "status": "pre_inference_metadata_guard_repair",
+    "created_at_utc": "2026-10-17T02:20:33.538221+00:00",
+    "prior_main": {
+      "path": "docs/evaluation_plans/phase2_rtmpose_response_execution_20261017_01.json",
+      "sha256": "dfb3b0c870019603db320744622dc438866319db31fb26db419e174c45f48f98"
+    },
+    "prior_compatibility": {
+      "path": "docs/evaluation_plans/phase2_rtmpose_response_compatibility_20261017_01.json",
+      "sha256": "5b998f8c2c45ffeedc7d20187848e8b5d0723eeacd0692f5aa1b8e63128d9112"
+    },
+    "prior_failure_log": {
+      "path": "analysis_results/phase2_rtmpose_response_20261016_01/compatibility.log",
+      "sha256": "b367eb3a447efbc0cbda4c84badade2ffc60e42e15fe319a2e6157d0ed278fb5"
+    },
+    "actual_onnx_metadata": {
+      "inputs": [
+        {
+          "name": "input",
+          "type": "tensor(float)",
+          "shape": [
+            "batch",
+            3,
+            256,
+            192
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "name": "simcc_x",
+          "type": "tensor(float)",
+          "shape": [
+            "batch",
+            "MatMulsimcc_x_dim_1",
+            384
+          ]
+        },
+        {
+          "name": "simcc_y",
+          "type": "tensor(float)",
+          "shape": [
+            "batch",
+            "MatMulsimcc_x_dim_1",
+            512
+          ]
+        }
+      ],
+      "providers": [
+        "CPUExecutionProvider"
+      ]
+    },
+    "inference_calls_before_repair": 0,
+    "synthetic_attempt_exists": false,
+    "real_input_export_exists": false,
+    "reason": "Output joint axis is a shared ONNX symbol, not an incompatible tensor. The old guard incorrectly required a literal integer.",
+    "repair": "Accept shared symbolic metadata joint axis; actual float32 outputs must still be exactly [1,17,384] and [1,17,512].",
+    "unchanged": [
+      "model",
+      "SDK preprocessing",
+      "native response",
+      "signal",
+      "calibration",
+      "decision",
+      "call limits",
+      "human labels",
+      "production core"
+    ],
+    "tests": {
+      "path": "analysis_results/phase2_rtmpose_response_20261016_01/synthetic_tests_amendment.log",
+      "sha256": "4b4265cb05aa1845e3c7dde9d8d654738e2021c66a5cb45d3353598ebc2075aa"
+    }
+  },
+  "independent_audit": {
+    "path": "analysis_results/phase2_rtmpose_response_20261016_01/audit.json",
+    "sha256": "35c1bab182fcf6abfa36d7a98aacd98e5060d1b725b41b51633d3cfe613cb275"
+  },
+  "tests": {
+    "run": 918,
+    "passed": 916,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 2,
+    "seconds": 54.701,
+    "exit_code": 0,
+    "new_synthetic_tests": 34,
+    "skip_details": [
+      "test_dangling_snapshot_file_link_cannot_create_external_target_when_supported (test_handoff_paths.HandoffPathTests.test_dangling_snapshot_file_link_cannot_create_external_target_when_supported) ... skipped 'file symlink creation is unavailable'",
+      "test_source_symlink_outside_candidate_is_rejected_when_supported (test_handoff_review.HandoffReviewTests.test_source_symlink_outside_candidate_is_rejected_when_supported) ... skipped 'creating symbolic links is unavailable'"
+    ],
+    "formal_five_e2e": [
+      {
+        "pitch_id": "pitch_001",
+        "status": "evaluated_development_evidence",
+        "source_frames": 87,
+        "review_frames_non_seed": 2
+      },
+      {
+        "pitch_id": "pitch_002",
+        "status": "evaluated_development_evidence",
+        "source_frames": 175,
+        "review_frames_non_seed": 0
+      },
+      {
+        "pitch_id": "pitch_003",
+        "status": "evaluated_development_evidence",
+        "source_frames": 115,
+        "review_frames_non_seed": 19
+      },
+      {
+        "pitch_id": "pitch_004",
+        "status": "evaluated_development_evidence",
+        "source_frames": 114,
+        "review_frames_non_seed": 5
+      },
+      {
+        "pitch_id": "pitch_005",
+        "status": "evaluated_development_evidence",
+        "source_frames": 101,
+        "review_frames_non_seed": 3
+      }
+    ],
+    "log": {
+      "path": "analysis_results/phase2_rtmpose_response_20261016_01/full_suite_with_formal_baseline.log",
+      "sha256": "3d09d010a7f7e58f2b27f7ea04e730ed72189df9b591c832c7d8aadea5498940"
+    },
+    "initial_suite_without_optional_baseline": {
+      "run": 918,
+      "passed": 915,
+      "skipped": 3,
+      "reason": "Initial command omitted PITCH_ANALYSIS_REAL_BASELINE_DIR; corrected final suite includes all formal five."
+    }
+  },
+  "protected": {
+    "current_sources": 467,
+    "upstream_sources": 62,
+    "changed_sources": [],
+    "before": {
+      "path": "analysis_results/phase2_rtmpose_response_20261016_01/protected_before.json",
+      "sha256": "2a72c9ccf9638becda29eb7c4409766425f18de363445eccb66f75c92401c431"
+    }
+  },
+  "intake": {
+    "sqlite": {
+      "path": "data/intake/handoff/state.sqlite3",
+      "sha256": "482be22ebb85334a964f27fd8693554462bdfd1f768f97224489dce8a762876f"
+    },
+    "counts": {
+      "batches": 1,
+      "pitches": 8,
+      "events": 45
+    },
+    "candidates": [
+      {
+        "original_pitch_id": "20261006T114959Z_Q8Bl2X4VKuw_p01",
+        "intake_status": "imported",
+        "review_status": "pending",
+        "review": {
+          "path": "data/intake/handoff/candidates/h_04fe41071f8a42ffc430d856cee75c0bd4875e4daff0f6018b71d49da5519789/review.json",
+          "sha256": "3c586c0275f6c9686030d64cbb25a2b33fe2bd7674f3827449a59d769204f917"
+        },
+        "provenance": {
+          "path": "data/intake/handoff/candidates/h_04fe41071f8a42ffc430d856cee75c0bd4875e4daff0f6018b71d49da5519789/provenance.json",
+          "sha256": "3a3c0401ce5e39c57494790f83a3e32b063402986dbee65f5fe9fc6973ca3ded"
+        }
+      },
+      {
+        "original_pitch_id": "20261006T114959Z_Q8Bl2X4VKuw_p02",
+        "intake_status": "imported",
+        "review_status": "pending",
+        "review": {
+          "path": "data/intake/handoff/candidates/h_d180a4a9bec2a986e77ad1db0dabb94254a94b86d497767d79c1db480861bfe9/review.json",
+          "sha256": "63388089500d4113c1a04076315e5f41aa2886be795a1b73a35fbc3eaf0be333"
+        },
+        "provenance": {
+          "path": "data/intake/handoff/candidates/h_d180a4a9bec2a986e77ad1db0dabb94254a94b86d497767d79c1db480861bfe9/provenance.json",
+          "sha256": "bb1383d56c2c85d655bdd53ae167af7f762ca62ba5e9f5e1f5eb4a1438f724d5"
+        }
+      },
+      {
+        "original_pitch_id": "20261006T114959Z_Q8Bl2X4VKuw_p03",
+        "intake_status": "imported",
+        "review_status": "pending",
+        "review": {
+          "path": "data/intake/handoff/candidates/h_48481b048828fe4415b04bdee64def4c4d705d4b1b54b55d31941d4406076dff/review.json",
+          "sha256": "a94ce00974992d8f95c56908cb9ca56a1eede5a5f8a47f901ae7633e31b84009"
+        },
+        "provenance": {
+          "path": "data/intake/handoff/candidates/h_48481b048828fe4415b04bdee64def4c4d705d4b1b54b55d31941d4406076dff/provenance.json",
+          "sha256": "2919ba5239228dc93ddb6fa9ace8b03c69adb9c18f8ad0c65cf87a17022f4bbb"
+        }
+      },
+      {
+        "original_pitch_id": "20261006T114959Z_Q8Bl2X4VKuw_p04",
+        "intake_status": "imported",
+        "review_status": "pending",
+        "review": {
+          "path": "data/intake/handoff/candidates/h_107662bcda84dc990b0221b871d9fb5d6ac02acd4251e8556ba69da4afff50da/review.json",
+          "sha256": "10150cae3acbba69c5ff2b37557813db172580e3864eb63e2fccf19daaf05bc0"
+        },
+        "provenance": {
+          "path": "data/intake/handoff/candidates/h_107662bcda84dc990b0221b871d9fb5d6ac02acd4251e8556ba69da4afff50da/provenance.json",
+          "sha256": "781604e5865a11070ceb0a7c65c9f637d150e786b3d31b1dd3d542da74e2f8e5"
+        }
+      },
+      {
+        "original_pitch_id": "20261006T114959Z_Q8Bl2X4VKuw_p05",
+        "intake_status": "imported",
+        "review_status": "pending",
+        "review": {
+          "path": "data/intake/handoff/candidates/h_b24002e538e057fbf36c33d172a8f96182739b16b53766e24cb50d28ebd3ff30/review.json",
+          "sha256": "c7e5e20c464f4a88cd96d34cf03f62853144e5006192452671307577716297dc"
+        },
+        "provenance": {
+          "path": "data/intake/handoff/candidates/h_b24002e538e057fbf36c33d172a8f96182739b16b53766e24cb50d28ebd3ff30/provenance.json",
+          "sha256": "48fdcead47d72782c04fd8c749e0b10a8e8295d7aae7c8b7e66649232eb73c76"
+        }
+      },
+      {
+        "original_pitch_id": "20261006T114959Z_Q8Bl2X4VKuw_p06",
+        "intake_status": "imported",
+        "review_status": "pending",
+        "review": {
+          "path": "data/intake/handoff/candidates/h_f3d173ad20656164b86abb5b913ee9253ec15663c3cc3754c1252d719099c53d/review.json",
+          "sha256": "a37d56aae9a11c7a0146f3f372b7b2443401ea05fe89b4cb921ffae52b81e968"
+        },
+        "provenance": {
+          "path": "data/intake/handoff/candidates/h_f3d173ad20656164b86abb5b913ee9253ec15663c3cc3754c1252d719099c53d/provenance.json",
+          "sha256": "36a2bd0281e1a00db09d27428dd46e3b99f319bde33eff9468a1a9b50b88014b"
+        }
+      },
+      {
+        "original_pitch_id": "20261006T114959Z_Q8Bl2X4VKuw_p07",
+        "intake_status": "imported",
+        "review_status": "pending",
+        "review": {
+          "path": "data/intake/handoff/candidates/h_918409c9de9565036b43660a5df6efa01d40db4152a7c83f6be6c3c87a9c4e46/review.json",
+          "sha256": "68ead7f67cc20ea43f1ff9eb6c32192fd36d3b19ceaedd511a87f0a4ff54d484"
+        },
+        "provenance": {
+          "path": "data/intake/handoff/candidates/h_918409c9de9565036b43660a5df6efa01d40db4152a7c83f6be6c3c87a9c4e46/provenance.json",
+          "sha256": "d861e8432f2b72339c8a2d3a931195ea4cb350912228bfcc6e14ae3224b4847d"
+        }
+      },
+      {
+        "original_pitch_id": "20261006T114959Z_Q8Bl2X4VKuw_p08",
+        "intake_status": "imported",
+        "review_status": "pending",
+        "review": {
+          "path": "data/intake/handoff/candidates/h_8106f7c561eed5f95b7b2cd200fa2c282e26a0a05321ade2e596de7f04552819/review.json",
+          "sha256": "9457cb4e323c6599fafc0a23e20e3f3c938074cf8e23e3fd0724cdf0f807070a"
+        },
+        "provenance": {
+          "path": "data/intake/handoff/candidates/h_8106f7c561eed5f95b7b2cd200fa2c282e26a0a05321ade2e596de7f04552819/provenance.json",
+          "sha256": "064cde3152a2acc77ce40be3129f3a5e09570803a835aca656812e105f69e21e"
+        }
+      }
+    ],
+    "analysis_started": false
+  },
+  "artifacts": {
+    "compatibility.json": {
+      "path": "analysis_results/phase2_rtmpose_response_20261016_01/compatibility.json",
+      "sha256": "7f94f10f9eaf5430a595f1c096a6072a4bc445bf1f2f43f582e9846eb1febd52"
+    },
+    "native_execution.json": {
+      "path": "analysis_results/phase2_rtmpose_response_20261016_01/native_execution.json",
+      "sha256": "4619ff712f866129f7e6e92981f6c4a46b4c0276f792a97c46c8e0aecf518590"
+    },
+    "exports/export_run.json": {
+      "path": "analysis_results/phase2_rtmpose_response_20261016_01/exports/export_run.json",
+      "sha256": "94bac0092209fb170fcc1fbdba78ae0590edda7a515874378c8db6ada7b08d66"
+    },
+    "native/native_run.json": {
+      "path": "analysis_results/phase2_rtmpose_response_20261016_01/native/native_run.json",
+      "sha256": "014be396923e1aed7bec528dfe8e0e177c95a8052b214f3669cf96e3dadecde4"
+    },
+    "measurements/measurement_run.json": {
+      "path": "analysis_results/phase2_rtmpose_response_20261016_01/measurements/measurement_run.json",
+      "sha256": "677c9bce1542e8e4e2c47c2625da3b0900ce897fdb7c7171eda3ac263a163897"
+    },
+    "predictions/prediction_run.json": {
+      "path": "analysis_results/phase2_rtmpose_response_20261016_01/predictions/prediction_run.json",
+      "sha256": "450158bb5b0dab16970b1d5beac71d4ba555a10b9c4304f48bf54c4a64ec39f4"
+    },
+    "evaluation/evaluation.json": {
+      "path": "analysis_results/phase2_rtmpose_response_20261016_01/evaluation/evaluation.json",
+      "sha256": "0aabb0e533e3a5ce2923e18eea60b1fb2f8d1f62c8415a0099d560ed96254a77"
+    },
+    "audit_preflight.json": {
+      "path": "analysis_results/phase2_rtmpose_response_20261016_01/audit_preflight.json",
+      "sha256": "aaf015e6c6b077a2b84c8b02b166a5572eaa1e8d25a3b96f4b5170bf49023c85"
+    }
+  },
+  "phase1": "PASSED",
+  "phase2_evaluation": "COMPLETE_WITH_KNOWN_LIMITATIONS",
+  "phase2_automatic_reliability": "NOT_PASSED",
+  "next_action": "Stop this signal under the approved decision; no cutoff/feature/model-size search, no Phase3."
+}

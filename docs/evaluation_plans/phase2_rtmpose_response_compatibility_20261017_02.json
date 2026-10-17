@@ -1,0 +1,29 @@
+{
+  "created_at_utc": "2026-10-17T02:20:33.554641+00:00",
+  "output_path": "analysis_results/phase2_rtmpose_response_20261016_01",
+  "model": {
+    "path": "analysis_results/phase2_rtmpose_response_20261016_01/model/end2end.onnx",
+    "sha256": "5c0a4bf67953e6d2ac43ce15e77dc9d5d354ae18430a47d2c5963a7bc5683e3c"
+  },
+  "runtime": {
+    "python": "3.12.14",
+    "python_executable_sha256": "82264b3fe4248d1ff3564a0296cbb4a266ef968799bd85902ab5eaaf3e17eb62",
+    "numpy": "2.2.6",
+    "onnxruntime": "1.23.2"
+  },
+  "worker_sha256": "9709c6ba8feb9aae2cd696d22605874fb666dc148b79e6cf584e12e5768488c0",
+  "approval": "核准完整單次離線驗證",
+  "proposal": {
+    "path": "docs/phase2_rtmpose_response_proposal_20261016.md",
+    "sha256": "e6965ede7a3cb95bf882a548b0575ccd15396a224aecbfcef0d576206d58cfaa"
+  },
+  "mode": "compatibility",
+  "metadata_guard_amendment": {
+    "path": "analysis_results/phase2_rtmpose_response_20261016_01/metadata_guard_amendment.json",
+    "sha256": "6941723a2749ef4d80467ffcc87e2907780783ab6336a1df133bfee7716ff640"
+  },
+  "supersedes_pre_inference_plan": {
+    "path": "docs/evaluation_plans/phase2_rtmpose_response_compatibility_20261017_01.json",
+    "sha256": "5b998f8c2c45ffeedc7d20187848e8b5d0723eeacd0692f5aa1b8e63128d9112"
+  }
+}
