@@ -1,0 +1,702 @@
+{
+  "native_interface_integration": "PASSED",
+  "phase1": "PASSED",
+  "phase2_automatic_reliability": "NOT_PASSED",
+  "accepted_scope": "Cached native output compatibility, preservation and review only; no live inference or model adoption.",
+  "checks": {
+    "legacy_core_and_gates_unchanged": true,
+    "complete_592_frames_per_backend": true,
+    "native_semantics_and_unsupported_fields_preserved": true,
+    "exact_coordinate_and_score_preservation": true,
+    "missing_and_unsupported_separated_without_interpolation": true,
+    "five_overlays_decoded_and_sample_viewed": true,
+    "visible_xy_comparison_preserves_regressions_and_unknowns": true,
+    "full_suite_passed": true
+  },
+  "execution": {
+    "path": "docs/evaluation_plans/phase2_rtmpose_native_interface_execution_20261018_01.json",
+    "sha256": "be75e6f1153541eebb01905c496afd04583f5828cfbb0fc6b702c9d8b7b07f82"
+  },
+  "export_stage_summary": {
+    "path": "analysis_results/phase2_native_interface_20261018_01/integration_summary.json",
+    "sha256": "33eabd4d9013073d7e46e80cdac38e14e629918a04b14a7646c43bb8fcb1011a"
+  },
+  "independent_audit": {
+    "path": "analysis_results/phase2_native_interface_20261018_01/independent_audit.json",
+    "sha256": "4abecb5cc602e81fbefcd87fd4459a17fecbd08ef0d549af84298841708cf585"
+  },
+  "visual_inspection": {
+    "path": "analysis_results/phase2_native_interface_20261018_01/visual_review/inspection.json",
+    "sha256": "8f04b5eb10b7397f32f268edc544ca7ba0f78421572685c46dc577a2908ea7ad"
+  },
+  "tests": {
+    "run": 963,
+    "passed": 961,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 2,
+    "seconds": 76.699,
+    "exit_code": 0,
+    "new_synthetic_tests": 45,
+    "skip_details": [
+      "test_dangling_snapshot_file_link_cannot_create_external_target_when_supported (test_handoff_paths.HandoffPathTests.test_dangling_snapshot_file_link_cannot_create_external_target_when_supported) ... skipped 'file symlink creation is unavailable'",
+      "test_source_symlink_outside_candidate_is_rejected_when_supported (test_handoff_review.HandoffReviewTests.test_source_symlink_outside_candidate_is_rejected_when_supported) ... skipped 'creating symbolic links is unavailable'"
+    ],
+    "formal_five_e2e": [
+      {
+        "pitch_id": "pitch_001",
+        "status": "evaluated_development_evidence",
+        "source_frames": 87,
+        "review_frames_non_seed": 2
+      },
+      {
+        "pitch_id": "pitch_002",
+        "status": "evaluated_development_evidence",
+        "source_frames": 175,
+        "review_frames_non_seed": 0
+      },
+      {
+        "pitch_id": "pitch_003",
+        "status": "evaluated_development_evidence",
+        "source_frames": 115,
+        "review_frames_non_seed": 19
+      },
+      {
+        "pitch_id": "pitch_004",
+        "status": "evaluated_development_evidence",
+        "source_frames": 114,
+        "review_frames_non_seed": 5
+      },
+      {
+        "pitch_id": "pitch_005",
+        "status": "evaluated_development_evidence",
+        "source_frames": 101,
+        "review_frames_non_seed": 3
+      }
+    ],
+    "log": {
+      "path": "analysis_results/phase2_native_interface_20261018_01/full_suite.log",
+      "sha256": "61bdc4d5ce82d7e3700d59343a9745a7b6334861593ff64d7f2cf087dea50bd2"
+    }
+  },
+  "operation_counts": {
+    "new_rtmpose_inference": 0,
+    "new_trackers": 0,
+    "new_calibration": 0,
+    "new_annotations": 0,
+    "model_downloads": 0
+  },
+  "source_counts": {
+    "frames_per_backend": 592,
+    "mp_declared_slots": 19536,
+    "mp_missing_slots": 99,
+    "rtmpose_declared_slots": 10064,
+    "rtmpose_missing_slots": 0,
+    "rtmpose_outside_image_slots": 11,
+    "human_xy_rows": 1380,
+    "human_visible": 1205,
+    "human_not_observable": 173,
+    "human_uncertain": 2
+  },
+  "intake": {
+    "counts": {
+      "batches": 1,
+      "pitches": 8,
+      "events": 45
+    },
+    "sqlite": {
+      "path": "data/intake/handoff/state.sqlite3",
+      "sha256": "482be22ebb85334a964f27fd8693554462bdfd1f768f97224489dce8a762876f"
+    },
+    "candidate_status": "8 pending; reviews/provenance unchanged; not analysed or promoted"
+  },
+  "clips": [
+    {
+      "pitch_id": "pitch_001",
+      "backends": {
+        "mediapipe": {
+          "frames": 87,
+          "topology": "mediapipe_33",
+          "manifest": {
+            "path": "analysis_results/phase2_native_interface_20261018_01/pitch_001/mediapipe/native_pose_manifest.json",
+            "sha256": "eff13d1704f4f775a88b05b887cef5098f5e2984279a81580bc862d50716d517"
+          },
+          "keypoints": {
+            "path": "analysis_results/phase2_native_interface_20261018_01/pitch_001/mediapipe/native_keypoints.jsonl",
+            "sha256": "285fa8aa3787f566b46595cbd31ec4225bb6f985db618533aa7dc8c7dd61f565"
+          },
+          "summary": {
+            "path": "analysis_results/phase2_native_interface_20261018_01/pitch_001/mediapipe/native_pose_summary.json",
+            "sha256": "90762ae7a42e49941a67128765f7dd07d2f70bfa1de326dfca7b2bec228defc3"
+          },
+          "original_overlay": {
+            "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_001/overlay.mp4",
+            "sha256": "6461fca279c766ad8f1af89d2a6f2b7c54535017984ea2e009ec2f6d2d44cd5a"
+          }
+        },
+        "rtmpose": {
+          "frames": 87,
+          "topology": "coco_17",
+          "manifest": {
+            "path": "analysis_results/phase2_native_interface_20261018_01/pitch_001/rtmpose/native_pose_manifest.json",
+            "sha256": "621fe3ea03e74ce467f571d80a5e4b6f6751e313fef75fe10929da46e8fe98e1"
+          },
+          "keypoints": {
+            "path": "analysis_results/phase2_native_interface_20261018_01/pitch_001/rtmpose/native_keypoints.jsonl",
+            "sha256": "abb1642f849727d8b6e3390f4d586e181b520592074d595bba562082d873024c"
+          },
+          "summary": {
+            "path": "analysis_results/phase2_native_interface_20261018_01/pitch_001/rtmpose/native_pose_summary.json",
+            "sha256": "a1f376836e586b8bb9b1d98d32e8578a73279684e2e7b3e1e74038e0697d79a0"
+          },
+          "overlay": {
+            "path": "analysis_results/phase2_native_interface_20261018_01/pitch_001/rtmpose/overlay_native.mp4",
+            "sha256": "07c226e22e9523caf417e41739367ac5c3b60c46b878244dbb167821f5e18a4d"
+          },
+          "overlay_validation": {
+            "schema_version": "native-overlay-review-v1",
+            "path": "D:\\project\\pitch-analysis\\analysis_results\\phase2_native_interface_20261018_01\\pitch_001\\rtmpose\\overlay_native.mp4",
+            "sha256": "07c226e22e9523caf417e41739367ac5c3b60c46b878244dbb167821f5e18a4d",
+            "source_video_sha256": "7c9fe20e39c1b5358aa8e13b739222aebb6bf3ebfadf3569ccb3042c64f10190",
+            "source_pixel_sha_verified_frames": 87,
+            "source_timestamps_verified_frames": 87,
+            "max_source_timestamp_rounding_difference_ms": 0.3333333333334849,
+            "timestamp_semantics": "original_pose_capture_timestamp_ms_rounded_native_decode_no_shift",
+            "saved_timestamps_preserved": true,
+            "source_timestamp_shift_ms": 0,
+            "quality_status": "not_calibrated",
+            "usable_for_analysis": null,
+            "topology": "coco_17",
+            "new_inference_calls": 0,
+            "interpolated_coordinates": 0,
+            "decoded_frame_count": 87,
+            "width": 434,
+            "height": 616,
+            "fps": 30.0,
+            "codec": "h264",
+            "encoder": "libx264",
+            "pixel_format": "yuv420p",
+            "overlay_timestamps_verified_frames": 87,
+            "max_overlay_timestamp_rounding_difference_ms": 0.3333333333334849
+          }
+        }
+      }
+    },
+    {
+      "pitch_id": "pitch_002",
+      "backends": {
+        "mediapipe": {
+          "frames": 175,
+          "topology": "mediapipe_33",
+          "manifest": {
+            "path": "analysis_results/phase2_native_interface_20261018_01/pitch_002/mediapipe/native_pose_manifest.json",
+            "sha256": "b72c2d8feca6cf2462fbaf10ef8038d23274d710fe6fb64c9f9a556c1ac8fe4f"
+          },
+          "keypoints": {
+            "path": "analysis_results/phase2_native_interface_20261018_01/pitch_002/mediapipe/native_keypoints.jsonl",
+            "sha256": "575fb6daa7ef854125125e3f4198f73b65da4173773e6442667117849cff7f3d"
+          },
+          "summary": {
+            "path": "analysis_results/phase2_native_interface_20261018_01/pitch_002/mediapipe/native_pose_summary.json",
+            "sha256": "f9dd21b4ef1bcd5656c935ea67fdeaa72d0dd05b9202f072ddb6625fb6f8b5a1"
+          },
+          "original_overlay": {
+            "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_002/overlay.mp4",
+            "sha256": "20fd31305b96e6087200142c074b654ac2706a3dff2493a73029b3ea7c5bc6d6"
+          }
+        },
+        "rtmpose": {
+          "frames": 175,
+          "topology": "coco_17",
+          "manifest": {
+            "path": "analysis_results/phase2_native_interface_20261018_01/pitch_002/rtmpose/native_pose_manifest.json",
+            "sha256": "622385b67a3df2f60c2769226c68fbdca08974880ec9e1cd94bd3d8e49a56f85"
+          },
+          "keypoints": {
+            "path": "analysis_results/phase2_native_interface_20261018_01/pitch_002/rtmpose/native_keypoints.jsonl",
+            "sha256": "822251f6f2ce2159d61ceed7dcab36677d0d0ace51fb64955753281822944f57"
+          },
+          "summary": {
+            "path": "analysis_results/phase2_native_interface_20261018_01/pitch_002/rtmpose/native_pose_summary.json",
+            "sha256": "8006fd5649ba7bf3dc84c9f2f14ddb1c4a5a01683b65e856f1a25ca5b89418a5"
+          },
+          "overlay": {
+            "path": "analysis_results/phase2_native_interface_20261018_01/pitch_002/rtmpose/overlay_native.mp4",
+            "sha256": "eeafc04daf271064985bbab89c314f75fcdeec74678c61c5cb7cd6b6739bde25"
+          },
+          "overlay_validation": {
+            "schema_version": "native-overlay-review-v1",
+            "path": "D:\\project\\pitch-analysis\\analysis_results\\phase2_native_interface_20261018_01\\pitch_002\\rtmpose\\overlay_native.mp4",
+            "sha256": "eeafc04daf271064985bbab89c314f75fcdeec74678c61c5cb7cd6b6739bde25",
+            "source_video_sha256": "b38258e682370349d085d0b43683f183afc632f682dc85b758604c9d1489f01a",
+            "source_pixel_sha_verified_frames": 175,
+            "source_timestamps_verified_frames": 175,
+            "max_source_timestamp_rounding_difference_ms": 0.33333333333393966,
+            "timestamp_semantics": "original_pose_capture_timestamp_ms_rounded_native_decode_no_shift",
+            "saved_timestamps_preserved": true,
+            "source_timestamp_shift_ms": 0,
+            "quality_status": "not_calibrated",
+            "usable_for_analysis": null,
+            "topology": "coco_17",
+            "new_inference_calls": 0,
+            "interpolated_coordinates": 0,
+            "decoded_frame_count": 175,
+            "width": 460,
+            "height": 634,
+            "fps": 30.0,
+            "codec": "h264",
+            "encoder": "libx264",
+            "pixel_format": "yuv420p",
+            "overlay_timestamps_verified_frames": 175,
+            "max_overlay_timestamp_rounding_difference_ms": 0.33333333333393966
+          }
+        }
+      }
+    },
+    {
+      "pitch_id": "pitch_003",
+      "backends": {
+        "mediapipe": {
+          "frames": 115,
+          "topology": "mediapipe_33",
+          "manifest": {
+            "path": "analysis_results/phase2_native_interface_20261018_01/pitch_003/mediapipe/native_pose_manifest.json",
+            "sha256": "b510561e882bb9228aba2180df99436eb0c112a17808170b9dd35fedbda57aa7"
+          },
+          "keypoints": {
+            "path": "analysis_results/phase2_native_interface_20261018_01/pitch_003/mediapipe/native_keypoints.jsonl",
+            "sha256": "9dc09c4659b27e8e98ae458566690f89e3dc964defe44b9ff07aad4566eeaea3"
+          },
+          "summary": {
+            "path": "analysis_results/phase2_native_interface_20261018_01/pitch_003/mediapipe/native_pose_summary.json",
+            "sha256": "7f2d81f582dbc202a1f87f4353e25794aa4d566215252cfc12cf3a0f7f9f4e91"
+          },
+          "original_overlay": {
+            "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_003/overlay.mp4",
+            "sha256": "29e5a68c09ffff08fbb5fda16d7102d8771c3256c7e796e4aeb11cf2b6f0801d"
+          }
+        },
+        "rtmpose": {
+          "frames": 115,
+          "topology": "coco_17",
+          "manifest": {
+            "path": "analysis_results/phase2_native_interface_20261018_01/pitch_003/rtmpose/native_pose_manifest.json",
+            "sha256": "f8b037a9a7fb07ef383e5274f411ba7e36bf8aa65ec01514321f0e86a730dd8e"
+          },
+          "keypoints": {
+            "path": "analysis_results/phase2_native_interface_20261018_01/pitch_003/rtmpose/native_keypoints.jsonl",
+            "sha256": "a6bcab75bb0bf37d461987fb63af1af976870b7231b72f17a9d61e902cf3e273"
+          },
+          "summary": {
+            "path": "analysis_results/phase2_native_interface_20261018_01/pitch_003/rtmpose/native_pose_summary.json",
+            "sha256": "18d652398117c1dcdf3629122b3ad8053b5a5ca9caf689c35ac54a273d3167f6"
+          },
+          "overlay": {
+            "path": "analysis_results/phase2_native_interface_20261018_01/pitch_003/rtmpose/overlay_native.mp4",
+            "sha256": "73771ce543ae673ae9fda73e1a7dc30ce4c1a9b17dd74790c4834a93cb26ef84"
+          },
+          "overlay_validation": {
+            "schema_version": "native-overlay-review-v1",
+            "path": "D:\\project\\pitch-analysis\\analysis_results\\phase2_native_interface_20261018_01\\pitch_003\\rtmpose\\overlay_native.mp4",
+            "sha256": "73771ce543ae673ae9fda73e1a7dc30ce4c1a9b17dd74790c4834a93cb26ef84",
+            "source_video_sha256": "5c08dba98504d998536dfd0f0fab598760400612c9049445a68120e68fdf024c",
+            "source_pixel_sha_verified_frames": 115,
+            "source_timestamps_verified_frames": 115,
+            "max_source_timestamp_rounding_difference_ms": 0.3333333333334849,
+            "timestamp_semantics": "original_pose_capture_timestamp_ms_rounded_native_decode_no_shift",
+            "saved_timestamps_preserved": true,
+            "source_timestamp_shift_ms": 0,
+            "quality_status": "not_calibrated",
+            "usable_for_analysis": null,
+            "topology": "coco_17",
+            "new_inference_calls": 0,
+            "interpolated_coordinates": 0,
+            "decoded_frame_count": 115,
+            "width": 510,
+            "height": 628,
+            "fps": 30.0,
+            "codec": "h264",
+            "encoder": "libx264",
+            "pixel_format": "yuv420p",
+            "overlay_timestamps_verified_frames": 115,
+            "max_overlay_timestamp_rounding_difference_ms": 0.3333333333334849
+          }
+        }
+      }
+    },
+    {
+      "pitch_id": "pitch_004",
+      "backends": {
+        "mediapipe": {
+          "frames": 114,
+          "topology": "mediapipe_33",
+          "manifest": {
+            "path": "analysis_results/phase2_native_interface_20261018_01/pitch_004/mediapipe/native_pose_manifest.json",
+            "sha256": "b0197c43492012f9cf4ecf2fab5b8358fa37ef08f2b8f201759bcb95e094c52e"
+          },
+          "keypoints": {
+            "path": "analysis_results/phase2_native_interface_20261018_01/pitch_004/mediapipe/native_keypoints.jsonl",
+            "sha256": "71acb014c0e00bf794801290a0517aaea024a24f3cafcc7b78dfd06dda8f4302"
+          },
+          "summary": {
+            "path": "analysis_results/phase2_native_interface_20261018_01/pitch_004/mediapipe/native_pose_summary.json",
+            "sha256": "74c53ca7befc922bada0068444ede707d824bc1bb3873ba79b71bc397f79e329"
+          },
+          "original_overlay": {
+            "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_004/overlay.mp4",
+            "sha256": "74d8c78e9559c78c97f60369288264ecf7fb8b997665015ac77c041898921515"
+          }
+        },
+        "rtmpose": {
+          "frames": 114,
+          "topology": "coco_17",
+          "manifest": {
+            "path": "analysis_results/phase2_native_interface_20261018_01/pitch_004/rtmpose/native_pose_manifest.json",
+            "sha256": "ed0ca30b8045e71b212b0a5726fa10ce8e70260c16f9d2c4f3c5018c5550085d"
+          },
+          "keypoints": {
+            "path": "analysis_results/phase2_native_interface_20261018_01/pitch_004/rtmpose/native_keypoints.jsonl",
+            "sha256": "3cc217916c3cc0c34a234d2d586c76f2388fd04f209e8683e2928c416fad870e"
+          },
+          "summary": {
+            "path": "analysis_results/phase2_native_interface_20261018_01/pitch_004/rtmpose/native_pose_summary.json",
+            "sha256": "0959628d62d992a50005965fa947bc75a99469ddea22a2129057a11cf5ef7ded"
+          },
+          "overlay": {
+            "path": "analysis_results/phase2_native_interface_20261018_01/pitch_004/rtmpose/overlay_native.mp4",
+            "sha256": "1c55030494f95b09036ecd97b55e7212ac1276820676426dbc19b7700cb30223"
+          },
+          "overlay_validation": {
+            "schema_version": "native-overlay-review-v1",
+            "path": "D:\\project\\pitch-analysis\\analysis_results\\phase2_native_interface_20261018_01\\pitch_004\\rtmpose\\overlay_native.mp4",
+            "sha256": "1c55030494f95b09036ecd97b55e7212ac1276820676426dbc19b7700cb30223",
+            "source_video_sha256": "e5a57bfc2e0746bb19af2a073d94abb7265d8dfb9ad37de06cee1de29f63d11a",
+            "source_pixel_sha_verified_frames": 114,
+            "source_timestamps_verified_frames": 114,
+            "max_source_timestamp_rounding_difference_ms": 0.3333333333334849,
+            "timestamp_semantics": "original_pose_capture_timestamp_ms_rounded_native_decode_no_shift",
+            "saved_timestamps_preserved": true,
+            "source_timestamp_shift_ms": 0,
+            "quality_status": "not_calibrated",
+            "usable_for_analysis": null,
+            "topology": "coco_17",
+            "new_inference_calls": 0,
+            "interpolated_coordinates": 0,
+            "decoded_frame_count": 114,
+            "width": 532,
+            "height": 676,
+            "fps": 30.0,
+            "codec": "h264",
+            "encoder": "libx264",
+            "pixel_format": "yuv420p",
+            "overlay_timestamps_verified_frames": 114,
+            "max_overlay_timestamp_rounding_difference_ms": 0.3333333333334849
+          }
+        }
+      }
+    },
+    {
+      "pitch_id": "pitch_005",
+      "backends": {
+        "mediapipe": {
+          "frames": 101,
+          "topology": "mediapipe_33",
+          "manifest": {
+            "path": "analysis_results/phase2_native_interface_20261018_01/pitch_005/mediapipe/native_pose_manifest.json",
+            "sha256": "ec3b520492331603ae63db72980300b9fb642285372a4d68d04cad8bd1072d28"
+          },
+          "keypoints": {
+            "path": "analysis_results/phase2_native_interface_20261018_01/pitch_005/mediapipe/native_keypoints.jsonl",
+            "sha256": "e3b91836b6d01df3d4399b5bc0a1bfd1181d3360d429346632a065c905bd045b"
+          },
+          "summary": {
+            "path": "analysis_results/phase2_native_interface_20261018_01/pitch_005/mediapipe/native_pose_summary.json",
+            "sha256": "e21c7a9cebe5f7cfd099967318a0fa78baf6b3278de1edc1dd3c9d7dde9a3c10"
+          },
+          "original_overlay": {
+            "path": "analysis_results/phase2_yamamoto_20260925_01/predictions/yoshinobu_yamamoto/pitch_005/overlay.mp4",
+            "sha256": "7a9c092eee84fbcd74d497ca2fe639786b1827159059d2c6834e3cda544db226"
+          }
+        },
+        "rtmpose": {
+          "frames": 101,
+          "topology": "coco_17",
+          "manifest": {
+            "path": "analysis_results/phase2_native_interface_20261018_01/pitch_005/rtmpose/native_pose_manifest.json",
+            "sha256": "5e3df692287606ea0888a932d32321e76b5afd2e038018117f9b37edfb8a966a"
+          },
+          "keypoints": {
+            "path": "analysis_results/phase2_native_interface_20261018_01/pitch_005/rtmpose/native_keypoints.jsonl",
+            "sha256": "6fd528497d0949143a48de3e65b490f6a35b2d5e95666264741c16a8f9f79d3a"
+          },
+          "summary": {
+            "path": "analysis_results/phase2_native_interface_20261018_01/pitch_005/rtmpose/native_pose_summary.json",
+            "sha256": "1b27e5cdab60ed2414d425ffc46c7a6a6f794ca3bdf5aa2c2ee6168fa1c599aa"
+          },
+          "overlay": {
+            "path": "analysis_results/phase2_native_interface_20261018_01/pitch_005/rtmpose/overlay_native.mp4",
+            "sha256": "f0f98c9d37866a57d17609572ee01c3122ff2a02e6bcc1d97302488d7915d695"
+          },
+          "overlay_validation": {
+            "schema_version": "native-overlay-review-v1",
+            "path": "D:\\project\\pitch-analysis\\analysis_results\\phase2_native_interface_20261018_01\\pitch_005\\rtmpose\\overlay_native.mp4",
+            "sha256": "f0f98c9d37866a57d17609572ee01c3122ff2a02e6bcc1d97302488d7915d695",
+            "source_video_sha256": "e289cb1159e5863583f85915214123d6afe03baa6f32ac6040040878093c873b",
+            "source_pixel_sha_verified_frames": 101,
+            "source_timestamps_verified_frames": 101,
+            "max_source_timestamp_rounding_difference_ms": 0.3333333333334849,
+            "timestamp_semantics": "original_pose_capture_timestamp_ms_rounded_native_decode_no_shift",
+            "saved_timestamps_preserved": true,
+            "source_timestamp_shift_ms": 0,
+            "quality_status": "not_calibrated",
+            "usable_for_analysis": null,
+            "topology": "coco_17",
+            "new_inference_calls": 0,
+            "interpolated_coordinates": 0,
+            "decoded_frame_count": 101,
+            "width": 512,
+            "height": 598,
+            "fps": 30.0,
+            "codec": "h264",
+            "encoder": "libx264",
+            "pixel_format": "yuv420p",
+            "overlay_timestamps_verified_frames": 101,
+            "max_overlay_timestamp_rounding_difference_ms": 0.3333333333334849
+          }
+        }
+      }
+    }
+  ],
+  "comparison": {
+    "path": "analysis_results/phase2_native_interface_20261018_01/backend_comparison.json",
+    "sha256": "f0685ddb4f17d44b08052cf324399a71eea45002c3955063e3b7934fdb640b61"
+  },
+  "stop": "Approved first version complete. No live RTMPose, production backend switch, gate calibration, new annotations or Phase3.",
+  "output_path": "analysis_results/phase2_native_interface_20261018_01",
+  "recorded_at_utc": "2026-10-18T14:46:54.411214+00:00",
+  "audit_summary": {
+    "status": "PASSED",
+    "scope": "Independent cached data/representation audit; no producer imported or executed.",
+    "source_frames_per_backend": 592,
+    "mp_landmark_rows": 19536,
+    "rtmpose_landmark_rows": 10064,
+    "raw_native_npz_independently_decoded": 592,
+    "per_clip": {
+      "pitch_001": {
+        "frames_per_backend": 87,
+        "mp_landmark_rows": 2871,
+        "rtmpose_landmark_rows": 1479,
+        "mp_states": {
+          "model_observed": 2871
+        },
+        "rtmpose_states": {
+          "model_observed": 1479
+        },
+        "timestamps_equal": 174,
+        "native_arrays": 87
+      },
+      "pitch_002": {
+        "frames_per_backend": 175,
+        "mp_landmark_rows": 5775,
+        "rtmpose_landmark_rows": 2975,
+        "mp_states": {
+          "model_observed": 5775
+        },
+        "rtmpose_states": {
+          "model_observed": 2975
+        },
+        "timestamps_equal": 350,
+        "native_arrays": 175
+      },
+      "pitch_003": {
+        "frames_per_backend": 115,
+        "mp_landmark_rows": 3795,
+        "rtmpose_landmark_rows": 1955,
+        "mp_states": {
+          "model_observed": 3795
+        },
+        "rtmpose_states": {
+          "model_observed": 1955
+        },
+        "timestamps_equal": 230,
+        "native_arrays": 115
+      },
+      "pitch_004": {
+        "frames_per_backend": 114,
+        "mp_landmark_rows": 3762,
+        "rtmpose_landmark_rows": 1938,
+        "mp_states": {
+          "model_observed": 3696,
+          "missing": 66
+        },
+        "rtmpose_states": {
+          "model_observed": 1938
+        },
+        "timestamps_equal": 228,
+        "native_arrays": 114
+      },
+      "pitch_005": {
+        "frames_per_backend": 101,
+        "mp_landmark_rows": 3333,
+        "rtmpose_landmark_rows": 1717,
+        "mp_states": {
+          "model_observed": 3300,
+          "missing": 33
+        },
+        "rtmpose_states": {
+          "model_observed": 1717
+        },
+        "timestamps_equal": 202,
+        "native_arrays": 101
+      }
+    },
+    "max_original_csv_to_native_pixel_difference_px": 0.0,
+    "max_saved_rtmpose_copy_difference_px": 0.0,
+    "max_independent_simcc_inverse_affine_difference_px": 0.0,
+    "max_native_score_difference": 0.0,
+    "protected_current_sources_unchanged": 467,
+    "protected_upstream_refs": 62,
+    "unique_prediction_source_refs_sha_verified": 646,
+    "audit_read_sources_unchanged": 736,
+    "human_rows_independently_checked": 1380,
+    "human_status_counts": {
+      "visible": 1205,
+      "not_observable": 173,
+      "uncertain": 2
+    },
+    "golden_diagnosis_frame_joint_rows_reproduced": 1380,
+    "new_inference_calls": 0,
+    "new_calibrations": 0,
+    "new_annotations": 0,
+    "limitations": [
+      "No human labeling or model adoption decision. No new GT.",
+      "Root agent reviews overlay appearance; this audit does not manufacture human visibility.",
+      "Full test suite executed separately by root; this audit does not rerun it.",
+      "Source SHA verification does not turn CSRT human initialization into automatic identity proof.",
+      "No formal core, thresholds, raw prediction or annotation changes."
+    ]
+  },
+  "visual_review": {
+    "reviewer": "Codex root",
+    "reviewed_at_utc": "2026-10-18T14:43:55.720534+00:00",
+    "review_kind": "rendering_and_frame_alignment_sample_inspection",
+    "inspection_method": "Actually viewed all five contact sheets with six decoded overlay frames each; technical validation decodes all 592 frames.",
+    "clips": [
+      {
+        "pitch_id": "pitch_001",
+        "inspected_frames": [
+          0,
+          17,
+          34,
+          52,
+          69,
+          86
+        ],
+        "contact_sheet": {
+          "path": "analysis_results/phase2_native_interface_20261018_01/visual_review/pitch_001_contact.png",
+          "sha256": "14ac4c38e556d9d4973039ceb9950b18abbebc45bf337d5e85fa5a322ba57118"
+        },
+        "findings": [
+          "Cached RTMPose / COCO17 / NOT CALIBRATED label and frame/time text are legible.",
+          "Native skeleton is drawn on the decoded source image without reusing MediaPipe finger/foot-index edges.",
+          "Sample frames show no renderer/frame registration error; no prediction coordinate was edited."
+        ]
+      },
+      {
+        "pitch_id": "pitch_002",
+        "inspected_frames": [
+          0,
+          35,
+          70,
+          104,
+          139,
+          174
+        ],
+        "contact_sheet": {
+          "path": "analysis_results/phase2_native_interface_20261018_01/visual_review/pitch_002_contact.png",
+          "sha256": "7eff0daae1a5370958c2a46fa431bf5eb0be34eaf3e766e1495f7fbe5017cafb"
+        },
+        "findings": [
+          "Cached RTMPose / COCO17 / NOT CALIBRATED label and frame/time text are legible.",
+          "Native skeleton is drawn on the decoded source image without reusing MediaPipe finger/foot-index edges.",
+          "Sample frames show no renderer/frame registration error; no prediction coordinate was edited."
+        ]
+      },
+      {
+        "pitch_id": "pitch_003",
+        "inspected_frames": [
+          0,
+          23,
+          46,
+          68,
+          91,
+          114
+        ],
+        "contact_sheet": {
+          "path": "analysis_results/phase2_native_interface_20261018_01/visual_review/pitch_003_contact.png",
+          "sha256": "87b211b3ca90f08ef270c052764580a0e17f338c6962c52a2fc9d5aad8a31f86"
+        },
+        "findings": [
+          "Cached RTMPose / COCO17 / NOT CALIBRATED label and frame/time text are legible.",
+          "Native skeleton is drawn on the decoded source image without reusing MediaPipe finger/foot-index edges.",
+          "Sample frames show no renderer/frame registration error; no prediction coordinate was edited."
+        ]
+      },
+      {
+        "pitch_id": "pitch_004",
+        "inspected_frames": [
+          0,
+          23,
+          45,
+          68,
+          90,
+          113
+        ],
+        "contact_sheet": {
+          "path": "analysis_results/phase2_native_interface_20261018_01/visual_review/pitch_004_contact.png",
+          "sha256": "4ded2d67c456598edad710d3fbf8b60866834e74611a5c656bef5c6d7cc8efa7"
+        },
+        "findings": [
+          "Cached RTMPose / COCO17 / NOT CALIBRATED label and frame/time text are legible.",
+          "Native skeleton is drawn on the decoded source image without reusing MediaPipe finger/foot-index edges.",
+          "Sample frames show no renderer/frame registration error; no prediction coordinate was edited."
+        ]
+      },
+      {
+        "pitch_id": "pitch_005",
+        "inspected_frames": [
+          0,
+          20,
+          40,
+          60,
+          80,
+          100
+        ],
+        "contact_sheet": {
+          "path": "analysis_results/phase2_native_interface_20261018_01/visual_review/pitch_005_contact.png",
+          "sha256": "dafca68ea556d9cd61dcf6c67c3ffc2b6d15646a23d456303ca4bd5fa0f40a65"
+        },
+        "findings": [
+          "Cached RTMPose / COCO17 / NOT CALIBRATED label and frame/time text are legible.",
+          "Native skeleton is drawn on the decoded source image without reusing MediaPipe finger/foot-index edges.",
+          "Sample frames show no renderer/frame registration error; no prediction coordinate was edited."
+        ]
+      }
+    ],
+    "limitations": [
+      "This checks rendering and alignment, not keypoint correctness or automatic reliability.",
+      "Occluded-joint estimates and awkward arm positions remain model output; no human GT was added or changed.",
+      "Six sampled frames per clip do not claim exhaustive manual annotation of all frames."
+    ],
+    "source_manifest": {
+      "path": "analysis_results/phase2_native_interface_20261018_01/visual_review/contact_sheet_manifest.json",
+      "sha256": "dd48628ea1ebf5c53d0a2ebc76d7ba2aa13dfcbb613e959620c2681eda27e920"
+    },
+    "new_human_ground_truth_annotations": 0,
+    "native_quality_status": "not_calibrated"
+  },
+  "acceptance_artifact": {
+    "path": "analysis_results/phase2_native_interface_20261018_01/integration_acceptance.json",
+    "sha256": "79ac7224e5939704459093818e908dd609ff8a71ac90a42cbc07bfef5cf7e48f"
+  }
+}

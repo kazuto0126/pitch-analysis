@@ -86,12 +86,14 @@ Phase 2約定的評估與本次有限修復已交付，停止追加倍率／小�
 2026-10-17完成使用者核准的[RTMPose原生回應單次試驗](docs/phase2_rtmpose_response_results_20261017.md)：
 五球592格與整片五折，肘TP/FN/FP為0/84/4、腕3/68/1，皆未達固定採用規則，停止此訊號。
 003可見XY平均誤差有所下降，但自動識別原錯點仍不足；沒有更換正式MediaPipe或修改GT／門檻。
-最新完整測試916 passed、0 failed、2 skipped（918項，含正式五球E2E）；Phase2仍NOT PASSED，未進Phase3。
+該輪完整測試916 passed、0 failed、2 skipped（918項，含正式五球E2E）；Phase2仍NOT PASSED，未進Phase3。
 後續[封存座標診斷](docs/phase2_rtmpose_coordinate_diagnosis_20261017.md)完成003全部十二關節／1,380列：
 全片平均均改善，但左右髖多數格退步，major hold外平均誤差也增加；不能直接換正式後端。
-原回應訊號維持不採用，沒有新增RTMPose推論、重校準或修改GT；最新完整suite仍916 passed、2 skipped。
-使用者已允許規劃[原生後端輸出接入](docs/phase2_rtmpose_native_backend_plan_20261017.md)，目前只完成方案、實作待確認；
-首版建議接封存17／33點資料與獨立覆核輸出，保留正式MediaPipe，介面完成不等於Phase2通過。
+原回應訊號維持不採用，沒有新增RTMPose推論、重校準或修改GT；該輪完整suite916 passed、2 skipped。
+使用者已核准並完成[原生後端輸出接入第一版](docs/phase2_rtmpose_native_interface_results_20261018.md)：
+兩後端各完整592格、原生17／33點、五支新RTMPose overlay及獨立比較，原core／gate／raw／GT保持。
+**Native interface integration = PASSED；Phase2自動可靠性仍NOT PASSED**。這是cached接入，不是live模型替換。
+最新完整suite **961 passed、0 failed、2 skipped**（963項，含正式五球E2E）；新RTMPose推論／校準／標註0，未進Phase3。
 使用者另核准的 [交付資料夾候選讀取器](docs/handoff_reader.md) 已接入 contract v2：
 驗 hash、完整解碼、分數 FPS 逐格時間與去重，保存本地待人工覆核候選。
 它不自動分析、轉換正式 metadata 或取代山本正式五球，也不改 Phase 2 核心。

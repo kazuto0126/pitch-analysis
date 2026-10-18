@@ -130,3 +130,7 @@ docs/phase2_rtmpose*.md text eol=lf
 docs/phase2_visibility_gap*.md text eol=lf
 docs/evaluation_plans/phase2_rtmpose*.json text eol=lf
 docs/evaluation_plans/phase2_visibility_gap*.json text eol=lf
+src/pitch_analysis/native_pose*.py text eol=lf
+src/pitch_analysis/contracts/schemas/native-keypoints-v1.json text eol=lf
+scripts/export_native_pose_review.py text eol=lf
+tests/test_native_pose*.py text eol=lf

@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$ref": "#/$defs/frame",
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "text": {"type": "string", "minLength": 1},
+    "nullable_number": {"type": ["number", "null"]},
+    "image_size": {
+      "type": "object", "additionalProperties": false,
+      "required": ["width", "height"],
+      "properties": {
+        "width": {"type": "integer", "minimum": 1},
+        "height": {"type": "integer", "minimum": 1}
+      }
+    },
+    "reference": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {"path": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/sha256"}}
+    },
+    "affine": {
+      "type": ["array", "null"], "minItems": 2, "maxItems": 2,
+      "items": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "number"}}
+    },
+    "geometry": {
+      "type": "object", "additionalProperties": false,
+      "required": ["input_mode", "roi_xywh", "affine_src_to_input", "affine_input_to_src", "sdk_geometry"],
+      "properties": {
+        "input_mode": {"enum": ["full_frame", "roi_affine"]},
+        "roi_xywh": {"type": ["array", "null"], "minItems": 4, "maxItems": 4, "items": {"type": "number"}},
+        "affine_src_to_input": {"$ref": "#/$defs/affine"},
+        "affine_input_to_src": {"$ref": "#/$defs/affine"},
+        "sdk_geometry": {"type": ["object", "null"]}
+      }
+    },
+    "landmark": {
+      "type": "object", "additionalProperties": false,
+      "required": ["name", "index", "x_px", "y_px", "z", "visibility", "presence", "native_score", "coordinate_state", "missing_reason", "source_record"],
+      "properties": {
+        "name": {"$ref": "#/$defs/text"},
+        "index": {"type": "integer", "minimum": 0, "maximum": 32},
+        "x_px": {"$ref": "#/$defs/nullable_number"},
+        "y_px": {"$ref": "#/$defs/nullable_number"},
+        "z": {"$ref": "#/$defs/nullable_number"},
+        "visibility": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+        "presence": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+        "native_score": {"$ref": "#/$defs/nullable_number"},
+        "coordinate_state": {"enum": ["model_observed", "missing"]},
+        "missing_reason": {"type": ["string", "null"], "minLength": 1},
+        "source_record": {"type": ["object", "null"]}
+      }
+    },
+    "manifest": {
+      "type": "object", "additionalProperties": false,
+      "required": ["schema_version", "pitch_id", "backend", "topology", "image_size", "video", "timebase", "capabilities", "quality_status", "usable_for_analysis", "inference_mode", "source_refs", "roi_provenance", "original_overlay"],
+      "properties": {
+        "schema_version": {"const": "native-pose-manifest-v1"},
+        "pitch_id": {"$ref": "#/$defs/text"},
+        "backend": {
+          "type": "object", "additionalProperties": false,
+          "required": ["name", "model_sha256", "model_version", "score_semantics"],
+          "properties": {
+            "name": {"$ref": "#/$defs/text"},
+            "model_sha256": {"$ref": "#/$defs/sha256"},
+            "model_version": {"$ref": "#/$defs/text"},
+            "score_semantics": {"$ref": "#/$defs/text"}
+          }
+        },
+        "topology": {"enum": ["mediapipe_33", "coco_17"]},
+        "image_size": {"$ref": "#/$defs/image_size"},
+        "video": {
+          "type": "object", "additionalProperties": false,
+          "required": ["path", "sha256", "frame_count", "fps"],
+          "properties": {
+            "path": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/sha256"},
+            "frame_count": {"type": "integer", "minimum": 1},
+            "fps": {"type": "number", "exclusiveMinimum": 0}
+          }
+        },
+        "timebase": {
+          "type": "object", "additionalProperties": false,
+          "required": ["frame_index_base", "timestamp_semantics"],
+          "properties": {
+            "frame_index_base": {"type": "integer", "const": 0},
+            "timestamp_semantics": {"$ref": "#/$defs/text"}
+          }
+        },
+        "capabilities": {
+          "type": "object", "additionalProperties": false,
+          "required": ["z", "visibility", "presence", "native_score"],
+          "properties": {
+            "z": {"type": "boolean"}, "visibility": {"type": "boolean"},
+            "presence": {"type": "boolean"}, "native_score": {"type": "boolean"}
+          }
+        },
+        "quality_status": {"const": "not_calibrated"},
+        "usable_for_analysis": {"type": "null"},
+        "inference_mode": {"const": "cached_read_only"},
+        "source_refs": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/reference"}},
+        "roi_provenance": {"type": "object"},
+        "original_overlay": {"anyOf": [{"type": "null"}, {"$ref": "#/$defs/reference"}]}
+      }
+    },
+    "frame": {
+      "type": "object", "additionalProperties": false,
+      "required": ["schema_version", "pitch_id", "backend", "topology", "frame_index", "timestamp_ms", "source_video_sha256", "decoded_bgr_sha256", "image_size", "coordinate_space", "quality_status", "usable_for_analysis", "input_geometry", "model_selection", "landmarks"],
+      "properties": {
+        "schema_version": {"const": "native-keypoints-v1"},
+        "pitch_id": {"$ref": "#/$defs/text"}, "backend": {"$ref": "#/$defs/text"},
+        "topology": {"enum": ["mediapipe_33", "coco_17"]},
+        "frame_index": {"type": "integer", "minimum": 0},
+        "timestamp_ms": {"type": "number", "minimum": 0},
+        "source_video_sha256": {"$ref": "#/$defs/sha256"},
+        "decoded_bgr_sha256": {"$ref": "#/$defs/sha256"},
+        "image_size": {"$ref": "#/$defs/image_size"},
+        "coordinate_space": {"const": "original_image_pixels_xy"},
+        "quality_status": {"const": "not_calibrated"},
+        "usable_for_analysis": {"type": "null"},
+        "input_geometry": {"$ref": "#/$defs/geometry"},
+        "model_selection": {"type": "object"},
+        "landmarks": {"type": "array", "minItems": 17, "maxItems": 33, "items": {"$ref": "#/$defs/landmark"}}
+      }
+    }
+  }
+}

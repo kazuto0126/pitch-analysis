@@ -1,0 +1,127 @@
+{
+  "approval": "核准第一版接入實作",
+  "created_at_utc": "2026-10-18T14:41:42.213774+00:00",
+  "approved_plan": {
+    "path": "docs/phase2_rtmpose_native_backend_plan_20261017.md",
+    "sha256": "cfa15dbd51137449678ff9abf8568e8c1e183a234a14737f0d9f33f02e19cdac"
+  },
+  "source_execution": {
+    "path": "docs/evaluation_plans/phase2_rtmpose_response_execution_20261017_02.json",
+    "sha256": "21f0ebea448be0b67546f0e28b7f9675f47627d8ace19b67f547fcec6134f553"
+  },
+  "source_result": {
+    "path": "docs/evaluation_plans/phase2_rtmpose_response_result_20261017_01.json",
+    "sha256": "577a7e1979d256375c27d02f884a89681595b5810ca4d0ba74521ca42146664b"
+  },
+  "new_model_inference_limit": 0,
+  "new_calibration_limit": 0,
+  "new_annotation_limit": 0,
+  "branch": "codex/phase2-native-pose-interface",
+  "baseline_commit": "2dfe721b377c317be1a3f971aef211fd8817dcb2",
+  "record_kind": "Completed cached IO execution provenance; no new model trial",
+  "recorded_at_utc": "2026-10-18T14:46:54.355194+00:00",
+  "code_sources": [
+    {
+      "path": "src/pitch_analysis/native_pose.py",
+      "sha256": "d1ffbbd05ae1fb62b67040523a76daf5ad073c3c97b66bb413579b58316722c6"
+    },
+    {
+      "path": "src/pitch_analysis/native_pose_io.py",
+      "sha256": "765483216904f696eec401c9a45e4a35bf1394743dd90a4828ec5d0d157b8222"
+    },
+    {
+      "path": "src/pitch_analysis/native_pose_sources.py",
+      "sha256": "77bfc622134f7c3d31913a953421b88d7ce08640fdc9b539dc878195463d55e7"
+    },
+    {
+      "path": "src/pitch_analysis/native_pose_review.py",
+      "sha256": "7856677c849a3b877cb60d8f0dde94a4c110064acd04485b2606f028707e9ddc"
+    },
+    {
+      "path": "src/pitch_analysis/contracts/schemas/native-keypoints-v1.json",
+      "sha256": "9dd6580631e08d6b81b54db4c8978d8ac59e266a0ef327ce173a58e6119cf0b7"
+    },
+    {
+      "path": "scripts/export_native_pose_review.py",
+      "sha256": "12f5ce4c492214650d65395ce56190a8c491095a70a79be4e2d2d74367a75247"
+    },
+    {
+      "path": "tests/test_native_pose_contract.py",
+      "sha256": "43a6cb47aa03f2dc2a5729e3b9be89411d9de9a3a32804c77039020ac7c98a16"
+    },
+    {
+      "path": "tests/test_native_pose_io.py",
+      "sha256": "4ff06012c94f051bb2afa9338488481b30ec91b0953793a33cda6a77d9212f7b"
+    },
+    {
+      "path": "tests/test_native_pose_sources.py",
+      "sha256": "5308af8ed94c98343c70b3b88e66a722c17297127d340600964ad531ba30fe4e"
+    },
+    {
+      "path": "tests/test_native_pose_review.py",
+      "sha256": "f7e4b561f768f3ef9eb110aa0800918e2e51d1c88aa1f679aa0e43317a42fc8c"
+    },
+    {
+      "path": "tests/test_native_pose_export.py",
+      "sha256": "37fe55ab46fb0c0998bee9b19bcf7eb32499933eca850a3617b2d9ea5a7bb362"
+    }
+  ],
+  "existing_core_sources": [
+    {
+      "path": "src/pitch_analysis/pose_estimator.py",
+      "sha256": "beb8a3a295712f16ed75bbd9545e0a2acb286c325ae4ae62d1ad8f1631250046"
+    },
+    {
+      "path": "src/pitch_analysis/pose_capture.py",
+      "sha256": "02f071811a2de83011e6927e2bd933623f918b8338dfe364888c6050e6ba3061"
+    },
+    {
+      "path": "src/pitch_analysis/subject.py",
+      "sha256": "c5cae1ace96db5b9f3229f4f5e41870d420370676d99dea0abd03dcad3748276"
+    },
+    {
+      "path": "src/pitch_analysis/clean_pose.py",
+      "sha256": "3068b09d899d8cb6bb9b5019efe58bf63f3b7e13515a18ec967d7ba62fb07800"
+    },
+    {
+      "path": "src/pitch_analysis/features.py",
+      "sha256": "d0499df3cff573fc9eeadb8c6b0bf4c651708d65d152920295160f9bcfd19b6b"
+    },
+    {
+      "path": "src/pitch_analysis/pose_reliability.py",
+      "sha256": "df96b0e0a5d0883cddbcb921c23ac402ea968fd74e461d98a12971629779bc9d"
+    },
+    {
+      "path": "src/pitch_analysis/tracking_reliability.py",
+      "sha256": "87edf930892aa685480cfe60fddc88280c88e0af43924842e71c56bde3725b30"
+    },
+    {
+      "path": "src/pitch_analysis/analysis/pitch.py",
+      "sha256": "28a4242aa240a26dd4ee243fafaabd51574803319704224b5337f45b6d64fae2"
+    },
+    {
+      "path": "src/pitch_analysis/analysis/debug.py",
+      "sha256": "07992c26d900492bfd0e5d8700c9266204441d6c15d8f52a5e2bca739b39846c"
+    },
+    {
+      "path": "src/pitch_analysis/workflow.py",
+      "sha256": "6c75733dee24c9e7f31ee09bd942e9b913349fe21999ef600fba314d456da11b"
+    },
+    {
+      "path": "src/pitch_analysis/cli.py",
+      "sha256": "d2961a3b9078f3ec0c1d608d2ec0efaa46f63be189488244651914df0bd78326"
+    },
+    {
+      "path": "src/pitch_analysis/contracts/__init__.py",
+      "sha256": "128b6bcb749e3b4b31f2dc1c046fe844a2988ed32eee396514eef10f4b250d26"
+    },
+    {
+      "path": "src/pitch_analysis/config.py",
+      "sha256": "29cc04c26f951e6fef911c2b16553c1e72144dedfb116d3ee949af4e4ac6bb35"
+    },
+    {
+      "path": "src/pitch_analysis/temporal.py",
+      "sha256": "6b34e66733c755d7cc27ee7a84721bc272f72b3517c14c7543ab34a9714e40a6"
+    }
+  ]
+}

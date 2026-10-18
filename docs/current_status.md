@@ -1,8 +1,9 @@
-# Current status — Native output interface proposed; implementation awaiting approval
+# Current status — Native output integration passed; automatic Phase 2 remains NOT PASSED
 
-Updated: 2026-10-17
+Updated: 2026-10-18
 
 **Phase 1 = PASSED.**
+**Native interface integration = PASSED (cached output compatibility only).**
 **Phase 2 evaluation = COMPLETE; Phase 2 = NOT PASSED (automatic reliability degraded).**
 
 The baseline evaluation is complete; the latest resumed repair is recorded below.
@@ -10,7 +11,48 @@ Automatic reliability remains unaccepted. Existing acceptance thresholds, confid
 gates, PitcherSelector, pose/tracking, interpolation and smoothing are unchanged.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-17 native backend interface plan (latest; not implemented)
+## 2026-10-18 approved cached native interface delivery (latest)
+
+User explicitly approved “核准第一版接入實作”. Completed the bounded native
+17/33-point output interface on`codex/phase2-native-pose-interface`;
+[results and usage](phase2_rtmpose_native_interface_results_20261018.md).
+The approved proposal stays at its historical SHA; execution/result receipts
+record approval and completion. No live pose estimator or production backend switch.
+
+Both backends preserve592frames. MediaPipe19536declared slots include99missing;
+RTMPose10064native slots retain original decoded coordinates/scores with unsupported
+Z/visibility/presence null. Full-frame MediaPipe geometry and human-seeded CSRT ROI
+for RTMPose remain distinct. Native quality is not_calibrated, usable=null, with no
+legacy gate applied or source confidence fabricated. New inference/calibration/
+tracking/annotations/downloads=0 for the integration; existing tests rerun MediaPipe E2E.
+
+Five H264/yuv420p overlays fully decode with original dimensions/frame counts and
+592source-pixel/timestamp checks. Root actually inspected six rendered frames per
+clip for drawing/alignment; this is not new correctness GT. Existing MP overlays
+are referenced only. The original99MPmissing slots and11RTMout-of-image points
+remain explicit, without interpolation or clipping into apparently valid points.
+
+Independent audit checks 19,536 MP and 10,064 RTM declared landmark slots,
+592 native SimCC outputs, scores, inverse affine and original CSV pixel transforms;
+maximum coordinate/score difference = 0. All 1,380 human rows for 003 reproduce
+the prior diagnosis; hip regressions remain visible. Other four precise XY accuracy stays null.
+646 unique prediction source SHA and 736 audit-read sources match; 467 protected
+current sources and 62 upstream references are unchanged. Existing production modules,
+gates,raw/GT/old trials and8pending/unanalysed candidates preserved.
+
+45new tests; full963run/961passed/0failed/0errors/2Windows file-symlink skips,
+76.699s,exit0,formal5E2E major hints still2/0/19/5/3.
+Output:`analysis_results/phase2_native_interface_20261018_01/`.
+Final compatibility acceptance is in`integration_acceptance.json`; the original
+integration_summary is retained as the pre-audit export-stage snapshot.
+
+Engineering integrationPASSED does not repair automatic wrong-point acceptance.
+Phase2 automatic reliability remains NOT PASSED; native score is uncalibrated,
+old response hints remain rejected, and003/104is not patched. This approved
+delivery is complete; stop without live inference, model adoption, new gates,
+annotations, handoff candidate analysis or Phase3.
+
+## 2026-10-17 native backend interface plan (previous; approved and implemented later)
 
 User confirmed “允許規劃後端介面改動”. Delivered the
 [native output integration and acceptance plan](phase2_rtmpose_native_backend_plan_20261017.md).

@@ -1,10 +1,27 @@
 # 進度摘要
 
-更新：2026-10-17（台灣）。[完整狀態](current_status.md)；[原生後端接入方案](phase2_rtmpose_native_backend_plan_20261017.md)。
+更新：2026-10-18（台灣）。[完整狀態](current_status.md)；[原生接入第一版結果與使用方式](phase2_rtmpose_native_interface_results_20261018.md)。
 
-**兩步授權工作已完成。Phase 1 = PASSED；Phase 2 自動可靠性仍 NOT PASSED。**
+**Phase 1 = PASSED；Native interface integration = PASSED；Phase 2 自動可靠性仍 NOT PASSED。**
 
-## 最新：原生後端介面方案已提出，實作待核准
+## 最新：原生17／33點接入第一版完成
+
+使用者核准「第一版接入實作」後，已在`codex/phase2-native-pose-interface`完成獨立原生contract、
+封存來源adapter、資料保存、五支RTMPose overlay及003十二關節比較；每後端完整592格。
+沒有padding33或fake visibility／presence／Z，原生score保留；新路徑未校準、不套用原gate。
+原MediaPipe99個missing欄位完整保留；新RTMPose推論／tracker／校準／標註皆0。
+五支overlay已全解碼驗證，並實際檢查每片6個sample frame的繪圖／對齊，不新增人工GT。
+
+45項新測試；完整suite **961 passed、0 failed、0 errors、2 skipped**（963項，76.699秒，含正式五球E2E）。
+原重大提示維持2／0／19／5／3；467保護來源與62上游SHA不變。
+獨立核對29,600個原生欄位、592份SimCC及003的1,380人工列，座標／score最大差異0。
+原core、正式MediaPipe預設、門檻、raw與GT維持；8顆候選未分析或升格。
+輸出：`analysis_results/phase2_native_interface_20261018_01/`。
+
+工程接入PASSED，不代表原錯點接受問題已修好；Phase2自動可靠性仍NOT PASSED。
+已依核准範圍收尾，不開始live RTMPose、正式模型替換、gate校準或Phase3。
+
+## 前段：原生後端介面方案（後續已核准並實作）
 
 使用者確認「允許規劃後端介面改動」後，已完成接入與驗收方案；這是規劃授權，尚未實作。
 建議第一版只接已封存五球的MediaPipe33／RTMPose17資料，新增原生contract、來源adapter、
@@ -24,7 +41,7 @@
 十個既定界線的訓練來源已追查，沒有重校準、刪可靠列或改用分位數。
 
 1,380列／十二關節統計獨立重算一致；1,205可見／173不可觀測／2不確定維持。
-最新完整suite仍**916 passed、0 failed、0 errors、2 skipped**（918項，60.560秒，含正式五球E2E）。
+該輪完整suite為**916 passed、0 failed、0 errors、2 skipped**（918項，60.560秒，含正式五球E2E）。
 原trial決策、正式core／gate／raw／GT及8顆pending候選保持；Phase2仍NOT PASSED，未進Phase3。
 輸出：`analysis_results/phase2_rtmpose_coordinate_diagnosis_20261017_01/`。
 若下一段要使用原生17點座標，需先確認新的後端／contract工作範圍，不能偽裝成現行33點輸出。
