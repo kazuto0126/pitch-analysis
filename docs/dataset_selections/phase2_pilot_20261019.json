@@ -1,0 +1,151 @@
+{
+  "record_type": "prospective_dataset_selection",
+  "date_local": "2026-10-19",
+  "timezone": "Asia/Taipei",
+  "decision_source": "User requested excluding high-deviation pitch_003 and starting new-pitcher videos; explicitly selected Shohei Ohtani, five pitches.",
+  "historical_baseline_directory": "input/yoshinobu_yamamoto/phase1_final",
+  "historical_baseline_unchanged": true,
+  "historical_phase2_automatic_reliability": "NOT_PASSED",
+  "active_yamamoto_directory": "input/yoshinobu_yamamoto/phase2_active_20261019",
+  "active_yamamoto_pitches": [
+    {
+      "pitch_id": "pitch_001",
+      "files": [
+        {
+          "original": "input/yoshinobu_yamamoto/phase1_final/pitch_001.mp4",
+          "active_copy": "input/yoshinobu_yamamoto/phase2_active_20261019/pitch_001.mp4",
+          "sha256": "7c9fe20e39c1b5358aa8e13b739222aebb6bf3ebfadf3569ccb3042c64f10190"
+        },
+        {
+          "original": "input/yoshinobu_yamamoto/phase1_final/pitch_001.json",
+          "active_copy": "input/yoshinobu_yamamoto/phase2_active_20261019/pitch_001.json",
+          "sha256": "1b50d630f777d9897fed8c579ac60ff830a666e63452dafca2ce92649634549c"
+        }
+      ]
+    },
+    {
+      "pitch_id": "pitch_002",
+      "files": [
+        {
+          "original": "input/yoshinobu_yamamoto/phase1_final/pitch_002.mp4",
+          "active_copy": "input/yoshinobu_yamamoto/phase2_active_20261019/pitch_002.mp4",
+          "sha256": "b38258e682370349d085d0b43683f183afc632f682dc85b758604c9d1489f01a"
+        },
+        {
+          "original": "input/yoshinobu_yamamoto/phase1_final/pitch_002.json",
+          "active_copy": "input/yoshinobu_yamamoto/phase2_active_20261019/pitch_002.json",
+          "sha256": "10f453ac9733523b6a703f996411f112922b7ec25dd0766c6a88f32f23cda14d"
+        }
+      ]
+    },
+    {
+      "pitch_id": "pitch_004",
+      "files": [
+        {
+          "original": "input/yoshinobu_yamamoto/phase1_final/pitch_004.mp4",
+          "active_copy": "input/yoshinobu_yamamoto/phase2_active_20261019/pitch_004.mp4",
+          "sha256": "e5a57bfc2e0746bb19af2a073d94abb7265d8dfb9ad37de06cee1de29f63d11a"
+        },
+        {
+          "original": "input/yoshinobu_yamamoto/phase1_final/pitch_004.json",
+          "active_copy": "input/yoshinobu_yamamoto/phase2_active_20261019/pitch_004.json",
+          "sha256": "3804edec77d79590f949e8b5d9e9ba17a91341a4cf00672d2053d479a064c8ec"
+        }
+      ]
+    },
+    {
+      "pitch_id": "pitch_005",
+      "files": [
+        {
+          "original": "input/yoshinobu_yamamoto/phase1_final/pitch_005.mp4",
+          "active_copy": "input/yoshinobu_yamamoto/phase2_active_20261019/pitch_005.mp4",
+          "sha256": "e289cb1159e5863583f85915214123d6afe03baa6f32ac6040040878093c873b"
+        },
+        {
+          "original": "input/yoshinobu_yamamoto/phase1_final/pitch_005.json",
+          "active_copy": "input/yoshinobu_yamamoto/phase2_active_20261019/pitch_005.json",
+          "sha256": "a9e9db2ccfe522159e8b771261403c31acbd7f218aadf5063fe32fc0bd89dba4"
+        }
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "pitcher_id": "yoshinobu_yamamoto",
+      "pitch_id": "pitch_003",
+      "scope": "future pilot input selection only",
+      "reason": "Human-reviewed major skeleton displacement; stop spending the current pilot on this clip.",
+      "preservation": "Keep original MP4/metadata, raw predictions, canonical GT, manual XY, and historical five-clip evaluation/regression evidence.",
+      "original_video": "input/yoshinobu_yamamoto/phase1_final/pitch_003.mp4",
+      "video_sha256": "5c08dba98504d998536dfd0f0fab598760400612c9049445a68120e68fdf024c"
+    }
+  ],
+  "new_pilot": {
+    "pitcher_id": "shohei_ohtani",
+    "pitcher_name": "Shohei Ohtani",
+    "batch_id": "20261010T110737Z_RObvkuHpkSo",
+    "pitch_ids": [
+      "20261010T110737Z_RObvkuHpkSo_p01",
+      "20261010T110737Z_RObvkuHpkSo_p02",
+      "20261010T110737Z_RObvkuHpkSo_p03",
+      "20261010T110737Z_RObvkuHpkSo_p04",
+      "20261010T110737Z_RObvkuHpkSo_p05"
+    ],
+    "source": "D:/project/pitch-video-handoff/index.jsonl",
+    "status": "imported_candidates_pending_human_input_review",
+    "input_review": "pending",
+    "pose_analysis_executed": false,
+    "formal_promotion": false,
+    "imported_candidates": 5,
+    "rejected": 0,
+    "intake_output": "analysis_results/phase2_ohtani_intake_20261019_01",
+    "local_candidates": [
+      {
+        "pitch_id": "20261010T110737Z_RObvkuHpkSo_p01",
+        "candidate_dir": "data/intake/handoff/candidates/h_eb8fcb328da084273ec1cb79ef20e7419906cec212de03b363b5111b01d33bb8",
+        "review_file": "data/intake/handoff/candidates/h_eb8fcb328da084273ec1cb79ef20e7419906cec212de03b363b5111b01d33bb8/review.json",
+        "frame_count": 362,
+        "fps": "60000/1001",
+        "max_abs_deviation_ms": 0.0006666666666666666,
+        "video_sha256": "904a0b1537c203b51b2c4013f641e9dacfea9c15daade7b8cc2ab13aa53005e7"
+      },
+      {
+        "pitch_id": "20261010T110737Z_RObvkuHpkSo_p02",
+        "candidate_dir": "data/intake/handoff/candidates/h_01835c6d94b810d85023f1cf3f6b4fb00442efc362ce0bb3034f27f20dc34bf1",
+        "review_file": "data/intake/handoff/candidates/h_01835c6d94b810d85023f1cf3f6b4fb00442efc362ce0bb3034f27f20dc34bf1/review.json",
+        "frame_count": 326,
+        "fps": "60000/1001",
+        "max_abs_deviation_ms": 0.0006666666666666666,
+        "video_sha256": "e4e32b4e7c409b500b4bae1c8301f8c0c2041d3b17aa2b09f31959070b0aa82f"
+      },
+      {
+        "pitch_id": "20261010T110737Z_RObvkuHpkSo_p03",
+        "candidate_dir": "data/intake/handoff/candidates/h_e75d5724d65ff852c0c62fd5a7833717036fe0250ad5d47b127f426cff9720f0",
+        "review_file": "data/intake/handoff/candidates/h_e75d5724d65ff852c0c62fd5a7833717036fe0250ad5d47b127f426cff9720f0/review.json",
+        "frame_count": 422,
+        "fps": "60000/1001",
+        "max_abs_deviation_ms": 0.0006666666666666666,
+        "video_sha256": "b67ce1895a0648f2e3d682c915cab12b24373d1cd71aecb974114649a85d49ec"
+      },
+      {
+        "pitch_id": "20261010T110737Z_RObvkuHpkSo_p04",
+        "candidate_dir": "data/intake/handoff/candidates/h_ef2f4043a85557233b400c606eed68945ededd21d2d840d5447dee55b98b7fe9",
+        "review_file": "data/intake/handoff/candidates/h_ef2f4043a85557233b400c606eed68945ededd21d2d840d5447dee55b98b7fe9/review.json",
+        "frame_count": 410,
+        "fps": "60000/1001",
+        "max_abs_deviation_ms": 0.0006666666666666666,
+        "video_sha256": "d4815a24c6b8c19b2d44d2fb3cd1cdf6969b5be260f596ee21f0a70514379de3"
+      },
+      {
+        "pitch_id": "20261010T110737Z_RObvkuHpkSo_p05",
+        "candidate_dir": "data/intake/handoff/candidates/h_32d743769517c664d7e99cb1753eeef757d0da0f47adb8fc07c1392609d95d51",
+        "review_file": "data/intake/handoff/candidates/h_32d743769517c664d7e99cb1753eeef757d0da0f47adb8fc07c1392609d95d51/review.json",
+        "frame_count": 353,
+        "fps": "60000/1001",
+        "max_abs_deviation_ms": 0.0006666666666666666,
+        "video_sha256": "950f8d3d2b5adef1c9fbc729df9d222632419eecc85a2f21ddf8052a0f310e81"
+      }
+    ]
+  },
+  "use_note": "Selection record only, not a new quality gate or evaluation result. Existing baseline runners/tests retain their historical five-clip inputs; future pilot must explicitly use the active directory or selected intake batch."
+}

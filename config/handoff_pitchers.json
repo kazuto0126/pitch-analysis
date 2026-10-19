@@ -1,6 +1,7 @@
 {
   "schema": "handoff-pitcher-map-v1",
   "pitchers": {
-    "Yoshinobu Yamamoto": "yoshinobu_yamamoto"
+    "Yoshinobu Yamamoto": "yoshinobu_yamamoto",
+    "Shohei Ohtani": "shohei_ohtani"
   }
 }

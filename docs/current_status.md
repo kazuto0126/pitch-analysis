@@ -1,17 +1,51 @@
-# Current status — Native output integration passed; automatic Phase 2 remains NOT PASSED
+# Current status — Second-pitcher pilot; historical automatic Phase 2 remains NOT PASSED
 
-Updated: 2026-10-18
+Updated: 2026-10-19
 
 **Phase 1 = PASSED.**
 **Native interface integration = PASSED (cached output compatibility only).**
 **Phase 2 evaluation = COMPLETE; Phase 2 = NOT PASSED (automatic reliability degraded).**
 
-The baseline evaluation is complete; the latest resumed repair is recorded below.
+The baseline evaluation is complete; the current second-pitcher pilot is recorded below.
 Automatic reliability remains unaccepted. Existing acceptance thresholds, confidence
 gates, PitcherSelector, pose/tracking, interpolation and smoothing are unchanged.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-18 approved cached native interface delivery (latest)
+## 2026-10-19 prospective input selection and Ohtani pilot (latest)
+
+User requested removing the high-deviation Yamamoto pitch_003 from subsequent work,
+then explicitly chose Shohei Ohtani, five pitches. The new active Yamamoto directory
+`input/yoshinobu_yamamoto/phase2_active_20261019/` contains only pitch_001/002/004/005,
+with matching source hashes and four valid input pairs. Original phase1_final videos,
+pitch_003 raw predictions/manual XY/canonical GT and historical five-clip evaluation
+and regression evidence are preserved. This prospective exclusion does not revise
+the old evaluation denominator or establish automatic reliability acceptance.
+
+Current bounded work: select only indexed handoff batch `20261010T110737Z_RObvkuHpkSo`,
+import its five candidates with existing hash/timing/dedup checks, obtain explicit
+human input review, then run current MediaPipe once per eligible input and review
+the resulting overlays/reliability. Missing input approvals cannot be inferred.
+The new pilot scope supersedes older prospective “no new-candidate work” stop notes;
+those notes remain historical. No Phase3, profile, cross-pitcher comparison or live
+RTMPose adoption is authorized. Failed warning trials stay closed.
+
+See [current work and stopping conditions](phase2_next_dataset_20261019.md) and
+[prospective dataset selection](dataset_selections/phase2_pilot_20261019.json).
+Earlier “next” paragraphs below describe their dated work; they are not a current queue.
+
+Ohtani intake is complete: 5 imported, 0 rejected/conflicts; repeat adds0/skips5.
+Only selected index line2 was processed, ledger1batch/8pitches ->2batches/13pitches.
+All1,873frames match60000/1001FPS; max normalized PTS deviation0.000666667ms each.
+All five remain candidate/pending with zero human answers, analysis or promotions.
+The viewing-only page contains local source-identical MP4 copies and the seven
+input review items. Output:`analysis_results/phase2_ohtani_intake_20261019_01/`.
+Reader/CLI add optional exact indexed batch selection; production Phase2 core unchanged.
+Focused handoff suite75run/73passed/0failed/2existing file-symlink skips,6.412s,
+including6new tests; junction cases actually ran. No full-suite rerun this turn;
+the latest historical full-suite result remains961passed/0failed/2skipped.
+Next: receive explicit human input review, then analyze eligible clips once.
+
+## 2026-10-18 approved cached native interface delivery (previous)
 
 User explicitly approved “核准第一版接入實作”. Completed the bounded native
 17/33-point output interface on`codex/phase2-native-pose-interface`;

@@ -1,10 +1,26 @@
 # 進度摘要
 
-更新：2026-10-18（台灣）。[完整狀態](current_status.md)；[原生接入第一版結果與使用方式](phase2_rtmpose_native_interface_results_20261018.md)。
+更新：2026-10-19（台灣）。[完整狀態](current_status.md)；[目前工作：第二位投手試用](phase2_next_dataset_20261019.md)。
 
 **Phase 1 = PASSED；Native interface integration = PASSED；Phase 2 自動可靠性仍 NOT PASSED。**
 
-## 最新：原生17／33點接入第一版完成
+## 最新：排除 pitch_003，開始大谷翔平五球試用
+
+使用者已選定大谷翔平的一批五球。後續山本工作集合只含 `001`、`002`、`004`、`005`，
+四對工作副本已建立於 `input/yoshinobu_yamamoto/phase2_active_20261019/`。
+`003` 原影片與全部人工／模型證據保留，退出新試用集合；原五球評估分母與 NOT PASSED 結論不變。
+
+本次只處理交付索引中的 `20261010T110737Z_RObvkuHpkSo`，先匯入候選、完成人工輸入覆核，
+再用現有 MediaPipe 流程試跑通過覆核的球，交付每球結果與限制後停止。
+不重開已結束的警示試驗，不新增逐格 GT，不進 Phase 3。
+當前進度與停止條件見[本批工作紀錄](phase2_next_dataset_20261019.md)。
+
+大谷五球已成功匯入、0 拒收，重跑新增 0／跳過 5；目前全數候選且人工輸入覆核 pending。
+1,873 格通過既有時間檢查；尚未分析或升格。已備妥五球原影片觀看頁。
+本輪 handoff 測試 **73 passed、0 failed、2 skipped**（75 項，含新增 6 項）。
+本批輸出：`analysis_results/phase2_ohtani_intake_20261019_01/`，先看 `START_HERE.md`。
+
+## 前段：原生17／33點接入第一版完成
 
 使用者核准「第一版接入實作」後，已在`codex/phase2-native-pose-interface`完成獨立原生contract、
 封存來源adapter、資料保存、五支RTMPose overlay及003十二關節比較；每後端完整592格。

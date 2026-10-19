@@ -18,6 +18,7 @@ def main(argv=None) -> int:
     ingest.add_argument("--handoff-root", type=Path, default=Path("D:/project/pitch-video-handoff"))
     ingest.add_argument("--pitcher-map", type=Path, default=PROJECT_ROOT / "config/handoff_pitchers.json")
     ingest.add_argument("--ffprobe", type=Path)
+    ingest.add_argument("--batch-id", action="append", dest="batch_ids", help="Import only this indexed batch ID; repeat to select several")
     commands.add_parser("status", help="Show local candidate and review statuses")
     review = commands.add_parser("review", help="Record one explicit human finding")
     review.add_argument("internal_pitch_id")
@@ -29,7 +30,7 @@ def main(argv=None) -> int:
     args = parser.parse_args(argv)
     try:
         if args.command == "import":
-            result = import_handoff(args.handoff_root, args.intake_root, pitcher_map_path=args.pitcher_map, ffprobe_path=args.ffprobe)
+            result = import_handoff(args.handoff_root, args.intake_root, pitcher_map_path=args.pitcher_map, ffprobe_path=args.ffprobe, batch_ids=args.batch_ids)
         elif args.command == "status":
             result = list_candidates(args.intake_root)
         else:

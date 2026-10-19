@@ -19,6 +19,12 @@ python -B scripts/import_handoff.py import --handoff-root D:/project/pitch-video
 python -B scripts/import_handoff.py status
 ```
 
+2026-10-19：可用 `import --batch-id <原 batch_id>` 只處理索引中的指定批次；
+參數可重複，未指定時維持掃描全部索引批次的原行為。指定 ID 若有任何一個不在
+`index.jsonl`，會在匯入前明確報錯，不會默默成功或讀取其他批次。指定批次仍執行
+原 SHA／時間／去重／候選覆核流程。大谷五球首次匯入及試用狀態見
+[第二位投手工作紀錄](phase2_next_dataset_20261019.md)。
+
 `ffprobe` 必須已安裝；可用 PATH、`FFPROBE_PATH` 或 `--ffprobe` 指定。
 不安裝、下載或替換影片工具。標準输出與本地 reports 都保留拒收原因。
 有拒收／衝突時退出碼為 1；無法啟動時為 2。

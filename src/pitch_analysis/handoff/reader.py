@@ -14,6 +14,7 @@ import shutil
 import sqlite3
 import uuid
 from contextlib import closing
+from collections.abc import Iterable
 from datetime import datetime, timezone
 from pathlib import Path, PureWindowsPath
 from typing import Callable
@@ -273,7 +274,7 @@ def _snapshot_batch(intake: Path, batch_id: str, index: dict, batch_data: bytes,
             path.write_bytes(data)
 
 
-def import_handoff(handoff_root, intake_root, *, pitcher_map_path=None, pitcher_map=None, ffprobe_path=None, timing_verifier: Callable | None = None, project_root=PROJECT_ROOT) -> dict:
+def import_handoff(handoff_root, intake_root, *, pitcher_map_path=None, pitcher_map=None, ffprobe_path=None, batch_ids: Iterable[str] | None = None, timing_verifier: Callable | None = None, project_root=PROJECT_ROOT) -> dict:
     """Read only indexed v2 batches and import valid clips as pending candidates."""
     handoff, intake = _locations(handoff_root, intake_root, project_root)
     mapping = _pitcher_map(pitcher_map_path, pitcher_map)
@@ -281,12 +282,38 @@ def import_handoff(handoff_root, intake_root, *, pitcher_map_path=None, pitcher_
     # Read required discovery/spec files before any local mutation.
     contract_data = _source_file(handoff, "CONTRACT.md").read_bytes()
     lines = _source_file(handoff, "index.jsonl").read_bytes().decode("utf-8-sig").splitlines()
+    index_lines = list(enumerate(lines, 1))
+    requested = None
+    if batch_ids is not None:
+        if isinstance(batch_ids, (str, bytes)):
+            raise ValueError("batch_ids must be a nonempty collection of exact batch IDs")
+        identifiers = list(batch_ids)
+        if not identifiers or any(not isinstance(value, str) or not value.strip() for value in identifiers):
+            raise ValueError("batch_ids must contain nonempty exact batch IDs")
+        requested = set(identifiers)
+        selected, found = [], set()
+        # Discover all requested IDs before opening any batch or mutating local state.
+        # Keep original index line numbers and bytes for validation and provenance.
+        for line_number, line in index_lines:
+            if not line.strip():
+                continue
+            entry = _json_bytes(line.encode("utf-8"), f"index line {line_number}")
+            identifier = entry.get("batch_id") if isinstance(entry, dict) else None
+            if isinstance(identifier, str) and identifier in requested:
+                selected.append((line_number, line))
+                found.add(identifier)
+        missing = sorted(requested - found)
+        if missing:
+            raise HandoffError("batch_not_indexed", "Requested batch IDs are absent from index.jsonl: " + ", ".join(missing), {"batch_ids": missing})
+        index_lines = selected
     intake.mkdir(parents=True, exist_ok=True)
     run_id = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S%fZ_") + uuid.uuid4().hex[:8]
     report = {"schema": "handoff-import-report-v1", "run_id": run_id, "status": "complete", "handoff_root": str(handoff), "intake_root": str(intake), "started_at_utc": _now(), "contract_sha256": _hash(contract_data), "batches_seen": 0, "imported_candidates": 0, "already_imported": 0, "rejected": 0, "conflicts": 0, "results": [], "analysis_executed": False, "formal_inputs_modified": False}
+    if requested is not None:
+        report["requested_batch_ids"] = sorted(requested)
     connection = _database(_local_path(intake, "state.sqlite3"))
     try:
-        for line_number, line in enumerate(lines, 1):
+        for line_number, line in index_lines:
             if not line.strip():
                 continue
             report["batches_seen"] += 1
