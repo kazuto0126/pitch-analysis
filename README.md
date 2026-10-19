@@ -6,7 +6,11 @@
 本次收尾摘要見 [STATUS](docs/STATUS.md)；外部專案供片需求見
 [INPUT_REQUIREMENTS](docs/INPUT_REQUIREMENTS.md)。
 
-2026-10-19：[大谷翔平五球小量試用已完成](docs/phase2_ohtani_pilot_results_20261019.md)：五球均 degraded，0 執行異常。
+2026-10-19 最新：[可選投手範圍修正已交付](docs/phase2_pitcher_lock_results_20261019.md)，
+部分錯人例子已排除或改選投手，但仍有混合手臂及更多missing，五球仍degraded。
+完整測試999 passed／0 failed／2 skipped（1001項）；未指定範圍時保持原預設。
+
+前段：[大谷翔平五球初次小量試用](docs/phase2_ohtani_pilot_results_20261019.md)：五球均 degraded，0 執行異常。
 山本 `pitch_003` 退出後續試用集合，原影片、人工標註與五球歷史評估保留。
 人工輸入覆核5/5完成；實際overlay抽樣發現第2球部分追到打者、第5球多處追到裁判／打者。
 已保存完整結果與錯例；Phase 2 原自動可靠性未通過的結論保持，尚未進 Phase 3。

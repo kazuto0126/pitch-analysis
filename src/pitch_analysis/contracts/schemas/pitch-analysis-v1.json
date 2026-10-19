@@ -17,7 +17,19 @@
         "model_path": {"type": "string"},
         "packages": {"type": "object", "additionalProperties": {"type": "string"}},
         "standardization": {"enum": ["none", "h264_yuv420p_native_fps"]},
-        "subject_selection": {"const": "rear_centerfield_v1"},
+        "subject_selection": {"enum": ["rear_centerfield_v1", "rear_centerfield_subject_roi_v1"]},
+        "subject_constraint": {
+          "type": "object", "additionalProperties": false,
+          "required": ["subject_roi", "coordinate_system", "semantics", "source", "model_input"],
+          "properties": {
+            "subject_roi": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "number", "minimum": 0, "maximum": 1}},
+            "coordinate_system": {"const": "original_image_normalized_xy"},
+            "semantics": {"const": "all four raw shoulder/hip landmarks must lie inside the operator ROI"},
+            "source": {"const": "explicit caller-supplied operator setting; not inferred identity or ground truth"},
+            "model_input": {"const": "unchanged full original image; no crop or coordinate transform"}
+          }
+        },
+        "candidate_recording": {"const": "all model candidates before subject selection"},
         "timebase": {"const": "zero-based clip frames; CFR checked against decoded presentation timestamps"},
         "quality_config": {"type": "object"}
       }

@@ -1,4 +1,4 @@
-# Current status — Ohtani pilot delivered with degraded outputs; automatic Phase 2 remains NOT PASSED
+# Current status — Optional pitcher-region repair delivered; automatic Phase 2 remains NOT PASSED
 
 Updated: 2026-10-19
 
@@ -8,10 +8,46 @@ Updated: 2026-10-19
 
 The baseline evaluation is complete; the current second-pitcher pilot is recorded below.
 Automatic reliability remains unaccepted. Existing acceptance thresholds, confidence
-gates, PitcherSelector, pose/tracking, interpolation and smoothing are unchanged.
+gates, MediaPipe settings, interpolation and smoothing are unchanged. The approved
+optional subject-region constraint is described below; the default selector remains compatible.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-19 Ohtani pilot complete with degraded outputs (latest)
+## 2026-10-19 approved optional pitcher-region repair delivered (latest)
+
+User explicitly approved the minimal selector/capture repair and then confirmed
+the displayed five-video torso region. `config/pilots/ohtani_subject_region_20261019.json`
+binds each videoSHA and HSU confirmation to normalized(0.10,0.33,0.43,0.92).
+All four raw shoulder/hip points must lie inside; limbs may extend outside.
+This is an operator constraint, not automatic named-player identification or new GT.
+No eligible candidate means missing; the original full-image model input stays.
+
+Added opt-in subject_roi/candidate capture with necessary workflow/analysis plumbing,
+backward-compatible optional provenance fields and a thin source-bound pilot runner.
+When no setting is supplied, old default behavior is retained; no model/gate/threshold/interpolation changes.
+Old outputs and canonical/manual GT are preserved.
+
+Ran the new Ohtani five once:5complete/0runtime failures,all5degraded.
+Selected counts333/300/397/345/302 ->332/170/397/334/215,total1677->1448;
+missing196->425.251old selected become missing,22old missing become selected.
+These are selection-state counts, not new human error classifications.
+Source/overlay samples show clip2f177/266/325 rejected; clip5f0 rejected and
+f32/64/96/128/160 now select the pitcher. Mixed arms remain in2f238 and
+5f192/224/352. Root inspected70same-frame sample pairs; no exhaustive new GT.
+All1873native overlay frames decode;10H264view copies retain frame count/time rate.
+
+Full suite once:1001run/999passed/0failed/0errors/2existing Windows file-symlink
+skips,89.641s,exit0,32new tests. Formal five E2E major hints remain2/0/19/5/3.
+Saved trace audit:1873frames,2801poses/92433points;47784selected raw points
+exactly match original candidates;425unselected frames have no raw rows,
+5792torso ROI checks pass;32read source/artifact hashes unchanged,0errors.
+
+Output:`analysis_results/phase2_ohtani_subject_lock_20261019_01/`;
+[results/use limits](phase2_pitcher_lock_results_20261019.md).
+Optional constrained selection is delivered, not a full reliability acceptance.
+Stop this bounded repair: no ROI-size search, new model, annotation or Phase3;
+automaticPhase2 remainsNOT PASSED and no new formal reference was accepted.
+
+## 2026-10-19 Ohtani pilot complete with degraded outputs (previous)
 
 User requested removing the high-deviation Yamamoto pitch_003 from subsequent work,
 then explicitly chose Shohei Ohtani, five pitches. The new active Yamamoto directory

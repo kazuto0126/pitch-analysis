@@ -1,0 +1,65 @@
+{
+  "schema_version": "pitcher-region-pilot-v1",
+  "status": "operator_confirmed",
+  "operator_confirmation": {
+    "reviewer": "HSU",
+    "reviewed_at_utc": "2026-10-19T08:13:34.209597Z",
+    "note": "User explicitly approved the displayed orange torso regions for all five clips: 五球橘框皆可使用（建議）. Shoulders and hips must lie inside; limbs may extend outside. This is an operator region setting, not per-frame ground truth."
+  },
+  "pitcher_id": "shohei_ohtani",
+  "region_semantics": "all_four_torso_landmarks_inside_original_image_roi",
+  "region_source": "Visible pitcher torso region shown on original clips; operator setting, not per-frame joint ground truth.",
+  "model_input": "full original image, unchanged; no crop or resize introduced",
+  "clips": [
+    {
+      "pitch_id": "pitch_001",
+      "video_sha256": "904a0b1537c203b51b2c4013f641e9dacfea9c15daade7b8cc2ab13aa53005e7",
+      "subject_roi": [
+        0.1,
+        0.33,
+        0.43,
+        0.92
+      ]
+    },
+    {
+      "pitch_id": "pitch_002",
+      "video_sha256": "e4e32b4e7c409b500b4bae1c8301f8c0c2041d3b17aa2b09f31959070b0aa82f",
+      "subject_roi": [
+        0.1,
+        0.33,
+        0.43,
+        0.92
+      ]
+    },
+    {
+      "pitch_id": "pitch_003",
+      "video_sha256": "b67ce1895a0648f2e3d682c915cab12b24373d1cd71aecb974114649a85d49ec",
+      "subject_roi": [
+        0.1,
+        0.33,
+        0.43,
+        0.92
+      ]
+    },
+    {
+      "pitch_id": "pitch_004",
+      "video_sha256": "d4815a24c6b8c19b2d44d2fb3cd1cdf6969b5be260f596ee21f0a70514379de3",
+      "subject_roi": [
+        0.1,
+        0.33,
+        0.43,
+        0.92
+      ]
+    },
+    {
+      "pitch_id": "pitch_005",
+      "video_sha256": "950f8d3d2b5adef1c9fbc729df9d222632419eecc85a2f21ddf8052a0f310e81",
+      "subject_roi": [
+        0.1,
+        0.33,
+        0.43,
+        0.92
+      ]
+    }
+  ]
+}

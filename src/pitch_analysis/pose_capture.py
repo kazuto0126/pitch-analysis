@@ -1,6 +1,8 @@
 """Pose extraction through the shared backend contract."""
 from __future__ import annotations
 import csv
+from contextlib import nullcontext
+import hashlib
 import json
 from pathlib import Path
 from typing import Callable
@@ -13,16 +15,43 @@ LANDMARK_NAMES = (
 )
 
 
-def extract_pose(video_path: str | Path, model_path: str | Path, output_csv: str | Path, *, start_second: float = 0.0, end_second: float | None = None, subject_selection: str | None = None, estimator_factory: Callable[[Path, int], PoseEstimator] | None = None) -> dict:
+def _file_sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as stream:
+        for block in iter(lambda: stream.read(1024 * 1024), b""):
+            digest.update(block)
+    return digest.hexdigest()
+
+
+def _raw_candidates(poses) -> list[dict]:
+    """Copy every model value to the sidecar without changing its coordinates."""
+    return [{"candidate_index": candidate_index,
+             "landmarks": [{"index": index, "name": LANDMARK_NAMES[index],
+                            "x": point.x, "y": point.y, "z": point.z,
+                            "visibility": point.visibility,
+                            "presence": getattr(point, "presence", None)}
+                           for index, point in enumerate(pose)]}
+            for candidate_index, pose in enumerate(poses)]
+
+
+def extract_pose(video_path: str | Path, model_path: str | Path, output_csv: str | Path, *, start_second: float = 0.0, end_second: float | None = None, subject_selection: str | None = None, subject_roi: tuple[float, float, float, float] | None = None, record_candidates: bool = False, estimator_factory: Callable[[Path, int], PoseEstimator] | None = None) -> dict:
     import cv2
 
     from .subject import PitcherSelector
 
     if subject_selection not in (None, "rear_centerfield_broadcast"):
         raise ValueError("Unsupported subject-selection camera protocol")
-    selector = PitcherSelector() if subject_selection else None
+    if not isinstance(record_candidates, bool):
+        raise ValueError("record_candidates must be a boolean")
+    if subject_roi is not None and subject_selection is None:
+        raise ValueError("subject_roi requires rear_centerfield_broadcast subject selection")
+    selector = (PitcherSelector(subject_roi=subject_roi) if subject_roi is not None else PitcherSelector()) if subject_selection else None
 
     video_path, model_path, output_csv = Path(video_path), Path(model_path), Path(output_csv)
+    trace_enabled = record_candidates or subject_roi is not None
+    trace_path = output_csv.with_suffix(".candidates.jsonl")
+    trace_binding = ({"source_video_sha256": _file_sha256(video_path),
+                      "model_sha256": _file_sha256(model_path)} if trace_enabled else None)
     output_csv.parent.mkdir(parents=True, exist_ok=True)
     capture = cv2.VideoCapture(str(video_path))
     if not capture.isOpened():
@@ -40,9 +69,10 @@ def extract_pose(video_path: str | Path, model_path: str | Path, output_csv: str
     factory = estimator_factory or (lambda path, count: MediaPipePoseEstimator(path, num_poses=count))
     detected_frames = 0
     processed_frames = 0
+    candidate_records = 0
     selection_frames = []
     try:
-        with output_csv.open("w", newline="", encoding="utf-8-sig") as sink, factory(model_path, 4 if selector else 1) as estimator:
+        with output_csv.open("w", newline="", encoding="utf-8-sig") as sink, factory(model_path, 4 if selector else 1) as estimator, (trace_path.open("w", encoding="utf-8") if trace_enabled else nullcontext()) as trace:
             writer = csv.DictWriter(sink, fieldnames=("frame", "timestamp_ms", "landmark", "x", "y", "z", "visibility", "presence"))
             writer.writeheader()
             for frame_number in range(start_frame, end_frame + 1):
@@ -60,6 +90,23 @@ def extract_pose(video_path: str | Path, model_path: str | Path, output_csv: str
                                              "status": choice.status, "reason": choice.reason,
                                              "candidate_count": choice.candidate_count, "selected_index": choice.index,
                                              "score": choice.score, "mean_confidence": choice.mean_confidence})
+                    selected_index, status, reason = choice.index, choice.status, choice.reason
+                else:
+                    selected_index = 0 if result.pose_landmarks else None
+                    status = "selected" if selected_index is not None else "rejected"
+                    reason = "legacy_first_pose" if selected_index is not None else "no_pose_detected"
+                if trace is not None:
+                    record = {"schema_version": 1, "frame_index": frame_number,
+                              "timestamp_ms": timestamp_ms,
+                              "coordinate_system": "original_image_normalized",
+                              "candidate_index_semantics": "frame_local",
+                              "candidates": _raw_candidates(result.pose_landmarks),
+                              "selection": {"selected_index": selected_index,
+                                            "status": status, "reason": reason},
+                              "selector_decision": selector.last_decision if selector else None}
+                    trace.write(json.dumps(record, ensure_ascii=False) + "\n")
+                    candidate_records += 1
+                if selector:
                     if choice.index is None:
                         continue
                     landmarks = result.pose_landmarks[choice.index]
@@ -74,5 +121,13 @@ def extract_pose(video_path: str | Path, model_path: str | Path, output_csv: str
         capture.release()
     report = {"video": str(video_path), "model": str(model_path), "fps": fps, "start_frame": start_frame, "end_frame": end_frame, "requested_frames": end_frame - start_frame + 1, "processed_frames": processed_frames, "detected_frames": detected_frames, "width": width, "height": height,
               "subject_selection": subject_selection or "legacy_first_pose", "selection_frames": selection_frames}
+    if trace_enabled:
+        report["subject_roi"] = list(subject_roi) if subject_roi is not None else None
+        report["candidate_trace"] = {"path": str(trace_path), "record_count": candidate_records,
+                                     "coordinate_system": "original_image_normalized",
+                                     "candidate_index_semantics": "frame_local",
+                                     "landmarks_per_candidate": len(LANDMARK_NAMES),
+                                     "semantics": "All raw model candidates, including rejected and ambiguous frames; no coordinate correction, padding or interpolation. Model values do not establish visibility or identity.",
+                                     **trace_binding}
     output_csv.with_suffix(".capture.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
     return report

@@ -60,7 +60,9 @@ def _metrics(core: Path, ids: dict, status: str, passed: bool) -> dict:
 
 
 def analyze_pitch(video_path: str | Path, metadata_path: str | Path, *, output_root: str | Path = "analysis_results",
-                  model_path: str | Path = "models/pose_landmarker_full.task", standardize: bool = False) -> dict:
+                  model_path: str | Path = "models/pose_landmarker_full.task", standardize: bool = False,
+                  subject_roi: tuple[float, float, float, float] | None = None,
+                  record_candidates: bool = False) -> dict:
     payload = load_input(video_path, metadata_path)
     source = Path(video_path).resolve(strict=True)
     model = Path(model_path).resolve(strict=True)
@@ -81,6 +83,24 @@ def analyze_pitch(video_path: str | Path, metadata_path: str | Path, *, output_r
             "timebase": "zero-based clip frames; CFR checked against decoded presentation timestamps", "quality_config": asdict(quality),
         },
     }
+    if subject_roi is not None:
+        from ..subject import PitcherSelector
+
+        # Validate operator settings before creating any output. Model inputs and
+        # confidence gates are unchanged; this restricts candidate selection only.
+        subject_roi = PitcherSelector(subject_roi=subject_roi).subject_roi
+        manifest["provenance"]["subject_selection"] = "rear_centerfield_subject_roi_v1"
+        manifest["provenance"]["subject_constraint"] = {
+            "subject_roi": list(subject_roi),
+            "coordinate_system": "original_image_normalized_xy",
+            "semantics": "all four raw shoulder/hip landmarks must lie inside the operator ROI",
+            "source": "explicit caller-supplied operator setting; not inferred identity or ground truth",
+            "model_input": "unchanged full original image; no crop or coordinate transform",
+        }
+    if not isinstance(record_candidates, bool):
+        raise ValueError("record_candidates must be a boolean")
+    if subject_roi is not None or record_candidates:
+        manifest["provenance"]["candidate_recording"] = "all model candidates before subject selection"
     output.mkdir(parents=True, exist_ok=False)
     def save(name: str, value: dict, schema: str) -> None:
         write_contract(output / name, value, schema)
@@ -109,11 +129,16 @@ def analyze_pitch(video_path: str | Path, metadata_path: str | Path, *, output_r
         context.update({"view": payload["video"]["camera_view"], "horizontal_mirror": False, "subject_framing": "full_body"})
         # A fresh child directory satisfies prepare_segment's non-overwrite contract.
         core = output / "core"
+        subject_options = {}
+        if subject_roi is not None:
+            subject_options["subject_roi"] = subject_roi
+        if record_candidates:
+            subject_options["record_candidates"] = record_candidates
         prepared = prepare_segment(analysis_video, core, video_id=ids["pitcher_id"] + "__" + ids["pitch_id"],
                                    throwing_side=payload["pitcher"]["throws"], model_path=model,
                                    start_second=0.0, end_second=None,
                                    reference_context=context, quality=quality,
-                                   subject_selection="rear_centerfield_broadcast")
+                                   subject_selection="rear_centerfield_broadcast", **subject_options)
         capture = json.loads((core / "pose_raw.capture.json").read_text(encoding="utf-8"))
         if capture["requested_frames"] != video["frame_count"]:
             raise ValueError("Pose capture timeline disagrees with validated input")

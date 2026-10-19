@@ -1,10 +1,25 @@
 # 進度摘要
 
-更新：2026-10-19（台灣）。[完整狀態](current_status.md)；[大谷五球試用結果](phase2_ohtani_pilot_results_20261019.md)。
+更新：2026-10-19（台灣）。[完整狀態](current_status.md)；[最新投手範圍修正結果](phase2_pitcher_lock_results_20261019.md)。
 
 **Phase 1 = PASSED；Native interface integration = PASSED；Phase 2 自動可靠性仍 NOT PASSED。**
 
-## 最新：大谷翔平五球試用完成，五球 degraded
+## 最新：可選投手範圍修正已交付，部分錯人改善
+
+使用者已核准有限selector／capture修改並確認五球橘框。新增可選`subject_roi`：
+左右肩／髖原點必須在操作範圍內，手腳可伸出；無匹配候選就missing。無設定時維持原預設。
+模型仍看原完整畫面，既有信心與品質門檻、插值／平滑不變；所有模型候選另存逐格側檔。
+
+大谷五球各重跑一次：0執行異常、5 degraded。原第2球177／266格錯人改missing；第5球多個抽樣改選投手，
+但2／5仍有框內軀幹搭配跨人手臂。選中格數1677→1448，missing196→425；不可把減少數量當準確率改善。
+完整suite **999 passed、0 failed、0 errors、2 skipped**（1001項，新增32項，含正式五球E2E），89.641秒。
+原山本major提示仍2／0／19／5／3。候選保存核對0錯誤：1873格、2801副候選／92433點，47784選中raw點逐值相等。
+
+輸出：`analysis_results/phase2_ohtani_subject_lock_20261019_01/`；先看`START_HERE.md`。
+本輪已完成並停止，未改成全自動辨識或正式reference；Phase2自動可靠性仍NOT PASSED。
+詳細數字、實際overlay抽樣與使用方式見[結果報告](phase2_pitcher_lock_results_20261019.md)。
+
+## 前段：大谷翔平五球試用完成，五球 degraded
 
 使用者已選定大谷翔平的一批五球。後續山本工作集合只含 `001`、`002`、`004`、`005`，
 四對工作副本已建立於 `input/yoshinobu_yamamoto/phase2_active_20261019/`。

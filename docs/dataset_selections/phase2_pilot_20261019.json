@@ -151,7 +151,25 @@
     "quality_success": 0,
     "quality_degraded": 5,
     "pose_correctness_gt_added": 0,
-    "versioned_input_reviews": "annotations/input_reviews/shohei_ohtani/20261010T110737Z_RObvkuHpkSo"
+    "versioned_input_reviews": "annotations/input_reviews/shohei_ohtani/20261010T110737Z_RObvkuHpkSo",
+    "subject_lock_repair": {
+      "status": "optional_constraint_delivered_with_remaining_limits",
+      "operator_config": "config/pilots/ohtani_subject_region_20261019.json",
+      "output": "analysis_results/phase2_ohtani_subject_lock_20261019_01",
+      "analysis_attempts": 5,
+      "old_selected": 1677,
+      "locked_selected": 1448,
+      "quality_success": 0,
+      "quality_degraded": 5,
+      "ground_truth_added": 0,
+      "existing_quality_thresholds_changed": false,
+      "phase2_automatic_reliability": "NOT_PASSED",
+      "full_suite": {
+        "passed": 999,
+        "failed": 0,
+        "skipped": 2
+      }
+    }
   },
   "use_note": "Selection record only, not a new quality gate or evaluation result. Existing baseline runners/tests retain their historical five-clip inputs; future pilot must explicitly use the active directory or selected intake batch."
 }

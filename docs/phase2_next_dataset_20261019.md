@@ -46,3 +46,7 @@
 五球已依第3步各跑一次，分析輸出在 `analysis_results/phase2_ohtani_pilot_20261019_01/`。
 5球完整產生分析與overlay，0執行異常；依既有gate皆degraded。根代理實際檢查每片14格source／overlay，發現第2球部分骨架轉到打者、第5球多處抓到裁判或打者。
 [本批完整結果](phase2_ohtani_pilot_results_20261019.md)已交付，依第4步停止。未增加投手、重開舊試驗、修改核心或開始Phase3。
+
+其後使用者另行核准[最小主體鎖定修正](phase2_pitcher_lock_repair_scope_20261019.md)，
+開放可選selector範圍與capture接點，並確認五球橘框。該輪已另存[修正結果](phase2_pitcher_lock_results_20261019.md)：
+部分錯人改善，五球仍degraded，999 passed／0 failed／2 skipped。這是後續明確核准的有限例外，原試用輸出與本頁歷史進度不覆寫。
