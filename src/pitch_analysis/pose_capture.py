@@ -8,6 +8,7 @@ from pathlib import Path
 from typing import Callable
 
 from .pose_estimator import MediaPipePoseEstimator, PoseEstimator
+from .pose_crop import build_input_transform, map_crop_candidates, validate_input_crop
 
 
 LANDMARK_NAMES = (
@@ -34,7 +35,7 @@ def _raw_candidates(poses) -> list[dict]:
             for candidate_index, pose in enumerate(poses)]
 
 
-def extract_pose(video_path: str | Path, model_path: str | Path, output_csv: str | Path, *, start_second: float = 0.0, end_second: float | None = None, subject_selection: str | None = None, subject_roi: tuple[float, float, float, float] | None = None, record_candidates: bool = False, estimator_factory: Callable[[Path, int], PoseEstimator] | None = None) -> dict:
+def extract_pose(video_path: str | Path, model_path: str | Path, output_csv: str | Path, *, start_second: float = 0.0, end_second: float | None = None, subject_selection: str | None = None, subject_roi: tuple[float, float, float, float] | None = None, record_candidates: bool = False, input_crop: tuple[float, float, float, float] | None = None, estimator_factory: Callable[[Path, int], PoseEstimator] | None = None) -> dict:
     import cv2
 
     from .subject import PitcherSelector
@@ -45,10 +46,11 @@ def extract_pose(video_path: str | Path, model_path: str | Path, output_csv: str
         raise ValueError("record_candidates must be a boolean")
     if subject_roi is not None and subject_selection is None:
         raise ValueError("subject_roi requires rear_centerfield_broadcast subject selection")
+    input_crop = validate_input_crop(input_crop)
     selector = (PitcherSelector(subject_roi=subject_roi) if subject_roi is not None else PitcherSelector()) if subject_selection else None
 
     video_path, model_path, output_csv = Path(video_path), Path(model_path), Path(output_csv)
-    trace_enabled = record_candidates or subject_roi is not None
+    trace_enabled = record_candidates or subject_roi is not None or input_crop is not None
     trace_path = output_csv.with_suffix(".candidates.jsonl")
     trace_binding = ({"source_video_sha256": _file_sha256(video_path),
                       "model_sha256": _file_sha256(model_path)} if trace_enabled else None)
@@ -61,6 +63,7 @@ def extract_pose(video_path: str | Path, model_path: str | Path, output_csv: str
     width, height = int(capture.get(cv2.CAP_PROP_FRAME_WIDTH)), int(capture.get(cv2.CAP_PROP_FRAME_HEIGHT))
     if fps <= 0:
         raise ValueError("video has invalid FPS")
+    input_transform = build_input_transform(input_crop, width, height) if input_crop is not None else None
     start_frame = max(0, round(start_second * fps))
     end_frame = min(total_frames - 1, round(end_second * fps)) if end_second is not None else total_frames - 1
     if end_frame < start_frame:
@@ -81,18 +84,26 @@ def extract_pose(video_path: str | Path, model_path: str | Path, output_csv: str
                     break
                 processed_frames += 1
                 timestamp_ms = round(capture.get(cv2.CAP_PROP_POS_MSEC)) if selector else round(frame_number * 1000 / fps)
-                result = estimator.estimate(frame, timestamp_ms)
+                model_frame = frame
+                if input_transform is not None:
+                    if frame.shape[:2] != (height, width):
+                        raise ValueError("Decoded frame dimensions disagree with input_crop transform")
+                    left, top, right, bottom = input_transform["pixel_bounds_xyxy"]
+                    model_frame = frame[top:bottom, left:right]
+                result = estimator.estimate(model_frame, timestamp_ms)
                 if any(len(pose) != len(LANDMARK_NAMES) for pose in result.pose_landmarks):
                     raise ValueError("Pose backend must return 33 ordered landmarks per subject")
+                poses = (map_crop_candidates(result.pose_landmarks, input_transform)
+                         if input_transform is not None else result.pose_landmarks)
                 if selector:
-                    choice = selector.select(result.pose_landmarks)
+                    choice = selector.select(poses)
                     selection_frames.append({"frame_index": frame_number, "timestamp_ms": timestamp_ms,
                                              "status": choice.status, "reason": choice.reason,
                                              "candidate_count": choice.candidate_count, "selected_index": choice.index,
                                              "score": choice.score, "mean_confidence": choice.mean_confidence})
                     selected_index, status, reason = choice.index, choice.status, choice.reason
                 else:
-                    selected_index = 0 if result.pose_landmarks else None
+                    selected_index = 0 if poses else None
                     status = "selected" if selected_index is not None else "rejected"
                     reason = "legacy_first_pose" if selected_index is not None else "no_pose_detected"
                 if trace is not None:
@@ -100,20 +111,23 @@ def extract_pose(video_path: str | Path, model_path: str | Path, output_csv: str
                               "timestamp_ms": timestamp_ms,
                               "coordinate_system": "original_image_normalized",
                               "candidate_index_semantics": "frame_local",
-                              "candidates": _raw_candidates(result.pose_landmarks),
+                              "candidates": _raw_candidates(poses),
                               "selection": {"selected_index": selected_index,
                                             "status": status, "reason": reason},
                               "selector_decision": selector.last_decision if selector else None}
+                    if input_transform is not None:
+                        record["input_transform"] = input_transform
+                        record["native_candidates"] = _raw_candidates(result.pose_landmarks)
                     trace.write(json.dumps(record, ensure_ascii=False) + "\n")
                     candidate_records += 1
                 if selector:
                     if choice.index is None:
                         continue
-                    landmarks = result.pose_landmarks[choice.index]
-                elif not result.pose_landmarks:
+                    landmarks = poses[choice.index]
+                elif not poses:
                     continue
                 else:
-                    landmarks = result.pose_landmarks[0]
+                    landmarks = poses[0]
                 detected_frames += 1
                 for index, landmark in enumerate(landmarks):
                     writer.writerow({"frame": frame_number, "timestamp_ms": timestamp_ms, "landmark": LANDMARK_NAMES[index], "x": landmark.x, "y": landmark.y, "z": landmark.z, "visibility": landmark.visibility, "presence": getattr(landmark, "presence", "")})
@@ -129,5 +143,10 @@ def extract_pose(video_path: str | Path, model_path: str | Path, output_csv: str
                                      "landmarks_per_candidate": len(LANDMARK_NAMES),
                                      "semantics": "All raw model candidates, including rejected and ambiguous frames; no coordinate correction, padding or interpolation. Model values do not establish visibility or identity.",
                                      **trace_binding}
+    if input_transform is not None:
+        report["input_crop"] = list(input_crop)
+        report["input_transform"] = input_transform
+        report["candidate_trace"]["semantics"] = "All model candidates; native_candidates preserve crop-native model values, candidates and raw CSV map to original-image coordinates without clamping or interpolation. Model values do not establish visibility or identity."
+        report["candidate_trace"]["native_coordinate_system"] = "crop_image_normalized_xy"
     output_csv.with_suffix(".capture.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
     return report

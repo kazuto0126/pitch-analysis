@@ -62,7 +62,12 @@ def _metrics(core: Path, ids: dict, status: str, passed: bool) -> dict:
 def analyze_pitch(video_path: str | Path, metadata_path: str | Path, *, output_root: str | Path = "analysis_results",
                   model_path: str | Path = "models/pose_landmarker_full.task", standardize: bool = False,
                   subject_roi: tuple[float, float, float, float] | None = None,
-                  record_candidates: bool = False) -> dict:
+                  record_candidates: bool = False,
+                  input_crop: tuple[float, float, float, float] | None = None) -> dict:
+    if input_crop is not None:
+        from ..pose_crop import validate_input_crop
+
+        input_crop = validate_input_crop(input_crop)
     payload = load_input(video_path, metadata_path)
     source = Path(video_path).resolve(strict=True)
     model = Path(model_path).resolve(strict=True)
@@ -86,8 +91,8 @@ def analyze_pitch(video_path: str | Path, metadata_path: str | Path, *, output_r
     if subject_roi is not None:
         from ..subject import PitcherSelector
 
-        # Validate operator settings before creating any output. Model inputs and
-        # confidence gates are unchanged; this restricts candidate selection only.
+        # Validate operator settings before creating any output. This selector
+        # setting restricts candidates; model cropping is a separate option.
         subject_roi = PitcherSelector(subject_roi=subject_roi).subject_roi
         manifest["provenance"]["subject_selection"] = "rear_centerfield_subject_roi_v1"
         manifest["provenance"]["subject_constraint"] = {
@@ -95,11 +100,25 @@ def analyze_pitch(video_path: str | Path, metadata_path: str | Path, *, output_r
             "coordinate_system": "original_image_normalized_xy",
             "semantics": "all four raw shoulder/hip landmarks must lie inside the operator ROI",
             "source": "explicit caller-supplied operator setting; not inferred identity or ground truth",
-            "model_input": "unchanged full original image; no crop or coordinate transform",
+            "model_input": ("explicit operator crop; predictions mapped to original image"
+                            if input_crop is not None else
+                            "unchanged full original image; no crop or coordinate transform"),
+        }
+    if input_crop is not None:
+        from ..pose_crop import build_input_transform
+
+        manifest["provenance"]["model_input_crop"] = {
+            "input_crop": list(input_crop),
+            "coordinate_system": "original_image_normalized_xy",
+            "source": "explicit caller-supplied operator crop; not inferred identity or ground truth",
+            "input_transform": build_input_transform(input_crop, video["width"], video["height"]),
+            "x_mapping": "original_x = (pixel_left + native_x * actual_crop_width) / original_width",
+            "y_mapping": "original_y = (pixel_top + native_y * actual_crop_height) / original_height",
+            "z_mapping": "original_relative_z = native_z * actual_crop_width / original_width; not calibrated 3D",
         }
     if not isinstance(record_candidates, bool):
         raise ValueError("record_candidates must be a boolean")
-    if subject_roi is not None or record_candidates:
+    if subject_roi is not None or record_candidates or input_crop is not None:
         manifest["provenance"]["candidate_recording"] = "all model candidates before subject selection"
     output.mkdir(parents=True, exist_ok=False)
     def save(name: str, value: dict, schema: str) -> None:
@@ -134,6 +153,8 @@ def analyze_pitch(video_path: str | Path, metadata_path: str | Path, *, output_r
             subject_options["subject_roi"] = subject_roi
         if record_candidates:
             subject_options["record_candidates"] = record_candidates
+        if input_crop is not None:
+            subject_options["input_crop"] = input_crop
         prepared = prepare_segment(analysis_video, core, video_id=ids["pitcher_id"] + "__" + ids["pitch_id"],
                                    throwing_side=payload["pitcher"]["throws"], model_path=model,
                                    start_second=0.0, end_second=None,

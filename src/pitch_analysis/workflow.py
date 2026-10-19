@@ -84,12 +84,17 @@ def prepare_segment(
     subject_selection: str | None = None,
     subject_roi: tuple[float, float, float, float] | None = None,
     record_candidates: bool = False,
+    input_crop: tuple[float, float, float, float] | None = None,
 ) -> dict:
     """Extract, clean and featurize one bounded delivery without overwriting review.
 
     The output directory must be new. This avoids replacing event annotations or
     phase sequences that a reviewer has already approved.
     """
+    if input_crop is not None:
+        from .pose_crop import validate_input_crop
+
+        input_crop = validate_input_crop(input_crop)
     output = Path(output_dir)
     if output.exists() and any(output.iterdir()):
         raise FileExistsError(f"Output directory is not empty: {output}")
@@ -102,6 +107,8 @@ def prepare_segment(
         capture_options["subject_roi"] = subject_roi
     if record_candidates:
         capture_options["record_candidates"] = record_candidates
+    if input_crop is not None:
+        capture_options["input_crop"] = input_crop
     capture = extract_pose(video_path, model_path, raw, start_second=start_second, end_second=end_second,
                            subject_selection=subject_selection, **capture_options)
     if capture["detected_frames"] == 0:

@@ -26,7 +26,20 @@
             "coordinate_system": {"const": "original_image_normalized_xy"},
             "semantics": {"const": "all four raw shoulder/hip landmarks must lie inside the operator ROI"},
             "source": {"const": "explicit caller-supplied operator setting; not inferred identity or ground truth"},
-            "model_input": {"const": "unchanged full original image; no crop or coordinate transform"}
+            "model_input": {"enum": ["unchanged full original image; no crop or coordinate transform", "explicit operator crop; predictions mapped to original image"]}
+          }
+        },
+        "model_input_crop": {
+          "type": "object", "additionalProperties": false,
+          "required": ["input_crop", "coordinate_system", "source", "input_transform", "x_mapping", "y_mapping", "z_mapping"],
+          "properties": {
+            "input_crop": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "number", "minimum": 0, "maximum": 1}},
+            "coordinate_system": {"const": "original_image_normalized_xy"},
+            "source": {"const": "explicit caller-supplied operator crop; not inferred identity or ground truth"},
+            "input_transform": {"type": "object"},
+            "x_mapping": {"const": "original_x = (pixel_left + native_x * actual_crop_width) / original_width"},
+            "y_mapping": {"const": "original_y = (pixel_top + native_y * actual_crop_height) / original_height"},
+            "z_mapping": {"const": "original_relative_z = native_z * actual_crop_width / original_width; not calibrated 3D"}
           }
         },
         "candidate_recording": {"const": "all model candidates before subject selection"},

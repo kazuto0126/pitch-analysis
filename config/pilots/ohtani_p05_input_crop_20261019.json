@@ -1,0 +1,27 @@
+{
+  "schema_version": "single-pitch-input-crop-pilot-v1",
+  "pitcher_id": "shohei_ohtani",
+  "pitch_id": "pitch_005",
+  "video": "input/shohei_ohtani/phase2_pilot_20261019_01/pitch_005.mp4",
+  "metadata": "input/shohei_ohtani/phase2_pilot_20261019_01/pitch_005.json",
+  "video_sha256": "950f8d3d2b5adef1c9fbc729df9d222632419eecc85a2f21ddf8052a0f310e81",
+  "model_sha256": "5134a3aad27a58b93da0088d431f366da362b44e3ccfbe3462b3827a839011b1",
+  "input_crop": [0.05, 0.3, 0.5, 1.0],
+  "expected_pixel_bounds_xyxy_exclusive": [64, 216, 640, 720],
+  "subject_roi": [0.1, 0.33, 0.43, 0.92],
+  "subject_roi_confirmation": "config/pilots/ohtani_subject_region_20261019.json",
+  "crop_selection": {
+    "source": "agent-selected fixed full-motion image region, within user-approved single-pitch crop scope",
+    "human_joint_ground_truth": false,
+    "evidence": "Original full-clip context samples plus frames 140 through 212 every 4 frames inspected before inference. Extra right margin retains the extended rear foot during follow-through.",
+    "user_authorization": "User replied 好繼續 to the proposal for a single Ohtani pitch_005 full-motion model-input crop. This does not attribute these exact bounds to a human annotation.",
+    "fixed_before_inference": true
+  },
+  "scope": "One inference run on pitch_005 only; unchanged MediaPipe Full weights, thresholds, subject selection and quality gates; map coordinates back to original image; preserve native crop candidates; no GT changes.",
+  "comparison": {
+    "original_full_frame": "analysis_results/phase2_ohtani_pilot_20261019_01/predictions/shohei_ohtani/pitch_005",
+    "full_frame_subject_lock": "analysis_results/phase2_ohtani_subject_lock_20261019_01/run/predictions/shohei_ohtani/pitch_005",
+    "fixed_visual_frames": [0, 32, 64, 96, 128, 160, 176, 192, 204, 224, 256, 288, 320, 352]
+  },
+  "decision": "Inspect fixed original wrong-person/mixed-arm examples and coverage together. Only extend to the remaining clips if this single clip shows an actual subject-selection benefit. No crop-size search, threshold changes or Phase 2 pass from coverage alone."
+}

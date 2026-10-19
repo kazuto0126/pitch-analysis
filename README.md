@@ -6,7 +6,11 @@
 本次收尾摘要見 [STATUS](docs/STATUS.md)；外部專案供片需求見
 [INPUT_REQUIREMENTS](docs/INPUT_REQUIREMENTS.md)。
 
-2026-10-19 最新：[可選投手範圍修正已交付](docs/phase2_pitcher_lock_results_20261019.md)，
+2026-10-19 最新：[大谷第5球輸入裁切有實際改善](docs/phase2_ohtani_p05_crop_20261019.md)：
+選中215→338/353格，missing138→15；原錯人畫面回到投手，但13格收尾缺口仍使原gate未通過。
+可選`input_crop`保存native及原圖座標，預設流程不變；完整suite1016 passed／0 failed／2 skipped。
+
+前段：[可選投手範圍修正已交付](docs/phase2_pitcher_lock_results_20261019.md)，
 部分錯人例子已排除或改選投手，但仍有混合手臂及更多missing，五球仍degraded。
 完整測試999 passed／0 failed／2 skipped（1001項）；未指定範圍時保持原預設。
 

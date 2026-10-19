@@ -12,7 +12,37 @@ gates, MediaPipe settings, interpolation and smoothing are unchanged. The approv
 optional subject-region constraint is described below; the default selector remains compatible.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-19 approved optional pitcher-region repair delivered (latest)
+## 2026-10-19 single Ohtani pitch_005 input crop delivered (latest)
+
+User accepted the proposed full-motion model-input crop with “好繼續”.
+Added optional input_crop with exact floor/ceil pixel bounds, native crop candidates
+and mapped original-image candidates/CSV; selector and overlay use original coordinates.
+No crop keeps the old path. Fixed source-inspected bounds [64,216,640,720) retain
+head/limbs/follow-through; these bounds are an agent-selected operator setting,
+not a new human joint annotation. No ROI-size search or other Ohtani clip inference.
+
+One real 353-frame run: selected215->338/353 (60.91->95.75%),missing138->15,
+longest gap54->13,elbow-angle raw coverage36.83->59.49%. All coverage gates now
+pass but original >2-frame pose-gap rule still fails: gap196-208 remains missing.
+Result degraded, not success. Right elbow raw310/353; wrist210/353,129missing.
+14 fixed same-frame three-version samples inspected: previous wrong-person/mixed
+examples return to pitcher; frame204 missing. This is agent sample inspection,
+not exhaustive human identity/keypoint GT or an accuracy score.
+
+Original sources/old outputs/formal materials/annotations:160 SHA checks unchanged.
+353 trace rows,345 native candidates/11385 points;11154 selected raw points equal
+mapped candidates,inverse XY error0,confidence/Z mismatch0. Model/gate/threshold/
+selector/smoothing/interpolation unchanged. Viewing copies retain353frames,1280x720,
+59.94fps; original overlays preserved.
+
+Full suite once:1018run/1016passed/0failed/0errors/2existing Windows file-symlink
+skips,82.720s,exit0;17new tests. Formal five E2E hints remain2/0/19/5/3.
+Output:`analysis_results/phase2_ohtani_p05_crop_20261019_01/`;
+[results and use](phase2_ohtani_p05_crop_20261019.md).
+Single-clip improvement supports a next bounded trial on the remaining four;
+this delivery stops at one clip. AutomaticPhase2 remainsNOT PASSED;no Phase3.
+
+## 2026-10-19 approved optional pitcher-region repair delivered (previous)
 
 User explicitly approved the minimal selector/capture repair and then confirmed
 the displayed five-video torso region. `config/pilots/ohtani_subject_region_20261019.json`

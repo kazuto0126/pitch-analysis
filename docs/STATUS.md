@@ -1,10 +1,23 @@
 # 進度摘要
 
-更新：2026-10-19（台灣）。[完整狀態](current_status.md)；[最新投手範圍修正結果](phase2_pitcher_lock_results_20261019.md)。
+更新：2026-10-19（台灣）。[完整狀態](current_status.md)；[最新大谷第5球輸入裁切結果](phase2_ohtani_p05_crop_20261019.md)。
 
 **Phase 1 = PASSED；Native interface integration = PASSED；Phase 2 自動可靠性仍 NOT PASSED。**
 
-## 最新：可選投手範圍修正已交付，部分錯人改善
+## 最新：大谷第5球有實際主體改善
+
+使用者同意單球完整動作範圍輸入。新增可選 `input_crop`，保存 crop-native 候選及轉回原圖的座標；
+未指定時維持舊流程。模型、selector、gate／門檻與人工GT保持。
+同一球僅跑一次：位置限制版215/353→裁切版338/353（95.75%），missing138→15，最長gap54→13；
+肘角raw coverage36.83%→59.49%。固定14格實際對照，原裁判／打者例子回到投手，仍有局部關節限制。
+196–208格缺失未補，依原gate仍degraded；沒有宣告Phase2通過。
+
+新增17項測試；完整suite **1016 passed、0 failed、0 errors、2 skipped**（1018項，82.720秒）。
+正式山本五球E2E提示仍2／0／19／5／3，160個保護來源／標註／舊輸出SHA不變。
+輸出：`analysis_results/phase2_ohtani_p05_crop_20261019_01/`，包含可直接看的 `before_after.html`。
+本輪停在單球交付；下一步才是其餘四球的固定範圍試用，不做倍率搜尋或Phase3。
+
+## 前段：可選投手範圍修正已交付，部分錯人改善
 
 使用者已核准有限selector／capture修改並確認五球橘框。新增可選`subject_roi`：
 左右肩／髖原點必須在操作範圍內，手腳可伸出；無匹配候選就missing。無設定時維持原預設。
