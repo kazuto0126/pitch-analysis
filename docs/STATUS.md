@@ -1,24 +1,30 @@
 # 進度摘要
 
-更新：2026-10-19（台灣）。[完整狀態](current_status.md)；[目前工作：第二位投手試用](phase2_next_dataset_20261019.md)。
+更新：2026-10-19（台灣）。[完整狀態](current_status.md)；[大谷五球試用結果](phase2_ohtani_pilot_results_20261019.md)。
 
 **Phase 1 = PASSED；Native interface integration = PASSED；Phase 2 自動可靠性仍 NOT PASSED。**
 
-## 最新：排除 pitch_003，開始大谷翔平五球試用
+## 最新：大谷翔平五球試用完成，五球 degraded
 
 使用者已選定大谷翔平的一批五球。後續山本工作集合只含 `001`、`002`、`004`、`005`，
 四對工作副本已建立於 `input/yoshinobu_yamamoto/phase2_active_20261019/`。
 `003` 原影片與全部人工／模型證據保留，退出新試用集合；原五球評估分母與 NOT PASSED 結論不變。
 
-本次只處理交付索引中的 `20261010T110737Z_RObvkuHpkSo`，先匯入候選、完成人工輸入覆核，
-再用現有 MediaPipe 流程試跑通過覆核的球，交付每球結果與限制後停止。
+本次只處理交付索引中的 `20261010T110737Z_RObvkuHpkSo`。HSU 已確認五球所有七項輸入需求（35項），
+既有 MediaPipe 流程各跑一次，五球均完成輸出、0 執行異常；依原品質 gate 全為 degraded。
 不重開已結束的警示試驗，不新增逐格 GT，不進 Phase 3。
 當前進度與停止條件見[本批工作紀錄](phase2_next_dataset_20261019.md)。
 
-大谷五球已成功匯入、0 拒收，重跑新增 0／跳過 5；目前全數候選且人工輸入覆核 pending。
-1,873 格通過既有時間檢查；尚未分析或升格。已備妥五球原影片觀看頁。
+大谷五球已成功匯入、0 拒收，重跑新增 0／跳過 5；人工輸入覆核 5/5 完成，未升為正式 reference。
+1,873 格已完成分析與 overlay 全解碼；實際檢查每球 14 格 source／overlay 圖（共70格）。
+有效 pose 比例依序 91.99／92.02／94.08／84.15／85.55%；肘角raw coverage 59.12／56.44／36.49／38.78／78.19%。
+**重要限制：第2球部分抽樣轉到打者，第5球多處骨架落在裁判／打者；高coverage不能當成抓對投手。**
+五球均有超過2格pose gap，另有膝角coverage不足／肘角coverage不足；詳見結果報告。
+已交付本批結果後停止；下一個具體問題是主體選取／跨人骨架，尚未修改正式核心或開始新的修復試驗。
 本輪 handoff 測試 **73 passed、0 failed、2 skipped**（75 項，含新增 6 項）。
-本批輸出：`analysis_results/phase2_ohtani_intake_20261019_01/`，先看 `START_HERE.md`。
+上述為匯入 checkpoint 測試；本次只準備素材並實跑，無產品程式變更，未重跑全suite。
+分析輸出：`analysis_results/phase2_ohtani_pilot_20261019_01/`，先看 `START_HERE.md`。
+候選與人工輸入覆核紀錄仍在 `analysis_results/phase2_ohtani_intake_20261019_01/` 與各候選 `review.json`。
 
 ## 前段：原生17／33點接入第一版完成
 

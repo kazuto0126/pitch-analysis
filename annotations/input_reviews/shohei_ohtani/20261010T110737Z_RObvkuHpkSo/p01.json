@@ -1,0 +1,123 @@
+{
+  "schema": "handoff-input-review-v1",
+  "internal_pitch_id": "h_eb8fcb328da084273ec1cb79ef20e7419906cec212de03b363b5111b01d33bb8",
+  "original_pitch_id": "20261010T110737Z_RObvkuHpkSo_p01",
+  "original_batch_id": "20261010T110737Z_RObvkuHpkSo",
+  "source_video_sha256": "904a0b1537c203b51b2c4013f641e9dacfea9c15daade7b8cc2ab13aa53005e7",
+  "source_json_sha256": "3d57f1150c5d1b73e30f8322c479346062d0859afa346a0783c52c49984751f5",
+  "overall_status": "review_complete",
+  "items": {
+    "pitch_delivery_visible": {
+      "history": [
+        {
+          "reviewer": "HSU",
+          "reviewed_at_utc": "2026-10-19T07:46:01.985482Z",
+          "conclusion": "pass",
+          "note": "HSU reviewed the displayed p01 source video and replied 都對 to the seven named input-review checks. This confirmation applies only to p01; it does not label pose/keypoint correctness."
+        }
+      ],
+      "latest": {
+        "reviewer": "HSU",
+        "reviewed_at_utc": "2026-10-19T07:46:01.985482Z",
+        "conclusion": "pass",
+        "note": "HSU reviewed the displayed p01 source video and replied 都對 to the seven named input-review checks. This confirmation applies only to p01; it does not label pose/keypoint correctness."
+      }
+    },
+    "not_replay_or_slow_motion": {
+      "history": [
+        {
+          "reviewer": "HSU",
+          "reviewed_at_utc": "2026-10-19T07:46:01.985482Z",
+          "conclusion": "pass",
+          "note": "HSU reviewed the displayed p01 source video and replied 都對 to the seven named input-review checks. This confirmation applies only to p01; it does not label pose/keypoint correctness."
+        }
+      ],
+      "latest": {
+        "reviewer": "HSU",
+        "reviewed_at_utc": "2026-10-19T07:46:01.985482Z",
+        "conclusion": "pass",
+        "note": "HSU reviewed the displayed p01 source video and replied 都對 to the seven named input-review checks. This confirmation applies only to p01; it does not label pose/keypoint correctness."
+      }
+    },
+    "not_mirrored": {
+      "history": [
+        {
+          "reviewer": "HSU",
+          "reviewed_at_utc": "2026-10-19T07:46:01.985482Z",
+          "conclusion": "pass",
+          "note": "HSU reviewed the displayed p01 source video and replied 都對 to the seven named input-review checks. This confirmation applies only to p01; it does not label pose/keypoint correctness."
+        }
+      ],
+      "latest": {
+        "reviewer": "HSU",
+        "reviewed_at_utc": "2026-10-19T07:46:01.985482Z",
+        "conclusion": "pass",
+        "note": "HSU reviewed the displayed p01 source video and replied 都對 to the seven named input-review checks. This confirmation applies only to p01; it does not label pose/keypoint correctness."
+      }
+    },
+    "full_body_in_frame": {
+      "history": [
+        {
+          "reviewer": "HSU",
+          "reviewed_at_utc": "2026-10-19T07:46:01.985482Z",
+          "conclusion": "pass",
+          "note": "HSU reviewed the displayed p01 source video and replied 都對 to the seven named input-review checks. This confirmation applies only to p01; it does not label pose/keypoint correctness."
+        }
+      ],
+      "latest": {
+        "reviewer": "HSU",
+        "reviewed_at_utc": "2026-10-19T07:46:01.985482Z",
+        "conclusion": "pass",
+        "note": "HSU reviewed the displayed p01 source video and replied 都對 to the seven named input-review checks. This confirmation applies only to p01; it does not label pose/keypoint correctness."
+      }
+    },
+    "pitcher_identity": {
+      "history": [
+        {
+          "reviewer": "HSU",
+          "reviewed_at_utc": "2026-10-19T07:46:01.985482Z",
+          "conclusion": "pass",
+          "note": "HSU reviewed the displayed p01 source video and replied 都對 to the seven named input-review checks. This confirmation applies only to p01; it does not label pose/keypoint correctness."
+        }
+      ],
+      "latest": {
+        "reviewer": "HSU",
+        "reviewed_at_utc": "2026-10-19T07:46:01.985482Z",
+        "conclusion": "pass",
+        "note": "HSU reviewed the displayed p01 source video and replied 都對 to the seven named input-review checks. This confirmation applies only to p01; it does not label pose/keypoint correctness."
+      }
+    },
+    "preparation_complete": {
+      "history": [
+        {
+          "reviewer": "HSU",
+          "reviewed_at_utc": "2026-10-19T07:46:01.985482Z",
+          "conclusion": "pass",
+          "note": "HSU reviewed the displayed p01 source video and replied 都對 to the seven named input-review checks. This confirmation applies only to p01; it does not label pose/keypoint correctness."
+        }
+      ],
+      "latest": {
+        "reviewer": "HSU",
+        "reviewed_at_utc": "2026-10-19T07:46:01.985482Z",
+        "conclusion": "pass",
+        "note": "HSU reviewed the displayed p01 source video and replied 都對 to the seven named input-review checks. This confirmation applies only to p01; it does not label pose/keypoint correctness."
+      }
+    },
+    "follow_through_complete": {
+      "history": [
+        {
+          "reviewer": "HSU",
+          "reviewed_at_utc": "2026-10-19T07:46:01.985482Z",
+          "conclusion": "pass",
+          "note": "HSU reviewed the displayed p01 source video and replied 都對 to the seven named input-review checks. This confirmation applies only to p01; it does not label pose/keypoint correctness."
+        }
+      ],
+      "latest": {
+        "reviewer": "HSU",
+        "reviewed_at_utc": "2026-10-19T07:46:01.985482Z",
+        "conclusion": "pass",
+        "note": "HSU reviewed the displayed p01 source video and replied 都對 to the seven named input-review checks. This confirmation applies only to p01; it does not label pose/keypoint correctness."
+      }
+    }
+  }
+}

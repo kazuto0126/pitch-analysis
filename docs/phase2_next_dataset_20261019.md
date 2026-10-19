@@ -36,11 +36,13 @@
 - SQLite 原有 1 批／8 球，現在 2 批／13 球；其他新投手尚未匯入。
 - 五球均 1280×720、`60000/1001` FPS；解碼格數依序 362／326／422／410／353，共 1,873 格。
 - 每球相對首格 PTS 與分數 FPS 時間的最大差異都是 0.000666667 ms，低於既有嚴格 1 ms 限制。
-- 5/5 仍為 candidate／review pending，七項人工輸入覆核皆未代填；分析執行 0、正式提升 0。慣用手保留來源提供的 RIGHT、球季 null。
+- 匯入時 5/5 為 candidate／review pending，沒有代填人工答案。其後 HSU 已明確確認五球共 35 項全部通過，人工輸入覆核 5/5 完成。慣用手保留來源提供的 RIGHT、球季 null；正式提升仍為 0。
 - 讀取器增加可重複 `--batch-id`，未指定時維持原行為；未列索引的所選 ID 會明確拒絕。Phase 2 核心沒有修改。
 - 相關 handoff 測試 75 項：73 passed、0 failed、2 skipped，6.412 秒；其中 6 項為本次新增。Windows junction 測試有執行，兩項 file-symlink 因環境權限略過。
 - 本輪未重跑全專案 suite；最近完整紀錄仍為 961 passed、0 failed、2 skipped，不能把舊紀錄當成本輪重跑。
 
 輸出：`analysis_results/phase2_ohtani_intake_20261019_01/`，先看 `START_HERE.md`；來源、各球 `review.json`、時間與測試紀錄在 `intake_summary.json`。
 五球原影片的觀看頁在 `review/review_all.html`。頁面只供觀看，沒有自動提交人工答案。影片副本 SHA 與候選來源相同。
-下一步是使用者觀看五球、回答七項輸入覆核，再依第 3 步執行分析。
+五球已依第3步各跑一次，分析輸出在 `analysis_results/phase2_ohtani_pilot_20261019_01/`。
+5球完整產生分析與overlay，0執行異常；依既有gate皆degraded。根代理實際檢查每片14格source／overlay，發現第2球部分骨架轉到打者、第5球多處抓到裁判或打者。
+[本批完整結果](phase2_ohtani_pilot_results_20261019.md)已交付，依第4步停止。未增加投手、重開舊試驗、修改核心或開始Phase3。

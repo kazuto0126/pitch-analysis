@@ -1,4 +1,4 @@
-# Current status — Second-pitcher pilot; historical automatic Phase 2 remains NOT PASSED
+# Current status — Ohtani pilot delivered with degraded outputs; automatic Phase 2 remains NOT PASSED
 
 Updated: 2026-10-19
 
@@ -11,7 +11,7 @@ Automatic reliability remains unaccepted. Existing acceptance thresholds, confid
 gates, PitcherSelector, pose/tracking, interpolation and smoothing are unchanged.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-19 prospective input selection and Ohtani pilot (latest)
+## 2026-10-19 Ohtani pilot complete with degraded outputs (latest)
 
 User requested removing the high-deviation Yamamoto pitch_003 from subsequent work,
 then explicitly chose Shohei Ohtani, five pitches. The new active Yamamoto directory
@@ -21,10 +21,11 @@ pitch_003 raw predictions/manual XY/canonical GT and historical five-clip evalua
 and regression evidence are preserved. This prospective exclusion does not revise
 the old evaluation denominator or establish automatic reliability acceptance.
 
-Current bounded work: select only indexed handoff batch `20261010T110737Z_RObvkuHpkSo`,
-import its five candidates with existing hash/timing/dedup checks, obtain explicit
-human input review, then run current MediaPipe once per eligible input and review
-the resulting overlays/reliability. Missing input approvals cannot be inferred.
+Completed bounded work: selected only indexed handoff batch `20261010T110737Z_RObvkuHpkSo`,
+imported its five candidates with existing hash/timing/dedup checks, recorded HSU's
+explicit seven-item input review for all five (35 pass findings), then ran current
+MediaPipe once per clip and inspected source/overlay contact sheets. Input review
+does not supply skeleton correctness GT.
 The new pilot scope supersedes older prospective “no new-candidate work” stop notes;
 those notes remain historical. No Phase3, profile, cross-pitcher comparison or live
 RTMPose adoption is authorized. Failed warning trials stay closed.
@@ -36,14 +37,27 @@ Earlier “next” paragraphs below describe their dated work; they are not a cu
 Ohtani intake is complete: 5 imported, 0 rejected/conflicts; repeat adds0/skips5.
 Only selected index line2 was processed, ledger1batch/8pitches ->2batches/13pitches.
 All1,873frames match60000/1001FPS; max normalized PTS deviation0.000666667ms each.
-All five remain candidate/pending with zero human answers, analysis or promotions.
-The viewing-only page contains local source-identical MP4 copies and the seven
-input review items. Output:`analysis_results/phase2_ohtani_intake_20261019_01/`.
+At intake all five were candidate/pending; HSU subsequently completed all input reviews.
+The local review history retains both stages; there are still no formal promotions.
+Intake output:`analysis_results/phase2_ohtani_intake_20261019_01/`.
 Reader/CLI add optional exact indexed batch selection; production Phase2 core unchanged.
 Focused handoff suite75run/73passed/0failed/2existing file-symlink skips,6.412s,
 including6new tests; junction cases actually ran. No full-suite rerun this turn;
 the latest historical full-suite result remains961passed/0failed/2skipped.
-Next: receive explicit human input review, then analyze eligible clips once.
+Analysis output:`analysis_results/phase2_ohtani_pilot_20261019_01/`.
+All five completed artifacts with0runtime failures;0success/5degraded/0failed by the
+unchanged keypoint quality gate. Valid pose ratios91.99/92.02/94.08/84.15/85.55%;
+elbow-angle raw coverage59.12/56.44/36.49/38.78/78.19%;longest pose gaps5/6/6/11/7frames.
+All1,873overlay frames decode and match input counts. Root inspected14source/overlay
+samples per clip (70total), not new human GT. Clip2samples include batter selection;
+clip5often tracks umpire/batter and mixes people. Coverage cannot validate identity.
+The source-bound major-review hints report not_evaluated for all new inputs;
+tracking identity_switch_confirmed remains null. No events or coordinate GT invented.
+Per-joint coverage/visibility/gaps/interpolation and tracking reports are preserved.
+See [completed trial report](phase2_ohtani_pilot_results_20261019.md).
+This pilot is delivered and stopped, with no formal reference adoption, production
+code/gate changes or Phase3. Future repair should focus on these reproducible
+wrong-subject/cross-person failures within an explicitly confirmed core-change scope.
 
 ## 2026-10-18 approved cached native interface delivery (previous)
 

@@ -92,9 +92,9 @@
       "20261010T110737Z_RObvkuHpkSo_p05"
     ],
     "source": "D:/project/pitch-video-handoff/index.jsonl",
-    "status": "imported_candidates_pending_human_input_review",
-    "input_review": "pending",
-    "pose_analysis_executed": false,
+    "status": "pilot_complete_with_degraded_outputs",
+    "input_review": "5/5 complete; all 35 items passed by HSU",
+    "pose_analysis_executed": true,
     "formal_promotion": false,
     "imported_candidates": 5,
     "rejected": 0,
@@ -145,7 +145,13 @@
         "max_abs_deviation_ms": 0.0006666666666666666,
         "video_sha256": "950f8d3d2b5adef1c9fbc729df9d222632419eecc85a2f21ddf8052a0f310e81"
       }
-    ]
+    ],
+    "analysis_output": "analysis_results/phase2_ohtani_pilot_20261019_01",
+    "runtime_failed": 0,
+    "quality_success": 0,
+    "quality_degraded": 5,
+    "pose_correctness_gt_added": 0,
+    "versioned_input_reviews": "annotations/input_reviews/shohei_ohtani/20261010T110737Z_RObvkuHpkSo"
   },
   "use_note": "Selection record only, not a new quality gate or evaluation result. Existing baseline runners/tests retain their historical five-clip inputs; future pilot must explicitly use the active directory or selected intake batch."
 }

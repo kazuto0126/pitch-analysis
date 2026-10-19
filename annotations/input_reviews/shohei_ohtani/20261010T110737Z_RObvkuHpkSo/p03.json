@@ -1,0 +1,123 @@
+{
+  "schema": "handoff-input-review-v1",
+  "internal_pitch_id": "h_e75d5724d65ff852c0c62fd5a7833717036fe0250ad5d47b127f426cff9720f0",
+  "original_pitch_id": "20261010T110737Z_RObvkuHpkSo_p03",
+  "original_batch_id": "20261010T110737Z_RObvkuHpkSo",
+  "source_video_sha256": "b67ce1895a0648f2e3d682c915cab12b24373d1cd71aecb974114649a85d49ec",
+  "source_json_sha256": "4163ecaaf789fc3c6e8ece9cf55d31d6a06cd41e3285b6f4eaa418c0d7a9e906",
+  "overall_status": "review_complete",
+  "items": {
+    "pitch_delivery_visible": {
+      "history": [
+        {
+          "reviewer": "HSU",
+          "reviewed_at_utc": "2026-10-19T07:48:21.038300Z",
+          "conclusion": "pass",
+          "note": "HSU reviewed the displayed p02-p05 source videos and replied 2-5 followed by 都正確, confirming all seven named input-review items for these four clips. Input eligibility only; not joint correctness ground truth."
+        }
+      ],
+      "latest": {
+        "reviewer": "HSU",
+        "reviewed_at_utc": "2026-10-19T07:48:21.038300Z",
+        "conclusion": "pass",
+        "note": "HSU reviewed the displayed p02-p05 source videos and replied 2-5 followed by 都正確, confirming all seven named input-review items for these four clips. Input eligibility only; not joint correctness ground truth."
+      }
+    },
+    "not_replay_or_slow_motion": {
+      "history": [
+        {
+          "reviewer": "HSU",
+          "reviewed_at_utc": "2026-10-19T07:48:21.038300Z",
+          "conclusion": "pass",
+          "note": "HSU reviewed the displayed p02-p05 source videos and replied 2-5 followed by 都正確, confirming all seven named input-review items for these four clips. Input eligibility only; not joint correctness ground truth."
+        }
+      ],
+      "latest": {
+        "reviewer": "HSU",
+        "reviewed_at_utc": "2026-10-19T07:48:21.038300Z",
+        "conclusion": "pass",
+        "note": "HSU reviewed the displayed p02-p05 source videos and replied 2-5 followed by 都正確, confirming all seven named input-review items for these four clips. Input eligibility only; not joint correctness ground truth."
+      }
+    },
+    "not_mirrored": {
+      "history": [
+        {
+          "reviewer": "HSU",
+          "reviewed_at_utc": "2026-10-19T07:48:21.038300Z",
+          "conclusion": "pass",
+          "note": "HSU reviewed the displayed p02-p05 source videos and replied 2-5 followed by 都正確, confirming all seven named input-review items for these four clips. Input eligibility only; not joint correctness ground truth."
+        }
+      ],
+      "latest": {
+        "reviewer": "HSU",
+        "reviewed_at_utc": "2026-10-19T07:48:21.038300Z",
+        "conclusion": "pass",
+        "note": "HSU reviewed the displayed p02-p05 source videos and replied 2-5 followed by 都正確, confirming all seven named input-review items for these four clips. Input eligibility only; not joint correctness ground truth."
+      }
+    },
+    "full_body_in_frame": {
+      "history": [
+        {
+          "reviewer": "HSU",
+          "reviewed_at_utc": "2026-10-19T07:48:21.038300Z",
+          "conclusion": "pass",
+          "note": "HSU reviewed the displayed p02-p05 source videos and replied 2-5 followed by 都正確, confirming all seven named input-review items for these four clips. Input eligibility only; not joint correctness ground truth."
+        }
+      ],
+      "latest": {
+        "reviewer": "HSU",
+        "reviewed_at_utc": "2026-10-19T07:48:21.038300Z",
+        "conclusion": "pass",
+        "note": "HSU reviewed the displayed p02-p05 source videos and replied 2-5 followed by 都正確, confirming all seven named input-review items for these four clips. Input eligibility only; not joint correctness ground truth."
+      }
+    },
+    "pitcher_identity": {
+      "history": [
+        {
+          "reviewer": "HSU",
+          "reviewed_at_utc": "2026-10-19T07:48:21.038300Z",
+          "conclusion": "pass",
+          "note": "HSU reviewed the displayed p02-p05 source videos and replied 2-5 followed by 都正確, confirming all seven named input-review items for these four clips. Input eligibility only; not joint correctness ground truth."
+        }
+      ],
+      "latest": {
+        "reviewer": "HSU",
+        "reviewed_at_utc": "2026-10-19T07:48:21.038300Z",
+        "conclusion": "pass",
+        "note": "HSU reviewed the displayed p02-p05 source videos and replied 2-5 followed by 都正確, confirming all seven named input-review items for these four clips. Input eligibility only; not joint correctness ground truth."
+      }
+    },
+    "preparation_complete": {
+      "history": [
+        {
+          "reviewer": "HSU",
+          "reviewed_at_utc": "2026-10-19T07:48:21.038300Z",
+          "conclusion": "pass",
+          "note": "HSU reviewed the displayed p02-p05 source videos and replied 2-5 followed by 都正確, confirming all seven named input-review items for these four clips. Input eligibility only; not joint correctness ground truth."
+        }
+      ],
+      "latest": {
+        "reviewer": "HSU",
+        "reviewed_at_utc": "2026-10-19T07:48:21.038300Z",
+        "conclusion": "pass",
+        "note": "HSU reviewed the displayed p02-p05 source videos and replied 2-5 followed by 都正確, confirming all seven named input-review items for these four clips. Input eligibility only; not joint correctness ground truth."
+      }
+    },
+    "follow_through_complete": {
+      "history": [
+        {
+          "reviewer": "HSU",
+          "reviewed_at_utc": "2026-10-19T07:48:21.038300Z",
+          "conclusion": "pass",
+          "note": "HSU reviewed the displayed p02-p05 source videos and replied 2-5 followed by 都正確, confirming all seven named input-review items for these four clips. Input eligibility only; not joint correctness ground truth."
+        }
+      ],
+      "latest": {
+        "reviewer": "HSU",
+        "reviewed_at_utc": "2026-10-19T07:48:21.038300Z",
+        "conclusion": "pass",
+        "note": "HSU reviewed the displayed p02-p05 source videos and replied 2-5 followed by 都正確, confirming all seven named input-review items for these four clips. Input eligibility only; not joint correctness ground truth."
+      }
+    }
+  }
+}

@@ -6,9 +6,10 @@
 本次收尾摘要見 [STATUS](docs/STATUS.md)；外部專案供片需求見
 [INPUT_REQUIREMENTS](docs/INPUT_REQUIREMENTS.md)。
 
-2026-10-19：[目前進行大谷翔平五球小量試用](docs/phase2_next_dataset_20261019.md)。
+2026-10-19：[大谷翔平五球小量試用已完成](docs/phase2_ohtani_pilot_results_20261019.md)：五球均 degraded，0 執行異常。
 山本 `pitch_003` 退出後續試用集合，原影片、人工標註與五球歷史評估保留。
-先做候選匯入與人工輸入覆核；Phase 2 原自動可靠性未通過的結論保持，尚未進 Phase 3。
+人工輸入覆核5/5完成；實際overlay抽樣發現第2球部分追到打者、第5球多處追到裁判／打者。
+已保存完整結果與錯例；Phase 2 原自動可靠性未通過的結論保持，尚未進 Phase 3。
 
 專案不負責影片搜尋、YouTube、下載、yt-dlp、來源管理、從長影片建立素材或指定球員 ReID。
 這些能力由獨立 preprocessing 專案負責。本機 MP4 probe / validation / working-copy
