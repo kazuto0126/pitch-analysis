@@ -283,7 +283,7 @@
       "source_video": "data\\intake\\handoff\\candidates\\h_17cb95e543165bbe45df516e7e339f32f281d92de5bf5334daed428550637afc\\source\\20261020T073530Z_6gyr6IC2e0Q_p05.mp4",
       "review_file": "data\\intake\\handoff\\candidates\\h_17cb95e543165bbe45df516e7e339f32f281d92de5bf5334daed428550637afc\\review.json",
       "status": "candidate",
-      "review_status": "pending",
+      "review_status": "review_complete",
       "required_reviews": [
         "pitch_delivery_visible",
         "not_replay_or_slow_motion",
@@ -293,7 +293,7 @@
         "preparation_complete",
         "follow_through_complete"
       ],
-      "recorded_human_findings": 0,
+      "recorded_human_findings": 7,
       "video_sha256": "1c67c058d4376ecf94a138eb08e3251eb601a365a7e8a55e251e1c136ae5d95f",
       "same_mp4_sha_as_preexisting_candidate": false,
       "metadata_blockers": [],
@@ -334,7 +334,8 @@
         "biomechanical_events": null
       },
       "pipeline_anchors_are_biomechanical_events": false,
-      "review_status_at_import": "pending"
+      "review_status_at_import": "pending",
+      "versioned_review": "annotations/input_reviews/shohei_ohtani/20261020T073530Z_6gyr6IC2e0Q/p05.json"
     }
   ],
   "operator_exclusions": {
@@ -350,14 +351,14 @@
   },
   "analysis_executed": false,
   "formal_promotions": 0,
-  "human_findings_recorded": 28,
+  "human_findings_recorded": 35,
   "handoff_changed_files": [],
   "protected_reviews_and_inputs_changed": [],
   "product_code_changed": false,
   "full_suite_rerun": false,
   "phase2_automatic_reliability": "NOT_PASSED",
   "human_findings_recorded_at_import": 0,
-  "human_input_review_completed": 4,
+  "human_input_review_completed": 5,
   "human_input_review_total": 5,
   "input_review_progress": [
     {
@@ -387,8 +388,8 @@
     {
       "alias": "supplement_p05",
       "original_pitch_id": "20261020T073530Z_6gyr6IC2e0Q_p05",
-      "status": "pending",
-      "human_findings": 0
+      "status": "review_complete",
+      "human_findings": 7
     }
   ],
   "versioned_input_reviews": "annotations/input_reviews/shohei_ohtani/20261020T073530Z_6gyr6IC2e0Q"

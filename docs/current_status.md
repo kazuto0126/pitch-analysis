@@ -1,4 +1,4 @@
-# Current status — New Ohtani candidates imported, awaiting human input review
+# Current status — New Ohtani candidates imported, human input review complete
 
 Updated: 2026-10-20
 
@@ -26,10 +26,11 @@ Native container offset retained as evidence,no frame0 shift;anchors not events.
 
 At import fivecandidate/pending,0/5reviews.After viewing in-chat supplementp01
 and its7-item checklist,HSU explicitly replied“七項正確”,then replied“正確”
-to supplementp02,p03andp04and their same7items.Recorded28pass findings,p01-p04
-review_complete,4/5completed;p05seven items pending.Same-schema exact snapshots at
-annotations/input_reviews/shohei_ohtani/20261020T073530Z_6gyr6IC2e0Q/p01.json throughp04.json.
-No finding inferred forp05or from supplier description.No analyze-pitch,
+to supplementp02,p03,p04andp05and their same7items.Recorded35pass findings,p01-p05
+review_complete,5/5completed.Same-schema exact snapshots at
+annotations/input_reviews/shohei_ohtani/20261020T073530Z_6gyr6IC2e0Q/p01.json throughp05.json.
+Each finding transcribes that clip's human reply;none inferred from supplier description.
+Input review is not frame-level joint GT.No analyze-pitch,
 pose,overlay,formal input conversion,promotion or replacement performed.
 14handoff files SHA/size/mtime unchanged;33prior review/input files SHA unchanged.
 New sourceID6gyr6IC2e0Q distinct from oldRObvkuHpkSo,newMP4SHA not among prior candidates.
@@ -40,7 +41,8 @@ as separate context,not injected into unknown delivery fields.
 Output:`analysis_results/phase2_ohtani_supplement_intake_20261020_01/`;
 [intake receipt](phase2_ohtani_supplement_intake_20261020.md),
 [versioned IDs](dataset_selections/ohtani_supplement_20261020.json).
-Next:human source-video input review.No automatic analysis before confirmation.
+Next:set source-bound pitcher regions for this batch,then analyze each input once
+with the existing model and gates.Analysis has not started in this review update.
 No product/test code changes,full suite not rerun;Phase2automatic reliability
 remainsNOT PASSED.No supplier code read,no Phase3.
 

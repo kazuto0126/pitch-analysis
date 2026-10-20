@@ -1,0 +1,123 @@
+{
+  "schema": "handoff-input-review-v1",
+  "internal_pitch_id": "h_17cb95e543165bbe45df516e7e339f32f281d92de5bf5334daed428550637afc",
+  "original_pitch_id": "20261020T073530Z_6gyr6IC2e0Q_p05",
+  "original_batch_id": "20261020T073530Z_6gyr6IC2e0Q",
+  "source_video_sha256": "1c67c058d4376ecf94a138eb08e3251eb601a365a7e8a55e251e1c136ae5d95f",
+  "source_json_sha256": "9def2daa20d291aa560e4a2d9671e2a9f6fc34168e5dc8c7da6cd6e59583f417",
+  "overall_status": "review_complete",
+  "items": {
+    "pitch_delivery_visible": {
+      "history": [
+        {
+          "reviewer": "HSU",
+          "reviewed_at_utc": "2026-10-20T08:22:42Z",
+          "conclusion": "pass",
+          "note": "HSU觀看本對話展示的補片p05原片與七項輸入清單後明確回覆「正確」。本項：確實完成一次投球。依人工回答轉錄，非模型或代理自動判定。"
+        }
+      ],
+      "latest": {
+        "reviewer": "HSU",
+        "reviewed_at_utc": "2026-10-20T08:22:42Z",
+        "conclusion": "pass",
+        "note": "HSU觀看本對話展示的補片p05原片與七項輸入清單後明確回覆「正確」。本項：確實完成一次投球。依人工回答轉錄，非模型或代理自動判定。"
+      }
+    },
+    "not_replay_or_slow_motion": {
+      "history": [
+        {
+          "reviewer": "HSU",
+          "reviewed_at_utc": "2026-10-20T08:22:42Z",
+          "conclusion": "pass",
+          "note": "HSU觀看本對話展示的補片p05原片與七項輸入清單後明確回覆「正確」。本項：正常速度，無重播或慢動作。依人工回答轉錄，非模型或代理自動判定。"
+        }
+      ],
+      "latest": {
+        "reviewer": "HSU",
+        "reviewed_at_utc": "2026-10-20T08:22:42Z",
+        "conclusion": "pass",
+        "note": "HSU觀看本對話展示的補片p05原片與七項輸入清單後明確回覆「正確」。本項：正常速度，無重播或慢動作。依人工回答轉錄，非模型或代理自動判定。"
+      }
+    },
+    "not_mirrored": {
+      "history": [
+        {
+          "reviewer": "HSU",
+          "reviewed_at_utc": "2026-10-20T08:22:42Z",
+          "conclusion": "pass",
+          "note": "HSU觀看本對話展示的補片p05原片與七項輸入清單後明確回覆「正確」。本項：沒有水平鏡像。依人工回答轉錄，非模型或代理自動判定。"
+        }
+      ],
+      "latest": {
+        "reviewer": "HSU",
+        "reviewed_at_utc": "2026-10-20T08:22:42Z",
+        "conclusion": "pass",
+        "note": "HSU觀看本對話展示的補片p05原片與七項輸入清單後明確回覆「正確」。本項：沒有水平鏡像。依人工回答轉錄，非模型或代理自動判定。"
+      }
+    },
+    "full_body_in_frame": {
+      "history": [
+        {
+          "reviewer": "HSU",
+          "reviewed_at_utc": "2026-10-20T08:22:42Z",
+          "conclusion": "pass",
+          "note": "HSU觀看本對話展示的補片p05原片與七項輸入清單後明確回覆「正確」。本項：全身及動作空間完整入鏡。依人工回答轉錄，非模型或代理自動判定。"
+        }
+      ],
+      "latest": {
+        "reviewer": "HSU",
+        "reviewed_at_utc": "2026-10-20T08:22:42Z",
+        "conclusion": "pass",
+        "note": "HSU觀看本對話展示的補片p05原片與七項輸入清單後明確回覆「正確」。本項：全身及動作空間完整入鏡。依人工回答轉錄，非模型或代理自動判定。"
+      }
+    },
+    "pitcher_identity": {
+      "history": [
+        {
+          "reviewer": "HSU",
+          "reviewed_at_utc": "2026-10-20T08:22:42Z",
+          "conclusion": "pass",
+          "note": "HSU觀看本對話展示的補片p05原片與七項輸入清單後明確回覆「正確」。本項：投手是大谷翔平。依人工回答轉錄，非模型或代理自動判定。"
+        }
+      ],
+      "latest": {
+        "reviewer": "HSU",
+        "reviewed_at_utc": "2026-10-20T08:22:42Z",
+        "conclusion": "pass",
+        "note": "HSU觀看本對話展示的補片p05原片與七項輸入清單後明確回覆「正確」。本項：投手是大谷翔平。依人工回答轉錄，非模型或代理自動判定。"
+      }
+    },
+    "preparation_complete": {
+      "history": [
+        {
+          "reviewer": "HSU",
+          "reviewed_at_utc": "2026-10-20T08:22:42Z",
+          "conclusion": "pass",
+          "note": "HSU觀看本對話展示的補片p05原片與七項輸入清單後明確回覆「正確」。本項：準備與啟動完整。依人工回答轉錄，非模型或代理自動判定。"
+        }
+      ],
+      "latest": {
+        "reviewer": "HSU",
+        "reviewed_at_utc": "2026-10-20T08:22:42Z",
+        "conclusion": "pass",
+        "note": "HSU觀看本對話展示的補片p05原片與七項輸入清單後明確回覆「正確」。本項：準備與啟動完整。依人工回答轉錄，非模型或代理自動判定。"
+      }
+    },
+    "follow_through_complete": {
+      "history": [
+        {
+          "reviewer": "HSU",
+          "reviewed_at_utc": "2026-10-20T08:22:42Z",
+          "conclusion": "pass",
+          "note": "HSU觀看本對話展示的補片p05原片與七項輸入清單後明確回覆「正確」。本項：收尾至恢復平衡完整。依人工回答轉錄，非模型或代理自動判定。"
+        }
+      ],
+      "latest": {
+        "reviewer": "HSU",
+        "reviewed_at_utc": "2026-10-20T08:22:42Z",
+        "conclusion": "pass",
+        "note": "HSU觀看本對話展示的補片p05原片與七項輸入清單後明確回覆「正確」。本項：收尾至恢復平衡完整。依人工回答轉錄，非模型或代理自動判定。"
+      }
+    }
+  }
+}
