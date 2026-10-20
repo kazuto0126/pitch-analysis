@@ -24,8 +24,11 @@ frames,total1684.Declared counts equal decoded counts;max normalized PTS
 deviation0.000666667ms each,fractional FPS validation strictly<1ms.
 Native container offset retained as evidence,no frame0 shift;anchors not events.
 
-Fivecandidate/pending,0/5human input reviews completed,35pending items.
-No review finding inferred from supplier/user batch description.No analyze-pitch,
+At import fivecandidate/pending,0/5reviews.After viewing in-chat supplementp01
+and its7-item checklist,HSU explicitly replied“七項正確”.Recorded7pass findings,
+p01review_complete,1/5completed;others28items pending.Same-schema exact snapshot
+atannotations/input_reviews/shohei_ohtani/20261020T073530Z_6gyr6IC2e0Q/p01.json.
+No finding inferred for the other4clips or from supplier description.No analyze-pitch,
 pose,overlay,formal input conversion,promotion or replacement performed.
 14handoff files SHA/size/mtime unchanged;33prior review/input files SHA unchanged.
 New sourceID6gyr6IC2e0Q distinct from oldRObvkuHpkSo,newMP4SHA not among prior candidates.

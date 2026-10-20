@@ -35,7 +35,7 @@
       "source_video": "data\\intake\\handoff\\candidates\\h_1fa0bef0d4de1001a90902f313f40cffef4eefd30879ce99c2299d8d6b48c0c8\\source\\20261020T073530Z_6gyr6IC2e0Q_p01.mp4",
       "review_file": "data\\intake\\handoff\\candidates\\h_1fa0bef0d4de1001a90902f313f40cffef4eefd30879ce99c2299d8d6b48c0c8\\review.json",
       "status": "candidate",
-      "review_status": "pending",
+      "review_status": "review_complete",
       "required_reviews": [
         "pitch_delivery_visible",
         "not_replay_or_slow_motion",
@@ -45,7 +45,7 @@
         "preparation_complete",
         "follow_through_complete"
       ],
-      "recorded_human_findings": 0,
+      "recorded_human_findings": 7,
       "video_sha256": "90a6acec9865c634bd019503d46c147647fa78df9a2827e1143c74abb852111a",
       "same_mp4_sha_as_preexisting_candidate": false,
       "metadata_blockers": [],
@@ -85,7 +85,9 @@
         "validation_time_rule": "(native PTS - first PTS) compared with frame_index / fractional fps",
         "biomechanical_events": null
       },
-      "pipeline_anchors_are_biomechanical_events": false
+      "pipeline_anchors_are_biomechanical_events": false,
+      "review_status_at_import": "pending",
+      "versioned_review": "annotations/input_reviews/shohei_ohtani/20261020T073530Z_6gyr6IC2e0Q/p01.json"
     },
     {
       "alias": "supplement_p02",
@@ -145,7 +147,8 @@
         "validation_time_rule": "(native PTS - first PTS) compared with frame_index / fractional fps",
         "biomechanical_events": null
       },
-      "pipeline_anchors_are_biomechanical_events": false
+      "pipeline_anchors_are_biomechanical_events": false,
+      "review_status_at_import": "pending"
     },
     {
       "alias": "supplement_p03",
@@ -205,7 +208,8 @@
         "validation_time_rule": "(native PTS - first PTS) compared with frame_index / fractional fps",
         "biomechanical_events": null
       },
-      "pipeline_anchors_are_biomechanical_events": false
+      "pipeline_anchors_are_biomechanical_events": false,
+      "review_status_at_import": "pending"
     },
     {
       "alias": "supplement_p04",
@@ -265,7 +269,8 @@
         "validation_time_rule": "(native PTS - first PTS) compared with frame_index / fractional fps",
         "biomechanical_events": null
       },
-      "pipeline_anchors_are_biomechanical_events": false
+      "pipeline_anchors_are_biomechanical_events": false,
+      "review_status_at_import": "pending"
     },
     {
       "alias": "supplement_p05",
@@ -325,7 +330,8 @@
         "validation_time_rule": "(native PTS - first PTS) compared with frame_index / fractional fps",
         "biomechanical_events": null
       },
-      "pipeline_anchors_are_biomechanical_events": false
+      "pipeline_anchors_are_biomechanical_events": false,
+      "review_status_at_import": "pending"
     }
   ],
   "operator_exclusions": {
@@ -341,10 +347,46 @@
   },
   "analysis_executed": false,
   "formal_promotions": 0,
-  "human_findings_recorded": 0,
+  "human_findings_recorded": 7,
   "handoff_changed_files": [],
   "protected_reviews_and_inputs_changed": [],
   "product_code_changed": false,
   "full_suite_rerun": false,
-  "phase2_automatic_reliability": "NOT_PASSED"
+  "phase2_automatic_reliability": "NOT_PASSED",
+  "human_findings_recorded_at_import": 0,
+  "human_input_review_completed": 1,
+  "human_input_review_total": 5,
+  "input_review_progress": [
+    {
+      "alias": "supplement_p01",
+      "original_pitch_id": "20261020T073530Z_6gyr6IC2e0Q_p01",
+      "status": "review_complete",
+      "human_findings": 7
+    },
+    {
+      "alias": "supplement_p02",
+      "original_pitch_id": "20261020T073530Z_6gyr6IC2e0Q_p02",
+      "status": "pending",
+      "human_findings": 0
+    },
+    {
+      "alias": "supplement_p03",
+      "original_pitch_id": "20261020T073530Z_6gyr6IC2e0Q_p03",
+      "status": "pending",
+      "human_findings": 0
+    },
+    {
+      "alias": "supplement_p04",
+      "original_pitch_id": "20261020T073530Z_6gyr6IC2e0Q_p04",
+      "status": "pending",
+      "human_findings": 0
+    },
+    {
+      "alias": "supplement_p05",
+      "original_pitch_id": "20261020T073530Z_6gyr6IC2e0Q_p05",
+      "status": "pending",
+      "human_findings": 0
+    }
+  ],
+  "versioned_input_reviews": "annotations/input_reviews/shohei_ohtani/20261020T073530Z_6gyr6IC2e0Q"
 }
