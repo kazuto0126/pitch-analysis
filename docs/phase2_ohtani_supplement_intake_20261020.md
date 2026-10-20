@@ -26,8 +26,8 @@
 ## 候選與人工覆核
 
 匯入時五球全部保持candidate，輸入人工覆核0/5、35項待確認。
-後續HSU觀看本對話補片p01／p02／p03原片與以下清單後，依序回覆「七項正確」／「正確」／「正確」，
-三球共21項已轉錄pass，目前**輸入人工覆核3/5完成，p04–p05共14項待確認**：
+後續HSU觀看本對話補片p01–p04原片與以下清單後，逐球回覆通過，
+四球共28項已轉錄pass，目前**輸入人工覆核4/5完成，p05七項待確認**：
 
 1. pitcher_identity：畫面投手是大谷翔平。
 2. pitch_delivery_visible：投手確實完成投球。
@@ -41,7 +41,8 @@ p01的`review.json`已保存HSU、2026-10-20T08:12:17Z、pass及原回答轉錄�
 相同schema快照在`annotations/input_reviews/shohei_ohtani/20261020T073530Z_6gyr6IC2e0Q/p01.json`。
 p02另保存HSU、2026-10-20T08:14:57Z、七項pass及「正確」原回答備註，快照在同資料夾`p02.json`。
 p03另保存HSU、2026-10-20T08:17:08Z、七項pass及「正確」原回答備註，快照在同資料夾`p03.json`。
-其餘兩球history仍空、latest=null；沒有將已看影片的回答套用到其他影片。
+p04另保存HSU、2026-10-20T08:19:47Z、七項pass及「正確」原回答備註，快照在同資料夾`p04.json`。
+p05的history仍空、latest=null；沒有將已看影片的回答套用到其他影片。
 這是影片輸入覆核，不是逐格關節GT；候選身分保留。
 
 **分析執行0、正式提升0、舊素材替換0。** 沒有轉成正式`pitch-input-v1`、執行`analyze-pitch`、
@@ -67,7 +68,7 @@ pose、metrics或overlay。原大谷001／002、其他舊球與山本正式素�
   `review_all.html`提供五支本地原片及覆核清單，僅供觀看，不提交判定。
   `intake_summary.json`、`intake_receipt.json`、兩次CLI log、`metadata_audit.json`保留實際證據。
 
-下一步從p04繼續人工觀看原片、逐球確認上述七項；維持候選，沒有安排自動分析。
+下一步觀看p05原片、確認上述七項；維持候選，沒有安排自動分析。
 Phase2自動可靠性狀態仍NOT PASSED，未進Phase3。
 
 本輪未修改產品／測試程式，因此未重跑完整suite；實際完成的是SHA、全解碼、分數時間與去重的匯入檢查。

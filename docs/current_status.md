@@ -26,10 +26,10 @@ Native container offset retained as evidence,no frame0 shift;anchors not events.
 
 At import fivecandidate/pending,0/5reviews.After viewing in-chat supplementp01
 and its7-item checklist,HSU explicitly replied“七項正確”,then replied“正確”
-to supplementp02andp03and their same7items.Recorded21pass findings,p01/p02/p03
-review_complete,3/5completed;other2clips14items pending.Same-schema exact snapshots at
-annotations/input_reviews/shohei_ohtani/20261020T073530Z_6gyr6IC2e0Q/p01.json,p02.json andp03.json.
-No finding inferred for the other2clips or from supplier description.No analyze-pitch,
+to supplementp02,p03andp04and their same7items.Recorded28pass findings,p01-p04
+review_complete,4/5completed;p05seven items pending.Same-schema exact snapshots at
+annotations/input_reviews/shohei_ohtani/20261020T073530Z_6gyr6IC2e0Q/p01.json throughp04.json.
+No finding inferred forp05or from supplier description.No analyze-pitch,
 pose,overlay,formal input conversion,promotion or replacement performed.
 14handoff files SHA/size/mtime unchanged;33prior review/input files SHA unchanged.
 New sourceID6gyr6IC2e0Q distinct from oldRObvkuHpkSo,newMP4SHA not among prior candidates.
