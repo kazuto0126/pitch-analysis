@@ -4,7 +4,19 @@
 
 **Phase 1 = PASSED；Native interface integration = PASSED；Phase 2 自動可靠性仍 NOT PASSED。**
 
-## 最新：大谷新補片5球分析完成，仍有追蹤與前導膝限制
+## 最新續行：原因分解完成，準備可選live後端方案
+
+只讀新補片已保存資料：85個未選中格皆無eligible候選；14格沒有模型候選，
+其餘71格有輸出但被原ROI／投影尺度／confidence拒絕，不能統稱完全漏偵測。
+p02第159／245、p05第251格也沒有其他eligible骨架可直接換上。
+前導膝起始低visibility段p02／p03／p05分別81／107／82格，不能由模型分數斷言真人被遮住。
+
+[原因分解](phase2_ohtani_supplement_diagnosis_20261020.md)；
+[可選live RTMPose最小實作方案](phase2_live_native_pose_plan_20261020.md)已備妥，待核准。
+目前核准的RTMPose介面僅讀封存；本次尚未改程式或推論，沒有重跑suite或進Phase3。
+方案限定現有權重／隔離環境、新補片1684格各一次、原生17點與五支overlay，正式核心及門檻保持。
+
+## 前段：大谷新補片5球分析完成，仍有追蹤與前導膝限制
 
 HSU已確認新來源五球軀幹框與完整動作crop，五球各跑一次，0執行異常。
 合計選中1599/1684格（94.95%）；最長gap9／13／5／12／2格，

@@ -1,4 +1,4 @@
-# Current status — New Ohtani supplement analyzed once, reliability still degraded
+# Current status — Supplement failure attribution complete, live native backend proposed
 
 Updated: 2026-10-20
 
@@ -12,7 +12,30 @@ gates, MediaPipe settings, interpolation and smoothing are unchanged. The approv
 optional subject-region constraint is described below; the default selector remains compatible.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-20 Ohtani supplement analysis completed (latest)
+## 2026-10-20 bounded attribution and next implementation scope (latest)
+
+Read saved1684-frame candidate traces and raw only;0new inference,0selector replay,
+0human GT changes.All85unselected frames have0eligible candidates.Only14frames
+have no model candidate(allp02);71have predictions rejected under original rules.
+118rejected candidate records:first failure ROI65/projected body height50/confidence3.
+All50protocol failures are ankle-minus-shoulder projected height<.16;not proof of
+small people or correct rejected skeletons.No thresholds or geometry changed.
+
+p02f159/f245 andp05f251 each have0other eligible candidate,so simple re-ranking
+cannot directly replace the observed hybrid skeletons.Knee raw gating is dominated
+by initial lowvisibility spans81/107/82frames inp02/p03/p05,respectively.This is
+model score evidence,not human occlusion truth;do not trim preparation to pass.
+
+Output:`analysis_results/phase2_ohtani_supplement_diagnosis_20261020_01/`;
+10read artifacts SHA unchanged.No product/test changes or suite rerun.
+[attribution](phase2_ohtani_supplement_diagnosis_20261020.md),
+[live native backend proposal](phase2_live_native_pose_plan_20261020.md).
+Existing approved RTMPose interface is cached-only.New live implementation awaits
+scope confirmation:existing weight/runtime,1684new frames once,native17 outputs
+and5overlays,unchanged production MediaPipe/core/gates.No Phase2 pass from interface
+completion.No new model experiment,code implementation or Phase3started here.
+
+## 2026-10-20 Ohtani supplement analysis completed (previous)
 
 HSU explicitly confirmed both new-source orange torso regions and cyan model-input
 crop for all five clips, then authorized analysis. Five new trial inputs
