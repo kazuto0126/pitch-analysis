@@ -6,7 +6,11 @@
 本次收尾摘要見 [STATUS](docs/STATUS.md)；外部專案供片需求見
 [INPUT_REQUIREMENTS](docs/INPUT_REQUIREMENTS.md)。
 
-2026-10-20 最新：[大谷五球固定裁切試用已完成](docs/phase2_ohtani_crop_cohort_20261019.md)：
+2026-10-20 最新：[剩餘缺失復原處理已記錄](docs/phase2_ohtani_remaining_limits_20261020.md)：
+003／004主因右腕低visibility，未找到資料鏈bug；004／005的23格補偵測只找回5格，長gap未縮短，未接入正式流程。
+保留原門檻與degraded結果，後續需較可觀測素材或明確核准新的模型資訊範圍；未進Phase3。
+
+前段：[大谷五球固定裁切試用已完成](docs/phase2_ohtani_crop_cohort_20261019.md)：
 001–004各跑一次、005沿用，五球選中1448→1842/1873，missing425→31；001／002通過原pose gate。
 003／004肘角coverage、005收尾缺口仍保留，Phase2自動可靠性未通過；本輪未改產品碼或重跑suite。
 

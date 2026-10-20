@@ -1,10 +1,23 @@
 # 進度摘要
 
-更新：2026-10-20（台灣）。[完整狀態](current_status.md)；[最新大谷五球裁切試用結果](phase2_ohtani_crop_cohort_20261019.md)。
+更新：2026-10-20（台灣）。[完整狀態](current_status.md)；[最新剩餘問題處理](phase2_ohtani_remaining_limits_20261020.md)。
 
 **Phase 1 = PASSED；Native interface integration = PASSED；Phase 2 自動可靠性仍 NOT PASSED。**
 
-## 最新：大谷五球固定範圍試用完成，兩球通過 pose gate
+## 最新：23格缺失復原未解決主要限制，未接入正式流程
+
+使用者要求繼續修正後，完成003／004資料鏈查核及004／005共23個原missing格的同模型獨立重新偵測。
+003／004肘角缺失中，97.19%／95.40%涉及右腕低visibility；時間、側別、座標與原gate計算沒有發現bug。
+23格重新偵測的原selector重播僅多找回5格，最長gap仍3／13，沒有解除原失敗原因。
+因此不接入正式capture、不改正式數字、不追加crop／門檻搜尋；來源raw與GT保留。
+正式結果仍001／002 pose gate通過，003／004／005 degraded，Phase2自動可靠性仍NOT PASSED。
+
+輸出：`analysis_results/phase2_ohtani_recovery_20261020_01/`；
+[處理結果與停止決定](phase2_ohtani_remaining_limits_20261020.md)、[同投手替代素材需求](phase2_ohtani_replacement_input_needs_20261020.md)。
+本輪無產品／測試碼變更，未重跑suite；同版最近結果1016 passed／0 failed／2 skipped。
+已詢問使用者下一步方向：較清楚的同投手素材，或先規劃可選live後端；未擅自改正式模型或進Phase3。
+
+## 前段：大谷五球固定範圍試用完成，兩球通過 pose gate
 
 001–004各推論一次、005沿用前次，產品程式／模型／門檻與GT不變。
 相較全畫面＋軀幹限制，五球選中1448→1842/1873，missing425→31；

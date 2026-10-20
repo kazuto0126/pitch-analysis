@@ -12,7 +12,36 @@ gates, MediaPipe settings, interpolation and smoothing are unchanged. The approv
 optional subject-region constraint is described below; the default selector remains compatible.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-20 four-clip crop continuation delivered (latest)
+## 2026-10-20 remaining-limit recovery bounded attempt closed (latest)
+
+User requested continued repair. Checked003/004 data paths:249/239missing
+elbow-angle frames,242/228 involve right-wrist low visibility(97.19/95.40%).
+Presence,RIGHT side,timeline,raw/native mapping,clean masks and feature flags
+are consistent;832trace frames/27093selected points checked,no product bug found.
+Initial wrist low-score spans0-150/0-145 account for about61%angle missing;
+do not infer per-frame human occlusion labels or trim preparation to improve ratios.
+
+Independently re-detected only004's8and005's15existing missing frames inIMAGE
+mode with sameFull weight,exact crop,num_poses4 and0.5settings:23calls once.
+Native/mapped candidates stored separately;original selector replay without
+threshold/score changes yields405vs402 and340vs338 selected,but longest gaps
+remain3/13.Previously selected decisions unchanged0.Not a formal pipeline rerun.
+Viewed5recovered samples plus005f200/205/208;local accuracy not human-certified.
+
+Decision:do not integrate this fallback;it does not fix the gating failure.
+005also has posture-dependent projected-scale rejection and truly absent model
+candidates;changing scale alone cannot recover the whole gap.No ROI-size search,
+threshold relaxation,GT/raw rewrite or live backend change.AutomaticPhase2
+remainsNOT PASSED;formal crop results stay361/322/419/402/338selected.
+
+Output:`analysis_results/phase2_ohtani_recovery_20261020_01/`;
+[result and boundaries](phase2_ohtani_remaining_limits_20261020.md),
+[replacement input needs](phase2_ohtani_replacement_input_needs_20261020.md).
+No product/test code changed,full suite not rerun;latest same-code record
+1016passed/0failed/2skipped(1018run,e236878).Asked user to choose clearer
+same-pitcher inputs or planning an optional live backend,no dependent work started.
+
+## 2026-10-20 four-clip crop continuation delivered (previous)
 
 User accepted applying the completed crop approach to remaining Ohtani clips.
 Ran001-004 once each on2026-10-19;005 is read-only reuse,not new inference.
