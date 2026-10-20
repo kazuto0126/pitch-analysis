@@ -1,4 +1,4 @@
-# Current status — Clearer Ohtani inputs selected as next step; automatic Phase 2 remains NOT PASSED
+# Current status — New Ohtani candidates imported, awaiting human input review
 
 Updated: 2026-10-20
 
@@ -12,7 +12,35 @@ gates, MediaPipe settings, interpolation and smoothing are unchanged. The approv
 optional subject-region constraint is described below; the default selector remains compatible.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-20 remaining-limit recovery bounded attempt closed (latest)
+## 2026-10-20 Ohtani supplement intake completed (latest)
+
+User delivered and requested only indexed batch20261020T073530Z_6gyr6IC2e0Q.
+Imported5candidate clips,0rejected/0conflicts,exit0;repeat adds0/skips5,exit0.
+Ledger before2batches/13pitches/57events;after3/18/63;repeat3/18/69.
+Audit events grow without duplicate candidate rows.
+
+All5CFR60000/1001,1280x720,H264/yuv420p;decoded335/321/369/338/321
+frames,total1684.Declared counts equal decoded counts;max normalized PTS
+deviation0.000666667ms each,fractional FPS validation strictly<1ms.
+Native container offset retained as evidence,no frame0 shift;anchors not events.
+
+Fivecandidate/pending,0/5human input reviews completed,35pending items.
+No review finding inferred from supplier/user batch description.No analyze-pitch,
+pose,overlay,formal input conversion,promotion or replacement performed.
+14handoff files SHA/size/mtime unchanged;33prior review/input files SHA unchanged.
+New sourceID6gyr6IC2e0Q distinct from oldRObvkuHpkSo,newMP4SHA not among prior candidates.
+Operator exclusions preserved:6complete higher-overlap plus3incomplete/nonpitch;
+no excluded video imported.Season2026 fromJSON;game date/opponent from user kept
+as separate context,not injected into unknown delivery fields.
+
+Output:`analysis_results/phase2_ohtani_supplement_intake_20261020_01/`;
+[intake receipt](phase2_ohtani_supplement_intake_20261020.md),
+[versioned IDs](dataset_selections/ohtani_supplement_20261020.json).
+Next:human source-video input review.No automatic analysis before confirmation.
+No product/test code changes,full suite not rerun;Phase2automatic reliability
+remainsNOT PASSED.No supplier code read,no Phase3.
+
+## 2026-10-20 remaining-limit recovery bounded attempt closed (previous)
 
 User requested continued repair. Checked003/004 data paths:249/239missing
 elbow-angle frames,242/228 involve right-wrist low visibility(97.19/95.40%).
@@ -42,8 +70,8 @@ No product/test code changed,full suite not rerun;latest same-code record
 
 User explicitly selected “先補較清楚的大谷素材（建議）”. Next input target is
 at least3different complete Ohtani pitches under contract v2 and the clarified
-replacement input requirements. Latest read-only index check still contains only
-existing batch20261010T110737Z_RObvkuHpkSo(5pitches),no new Ohtani batch.
+replacement input requirements. That index check contained only the old five
+clips;the newly delivered batch and completed intake are recorded in the latest section.
 When a new indexed batch is available:import as candidates,complete local human
 input review,then run each accepted input once.Keep001/002 and historical results;
 no automatic replacement or Phase2 pass.Optional live backend planning/adoption
