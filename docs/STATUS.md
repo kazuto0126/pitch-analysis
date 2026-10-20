@@ -1,10 +1,24 @@
 # 進度摘要
 
-更新：2026-10-19（台灣）。[完整狀態](current_status.md)；[最新大谷第5球輸入裁切結果](phase2_ohtani_p05_crop_20261019.md)。
+更新：2026-10-20（台灣）。[完整狀態](current_status.md)；[最新大谷五球裁切試用結果](phase2_ohtani_crop_cohort_20261019.md)。
 
 **Phase 1 = PASSED；Native interface integration = PASSED；Phase 2 自動可靠性仍 NOT PASSED。**
 
-## 最新：大谷第5球有實際主體改善
+## 最新：大谷五球固定範圍試用完成，兩球通過 pose gate
+
+001–004各推論一次、005沿用前次，產品程式／模型／門檻與GT不變。
+相較全畫面＋軀幹限制，五球選中1448→1842/1873，missing425→31；
+最長gap依序1／1／1／3／13，肘角raw coverage59.12／62.58／41.00／41.71／59.49%。
+001、002品質success但仍needs_event_review；003／004肘角不足，004另有3格gap，005保留13格收尾缺口。
+001自動input quality仍因followthrough_unverified而degraded，002為accepted，未自動升格素材。
+
+實際檢查57格前後overlay（114張），原錯人／missing例子有改善；局部關節準確度仍有限，未新增人工GT。
+新四片overlay全解碼，504保護檔案SHA不變；五球觀看入口在
+`analysis_results/phase2_ohtani_crop_cohort_20261019_01/before_after.html`。
+本輪只改設定／結果文件，**未重跑完整suite**；同版程式最近紀錄仍1016 passed／0 failed／2 skipped。
+已完成本輪固定試用；Phase2自動可靠性仍NOT PASSED，未進Phase3，不追加裁切大小搜尋。
+
+## 前段：大谷第5球有實際主體改善
 
 使用者同意單球完整動作範圍輸入。新增可選 `input_crop`，保存 crop-native 候選及轉回原圖的座標；
 未指定時維持舊流程。模型、selector、gate／門檻與人工GT保持。

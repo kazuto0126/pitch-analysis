@@ -6,7 +6,11 @@
 本次收尾摘要見 [STATUS](docs/STATUS.md)；外部專案供片需求見
 [INPUT_REQUIREMENTS](docs/INPUT_REQUIREMENTS.md)。
 
-2026-10-19 最新：[大谷第5球輸入裁切有實際改善](docs/phase2_ohtani_p05_crop_20261019.md)：
+2026-10-20 最新：[大谷五球固定裁切試用已完成](docs/phase2_ohtani_crop_cohort_20261019.md)：
+001–004各跑一次、005沿用，五球選中1448→1842/1873，missing425→31；001／002通過原pose gate。
+003／004肘角coverage、005收尾缺口仍保留，Phase2自動可靠性未通過；本輪未改產品碼或重跑suite。
+
+前段：[大谷第5球輸入裁切有實際改善](docs/phase2_ohtani_p05_crop_20261019.md)：
 選中215→338/353格，missing138→15；原錯人畫面回到投手，但13格收尾缺口仍使原gate未通過。
 可選`input_crop`保存native及原圖座標，預設流程不變；完整suite1016 passed／0 failed／2 skipped。
 

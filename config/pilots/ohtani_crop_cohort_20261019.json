@@ -1,0 +1,187 @@
+{
+  "schema_version": "fixed-cohort-input-crop-pilot-v1",
+  "pitcher_id": "shohei_ohtani",
+  "model_sha256": "5134a3aad27a58b93da0088d431f366da362b44e3ccfbe3462b3827a839011b1",
+  "scope": "User accepted extending the completed single-clip full-motion input crop to remaining four Ohtani clips. One inference run per clip; no new GT, model, gates or thresholds.",
+  "crop_selection": {
+    "fixed_before_inference": true,
+    "source": "Same full-motion pixel bounds as successful p05 pilot; original video context inspected for all four before running. Agent operational setting, not human joint annotation.",
+    "input_resize": false,
+    "bounds_shared_by_four_clips": true,
+    "crop_search": false
+  },
+  "subject_roi_confirmation": "config/pilots/ohtani_subject_region_20261019.json",
+  "clips": [
+    {
+      "pitch_id": "pitch_001",
+      "video": "input/shohei_ohtani/phase2_pilot_20261019_01/pitch_001.mp4",
+      "metadata": "input/shohei_ohtani/phase2_pilot_20261019_01/pitch_001.json",
+      "video_sha256": "904a0b1537c203b51b2c4013f641e9dacfea9c15daade7b8cc2ab13aa53005e7",
+      "input_crop": [
+        0.05,
+        0.3,
+        0.5,
+        1.0
+      ],
+      "expected_pixel_bounds_xyxy_exclusive": [
+        64,
+        216,
+        640,
+        720
+      ],
+      "subject_roi": [
+        0.1,
+        0.33,
+        0.43,
+        0.92
+      ],
+      "comparison_frames": [
+        0,
+        33,
+        66,
+        98,
+        131,
+        143,
+        164,
+        165,
+        197,
+        230,
+        263,
+        295,
+        328,
+        361
+      ],
+      "previous_analysis": "analysis_results/phase2_ohtani_subject_lock_20261019_01/run/predictions/shohei_ohtani/pitch_001"
+    },
+    {
+      "pitch_id": "pitch_002",
+      "video": "input/shohei_ohtani/phase2_pilot_20261019_01/pitch_002.mp4",
+      "metadata": "input/shohei_ohtani/phase2_pilot_20261019_01/pitch_002.json",
+      "video_sha256": "e4e32b4e7c409b500b4bae1c8301f8c0c2041d3b17aa2b09f31959070b0aa82f",
+      "input_crop": [
+        0.05,
+        0.3,
+        0.5,
+        1.0
+      ],
+      "expected_pixel_bounds_xyxy_exclusive": [
+        64,
+        216,
+        640,
+        720
+      ],
+      "subject_roi": [
+        0.1,
+        0.33,
+        0.43,
+        0.92
+      ],
+      "comparison_frames": [
+        0,
+        30,
+        33,
+        59,
+        64,
+        89,
+        118,
+        148,
+        177,
+        207,
+        236,
+        238,
+        266,
+        295,
+        325
+      ],
+      "previous_analysis": "analysis_results/phase2_ohtani_subject_lock_20261019_01/run/predictions/shohei_ohtani/pitch_002"
+    },
+    {
+      "pitch_id": "pitch_003",
+      "video": "input/shohei_ohtani/phase2_pilot_20261019_01/pitch_003.mp4",
+      "metadata": "input/shohei_ohtani/phase2_pilot_20261019_01/pitch_003.json",
+      "video_sha256": "b67ce1895a0648f2e3d682c915cab12b24373d1cd71aecb974114649a85d49ec",
+      "input_crop": [
+        0.05,
+        0.3,
+        0.5,
+        1.0
+      ],
+      "expected_pixel_bounds_xyxy_exclusive": [
+        64,
+        216,
+        640,
+        720
+      ],
+      "subject_roi": [
+        0.1,
+        0.33,
+        0.43,
+        0.92
+      ],
+      "comparison_frames": [
+        0,
+        38,
+        77,
+        111,
+        115,
+        153,
+        166,
+        191,
+        230,
+        268,
+        306,
+        344,
+        383,
+        421
+      ],
+      "previous_analysis": "analysis_results/phase2_ohtani_subject_lock_20261019_01/run/predictions/shohei_ohtani/pitch_003"
+    },
+    {
+      "pitch_id": "pitch_004",
+      "video": "input/shohei_ohtani/phase2_pilot_20261019_01/pitch_004.mp4",
+      "metadata": "input/shohei_ohtani/phase2_pilot_20261019_01/pitch_004.json",
+      "video_sha256": "d4815a24c6b8c19b2d44d2fb3cd1cdf6969b5be260f596ee21f0a70514379de3",
+      "input_crop": [
+        0.05,
+        0.3,
+        0.5,
+        1.0
+      ],
+      "expected_pixel_bounds_xyxy_exclusive": [
+        64,
+        216,
+        640,
+        720
+      ],
+      "subject_roi": [
+        0.1,
+        0.33,
+        0.43,
+        0.92
+      ],
+      "comparison_frames": [
+        0,
+        37,
+        74,
+        93,
+        109,
+        112,
+        149,
+        186,
+        223,
+        260,
+        297,
+        335,
+        372,
+        409
+      ],
+      "previous_analysis": "analysis_results/phase2_ohtani_subject_lock_20261019_01/run/predictions/shohei_ohtani/pitch_004"
+    }
+  ],
+  "reused_pitch_005": {
+    "analysis_dir": "analysis_results/phase2_ohtani_p05_crop_20261019_01/predictions/shohei_ohtani/pitch_005",
+    "video_sha256": "950f8d3d2b5adef1c9fbc729df9d222632419eecc85a2f21ddf8052a0f310e81",
+    "new_inference": false
+  },
+  "stopping_rule": "Report all results and overlay checks, preserve degraded status where existing gate fails; do not search crop sizes or declare Phase2 passed from coverage."
+}

@@ -50,3 +50,9 @@
 其後使用者另行核准[最小主體鎖定修正](phase2_pitcher_lock_repair_scope_20261019.md)，
 開放可選selector範圍與capture接點，並確認五球橘框。該輪已另存[修正結果](phase2_pitcher_lock_results_20261019.md)：
 部分錯人改善，五球仍degraded，999 passed／0 failed／2 skipped。這是後續明確核准的有限例外，原試用輸出與本頁歷史進度不覆寫。
+
+2026-10-20：使用者再核准的[完整動作crop單球](phase2_ohtani_p05_crop_20261019.md)及
+[其餘四球續行](phase2_ohtani_crop_cohort_20261019.md)已交付。固定範圍、各一次、005沿用；
+001／002通過pose gate，003／004肘角coverage不足、005收尾gap限制仍在。
+本輪不改產品碼或門檻，也不重跑完整suite；同版產品碼最近紀錄1016 passed／0 failed／2 skipped。
+本批固定試用已完成，停止追加裁切倍率搜尋；後續需針對明確使用需求處理剩餘限制，未進Phase3。

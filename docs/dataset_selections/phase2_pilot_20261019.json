@@ -169,6 +169,50 @@
         "failed": 0,
         "skipped": 2
       }
+    },
+    "input_crop_continuation": {
+      "status": "fixed_four_clip_trial_complete",
+      "operator_config": "config/pilots/ohtani_crop_cohort_20261019.json",
+      "output": "analysis_results/phase2_ohtani_crop_cohort_20261019_01",
+      "new_inference_clips": [
+        "pitch_001",
+        "pitch_002",
+        "pitch_003",
+        "pitch_004"
+      ],
+      "reused_pitch_005": "analysis_results/phase2_ohtani_p05_crop_20261019_01",
+      "previous_selected": 1448,
+      "crop_selected": 1842,
+      "total_frames": 1873,
+      "previous_missing": 425,
+      "crop_missing": 31,
+      "pose_gate_passed": [
+        "pitch_001",
+        "pitch_002"
+      ],
+      "quality_degraded": [
+        "pitch_003",
+        "pitch_004",
+        "pitch_005"
+      ],
+      "formal_promotion": false,
+      "new_ground_truth": 0,
+      "product_code_changed": false,
+      "existing_quality_thresholds_changed": false,
+      "full_suite_rerun_this_round": false,
+      "same_code_test_reference": {
+        "rerun_this_round": false,
+        "reason": "No product or test code changed; only config/results/docs.",
+        "product_commit": "e236878abe38826662b6152ac3e45fad59a60568",
+        "full_suite_log": "analysis_results/phase2_ohtani_p05_crop_20261019_01/full_suite.log",
+        "run": 1018,
+        "passed": 1016,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 2,
+        "seconds": 82.72
+      },
+      "phase2_automatic_reliability": "NOT_PASSED"
     }
   },
   "use_note": "Selection record only, not a new quality gate or evaluation result. Existing baseline runners/tests retain their historical five-clip inputs; future pilot must explicitly use the active directory or selected intake batch."

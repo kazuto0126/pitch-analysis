@@ -12,7 +12,39 @@ gates, MediaPipe settings, interpolation and smoothing are unchanged. The approv
 optional subject-region constraint is described below; the default selector remains compatible.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-19 single Ohtani pitch_005 input crop delivered (latest)
+## 2026-10-20 four-clip crop continuation delivered (latest)
+
+User accepted applying the completed crop approach to remaining Ohtani clips.
+Ran001-004 once each on2026-10-19;005 is read-only reuse,not new inference.
+Same source-inspected [64,216,640,720) crop and previous operator torso ROI;
+no product/test code,model,gate,threshold,raw history or GT changes.
+
+Selected332/170/397/334 ->361/322/419/402 of362/326/422/410;
+with reused005=338/353,cohort1842/1873,missing425->31.
+Longest gaps1/1/1/3/13;elbow-angle raw coverage59.12/62.58/41.00/41.71/59.49%.
+001/002 pass original pose gate,quality success,but analysis needs_event_review.
+003/004 elbow coverage fails;004 also gap>2;005 retains196-208 missing.
+001 automatic input quality still degraded(followthrough_unverified),002 accepted;
+historical HSU source input review is preserved separately.No formal promotion.
+
+Root inspected57fixed same-frame before/after pairs(114images).Main skeleton on
+pitcher in samples,missing and known mixed-arm examples improved.Local shoulder/
+elbow/wrist positions remain uncertified;this is not exhaustive human GT.
+New four tracking reports partially_reliable;no warning is not confirmed identity.
+
+504protected files unchanged;1520traceframes/1634candidates/53922points,
+49632selected raw points preserved;6016torso checks,XYZ inverse error0.
+New overlays362/326/422/410decode;8H264copies preserve original overlay fps;
+005view copies reused.Product/test code unchanged:full suite not rerun this round.
+Latest same-code full result remains1016passed/0failed/2skipped(1018run,82.720s)
+frome236878,including formal five E2E;do not label that historical run a new run.
+
+Output:`analysis_results/phase2_ohtani_crop_cohort_20261019_01/`;
+[full result](phase2_ohtani_crop_cohort_20261019.md).
+Fixed continuation is complete.Stop crop-size searches and preserve unresolved
+coverage/gaps.AutomaticPhase2 remainsNOT PASSED;no Phase3.
+
+## 2026-10-19 single Ohtani pitch_005 input crop delivered (previous)
 
 User accepted the proposed full-motion model-input crop with “好繼續”.
 Added optional input_crop with exact floor/ceil pixel bounds, native crop candidates
