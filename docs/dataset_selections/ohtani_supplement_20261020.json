@@ -159,7 +159,7 @@
       "source_video": "data\\intake\\handoff\\candidates\\h_723d9142aa931f213f49ab34f760752db6630d3659c60bb7edb4af822a99c46f\\source\\20261020T073530Z_6gyr6IC2e0Q_p03.mp4",
       "review_file": "data\\intake\\handoff\\candidates\\h_723d9142aa931f213f49ab34f760752db6630d3659c60bb7edb4af822a99c46f\\review.json",
       "status": "candidate",
-      "review_status": "pending",
+      "review_status": "review_complete",
       "required_reviews": [
         "pitch_delivery_visible",
         "not_replay_or_slow_motion",
@@ -169,7 +169,7 @@
         "preparation_complete",
         "follow_through_complete"
       ],
-      "recorded_human_findings": 0,
+      "recorded_human_findings": 7,
       "video_sha256": "97a45985648af1cf20ed48bda6ce5454fe509609114ac28d8a5deb632621e8ae",
       "same_mp4_sha_as_preexisting_candidate": false,
       "metadata_blockers": [],
@@ -210,7 +210,8 @@
         "biomechanical_events": null
       },
       "pipeline_anchors_are_biomechanical_events": false,
-      "review_status_at_import": "pending"
+      "review_status_at_import": "pending",
+      "versioned_review": "annotations/input_reviews/shohei_ohtani/20261020T073530Z_6gyr6IC2e0Q/p03.json"
     },
     {
       "alias": "supplement_p04",
@@ -348,14 +349,14 @@
   },
   "analysis_executed": false,
   "formal_promotions": 0,
-  "human_findings_recorded": 14,
+  "human_findings_recorded": 21,
   "handoff_changed_files": [],
   "protected_reviews_and_inputs_changed": [],
   "product_code_changed": false,
   "full_suite_rerun": false,
   "phase2_automatic_reliability": "NOT_PASSED",
   "human_findings_recorded_at_import": 0,
-  "human_input_review_completed": 2,
+  "human_input_review_completed": 3,
   "human_input_review_total": 5,
   "input_review_progress": [
     {
@@ -373,8 +374,8 @@
     {
       "alias": "supplement_p03",
       "original_pitch_id": "20261020T073530Z_6gyr6IC2e0Q_p03",
-      "status": "pending",
-      "human_findings": 0
+      "status": "review_complete",
+      "human_findings": 7
     },
     {
       "alias": "supplement_p04",
