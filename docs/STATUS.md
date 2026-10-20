@@ -15,7 +15,10 @@
 輸出：`analysis_results/phase2_ohtani_recovery_20261020_01/`；
 [處理結果與停止決定](phase2_ohtani_remaining_limits_20261020.md)、[同投手替代素材需求](phase2_ohtani_replacement_input_needs_20261020.md)。
 本輪無產品／測試碼變更，未重跑suite；同版最近結果1016 passed／0 failed／2 skipped。
-已詢問使用者下一步方向：較清楚的同投手素材，或先規劃可選live後端；未擅自改正式模型或進Phase3。
+使用者已明確選定「先補較清楚的大谷素材」。本次目標新增至少3顆不同完整投球，依
+[明確供片需求](phase2_ohtani_replacement_input_needs_20261020.md)及contract v2交付。
+最新索引仍只有已分析的5球批次，尚無新大谷批次；待新批次公布後，再候選匯入、人工輸入覆核、各跑一次。
+001／002與全部歷史結果保留；可選live後端不在本次路線，未開始新模型或Phase3。
 
 ## 前段：大谷五球固定範圍試用完成，兩球通過 pose gate
 

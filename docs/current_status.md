@@ -1,6 +1,6 @@
-# Current status — Optional pitcher-region repair delivered; automatic Phase 2 remains NOT PASSED
+# Current status — Clearer Ohtani inputs selected as next step; automatic Phase 2 remains NOT PASSED
 
-Updated: 2026-10-19
+Updated: 2026-10-20
 
 **Phase 1 = PASSED.**
 **Native interface integration = PASSED (cached output compatibility only).**
@@ -38,8 +38,16 @@ Output:`analysis_results/phase2_ohtani_recovery_20261020_01/`;
 [result and boundaries](phase2_ohtani_remaining_limits_20261020.md),
 [replacement input needs](phase2_ohtani_replacement_input_needs_20261020.md).
 No product/test code changed,full suite not rerun;latest same-code record
-1016passed/0failed/2skipped(1018run,e236878).Asked user to choose clearer
-same-pitcher inputs or planning an optional live backend,no dependent work started.
+1016passed/0failed/2skipped(1018run,e236878).
+
+User explicitly selected “先補較清楚的大谷素材（建議）”. Next input target is
+at least3different complete Ohtani pitches under contract v2 and the clarified
+replacement input requirements. Latest read-only index check still contains only
+existing batch20261010T110737Z_RObvkuHpkSo(5pitches),no new Ohtani batch.
+When a new indexed batch is available:import as candidates,complete local human
+input review,then run each accepted input once.Keep001/002 and historical results;
+no automatic replacement or Phase2 pass.Optional live backend planning/adoption
+is not the selected route.No supplier code read or acquisition work started here.
 
 ## 2026-10-20 four-clip crop continuation delivered (previous)
 
