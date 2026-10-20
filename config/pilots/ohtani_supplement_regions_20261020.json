@@ -1,0 +1,362 @@
+{
+  "schema_version": "fixed-cohort-input-crop-pilot-v1",
+  "status": "operator_confirmed",
+  "created_at_utc": "2026-10-20T08:31:56.551844+00:00",
+  "pitcher_id": "shohei_ohtani",
+  "batch_id": "20261020T073530Z_6gyr6IC2e0Q",
+  "model": "models/pose_landmarker_full.task",
+  "model_sha256": "5134a3aad27a58b93da0088d431f366da362b44e3ccfbe3462b3827a839011b1",
+  "operator_confirmation": {
+    "reviewer": "HSU",
+    "reviewed_at_utc": "2026-10-20T08:33:11Z",
+    "user_reply": "五球範圍都可使用，繼續分析",
+    "note": "HSU explicitly confirmed both displayed new-source orange torso ROI and cyan full-motion model-input crop for supplement_p01 through supplement_p05, then authorized one analysis per clip. Operation setting only, not new frame-level GT."
+  },
+  "region_semantics": "all_four_torso_landmarks_inside_original_image_roi",
+  "selection_basis": "New source images, every 20 frames plus final frame (90 source samples); image-only operation settings, no prediction or GT search. Full-motion margin retained.",
+  "input_crop_semantics": "Unresized model-input crop only; original MP4 unchanged. Native and original-image predictions retained separately.",
+  "proposal_images": [
+    "analysis_results/phase2_ohtani_supplement_setup_20261020_01/proposed_regions_p01_p03.jpg",
+    "analysis_results/phase2_ohtani_supplement_setup_20261020_01/proposed_regions_p04_p05.jpg"
+  ],
+  "scope": "Five candidate trial inputs, one analysis each after operator region confirmation. Existing model, selector gates, thresholds, smoothing and interpolation unchanged.",
+  "stopping_rule": "Report all five outcomes and overlay checks. No crop-size search, new frame GT, source promotion, formal replacement, automatic Phase2 pass or Phase3.",
+  "analysis_output": "analysis_results/phase2_ohtani_supplement_20261020_01",
+  "clips": [
+    {
+      "alias": "supplement_p01",
+      "pitch_id": "supplement_001",
+      "video": "input/shohei_ohtani/phase2_supplement_20261020_01/supplement_001.mp4",
+      "metadata": "input/shohei_ohtani/phase2_supplement_20261020_01/supplement_001.json",
+      "video_sha256": "90a6acec9865c634bd019503d46c147647fa78df9a2827e1143c74abb852111a",
+      "metadata_sha256": "12c1476d692d22412f992ba96d805881c4140daccd3d0f02d6e8a068e75a9644",
+      "frame_count": 335,
+      "original_batch_id": "20261020T073530Z_6gyr6IC2e0Q",
+      "original_pitch_id": "20261020T073530Z_6gyr6IC2e0Q_p01",
+      "internal_pitch_id": "h_1fa0bef0d4de1001a90902f313f40cffef4eefd30879ce99c2299d8d6b48c0c8",
+      "candidate_dir": "data/intake/handoff/candidates/h_1fa0bef0d4de1001a90902f313f40cffef4eefd30879ce99c2299d8d6b48c0c8",
+      "candidate_status": "candidate",
+      "source_video": "data/intake/handoff/candidates/h_1fa0bef0d4de1001a90902f313f40cffef4eefd30879ce99c2299d8d6b48c0c8/source/20261020T073530Z_6gyr6IC2e0Q_p01.mp4",
+      "source_json": "data/intake/handoff/candidates/h_1fa0bef0d4de1001a90902f313f40cffef4eefd30879ce99c2299d8d6b48c0c8/source/20261020T073530Z_6gyr6IC2e0Q_p01.json",
+      "source_json_sha256": "3abd29a4ee21a5a93d4b45c4454a15eab2a8cfd7082303b7ab4d0826e2ba8830",
+      "input_review": "annotations/input_reviews/shohei_ohtani/20261020T073530Z_6gyr6IC2e0Q/p01.json",
+      "input_review_sha256": "7573c812ca79049644bc5f050bcb388003e63cd1bd3c9db25d34bb972b6097b0",
+      "metadata_payload": {
+        "schema_version": "pitch-input-v1",
+        "pitch_id": "supplement_001",
+        "pitcher": {
+          "id": "shohei_ohtani",
+          "display_name": "Shohei Ohtani",
+          "throws": "RIGHT"
+        },
+        "video": {
+          "file": "supplement_001.mp4",
+          "camera_view": "rear_centerfield_broadcast",
+          "horizontal_mirror": false,
+          "playback_speed": 1.0,
+          "contains_single_pitch": true,
+          "continuous_shot": true,
+          "subject_framing": "full_body"
+        },
+        "context": {
+          "season": 2026,
+          "team": null,
+          "pitch_type": null,
+          "session_id": null
+        }
+      },
+      "subject_roi": [
+        0.22,
+        0.4,
+        0.46,
+        0.88
+      ],
+      "input_crop": [
+        0.15,
+        0.3,
+        0.6,
+        1.0
+      ],
+      "expected_pixel_bounds_xyxy_exclusive": [
+        192,
+        216,
+        768,
+        720
+      ],
+      "context_not_mapped_into_pitch_input": {
+        "season_confidence": "high",
+        "opponent": null,
+        "game_id": null
+      },
+      "pipeline_anchors_are_biomechanical_events": false
+    },
+    {
+      "alias": "supplement_p02",
+      "pitch_id": "supplement_002",
+      "video": "input/shohei_ohtani/phase2_supplement_20261020_01/supplement_002.mp4",
+      "metadata": "input/shohei_ohtani/phase2_supplement_20261020_01/supplement_002.json",
+      "video_sha256": "b1586bdde9383e3b247bcc7d7974a3f15b0fed173848926d5217f261b87bab8e",
+      "metadata_sha256": "73e0729328d904608b8c9d2f4359b23108017363804c1a04dcebdfcbebb523f1",
+      "frame_count": 321,
+      "original_batch_id": "20261020T073530Z_6gyr6IC2e0Q",
+      "original_pitch_id": "20261020T073530Z_6gyr6IC2e0Q_p02",
+      "internal_pitch_id": "h_52926a604529200a6d901ad4a0cf7e78daabfbc7585fd74a06e7ed3fd48001ce",
+      "candidate_dir": "data/intake/handoff/candidates/h_52926a604529200a6d901ad4a0cf7e78daabfbc7585fd74a06e7ed3fd48001ce",
+      "candidate_status": "candidate",
+      "source_video": "data/intake/handoff/candidates/h_52926a604529200a6d901ad4a0cf7e78daabfbc7585fd74a06e7ed3fd48001ce/source/20261020T073530Z_6gyr6IC2e0Q_p02.mp4",
+      "source_json": "data/intake/handoff/candidates/h_52926a604529200a6d901ad4a0cf7e78daabfbc7585fd74a06e7ed3fd48001ce/source/20261020T073530Z_6gyr6IC2e0Q_p02.json",
+      "source_json_sha256": "a0a975fcdc1500fc49150f5d2dcb6f6bb035e2064df1714dd2d31334d62de4f4",
+      "input_review": "annotations/input_reviews/shohei_ohtani/20261020T073530Z_6gyr6IC2e0Q/p02.json",
+      "input_review_sha256": "e9227d0c70ce4e6ffc8a6b46790c73201e65a3ebf35c156c60606e26f6702131",
+      "metadata_payload": {
+        "schema_version": "pitch-input-v1",
+        "pitch_id": "supplement_002",
+        "pitcher": {
+          "id": "shohei_ohtani",
+          "display_name": "Shohei Ohtani",
+          "throws": "RIGHT"
+        },
+        "video": {
+          "file": "supplement_002.mp4",
+          "camera_view": "rear_centerfield_broadcast",
+          "horizontal_mirror": false,
+          "playback_speed": 1.0,
+          "contains_single_pitch": true,
+          "continuous_shot": true,
+          "subject_framing": "full_body"
+        },
+        "context": {
+          "season": 2026,
+          "team": null,
+          "pitch_type": null,
+          "session_id": null
+        }
+      },
+      "subject_roi": [
+        0.22,
+        0.4,
+        0.46,
+        0.88
+      ],
+      "input_crop": [
+        0.15,
+        0.3,
+        0.6,
+        1.0
+      ],
+      "expected_pixel_bounds_xyxy_exclusive": [
+        192,
+        216,
+        768,
+        720
+      ],
+      "context_not_mapped_into_pitch_input": {
+        "season_confidence": "high",
+        "opponent": null,
+        "game_id": null
+      },
+      "pipeline_anchors_are_biomechanical_events": false
+    },
+    {
+      "alias": "supplement_p03",
+      "pitch_id": "supplement_003",
+      "video": "input/shohei_ohtani/phase2_supplement_20261020_01/supplement_003.mp4",
+      "metadata": "input/shohei_ohtani/phase2_supplement_20261020_01/supplement_003.json",
+      "video_sha256": "97a45985648af1cf20ed48bda6ce5454fe509609114ac28d8a5deb632621e8ae",
+      "metadata_sha256": "7dffd913114a3b9526664807d3fbd4c76e9512bc94ed2973e17e1f87ff78fa51",
+      "frame_count": 369,
+      "original_batch_id": "20261020T073530Z_6gyr6IC2e0Q",
+      "original_pitch_id": "20261020T073530Z_6gyr6IC2e0Q_p03",
+      "internal_pitch_id": "h_723d9142aa931f213f49ab34f760752db6630d3659c60bb7edb4af822a99c46f",
+      "candidate_dir": "data/intake/handoff/candidates/h_723d9142aa931f213f49ab34f760752db6630d3659c60bb7edb4af822a99c46f",
+      "candidate_status": "candidate",
+      "source_video": "data/intake/handoff/candidates/h_723d9142aa931f213f49ab34f760752db6630d3659c60bb7edb4af822a99c46f/source/20261020T073530Z_6gyr6IC2e0Q_p03.mp4",
+      "source_json": "data/intake/handoff/candidates/h_723d9142aa931f213f49ab34f760752db6630d3659c60bb7edb4af822a99c46f/source/20261020T073530Z_6gyr6IC2e0Q_p03.json",
+      "source_json_sha256": "2ff0c9fe593206c339857f9924741c771a1cd37e0ab217031508880d735d57ba",
+      "input_review": "annotations/input_reviews/shohei_ohtani/20261020T073530Z_6gyr6IC2e0Q/p03.json",
+      "input_review_sha256": "8055158a048fb83d7df49c04ee106eb3a9835b893a038cf0363abd83f767c9e4",
+      "metadata_payload": {
+        "schema_version": "pitch-input-v1",
+        "pitch_id": "supplement_003",
+        "pitcher": {
+          "id": "shohei_ohtani",
+          "display_name": "Shohei Ohtani",
+          "throws": "RIGHT"
+        },
+        "video": {
+          "file": "supplement_003.mp4",
+          "camera_view": "rear_centerfield_broadcast",
+          "horizontal_mirror": false,
+          "playback_speed": 1.0,
+          "contains_single_pitch": true,
+          "continuous_shot": true,
+          "subject_framing": "full_body"
+        },
+        "context": {
+          "season": 2026,
+          "team": null,
+          "pitch_type": null,
+          "session_id": null
+        }
+      },
+      "subject_roi": [
+        0.22,
+        0.4,
+        0.46,
+        0.88
+      ],
+      "input_crop": [
+        0.15,
+        0.3,
+        0.6,
+        1.0
+      ],
+      "expected_pixel_bounds_xyxy_exclusive": [
+        192,
+        216,
+        768,
+        720
+      ],
+      "context_not_mapped_into_pitch_input": {
+        "season_confidence": "high",
+        "opponent": null,
+        "game_id": null
+      },
+      "pipeline_anchors_are_biomechanical_events": false
+    },
+    {
+      "alias": "supplement_p04",
+      "pitch_id": "supplement_004",
+      "video": "input/shohei_ohtani/phase2_supplement_20261020_01/supplement_004.mp4",
+      "metadata": "input/shohei_ohtani/phase2_supplement_20261020_01/supplement_004.json",
+      "video_sha256": "76945ebff5dc300ee0fc7084a0e21370137ee9d91ad61cdca52ccab0e4ee9054",
+      "metadata_sha256": "c89496dd3fdbea65a198490943ca4e7a4a5eda09bc3cde4778d0d18dc85e1c62",
+      "frame_count": 338,
+      "original_batch_id": "20261020T073530Z_6gyr6IC2e0Q",
+      "original_pitch_id": "20261020T073530Z_6gyr6IC2e0Q_p04",
+      "internal_pitch_id": "h_93d052d94c54f94336eb1f32c42940fabe854ae58e2e01983abead270421c8c3",
+      "candidate_dir": "data/intake/handoff/candidates/h_93d052d94c54f94336eb1f32c42940fabe854ae58e2e01983abead270421c8c3",
+      "candidate_status": "candidate",
+      "source_video": "data/intake/handoff/candidates/h_93d052d94c54f94336eb1f32c42940fabe854ae58e2e01983abead270421c8c3/source/20261020T073530Z_6gyr6IC2e0Q_p04.mp4",
+      "source_json": "data/intake/handoff/candidates/h_93d052d94c54f94336eb1f32c42940fabe854ae58e2e01983abead270421c8c3/source/20261020T073530Z_6gyr6IC2e0Q_p04.json",
+      "source_json_sha256": "27de684fb604161902e55a4438cb42b5d2462738522a77e80d38f214c3be10db",
+      "input_review": "annotations/input_reviews/shohei_ohtani/20261020T073530Z_6gyr6IC2e0Q/p04.json",
+      "input_review_sha256": "52e443e02e21df6697e85be74743a38b72be43b8ac6af6ed2c8ef3e8ca341751",
+      "metadata_payload": {
+        "schema_version": "pitch-input-v1",
+        "pitch_id": "supplement_004",
+        "pitcher": {
+          "id": "shohei_ohtani",
+          "display_name": "Shohei Ohtani",
+          "throws": "RIGHT"
+        },
+        "video": {
+          "file": "supplement_004.mp4",
+          "camera_view": "rear_centerfield_broadcast",
+          "horizontal_mirror": false,
+          "playback_speed": 1.0,
+          "contains_single_pitch": true,
+          "continuous_shot": true,
+          "subject_framing": "full_body"
+        },
+        "context": {
+          "season": 2026,
+          "team": null,
+          "pitch_type": null,
+          "session_id": null
+        }
+      },
+      "subject_roi": [
+        0.22,
+        0.4,
+        0.46,
+        0.88
+      ],
+      "input_crop": [
+        0.15,
+        0.3,
+        0.6,
+        1.0
+      ],
+      "expected_pixel_bounds_xyxy_exclusive": [
+        192,
+        216,
+        768,
+        720
+      ],
+      "context_not_mapped_into_pitch_input": {
+        "season_confidence": "high",
+        "opponent": null,
+        "game_id": null
+      },
+      "pipeline_anchors_are_biomechanical_events": false
+    },
+    {
+      "alias": "supplement_p05",
+      "pitch_id": "supplement_005",
+      "video": "input/shohei_ohtani/phase2_supplement_20261020_01/supplement_005.mp4",
+      "metadata": "input/shohei_ohtani/phase2_supplement_20261020_01/supplement_005.json",
+      "video_sha256": "1c67c058d4376ecf94a138eb08e3251eb601a365a7e8a55e251e1c136ae5d95f",
+      "metadata_sha256": "457f0e75809300509e487c0f33cdb529638e13fecc2f5861c1448d448b7f841d",
+      "frame_count": 321,
+      "original_batch_id": "20261020T073530Z_6gyr6IC2e0Q",
+      "original_pitch_id": "20261020T073530Z_6gyr6IC2e0Q_p05",
+      "internal_pitch_id": "h_17cb95e543165bbe45df516e7e339f32f281d92de5bf5334daed428550637afc",
+      "candidate_dir": "data/intake/handoff/candidates/h_17cb95e543165bbe45df516e7e339f32f281d92de5bf5334daed428550637afc",
+      "candidate_status": "candidate",
+      "source_video": "data/intake/handoff/candidates/h_17cb95e543165bbe45df516e7e339f32f281d92de5bf5334daed428550637afc/source/20261020T073530Z_6gyr6IC2e0Q_p05.mp4",
+      "source_json": "data/intake/handoff/candidates/h_17cb95e543165bbe45df516e7e339f32f281d92de5bf5334daed428550637afc/source/20261020T073530Z_6gyr6IC2e0Q_p05.json",
+      "source_json_sha256": "9def2daa20d291aa560e4a2d9671e2a9f6fc34168e5dc8c7da6cd6e59583f417",
+      "input_review": "annotations/input_reviews/shohei_ohtani/20261020T073530Z_6gyr6IC2e0Q/p05.json",
+      "input_review_sha256": "bdff6e3913ec558a8746e865a21eee43a502908e62eed2d1ec8b9b999c3cc6f4",
+      "metadata_payload": {
+        "schema_version": "pitch-input-v1",
+        "pitch_id": "supplement_005",
+        "pitcher": {
+          "id": "shohei_ohtani",
+          "display_name": "Shohei Ohtani",
+          "throws": "RIGHT"
+        },
+        "video": {
+          "file": "supplement_005.mp4",
+          "camera_view": "rear_centerfield_broadcast",
+          "horizontal_mirror": false,
+          "playback_speed": 1.0,
+          "contains_single_pitch": true,
+          "continuous_shot": true,
+          "subject_framing": "full_body"
+        },
+        "context": {
+          "season": 2026,
+          "team": null,
+          "pitch_type": null,
+          "session_id": null
+        }
+      },
+      "subject_roi": [
+        0.22,
+        0.4,
+        0.46,
+        0.88
+      ],
+      "input_crop": [
+        0.15,
+        0.3,
+        0.6,
+        1.0
+      ],
+      "expected_pixel_bounds_xyxy_exclusive": [
+        192,
+        216,
+        768,
+        720
+      ],
+      "context_not_mapped_into_pitch_input": {
+        "season_confidence": "high",
+        "opponent": null,
+        "game_id": null
+      },
+      "pipeline_anchors_are_biomechanical_events": false
+    }
+  ]
+}

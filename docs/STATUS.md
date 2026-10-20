@@ -1,10 +1,28 @@
 # 進度摘要
 
-更新：2026-10-20（台灣）。[完整狀態](current_status.md)；[最新大谷補片匯入](phase2_ohtani_supplement_intake_20261020.md)。
+更新：2026-10-20（台灣）。[完整狀態](current_status.md)；[最新大谷補片分析](phase2_ohtani_supplement_results_20261020.md)。
 
 **Phase 1 = PASSED；Native interface integration = PASSED；Phase 2 自動可靠性仍 NOT PASSED。**
 
-## 最新：大谷新補片5球匯入與人工輸入覆核完成
+## 最新：大谷新補片5球分析完成，仍有追蹤與前導膝限制
+
+HSU已確認新來源五球軀幹框與完整動作crop，五球各跑一次，0執行異常。
+合計選中1599/1684格（94.95%）；最長gap9／13／5／12／2格，
+肘角raw coverage59.10／59.19／75.34／57.40／63.86%，全部超過原50%條件。
+仍5 degraded、0通過原pose gate：p01／p04因長缺口，p02另有pose<90%與前導膝角不足，
+p03／p05前導膝角raw也<80%；門檻保持。
+
+實查五球90張overlay取樣與6組警示原片對照；p02第159／245格有錯位／混合，
+p05第251格混合捕手附近上身與投手下身，原警示保留，不宣稱追蹤已可靠。
+五球仍candidate，沒有新人工逐格GT、正式提升／替換或Phase3。
+305個保護檔案SHA不變；五支H264 overlay全解碼1684格。
+
+輸出：`analysis_results/phase2_ohtani_supplement_20261020_01/`，先看`review_all.html`。
+[逐球結果](phase2_ohtani_supplement_results_20261020.md)、[版本化數字](dataset_selections/ohtani_supplement_analysis_20261020.json)。
+本輪無產品／測試程式變更，未重跑suite；最近同版紀錄1016 passed／0 failed／2 skipped。
+固定素材試用完成，Phase2自動可靠性仍NOT PASSED；下一步應針對混合骨架與關節漏偵測提出有限修正方案。
+
+## 前段：大谷新補片5球匯入與人工輸入覆核完成
 
 只處理指定批次`20261020T073530Z_6gyr6IC2e0Q`：成功5、拒收0、衝突0；重跑新增0／跳過5。
 五球1280×720、60000/1001 FPS，完整解碼335／321／369／338／321格，共1684格；

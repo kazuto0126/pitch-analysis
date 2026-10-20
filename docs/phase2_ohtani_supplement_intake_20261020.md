@@ -69,8 +69,8 @@ pose、metrics或overlay。原大谷001／002、其他舊球與山本正式素�
   `review_all.html`提供五支本地原片及覆核清單，僅供觀看，不提交判定。
   `intake_summary.json`、`intake_receipt.json`、兩次CLI log、`metadata_audit.json`保留實際證據。
 
-五球的輸入人工覆核已完成，維持候選。下一步設定這批來源的投手範圍，
-再沿用現有模型與門檻各分析一次；本輪沒有執行分析。
+五球的輸入人工覆核已完成，維持候選。本文件記錄的匯入／覆核階段沒有執行分析；
+其後HSU確認新來源操作框，已另完成一次五球分析，見[新補片分析結果](phase2_ohtani_supplement_results_20261020.md)。
 Phase2自動可靠性狀態仍NOT PASSED，未進Phase3。
 
 本輪未修改產品／測試程式，因此未重跑完整suite；實際完成的是SHA、全解碼、分數時間與去重的匯入檢查。

@@ -1,4 +1,4 @@
-# Current status — New Ohtani candidates imported, human input review complete
+# Current status — New Ohtani supplement analyzed once, reliability still degraded
 
 Updated: 2026-10-20
 
@@ -12,7 +12,48 @@ gates, MediaPipe settings, interpolation and smoothing are unchanged. The approv
 optional subject-region constraint is described below; the default selector remains compatible.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-20 Ohtani supplement intake completed (latest)
+## 2026-10-20 Ohtani supplement analysis completed (latest)
+
+HSU explicitly confirmed both new-source orange torso regions and cyan model-input
+crop for all five clips, then authorized analysis. Five new trial inputs
+supplement_001..005 were prepared independently; MP4 SHA preserved and pitch-input-v1
+validated. Season2026 retained; unknown fields remain null, batch is not session,
+and supplier motion anchors are not biomechanical events.
+
+Fixed original-image ROI[.22,.40,.46,.88], crop[.15,.30,.60,1.0],
+pixel slice[192,216,768,720),576x504 without resize. New source samples inspected
+before inference; original video and all native/mapped candidates retained.
+Each clip analyzed once,0execution failures;no product/core/model/gate changes.
+
+Selected324/335,275/321,362/369,323/338,315/321;total1599/1684(94.95%).
+Longest gaps9/13/5/12/2;elbow-angle raw coverage59.10/59.19/75.34/57.40/63.86%.
+All exceed existing50% elbow-angle coverage, but all five quality gates still fail:
+p01/p04 gaps>2;p02 pose<90%,gap>2,lead-knee-angle<80%;p03 gap>2 and knee<80%;
+p05 knee<80%.Statuses remain5degraded/5quality_gate_failed;no threshold relaxed.
+
+Viewed90 evenly spaced overlay samples plus6 targeted source/overlay pairs
+(4additional unique frames).p02f159/245 wrong-person/hybrid upper-body placement;
+p05f251 mixed catcher-area upper body with pitcher-area lower body,f252 returns.
+All tracking partially_reliable;existing identity-switch warnings onp02/p05 retained,
+confirmed staysnull.No new human per-frame GT or identity confirmation added.
+Yamamoto-source major hints staynot_evaluated on all five new inputs.
+
+305protected SHA unchanged;1684trace rows,2719native candidates,52767selected raw
+points consistent with saved capture counts/transform.Five H264 playback copies
+decode all1684frames at original1280x720 and60000/1001FPS.Candidates remain candidate,
+no formal promotion/replacement.No Phase3.
+
+Output:`analysis_results/phase2_ohtani_supplement_20261020_01/`,start`review_all.html`;
+[report](phase2_ohtani_supplement_results_20261020.md),
+[versioned results](dataset_selections/ohtani_supplement_analysis_20261020.json),
+[confirmed config](../config/pilots/ohtani_supplement_regions_20261020.json).
+No product/test changes,full suite not rerun;latest same-code record remains
+1018run/1016passed/0failed/2skipped(e236878).Phase2automatic reliability remains
+NOT PASSED.This fixed-input trial is closed;do not search crop sizes or repeat
+inference to find a pass.Next repair should address hybrid skeletons and missed
+joints under the existing scope/proposal requirements;no new model started here.
+
+## 2026-10-20 Ohtani supplement intake completed (previous)
 
 User delivered and requested only indexed batch20261020T073530Z_6gyr6IC2e0Q.
 Imported5candidate clips,0rejected/0conflicts,exit0;repeat adds0/skips5,exit0.

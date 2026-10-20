@@ -1,0 +1,1050 @@
+{
+  "schema_version": "ohtani-supplement-evaluation-v1",
+  "created_at_utc": "2026-10-20T08:36:25.025157+00:00",
+  "scope": "Five new candidate clips, once each, unchanged existing MediaPipe pipeline and quality thresholds",
+  "pitcher_id": "shohei_ohtani",
+  "batch_id": "20261020T073530Z_6gyr6IC2e0Q",
+  "pitch_count": 5,
+  "config": "config\\pilots\\ohtani_supplement_regions_20261020.json",
+  "config_sha256": "687d64f0e5790633057c0b10724d8c420e1e67ab464d0b7f2dc1e069664231df",
+  "input_reviews_complete": 5,
+  "new_ground_truth_annotations": 0,
+  "formal_promotion": false,
+  "formal_replacement": false,
+  "core_or_threshold_changes": false,
+  "phase3_started": false,
+  "phase2_automatic_reliability": "NOT_PASSED",
+  "definitions": {
+    "valid_pose": "Existing selector-selected skeleton; does not establish correct joints or identity",
+    "raw_joint_coverage": "Existing quality-gated observed frames for one joint / full clip frames",
+    "raw_prediction_coverage": "Selected-model joint coordinate present / full clip frames; not accuracy",
+    "throwing_elbow_angle_raw_coverage": "Frames with jointly observed throwing shoulder, elbow and wrist / full clip frames",
+    "interpolated_frames": "Clip frames with at least one already interpolated landmark; may overlap selected frames",
+    "mean_visibility": "Mean of nonmissing raw selected-landmark MediaPipe visibility samples; not calibrated accuracy"
+  },
+  "limitations": [
+    "Human input review is not per-joint correctness ground truth.",
+    "Reliability statuses and continuity warnings remain provisional signal diagnostics.",
+    "No identity-switch warning does not confirm stable identity; confirmed stays null without human pose review.",
+    "Frozen Yamamoto-source major hints are not evaluated on the new Ohtani source.",
+    "Input-quality automation and human input review are retained independently; neither is overwritten.",
+    "Motion-energy anchors and analysis motion proxies are not biomechanical event annotations.",
+    "No new crop search, model replacement, prediction edit, gate change or Phase 2 acceptance decision."
+  ],
+  "output": "analysis_results/phase2_ohtani_supplement_20261020_01",
+  "run": {
+    "state": "completed",
+    "started_at_utc": "2026-10-20T08:33:57.144473+00:00",
+    "completed_at_utc": "2026-10-20T08:36:03.673810+00:00",
+    "model_sha256": "5134a3aad27a58b93da0088d431f366da362b44e3ccfbe3462b3827a839011b1",
+    "operator_confirmation": {
+      "reviewer": "HSU",
+      "reviewed_at_utc": "2026-10-20T08:33:11Z",
+      "user_reply": "五球範圍都可使用，繼續分析",
+      "note": "HSU explicitly confirmed both displayed new-source orange torso ROI and cyan full-motion model-input crop for supplement_p01 through supplement_p05, then authorized one analysis per clip. Operation setting only, not new frame-level GT."
+    },
+    "protected_files_checked": 305,
+    "protected_sha256_changes": []
+  },
+  "aggregate": {
+    "total_frames": 1684,
+    "valid_pose_frames": 1599,
+    "rejected_frames": 85,
+    "interpolated_frames": 313,
+    "mean_visibility": 0.8541487140702547,
+    "visibility_sample_count": 52767,
+    "longest_pose_gap_frames": 13,
+    "longest_gap_aggregation": "largest within-clip gap; clips are not joined",
+    "quality_status_counts": {
+      "degraded": 5
+    },
+    "analysis_status_counts": {
+      "quality_gate_failed": 5
+    },
+    "input_quality_status_counts": {
+      "degraded": 5
+    },
+    "quality_gate_passed_count": 0,
+    "throwing_elbow_angle_observed_frames": 1065,
+    "throwing_elbow_angle_raw_coverage": 0.6324228028503563,
+    "identity_switch_warning_clip_count": 2,
+    "identity_switch_confirmed": null,
+    "major_review_hints_status_counts": {
+      "not_evaluated": 5
+    },
+    "valid_pose_ratio": 0.9495249406175772
+  },
+  "overlay_review": {
+    "regular_frames": 90,
+    "additional_source_overlay_pairs": 6,
+    "additional_unique_overlay_frames": 4,
+    "human_gt_added": false,
+    "report": "analysis_results/phase2_ohtani_supplement_20261020_01/visual_review/inspection.json"
+  },
+  "clips": [
+    {
+      "pitch_id": "supplement_001",
+      "review_alias": "supplement_p01",
+      "original_batch_id": "20261020T073530Z_6gyr6IC2e0Q",
+      "original_pitch_id": "20261020T073530Z_6gyr6IC2e0Q_p01",
+      "internal_pitch_id": "h_1fa0bef0d4de1001a90902f313f40cffef4eefd30879ce99c2299d8d6b48c0c8",
+      "candidate_status": "candidate",
+      "video_sha256": "90a6acec9865c634bd019503d46c147647fa78df9a2827e1143c74abb852111a",
+      "input_review": "annotations/input_reviews/shohei_ohtani/20261020T073530Z_6gyr6IC2e0Q/p01.json",
+      "analysis_dir": "analysis_results\\phase2_ohtani_supplement_20261020_01\\predictions\\shohei_ohtani\\supplement_001",
+      "total_frames": 335,
+      "valid_pose_frames": 324,
+      "valid_pose_ratio": 0.9671641791044776,
+      "rejected_frames": 11,
+      "interpolated_frames": 45,
+      "mean_visibility": 0.8563455530010955,
+      "longest_pose_gap_frames": 9,
+      "quality_status": "degraded",
+      "analysis_status": "quality_gate_failed",
+      "input_quality_status": "degraded",
+      "input_quality_reasons": [
+        "existing_pose_feature_quality_gate_failed"
+      ],
+      "existing_quality_gate": {
+        "passed": false,
+        "feature_coverage": {
+          "throwing_knee_angle": 0.9313432835820895,
+          "lead_knee_angle": 0.9432835820895522,
+          "shoulder_line_angle": 0.9671641791044776,
+          "throwing_elbow_angle": 0.591044776119403,
+          "hip_line_angle": 0.9671641791044776,
+          "lateral_foot_separation": 0.9522388059701492
+        },
+        "usable_feature_coverage": {
+          "throwing_knee_angle": 0.9731343283582089,
+          "lead_knee_angle": 0.9582089552238806,
+          "shoulder_line_angle": 0.9731343283582089,
+          "throwing_elbow_angle": 0.6149253731343284,
+          "hip_line_angle": 0.9731343283582089,
+          "lateral_foot_separation": 0.9731343283582089
+        },
+        "coordinate_imputed_feature_fraction": {
+          "throwing_knee_angle": 0.041791044776119404,
+          "lead_knee_angle": 0.014925373134328358,
+          "shoulder_line_angle": 0.005970149253731343,
+          "throwing_elbow_angle": 0.023880597014925373,
+          "hip_line_angle": 0.005970149253731343,
+          "lateral_foot_separation": 0.020895522388059702
+        },
+        "detection_coverage": 0.9671641791044776,
+        "max_consecutive_missing_source_frames": 9,
+        "failures": [
+          "more than 2 consecutive frames have no source pose"
+        ]
+      },
+      "throwing_elbow_angle": {
+        "unit": "degree",
+        "observability": "direct_2d_projection",
+        "raw_coverage": 0.591044776119403,
+        "observed_frames": 198,
+        "min": 11.076237803974314,
+        "max": 176.81057492665454,
+        "median": 70.77609828464159
+      },
+      "tracking": {
+        "status": "partially_reliable",
+        "reasons": [
+          "selector_track_break"
+        ],
+        "selected_frames": 324,
+        "selected_frame_ratio": 0.9671641791044776,
+        "track_breaks": [
+          {
+            "start_frame": 113,
+            "end_frame": 113,
+            "length_frames": 1
+          },
+          {
+            "start_frame": 134,
+            "end_frame": 142,
+            "length_frames": 9
+          },
+          {
+            "start_frame": 191,
+            "end_frame": 191,
+            "length_frames": 1
+          }
+        ],
+        "longest_track_break_frames": 9,
+        "identity_switch_warning": false,
+        "identity_switch_confirmed": null,
+        "warning_events": []
+      },
+      "major_review_hints": {
+        "status": "not_evaluated",
+        "reason_codes": [
+          "input_identity_not_in_development_evidence"
+        ],
+        "absence_of_warning_means_reliable": false
+      },
+      "overlay_inspection": {
+        "status": "agent_fixed_sample_inspection_completed",
+        "report": "visual_review/inspection.json",
+        "findings": {
+          "observations": [
+            "18 evenly spaced overlay frames inspected; selected skeleton stays near pitcher in sampled selected frames.",
+            "Frame 138 has no skeleton, consistent with saved 134-142 source-pose gap.",
+            "No claim of per-joint accuracy or whole-video stable identity from these samples."
+          ],
+          "examples": [
+            138
+          ]
+        }
+      },
+      "important_joints": {
+        "throwing_shoulder": {
+          "landmark": "RIGHT_SHOULDER",
+          "status": "partially_reliable",
+          "raw_coverage": 0.9671641791044776,
+          "observed_frames": 324,
+          "interpolated_frames": 2,
+          "missing_frames": 9,
+          "longest_missing_span_frames": 9
+        },
+        "throwing_elbow": {
+          "landmark": "RIGHT_ELBOW",
+          "status": "unreliable",
+          "raw_coverage": 0.7313432835820896,
+          "observed_frames": 245,
+          "interpolated_frames": 4,
+          "missing_frames": 86,
+          "longest_missing_span_frames": 67
+        },
+        "throwing_wrist": {
+          "landmark": "RIGHT_WRIST",
+          "status": "unreliable",
+          "raw_coverage": 0.5970149253731343,
+          "observed_frames": 200,
+          "interpolated_frames": 7,
+          "missing_frames": 128,
+          "longest_missing_span_frames": 78
+        },
+        "lead_hip": {
+          "landmark": "LEFT_HIP",
+          "status": "partially_reliable",
+          "raw_coverage": 0.9671641791044776,
+          "observed_frames": 324,
+          "interpolated_frames": 2,
+          "missing_frames": 9,
+          "longest_missing_span_frames": 9
+        },
+        "lead_knee": {
+          "landmark": "LEFT_KNEE",
+          "status": "partially_reliable",
+          "raw_coverage": 0.9432835820895522,
+          "observed_frames": 316,
+          "interpolated_frames": 5,
+          "missing_frames": 14,
+          "longest_missing_span_frames": 9
+        },
+        "lead_ankle": {
+          "landmark": "LEFT_ANKLE",
+          "status": "partially_reliable",
+          "raw_coverage": 0.9611940298507463,
+          "observed_frames": 322,
+          "interpolated_frames": 4,
+          "missing_frames": 9,
+          "longest_missing_span_frames": 9
+        }
+      }
+    },
+    {
+      "pitch_id": "supplement_002",
+      "review_alias": "supplement_p02",
+      "original_batch_id": "20261020T073530Z_6gyr6IC2e0Q",
+      "original_pitch_id": "20261020T073530Z_6gyr6IC2e0Q_p02",
+      "internal_pitch_id": "h_52926a604529200a6d901ad4a0cf7e78daabfbc7585fd74a06e7ed3fd48001ce",
+      "candidate_status": "candidate",
+      "video_sha256": "b1586bdde9383e3b247bcc7d7974a3f15b0fed173848926d5217f261b87bab8e",
+      "input_review": "annotations/input_reviews/shohei_ohtani/20261020T073530Z_6gyr6IC2e0Q/p02.json",
+      "analysis_dir": "analysis_results\\phase2_ohtani_supplement_20261020_01\\predictions\\shohei_ohtani\\supplement_002",
+      "total_frames": 321,
+      "valid_pose_frames": 275,
+      "valid_pose_ratio": 0.8566978193146417,
+      "rejected_frames": 46,
+      "interpolated_frames": 91,
+      "mean_visibility": 0.8272306122038688,
+      "longest_pose_gap_frames": 13,
+      "quality_status": "degraded",
+      "analysis_status": "quality_gate_failed",
+      "input_quality_status": "degraded",
+      "input_quality_reasons": [
+        "pose_invalid_span_requires_review",
+        "preparation_phase_unverified",
+        "existing_pose_feature_quality_gate_failed"
+      ],
+      "existing_quality_gate": {
+        "passed": false,
+        "feature_coverage": {
+          "throwing_knee_angle": 0.8566978193146417,
+          "lead_knee_angle": 0.5825545171339563,
+          "shoulder_line_angle": 0.8566978193146417,
+          "throwing_elbow_angle": 0.5919003115264797,
+          "hip_line_angle": 0.8566978193146417,
+          "lateral_foot_separation": 0.8161993769470405
+        },
+        "usable_feature_coverage": {
+          "throwing_knee_angle": 0.9003115264797508,
+          "lead_knee_angle": 0.6479750778816199,
+          "shoulder_line_angle": 0.9003115264797508,
+          "throwing_elbow_angle": 0.6199376947040498,
+          "hip_line_angle": 0.9003115264797508,
+          "lateral_foot_separation": 0.9003115264797508
+        },
+        "coordinate_imputed_feature_fraction": {
+          "throwing_knee_angle": 0.04361370716510903,
+          "lead_knee_angle": 0.06542056074766354,
+          "shoulder_line_angle": 0.04361370716510903,
+          "throwing_elbow_angle": 0.028037383177570093,
+          "hip_line_angle": 0.04361370716510903,
+          "lateral_foot_separation": 0.08411214953271028
+        },
+        "detection_coverage": 0.8566978193146417,
+        "max_consecutive_missing_source_frames": 13,
+        "failures": [
+          "pose detection below 90% of segment timeline",
+          "more than 2 consecutive frames have no source pose",
+          "lead_knee_angle raw coverage below 80%"
+        ]
+      },
+      "throwing_elbow_angle": {
+        "unit": "degree",
+        "observability": "direct_2d_projection",
+        "raw_coverage": 0.5919003115264797,
+        "observed_frames": 190,
+        "min": 29.46005393822388,
+        "max": 179.77518806514414,
+        "median": 82.42584859569936
+      },
+      "tracking": {
+        "status": "partially_reliable",
+        "reasons": [
+          "selector_track_break",
+          "possible_identity_or_pose_discontinuity_requires_review"
+        ],
+        "selected_frames": 275,
+        "selected_frame_ratio": 0.8566978193146417,
+        "track_breaks": [
+          {
+            "start_frame": 132,
+            "end_frame": 132,
+            "length_frames": 1
+          },
+          {
+            "start_frame": 150,
+            "end_frame": 150,
+            "length_frames": 1
+          },
+          {
+            "start_frame": 152,
+            "end_frame": 158,
+            "length_frames": 7
+          },
+          {
+            "start_frame": 164,
+            "end_frame": 164,
+            "length_frames": 1
+          },
+          {
+            "start_frame": 168,
+            "end_frame": 176,
+            "length_frames": 9
+          },
+          {
+            "start_frame": 181,
+            "end_frame": 181,
+            "length_frames": 1
+          },
+          {
+            "start_frame": 183,
+            "end_frame": 183,
+            "length_frames": 1
+          },
+          {
+            "start_frame": 185,
+            "end_frame": 188,
+            "length_frames": 4
+          },
+          {
+            "start_frame": 195,
+            "end_frame": 207,
+            "length_frames": 13
+          },
+          {
+            "start_frame": 214,
+            "end_frame": 214,
+            "length_frames": 1
+          },
+          {
+            "start_frame": 216,
+            "end_frame": 217,
+            "length_frames": 2
+          },
+          {
+            "start_frame": 219,
+            "end_frame": 219,
+            "length_frames": 1
+          },
+          {
+            "start_frame": 310,
+            "end_frame": 310,
+            "length_frames": 1
+          },
+          {
+            "start_frame": 318,
+            "end_frame": 320,
+            "length_frames": 3
+          }
+        ],
+        "longest_track_break_frames": 13,
+        "identity_switch_warning": true,
+        "identity_switch_confirmed": null,
+        "warning_events": [
+          {
+            "type": "skeleton_scale_jump",
+            "frame_index": 159,
+            "previous_frame_index": 151,
+            "gap_frames": 7,
+            "scale_ratio": 1.734388570959685,
+            "warning_limit_ratio": 1.6
+          }
+        ]
+      },
+      "major_review_hints": {
+        "status": "not_evaluated",
+        "reason_codes": [
+          "input_identity_not_in_development_evidence"
+        ],
+        "absence_of_warning_means_reliable": false
+      },
+      "overlay_inspection": {
+        "status": "agent_fixed_sample_inspection_completed",
+        "report": "visual_review/inspection.json",
+        "findings": {
+          "observations": [
+            "18 evenly spaced frames inspected; multiple follow-through frames have no skeleton.",
+            "Source/overlay pair at 159 shows wrong-person or hybrid upper-body placement toward batter.",
+            "Source/overlay pair at 245 shows upper-body/arm displacement involving nearby batter; high coverage is not accuracy.",
+            "Existing scale warning at 159 retained; identity_switch_confirmed stays null."
+          ],
+          "examples": [
+            159,
+            245
+          ]
+        }
+      },
+      "important_joints": {
+        "throwing_shoulder": {
+          "landmark": "RIGHT_SHOULDER",
+          "status": "partially_reliable",
+          "raw_coverage": 0.8566978193146417,
+          "observed_frames": 275,
+          "interpolated_frames": 14,
+          "missing_frames": 32,
+          "longest_missing_span_frames": 13
+        },
+        "throwing_elbow": {
+          "landmark": "RIGHT_ELBOW",
+          "status": "unreliable",
+          "raw_coverage": 0.719626168224299,
+          "observed_frames": 231,
+          "interpolated_frames": 16,
+          "missing_frames": 74,
+          "longest_missing_span_frames": 49
+        },
+        "throwing_wrist": {
+          "landmark": "RIGHT_WRIST",
+          "status": "partially_reliable",
+          "raw_coverage": 0.6012461059190031,
+          "observed_frames": 193,
+          "interpolated_frames": 11,
+          "missing_frames": 117,
+          "longest_missing_span_frames": 30
+        },
+        "lead_hip": {
+          "landmark": "LEFT_HIP",
+          "status": "partially_reliable",
+          "raw_coverage": 0.8566978193146417,
+          "observed_frames": 275,
+          "interpolated_frames": 14,
+          "missing_frames": 32,
+          "longest_missing_span_frames": 13
+        },
+        "lead_knee": {
+          "landmark": "LEFT_KNEE",
+          "status": "unreliable",
+          "raw_coverage": 0.5856697819314641,
+          "observed_frames": 188,
+          "interpolated_frames": 20,
+          "missing_frames": 113,
+          "longest_missing_span_frames": 81
+        },
+        "lead_ankle": {
+          "landmark": "LEFT_ANKLE",
+          "status": "partially_reliable",
+          "raw_coverage": 0.8161993769470405,
+          "observed_frames": 262,
+          "interpolated_frames": 27,
+          "missing_frames": 32,
+          "longest_missing_span_frames": 13
+        }
+      }
+    },
+    {
+      "pitch_id": "supplement_003",
+      "review_alias": "supplement_p03",
+      "original_batch_id": "20261020T073530Z_6gyr6IC2e0Q",
+      "original_pitch_id": "20261020T073530Z_6gyr6IC2e0Q_p03",
+      "internal_pitch_id": "h_723d9142aa931f213f49ab34f760752db6630d3659c60bb7edb4af822a99c46f",
+      "candidate_status": "candidate",
+      "video_sha256": "97a45985648af1cf20ed48bda6ce5454fe509609114ac28d8a5deb632621e8ae",
+      "input_review": "annotations/input_reviews/shohei_ohtani/20261020T073530Z_6gyr6IC2e0Q/p03.json",
+      "analysis_dir": "analysis_results\\phase2_ohtani_supplement_20261020_01\\predictions\\shohei_ohtani\\supplement_003",
+      "total_frames": 369,
+      "valid_pose_frames": 362,
+      "valid_pose_ratio": 0.981029810298103,
+      "rejected_frames": 7,
+      "interpolated_frames": 61,
+      "mean_visibility": 0.859725864126916,
+      "longest_pose_gap_frames": 5,
+      "quality_status": "degraded",
+      "analysis_status": "quality_gate_failed",
+      "input_quality_status": "degraded",
+      "input_quality_reasons": [
+        "preparation_phase_unverified",
+        "existing_pose_feature_quality_gate_failed"
+      ],
+      "existing_quality_gate": {
+        "passed": false,
+        "feature_coverage": {
+          "throwing_knee_angle": 0.975609756097561,
+          "lead_knee_angle": 0.6747967479674797,
+          "shoulder_line_angle": 0.981029810298103,
+          "throwing_elbow_angle": 0.7533875338753387,
+          "hip_line_angle": 0.981029810298103,
+          "lateral_foot_separation": 0.981029810298103
+        },
+        "usable_feature_coverage": {
+          "throwing_knee_angle": 0.986449864498645,
+          "lead_knee_angle": 0.6829268292682927,
+          "shoulder_line_angle": 0.986449864498645,
+          "throwing_elbow_angle": 0.7723577235772358,
+          "hip_line_angle": 0.986449864498645,
+          "lateral_foot_separation": 0.986449864498645
+        },
+        "coordinate_imputed_feature_fraction": {
+          "throwing_knee_angle": 0.01084010840108401,
+          "lead_knee_angle": 0.008130081300813009,
+          "shoulder_line_angle": 0.005420054200542005,
+          "throwing_elbow_angle": 0.018970189701897018,
+          "hip_line_angle": 0.005420054200542005,
+          "lateral_foot_separation": 0.005420054200542005
+        },
+        "detection_coverage": 0.981029810298103,
+        "max_consecutive_missing_source_frames": 5,
+        "failures": [
+          "more than 2 consecutive frames have no source pose",
+          "lead_knee_angle raw coverage below 80%"
+        ]
+      },
+      "throwing_elbow_angle": {
+        "unit": "degree",
+        "observability": "direct_2d_projection",
+        "raw_coverage": 0.7533875338753387,
+        "observed_frames": 278,
+        "min": 2.3979079831596595,
+        "max": 179.7292680611362,
+        "median": 99.13728117858102
+      },
+      "tracking": {
+        "status": "partially_reliable",
+        "reasons": [
+          "selector_track_break"
+        ],
+        "selected_frames": 362,
+        "selected_frame_ratio": 0.981029810298103,
+        "track_breaks": [
+          {
+            "start_frame": 180,
+            "end_frame": 181,
+            "length_frames": 2
+          },
+          {
+            "start_frame": 183,
+            "end_frame": 187,
+            "length_frames": 5
+          }
+        ],
+        "longest_track_break_frames": 5,
+        "identity_switch_warning": false,
+        "identity_switch_confirmed": null,
+        "warning_events": []
+      },
+      "major_review_hints": {
+        "status": "not_evaluated",
+        "reason_codes": [
+          "input_identity_not_in_development_evidence"
+        ],
+        "absence_of_warning_means_reliable": false
+      },
+      "overlay_inspection": {
+        "status": "agent_fixed_sample_inspection_completed",
+        "report": "visual_review/inspection.json",
+        "findings": {
+          "observations": [
+            "18 evenly spaced frames inspected; sampled selected skeleton stays near pitcher.",
+            "Saved source-pose gaps 180-181 and 183-187 retained; lead-knee angle raw coverage remains below original 80% gate.",
+            "No frame-level human joint GT added."
+          ],
+          "examples": []
+        }
+      },
+      "important_joints": {
+        "throwing_shoulder": {
+          "landmark": "RIGHT_SHOULDER",
+          "status": "partially_reliable",
+          "raw_coverage": 0.981029810298103,
+          "observed_frames": 362,
+          "interpolated_frames": 2,
+          "missing_frames": 5,
+          "longest_missing_span_frames": 5
+        },
+        "throwing_elbow": {
+          "landmark": "RIGHT_ELBOW",
+          "status": "partially_reliable",
+          "raw_coverage": 0.7804878048780488,
+          "observed_frames": 288,
+          "interpolated_frames": 8,
+          "missing_frames": 73,
+          "longest_missing_span_frames": 26
+        },
+        "throwing_wrist": {
+          "landmark": "RIGHT_WRIST",
+          "status": "partially_reliable",
+          "raw_coverage": 0.7994579945799458,
+          "observed_frames": 295,
+          "interpolated_frames": 21,
+          "missing_frames": 53,
+          "longest_missing_span_frames": 17
+        },
+        "lead_hip": {
+          "landmark": "LEFT_HIP",
+          "status": "partially_reliable",
+          "raw_coverage": 0.981029810298103,
+          "observed_frames": 362,
+          "interpolated_frames": 2,
+          "missing_frames": 5,
+          "longest_missing_span_frames": 5
+        },
+        "lead_knee": {
+          "landmark": "LEFT_KNEE",
+          "status": "unreliable",
+          "raw_coverage": 0.6747967479674797,
+          "observed_frames": 249,
+          "interpolated_frames": 3,
+          "missing_frames": 117,
+          "longest_missing_span_frames": 107
+        },
+        "lead_ankle": {
+          "landmark": "LEFT_ANKLE",
+          "status": "partially_reliable",
+          "raw_coverage": 0.981029810298103,
+          "observed_frames": 362,
+          "interpolated_frames": 2,
+          "missing_frames": 5,
+          "longest_missing_span_frames": 5
+        }
+      }
+    },
+    {
+      "pitch_id": "supplement_004",
+      "review_alias": "supplement_p04",
+      "original_batch_id": "20261020T073530Z_6gyr6IC2e0Q",
+      "original_pitch_id": "20261020T073530Z_6gyr6IC2e0Q_p04",
+      "internal_pitch_id": "h_93d052d94c54f94336eb1f32c42940fabe854ae58e2e01983abead270421c8c3",
+      "candidate_status": "candidate",
+      "video_sha256": "76945ebff5dc300ee0fc7084a0e21370137ee9d91ad61cdca52ccab0e4ee9054",
+      "input_review": "annotations/input_reviews/shohei_ohtani/20261020T073530Z_6gyr6IC2e0Q/p04.json",
+      "analysis_dir": "analysis_results\\phase2_ohtani_supplement_20261020_01\\predictions\\shohei_ohtani\\supplement_004",
+      "total_frames": 338,
+      "valid_pose_frames": 323,
+      "valid_pose_ratio": 0.9556213017751479,
+      "rejected_frames": 15,
+      "interpolated_frames": 49,
+      "mean_visibility": 0.8603750134341455,
+      "longest_pose_gap_frames": 12,
+      "quality_status": "degraded",
+      "analysis_status": "quality_gate_failed",
+      "input_quality_status": "degraded",
+      "input_quality_reasons": [
+        "existing_pose_feature_quality_gate_failed"
+      ],
+      "existing_quality_gate": {
+        "passed": false,
+        "feature_coverage": {
+          "throwing_knee_angle": 0.9437869822485208,
+          "lead_knee_angle": 0.8372781065088757,
+          "shoulder_line_angle": 0.9556213017751479,
+          "throwing_elbow_angle": 0.5739644970414202,
+          "hip_line_angle": 0.9556213017751479,
+          "lateral_foot_separation": 0.9171597633136095
+        },
+        "usable_feature_coverage": {
+          "throwing_knee_angle": 0.9497041420118343,
+          "lead_knee_angle": 0.8609467455621301,
+          "shoulder_line_angle": 0.9644970414201184,
+          "throwing_elbow_angle": 0.5887573964497042,
+          "hip_line_angle": 0.9644970414201184,
+          "lateral_foot_separation": 0.9319526627218935
+        },
+        "coordinate_imputed_feature_fraction": {
+          "throwing_knee_angle": 0.005917159763313609,
+          "lead_knee_angle": 0.023668639053254437,
+          "shoulder_line_angle": 0.008875739644970414,
+          "throwing_elbow_angle": 0.014792899408284023,
+          "hip_line_angle": 0.008875739644970414,
+          "lateral_foot_separation": 0.014792899408284023
+        },
+        "detection_coverage": 0.9556213017751479,
+        "max_consecutive_missing_source_frames": 12,
+        "failures": [
+          "more than 2 consecutive frames have no source pose"
+        ]
+      },
+      "throwing_elbow_angle": {
+        "unit": "degree",
+        "observability": "direct_2d_projection",
+        "raw_coverage": 0.5739644970414202,
+        "observed_frames": 194,
+        "min": 18.691861013363848,
+        "max": 179.87082146289313,
+        "median": 132.37879929044584
+      },
+      "tracking": {
+        "status": "partially_reliable",
+        "reasons": [
+          "selector_track_break"
+        ],
+        "selected_frames": 323,
+        "selected_frame_ratio": 0.9556213017751479,
+        "track_breaks": [
+          {
+            "start_frame": 143,
+            "end_frame": 154,
+            "length_frames": 12
+          },
+          {
+            "start_frame": 156,
+            "end_frame": 156,
+            "length_frames": 1
+          },
+          {
+            "start_frame": 159,
+            "end_frame": 160,
+            "length_frames": 2
+          }
+        ],
+        "longest_track_break_frames": 12,
+        "identity_switch_warning": false,
+        "identity_switch_confirmed": null,
+        "warning_events": []
+      },
+      "major_review_hints": {
+        "status": "not_evaluated",
+        "reason_codes": [
+          "input_identity_not_in_development_evidence"
+        ],
+        "absence_of_warning_means_reliable": false
+      },
+      "overlay_inspection": {
+        "status": "agent_fixed_sample_inspection_completed",
+        "report": "visual_review/inspection.json",
+        "findings": {
+          "observations": [
+            "18 evenly spaced frames inspected; frame 159 lacks skeleton in follow-through.",
+            "Saved 143-154 gap and other missing frames retained; sampled selected skeleton remains near pitcher.",
+            "Joint positions remain unvalidated beyond agent image inspection."
+          ],
+          "examples": [
+            159
+          ]
+        }
+      },
+      "important_joints": {
+        "throwing_shoulder": {
+          "landmark": "RIGHT_SHOULDER",
+          "status": "partially_reliable",
+          "raw_coverage": 0.9556213017751479,
+          "observed_frames": 323,
+          "interpolated_frames": 3,
+          "missing_frames": 12,
+          "longest_missing_span_frames": 12
+        },
+        "throwing_elbow": {
+          "landmark": "RIGHT_ELBOW",
+          "status": "unreliable",
+          "raw_coverage": 0.7041420118343196,
+          "observed_frames": 238,
+          "interpolated_frames": 3,
+          "missing_frames": 97,
+          "longest_missing_span_frames": 97
+        },
+        "throwing_wrist": {
+          "landmark": "RIGHT_WRIST",
+          "status": "unreliable",
+          "raw_coverage": 0.5828402366863905,
+          "observed_frames": 197,
+          "interpolated_frames": 5,
+          "missing_frames": 136,
+          "longest_missing_span_frames": 55
+        },
+        "lead_hip": {
+          "landmark": "LEFT_HIP",
+          "status": "partially_reliable",
+          "raw_coverage": 0.9556213017751479,
+          "observed_frames": 323,
+          "interpolated_frames": 3,
+          "missing_frames": 12,
+          "longest_missing_span_frames": 12
+        },
+        "lead_knee": {
+          "landmark": "LEFT_KNEE",
+          "status": "partially_reliable",
+          "raw_coverage": 0.8402366863905325,
+          "observed_frames": 284,
+          "interpolated_frames": 8,
+          "missing_frames": 46,
+          "longest_missing_span_frames": 24
+        },
+        "lead_ankle": {
+          "landmark": "LEFT_ANKLE",
+          "status": "partially_reliable",
+          "raw_coverage": 0.9230769230769231,
+          "observed_frames": 312,
+          "interpolated_frames": 3,
+          "missing_frames": 23,
+          "longest_missing_span_frames": 12
+        }
+      }
+    },
+    {
+      "pitch_id": "supplement_005",
+      "review_alias": "supplement_p05",
+      "original_batch_id": "20261020T073530Z_6gyr6IC2e0Q",
+      "original_pitch_id": "20261020T073530Z_6gyr6IC2e0Q_p05",
+      "internal_pitch_id": "h_17cb95e543165bbe45df516e7e339f32f281d92de5bf5334daed428550637afc",
+      "candidate_status": "candidate",
+      "video_sha256": "1c67c058d4376ecf94a138eb08e3251eb601a365a7e8a55e251e1c136ae5d95f",
+      "input_review": "annotations/input_reviews/shohei_ohtani/20261020T073530Z_6gyr6IC2e0Q/p05.json",
+      "analysis_dir": "analysis_results\\phase2_ohtani_supplement_20261020_01\\predictions\\shohei_ohtani\\supplement_005",
+      "total_frames": 321,
+      "valid_pose_frames": 315,
+      "valid_pose_ratio": 0.9813084112149533,
+      "rejected_frames": 6,
+      "interpolated_frames": 67,
+      "mean_visibility": 0.8625953146563363,
+      "longest_pose_gap_frames": 2,
+      "quality_status": "degraded",
+      "analysis_status": "quality_gate_failed",
+      "input_quality_status": "degraded",
+      "input_quality_reasons": [
+        "preparation_phase_unverified",
+        "followthrough_unverified",
+        "existing_pose_feature_quality_gate_failed"
+      ],
+      "existing_quality_gate": {
+        "passed": false,
+        "feature_coverage": {
+          "throwing_knee_angle": 0.9750778816199377,
+          "lead_knee_angle": 0.7133956386292835,
+          "shoulder_line_angle": 0.9813084112149533,
+          "throwing_elbow_angle": 0.6386292834890965,
+          "hip_line_angle": 0.9813084112149533,
+          "lateral_foot_separation": 0.9781931464174455
+        },
+        "usable_feature_coverage": {
+          "throwing_knee_angle": 1.0,
+          "lead_knee_angle": 0.7445482866043613,
+          "shoulder_line_angle": 1.0,
+          "throwing_elbow_angle": 0.6947040498442367,
+          "hip_line_angle": 1.0,
+          "lateral_foot_separation": 1.0
+        },
+        "coordinate_imputed_feature_fraction": {
+          "throwing_knee_angle": 0.024922118380062305,
+          "lead_knee_angle": 0.03115264797507788,
+          "shoulder_line_angle": 0.018691588785046728,
+          "throwing_elbow_angle": 0.056074766355140186,
+          "hip_line_angle": 0.018691588785046728,
+          "lateral_foot_separation": 0.021806853582554516
+        },
+        "detection_coverage": 0.9813084112149533,
+        "max_consecutive_missing_source_frames": 2,
+        "failures": [
+          "lead_knee_angle raw coverage below 80%"
+        ]
+      },
+      "throwing_elbow_angle": {
+        "unit": "degree",
+        "observability": "direct_2d_projection",
+        "raw_coverage": 0.6386292834890965,
+        "observed_frames": 205,
+        "min": 9.651396244329774,
+        "max": 176.27931260615702,
+        "median": 77.23506278644747
+      },
+      "tracking": {
+        "status": "partially_reliable",
+        "reasons": [
+          "selector_track_break",
+          "possible_identity_or_pose_discontinuity_requires_review"
+        ],
+        "selected_frames": 315,
+        "selected_frame_ratio": 0.9813084112149533,
+        "track_breaks": [
+          {
+            "start_frame": 128,
+            "end_frame": 129,
+            "length_frames": 2
+          },
+          {
+            "start_frame": 149,
+            "end_frame": 150,
+            "length_frames": 2
+          },
+          {
+            "start_frame": 152,
+            "end_frame": 152,
+            "length_frames": 1
+          },
+          {
+            "start_frame": 154,
+            "end_frame": 154,
+            "length_frames": 1
+          }
+        ],
+        "longest_track_break_frames": 2,
+        "identity_switch_warning": true,
+        "identity_switch_confirmed": null,
+        "warning_events": [
+          {
+            "type": "skeleton_scale_jump",
+            "frame_index": 251,
+            "previous_frame_index": 250,
+            "gap_frames": 0,
+            "scale_ratio": 1.641751968736865,
+            "warning_limit_ratio": 1.6
+          },
+          {
+            "type": "body_center_jump",
+            "frame_index": 252,
+            "previous_frame_index": 251,
+            "gap_frames": 0,
+            "step_body_heights": 0.5030068823280287,
+            "warning_limit_body_heights": 0.45
+          },
+          {
+            "type": "skeleton_scale_jump",
+            "frame_index": 252,
+            "previous_frame_index": 251,
+            "gap_frames": 0,
+            "scale_ratio": 1.6761991005139543,
+            "warning_limit_ratio": 1.6
+          },
+          {
+            "type": "motion_discontinuity",
+            "frame_index": 251,
+            "center_acceleration_body_heights_per_frame2": 0.9307144208076524,
+            "warning_limit": 0.45
+          }
+        ]
+      },
+      "major_review_hints": {
+        "status": "not_evaluated",
+        "reason_codes": [
+          "input_identity_not_in_development_evidence"
+        ],
+        "absence_of_warning_means_reliable": false
+      },
+      "overlay_inspection": {
+        "status": "agent_fixed_sample_inspection_completed",
+        "report": "visual_review/inspection.json",
+        "findings": {
+          "observations": [
+            "18 evenly spaced frames plus source/overlay pairs 245/250/251/252 inspected.",
+            "Frame 245 arm edge extends toward catcher area; local placement requires review.",
+            "Frame 251 visibly combines catcher-area upper body with pitcher-area lower body; frame 252 returns near pitcher.",
+            "Existing scale/center/motion warnings at 251-252 retained; no human identity-switch confirmation added."
+          ],
+          "examples": [
+            245,
+            250,
+            251,
+            252
+          ]
+        }
+      },
+      "important_joints": {
+        "throwing_shoulder": {
+          "landmark": "RIGHT_SHOULDER",
+          "status": "reliable",
+          "raw_coverage": 0.9813084112149533,
+          "observed_frames": 315,
+          "interpolated_frames": 6,
+          "missing_frames": 0,
+          "longest_missing_span_frames": 0
+        },
+        "throwing_elbow": {
+          "landmark": "RIGHT_ELBOW",
+          "status": "partially_reliable",
+          "raw_coverage": 0.822429906542056,
+          "observed_frames": 264,
+          "interpolated_frames": 8,
+          "missing_frames": 49,
+          "longest_missing_span_frames": 26
+        },
+        "throwing_wrist": {
+          "landmark": "RIGHT_WRIST",
+          "status": "partially_reliable",
+          "raw_coverage": 0.6635514018691588,
+          "observed_frames": 213,
+          "interpolated_frames": 22,
+          "missing_frames": 86,
+          "longest_missing_span_frames": 23
+        },
+        "lead_hip": {
+          "landmark": "LEFT_HIP",
+          "status": "partially_reliable",
+          "raw_coverage": 0.9813084112149533,
+          "observed_frames": 315,
+          "interpolated_frames": 6,
+          "missing_frames": 0,
+          "longest_missing_span_frames": 0
+        },
+        "lead_knee": {
+          "landmark": "LEFT_KNEE",
+          "status": "unreliable",
+          "raw_coverage": 0.7133956386292835,
+          "observed_frames": 229,
+          "interpolated_frames": 10,
+          "missing_frames": 82,
+          "longest_missing_span_frames": 82
+        },
+        "lead_ankle": {
+          "landmark": "LEFT_ANKLE",
+          "status": "partially_reliable",
+          "raw_coverage": 0.9813084112149533,
+          "observed_frames": 315,
+          "interpolated_frames": 6,
+          "missing_frames": 0,
+          "longest_missing_span_frames": 0
+        }
+      }
+    }
+  ]
+}
