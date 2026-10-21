@@ -12,6 +12,17 @@ gates, MediaPipe settings, interpolation and smoothing are unchanged. The approv
 optional subject-region constraint is described below; the default selector remains compatible.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
+## 2026-10-21 operator-seeded track proposal prepared (not started)
+
+Continuation exported only two saved first-frame candidate boxes; seed remains
+unselected. [Concrete proposal](phase2_seeded_native_track_plan_20261021.md): one
+operator-specified initial subject, mutual-unique-maximum positive-IoU association
+over saved eligible detections, terminal break without reacquisition. No score/ROI
+changes or detector rerun; at most319newposecalls on previously unrun person-box
+frames, exact-geometry cache reuse only for193/194. This is new assisted-track scope,
+awaiting explicit approval and initial-box input; not a revision of the failed
+stateless policy. No replay/inference/product changes or suite rerun in preparation.
+
 ## 2026-10-21 approved single-clip person-box run completed (latest)
 
 HSU approved the [bounded plan](phase2_person_box_native_plan_20261021.md).

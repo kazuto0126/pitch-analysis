@@ -4,6 +4,14 @@
 
 **Phase 1 = PASSED；Native interface integration = PASSED；Phase 2 自動可靠性仍 NOT PASSED。**
 
+## 待確認的新操作方式：第一格人工指定主體
+
+續行只讀已保存框，已提供第0格兩個候選的編號圖；尚未替使用者選框。
+[人工初始化追蹤方案](phase2_seeded_native_track_plan_20261021.md)限定單球：
+沿用保存的候選做固定相鄰框關聯，0新detector，最多319新pose；193／194格只在完整幾何吻合時重用。
+這是額外的人工作業輸入與新native追蹤範圍，需核准並指定第一格框才實作／replay。
+本次準備0推論、0追蹤replay、0產品修改，未重跑suite或改變上輪不採用決定。
+
 ## 最新：人物框單球修正完成，政策不採用
 
 HSU已核准[單球方案](phase2_person_box_native_plan_20261021.md)，新人物偵測模型與既有RTMPose接點已完成。
