@@ -26,7 +26,7 @@
       "type": "object", "additionalProperties": false,
       "required": ["input_mode", "roi_xywh", "affine_src_to_input", "affine_input_to_src", "sdk_geometry"],
       "properties": {
-        "input_mode": {"enum": ["full_frame", "roi_affine"]},
+        "input_mode": {"enum": ["full_frame", "roi_affine", "not_run"]},
         "roi_xywh": {"type": ["array", "null"], "minItems": 4, "maxItems": 4, "items": {"type": "number"}},
         "affine_src_to_input": {"$ref": "#/$defs/affine"},
         "affine_input_to_src": {"$ref": "#/$defs/affine"},

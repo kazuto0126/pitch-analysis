@@ -8,7 +8,7 @@ unchanged, the box is padded by 1.25, and the input size is 192 by 256 pixels.
 from __future__ import annotations
 
 from dataclasses import dataclass
-from numbers import Integral
+from numbers import Integral, Real
 from typing import Protocol
 
 import cv2
@@ -62,25 +62,49 @@ def _crop_bounds(frame_bgr: np.ndarray, crop_xyxy) -> tuple[int, int, int, int]:
     return left, top, right, bottom
 
 
-def prepare_rtmpose_input(frame_bgr: np.ndarray, crop_xyxy) -> tuple[np.ndarray, dict]:
+def prepare_rtmpose_input(frame_bgr: np.ndarray, crop_xyxy, *,
+                          person_bbox_xyxy=None) -> tuple[np.ndarray, dict]:
     """Crop first, then apply the official zero-rotation affine and normalization.
 
     Padding samples black outside the already extracted crop.  It cannot expose
     pixels outside the caller's fixed crop even if they exist in the full frame.
     The saved affine matrices map original-image pixels, including crop offset.
+    An optional person box chooses the affine center/scale, while the sampling
+    canvas remains the approved crop. Its padding may see crop-local context.
     """
     left, top, right, bottom = _crop_bounds(frame_bgr, crop_xyxy)
     crop = frame_bgr[top:bottom, left:right]
     crop_width, crop_height = right - left, bottom - top
     input_width, input_height = _INPUT_SIZE
-    center = np.array([crop_width, crop_height], dtype=np.float64) * .5
-    padded_scale = np.array([crop_width, crop_height], dtype=np.float64) * _PADDING
+    person_box = None
+    if person_bbox_xyxy is None:
+        center = np.array([crop_width, crop_height], dtype=np.float64) * .5
+        padded_scale = np.array([crop_width, crop_height], dtype=np.float64) * _PADDING
+    else:
+        if (not isinstance(person_bbox_xyxy, (tuple, list)) or len(person_bbox_xyxy) != 4
+                or any(isinstance(value, (bool, np.bool_)) or not isinstance(value, Real)
+                       or not np.isfinite(value) for value in person_bbox_xyxy)):
+            raise ValueError("Person box requires four finite original-image coordinates")
+        person_box = np.asarray(person_bbox_xyxy, dtype=np.float64)
+        x1, y1, x2, y2 = person_box
+        if x2 <= x1 or y2 <= y1:
+            raise ValueError("Person box must have positive dimensions")
+        if max(x1, left) >= min(x2, right) or max(y1, top) >= min(y2, bottom):
+            raise ValueError("Person box has no intersection with the approved crop")
+        with np.errstate(over="ignore", invalid="ignore"):
+            center = np.array([x1 * .5 + x2 * .5 - left, y1 * .5 + y2 * .5 - top])
+            padded_scale = np.array([x2 - x1, y2 - y1]) * _PADDING
+        if not np.isfinite(center).all() or not np.isfinite(padded_scale).all():
+            raise ValueError("Person box exceeds the affine numeric range")
     scale = padded_scale.copy()
     aspect_ratio = input_width / input_height
     if scale[0] > scale[1] * aspect_ratio:
         scale[1] = scale[0] / aspect_ratio
     else:
         scale[0] = scale[1] * aspect_ratio
+    if (not np.isfinite(scale).all() or
+            np.any(np.abs(center) + scale > np.finfo(np.float32).max * .5)):
+        raise ValueError("Person box exceeds the affine numeric range")
 
     # These three control points are the official get_warp_matrix at rot=0.
     # Its vertical direction uses scale width; the adjusted aspect supplies Y.
@@ -134,6 +158,21 @@ def prepare_rtmpose_input(frame_bgr: np.ndarray, crop_xyxy) -> tuple[np.ndarray,
             "coordinate_clamping": False,
         },
     }
+    if person_box is not None:
+        sdk = geometry["sdk_geometry"]
+        sdk.update({
+            "preprocessing": "openmmlab_person_bbox_affine_on_approved_crop",
+            "person_bbox_xyxy_px": person_box.tolist(),
+            "person_bbox_clamped": False,
+            "person_bbox_outside_approved_crop": bool(person_box[0] < left or person_box[1] < top
+                                                      or person_box[2] > right or person_box[3] > bottom),
+            "person_bbox_crop_intersection_xyxy_px": [max(float(person_box[0]), left),
+                                                       max(float(person_box[1]), top),
+                                                       min(float(person_box[2]), right),
+                                                       min(float(person_box[3]), bottom)],
+            "sampling_canvas": "approved_motion_crop_only",
+            "person_bbox_padding_context": "pixels_inside_approved_crop_allowed",
+        })
     return tensor, geometry
 
 
@@ -212,8 +251,9 @@ class RTMPoseNativeEstimator:
         self.transport = transport
         self.crop_xyxy = tuple(crop_xyxy)
 
-    def estimate(self, frame_bgr: np.ndarray) -> NativePoseEstimate:
-        tensor, geometry = prepare_rtmpose_input(frame_bgr, self.crop_xyxy)
+    def estimate(self, frame_bgr: np.ndarray, *, person_bbox_xyxy=None) -> NativePoseEstimate:
+        tensor, geometry = prepare_rtmpose_input(frame_bgr, self.crop_xyxy,
+                                                person_bbox_xyxy=person_bbox_xyxy)
         outputs = self.transport.run(tensor)
         landmarks = decode_rtmpose_outputs(outputs, geometry)
         return NativePoseEstimate(landmarks, geometry)

@@ -174,6 +174,25 @@ def validate_frame(payload: dict) -> None:
         elif point["x_px"] is not None or point["y_px"] is not None or not point["missing_reason"]:
             raise ValueError("Missing native point needs null XY and an explicit missing_reason")
     geometry = payload["input_geometry"]
+    selection = payload["model_selection"]
+    if "pose_not_run" in selection and not isinstance(selection["pose_not_run"], bool):
+        raise ValueError("pose_not_run must be an explicit boolean")
+    if geometry["input_mode"] == "not_run":
+        reason = selection.get("pose_not_run_reason")
+        if (topology != "coco_17" or "rtmpose" not in payload["backend"].lower()
+                or selection.get("inference_mode") != "live_stateless_roi"
+                or selection.get("pose_not_run") is not True
+                or not isinstance(reason, str) or not reason.strip()):
+            raise ValueError("not_run geometry requires explicit live RTMPose no-inference provenance")
+        if any(geometry[key] is not None for key in
+               ("roi_xywh", "affine_src_to_input", "affine_input_to_src", "sdk_geometry")):
+            raise ValueError("not_run geometry cannot invent a ROI or affine")
+        if any(point["coordinate_state"] != "missing" or point["native_score"] is not None
+               or point["missing_reason"] != reason for point in points):
+            raise ValueError("not_run requires all native points missing with null scores and the same reason")
+        return
+    if selection.get("pose_not_run") is True:
+        raise ValueError("Executed affine/full-frame geometry cannot claim pose_not_run")
     if topology == "mediapipe_33":
         if geometry["input_mode"] != "full_frame" or any(geometry[key] is not None for key in
                 ("roi_xywh", "affine_src_to_input", "affine_input_to_src", "sdk_geometry")):

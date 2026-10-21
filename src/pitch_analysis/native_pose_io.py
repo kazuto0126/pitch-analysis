@@ -113,6 +113,8 @@ def _dataset_frames(manifest: dict, frames: Iterable[NativePoseFrame | dict]) ->
                     "source_video_sha256": manifest["video"]["sha256"]}
         if any(item[key] != value for key, value in expected.items()):
             raise ValueError("Native frame differs from its source manifest")
+        if item["input_geometry"]["input_mode"] == "not_run" and manifest["inference_mode"] != "live_stateless_roi":
+            raise ValueError("A pose-not-run frame requires a live source manifest")
         timestamp = item["timestamp_ms"]
         if (index == 0 and timestamp != 0) or (previous_timestamp is not None and timestamp <= previous_timestamp):
             raise ValueError("Native timestamps must begin at zero and increase without shifting")

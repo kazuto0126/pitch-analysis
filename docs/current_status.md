@@ -1,4 +1,4 @@
-# Current status — Optional live native backend delivered; reliability remains unaccepted
+# Current status — Person-box trial complete, policy not adopted; reliability remains unaccepted
 
 Updated: 2026-10-21
 
@@ -12,22 +12,40 @@ gates, MediaPipe settings, interpolation and smoothing are unchanged. The approv
 optional subject-region constraint is described below; the default selector remains compatible.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-21 next bounded repair proposal (not started)
+## 2026-10-21 approved single-clip person-box run completed (latest)
 
-Read-only continuation located the native input gap: the current top-down affine
-treats the full-motion crop, which includes another person, as its single-person bbox.
-It has no pre-pose person-box selection. This is consistent with the observed hybrid
-skeletons, not proof that a detector will fix them.
-[The bounded proposal](phase2_person_box_native_plan_20261021.md) specifies one
-YOLOX-m HumanArt detector, the existing RTMPose weights, supplement_002321frames
-only, at most321detector+321posecalls, unique ROI-compatible box or explicit missing.
-All boxes, ambiguity, dropped frames and limb truncation remain visible; no GT edits,
-formal core/gate changes, failed-classifier reopening, crop-size search or Phase3.
-Proposal only:0new inference,0product changes, no redundant suite rerun. Awaiting
-explicit new-model/native-scope approval under the user's existing proposal-first
-instruction; the preceding1684-call allowance has already been consumed.
+HSU approved the [bounded plan](phase2_person_box_native_plan_20261021.md).
+Implemented one optional YOLOX-m detector, source-bound person-box selection and
+native per-frame bbox affine; full missing/not_run preserves no-inference semantics.
+Existing fixed-crop calls and cached datasets remain compatible. Production
+MediaPipe/PitcherSelector/gates/core/raw/GT are unchanged.
 
-## 2026-10-21 approved live native implementation delivered (latest)
+Only supplement_002321frames ran once:321detector/2pose completed,0failures/retries/
+warmups. Onlyframes193/194 have unique candidates;319frames have exactly2eligible
+boxes and are missing. Prior native coordinate availability321→2frames(0.6231%);
+newmissing99.3769%, spans0–192(193frames)and195–320(126frames). This is lost
+availability, not successful recovery. The policy is NOT ADOPTED.
+
+Viewed22 source/prior/new triples in6contact sheets, includingbothrealposeframes.
+The sampled boxes separate pitcher and batter, but both centers meet the original
+operatorROI condition. Two new skeletons are near pitcher silhouette; localaccuracy
+remains unmeasured. Agent inspection is not new human GT;quality staysnot_calibrated,
+usable_for_analysis=null. Complete321frameH264overlay verifies originalfractional
+timeline withmaxdifference9.095e-13ms.
+
+Fullsuite1093run/1091passed/0failed/0errors/2skipped,83.812s;36new no-modeltests.
+FormalYamamotofiveE2Eenabled,majorhintsunchanged2/0/19/5/3.541protectedfiles SHA
+unchanged;all323binarypayloads verified. Five approved native geometry/contract
+files have recordedbeforeSHA;no formalcore/gatechanges,0newannotations/promotions.
+
+Output:`analysis_results/phase2_person_box_native_20261021_01/`;open`review_all.html`.
+[Report/stop decision](phase2_person_box_native_results_20261021.md),
+[usage](phase2_person_box_native_usage.md),
+[versioned evidence](dataset_selections/ohtani_person_box_results_20261021.json).
+The approved implementation/run is complete;Phase2remainsNOT_PASSED. Perplan stop
+here:no ROI/score adjustment,new small rule,otherclips,model replacement orPhase3.
+
+## 2026-10-21 approved live native implementation delivered (previous)
 
 HSU approved the fixed [live-native plan](phase2_live_native_pose_plan_20261020.md).
 Implemented an independent new-MP4 RTMPose entry using the existing model and

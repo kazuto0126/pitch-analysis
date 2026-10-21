@@ -167,6 +167,15 @@ def draw_native_frame(image_bgr: np.ndarray, record: dict, *, source_mode: str =
             cv2.line(result, points[first], points[second], (0, 220, 80), 2, cv2.LINE_AA)
     for location in points.values():
         cv2.circle(result, location, 3, (0, 220, 255), -1, cv2.LINE_AA)
+    box_selection = record.get("model_selection", {}).get("person_box_selection")
+    if isinstance(box_selection, dict) and box_selection.get("selected_bbox_xyxy_px") is not None:
+        x1, y1, x2, y2 = box_selection["selected_bbox_xyxy_px"]
+        if all(_finite(value) for value in (x1, y1, x2, y2)):
+            # Clip only the displayed rectangle, never its saved coordinates.
+            if x2 >= 0 and y2 >= 0 and x1 < width and y1 < height:
+                cv2.rectangle(result, (math.floor(max(x1, 0)), math.floor(max(y1, 0))),
+                              (math.ceil(min(x2, width - 1)), math.ceil(min(y2, height - 1))),
+                              (255, 180, 0), 1, cv2.LINE_AA)
     if source_mode not in ("cached_read_only", "live_stateless_roi"):
         raise ValueError("Unknown native overlay source mode")
     if source_mode == "live_stateless_roi" and record["topology"] != "coco_17":
@@ -174,12 +183,18 @@ def draw_native_frame(image_bgr: np.ndarray, record: dict, *, source_mode: str =
     model_label = ("live RTMPose / COCO17" if source_mode == "live_stateless_roi" else
                    "cached RTMPose / COCO17" if record["topology"] == "coco_17" else
                    "cached MediaPipe / 33 points")
-    cv2.rectangle(result, (0, 0), (width - 1, min(height - 1, 52)), (0, 0, 0), -1)
+    banner_height = 72 if isinstance(box_selection, dict) else 52
+    cv2.rectangle(result, (0, 0), (width - 1, min(height - 1, banner_height)), (0, 0, 0), -1)
     scale = min(.43, max(.20, width / 1100))
     cv2.putText(result, f"{model_label} / NOT CALIBRATED", (5, 18),
                 cv2.FONT_HERSHEY_SIMPLEX, scale, (0, 220, 255), 1, cv2.LINE_AA)
     cv2.putText(result, f"frame {record['frame_index']} / {record['timestamp_ms']:.3f} ms",
                 (5, 40), cv2.FONT_HERSHEY_SIMPLEX, scale, (255, 255, 255), 1, cv2.LINE_AA)
+    if isinstance(box_selection, dict):
+        status = box_selection.get("status", "unknown")
+        label = f"person box: {status}; eligible={box_selection.get('eligible_count', '?')}"
+        cv2.putText(result, label, (5, 62), cv2.FONT_HERSHEY_SIMPLEX, scale,
+                    (0, 220, 255), 1, cv2.LINE_AA)
     return result
 
 

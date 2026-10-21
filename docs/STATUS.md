@@ -1,20 +1,25 @@
 # 進度摘要
 
-更新：2026-10-21（台灣）。[完整狀態](current_status.md)；[最新 live RTMPose 交付](phase2_live_native_pose_results_20261021.md)。
+更新：2026-10-21（台灣）。[完整狀態](current_status.md)；[最新人物框單球結果](phase2_person_box_native_results_20261021.md)。
 
 **Phase 1 = PASSED；Native interface integration = PASSED；Phase 2 自動可靠性仍 NOT PASSED。**
 
-## 下一個有限接點：單球人物框方案待確認
+## 最新：人物框單球修正完成，政策不採用
 
-續行檢查確認目前native前處理把包含部分打者的完整動作crop當作單人bbox，
-沒有pose前的人物框選擇；這與第2球準備段混合骨架的限制相符，尚未證明修正效果。
-[具體方案](phase2_person_box_native_plan_20261021.md)已寫明：只接一個人物偵測模型，
-先處理supplement_002共321格，最多321detector＋321pose；唯一框才推論，無框／歧義missing，
-原分母、裁肢與新增缺失都回報，不靠棄權宣稱改善。正式核心／gate／GT保持。
-本輪只有唯讀查核與方案文件，0新推論、0產品修改；沒有重跑已完成suite。
-依先前「新模型先提案」要求，等待核准取得模型／native接點及本次額度，尚未開始。
+HSU已核准[單球方案](phase2_person_box_native_plan_20261021.md)，新人物偵測模型與既有RTMPose接點已完成。
+第2球321格只跑一次：detector321次，pose2次（193／194格），319格因兩框都合格而missing。
+原native有座標321格→2格，最長missing193格；這不是可靠性改善，**本政策NOT ADOPTED**。
+實看22組原片／舊／新對照：人物框分別包圍投手與打者，但框中心條件仍無法排除打者。
+不調整ROI／分數或追加小規則；Phase2仍NOT PASSED，沒有新GT、正式提升或擴跑。
 
-## 最新：可選 live RTMPose 入口與五球一次性交付完成
+新增36項無模型測試；完整suite **1091 passed／0 failed／0 errors／2 skipped**（1093項，83.812秒）。
+正式山本五球E2E提示仍2／0／19／5／3；541個保護檔案SHA不變，323份binary payload吻合。
+正式核心／selector／gate保持；native僅增加當格bbox、嚴格not_run與overlay狀態。
+輸出：`analysis_results/phase2_person_box_native_20261021_01/`，先看`review_all.html`。
+[結果／停止決定](phase2_person_box_native_results_20261021.md)、[使用說明](phase2_person_box_native_usage.md)。
+本輪已完成並停止，不換模型、重跑、擴大素材或進Phase3。
+
+## 前段：可選 live RTMPose 入口與五球一次性交付完成
 
 HSU已核准並完成新MP4入口；沿用既有權重／隔離環境、已確認的固定crop。
 五球335／321／369／338／321格各推論一次，共1684次，0執行失敗；

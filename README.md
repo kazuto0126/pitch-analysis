@@ -6,7 +6,12 @@
 本次收尾摘要見 [STATUS](docs/STATUS.md)；外部專案供片需求見
 [INPUT_REQUIREMENTS](docs/INPUT_REQUIREMENTS.md)。
 
-2026-10-21 最新：[可選 live RTMPose 入口已交付](docs/phase2_live_native_pose_results_20261021.md)：
+2026-10-21 最新：[單球人物框修正已完成，政策不採用](docs/phase2_person_box_native_results_20261021.md)：
+第2球321次人物偵測、2次pose；319格多框歧義導致missing，不能視為可靠性改善。
+完整suite1091 passed／0 failed／2 skipped，正式核心／門檻／raw／GT保持；Phase2仍NOT PASSED。
+本輪依核准方案停止，不追加規則或擴跑。本機觀看：`analysis_results/phase2_person_box_native_20261021_01/review_all.html`。
+
+前段：[可選 live RTMPose 入口已交付](docs/phase2_live_native_pose_results_20261021.md)：
 五球1684格各推論一次，提供原生17點與五支完整overlay；正式MediaPipe／核心／門檻保持。
 部分舊錯例回到投手附近，但第2球準備段、第5球第128格仍有混合骨架，尚未校準或正式採用。
 完整suite1055 passed／0 failed／2 skipped；**Phase2自動可靠性仍NOT PASSED**。

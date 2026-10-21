@@ -1,0 +1,291 @@
+{
+  "schema_version": "phase2-person-box-native-closeout-v1",
+  "date_local": "2026-10-21",
+  "status": "completed_not_adopted",
+  "adoption_decision": "NOT_ADOPTED",
+  "reason": "The fixed unique-ROI-center policy makes319of321previously available native frames missing; no usable reliability improvement demonstrated.",
+  "phase2_automatic_reliability": "NOT_PASSED",
+  "formal_promotion": false,
+  "new_annotations": 0,
+  "source_pitch_id": "supplement_002",
+  "source_batch_id": "20261020T073530Z_6gyr6IC2e0Q",
+  "total_frames": 321,
+  "fps_fraction": "60000/1001",
+  "config_ref": {
+    "path": "config/pilots/ohtani_person_box_20261021.json",
+    "sha256": "33f56afc6001e64c3581533fb406af65d13654f22bce36248289f46b8ec77025"
+  },
+  "started_at_utc": "2026-10-21T05:19:25.699946+00:00",
+  "completed_at_utc": "2026-10-21T05:24:40.035101+00:00",
+  "detector_calls_attempted": 321,
+  "detector_calls_completed": 321,
+  "pose_calls_attempted": 2,
+  "pose_calls_completed": 2,
+  "new_model_sha256": "3dea6513388889f0fff4b77bf7a26013600321b9eb9ceb0e9a400a82572f5f23",
+  "actual_baked_postprocessing": {
+    "nms_applied_in_graph": true,
+    "nms_node": "NonMaxSuppression_569",
+    "score_threshold": 0.009999999776482582,
+    "iou_threshold": 0.6499999761581421,
+    "max_output_boxes_per_class": 200,
+    "pre_top_k": 5000,
+    "keep_top_k": 100,
+    "second_nms": false,
+    "planned_final_score_threshold": 0.7,
+    "internal_score_threshold_not_above_final": true,
+    "configuration_discrepancy": "detail.json post_processing gives .05/.5, but pipeline.json gives .01/.65; graph actual constants .01/.65 take precedence. No thresholds altered.",
+    "final_filter_note": "Approved plan fixes score>=.7. Do not adopt upstream rt mlib baked branch .3, do not re-NMS or alter graph."
+  },
+  "final_detector_score_threshold": 0.7,
+  "new_model_downloads": 1,
+  "environment_installs": 0,
+  "warmup_calls": 0,
+  "status_counts": {
+    "ambiguous_subject_boxes": 319,
+    "selected": 2
+  },
+  "selected_frames": [
+    193,
+    194
+  ],
+  "ambiguous_frame_count": 319,
+  "no_subject_box_frame_count": 0,
+  "eligible_box_count_on_every_ambiguous_frame": 2,
+  "selected_frame_ratio": 0.006230529595015576,
+  "missing_frame_ratio": 0.9937694704049844,
+  "new_missing_spans": [
+    {
+      "start_frame": 0,
+      "end_frame": 192,
+      "frames": 193
+    },
+    {
+      "start_frame": 195,
+      "end_frame": 320,
+      "frames": 126
+    }
+  ],
+  "longest_new_missing_span_frames": 193,
+  "old_native_coordinate_frames": 321,
+  "new_native_coordinate_frames": 2,
+  "important_joints": [
+    {
+      "role": "throwing_shoulder",
+      "old_coordinate_present": 321,
+      "new_coordinate_present": 2,
+      "newly_missing_frames": 319
+    },
+    {
+      "role": "throwing_elbow",
+      "old_coordinate_present": 321,
+      "new_coordinate_present": 2,
+      "newly_missing_frames": 319
+    },
+    {
+      "role": "throwing_wrist",
+      "old_coordinate_present": 321,
+      "new_coordinate_present": 2,
+      "newly_missing_frames": 319
+    },
+    {
+      "role": "lead_hip",
+      "old_coordinate_present": 321,
+      "new_coordinate_present": 2,
+      "newly_missing_frames": 319
+    },
+    {
+      "role": "lead_knee",
+      "old_coordinate_present": 321,
+      "new_coordinate_present": 2,
+      "newly_missing_frames": 319
+    },
+    {
+      "role": "lead_ankle",
+      "old_coordinate_present": 321,
+      "new_coordinate_present": 2,
+      "newly_missing_frames": 319
+    }
+  ],
+  "new_quality_status": "not_calibrated",
+  "accuracy": null,
+  "usable_for_analysis": null,
+  "inspection": {
+    "fixed_frames": [
+      0,
+      19,
+      38,
+      56,
+      75,
+      94,
+      113,
+      132,
+      151,
+      159,
+      169,
+      188,
+      201,
+      207,
+      226,
+      245,
+      264,
+      282,
+      301,
+      320
+    ],
+    "additional_selection_missing_or_bbox_boundary_samples": [
+      193,
+      194
+    ],
+    "sampled_frames": [
+      0,
+      19,
+      38,
+      56,
+      75,
+      94,
+      113,
+      132,
+      151,
+      159,
+      169,
+      188,
+      193,
+      194,
+      201,
+      207,
+      226,
+      245,
+      264,
+      282,
+      301,
+      320
+    ],
+    "contact_sheets": [
+      "visual_review/comparison_01.jpg",
+      "visual_review/comparison_02.jpg",
+      "visual_review/comparison_03.jpg",
+      "visual_review/comparison_04.jpg",
+      "visual_review/comparison_05.jpg",
+      "visual_review/comparison_06.jpg"
+    ],
+    "inspection_status": "completed_agent_sample_review",
+    "amber_boxes": "All ROI-eligible detector candidates on ambiguous frames; no human identity assignment.",
+    "human_ground_truth": false,
+    "new_annotations": 0,
+    "accuracy": null,
+    "model_calls_by_export": 0,
+    "reviewer": "Codex agent visual inspection, not human GT",
+    "contact_sheets_viewed": 6,
+    "observations": [
+      "Inspected all22 source/prior/new triples, including both actually inferred frames193/194.",
+      "Ambiguous sample boxes surround the pitcher and the batter separately, but both box centers satisfy the reviewed operator ROI.",
+      "Frames193/194 new skeleton is near pitcher silhouette; local joint accuracy is not manually verified.",
+      "Prior preparation hybrids are replaced by missing; this is not a recovered or corrected pose.",
+      "All319 ambiguous frames have exactly2eligible boxes; the policy supplies too little pose availability to adopt."
+    ],
+    "identity_switch_confirmed": null,
+    "reliability_improvement_demonstrated": false,
+    "adoption_decision": "NOT_ADOPTED",
+    "stop_decision": "One approved run finished; no ROI/score change, new model search, expansion or Phase3."
+  },
+  "overlay": {
+    "decoded_frame_count": 321,
+    "width": 1280,
+    "height": 720,
+    "fps_fraction": "60000/1001",
+    "codec": "h264",
+    "max_overlay_timestamp_difference_ms": 9.094947017729282e-13
+  },
+  "tests": {
+    "created_at_utc": "2026-10-21T05:18:53.424288+00:00",
+    "tests_run": 1093,
+    "passed": 1091,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 2,
+    "skipped_reasons": [
+      {
+        "test": "test_dangling_snapshot_file_link_cannot_create_external_target_when_supported (test_handoff_paths.HandoffPathTests.test_dangling_snapshot_file_link_cannot_create_external_target_when_supported)",
+        "reason": "file symlink creation is unavailable"
+      },
+      {
+        "test": "test_source_symlink_outside_candidate_is_rejected_when_supported (test_handoff_review.HandoffReviewTests.test_source_symlink_outside_candidate_is_rejected_when_supported)",
+        "reason": "creating symbolic links is unavailable"
+      }
+    ],
+    "elapsed_seconds": 83.812,
+    "formal_five_video_e2e_enabled": true,
+    "real_detector_calls_in_tests": 0,
+    "real_rtmpose_calls_in_tests": 0,
+    "successful": true
+  },
+  "new_tests": 36,
+  "formal_yamamoto_major_hints_unchanged": [
+    2,
+    0,
+    19,
+    5,
+    3
+  ],
+  "preservation": {
+    "protected_files_checked": 541,
+    "protected_sha256_changes": [],
+    "config_sha_unchanged": true,
+    "worker_journals": {
+      "detector": {
+        "events": {
+          "started": 321,
+          "completed": 321
+        },
+        "payload_bytes": 50344,
+        "verified_payloads": 321
+      },
+      "pose": {
+        "events": {
+          "started": 2,
+          "completed": 2
+        },
+        "payload_bytes": 121856,
+        "verified_payloads": 2
+      }
+    },
+    "worker_verification_errors": [],
+    "same_index_pairing_errors": [],
+    "verification_inference_calls": 0,
+    "successful": true
+  },
+  "approved_native_contract_geometry_files_changed": 5,
+  "production_core_or_gate_changes": 0,
+  "output_root": "analysis_results/phase2_person_box_native_20261021_01",
+  "evidence_refs": [
+    {
+      "path": "analysis_results/phase2_person_box_native_20261021_01/run_receipt.json",
+      "sha256": "f90944bee801adbc11afb4a8a701ab75053891c7b84eca41a33bc51f7eb5a334"
+    },
+    {
+      "path": "analysis_results/phase2_person_box_native_20261021_01/preservation_check.json",
+      "sha256": "58624061a2440e156d45aa236bff3c6353960edc630a5102fbc73878f5814e7e"
+    },
+    {
+      "path": "analysis_results/phase2_person_box_native_20261021_01/comparison_summary.json",
+      "sha256": "21bf7f518ca58289fbd6481c0a7f2aedd096f5c9c3b96a4639f4b0bd77339e59"
+    },
+    {
+      "path": "analysis_results/phase2_person_box_native_20261021_01/person_box_summary.json",
+      "sha256": "bdc1e8ef8b6e1a649005d1f8f0cedd3b205052f5130ea6c644d250c64d679b96"
+    },
+    {
+      "path": "analysis_results/phase2_person_box_native_20261021_01/visual_review/inspection.json",
+      "sha256": "c46d9b6a0195aa12f14ef0f356af63b3024a59f3a30a97e8f98d32982e703c73"
+    },
+    {
+      "path": "analysis_results/phase2_person_box_preparation_20261021_01/model_metadata.json",
+      "sha256": "24181ba8a98fff33e99948837b8d6f2c32f22bb56e8765b082ddea5bd3f82d7f"
+    },
+    {
+      "path": "analysis_results/phase2_person_box_preparation_20261021_01/test_results.json",
+      "sha256": "358419aec1014b52b29585d9dfe448b6521fa36991890359740ee6976fef5737"
+    }
+  ],
+  "stop_decision": "No follow-up parameter changes, new rule, other clips, model replacement or Phase3 started."
+}

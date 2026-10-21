@@ -1,0 +1,198 @@
+{
+  "schema_version": "native-live-run-v1",
+  "status": "approved",
+  "approval": {
+    "reviewer": "HSU",
+    "reviewed_at_utc": "2026-10-21T05:10:42Z",
+    "user_reply": "核准單球人物框修正並執行",
+    "plan": "docs/phase2_person_box_native_plan_20261021.md",
+    "scope": "One new person detector plus existing native pose; supplement_002321frames once, no formal core/gate/raw/GT changes, delivery then stop."
+  },
+  "pitcher_id": "shohei_ohtani",
+  "original_batch_id": "20261020T073530Z_6gyr6IC2e0Q",
+  "max_real_calls": 321,
+  "model_ref": {
+    "path": "analysis_results/phase2_rtmpose_response_20261016_01/model/end2end.onnx",
+    "sha256": "5c0a4bf67953e6d2ac43ce15e77dc9d5d354ae18430a47d2c5963a7bc5683e3c"
+  },
+  "runtime_ref": {
+    "path": ".venv-rtmpose-response-20261016/Scripts/python.exe",
+    "sha256": "82264b3fe4248d1ff3564a0296cbb4a266ef968799bd85902ab5eaaf3e17eb62"
+  },
+  "worker_ref": {
+    "path": "scripts/native_pose_onnx_worker.py",
+    "sha256": "89aa8f021e14cbcacb6f4674137ab8f014c9a8fc37e1819e5245b4593f83aaa4"
+  },
+  "region_config_ref": {
+    "path": "config/pilots/ohtani_supplement_regions_20261020.json",
+    "sha256": "687d64f0e5790633057c0b10724d8c420e1e67ab464d0b7f2dc1e069664231df"
+  },
+  "implementation_refs": [
+    {
+      "path": "src/pitch_analysis/native_pose_estimator.py",
+      "sha256": "534c7ba81adaee5044a816e3eec5958787d225cc37d508e6fc3e7555d3689a49"
+    },
+    {
+      "path": "src/pitch_analysis/native_pose_transport.py",
+      "sha256": "b1cbb163e96bcd858da14c61ae5b06acd4a096cc798403551f1ee5ab98010a8d"
+    },
+    {
+      "path": "src/pitch_analysis/native_pose_live.py",
+      "sha256": "967418f3a37079c26e2da1da98ea95b2ac42dec0e683909435b4664e86e95b4e"
+    },
+    {
+      "path": "src/pitch_analysis/native_pose.py",
+      "sha256": "660156879512caa58856a6f81ecb37431a781fbe8a6bbf69fef04f827e5ade63"
+    },
+    {
+      "path": "src/pitch_analysis/native_pose_io.py",
+      "sha256": "99746e9e08368659cc5491e7c28c1e7d17f7bf939fa1220dc14944ee5faf6f0c"
+    },
+    {
+      "path": "src/pitch_analysis/native_pose_review.py",
+      "sha256": "3a99904dae43e5248f077c82cb1471a21e5ce67125d7be271021165ce195c9c9"
+    },
+    {
+      "path": "src/pitch_analysis/contracts/schemas/native-keypoints-v1.json",
+      "sha256": "5c990ef90c6361383fe4679f6bad4106b0b02074b1358c7dec4b74b92c286add"
+    },
+    {
+      "path": "src/pitch_analysis/native_person_box_live.py",
+      "sha256": "e5205be407aa33d7fa15f99f44514b63912880d84cb464b1e090edadaa112d49"
+    },
+    {
+      "path": "src/pitch_analysis/native_person_boxes.py",
+      "sha256": "99973836ce11deb8364eb91db91af50b0bd8020333d73061590a05c675c17e4e"
+    },
+    {
+      "path": "src/pitch_analysis/native_person_box_transport.py",
+      "sha256": "325b2901ee3245ea36e876c3986962df25e7ac13ab25fb3784225b72b5cb0945"
+    },
+    {
+      "path": "scripts/run_native_person_box.py",
+      "sha256": "f37825cfecca97db4095ca39cb060de3fa9890b2e1016c6530e1aeb6f7769f49"
+    },
+    {
+      "path": "scripts/native_person_box_onnx_worker.py",
+      "sha256": "2a1f330d69aec8850f2a4af14d4af220086834806ba0bb65bfb50830a40ae089"
+    }
+  ],
+  "expected_runtime": {
+    "python": "3.12.14",
+    "numpy": "2.2.6",
+    "onnxruntime": "1.23.2"
+  },
+  "clips": [
+    {
+      "pitch_id": "supplement_002",
+      "original_pitch_id": "20261020T073530Z_6gyr6IC2e0Q_p02",
+      "candidate_status": "candidate",
+      "video_ref": {
+        "path": "input/shohei_ohtani/phase2_supplement_20261020_01/supplement_002.mp4",
+        "sha256": "b1586bdde9383e3b247bcc7d7974a3f15b0fed173848926d5217f261b87bab8e"
+      },
+      "metadata_ref": {
+        "path": "input/shohei_ohtani/phase2_supplement_20261020_01/supplement_002.json",
+        "sha256": "73e0729328d904608b8c9d2f4359b23108017363804c1a04dcebdfcbebb523f1"
+      },
+      "review_ref": {
+        "path": "annotations/input_reviews/shohei_ohtani/20261020T073530Z_6gyr6IC2e0Q/p02.json",
+        "sha256": "e9227d0c70ce4e6ffc8a6b46790c73201e65a3ebf35c156c60606e26f6702131"
+      },
+      "timeline_ref": {
+        "path": "data/intake/handoff/candidates/h_52926a604529200a6d901ad4a0cf7e78daabfbc7585fd74a06e7ed3fd48001ce/timeline.json",
+        "sha256": "d5194cfa28586b6285a644644df227a256b69afc3049c74862b5478a1dce65f3"
+      },
+      "fps_fraction": "60000/1001",
+      "frame_count": 321,
+      "crop_xyxy_px": [
+        192,
+        216,
+        768,
+        720
+      ],
+      "mediapipe_analysis": "analysis_results/phase2_ohtani_supplement_20261020_01/predictions/shohei_ohtani/supplement_002"
+    }
+  ],
+  "person_box_conditioning": {
+    "schema_version": "native-person-box-conditioning-v1",
+    "policy": "unique_person_box_center_in_operator_roi_v1",
+    "model_ref": {
+      "path": "analysis_results/phase2_person_box_preparation_20261021_01/model/20230928/yolox_onnx/yolox_m_8xb8-300e_humanart-c2c7a14a/end2end.onnx",
+      "sha256": "3dea6513388889f0fff4b77bf7a26013600321b9eb9ceb0e9a400a82572f5f23"
+    },
+    "worker_ref": {
+      "path": "scripts/native_person_box_onnx_worker.py",
+      "sha256": "2a1f330d69aec8850f2a4af14d4af220086834806ba0bb65bfb50830a40ae089"
+    },
+    "metadata_ref": {
+      "path": "analysis_results/phase2_person_box_preparation_20261021_01/model_metadata.json",
+      "sha256": "24181ba8a98fff33e99948837b8d6f2c32f22bb56e8765b082ddea5bd3f82d7f"
+    },
+    "max_detector_calls": 321,
+    "operator_roi": [
+      0.22,
+      0.4,
+      0.46,
+      0.88
+    ],
+    "final_score_threshold": 0.7,
+    "baked_postprocessing": {
+      "nms_applied_in_graph": true,
+      "nms_node": "NonMaxSuppression_569",
+      "score_threshold": 0.009999999776482582,
+      "iou_threshold": 0.6499999761581421,
+      "max_output_boxes_per_class": 200,
+      "pre_top_k": 5000,
+      "keep_top_k": 100,
+      "second_nms": false,
+      "planned_final_score_threshold": 0.7,
+      "internal_score_threshold_not_above_final": true,
+      "configuration_discrepancy": "detail.json post_processing gives .05/.5, but pipeline.json gives .01/.65; graph actual constants .01/.65 take precedence. No thresholds altered.",
+      "final_filter_note": "Approved plan fixes score>=.7. Do not adopt upstream rt mlib baked branch .3, do not re-NMS or alter graph."
+    },
+    "once_only_claim_path": "analysis_results/phase2_person_box_preparation_20261021_01/once_only_execution_claim.json",
+    "source_refs": [
+      {
+        "path": "analysis_results/phase2_person_box_preparation_20261021_01/model/20230928/yolox_onnx/yolox_m_8xb8-300e_humanart-c2c7a14a/end2end.onnx",
+        "sha256": "3dea6513388889f0fff4b77bf7a26013600321b9eb9ceb0e9a400a82572f5f23"
+      },
+      {
+        "path": "analysis_results/phase2_person_box_preparation_20261021_01/model_metadata.json",
+        "sha256": "24181ba8a98fff33e99948837b8d6f2c32f22bb56e8765b082ddea5bd3f82d7f"
+      },
+      {
+        "path": "scripts/native_person_box_onnx_worker.py",
+        "sha256": "2a1f330d69aec8850f2a4af14d4af220086834806ba0bb65bfb50830a40ae089"
+      },
+      {
+        "path": "analysis_results/phase2_person_box_preparation_20261021_01/LICENSE_NOTES.md",
+        "sha256": "edce76db30760afd4e4bbaa5b08ec15bdc35325aba5403093347b9837a8d8685"
+      },
+      {
+        "path": "analysis_results/phase2_person_box_preparation_20261021_01/model_acquisition.json",
+        "sha256": "10832e3372c7cff03aeb1fecc1da2abd921a5a4038ec6c47d5b71e59dcce149f"
+      },
+      {
+        "path": "docs/phase2_person_box_native_plan_20261021.md",
+        "sha256": "56f5f6159e2df69cd75d09a391215412f75501496346eeac14c816358cb55b65"
+      },
+      {
+        "path": "analysis_results/phase2_person_box_preparation_20261021_01/model/yolox_m_8xb8-300e_humanart-c2c7a14a.zip",
+        "sha256": "a000224fd8ba283202bc62d4a5fcdfe353adb9f468777dbac1ea2ada2093adde"
+      },
+      {
+        "path": "analysis_results/phase2_person_box_preparation_20261021_01/model/20230928/yolox_onnx/yolox_m_8xb8-300e_humanart-c2c7a14a/deploy.json",
+        "sha256": "2d751e99c64375915a79a8aefc2c72ec7dff63e6b414a91e5a41a10929d7abff"
+      },
+      {
+        "path": "analysis_results/phase2_person_box_preparation_20261021_01/model/20230928/yolox_onnx/yolox_m_8xb8-300e_humanart-c2c7a14a/pipeline.json",
+        "sha256": "69f4d8a396aa83a47f41e15e34f89a1b0806f36913d0f7f860d90ed7fd12c666"
+      },
+      {
+        "path": "analysis_results/phase2_person_box_preparation_20261021_01/model/20230928/yolox_onnx/yolox_m_8xb8-300e_humanart-c2c7a14a/detail.json",
+        "sha256": "9c59ae798ced5561569093a286130b87eb327b01d355013a0f3c5187432ec40f"
+      }
+    ]
+  }
+}
