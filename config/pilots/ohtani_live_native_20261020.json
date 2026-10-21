@@ -1,0 +1,221 @@
+{
+  "schema_version": "native-live-run-v1",
+  "status": "approved",
+  "approval": {
+    "reviewer": "HSU",
+    "reviewed_at_utc": "2026-10-20T13:06:00Z",
+    "user_reply": "核准方案並開始實作",
+    "plan": "docs/phase2_live_native_pose_plan_20261020.md",
+    "scope": "Optional live RTMPose on these five candidate clips once; native 17 points, original model/gates/raw/GT retained, complete suite and delivery; no automatic Phase2 pass."
+  },
+  "pitcher_id": "shohei_ohtani",
+  "original_batch_id": "20261020T073530Z_6gyr6IC2e0Q",
+  "max_real_calls": 1684,
+  "model_ref": {
+    "path": "analysis_results/phase2_rtmpose_response_20261016_01/model/end2end.onnx",
+    "sha256": "5c0a4bf67953e6d2ac43ce15e77dc9d5d354ae18430a47d2c5963a7bc5683e3c"
+  },
+  "runtime_ref": {
+    "path": ".venv-rtmpose-response-20261016/Scripts/python.exe",
+    "sha256": "82264b3fe4248d1ff3564a0296cbb4a266ef968799bd85902ab5eaaf3e17eb62"
+  },
+  "worker_ref": {
+    "path": "scripts/native_pose_onnx_worker.py",
+    "sha256": "89aa8f021e14cbcacb6f4674137ab8f014c9a8fc37e1819e5245b4593f83aaa4"
+  },
+  "region_config_ref": {
+    "path": "config/pilots/ohtani_supplement_regions_20261020.json",
+    "sha256": "687d64f0e5790633057c0b10724d8c420e1e67ab464d0b7f2dc1e069664231df"
+  },
+  "implementation_refs": [
+    {
+      "path": "src/pitch_analysis/native_pose_estimator.py",
+      "sha256": "801915c62a79651938c4b48c436b8d6c732efa94f983b88e4a790a44105e6377"
+    },
+    {
+      "path": "src/pitch_analysis/native_pose_transport.py",
+      "sha256": "b1cbb163e96bcd858da14c61ae5b06acd4a096cc798403551f1ee5ab98010a8d"
+    },
+    {
+      "path": "src/pitch_analysis/native_pose_live.py",
+      "sha256": "967418f3a37079c26e2da1da98ea95b2ac42dec0e683909435b4664e86e95b4e"
+    },
+    {
+      "path": "src/pitch_analysis/native_pose.py",
+      "sha256": "c48c117df22740f8575dd59a7867fdda1842c15f8c547bae86cdc395a145bd0c"
+    },
+    {
+      "path": "src/pitch_analysis/native_pose_review.py",
+      "sha256": "bf87f1036cbf6e4c9dfcf7a97262ff47a77325aa52031470ce7837f7af8ba4ab"
+    },
+    {
+      "path": "src/pitch_analysis/native_pose_io.py",
+      "sha256": "765483216904f696eec401c9a45e4a35bf1394743dd90a4828ec5d0d157b8222"
+    },
+    {
+      "path": "src/pitch_analysis/contracts/schemas/native-keypoints-v1.json",
+      "sha256": "0b964f80d54ea9ad6a4cb433299cbfff734d6ccc2de733cd1e5979f4ed2047d3"
+    },
+    {
+      "path": "scripts/run_native_pose_live.py",
+      "sha256": "88e3486670dca198a41248fe16c2f7b952f74d09d9821808c535f6449b5b0dd6"
+    }
+  ],
+  "expected_runtime": {
+    "python": "3.12.14",
+    "numpy": "2.2.6",
+    "onnxruntime": "1.23.2"
+  },
+  "clips": [
+    {
+      "pitch_id": "supplement_001",
+      "original_pitch_id": "20261020T073530Z_6gyr6IC2e0Q_p01",
+      "candidate_status": "candidate",
+      "video_ref": {
+        "path": "input/shohei_ohtani/phase2_supplement_20261020_01/supplement_001.mp4",
+        "sha256": "90a6acec9865c634bd019503d46c147647fa78df9a2827e1143c74abb852111a"
+      },
+      "metadata_ref": {
+        "path": "input/shohei_ohtani/phase2_supplement_20261020_01/supplement_001.json",
+        "sha256": "12c1476d692d22412f992ba96d805881c4140daccd3d0f02d6e8a068e75a9644"
+      },
+      "review_ref": {
+        "path": "annotations/input_reviews/shohei_ohtani/20261020T073530Z_6gyr6IC2e0Q/p01.json",
+        "sha256": "7573c812ca79049644bc5f050bcb388003e63cd1bd3c9db25d34bb972b6097b0"
+      },
+      "timeline_ref": {
+        "path": "data/intake/handoff/candidates/h_1fa0bef0d4de1001a90902f313f40cffef4eefd30879ce99c2299d8d6b48c0c8/timeline.json",
+        "sha256": "2ffc673b916efa92a488e27beb16da244d4a16eb927ce87e9510a74c2eee017b"
+      },
+      "fps_fraction": "60000/1001",
+      "frame_count": 335,
+      "crop_xyxy_px": [
+        192,
+        216,
+        768,
+        720
+      ],
+      "mediapipe_analysis": "analysis_results/phase2_ohtani_supplement_20261020_01/predictions/shohei_ohtani/supplement_001"
+    },
+    {
+      "pitch_id": "supplement_002",
+      "original_pitch_id": "20261020T073530Z_6gyr6IC2e0Q_p02",
+      "candidate_status": "candidate",
+      "video_ref": {
+        "path": "input/shohei_ohtani/phase2_supplement_20261020_01/supplement_002.mp4",
+        "sha256": "b1586bdde9383e3b247bcc7d7974a3f15b0fed173848926d5217f261b87bab8e"
+      },
+      "metadata_ref": {
+        "path": "input/shohei_ohtani/phase2_supplement_20261020_01/supplement_002.json",
+        "sha256": "73e0729328d904608b8c9d2f4359b23108017363804c1a04dcebdfcbebb523f1"
+      },
+      "review_ref": {
+        "path": "annotations/input_reviews/shohei_ohtani/20261020T073530Z_6gyr6IC2e0Q/p02.json",
+        "sha256": "e9227d0c70ce4e6ffc8a6b46790c73201e65a3ebf35c156c60606e26f6702131"
+      },
+      "timeline_ref": {
+        "path": "data/intake/handoff/candidates/h_52926a604529200a6d901ad4a0cf7e78daabfbc7585fd74a06e7ed3fd48001ce/timeline.json",
+        "sha256": "d5194cfa28586b6285a644644df227a256b69afc3049c74862b5478a1dce65f3"
+      },
+      "fps_fraction": "60000/1001",
+      "frame_count": 321,
+      "crop_xyxy_px": [
+        192,
+        216,
+        768,
+        720
+      ],
+      "mediapipe_analysis": "analysis_results/phase2_ohtani_supplement_20261020_01/predictions/shohei_ohtani/supplement_002"
+    },
+    {
+      "pitch_id": "supplement_003",
+      "original_pitch_id": "20261020T073530Z_6gyr6IC2e0Q_p03",
+      "candidate_status": "candidate",
+      "video_ref": {
+        "path": "input/shohei_ohtani/phase2_supplement_20261020_01/supplement_003.mp4",
+        "sha256": "97a45985648af1cf20ed48bda6ce5454fe509609114ac28d8a5deb632621e8ae"
+      },
+      "metadata_ref": {
+        "path": "input/shohei_ohtani/phase2_supplement_20261020_01/supplement_003.json",
+        "sha256": "7dffd913114a3b9526664807d3fbd4c76e9512bc94ed2973e17e1f87ff78fa51"
+      },
+      "review_ref": {
+        "path": "annotations/input_reviews/shohei_ohtani/20261020T073530Z_6gyr6IC2e0Q/p03.json",
+        "sha256": "8055158a048fb83d7df49c04ee106eb3a9835b893a038cf0363abd83f767c9e4"
+      },
+      "timeline_ref": {
+        "path": "data/intake/handoff/candidates/h_723d9142aa931f213f49ab34f760752db6630d3659c60bb7edb4af822a99c46f/timeline.json",
+        "sha256": "05bc49d8435db302a8f6c461744c2b78a62c1a7bd2354e80d0e6d3b375812449"
+      },
+      "fps_fraction": "60000/1001",
+      "frame_count": 369,
+      "crop_xyxy_px": [
+        192,
+        216,
+        768,
+        720
+      ],
+      "mediapipe_analysis": "analysis_results/phase2_ohtani_supplement_20261020_01/predictions/shohei_ohtani/supplement_003"
+    },
+    {
+      "pitch_id": "supplement_004",
+      "original_pitch_id": "20261020T073530Z_6gyr6IC2e0Q_p04",
+      "candidate_status": "candidate",
+      "video_ref": {
+        "path": "input/shohei_ohtani/phase2_supplement_20261020_01/supplement_004.mp4",
+        "sha256": "76945ebff5dc300ee0fc7084a0e21370137ee9d91ad61cdca52ccab0e4ee9054"
+      },
+      "metadata_ref": {
+        "path": "input/shohei_ohtani/phase2_supplement_20261020_01/supplement_004.json",
+        "sha256": "c89496dd3fdbea65a198490943ca4e7a4a5eda09bc3cde4778d0d18dc85e1c62"
+      },
+      "review_ref": {
+        "path": "annotations/input_reviews/shohei_ohtani/20261020T073530Z_6gyr6IC2e0Q/p04.json",
+        "sha256": "52e443e02e21df6697e85be74743a38b72be43b8ac6af6ed2c8ef3e8ca341751"
+      },
+      "timeline_ref": {
+        "path": "data/intake/handoff/candidates/h_93d052d94c54f94336eb1f32c42940fabe854ae58e2e01983abead270421c8c3/timeline.json",
+        "sha256": "2cb35f6e16227dee4ab245d5fc9199b6702c1895658693a195292b129073daa9"
+      },
+      "fps_fraction": "60000/1001",
+      "frame_count": 338,
+      "crop_xyxy_px": [
+        192,
+        216,
+        768,
+        720
+      ],
+      "mediapipe_analysis": "analysis_results/phase2_ohtani_supplement_20261020_01/predictions/shohei_ohtani/supplement_004"
+    },
+    {
+      "pitch_id": "supplement_005",
+      "original_pitch_id": "20261020T073530Z_6gyr6IC2e0Q_p05",
+      "candidate_status": "candidate",
+      "video_ref": {
+        "path": "input/shohei_ohtani/phase2_supplement_20261020_01/supplement_005.mp4",
+        "sha256": "1c67c058d4376ecf94a138eb08e3251eb601a365a7e8a55e251e1c136ae5d95f"
+      },
+      "metadata_ref": {
+        "path": "input/shohei_ohtani/phase2_supplement_20261020_01/supplement_005.json",
+        "sha256": "457f0e75809300509e487c0f33cdb529638e13fecc2f5861c1448d448b7f841d"
+      },
+      "review_ref": {
+        "path": "annotations/input_reviews/shohei_ohtani/20261020T073530Z_6gyr6IC2e0Q/p05.json",
+        "sha256": "bdff6e3913ec558a8746e865a21eee43a502908e62eed2d1ec8b9b999c3cc6f4"
+      },
+      "timeline_ref": {
+        "path": "data/intake/handoff/candidates/h_17cb95e543165bbe45df516e7e339f32f281d92de5bf5334daed428550637afc/timeline.json",
+        "sha256": "3fd9ea8b6b151f1c69e0a1232842ec7238b91f5b9ab5deb07e3bdfea686705fe"
+      },
+      "fps_fraction": "60000/1001",
+      "frame_count": 321,
+      "crop_xyxy_px": [
+        192,
+        216,
+        768,
+        720
+      ],
+      "mediapipe_analysis": "analysis_results/phase2_ohtani_supplement_20261020_01/predictions/shohei_ohtani/supplement_005"
+    }
+  ]
+}

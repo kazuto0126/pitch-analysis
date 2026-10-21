@@ -6,7 +6,13 @@
 本次收尾摘要見 [STATUS](docs/STATUS.md)；外部專案供片需求見
 [INPUT_REQUIREMENTS](docs/INPUT_REQUIREMENTS.md)。
 
-2026-10-20 最新：[新大谷補片五球分析完成](docs/phase2_ohtani_supplement_results_20261020.md)：
+2026-10-21 最新：[可選 live RTMPose 入口已交付](docs/phase2_live_native_pose_results_20261021.md)：
+五球1684格各推論一次，提供原生17點與五支完整overlay；正式MediaPipe／核心／門檻保持。
+部分舊錯例回到投手附近，但第2球準備段、第5球第128格仍有混合骨架，尚未校準或正式採用。
+完整suite1055 passed／0 failed／2 skipped；**Phase2自動可靠性仍NOT PASSED**。
+[使用方式](docs/phase2_live_native_pose_usage.md)；本機觀看入口：`analysis_results/phase2_ohtani_live_native_20261020_01/review_all.html`。
+
+前段：[新大谷補片五球分析完成](docs/phase2_ohtani_supplement_results_20261020.md)：
 人工輸入覆核5/5與新來源操作框已確認，五球各跑一次；選中1599/1684，肘角raw coverage皆≥50%。
 仍因長缺口／前導膝角不足而5 degraded，另保留p02／p05混合骨架錯例；Phase2仍NOT PASSED。
 原片與overlay觀看入口：`analysis_results/phase2_ohtani_supplement_20261020_01/review_all.html`。

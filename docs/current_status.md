@@ -1,9 +1,9 @@
-# Current status — Supplement failure attribution complete, live native backend proposed
+# Current status — Optional live native backend delivered; reliability remains unaccepted
 
-Updated: 2026-10-20
+Updated: 2026-10-21
 
 **Phase 1 = PASSED.**
-**Native interface integration = PASSED (cached output compatibility only).**
+**Native interface integration = PASSED (cached compatibility and optional live COCO17 entry).**
 **Phase 2 evaluation = COMPLETE; Phase 2 = NOT PASSED (automatic reliability degraded).**
 
 The baseline evaluation is complete; the current second-pitcher pilot is recorded below.
@@ -12,7 +12,42 @@ gates, MediaPipe settings, interpolation and smoothing are unchanged. The approv
 optional subject-region constraint is described below; the default selector remains compatible.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-20 bounded attribution and next implementation scope (latest)
+## 2026-10-21 approved live native implementation delivered (latest)
+
+HSU approved the fixed [live-native plan](phase2_live_native_pose_plan_20261020.md).
+Implemented an independent new-MP4 RTMPose entry using the existing model and
+isolated runtime, source-bound reviewed crop, native COCO17 and original-pixel XY.
+Unsupported Z/visibility/presence remain null; no 33-point padding, confidence gate,
+interpolation, calibration or formal backend replacement. Default MediaPipe is unchanged.
+
+The one approved run completed on 2026-10-20 13:18:46–13:21:01 UTC: five clips
+335/321/369/338/321 frames, 1684 attempted/1684 completed, 0 execution failures.
+Worker journal has exactly 1684 started/completed pairs, no retries; all binary
+payload hashes verified (102602752 bytes). Five H264 overlays decode all1684 frames
+at1280x720/60000/1001FPS; maximum timeline difference9.095e-13ms.
+
+Viewed90 regular overlay samples and9 targeted original/MediaPipe/RTMPose triples,
+all13 contact sheets. Some prior missing/hybrid examples return near the pitcher,
+but new RTMPose preparation frames onp02 mix pitcher lower body with batter-area
+upper points, andp05f128 is still severely hybrid/misaligned. This is agent sample
+inspection, not human GT. Complete coordinate availability is not reliable coverage;
+accuracy remains null, quality_status=not_calibrated, usable_for_analysis=null.
+
+Full suite1057run/1055passed/0failed/0errors/2skipped,64.453s;39new tests.
+Two Windows file-symlink privilege skips remain; junction tests actually ran.
+Formal Yamamoto five-video MediaPipe E2E enabled, major hints unchanged2/0/19/5/3.
+475protected file SHA unchanged; no formal core/gate/raw/GT changes,0new annotations,
+0formal promotions. Existing supplement MediaPipe results stay5degraded.
+
+Output:`analysis_results/phase2_ohtani_live_native_20261020_01/`; open`review_all.html`.
+[Delivery report](phase2_live_native_pose_results_20261021.md),
+[usage](phase2_live_native_pose_usage.md),
+[versioned evidence](dataset_selections/ohtani_live_native_results_20261021.json).
+The approved implementation and one-pass delivery are complete. Engineering
+integration PASSED does not make Phase2 automatic reliability PASSED. This round
+stops here: no repeated inference, calibration, formal replacement or Phase3.
+
+## 2026-10-20 bounded attribution and next implementation scope (previous)
 
 Read saved1684-frame candidate traces and raw only;0new inference,0selector replay,
 0human GT changes.All85unselected frames have0eligible candidates.Only14frames
@@ -30,10 +65,11 @@ Output:`analysis_results/phase2_ohtani_supplement_diagnosis_20261020_01/`;
 10read artifacts SHA unchanged.No product/test changes or suite rerun.
 [attribution](phase2_ohtani_supplement_diagnosis_20261020.md),
 [live native backend proposal](phase2_live_native_pose_plan_20261020.md).
-Existing approved RTMPose interface is cached-only.New live implementation awaits
-scope confirmation:existing weight/runtime,1684new frames once,native17 outputs
+At that checkpoint the approved RTMPose interface was cached-only.Live scope was
+then awaiting confirmation:existing weight/runtime,1684new frames once,native17 outputs
 and5overlays,unchanged production MediaPipe/core/gates.No Phase2 pass from interface
-completion.No new model experiment,code implementation or Phase3started here.
+completion.That checkpoint started no implementation or Phase3; the subsequently
+approved implementation is completed in the latest section above.
 
 ## 2026-10-20 Ohtani supplement analysis completed (previous)
 

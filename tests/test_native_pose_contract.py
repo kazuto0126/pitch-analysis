@@ -53,7 +53,77 @@ def make_frame(topology="coco_17", index=0):
     }
 
 
+def make_live_manifest():
+    manifest = make_manifest()
+    manifest["inference_mode"] = "live_stateless_roi"
+    manifest["backend"]["name"] = "rtmpose_live_onnx"
+    manifest["video"]["fps"] = 60000 / 1001
+    manifest["timebase"]["fps_fraction"] = "60000/1001"
+    model = {"path": "model/end2end.onnx", "sha256": "a" * 64}
+    config = {"path": "config/live.json", "sha256": "d" * 64}
+    review = {"path": "annotations/input_review.json", "sha256": "e" * 64}
+    manifest["source_refs"].extend([model, config, review])
+    manifest["roi_provenance"] = {
+        "config_ref": deepcopy(config), "review_ref": deepcopy(review),
+        "reviewer": "HSU", "reviewed_at_utc": "2026-10-20T08:33:11Z",
+        "roi_source": "HSU-confirmed source-bound fixed full-motion crop",
+        "crop_xyxy_px": [0, 0, 100, 200],
+    }
+    return manifest
+
+
 class NativePoseContractTests(unittest.TestCase):
+    def test_live_manifest_explicitly_binds_model_video_config_and_reviewer(self):
+        validate_manifest(make_live_manifest())
+        for reference_kind in ("video", "model", "config", "review"):
+            source = make_live_manifest()
+            index = {"video": 0, "model": 1, "config": 2, "review": 3}[reference_kind]
+            source["source_refs"].pop(index)
+            with self.subTest(reference_kind=reference_kind), self.assertRaises(ValueError):
+                validate_manifest(source)
+        for field in ("config_ref", "review_ref", "reviewer", "reviewed_at_utc", "roi_source"):
+            source = make_live_manifest()
+            source["roi_provenance"].pop(field)
+            with self.subTest(field=field), self.assertRaises(ValueError):
+                validate_manifest(source)
+        source = make_live_manifest()
+        source["roi_provenance"]["review_ref"]["sha256"] = "f" * 64
+        with self.assertRaisesRegex(ValueError, "source reference"):
+            validate_manifest(source)
+
+    def test_live_mode_cannot_reinterpret_other_backends_or_fractional_fps(self):
+        source = make_live_manifest()
+        source["backend"]["name"] = "some_other_backend"
+        with self.assertRaisesRegex(ValueError, "RTMPose COCO17"):
+            validate_manifest(source)
+        source = make_live_manifest()
+        source["topology"] = "mediapipe_33"
+        with self.assertRaises(ValueError):
+            validate_manifest(source)
+        for fps in (59.94, 60, True):
+            source = make_live_manifest()
+            source["video"]["fps"] = fps
+            with self.subTest(fps=fps), self.assertRaises(ValueError):
+                validate_manifest(source)
+        for fraction in (None, "59.94", "60000/0", "0/1001", "-60000/1001"):
+            source = make_live_manifest()
+            if fraction is None:
+                source["timebase"].pop("fps_fraction")
+            else:
+                source["timebase"]["fps_fraction"] = fraction
+            with self.subTest(fraction=fraction), self.assertRaises(ValueError):
+                validate_manifest(source)
+
+    def test_live_reviewer_provenance_rejects_missing_name_or_naive_time(self):
+        for field, value in (("reviewer", " "), ("roi_source", "\t"),
+                             ("reviewed_at_utc", "2026-10-20T08:33:11"),
+                             ("reviewed_at_utc", "2026-10-20T08:33:11+08:00"),
+                             ("reviewed_at_utc", "not a date")):
+            source = make_live_manifest()
+            source["roi_provenance"][field] = value
+            with self.subTest(field=field, value=value), self.assertRaises(ValueError):
+                validate_manifest(source)
+
     def test_native_topologies_have_exact_names_indices_and_supported_connections(self):
         from pitch_analysis.pose_capture import LANDMARK_NAMES
         self.assertEqual(TOPOLOGIES["mediapipe_33"]["names"], LANDMARK_NAMES)

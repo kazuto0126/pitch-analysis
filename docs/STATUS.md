@@ -1,10 +1,27 @@
 # 進度摘要
 
-更新：2026-10-20（台灣）。[完整狀態](current_status.md)；[最新大谷補片分析](phase2_ohtani_supplement_results_20261020.md)。
+更新：2026-10-21（台灣）。[完整狀態](current_status.md)；[最新 live RTMPose 交付](phase2_live_native_pose_results_20261021.md)。
 
 **Phase 1 = PASSED；Native interface integration = PASSED；Phase 2 自動可靠性仍 NOT PASSED。**
 
-## 最新續行：原因分解完成，準備可選live後端方案
+## 最新：可選 live RTMPose 入口與五球一次性交付完成
+
+HSU已核准並完成新MP4入口；沿用既有權重／隔離環境、已確認的固定crop。
+五球335／321／369／338／321格各推論一次，共1684次，0執行失敗；
+輸出原生17點、完整SimCC、逐格journal及五支H264 overlay。正式MediaPipe預設與核心／門檻保持。
+
+實看90張overlay取樣與9組原片／舊／新對照：部分舊錯例回到投手附近，
+但新後端第2球準備段、第5球第128格仍混合／錯位；座標齊全不代表可靠。
+新結果未校準、accuracy未量測、usable_for_analysis=null；五球仍候選，沒有新人工GT。
+**工程接入完成，Phase2自動可靠性仍NOT PASSED。**
+
+完整suite **1055 passed／0 failed／0 errors／2 skipped**（1057項，新增39項，64.453秒）；
+正式山本五球E2E提示仍2／0／19／5／3，475保護檔案SHA不變。
+輸出：`analysis_results/phase2_ohtani_live_native_20261020_01/`，先看`review_all.html`。
+[結果／停止狀態](phase2_live_native_pose_results_20261021.md)、[使用方式](phase2_live_native_pose_usage.md)。
+本輪已完成並停止，沒有自行開始新推論、校準、正式模型替換或Phase3。
+
+## 前段：原因分解完成，提出可選live後端方案
 
 只讀新補片已保存資料：85個未選中格皆無eligible候選；14格沒有模型候選，
 其餘71格有輸出但被原ROI／投影尺度／confidence拒絕，不能統稱完全漏偵測。
@@ -12,8 +29,8 @@ p02第159／245、p05第251格也沒有其他eligible骨架可直接換上。
 前導膝起始低visibility段p02／p03／p05分別81／107／82格，不能由模型分數斷言真人被遮住。
 
 [原因分解](phase2_ohtani_supplement_diagnosis_20261020.md)；
-[可選live RTMPose最小實作方案](phase2_live_native_pose_plan_20261020.md)已備妥，待核准。
-目前核准的RTMPose介面僅讀封存；本次尚未改程式或推論，沒有重跑suite或進Phase3。
+[可選live RTMPose最小實作方案](phase2_live_native_pose_plan_20261020.md)在該checkpoint備妥，後續已核准並完成，見上節。
+原因分解當時的RTMPose介面僅讀封存；該checkpoint未改程式或推論，沒有重跑suite或進Phase3。
 方案限定現有權重／隔離環境、新補片1684格各一次、原生17點與五支overlay，正式核心及門檻保持。
 
 ## 前段：大谷新補片5球分析完成，仍有追蹤與前導膝限制

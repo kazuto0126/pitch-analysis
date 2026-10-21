@@ -1,4 +1,4 @@
-"""Descriptive review of cached native outputs, without quality calibration.
+"""Descriptive review of saved native outputs, without quality calibration.
 
 Coordinate availability is not correctness or human observability.  This module
 does not invoke a pose estimator, confidence gate, interpolation, or tracker.
@@ -6,6 +6,7 @@ does not invoke a pose estimator, confidence gate, interpolation, or tracker.
 from __future__ import annotations
 
 import hashlib
+from fractions import Fraction
 import math
 from pathlib import Path
 import shutil
@@ -66,6 +67,10 @@ def _records(manifest: dict, frames: Sequence[NativePoseFrame]) -> list[dict]:
         if ((index == 0 and record["timestamp_ms"] != 0)
                 or (index and record["timestamp_ms"] <= records[index - 1]["timestamp_ms"])):
             raise ValueError("Native frame timestamps must preserve zero origin and increasing source order")
+        if manifest["inference_mode"] == "live_stateless_roi":
+            expected_time = float(Fraction(index * 1000) / Fraction(manifest["timebase"]["fps_fraction"]))
+            if not math.isclose(record["timestamp_ms"], expected_time, rel_tol=0, abs_tol=1e-9):
+                raise ValueError(f"Live native timestamp must use frame index / fractional FPS at frame {index}")
     return records
 
 
@@ -120,7 +125,7 @@ def summarize_native(manifest: dict, frames: Sequence[NativePoseFrame]) -> dict:
     all_names = set()
     for topology in TOPOLOGIES.values():
         all_names.update(topology["names"])
-    return {
+    summary = {
         "schema_version": "native-pose-summary-v1", "pitch_id": manifest["pitch_id"],
         "backend": manifest["backend"], "topology": manifest["topology"],
         "total_frames": total, "native_landmark_count": len(names), "joints": joints,
@@ -135,9 +140,14 @@ def summarize_native(manifest: dict, frames: Sequence[NativePoseFrame]) -> dict:
             "Unsupported topology landmarks are separate from missing coordinates of provided landmarks.",
         ],
     }
+    if manifest["inference_mode"] == "live_stateless_roi":
+        summary["source_inference_mode"] = manifest["inference_mode"]
+        summary["notes"].append(
+            "new_inference_calls counts calls made by this summary only (zero); the source manifest describes live inference.")
+    return summary
 
 
-def draw_native_frame(image_bgr: np.ndarray, record: dict) -> np.ndarray:
+def draw_native_frame(image_bgr: np.ndarray, record: dict, *, source_mode: str = "cached_read_only") -> np.ndarray:
     """Draw in-image native points and edges on a copy, without clipping or score gates."""
     if record["quality_status"] != "not_calibrated" or record["usable_for_analysis"] is not None:
         raise ValueError("Overlay must describe uncalibrated native output")
@@ -157,7 +167,13 @@ def draw_native_frame(image_bgr: np.ndarray, record: dict) -> np.ndarray:
             cv2.line(result, points[first], points[second], (0, 220, 80), 2, cv2.LINE_AA)
     for location in points.values():
         cv2.circle(result, location, 3, (0, 220, 255), -1, cv2.LINE_AA)
-    model_label = "cached RTMPose / COCO17" if record["topology"] == "coco_17" else "cached MediaPipe / 33 points"
+    if source_mode not in ("cached_read_only", "live_stateless_roi"):
+        raise ValueError("Unknown native overlay source mode")
+    if source_mode == "live_stateless_roi" and record["topology"] != "coco_17":
+        raise ValueError("Live native overlay requires COCO17")
+    model_label = ("live RTMPose / COCO17" if source_mode == "live_stateless_roi" else
+                   "cached RTMPose / COCO17" if record["topology"] == "coco_17" else
+                   "cached MediaPipe / 33 points")
     cv2.rectangle(result, (0, 0), (width - 1, min(height - 1, 52)), (0, 0, 0), -1)
     scale = min(.43, max(.20, width / 1100))
     cv2.putText(result, f"{model_label} / NOT CALIBRATED", (5, 18),
@@ -175,7 +191,16 @@ def _open_video(path: Path):
     return capture
 
 
-def _decode_verified(video_path: Path, records: list[dict], width: int, height: int):
+def _time_matches(actual: float, expected: float, source_mode: str) -> bool:
+    if not math.isfinite(actual):
+        return False
+    if source_mode == "live_stateless_roi":
+        return abs(actual - expected) < 1.0
+    return round(actual) == expected
+
+
+def _decode_verified(video_path: Path, records: list[dict], width: int, height: int,
+                     *, source_mode: str = "cached_read_only"):
     capture = _open_video(video_path)
     try:
         for index, record in enumerate(records):
@@ -187,7 +212,7 @@ def _decode_verified(video_path: Path, records: list[dict], width: int, height: 
             if hashlib.sha256(image.tobytes()).hexdigest() != record["decoded_bgr_sha256"]:
                 raise ValueError(f"Decoded source pixel SHA mismatch at frame {index}")
             native_time = float(capture.get(cv2.CAP_PROP_POS_MSEC))
-            if not math.isfinite(native_time) or round(native_time) != record["timestamp_ms"]:
+            if not _time_matches(native_time, record["timestamp_ms"], source_mode):
                 raise ValueError(f"Decoded timestamp differs from preserved source timestamp at frame {index}")
             yield image, native_time
         ok, _ = capture.read()
@@ -197,7 +222,8 @@ def _decode_verified(video_path: Path, records: list[dict], width: int, height: 
         capture.release()
 
 
-def _inspect_overlay(path: Path, records: list[dict], width: int, height: int, fps: float) -> dict:
+def _inspect_overlay(path: Path, records: list[dict], width: int, height: int, fps: float,
+                     *, source_mode: str = "cached_read_only") -> dict:
     capture = _open_video(path)
     try:
         actual_fps = float(capture.get(cv2.CAP_PROP_FPS))
@@ -214,7 +240,7 @@ def _inspect_overlay(path: Path, records: list[dict], width: int, height: int, f
             if actual_count >= len(records):
                 raise ValueError("Encoded overlay has extra frames")
             overlay_time = float(capture.get(cv2.CAP_PROP_POS_MSEC))
-            if not math.isfinite(overlay_time) or round(overlay_time) != records[actual_count]["timestamp_ms"]:
+            if not _time_matches(overlay_time, records[actual_count]["timestamp_ms"], source_mode):
                 raise ValueError(f"Encoded overlay timestamp differs from saved source frame {actual_count}")
             max_time_difference = max(max_time_difference, abs(overlay_time - records[actual_count]["timestamp_ms"]))
             actual_count += 1
@@ -231,7 +257,7 @@ def _inspect_overlay(path: Path, records: list[dict], width: int, height: int, f
 
 
 def write_native_overlay(video_path: Path, manifest: dict, frames: Sequence[NativePoseFrame], target: Path) -> dict:
-    """Create one new cached COCO17 overlay, validating source pixels and timestamps.
+    """Create one new COCO17 overlay, validating source pixels and timestamps.
 
     A temporary encode is fully decoded before a new, exclusive output is
     published.  Existing overlays and source files are never overwritten.
@@ -242,7 +268,7 @@ def write_native_overlay(video_path: Path, manifest: dict, frames: Sequence[Nati
     if target.exists() or target.resolve() == video_path.resolve():
         raise FileExistsError(f"Native overlay target must be new: {target}")
     if manifest["topology"] != "coco_17" or "rtmpose" not in manifest["backend"]["name"].lower():
-        raise ValueError("MediaPipe uses its existing overlay; only cached RTMPose overlays are generated")
+        raise ValueError("MediaPipe uses its existing overlay; only RTMPose overlays are generated")
     records = _records(manifest, frames)
     if not records:
         raise ValueError("An overlay requires at least one native frame")
@@ -251,6 +277,9 @@ def write_native_overlay(video_path: Path, manifest: dict, frames: Sequence[Nati
         raise ValueError("Source video SHA mismatch")
     width, height = manifest["image_size"]["width"], manifest["image_size"]["height"]
     fps = float(manifest["video"]["fps"])
+    source_mode = manifest["inference_mode"]
+    encoder_fps = (manifest["timebase"]["fps_fraction"]
+                   if source_mode == "live_stateless_roi" else str(fps))
     if width % 2 or height % 2 or not math.isfinite(fps) or fps <= 0:
         raise ValueError("H.264 yuv420p overlay requires even image dimensions and positive finite FPS")
     capture = _open_video(video_path)
@@ -266,15 +295,16 @@ def write_native_overlay(video_path: Path, manifest: dict, frames: Sequence[Nati
         temporary = Path(staging) / "overlay.mp4"
         command = [imageio_ffmpeg.get_ffmpeg_exe(), "-hide_banner", "-loglevel", "error", "-n",
                    "-f", "rawvideo", "-pix_fmt", "bgr24", "-s:v", f"{width}x{height}",
-                   "-r", str(fps), "-i", "pipe:0", "-an", "-c:v", "libx264",
+                   "-r", encoder_fps, "-i", "pipe:0", "-an", "-c:v", "libx264",
                    "-preset", "medium", "-crf", "18", "-pix_fmt", "yuv420p",
                    "-movflags", "+faststart", str(temporary)]
         with tempfile.TemporaryFile(mode="w+b") as error_stream:
             process = subprocess.Popen(command, stdin=subprocess.PIPE, stdout=subprocess.DEVNULL, stderr=error_stream)
             try:
-                for index, (image, native_time) in enumerate(_decode_verified(video_path, records, width, height)):
+                for index, (image, native_time) in enumerate(_decode_verified(
+                        video_path, records, width, height, source_mode=source_mode)):
                     max_time_difference = max(max_time_difference, abs(native_time - records[index]["timestamp_ms"]))
-                    process.stdin.write(draw_native_frame(image, records[index]).tobytes())
+                    process.stdin.write(draw_native_frame(image, records[index], source_mode=source_mode).tobytes())
                 process.stdin.close()
                 code = process.wait()
                 if code:
@@ -287,12 +317,12 @@ def write_native_overlay(video_path: Path, manifest: dict, frames: Sequence[Nati
                     process.terminate()
                     process.wait()
                 raise
-        inspection = _inspect_overlay(temporary, records, width, height, fps)
+        inspection = _inspect_overlay(temporary, records, width, height, fps, source_mode=source_mode)
         if _sha256(video_path) != source_sha:
             raise ValueError("Source video changed during overlay generation")
         with temporary.open("rb") as source, target.open("xb") as destination:
             shutil.copyfileobj(source, destination)
-    return {
+    receipt = {
         "schema_version": "native-overlay-review-v1", "path": str(target.resolve()),
         "sha256": _sha256(target), "source_video_sha256": source_sha,
         "source_pixel_sha_verified_frames": len(records), "source_timestamps_verified_frames": len(records),
@@ -303,3 +333,13 @@ def write_native_overlay(video_path: Path, manifest: dict, frames: Sequence[Nati
         "topology": "coco_17", "new_inference_calls": 0, "interpolated_coordinates": 0,
         **inspection,
     }
+    if source_mode == "live_stateless_roi":
+        receipt.update({
+            "source_inference_mode": source_mode,
+            "fps_fraction": encoder_fps,
+            "timestamp_validation_tolerance_ms_exclusive": 1.0,
+            "max_source_timestamp_difference_ms": max_time_difference,
+            "max_overlay_timestamp_difference_ms": inspection["max_overlay_timestamp_rounding_difference_ms"],
+            "new_inference_calls_scope": "overlay rendering only; source live inference is described by the manifest",
+        })
+    return receipt

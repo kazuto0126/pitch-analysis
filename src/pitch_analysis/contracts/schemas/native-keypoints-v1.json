@@ -82,7 +82,8 @@
           "required": ["frame_index_base", "timestamp_semantics"],
           "properties": {
             "frame_index_base": {"type": "integer", "const": 0},
-            "timestamp_semantics": {"$ref": "#/$defs/text"}
+            "timestamp_semantics": {"$ref": "#/$defs/text"},
+            "fps_fraction": {"type": "string", "pattern": "^[1-9][0-9]*/[1-9][0-9]*$"}
           }
         },
         "capabilities": {
@@ -95,11 +96,28 @@
         },
         "quality_status": {"const": "not_calibrated"},
         "usable_for_analysis": {"type": "null"},
-        "inference_mode": {"const": "cached_read_only"},
+        "inference_mode": {"enum": ["cached_read_only", "live_stateless_roi"]},
         "source_refs": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/reference"}},
         "roi_provenance": {"type": "object"},
         "original_overlay": {"anyOf": [{"type": "null"}, {"$ref": "#/$defs/reference"}]}
-      }
+      },
+      "allOf": [{
+        "if": {"properties": {"inference_mode": {"const": "live_stateless_roi"}}},
+        "then": {"properties": {
+          "topology": {"const": "coco_17"},
+          "timebase": {"required": ["fps_fraction"]},
+          "roi_provenance": {
+            "required": ["config_ref", "review_ref", "reviewer", "reviewed_at_utc", "roi_source"],
+            "properties": {
+              "config_ref": {"$ref": "#/$defs/reference"},
+              "review_ref": {"$ref": "#/$defs/reference"},
+              "reviewer": {"$ref": "#/$defs/text"},
+              "reviewed_at_utc": {"$ref": "#/$defs/text"},
+              "roi_source": {"$ref": "#/$defs/text"}
+            }
+          }
+        }}
+      }]
     },
     "frame": {
       "type": "object", "additionalProperties": false,

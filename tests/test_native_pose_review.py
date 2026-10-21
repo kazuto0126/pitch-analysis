@@ -2,9 +2,11 @@
 from __future__ import annotations
 
 from copy import deepcopy
+from fractions import Fraction
 import hashlib
 from pathlib import Path
 import tempfile
+import subprocess
 import unittest
 from unittest.mock import patch
 
@@ -69,7 +71,39 @@ def missing(point):
     point.update(x_px=None, y_px=None, coordinate_state="missing", missing_reason="saved_native_missing")
 
 
+def make_live(source, fps_fraction="30/1"):
+    result = deepcopy(source)
+    result["inference_mode"] = "live_stateless_roi"
+    result["timebase"].update(fps_fraction=fps_fraction,
+                               timestamp_semantics="frame_index * 1000 / fractional FPS; zero origin")
+    result["video"]["fps"] = float(Fraction(fps_fraction))
+    model = {"path": "model/end2end.onnx", "sha256": result["backend"]["model_sha256"]}
+    video = {"path": "fixture.mp4", "sha256": result["video"]["sha256"]}
+    config = {"path": "config/live.json", "sha256": "e" * 64}
+    review = {"path": "annotations/review.json", "sha256": "f" * 64}
+    result["video"]["path"] = video["path"]
+    result["source_refs"] = [model, video, config, review]
+    result["roi_provenance"] = {
+        "config_ref": config, "review_ref": review, "reviewer": "HSU",
+        "reviewed_at_utc": "2026-10-20T08:33:11Z", "roi_source": "HSU confirmed source ROI",
+    }
+    return result
+
+
 class NativeSummaryTests(unittest.TestCase):
+    def test_live_summary_preserves_fractional_time_and_explains_its_zero_calls(self):
+        source = make_live(manifest(), "60000/1001")
+        payloads = [frame_payload(source, index) for index in range(3)]
+        for index, payload in enumerate(payloads):
+            payload["timestamp_ms"] = float(Fraction(index * 1000) / Fraction("60000/1001"))
+        result = summarize_native(source, [NativePoseFrame(payload) for payload in payloads])
+        self.assertEqual(result["source_inference_mode"], "live_stateless_roi")
+        self.assertEqual(result["new_inference_calls"], 0)
+        self.assertIn("source manifest describes live inference", result["notes"][-1])
+        payloads[1]["timestamp_ms"] = round(payloads[1]["timestamp_ms"])
+        with self.assertRaisesRegex(ValueError, "fractional FPS at frame 1"):
+            summarize_native(source, [NativePoseFrame(payload) for payload in payloads])
+
     def test_counts_native_missing_outside_and_unsupported_separately(self):
         source = manifest()
         payloads = [frame_payload(source, index) for index in range(3)]
@@ -118,6 +152,15 @@ class NativeSummaryTests(unittest.TestCase):
 
 
 class NativeDrawTests(unittest.TestCase):
+    def test_live_overlay_is_labeled_live_and_cached_default_remains(self):
+        payload = frame_payload(manifest(count=1))
+        image = np.zeros((120, 160, 3), dtype=np.uint8)
+        with patch("pitch_analysis.native_pose_review.cv2.putText") as texts:
+            draw_native_frame(image, payload, source_mode="live_stateless_roi")
+        self.assertEqual(texts.call_args_list[0].args[1], "live RTMPose / COCO17 / NOT CALIBRATED")
+        with self.assertRaisesRegex(ValueError, "source mode"):
+            draw_native_frame(image, payload, source_mode="made_up")
+
     def test_coco_edges_keep_native_indices_and_low_score(self):
         source = manifest(count=1)
         payload = frame_payload(source)
@@ -215,6 +258,61 @@ class NativeOverlayTests(unittest.TestCase):
         self.assertEqual(source_digest, digest(self.source))
         self.assertEqual(result["quality_status"], "not_calibrated")
         self.assertIsNone(result["usable_for_analysis"])
+
+    def test_live_overlay_preserves_unrounded_fractional_timestamps(self):
+        self.manifest = make_live(self.manifest)
+        for index, payload in enumerate(self.payloads):
+            payload["timestamp_ms"] = float(Fraction(index * 1000, 30))
+        result = write_native_overlay(self.source, self.manifest, self.frames(), self.target)
+        self.assertEqual(result["source_inference_mode"], "live_stateless_roi")
+        self.assertEqual(result["fps_fraction"], "30/1")
+        self.assertLess(result["max_source_timestamp_difference_ms"], 1)
+        self.assertLess(result["max_overlay_timestamp_difference_ms"], 1)
+        self.assertTrue(result["saved_timestamps_preserved"])
+
+    def test_live_overlay_encodes_source_fraction_instead_of_rounded_fps(self):
+        import imageio_ffmpeg
+
+        native_source = self.folder / "fractional.mp4"
+        command = [imageio_ffmpeg.get_ffmpeg_exe(), "-hide_banner", "-loglevel", "error", "-n",
+                   "-f", "rawvideo", "-pix_fmt", "bgr24", "-s:v", "160x120", "-r", "60000/1001",
+                   "-i", "pipe:0", "-an", "-c:v", "libx264", "-pix_fmt", "yuv420p", str(native_source)]
+        pixels = b"".join(np.full((120, 160, 3), index * 40, dtype=np.uint8).tobytes()
+                          for index in range(3))
+        subprocess.run(command, input=pixels, check=True, capture_output=True)
+        self.manifest = make_live(self.manifest, "60000/1001")
+        self.manifest["video"]["sha256"] = digest(native_source)
+        self.manifest["source_refs"][1]["sha256"] = digest(native_source)
+        capture = cv2.VideoCapture(str(native_source))
+        try:
+            self.assertAlmostEqual(capture.get(cv2.CAP_PROP_FPS), 60000 / 1001, places=8)
+            for index, payload in enumerate(self.payloads):
+                ok, image = capture.read()
+                self.assertTrue(ok)
+                payload["timestamp_ms"] = float(Fraction(index * 1000) / Fraction("60000/1001"))
+                payload["source_video_sha256"] = digest(native_source)
+                payload["decoded_bgr_sha256"] = hashlib.sha256(image.tobytes()).hexdigest()
+        finally:
+            capture.release()
+        result = write_native_overlay(native_source, self.manifest, self.frames(), self.target)
+        self.assertAlmostEqual(result["fps"], 60000 / 1001, places=8)
+        self.assertEqual(result["fps_fraction"], "60000/1001")
+        self.assertLess(result["max_overlay_timestamp_difference_ms"], 1)
+
+    def test_live_timestamp_decode_difference_of_one_ms_is_rejected(self):
+        self.manifest = make_live(self.manifest)
+        for index, payload in enumerate(self.payloads):
+            payload["timestamp_ms"] = float(Fraction(index * 1000, 30))
+        from pitch_analysis.native_pose_review import _decode_verified
+        # Change the source timestamps reported by the decoder, not native records.
+        original_get = cv2.VideoCapture.get
+        def shifted_get(capture, field):
+            actual = original_get(capture, field)
+            return actual + 1.0 if field == cv2.CAP_PROP_POS_MSEC else actual
+        with patch.object(cv2.VideoCapture, "get", shifted_get):
+            with self.assertRaisesRegex(ValueError, "timestamp.*frame 0"):
+                list(_decode_verified(self.source, self.payloads, 160, 120, source_mode="live_stateless_roi"))
+        self.assertFalse(self.target.exists())
 
     def test_source_video_sha_mismatch_rejected_before_output(self):
         self.manifest["video"]["sha256"] = "0" * 64

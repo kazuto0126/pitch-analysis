@@ -1,0 +1,432 @@
+{
+  "schema_version": "phase2-live-native-closeout-v1",
+  "closeout_date_local": "2026-10-21",
+  "scope": "Approved optional live native RTMPose entry; five Ohtani candidate clips once. No formal adoption or calibration.",
+  "engineering_integration": "PASSED",
+  "phase2_automatic_reliability": "NOT_PASSED",
+  "config_ref": {
+    "path": "config/pilots/ohtani_live_native_20261020.json",
+    "sha256": "7b25221567ec295edff91e0c31f2301207c1dbf50fed27f0d11931fa315d9e31"
+  },
+  "model_sha256": "5c0a4bf67953e6d2ac43ce15e77dc9d5d354ae18430a47d2c5963a7bc5683e3c",
+  "execution_started_at_utc": "2026-10-20T13:18:46.762068+00:00",
+  "execution_completed_at_utc": "2026-10-20T13:21:01.475210+00:00",
+  "calls_attempted": 1684,
+  "calls_completed": 1684,
+  "execution_failures": 0,
+  "new_annotations": 0,
+  "formal_promotion": false,
+  "native_quality_status": "not_calibrated",
+  "accuracy": null,
+  "inspection": {
+    "regular_overlay_frames": 90,
+    "targeted_triples": 9,
+    "all_contact_sheets_viewed": 13,
+    "human_ground_truth": false
+  },
+  "tests": {
+    "created_at_utc": "2026-10-20T13:17:42.045520+00:00",
+    "tests_run": 1057,
+    "passed": 1055,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 2,
+    "skipped_reasons": [
+      {
+        "test": "test_dangling_snapshot_file_link_cannot_create_external_target_when_supported (test_handoff_paths.HandoffPathTests.test_dangling_snapshot_file_link_cannot_create_external_target_when_supported)",
+        "reason": "file symlink creation is unavailable"
+      },
+      {
+        "test": "test_source_symlink_outside_candidate_is_rejected_when_supported (test_handoff_review.HandoffReviewTests.test_source_symlink_outside_candidate_is_rejected_when_supported)",
+        "reason": "creating symbolic links is unavailable"
+      }
+    ],
+    "elapsed_seconds": 64.453,
+    "formal_five_video_e2e_enabled": true,
+    "real_rtmpose_calls_in_tests": 0,
+    "successful": true
+  },
+  "new_tests": 39,
+  "formal_yamamoto_major_review_hints_unchanged": [
+    2,
+    0,
+    19,
+    5,
+    3
+  ],
+  "protected_files_checked": 475,
+  "protected_sha256_changes": [],
+  "worker_journal_events": {
+    "started": 1684,
+    "completed": 1684
+  },
+  "verified_worker_payload_bytes": 102602752,
+  "overlay_validation": [
+    {
+      "pitch_id": "supplement_001",
+      "decoded_frames": 335,
+      "max_timestamp_difference_ms": 9.094947017729282e-13
+    },
+    {
+      "pitch_id": "supplement_002",
+      "decoded_frames": 321,
+      "max_timestamp_difference_ms": 9.094947017729282e-13
+    },
+    {
+      "pitch_id": "supplement_003",
+      "decoded_frames": 369,
+      "max_timestamp_difference_ms": 9.094947017729282e-13
+    },
+    {
+      "pitch_id": "supplement_004",
+      "decoded_frames": 338,
+      "max_timestamp_difference_ms": 9.094947017729282e-13
+    },
+    {
+      "pitch_id": "supplement_005",
+      "decoded_frames": 321,
+      "max_timestamp_difference_ms": 9.094947017729282e-13
+    }
+  ],
+  "clips": [
+    {
+      "pitch_id": "supplement_001",
+      "frame_count": 335,
+      "native_inference_calls": 335,
+      "mediapipe_selected_pose_frames_unchanged": 324,
+      "mediapipe_longest_missing_span_unchanged": 9,
+      "roles": {
+        "throwing_shoulder": {
+          "native_coordinate_present": 335,
+          "native_coordinate_missing": 0,
+          "native_score_mean_uncalibrated": 0.6952082096195933,
+          "max_consecutive_displacement_px": 49.073446231134,
+          "coordinate_accuracy": null
+        },
+        "throwing_elbow": {
+          "native_coordinate_present": 335,
+          "native_coordinate_missing": 0,
+          "native_score_mean_uncalibrated": 0.591751540952654,
+          "max_consecutive_displacement_px": 77.98737878657033,
+          "coordinate_accuracy": null
+        },
+        "throwing_wrist": {
+          "native_coordinate_present": 335,
+          "native_coordinate_missing": 0,
+          "native_score_mean_uncalibrated": 0.477377696802367,
+          "max_consecutive_displacement_px": 119.17686436553028,
+          "coordinate_accuracy": null
+        },
+        "lead_hip": {
+          "native_coordinate_present": 335,
+          "native_coordinate_missing": 0,
+          "native_score_mean_uncalibrated": 0.7507180500386367,
+          "max_consecutive_displacement_px": 39.419617578053696,
+          "coordinate_accuracy": null
+        },
+        "lead_knee": {
+          "native_coordinate_present": 335,
+          "native_coordinate_missing": 0,
+          "native_score_mean_uncalibrated": 0.7055435632591817,
+          "max_consecutive_displacement_px": 66.45016930001006,
+          "coordinate_accuracy": null
+        },
+        "lead_ankle": {
+          "native_coordinate_present": 335,
+          "native_coordinate_missing": 0,
+          "native_score_mean_uncalibrated": 0.6947964732326678,
+          "max_consecutive_displacement_px": 86.27037802745505,
+          "coordinate_accuracy": null
+        }
+      },
+      "visual_sample_review": {
+        "observations": [
+          "抽樣主要骨架位於投手附近。",
+          "第138格舊MediaPipe缺失，新座標接近俯身投手輪廓；局部關節未經人工確認。"
+        ],
+        "limitations": [
+          "遮擋處手臂／手腕仍是模型估計；不能由有座標推論已可靠復原。"
+        ]
+      },
+      "candidate_status": "candidate",
+      "quality_status": "not_calibrated",
+      "usable_for_analysis": null
+    },
+    {
+      "pitch_id": "supplement_002",
+      "frame_count": 321,
+      "native_inference_calls": 321,
+      "mediapipe_selected_pose_frames_unchanged": 275,
+      "mediapipe_longest_missing_span_unchanged": 13,
+      "roles": {
+        "throwing_shoulder": {
+          "native_coordinate_present": 321,
+          "native_coordinate_missing": 0,
+          "native_score_mean_uncalibrated": 0.5633818195244976,
+          "max_consecutive_displacement_px": 52.63375817856825,
+          "coordinate_accuracy": null
+        },
+        "throwing_elbow": {
+          "native_coordinate_present": 321,
+          "native_coordinate_missing": 0,
+          "native_score_mean_uncalibrated": 0.4680545009510168,
+          "max_consecutive_displacement_px": 96.52153257175313,
+          "coordinate_accuracy": null
+        },
+        "throwing_wrist": {
+          "native_coordinate_present": 321,
+          "native_coordinate_missing": 0,
+          "native_score_mean_uncalibrated": 0.37313734693597783,
+          "max_consecutive_displacement_px": 172.51018991642204,
+          "coordinate_accuracy": null
+        },
+        "lead_hip": {
+          "native_coordinate_present": 321,
+          "native_coordinate_missing": 0,
+          "native_score_mean_uncalibrated": 0.5862956316300271,
+          "max_consecutive_displacement_px": 19.931523398877466,
+          "coordinate_accuracy": null
+        },
+        "lead_knee": {
+          "native_coordinate_present": 321,
+          "native_coordinate_missing": 0,
+          "native_score_mean_uncalibrated": 0.5626530226238792,
+          "max_consecutive_displacement_px": 115.52191350562022,
+          "coordinate_accuracy": null
+        },
+        "lead_ankle": {
+          "native_coordinate_present": 321,
+          "native_coordinate_missing": 0,
+          "native_score_mean_uncalibrated": 0.5485303892153446,
+          "max_consecutive_displacement_px": 229.12622749262033,
+          "coordinate_accuracy": null
+        }
+      },
+      "visual_sample_review": {
+        "observations": [
+          "舊錯例第159、245格的新骨架較接近投手輪廓；局部關節未經人工確認。"
+        ],
+        "limitations": [
+          "新後端第0、19、38、56、75格可見投手下身混接打者附近上身／頭部，第188格上方點也偏向打者。",
+          "不能宣稱全片主體追蹤穩定或整體優於舊模型。"
+        ]
+      },
+      "candidate_status": "candidate",
+      "quality_status": "not_calibrated",
+      "usable_for_analysis": null
+    },
+    {
+      "pitch_id": "supplement_003",
+      "frame_count": 369,
+      "native_inference_calls": 369,
+      "mediapipe_selected_pose_frames_unchanged": 362,
+      "mediapipe_longest_missing_span_unchanged": 5,
+      "roles": {
+        "throwing_shoulder": {
+          "native_coordinate_present": 369,
+          "native_coordinate_missing": 0,
+          "native_score_mean_uncalibrated": 0.6373697494669013,
+          "max_consecutive_displacement_px": 63.75,
+          "coordinate_accuracy": null
+        },
+        "throwing_elbow": {
+          "native_coordinate_present": 369,
+          "native_coordinate_missing": 0,
+          "native_score_mean_uncalibrated": 0.5303883068364487,
+          "max_consecutive_displacement_px": 97.5,
+          "coordinate_accuracy": null
+        },
+        "throwing_wrist": {
+          "native_coordinate_present": 369,
+          "native_coordinate_missing": 0,
+          "native_score_mean_uncalibrated": 0.4649173847341602,
+          "max_consecutive_displacement_px": 129.71422917320982,
+          "coordinate_accuracy": null
+        },
+        "lead_hip": {
+          "native_coordinate_present": 369,
+          "native_coordinate_missing": 0,
+          "native_score_mean_uncalibrated": 0.6741795467167366,
+          "max_consecutive_displacement_px": 30.233466556119563,
+          "coordinate_accuracy": null
+        },
+        "lead_knee": {
+          "native_coordinate_present": 369,
+          "native_coordinate_missing": 0,
+          "native_score_mean_uncalibrated": 0.6327148754260727,
+          "max_consecutive_displacement_px": 100.0097651482094,
+          "coordinate_accuracy": null
+        },
+        "lead_ankle": {
+          "native_coordinate_present": 369,
+          "native_coordinate_missing": 0,
+          "native_score_mean_uncalibrated": 0.6334009382944443,
+          "max_consecutive_displacement_px": 185.63446945543276,
+          "coordinate_accuracy": null
+        }
+      },
+      "visual_sample_review": {
+        "observations": [
+          "抽樣主要骨架位於投手附近。",
+          "第185格舊MediaPipe缺失，新座標接近投手輪廓；局部關節未經人工確認。"
+        ],
+        "limitations": [
+          "未量測新模型關節準確率。"
+        ]
+      },
+      "candidate_status": "candidate",
+      "quality_status": "not_calibrated",
+      "usable_for_analysis": null
+    },
+    {
+      "pitch_id": "supplement_004",
+      "frame_count": 338,
+      "native_inference_calls": 338,
+      "mediapipe_selected_pose_frames_unchanged": 323,
+      "mediapipe_longest_missing_span_unchanged": 12,
+      "roles": {
+        "throwing_shoulder": {
+          "native_coordinate_present": 338,
+          "native_coordinate_missing": 0,
+          "native_score_mean_uncalibrated": 0.6907451620997762,
+          "max_consecutive_displacement_px": 105.2675163571365,
+          "coordinate_accuracy": null
+        },
+        "throwing_elbow": {
+          "native_coordinate_present": 338,
+          "native_coordinate_missing": 0,
+          "native_score_mean_uncalibrated": 0.6062725731254329,
+          "max_consecutive_displacement_px": 332.03915431767985,
+          "coordinate_accuracy": null
+        },
+        "throwing_wrist": {
+          "native_coordinate_present": 338,
+          "native_coordinate_missing": 0,
+          "native_score_mean_uncalibrated": 0.5110455117017559,
+          "max_consecutive_displacement_px": 238.56750223993208,
+          "coordinate_accuracy": null
+        },
+        "lead_hip": {
+          "native_coordinate_present": 338,
+          "native_coordinate_missing": 0,
+          "native_score_mean_uncalibrated": 0.7104435132364549,
+          "max_consecutive_displacement_px": 340.24921932313083,
+          "coordinate_accuracy": null
+        },
+        "lead_knee": {
+          "native_coordinate_present": 338,
+          "native_coordinate_missing": 0,
+          "native_score_mean_uncalibrated": 0.6608306290747146,
+          "max_consecutive_displacement_px": 367.5047831321383,
+          "coordinate_accuracy": null
+        },
+        "lead_ankle": {
+          "native_coordinate_present": 338,
+          "native_coordinate_missing": 0,
+          "native_score_mean_uncalibrated": 0.6487696303506575,
+          "max_consecutive_displacement_px": 229.67793347424563,
+          "coordinate_accuracy": null
+        }
+      },
+      "visual_sample_review": {
+        "observations": [
+          "抽樣主要骨架位於投手附近。",
+          "第149格舊MediaPipe缺失，新座標接近投手。"
+        ],
+        "limitations": [
+          "大幅前傾時上身／手臂位置仍有近似與跳動；不能當成可用性判定。"
+        ]
+      },
+      "candidate_status": "candidate",
+      "quality_status": "not_calibrated",
+      "usable_for_analysis": null
+    },
+    {
+      "pitch_id": "supplement_005",
+      "frame_count": 321,
+      "native_inference_calls": 321,
+      "mediapipe_selected_pose_frames_unchanged": 315,
+      "mediapipe_longest_missing_span_unchanged": 2,
+      "roles": {
+        "throwing_shoulder": {
+          "native_coordinate_present": 321,
+          "native_coordinate_missing": 0,
+          "native_score_mean_uncalibrated": 0.6713463168510024,
+          "max_consecutive_displacement_px": 248.555985896538,
+          "coordinate_accuracy": null
+        },
+        "throwing_elbow": {
+          "native_coordinate_present": 321,
+          "native_coordinate_missing": 0,
+          "native_score_mean_uncalibrated": 0.5423788265136543,
+          "max_consecutive_displacement_px": 256.49150205221224,
+          "coordinate_accuracy": null
+        },
+        "throwing_wrist": {
+          "native_coordinate_present": 321,
+          "native_coordinate_missing": 0,
+          "native_score_mean_uncalibrated": 0.4534921313511248,
+          "max_consecutive_displacement_px": 145.15212924721428,
+          "coordinate_accuracy": null
+        },
+        "lead_hip": {
+          "native_coordinate_present": 321,
+          "native_coordinate_missing": 0,
+          "native_score_mean_uncalibrated": 0.702515791463332,
+          "max_consecutive_displacement_px": 253.25691007354567,
+          "coordinate_accuracy": null
+        },
+        "lead_knee": {
+          "native_coordinate_present": 321,
+          "native_coordinate_missing": 0,
+          "native_score_mean_uncalibrated": 0.6648612064178859,
+          "max_consecutive_displacement_px": 133.3361002317077,
+          "coordinate_accuracy": null
+        },
+        "lead_ankle": {
+          "native_coordinate_present": 321,
+          "native_coordinate_missing": 0,
+          "native_score_mean_uncalibrated": 0.6490336388256691,
+          "max_consecutive_displacement_px": 180.78928514986723,
+          "coordinate_accuracy": null
+        }
+      },
+      "visual_sample_review": {
+        "observations": [
+          "第251格舊MediaPipe上身混接捕手，新骨架較接近投手輪廓。"
+        ],
+        "limitations": [
+          "新後端第128格仍有嚴重混合／錯位，長骨架線延伸至打者／捕手區。",
+          "第245、264、282格手臂局部對位尚未確認，不能宣稱全片可靠。"
+        ]
+      },
+      "candidate_status": "candidate",
+      "quality_status": "not_calibrated",
+      "usable_for_analysis": null
+    }
+  ],
+  "evidence_refs": [
+    {
+      "path": "analysis_results/phase2_ohtani_live_native_20261020_01/run_receipt.json",
+      "sha256": "d03ac438dd92a6864aacc7c351822375944218d5fc2129fd09b2a0b602b31708"
+    },
+    {
+      "path": "analysis_results/phase2_ohtani_live_native_20261020_01/comparison_summary.json",
+      "sha256": "056239c468cc1baf99216aacf085f4c6587e149557c665c89a13ef06d2a03a5e"
+    },
+    {
+      "path": "analysis_results/phase2_ohtani_live_native_20261020_01/preservation_check.json",
+      "sha256": "3fc3221320f8239a3e6b1614f22e97cbc5787347a30cde6c82971ea1b37928fa"
+    },
+    {
+      "path": "analysis_results/phase2_ohtani_live_native_20261020_01/visual_review/inspection.json",
+      "sha256": "3d3801b575d68acb8dd8b8c5570bf5d701c97bc234cf0bd35f4f8c930d4bf0bf"
+    },
+    {
+      "path": "analysis_results/phase2_live_native_preparation_20261020_01/test_results_unrestricted.json",
+      "sha256": "aabe666acf4c60ca8985b09a1653b3995bccab2afe52a9e77c54b43065b1ff40"
+    }
+  ],
+  "output_root": "analysis_results/phase2_ohtani_live_native_20261020_01",
+  "stop_decision": "Approved implementation and one-pass run delivered. No repeated inference, calibration, model replacement or Phase 3 started."
+}

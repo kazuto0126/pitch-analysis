@@ -1,4 +1,4 @@
-"""Native cached-pose contracts, independent of the production quality gates.
+"""Native pose contracts, independent of the production quality gates.
 
 Coordinates describe model output in original image pixels.  Neither a finite
 coordinate nor a native model score is a claim of visibility or accuracy.
@@ -7,6 +7,8 @@ from __future__ import annotations
 
 from copy import deepcopy
 from dataclasses import dataclass, field
+from datetime import datetime, timedelta
+from fractions import Fraction
 from functools import lru_cache
 from importlib.resources import files
 import json
@@ -101,7 +103,11 @@ def _validate_reference(ref: dict) -> None:
 
 
 def validate_manifest(payload: dict) -> None:
-    """Validate the cached source envelope without touching the referenced files."""
+    """Validate a source envelope without touching files or invoking a model.
+
+    Cached manifests retain their original contract.  The opt-in live mode also
+    binds its model, video, operation configuration, and human input review.
+    """
     _validate_schema(payload, "manifest")
     topology = payload["topology"]
     if payload["capabilities"] != CAPABILITIES[topology]:
@@ -110,6 +116,42 @@ def validate_manifest(payload: dict) -> None:
         _validate_reference(ref)
     if payload["original_overlay"] is not None:
         _validate_reference(payload["original_overlay"])
+    if payload["inference_mode"] == "live_stateless_roi":
+        _validate_live_manifest(payload)
+
+
+def _validate_live_manifest(payload: dict) -> None:
+    if payload["topology"] != "coco_17" or "rtmpose" not in payload["backend"]["name"].lower():
+        raise ValueError("Live native mode requires RTMPose COCO17")
+    refs = payload["source_refs"]
+    video_ref = {"path": payload["video"]["path"], "sha256": payload["video"]["sha256"]}
+    if video_ref not in refs:
+        raise ValueError("Live native video must be declared in source_refs")
+    if not any(ref["sha256"] == payload["backend"]["model_sha256"] for ref in refs):
+        raise ValueError("Live native model must be declared in source_refs")
+    provenance = payload["roi_provenance"]
+    for key in ("config_ref", "review_ref"):
+        ref = provenance.get(key)
+        if not isinstance(ref, dict) or set(ref) != {"path", "sha256"} or ref not in refs:
+            raise ValueError(f"Live native ROI {key} must match a declared source reference")
+    for key in ("reviewer", "roi_source"):
+        if not isinstance(provenance.get(key), str) or not provenance[key].strip():
+            raise ValueError(f"Live native ROI requires explicit {key}")
+    reviewed = provenance.get("reviewed_at_utc")
+    try:
+        if not isinstance(reviewed, str):
+            raise ValueError
+        parsed = datetime.fromisoformat(reviewed.replace("Z", "+00:00"))
+        if parsed.utcoffset() != timedelta(0):
+            raise ValueError
+    except (ValueError, TypeError):
+        raise ValueError("Live native ROI requires reviewed_at_utc with a UTC timezone") from None
+    fps_text = payload["timebase"].get("fps_fraction")
+    if fps_text is None:
+        raise ValueError("Live native timebase requires fps_fraction")
+    fps = Fraction(fps_text)
+    if fps <= 0 or not math.isclose(float(fps), payload["video"]["fps"], rel_tol=0, abs_tol=1e-9):
+        raise ValueError("Live native FPS must preserve its declared fractional source FPS")
 
 
 def validate_frame(payload: dict) -> None:
@@ -139,7 +181,7 @@ def validate_frame(payload: dict) -> None:
     else:
         if geometry["input_mode"] != "roi_affine" or any(geometry[key] is None for key in
                 ("roi_xywh", "affine_src_to_input", "affine_input_to_src", "sdk_geometry")):
-            raise ValueError("RTMPose cached source requires its saved ROI and affine geometry")
+            raise ValueError("RTMPose native source requires its saved ROI and affine geometry")
         if geometry["roi_xywh"][2] <= 0 or geometry["roi_xywh"][3] <= 0:
             raise ValueError("Native ROI dimensions must be positive")
 
