@@ -1,4 +1,4 @@
-# Current status — Person-box trial complete, policy not adopted; reliability remains unaccepted
+# Current status — Seeded track partial run preserved after I/O interruption
 
 Updated: 2026-10-21
 
@@ -12,18 +12,42 @@ gates, MediaPipe settings, interpolation and smoothing are unchanged. The approv
 optional subject-region constraint is described below; the default selector remains compatible.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-21 operator-seeded track proposal prepared (not started)
+## 2026-10-21 approved operator-seeded track: partial predictions preserved, stopped
 
-Continuation exported only two saved first-frame candidate boxes; seed remains
-unselected. [Concrete proposal](phase2_seeded_native_track_plan_20261021.md): one
-operator-specified initial subject, mutual-unique-maximum positive-IoU association
-over saved eligible detections, terminal break without reacquisition. No score/ROI
-changes or detector rerun; at most319newposecalls on previously unrun person-box
-frames, exact-geometry cache reuse only for193/194. This is new assisted-track scope,
-awaiting explicit approval and initial-box input; not a revision of the failed
-stateless policy. No replay/inference/product changes or suite rerun in preparation.
+HSU approved the [frozen plan](phase2_seeded_native_track_plan_20261021.md) and chose
+display1/output_index0 at frame0. Added separate native association/cache/producer
+modules and CLI. Exactly one saved-box replay linked321/321frames (1seeded/320linked),
+no geometric track break,0newdetector. Newpose213attempted/completed;193/194 reused
+only after exact source/model/frame/pixel/bbox/full-affine-and-SDK geometry match.
 
-## 2026-10-21 approved single-clip person-box run completed (latest)
+After saving frame214, Windows denied replacement of run_receipt.json.tmp to
+run_receipt.json (WinError5); the error handler then encountered the existing tmp
+file. Root cause is not confirmed. The process stopped after215savedposeframes;
+215–320(106frames)were never inferred. No inference/replay retries or claim reset.
+Original running/stale receipt,tmp,partial,binary/journals/claim remain unchanged;
+interrupted_run_receipt.json records the independently verified actual counts.
+
+Read-only postprocessing exported a full321frame native dataset/H264overlay with
+106explicitnot_run/missingframes; these indicate execution interruption, not pose
+loss, occlusion, or track break. No extra inference was used for rendering/review.
+Viewed22source/prior/new comparisons on6sheets: early static-crop arm contamination
+near the batter is reduced in sampled new frames; uncalibrated coordinate presence
+does not establish local accuracy or full-video identity. No new humanGT.
+
+Fullsuite1117run/1115passed/0failed/0errors/2Windows-symlinkskips,81.922s;24new
+synthetictests. FormalYamamotofiveE2E enabled;majorhintsunchanged2/0/19/5/3.
+615protectedfiles and8interruptedrawartifacts unchanged;213binarypayloads verified,
+source pairing/frozen implementation SHA errors0. Productioncore/gates/raw/GT unchanged.
+
+Output:`analysis_results/phase2_seeded_track_native_20261021_01/`;open`review_all.html`.
+[Result and known I/O issue](phase2_seeded_native_track_results_20261021.md),
+[versioned evidence](dataset_selections/ohtani_seeded_track_results_20261021.json).
+**Full inference incomplete; NOT ADOPTED; Phase2 automatic reliability still NOT PASSED.**
+Per approved failure-stop rule, stop here: no remaining106frame rerun, policy tuning,
+otherclips, formalpromotion orPhase3. Approval document retains its pre-execution
+snapshot because its SHA was bound before the once-only run; current outcome is here.
+
+## 2026-10-21 approved single-clip person-box run completed (previous)
 
 HSU approved the [bounded plan](phase2_person_box_native_plan_20261021.md).
 Implemented one optional YOLOX-m detector, source-bound person-box selection and

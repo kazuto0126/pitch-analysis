@@ -1,0 +1,28 @@
+{
+  "schema_version": "native-subject-seed-v1",
+  "status": "operator_confirmed",
+  "pitch_id": "supplement_002",
+  "frame_index": 0,
+  "display_number": 1,
+  "selected_output_index": 0,
+  "selected_bbox_xyxy_px": [
+    421.3091400146484,
+    291.34437561035156,
+    495.3560028076172,
+    587.9703460693358
+  ],
+  "decoded_bgr_sha256": "e3572562917fbec8fdded6eb8177d88670a40d49640cdafa56c4c4e0575360ec",
+  "saved_detection_ref": {
+    "path": "analysis_results/phase2_person_box_native_20261021_01/person_boxes.jsonl",
+    "sha256": "dd01111c88adb6d965ed1ae7ea0a0c97d6e2c7c6445acb17482add27ae079a4b"
+  },
+  "source_video_ref": {
+    "path": "input/shohei_ohtani/phase2_supplement_20261020_01/supplement_002.mp4",
+    "sha256": "b1586bdde9383e3b247bcc7d7974a3f15b0fed173848926d5217f261b87bab8e"
+  },
+  "reviewer": "HSU",
+  "reviewed_at_utc": "2026-10-21T11:06:54Z",
+  "user_reply": "核准，以1號框作為初始投手",
+  "scope": "Initial subject operation setting only; no later-frame identity or joint correctness annotation.",
+  "ground_truth": false
+}

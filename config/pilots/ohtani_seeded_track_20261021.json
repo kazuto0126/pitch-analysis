@@ -1,0 +1,93 @@
+{
+  "schema_version": "native-seeded-track-run-v1",
+  "status": "approved",
+  "approval": {
+    "reviewer": "HSU",
+    "reviewed_at_utc": "2026-10-21T11:06:54Z",
+    "user_reply": "核准，以1號框作為初始投手",
+    "plan": "docs/phase2_seeded_native_track_plan_20261021.md",
+    "scope": "One frozen saved-box association replay on supplement_002, zero detector calls, at most319 new pose calls; exact reuse only for193/194; deliver then stop."
+  },
+  "source_config_ref": {
+    "path": "config/pilots/ohtani_person_box_20261021.json",
+    "sha256": "33f56afc6001e64c3581533fb406af65d13654f22bce36248289f46b8ec77025"
+  },
+  "seed_ref": {
+    "path": "config/pilots/ohtani_seed_initialization_20261021.json",
+    "sha256": "feaaf7c4c6824cb35e1aec417a8de3c66f52d8100ae471d2acbcb81654f23b01"
+  },
+  "detections_ref": {
+    "path": "analysis_results/phase2_person_box_native_20261021_01/person_boxes.jsonl",
+    "sha256": "dd01111c88adb6d965ed1ae7ea0a0c97d6e2c7c6445acb17482add27ae079a4b"
+  },
+  "cached_manifest_ref": {
+    "path": "analysis_results/phase2_person_box_native_20261021_01/rtmpose/supplement_002/native_pose_manifest.json",
+    "sha256": "4117982d0e6911ef50f2801a8d575d6ce506ce91fb582582d8beb13be78c5e97"
+  },
+  "cached_keypoints_ref": {
+    "path": "analysis_results/phase2_person_box_native_20261021_01/rtmpose/supplement_002/native_keypoints.jsonl",
+    "sha256": "a941e3c109fb3d0b62a65a8b3f5bb4cd8dffaa0e27066d0a2aee7fc46c658e94"
+  },
+  "cached_receipt_ref": {
+    "path": "analysis_results/phase2_person_box_native_20261021_01/run_receipt.json",
+    "sha256": "f90944bee801adbc11afb4a8a701ab75053891c7b84eca41a33bc51f7eb5a334"
+  },
+  "track_policy": "operator_seeded_mutual_unique_max_iou_v1",
+  "max_detector_calls": 0,
+  "max_new_pose_calls": 319,
+  "prior_inferred_frame_indices": [
+    193,
+    194
+  ],
+  "once_only_claim_path": "analysis_results/phase2_seeded_track_preparation_20261021_01/once_only_execution_claim.json",
+  "source_refs": [
+    {
+      "path": "config/pilots/ohtani_person_box_20261021.json",
+      "sha256": "33f56afc6001e64c3581533fb406af65d13654f22bce36248289f46b8ec77025"
+    },
+    {
+      "path": "config/pilots/ohtani_seed_initialization_20261021.json",
+      "sha256": "feaaf7c4c6824cb35e1aec417a8de3c66f52d8100ae471d2acbcb81654f23b01"
+    },
+    {
+      "path": "analysis_results/phase2_person_box_native_20261021_01/person_boxes.jsonl",
+      "sha256": "dd01111c88adb6d965ed1ae7ea0a0c97d6e2c7c6445acb17482add27ae079a4b"
+    },
+    {
+      "path": "analysis_results/phase2_person_box_native_20261021_01/rtmpose/supplement_002/native_pose_manifest.json",
+      "sha256": "4117982d0e6911ef50f2801a8d575d6ce506ce91fb582582d8beb13be78c5e97"
+    },
+    {
+      "path": "analysis_results/phase2_person_box_native_20261021_01/rtmpose/supplement_002/native_keypoints.jsonl",
+      "sha256": "a941e3c109fb3d0b62a65a8b3f5bb4cd8dffaa0e27066d0a2aee7fc46c658e94"
+    },
+    {
+      "path": "analysis_results/phase2_person_box_native_20261021_01/run_receipt.json",
+      "sha256": "f90944bee801adbc11afb4a8a701ab75053891c7b84eca41a33bc51f7eb5a334"
+    },
+    {
+      "path": "src/pitch_analysis/native_seeded_track.py",
+      "sha256": "70361da4137f7b225ebaee65f8a73e2bf380927353b0309a02aa03118d4d6eaf"
+    },
+    {
+      "path": "src/pitch_analysis/native_seeded_cache.py",
+      "sha256": "07702b291ca3a73a141637979f84dac5951192abd05be4307a389a970eb06045"
+    },
+    {
+      "path": "src/pitch_analysis/native_seeded_live.py",
+      "sha256": "426e7aaee8f77da248f308ef5e59350b47a17221708ea4128517003c0bdc1a0e"
+    },
+    {
+      "path": "scripts/run_native_seeded_track.py",
+      "sha256": "6bcbdce2e3ce7a7399d2b2588885f8fbe9b8e28bd03e80d87fdbc1e4cddd4fb0"
+    },
+    {
+      "path": "docs/phase2_seeded_native_track_plan_20261021.md",
+      "sha256": "4fda01edec9fb17b96452a61476fb51f9ebdfbad352277626a5a2e00be13d9ce"
+    },
+    {
+      "path": "docs/dataset_selections/ohtani_seed_operation_proposal_20261021.json",
+      "sha256": "637b3718d58d4f5a91d542c1f36950d8deced791e5fd4567fe74208923c14614"
+    }
+  ]
+}

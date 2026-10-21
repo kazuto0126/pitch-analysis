@@ -1,16 +1,25 @@
 # 進度摘要
 
-更新：2026-10-21（台灣）。[完整狀態](current_status.md)；[最新人物框單球結果](phase2_person_box_native_results_20261021.md)。
+更新：2026-10-21（台灣）。[完整狀態](current_status.md)；[最新人工初始化追蹤結果](phase2_seeded_native_track_results_20261021.md)。
 
 **Phase 1 = PASSED；Native interface integration = PASSED；Phase 2 自動可靠性仍 NOT PASSED。**
 
-## 待確認的新操作方式：第一格人工指定主體
+## 最新：人工初始化追蹤部分結果已保存，I/O中斷後停止
 
-續行只讀已保存框，已提供第0格兩個候選的編號圖；尚未替使用者選框。
-[人工初始化追蹤方案](phase2_seeded_native_track_plan_20261021.md)限定單球：
-沿用保存的候選做固定相鄰框關聯，0新detector，最多319新pose；193／194格只在完整幾何吻合時重用。
-這是額外的人工作業輸入與新native追蹤範圍，需核准並指定第一格框才實作／replay。
-本次準備0推論、0追蹤replay、0產品修改，未重跑suite或改變上輪不採用決定。
+HSU已核准[單球方案](phase2_seeded_native_track_plan_20261021.md)，指定第0格1號框。
+新增獨立native關聯／cache／producer與CLI；321格關聯只跑一次，1seeded＋320linked、無幾何break。
+0新detector、213新pose、193／194完整幾何相同重用，共215格骨架；剩餘106格未執行。
+Windows在214格後替換執行紀錄失敗，錯誤處理又遇暫存檔存在，依方案不重試。
+保留原receipt／tmp、partial／binary／journal／claim；另存中斷說明，不改原紀錄為成功。
+匯出完整321格overlay，215–320標missing（執行中斷，並非追蹤／遮擋結論）。
+
+實看22組原片／舊／新對照，準備段舊手臂線回到投手附近；未新增GT或宣稱全片可靠。
+完整suite **1115 passed／0 failed／0 errors／2 skipped**（1117項，81.922秒，新增24項）。
+正式山本五球E2E提示仍2／0／19／5／3；615保護檔案、8中斷原artifact SHA不變，213份binary核對。
+完整推論未完成，**本輪未正式採用，Phase2仍NOT PASSED**；既有核心／門檻／raw／GT保持。
+輸出：`analysis_results/phase2_seeded_track_native_20261021_01/`，先開`review_all.html`。
+[結果與已知問題](phase2_seeded_native_track_results_20261021.md)、[版本化數字](dataset_selections/ohtani_seeded_track_results_20261021.json)。
+本輪保存並停止；沒有claim reset、補跑剩餘106格、政策調整、擴跑或Phase3。
 
 ## 最新：人物框單球修正完成，政策不採用
 

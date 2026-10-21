@@ -6,7 +6,14 @@
 本次收尾摘要見 [STATUS](docs/STATUS.md)；外部專案供片需求見
 [INPUT_REQUIREMENTS](docs/INPUT_REQUIREMENTS.md)。
 
-2026-10-21 最新：[單球人物框修正已完成，政策不採用](docs/phase2_person_box_native_results_20261021.md)：
+2026-10-21 最新：[人工初始化追蹤的部分結果已保存](docs/phase2_seeded_native_track_results_20261021.md)：
+HSU指定1號框；321格保存框關聯完成，0新detector，213新pose＋193／194兩格重用。
+Windows執行紀錄替換錯誤使pose在214格後停止；後106格未執行，保留missing，未補跑。
+22組對照中準備段舊手臂線回到投手附近；完整推論未完成，不正式採用，Phase2仍NOT PASSED。
+完整suite1115 passed／0 failed／2 skipped，615保護檔案不變。
+本機觀看：`analysis_results/phase2_seeded_track_native_20261021_01/review_all.html`。本輪停止。
+
+前段：[單球人物框修正已完成，政策不採用](docs/phase2_person_box_native_results_20261021.md)：
 第2球321次人物偵測、2次pose；319格多框歧義導致missing，不能視為可靠性改善。
 完整suite1091 passed／0 failed／2 skipped，正式核心／門檻／raw／GT保持；Phase2仍NOT PASSED。
 本輪依核准方案停止，不追加規則或擴跑。本機觀看：`analysis_results/phase2_person_box_native_20261021_01/review_all.html`。
