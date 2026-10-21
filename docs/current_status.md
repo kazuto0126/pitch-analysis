@@ -12,6 +12,21 @@ gates, MediaPipe settings, interpolation and smoothing are unchanged. The approv
 optional subject-region constraint is described below; the default selector remains compatible.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
+## 2026-10-21 next bounded repair proposal (not started)
+
+Read-only continuation located the native input gap: the current top-down affine
+treats the full-motion crop, which includes another person, as its single-person bbox.
+It has no pre-pose person-box selection. This is consistent with the observed hybrid
+skeletons, not proof that a detector will fix them.
+[The bounded proposal](phase2_person_box_native_plan_20261021.md) specifies one
+YOLOX-m HumanArt detector, the existing RTMPose weights, supplement_002321frames
+only, at most321detector+321posecalls, unique ROI-compatible box or explicit missing.
+All boxes, ambiguity, dropped frames and limb truncation remain visible; no GT edits,
+formal core/gate changes, failed-classifier reopening, crop-size search or Phase3.
+Proposal only:0new inference,0product changes, no redundant suite rerun. Awaiting
+explicit new-model/native-scope approval under the user's existing proposal-first
+instruction; the preceding1684-call allowance has already been consumed.
+
 ## 2026-10-21 approved live native implementation delivered (latest)
 
 HSU approved the fixed [live-native plan](phase2_live_native_pose_plan_20261020.md).
