@@ -1,0 +1,227 @@
+{
+  "schema_version": "native-seeded-resume-v1",
+  "status": "approved",
+  "approval": {
+    "reviewer": "HSU",
+    "reviewed_at_utc": "2026-10-22T17:34:34.835219+00:00",
+    "user_reply": "繼續",
+    "plan": "docs/phase2_seeded_resume_20261023.md",
+    "scope": "Explicit continuation of215–320only after interrupted pilot;0detector/0trackingreplay;no repeated model calls;original total319newpose unchanged."
+  },
+  "original_config_ref": {
+    "path": "config/pilots/ohtani_seeded_track_20261021.json",
+    "sha256": "310c10d5fdcca8c146b7de24b7b3a8aa1750b4579406a13bb5020f60e959b450"
+  },
+  "interrupted_receipt_ref": {
+    "path": "analysis_results/phase2_seeded_track_native_20261021_01/interrupted_run_receipt.json",
+    "sha256": "f92d41e6ea2409a9682fce9f089a32876022fb772c417bcdba213f4fb4ad4124"
+  },
+  "prior_claim_ref": {
+    "path": "analysis_results/phase2_seeded_track_preparation_20261021_01/once_only_execution_claim.json",
+    "sha256": "a47cd0ea81dc4ccd507dac4371d3ff02d458d7bac464cb5c74417ed1f488a867"
+  },
+  "partial_ref": {
+    "path": "analysis_results/phase2_seeded_track_native_20261021_01/native.partial.jsonl",
+    "sha256": "135dd272852c7f76ba89b5a238ec0fb80bf29ecbecb4f22046c0ea4e93cef16b"
+  },
+  "track_ref": {
+    "path": "analysis_results/phase2_seeded_track_native_20261021_01/subject_track.jsonl",
+    "sha256": "7718e23bb751f621962be8ee0d29345ff1a36ae54f23d0906b4b6261a4ab18f5"
+  },
+  "native_manifest_ref": {
+    "path": "analysis_results/phase2_seeded_track_native_20261021_01/rtmpose/supplement_002/native_pose_manifest.json",
+    "sha256": "39762874352454df8819fdc473072f89e8577b6bc68ee096c4a05b93b666859e"
+  },
+  "native_keypoints_ref": {
+    "path": "analysis_results/phase2_seeded_track_native_20261021_01/rtmpose/supplement_002/native_keypoints.jsonl",
+    "sha256": "1d2cc152111db23a0ad2f538132413e224b5e66a0652b3bff18dfb8aa98c0f7b"
+  },
+  "journal_ref": {
+    "path": "analysis_results/phase2_seeded_track_native_20261021_01/pose_worker/worker_calls.jsonl",
+    "sha256": "acca588d9a31f2695319aaca325297789b723f8e1231ea7c11be36af8c5707ee"
+  },
+  "binary_ref": {
+    "path": "analysis_results/phase2_seeded_track_native_20261021_01/pose_worker/worker_outputs.bin",
+    "sha256": "6075202b80b3dc891a3025831ee84c2c29621966ef8b54bc08311b210aaf393f"
+  },
+  "prior_new_pose_calls": 213,
+  "prior_saved_pose_frames": 215,
+  "pending_frame_indices": [
+    215,
+    216,
+    217,
+    218,
+    219,
+    220,
+    221,
+    222,
+    223,
+    224,
+    225,
+    226,
+    227,
+    228,
+    229,
+    230,
+    231,
+    232,
+    233,
+    234,
+    235,
+    236,
+    237,
+    238,
+    239,
+    240,
+    241,
+    242,
+    243,
+    244,
+    245,
+    246,
+    247,
+    248,
+    249,
+    250,
+    251,
+    252,
+    253,
+    254,
+    255,
+    256,
+    257,
+    258,
+    259,
+    260,
+    261,
+    262,
+    263,
+    264,
+    265,
+    266,
+    267,
+    268,
+    269,
+    270,
+    271,
+    272,
+    273,
+    274,
+    275,
+    276,
+    277,
+    278,
+    279,
+    280,
+    281,
+    282,
+    283,
+    284,
+    285,
+    286,
+    287,
+    288,
+    289,
+    290,
+    291,
+    292,
+    293,
+    294,
+    295,
+    296,
+    297,
+    298,
+    299,
+    300,
+    301,
+    302,
+    303,
+    304,
+    305,
+    306,
+    307,
+    308,
+    309,
+    310,
+    311,
+    312,
+    313,
+    314,
+    315,
+    316,
+    317,
+    318,
+    319,
+    320
+  ],
+  "max_new_pose_calls": 106,
+  "max_detector_calls": 0,
+  "max_tracking_replays": 0,
+  "once_only_claim_path": "analysis_results/phase2_seeded_resume_preparation_20261023_01/once_only_execution_claim.json",
+  "source_refs": [
+    {
+      "path": "config/pilots/ohtani_seeded_track_20261021.json",
+      "sha256": "310c10d5fdcca8c146b7de24b7b3a8aa1750b4579406a13bb5020f60e959b450"
+    },
+    {
+      "path": "analysis_results/phase2_seeded_track_native_20261021_01/interrupted_run_receipt.json",
+      "sha256": "f92d41e6ea2409a9682fce9f089a32876022fb772c417bcdba213f4fb4ad4124"
+    },
+    {
+      "path": "analysis_results/phase2_seeded_track_preparation_20261021_01/once_only_execution_claim.json",
+      "sha256": "a47cd0ea81dc4ccd507dac4371d3ff02d458d7bac464cb5c74417ed1f488a867"
+    },
+    {
+      "path": "analysis_results/phase2_seeded_track_native_20261021_01/native.partial.jsonl",
+      "sha256": "135dd272852c7f76ba89b5a238ec0fb80bf29ecbecb4f22046c0ea4e93cef16b"
+    },
+    {
+      "path": "analysis_results/phase2_seeded_track_native_20261021_01/subject_track.jsonl",
+      "sha256": "7718e23bb751f621962be8ee0d29345ff1a36ae54f23d0906b4b6261a4ab18f5"
+    },
+    {
+      "path": "analysis_results/phase2_seeded_track_native_20261021_01/rtmpose/supplement_002/native_pose_manifest.json",
+      "sha256": "39762874352454df8819fdc473072f89e8577b6bc68ee096c4a05b93b666859e"
+    },
+    {
+      "path": "analysis_results/phase2_seeded_track_native_20261021_01/rtmpose/supplement_002/native_keypoints.jsonl",
+      "sha256": "1d2cc152111db23a0ad2f538132413e224b5e66a0652b3bff18dfb8aa98c0f7b"
+    },
+    {
+      "path": "analysis_results/phase2_seeded_track_native_20261021_01/pose_worker/worker_calls.jsonl",
+      "sha256": "acca588d9a31f2695319aaca325297789b723f8e1231ea7c11be36af8c5707ee"
+    },
+    {
+      "path": "analysis_results/phase2_seeded_track_native_20261021_01/pose_worker/worker_outputs.bin",
+      "sha256": "6075202b80b3dc891a3025831ee84c2c29621966ef8b54bc08311b210aaf393f"
+    },
+    {
+      "path": "analysis_results/phase2_seeded_track_native_20261021_01/run_receipt.json",
+      "sha256": "c5f7dab7265d55c30dabcda8eb214ccbae97482c66636dd7b59f4bd41ba27262"
+    },
+    {
+      "path": "analysis_results/phase2_seeded_track_native_20261021_01/run_receipt.json.tmp",
+      "sha256": "eb4d0f80fd03a603bfc70279bbf0baeb779b3c3a45104938f78f5d8d080dd013"
+    },
+    {
+      "path": "analysis_results/phase2_seeded_track_native_20261021_01/pose_worker/transport_claim.json",
+      "sha256": "21e3a7bd3b71425a5bd46b3f93213e09bcc57e92021c37e2bb72c0289495affd"
+    },
+    {
+      "path": "docs/phase2_seeded_resume_20261023.md",
+      "sha256": "52bacac0bcedaf417e33bdc3a51caea6601c320bb257c7997d74c04bcbd4dc87"
+    },
+    {
+      "path": "src/pitch_analysis/native_seeded_resume.py",
+      "sha256": "6ff7478f290986e1bb56c538f8a86da69050a3d1391547cca5d1c1d199ef4f21"
+    },
+    {
+      "path": "src/pitch_analysis/native_progress_log.py",
+      "sha256": "c6c0c7993ec8f9abb8ddf34fc64198b542aaad0f109529471135206919769717"
+    },
+    {
+      "path": "scripts/resume_native_seeded_track.py",
+      "sha256": "b60a96257c273d1a3d416e0f0c9c0f8ddbf633899254f8de6c03603051023cbd"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
-# Current status — Seeded track partial run preserved after I/O interruption
+# Current status — Seeded track continuation complete; reliability remains unaccepted
 
-Updated: 2026-10-21
+Updated: 2026-10-23
 
 **Phase 1 = PASSED.**
 **Native interface integration = PASSED (cached compatibility and optional live COCO17 entry).**
@@ -12,7 +12,41 @@ gates, MediaPipe settings, interpolation and smoothing are unchanged. The approv
 optional subject-region constraint is described below; the default selector remains compatible.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-21 approved operator-seeded track: partial predictions preserved, stopped
+## 2026-10-23 explicit continuation completed:321/321native coordinate frames
+
+The user requested continuation after the prior stopped report. Implemented a
+separate resume entry that verifies old claims, complete213pairedcalls/binary,
+215savedpredictions and source/pixel/time/affine evidence before doing any newpose.
+Only215–320ran106times;0–214records are copied unchanged, including193/194cache.
+Total newpose across both seeded segments is319, plus2originalcacheframes=321.
+No newdetector, trackingreplay, model, environment install or warmup/retry occurred.
+
+Newprogress writes immutable numbered files instead of replacing one snapshot;
+108events completed, including106frames. No interruption this time. Originalclaim,
+stale receipt/tmp, partial, journals/binary and earlier overlays remain unchanged.
+The old Windows lock root cause is still unconfirmed; the new path avoids its
+repeated replace operation. This explicit continuation does not reset the old run.
+
+Full321frame COCO17dataset andH264overlay delivered, source pixels/time verified;
+whole-frame missing106→0. Viewed25source/prior/new comparisons including214/215/216:
+sampled skeletons remain near pitcher across the seam and newly completed tail;
+earlier improvement over batter-contaminated static-crop arms remains visible.
+These are agent samples, not per-frame humanGT; local/occluded-joint accuracy is
+unmeasured. not_calibrated/accuracy=null/usable_for_analysis=null remain unchanged.
+
+Fullsuite1128run/1126passed/0failed/0errors/2Windows-symlinkskips,82.719s;11newtests.
+FormalYamamotofiveE2E enabled;majorhintsunchanged2/0/19/5/3.672protectedfiles SHA
+unchanged;215prefixrecords unchanged;106newbinarypayloads verified;sourcepairing
+errors0. Existingproductioncore/gates/thresholds/raw/GT remain unchanged.
+
+Output:`analysis_results/phase2_seeded_resume_native_20261023_01/`;open`review_all.html`.
+[Continuation results](phase2_seeded_resume_results_20261023.md),
+[execution scope](phase2_seeded_resume_20261023.md),
+[versioned evidence](dataset_selections/ohtani_seeded_resume_results_20261023.json).
+**Bounded continuation COMPLETE; NOT FORMALLY ADOPTED; Phase2 still NOT PASSED.**
+Stop after commit/push;no otherclips,newannotations,acceptancechanges orPhase3.
+
+## 2026-10-21 approved operator-seeded track: partial predictions preserved (history)
 
 HSU approved the [frozen plan](phase2_seeded_native_track_plan_20261021.md) and chose
 display1/output_index0 at frame0. Added separate native association/cache/producer

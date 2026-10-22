@@ -1,0 +1,255 @@
+{
+  "schema_version": "phase2-seeded-resume-closeout-v1",
+  "date_local": "2026-10-23",
+  "status": "completed_explicit_never_executed_tail",
+  "full_inference_completed": true,
+  "adoption_decision": "NOT_FORMALLY_ADOPTED",
+  "phase2_automatic_reliability": "NOT_PASSED",
+  "formal_promotion": false,
+  "new_annotations": 0,
+  "config_ref": {
+    "path": "config/pilots/ohtani_seeded_resume_20261023.json",
+    "sha256": "98a711e829959dc04f6955ead9e341b7de75fe416468261d832fff481722bd66"
+  },
+  "source_pitch_id": "supplement_002",
+  "source_batch_id": "20261020T073530Z_6gyr6IC2e0Q",
+  "total_frames": 321,
+  "fps_fraction": "60000/1001",
+  "seed_display_number": 1,
+  "seed_output_index": 0,
+  "started_at_utc": "2026-10-22T17:36:28.823643+00:00",
+  "completed_at_utc": "2026-10-22T17:36:45.817618+00:00",
+  "prior_saved_pose_frames": 215,
+  "prior_prefix_changed_frames": [],
+  "new_pose_frame_ranges": [
+    [
+      215,
+      320
+    ]
+  ],
+  "new_pose_calls_attempted": 106,
+  "new_pose_calls_completed": 106,
+  "new_detector_calls": 0,
+  "new_tracking_replays": 0,
+  "tracking_replays_all_seeded_segments": 1,
+  "new_pose_calls_all_seeded_segments": 319,
+  "old_person_box_cache_frames": [
+    193,
+    194
+  ],
+  "saved_pose_frames": 321,
+  "not_executed_frames": [],
+  "coordinate_availability_ratio": 1.0,
+  "important_joints": {
+    "throwing_shoulder": {
+      "before_coordinate_frames": 215,
+      "after_coordinate_frames": 321
+    },
+    "throwing_elbow": {
+      "before_coordinate_frames": 215,
+      "after_coordinate_frames": 321
+    },
+    "throwing_wrist": {
+      "before_coordinate_frames": 215,
+      "after_coordinate_frames": 321
+    },
+    "lead_hip": {
+      "before_coordinate_frames": 215,
+      "after_coordinate_frames": 321
+    },
+    "lead_knee": {
+      "before_coordinate_frames": 215,
+      "after_coordinate_frames": 321
+    },
+    "lead_ankle": {
+      "before_coordinate_frames": 215,
+      "after_coordinate_frames": 321
+    }
+  },
+  "immutable_progress_event_count": 108,
+  "model_retry_calls": 0,
+  "warmup_calls": 0,
+  "new_models": 0,
+  "environment_installs": 0,
+  "quality_status": "not_calibrated",
+  "usable_for_analysis": null,
+  "accuracy": null,
+  "identity_switch_confirmed": null,
+  "inspection": {
+    "sampled_frames": [
+      0,
+      19,
+      38,
+      56,
+      75,
+      94,
+      113,
+      132,
+      151,
+      159,
+      169,
+      188,
+      193,
+      194,
+      201,
+      207,
+      214,
+      215,
+      216,
+      226,
+      245,
+      264,
+      282,
+      301,
+      320
+    ],
+    "contact_sheets": [
+      "visual_review/comparison_01.jpg",
+      "visual_review/comparison_02.jpg",
+      "visual_review/comparison_03.jpg",
+      "visual_review/comparison_04.jpg",
+      "visual_review/comparison_05.jpg",
+      "visual_review/comparison_06.jpg",
+      "visual_review/comparison_07.jpg"
+    ],
+    "inspection_status": "completed_agent_sample_review",
+    "human_ground_truth": false,
+    "accuracy": null,
+    "new_annotations": 0,
+    "export_model_calls": 0,
+    "reviewed_comparisons": 25,
+    "notes": [
+      "Viewed all7contact sheets, including20fixedframes,193/194 and214/215/216continuationboundary.",
+      "Early0/19/38/56/75samples retain the improvement over static crop: arm lines stay near pitcher/glove rather than batter.",
+      "Boundary214/215/216 has a skeleton in every frame near pitcher; no blank continuation seam in these samples.",
+      "Previously unexecuted226/245/264/282/301/320samples now have skeletons near pitcher, with no obvious whole-skeleton change to batter in reviewed samples.",
+      "Local joint accuracy and occluded elbow/wrist observability are unmeasured; model coordinates remain uncalibrated estimates.",
+      "Agent sample review is not human per-frame GT or proof of full-video identity stability."
+    ]
+  },
+  "tests": {
+    "created_at_utc": "2026-10-22T17:36:13.754961+00:00",
+    "tests_run": 1128,
+    "passed": 1126,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 2,
+    "skipped_reasons": [
+      {
+        "test": "test_dangling_snapshot_file_link_cannot_create_external_target_when_supported (test_handoff_paths.HandoffPathTests.test_dangling_snapshot_file_link_cannot_create_external_target_when_supported)",
+        "reason": "file symlink creation is unavailable"
+      },
+      {
+        "test": "test_source_symlink_outside_candidate_is_rejected_when_supported (test_handoff_review.HandoffReviewTests.test_source_symlink_outside_candidate_is_rejected_when_supported)",
+        "reason": "creating symbolic links is unavailable"
+      }
+    ],
+    "elapsed_seconds": 82.719,
+    "formal_five_video_e2e_enabled": true,
+    "real_detector_calls_in_tests": 0,
+    "real_rtmpose_calls_in_tests": 0,
+    "successful": true
+  },
+  "formal_five_e2e": [
+    {
+      "pitch_id": "pitch_001",
+      "status": "evaluated_development_evidence",
+      "source_frames": 87,
+      "review_frames_non_seed": 2
+    },
+    {
+      "pitch_id": "pitch_002",
+      "status": "evaluated_development_evidence",
+      "source_frames": 175,
+      "review_frames_non_seed": 0
+    },
+    {
+      "pitch_id": "pitch_003",
+      "status": "evaluated_development_evidence",
+      "source_frames": 115,
+      "review_frames_non_seed": 19
+    },
+    {
+      "pitch_id": "pitch_004",
+      "status": "evaluated_development_evidence",
+      "source_frames": 114,
+      "review_frames_non_seed": 5
+    },
+    {
+      "pitch_id": "pitch_005",
+      "status": "evaluated_development_evidence",
+      "source_frames": 101,
+      "review_frames_non_seed": 3
+    }
+  ],
+  "preservation": {
+    "protected_files_checked": 672,
+    "protected_sha256_changes": [],
+    "frozen_source_changes": [],
+    "prior_prefix_frames_checked": 215,
+    "prior_prefix_changed_frames": [],
+    "source_frame_pairing_errors": [],
+    "new_worker_payloads_verified": 106,
+    "payload_bytes": 6458368,
+    "verification_model_calls": 0,
+    "verification_tracking_replays": 0,
+    "successful": true
+  },
+  "overlay": {
+    "decoded_frame_count": 321,
+    "source_pixel_sha_verified_frames": 321,
+    "fps_fraction": "60000/1001",
+    "codec": "h264",
+    "max_source_timestamp_difference_ms": 9.094947017729282e-13
+  },
+  "output_root": "analysis_results/phase2_seeded_resume_native_20261023_01",
+  "viewer": "analysis_results/phase2_seeded_resume_native_20261023_01/review_all.html",
+  "output_refs": [
+    {
+      "path": "analysis_results/phase2_seeded_resume_native_20261023_01/run_receipt.json",
+      "sha256": "f25c0279f241d627aa6526307f08354c610336ee297019ecec787ad8ea42fbf4"
+    },
+    {
+      "path": "analysis_results/phase2_seeded_resume_native_20261023_01/continuation.partial.jsonl",
+      "sha256": "3b09a90e726cae4736a64986770219c3756fd127699ea9588d48fec0be7f540c"
+    },
+    {
+      "path": "analysis_results/phase2_seeded_resume_native_20261023_01/pose_worker/worker_calls.jsonl",
+      "sha256": "d234926b71cf38c4aac8035eed196e8e31423350f74859f140993756615ffa44"
+    },
+    {
+      "path": "analysis_results/phase2_seeded_resume_native_20261023_01/pose_worker/worker_outputs.bin",
+      "sha256": "b9bba6b75d5e1c6d3135887bd20596951eb471624a7eefdf7a34fedd631e451b"
+    },
+    {
+      "path": "analysis_results/phase2_seeded_resume_native_20261023_01/rtmpose/supplement_002/native_pose_manifest.json",
+      "sha256": "7d1166a676c0d80a9e26790fc73361c1e7223d5af1f37f9e9bc968c635f3e621"
+    },
+    {
+      "path": "analysis_results/phase2_seeded_resume_native_20261023_01/rtmpose/supplement_002/native_keypoints.jsonl",
+      "sha256": "bedabb9c7d192343306cab7b47088bb5c97200ead4a99098960f25bce914e747"
+    },
+    {
+      "path": "analysis_results/phase2_seeded_resume_native_20261023_01/rtmpose/supplement_002/overlay_native.mp4",
+      "sha256": "9713f1053f3ea68df9a3b960806f86a448dc213a0389f404f8288b870c5e31f8"
+    },
+    {
+      "path": "analysis_results/phase2_seeded_resume_native_20261023_01/comparison_summary.json",
+      "sha256": "bbfb3578a264fcf732a25dfc2b3bd67b08abd9ab8c61c8fe51a51ac77af75a7d"
+    },
+    {
+      "path": "analysis_results/phase2_seeded_resume_native_20261023_01/preservation_check.json",
+      "sha256": "8ea52acd844ac19c2a1c371b63fc3a7cdd2b58fb34f50f45d3f6f8000a978674"
+    },
+    {
+      "path": "analysis_results/phase2_seeded_resume_native_20261023_01/visual_review/inspection.json",
+      "sha256": "9a946c1d1f8dc92ca5fe0a9c5561b4477efff414b0f4822767c06cb853480871"
+    }
+  ],
+  "limitations": [
+    "Full coordinate availability is not joint accuracy or human visibility.",
+    "Only the initial subject selection is human confirmed; other frames lack per-frame human GT.",
+    "Original core, gate, raw predictions and GT remain unchanged; no formal adoption or Phase3."
+  ],
+  "stop_status": "Completed bounded continuation; stop after commit and push."
+}

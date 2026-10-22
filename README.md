@@ -6,7 +6,14 @@
 本次收尾摘要見 [STATUS](docs/STATUS.md)；外部專案供片需求見
 [INPUT_REQUIREMENTS](docs/INPUT_REQUIREMENTS.md)。
 
-2026-10-21 最新：[人工初始化追蹤的部分結果已保存](docs/phase2_seeded_native_track_results_20261021.md)：
+2026-10-23 最新：[人工初始化追蹤的106格續跑完成](docs/phase2_seeded_resume_results_20261023.md)：
+只執行第215–320格；前215格逐值不變，合計319新pose＋2格cache＝321格原生座標。
+紀錄改為各筆獨立新檔，本次無中斷；0新detector／0追蹤replay，672保護檔案不變。
+實看25組對照，完整suite1126 passed／0 failed／2 skipped；正式核心／門檻／GT保持。
+座標完整度不代表關節可靠性，未正式採用，Phase2仍NOT PASSED。本輪完成後停止。
+本機觀看：`analysis_results/phase2_seeded_resume_native_20261023_01/review_all.html`。
+
+前段：[人工初始化追蹤的部分結果已保存](docs/phase2_seeded_native_track_results_20261021.md)：
 HSU指定1號框；321格保存框關聯完成，0新detector，213新pose＋193／194兩格重用。
 Windows執行紀錄替換錯誤使pose在214格後停止；後106格未執行，保留missing，未補跑。
 22組對照中準備段舊手臂線回到投手附近；完整推論未完成，不正式採用，Phase2仍NOT PASSED。

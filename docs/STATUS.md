@@ -1,10 +1,26 @@
 # 進度摘要
 
-更新：2026-10-21（台灣）。[完整狀態](current_status.md)；[最新人工初始化追蹤結果](phase2_seeded_native_track_results_20261021.md)。
+更新：2026-10-23（台灣）。[完整狀態](current_status.md)；[最新106格續跑結果](phase2_seeded_resume_results_20261023.md)。
 
 **Phase 1 = PASSED；Native interface integration = PASSED；Phase 2 自動可靠性仍 NOT PASSED。**
 
-## 最新：人工初始化追蹤部分結果已保存，I/O中斷後停止
+## 最新：106格續跑完成，原生座標321／321
+
+使用者續行後，已完成同一球第215–320格106次pose；前215份prediction逐值不變。
+兩段合計319次新pose＋193／194兩格cache＝321格，整格missing106→0。
+沿用已保存321格框關聯，本次0detector／0tracking replay，原claim與中斷輸出全保留。
+新增不可變逐事件進度檔，108筆均完成，不覆寫舊snapshot；本次無I/O中斷或模型重試。
+
+實看25組原片／舊／新對照，準備段舊手臂混入打者的改善保留，續跑交界／尾段骨架在投手附近。
+這是代理抽樣，沒有新人工GT；局部精度及遮擋肘／腕仍未校準，不能以有座標宣告可靠。
+完整suite **1126 passed／0 failed／0 errors／2 skipped**（1128項，82.719秒，新增11項）。
+正式山本五球E2E提示仍2／0／19／5／3；672保護檔案SHA不變、106份新binary核對。
+**本次補完 = COMPLETED；尚未正式採用，Phase2自動可靠性仍NOT PASSED。**
+輸出：`analysis_results/phase2_seeded_resume_native_20261023_01/`，先開`review_all.html`。
+[結果與保存證據](phase2_seeded_resume_results_20261023.md)、[版本化數字](dataset_selections/ohtani_seeded_resume_results_20261023.json)。
+本輪完成commit／push後停止，不擴跑其他球、加新標註、改既有驗收或進Phase3。
+
+## 前段：人工初始化追蹤部分結果已保存，I/O中斷後停止
 
 HSU已核准[單球方案](phase2_seeded_native_track_plan_20261021.md)，指定第0格1號框。
 新增獨立native關聯／cache／producer與CLI；321格關聯只跑一次，1seeded＋320linked、無幾何break。
