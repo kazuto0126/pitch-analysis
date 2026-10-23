@@ -14,6 +14,14 @@ The original Phase 1 stable state and five formal videos remain unchanged.
 
 ## 2026-10-23 shared skeleton standard adopted and applied to Yamamoto
 
+After delivery HSU explicitly reaffirmed this as the most successful method so far
+and authorized its continued use for future pitchers. New skeleton work therefore
+continues through the shared operator-seeded RTMPose workflow, with each source's
+initial pitcher confirmed separately. The exact statement and source-bound method
+record are saved in
+`annotations/skeleton_reviews/HSU_20261023/future_pitcher_method_endorsement.json`.
+This method-level confirmation adds no individual video or keypoint GT labels.
+
 HSU watched the complete Ohtani supplement_002321frame seeded overlay, accepted its
 subject identity and overall joint alignment, and explicitly requested the same method
 for Yamamoto and future pitchers. The exact user statement, reviewer, recorded UTC,

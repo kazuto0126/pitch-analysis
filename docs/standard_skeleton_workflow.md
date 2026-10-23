@@ -4,6 +4,10 @@
 關節整體對位正確，並指示山本及後續投手都使用同一方法。
 本流程因此採用為**新骨架輸出的共同入口**；原評估資料與人工GT保留。
 
+HSU在山本新結果交付後再次確認：「我覺得這種模型是目前下來最成功的，
+你可以繼續沿用之後的投手部分」。後續投手的新骨架沿用本流程，逐片確認初始投手；
+方法沿用的授權另存`annotations/skeleton_reviews/HSU_20261023/future_pitcher_method_endorsement.json`。
+
 ## 固定流程
 
 1. 接收已剪好的單球MP4與`pitch-input-v1` metadata，核對來源及分數FPS時間軸。

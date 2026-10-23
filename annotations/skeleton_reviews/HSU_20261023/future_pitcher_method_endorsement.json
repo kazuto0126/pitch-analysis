@@ -1,0 +1,29 @@
+{
+  "schema_version": "skeleton-method-endorsement-v1",
+  "reviewer": "HSU",
+  "recorded_at_utc": "2026-10-23T07:35:16.212888+00:00",
+  "original_user_statement": "我覺得這種模型是目前下來最成功的，你可以繼續沿用之後的投手部分",
+  "decision": "CONTINUE_SHARED_SEEDED_RTMPOSE_FOR_FUTURE_PITCHERS",
+  "applies_to": "future pitcher skeleton extraction",
+  "method": [
+    "operator-confirmed first-frame pitcher",
+    "continuous person-box association",
+    "bbox-conditioned RTMPose native COCO17"
+  ],
+  "runtime_config_ref": {
+    "path": "config/seeded_skeleton_runtime.json",
+    "sha256": "842ede08119844684dbee3b49e3978af85e777f87b7cb785ba2a63209927ca80"
+  },
+  "prior_adoption_ref": {
+    "path": "annotations/skeleton_reviews/HSU_20261023/ohtani_supplement_002.json",
+    "sha256": "6894a7be22e7be1e39530e8cb1bebdbcf01fd42eecdf00a64ac6f456dc123145"
+  },
+  "displayed_rollout_ref": {
+    "path": "docs/dataset_selections/standard_skeleton_rollout_20261023.json",
+    "sha256": "0cb5e3c69f0837880c68d98ebbc6f91dfd845c487d8f05ed0317e4463b5d57e0"
+  },
+  "judgment_scope": "method-level preference and authorization; no new per-video acceptance or pointwise GT labels",
+  "new_inference_calls": 0,
+  "new_ground_truth_labels": 0,
+  "phase3_started": false
+}
