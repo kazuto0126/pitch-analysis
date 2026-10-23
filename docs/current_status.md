@@ -14,6 +14,12 @@ The original Phase 1 stable state and five formal videos remain unchanged.
 
 ## 2026-10-24 active Yamamoto review recorded; nine-clip assisted delivery complete
 
+HSU subsequently reaffirmed that the current Ohtani and Yamamoto skeleton mode
+must be retained. The shared operator-seeded person-box tracking plus native17
+RTMPose workflow remains the standard, with fixed runtime/model/source SHA.
+Existing accepted skeletons are consumed directly for later analysis; this
+retention confirmation does not authorize Phase3 or a backend change.
+
 HSU replied「都正確」to the explicit request for active Yamamoto001/002/004/005.
 The independent skeleton-overlay-review-v1 record binds exact video/overlay/native
 SHA, reviewer, recorded UTC and the original response.003remains historical only.
