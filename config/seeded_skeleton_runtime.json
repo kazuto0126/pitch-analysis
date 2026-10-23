@@ -1,0 +1,85 @@
+{
+  "schema_version": "seeded-skeleton-runtime-v1",
+  "runtime_ref": {
+    "path": ".venv-rtmpose-response-20261016/Scripts/python.exe",
+    "sha256": "82264b3fe4248d1ff3564a0296cbb4a266ef968799bd85902ab5eaaf3e17eb62"
+  },
+  "model_ref": {
+    "path": "analysis_results/phase2_rtmpose_response_20261016_01/model/end2end.onnx",
+    "sha256": "5c0a4bf67953e6d2ac43ce15e77dc9d5d354ae18430a47d2c5963a7bc5683e3c"
+  },
+  "worker_ref": {
+    "path": "scripts/native_pose_onnx_worker.py",
+    "sha256": "89aa8f021e14cbcacb6f4674137ab8f014c9a8fc37e1819e5245b4593f83aaa4"
+  },
+  "expected_runtime": {
+    "python": "3.12.14",
+    "numpy": "2.2.6",
+    "onnxruntime": "1.23.2"
+  },
+  "detector_model_ref": {
+    "path": "analysis_results/phase2_person_box_preparation_20261021_01/model/20230928/yolox_onnx/yolox_m_8xb8-300e_humanart-c2c7a14a/end2end.onnx",
+    "sha256": "3dea6513388889f0fff4b77bf7a26013600321b9eb9ceb0e9a400a82572f5f23"
+  },
+  "detector_worker_ref": {
+    "path": "scripts/native_person_box_onnx_worker.py",
+    "sha256": "2a1f330d69aec8850f2a4af14d4af220086834806ba0bb65bfb50830a40ae089"
+  },
+  "backend": "operator_seeded_rtmpose",
+  "native_topology": "coco_17",
+  "track_policy": "operator_seeded_mutual_unique_max_iou_v1",
+  "final_detector_score_threshold": 0.7,
+  "sampling_canvas_default": "whole source image; never borrow another clip pixel ROI",
+  "quality_status": "not_calibrated",
+  "usable_for_analysis": null,
+  "source_refs": [
+    {
+      "path": ".venv-rtmpose-response-20261016/Scripts/python.exe",
+      "sha256": "82264b3fe4248d1ff3564a0296cbb4a266ef968799bd85902ab5eaaf3e17eb62"
+    },
+    {
+      "path": "analysis_results/phase2_rtmpose_response_20261016_01/model/end2end.onnx",
+      "sha256": "5c0a4bf67953e6d2ac43ce15e77dc9d5d354ae18430a47d2c5963a7bc5683e3c"
+    },
+    {
+      "path": "scripts/native_pose_onnx_worker.py",
+      "sha256": "89aa8f021e14cbcacb6f4674137ab8f014c9a8fc37e1819e5245b4593f83aaa4"
+    },
+    {
+      "path": "analysis_results/phase2_person_box_preparation_20261021_01/model/20230928/yolox_onnx/yolox_m_8xb8-300e_humanart-c2c7a14a/end2end.onnx",
+      "sha256": "3dea6513388889f0fff4b77bf7a26013600321b9eb9ceb0e9a400a82572f5f23"
+    },
+    {
+      "path": "scripts/native_person_box_onnx_worker.py",
+      "sha256": "2a1f330d69aec8850f2a4af14d4af220086834806ba0bb65bfb50830a40ae089"
+    },
+    {
+      "path": "src/pitch_analysis/native_skeleton_prepare.py",
+      "sha256": "d6f13af7d88c6b6c7efad35a381b4a9997b744ee8ebaf4c61d6814aa0045a794"
+    },
+    {
+      "path": "src/pitch_analysis/native_person_boxes.py",
+      "sha256": "99973836ce11deb8364eb91db91af50b0bd8020333d73061590a05c675c17e4e"
+    },
+    {
+      "path": "src/pitch_analysis/native_seeded_track.py",
+      "sha256": "70361da4137f7b225ebaee65f8a73e2bf380927353b0309a02aa03118d4d6eaf"
+    },
+    {
+      "path": "src/pitch_analysis/native_pose_estimator.py",
+      "sha256": "534c7ba81adaee5044a816e3eec5958787d225cc37d508e6fc3e7555d3689a49"
+    },
+    {
+      "path": "src/pitch_analysis/native_pose_transport.py",
+      "sha256": "b1cbb163e96bcd858da14c61ae5b06acd4a096cc798403551f1ee5ab98010a8d"
+    },
+    {
+      "path": "src/pitch_analysis/native_person_box_transport.py",
+      "sha256": "325b2901ee3245ea36e876c3986962df25e7ac13ab25fb3784225b72b5cb0945"
+    },
+    {
+      "path": "src/pitch_analysis/native_progress_log.py",
+      "sha256": "c6c0c7993ec8f9abb8ddf34fc64198b542aaad0f109529471135206919769717"
+    }
+  ]
+}

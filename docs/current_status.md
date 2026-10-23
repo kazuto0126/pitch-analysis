@@ -1,4 +1,4 @@
-# Current status — Seeded track continuation complete; reliability remains unaccepted
+# Current status — Shared skeleton method adopted; Yamamoto rollout complete
 
 Updated: 2026-10-23
 
@@ -12,7 +12,54 @@ gates, MediaPipe settings, interpolation and smoothing are unchanged. The approv
 optional subject-region constraint is described below; the default selector remains compatible.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-23 explicit continuation completed:321/321native coordinate frames
+## 2026-10-23 shared skeleton standard adopted and applied to Yamamoto
+
+HSU watched the complete Ohtani supplement_002321frame seeded overlay, accepted its
+subject identity and overall joint alignment, and explicitly requested the same method
+for Yamamoto and future pitchers. The exact user statement, reviewer, recorded UTC,
+and source/output SHA are saved independently. This is a qualitative whole-video
+acceptance and method adoption, not invented per-point human coordinates or a 100% score.
+
+The common skeleton CLI is now `prepare-skeleton` followed by an operator-confirmed
+source-bound seed and `extract-skeleton`. It uses each complete input image as its
+own canvas, reuses the first-frame detector output, saves all remaining candidates,
+applies the existing fixed mutual-unique positive-IoU/terminal-break policy, then
+estimates native COCO17 in the selected person's bbox. No Ohtani-specific crop,
+cache rule, pitcher name condition or model-specific call count is copied to new inputs.
+Long inputs split detector worker evidence into bounded sessions without extra calls.
+
+HSU confirmed first-frame display choices 001=2, 002/003/004/005=1. All five Yamamoto
+sources ran once: 87/175/115/114/101frames, total592; detector5cached-firstframe plus
+587remaining, pose592; whole-frame missing0, geometric breaks0.
+003 remains historical_diagnostic_only; active cohort remains001/002/004/005.
+Complete overlays and sampled source/old/new comparisons are delivered. The Yamamoto
+outputs have agent sample inspection; full-video human acceptance is still pending.
+
+Existing independent pitch003visible manual XY is reused on1205visible points;
+173not_observable and2uncertain are excluded, missing points reported separately.
+Same-point mean pixel error old→new: 22.2113→10.1057; historical87–104:
+76.9003→10.5003. Per-joint and same-point counts remain explicit.
+Canonical reliability labels describe the old MediaPipe overlay and are not transferred
+to RTMPose TP/FN/FP. No new human labels, hidden-joint claims or acceptance threshold.
+
+Full suite1141run/1139passed/0failed/0errors/2Windows-file-symlinkskips,98.391s.
+All five formal MediaPipe E2E cases ran; major hints remain2/0/19/5/3.727protected
+sources are SHA-unchanged. Only existing CLI dispatch/help was extended; production
+pose/tracking/gates/thresholds/raw/GT and Phase1 material remain unchanged.
+
+**Shared skeleton method = ADOPTED BY HSU. Phase2 automatic reliability = NOT PASSED.**
+Native17 score is uncalibrated; unavailable Z/visibility/presence stay null. Legacy
+`analyze-pitch`/`extract-pose`33point feature/gate compatibility stays available;
+all new skeleton production uses the shared entry. Native-feature integration and
+new-model automatic reliability are not silently claimed by this rollout.
+
+Output:`analysis_results/phase2_yamamoto_seeded_skeleton_20261023_01/`;open`review_all.html`.
+[Rollout results](standard_skeleton_rollout_20261023.md),
+[common workflow](standard_skeleton_workflow.md),
+[versioned results](dataset_selections/standard_skeleton_rollout_20261023.json).
+Stop after this delivery/commit/push; no Phase3 or new experiment has started.
+
+## 2026-10-23 explicit continuation completed:321/321native coordinate frames (history)
 
 The user requested continuation after the prior stopped report. Implemented a
 separate resume entry that verifies old claims, complete213pairedcalls/binary,

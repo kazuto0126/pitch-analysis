@@ -6,7 +6,18 @@
 本次收尾摘要見 [STATUS](docs/STATUS.md)；外部專案供片需求見
 [INPUT_REQUIREMENTS](docs/INPUT_REQUIREMENTS.md)。
 
-2026-10-23 最新：[人工初始化追蹤的106格續跑完成](docs/phase2_seeded_resume_results_20261023.md)：
+2026-10-23 最新：[共用骨架流程已採用，山本五片已處理](docs/standard_skeleton_rollout_20261023.md)。
+HSU完整觀看大谷第2球後確認整體骨架對位，要求山本與後續投手使用同一標準。
+**新骨架統一使用人工指定起始投手＋人物框連續追蹤＋RTMPose原生17點**；
+正式入口為 `prepare-skeleton` → 人工確認首格框 → `extract-skeleton`，
+[使用方法](docs/standard_skeleton_workflow.md)。舊33點特徵／品質流程保留相容。
+山本五片各執行一次，87/175/115/114/101格、合計592格；整格missing 0、幾何track break 0。
+003仍僅歷史對照。既有003可見人工XY同點平均誤差 22.21→10.11px，
+87–104歷史重大錯位段 76.90→10.50px；不是新的遮擋GT或自動可靠性通過證明。
+完整suite1139 passed／0 failed／2 skipped。原影片、raw與GT保留；Phase2自動可靠性仍NOT PASSED。
+本機觀看：`analysis_results/phase2_yamamoto_seeded_skeleton_20261023_01/review_all.html`。
+
+前段：[人工初始化追蹤的106格續跑完成](docs/phase2_seeded_resume_results_20261023.md)：
 只執行第215–320格；前215格逐值不變，合計319新pose＋2格cache＝321格原生座標。
 紀錄改為各筆獨立新檔，本次無中斷；0新detector／0追蹤replay，672保護檔案不變。
 實看25組對照，完整suite1126 passed／0 failed／2 skipped；正式核心／門檻／GT保持。

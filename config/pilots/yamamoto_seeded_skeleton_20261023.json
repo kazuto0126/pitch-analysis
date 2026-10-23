@@ -1,0 +1,311 @@
+{
+  "schema_version": "seeded-skeleton-cohort-v1",
+  "status": "operator_confirmed",
+  "adoption_ref": {
+    "path": "annotations/skeleton_reviews/HSU_20261023/ohtani_supplement_002.json",
+    "sha256": "6894a7be22e7be1e39530e8cb1bebdbcf01fd42eecdf00a64ac6f456dc123145"
+  },
+  "runtime_config_ref": {
+    "path": "config/seeded_skeleton_runtime.json",
+    "sha256": "842ede08119844684dbee3b49e3978af85e777f87b7cb785ba2a63209927ca80"
+  },
+  "sources": [
+    {
+      "pitch_id": "pitch_001",
+      "role": "active",
+      "preparation_ref": {
+        "path": "analysis_results/phase2_skeleton_standard_20261023_01/yamamoto/pitch_001/preparation.json",
+        "sha256": "36a1b24f4713ac778205d5508167fa541ed187bb7293426dc344d8566d386c86"
+      },
+      "seed_image_ref": {
+        "path": "analysis_results/phase2_skeleton_standard_20261023_01/yamamoto/pitch_001/seed_candidates.png",
+        "sha256": "e24029725d236403ed4012ccf893043810e18c9f43d5353add01fd72c3c16616"
+      },
+      "display_choices": [
+        {
+          "display_number": 1,
+          "output_index": 0,
+          "bbox_original_xyxy_px": [
+            287.2747032165528,
+            0.786393165588379,
+            433.15642929077154,
+            183.48149719238282
+          ]
+        },
+        {
+          "display_number": 2,
+          "output_index": 1,
+          "bbox_original_xyxy_px": [
+            122.52695055007936,
+            86.27688388824464,
+            262.3857891082764,
+            477.0548652648926
+          ]
+        },
+        {
+          "display_number": 3,
+          "output_index": 2,
+          "bbox_original_xyxy_px": [
+            213.96019878387455,
+            0.48028068542480473,
+            340.18259506225587,
+            200.85083599090578
+          ]
+        },
+        {
+          "display_number": 4,
+          "output_index": 3,
+          "bbox_original_xyxy_px": [
+            150.41595935821533,
+            0.5441379547119141,
+            236.3266332626343,
+            155.41279067993165
+          ]
+        }
+      ],
+      "seed_selected": true,
+      "seed_ref": {
+        "path": "analysis_results/phase2_skeleton_standard_20261023_01/yamamoto/pitch_001/seed_HSU.json",
+        "sha256": "2bfef4c8b3436fbf83634ffa202c5d65b5eccd3e0168acc1695e4e5e252e36ec"
+      },
+      "frame_count": 87,
+      "max_new_detector_calls": 86,
+      "max_pose_calls": 87
+    },
+    {
+      "pitch_id": "pitch_002",
+      "role": "active",
+      "preparation_ref": {
+        "path": "analysis_results/phase2_skeleton_standard_20261023_01/yamamoto/pitch_002/preparation.json",
+        "sha256": "d6cc879de49e19623c768252b5e7e6ebb59ede9dfac19bfb4640e57ca90384fc"
+      },
+      "seed_image_ref": {
+        "path": "analysis_results/phase2_skeleton_standard_20261023_01/yamamoto/pitch_002/seed_candidates.png",
+        "sha256": "bfc82878897a5f119d9dc39d49a8cfe71be58f1215175b4792997e4c5b59ac33"
+      },
+      "display_choices": [
+        {
+          "display_number": 1,
+          "output_index": 0,
+          "bbox_original_xyxy_px": [
+            107.65640919208528,
+            115.33853707313538,
+            270.93811416625977,
+            550.4571908950805
+          ]
+        }
+      ],
+      "seed_selected": true,
+      "seed_ref": {
+        "path": "analysis_results/phase2_skeleton_standard_20261023_01/yamamoto/pitch_002/seed_HSU.json",
+        "sha256": "8fe4d34de6dcb22958cc08d6e199580c96660d1db9f8fc5f71d9ff526315a928"
+      },
+      "frame_count": 175,
+      "max_new_detector_calls": 174,
+      "max_pose_calls": 175
+    },
+    {
+      "pitch_id": "pitch_003",
+      "role": "historical_diagnostic_only",
+      "preparation_ref": {
+        "path": "analysis_results/phase2_skeleton_standard_20261023_01/yamamoto/pitch_003/preparation.json",
+        "sha256": "ea33b761f097d4481cf4551f78b744c4cc1b664f9e023c3214a8fc4db49ea2e1"
+      },
+      "seed_image_ref": {
+        "path": "analysis_results/phase2_skeleton_standard_20261023_01/yamamoto/pitch_003/seed_candidates.png",
+        "sha256": "8e7293c349f9f14f3b5a77538313c8c66aa27b2dc54d908c1b9a42b4c110efb4"
+      },
+      "display_choices": [
+        {
+          "display_number": 1,
+          "output_index": 0,
+          "bbox_original_xyxy_px": [
+            127.09304637908936,
+            144.99549865722656,
+            264.366351890564,
+            553.1953788757324
+          ]
+        },
+        {
+          "display_number": 2,
+          "output_index": 1,
+          "bbox_original_xyxy_px": [
+            232.94937286376953,
+            1.2329708099365235,
+            387.69244995117185,
+            230.55184144973754
+          ]
+        },
+        {
+          "display_number": 3,
+          "output_index": 2,
+          "bbox_original_xyxy_px": [
+            268.1626167297363,
+            25.68945469856262,
+            428.1070255279541,
+            236.14229831695556
+          ]
+        },
+        {
+          "display_number": 4,
+          "output_index": 3,
+          "bbox_original_xyxy_px": [
+            185.75842876434325,
+            0.5833807945251465,
+            267.87061939239504,
+            211.21214599609374
+          ]
+        }
+      ],
+      "seed_selected": true,
+      "seed_ref": {
+        "path": "analysis_results/phase2_skeleton_standard_20261023_01/yamamoto/pitch_003/seed_HSU.json",
+        "sha256": "6f6bbfbeb2f09bc3d51f11357481abbe07b4fecfb38c2998d988fd036ebe2a5b"
+      },
+      "frame_count": 115,
+      "max_new_detector_calls": 114,
+      "max_pose_calls": 115
+    },
+    {
+      "pitch_id": "pitch_004",
+      "role": "active",
+      "preparation_ref": {
+        "path": "analysis_results/phase2_skeleton_standard_20261023_01/yamamoto/pitch_004/preparation.json",
+        "sha256": "db6649489b3ecb44975250705c51e9e6babc2865a2e42432e0579ee87ffc0131"
+      },
+      "seed_image_ref": {
+        "path": "analysis_results/phase2_skeleton_standard_20261023_01/yamamoto/pitch_004/seed_candidates.png",
+        "sha256": "8c224365514f01dc1fdca53d8a61390f0d2493541ad4f14e6480fab7de6c05cc"
+      },
+      "display_choices": [
+        {
+          "display_number": 1,
+          "output_index": 0,
+          "bbox_original_xyxy_px": [
+            146.6096145629883,
+            115.91692619323732,
+            307.27578659057616,
+            610.0706981658935
+          ]
+        },
+        {
+          "display_number": 2,
+          "output_index": 1,
+          "bbox_original_xyxy_px": [
+            275.2971796035767,
+            1.4286355018615724,
+            405.9941274642945,
+            333.51190452575685
+          ]
+        },
+        {
+          "display_number": 3,
+          "output_index": 2,
+          "bbox_original_xyxy_px": [
+            350.62645530700684,
+            0.6676345825195313,
+            530.1218437194824,
+            310.9902292251587
+          ]
+        }
+      ],
+      "seed_selected": true,
+      "seed_ref": {
+        "path": "analysis_results/phase2_skeleton_standard_20261023_01/yamamoto/pitch_004/seed_HSU.json",
+        "sha256": "0622dcb2b4576f0493802385f731c10368bc09bc2761f2b710cf6891a4038cc9"
+      },
+      "frame_count": 114,
+      "max_new_detector_calls": 113,
+      "max_pose_calls": 114
+    },
+    {
+      "pitch_id": "pitch_005",
+      "role": "active",
+      "preparation_ref": {
+        "path": "analysis_results/phase2_skeleton_standard_20261023_01/yamamoto/pitch_005/preparation.json",
+        "sha256": "ae62a7864999e1ad19ebc5b292022c16c7b095663f9af4f6d8af2afdb536e1fd"
+      },
+      "seed_image_ref": {
+        "path": "analysis_results/phase2_skeleton_standard_20261023_01/yamamoto/pitch_005/seed_candidates.png",
+        "sha256": "6fa76ed1697ce4f7dca5dfdf01c9a0033e7d4b3771a57d8ad6799fe5dcd1ead2"
+      },
+      "display_choices": [
+        {
+          "display_number": 1,
+          "output_index": 0,
+          "bbox_original_xyxy_px": [
+            135.6994055747986,
+            88.52168035507202,
+            279.30971784591674,
+            512.790520477295
+          ]
+        },
+        {
+          "display_number": 2,
+          "output_index": 1,
+          "bbox_original_xyxy_px": [
+            270.3349216461182,
+            1.2411093711853027,
+            375.38367347717286,
+            265.84722414016727
+          ]
+        },
+        {
+          "display_number": 3,
+          "output_index": 2,
+          "bbox_original_xyxy_px": [
+            405.49565296173097,
+            1.1027695178985597,
+            510.3703500747681,
+            241.60711059570315
+          ]
+        }
+      ],
+      "seed_selected": true,
+      "seed_ref": {
+        "path": "analysis_results/phase2_skeleton_standard_20261023_01/yamamoto/pitch_005/seed_HSU.json",
+        "sha256": "9c11b8241ae49ccaca7f8d42af4e0a22244c938e3de2048c87bdac6e0d4b8015"
+      },
+      "frame_count": 101,
+      "max_new_detector_calls": 100,
+      "max_pose_calls": 101
+    }
+  ],
+  "implementation_refs": [
+    {
+      "path": "src/pitch_analysis/seeded_skeleton.py",
+      "sha256": "065aaa3d84f82995956f589933c262d28d44a104bb079f12538612e25139f594"
+    },
+    {
+      "path": "src/pitch_analysis/native_skeleton_prepare.py",
+      "sha256": "d6f13af7d88c6b6c7efad35a381b4a9997b744ee8ebaf4c61d6814aa0045a794"
+    },
+    {
+      "path": "src/pitch_analysis/cli.py",
+      "sha256": "c44ad98fcb6fb67b15016038beaf61d8e134cd1ac76cba4e7b71f3f47e0a8be4"
+    },
+    {
+      "path": "src/pitch_analysis/native_seeded_track.py",
+      "sha256": "70361da4137f7b225ebaee65f8a73e2bf380927353b0309a02aa03118d4d6eaf"
+    },
+    {
+      "path": "src/pitch_analysis/native_pose_estimator.py",
+      "sha256": "534c7ba81adaee5044a816e3eec5958787d225cc37d508e6fc3e7555d3689a49"
+    },
+    {
+      "path": "src/pitch_analysis/native_person_boxes.py",
+      "sha256": "99973836ce11deb8364eb91db91af50b0bd8020333d73061590a05c675c17e4e"
+    },
+    {
+      "path": "src/pitch_analysis/native_progress_log.py",
+      "sha256": "c6c0c7993ec8f9abb8ddf34fc64198b542aaad0f109529471135206919769717"
+    }
+  ],
+  "source_frames": 592,
+  "max_new_detector_calls_after_preparation": 587,
+  "max_pose_calls": 592,
+  "output_root": "analysis_results/phase2_yamamoto_seeded_skeleton_20261023_01",
+  "method": "operator_seeded_rtmpose",
+  "formal_source_replacement": false,
+  "new_ground_truth_labels": 0
+}

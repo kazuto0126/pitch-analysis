@@ -1,0 +1,50 @@
+{
+  "schema_version": "skeleton-method-adoption-v1",
+  "reviewer": "HSU",
+  "recorded_at_utc": "2026-10-23T02:14:18.229791+00:00",
+  "source_pitch_id": "supplement_002",
+  "source_pitcher_id": "shohei_ohtani",
+  "video_ref": {
+    "path": "input/shohei_ohtani/phase2_supplement_20261020_01/supplement_002.mp4",
+    "sha256": "b1586bdde9383e3b247bcc7d7974a3f15b0fed173848926d5217f261b87bab8e"
+  },
+  "overlay_ref": {
+    "path": "analysis_results/phase2_seeded_resume_native_20261023_01/rtmpose/supplement_002/overlay_native.mp4",
+    "sha256": "9713f1053f3ea68df9a3b960806f86a448dc213a0389f404f8288b870c5e31f8"
+  },
+  "native_manifest_ref": {
+    "path": "analysis_results/phase2_seeded_resume_native_20261023_01/rtmpose/supplement_002/native_pose_manifest.json",
+    "sha256": "7d1166a676c0d80a9e26790fc73361c1e7223d5af1f37f9e9bc968c635f3e621"
+  },
+  "native_keypoints_ref": {
+    "path": "analysis_results/phase2_seeded_resume_native_20261023_01/rtmpose/supplement_002/native_keypoints.jsonl",
+    "sha256": "bedabb9c7d192343306cab7b47088bb5c97200ead4a99098960f25bce914e747"
+  },
+  "review_method": "human whole-clip visual review in conversation",
+  "original_user_statement": "這是目前為止最完美的一次完全沒有跑到其他人身上，所有關節都有標正確，我建議所有的骨架部分都按照這個標準來處理，包括前面山本由申以及之後所有的投手骨架。",
+  "subject_identity_review": "confirmed_pitcher_throughout_by_HSU",
+  "overall_joint_alignment_review": "accepted_by_HSU",
+  "judgment_scope": "overall visual judgment of this complete321frame result; no new pointwise XY/visibility labels",
+  "quantitative_coordinate_error": null,
+  "calibrated_score": false,
+  "adoption_decision": "ADOPT_METHOD_AS_SHARED_SKELETON_STANDARD",
+  "adopted_method": [
+    "operator chooses first-frame pitcher box",
+    "same saved adjacent-box mutual unique positive IoU continuity",
+    "bbox-conditioned RTMPose native17",
+    "terminal break retains missing",
+    "source-bound immutable evidence and full overlay"
+  ],
+  "rollout_targets": [
+    "existing Yamamoto sources",
+    "future pitcher skeleton extraction"
+  ],
+  "historical_pitch003": "may be rebuilt for historical comparison; not silently restored to active cohort",
+  "runtime_config_ref": {
+    "path": "config/seeded_skeleton_runtime.json",
+    "sha256": "842ede08119844684dbee3b49e3978af85e777f87b7cb785ba2a63209927ca80"
+  },
+  "source_raw_and_canonical_gt_modified": false,
+  "phase2_automatic_reliability": "NOT_PASSED",
+  "phase3_started": false
+}

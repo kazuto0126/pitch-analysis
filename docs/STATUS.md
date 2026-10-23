@@ -1,10 +1,37 @@
 # 進度摘要
 
-更新：2026-10-23（台灣）。[完整狀態](current_status.md)；[最新106格續跑結果](phase2_seeded_resume_results_20261023.md)。
+更新：2026-10-23（台灣）。[完整狀態](current_status.md)；[最新共用骨架結果](standard_skeleton_rollout_20261023.md)。
 
 **Phase 1 = PASSED；Native interface integration = PASSED；Phase 2 自動可靠性仍 NOT PASSED。**
 
-## 最新：106格續跑完成，原生座標321／321
+## 最新：共用骨架標準採用，山本五片完成
+
+HSU已完整觀看大谷`supplement_002`的321格新overlay，確認沒有追到其他人、關節整體對位正確，
+並授權山本與後續投手沿用。新骨架共同入口已提供：`prepare-skeleton`準備首格編號框，
+人工選定投手後，以`extract-skeleton`連續追蹤人物框並輸出RTMPose原生17點。
+首格不重複偵測，失去唯一連結後保留missing；固定政策及模型保持，不按投手姓名調參。
+
+HSU確認山本001首格2號、其餘1號；五片各跑一次，影格數87/175/115/114/101，合計592格。
+首格detector5次＋其餘587次，pose 592次；
+整格missing 0、幾何track break 0。003仍是歷史對照，啟用素材維持001／002／004／005。
+已檢查五片新舊骨架比較圖，完整新overlay可由下方入口觀看；山本新結果的全片人工覆核仍待進行。
+既有003的1,205個可見人工XY同點平均誤差 22.21→10.11px；
+87–104歷史重大錯位段 76.90→10.50px，逐關節差異與缺值另列，沒有新增GT或新驗收門檻。
+
+完整suite **1139 passed／0 failed／0 errors／2 skipped**（1141項，98.391秒）。
+正式山本五球舊E2E提示仍2／0／19／5／3；727個保護來源SHA不變。
+Git另保存5份HSU初始投手選擇，原始seed不改寫。
+新入口保留17點原生score，沒有Z／visibility／presence則為null；不能冒充舊33點特徵／gate資料。
+舊核心、門檻、raw、人工GT及Phase1素材保持；未做Phase3。
+
+**骨架方法 = ADOPTED；Phase2自動可靠性仍NOT PASSED。**
+已完成共用骨架接入及本次五片輸出；仍待山本新overlay的人工檢查，以及新模型可靠性／原生特徵的後續工作。
+採用一支人工接受的結果與共同方法，不等於所有未來關節已量化通過。
+本機：`analysis_results/phase2_yamamoto_seeded_skeleton_20261023_01/review_all.html`。
+[結果](standard_skeleton_rollout_20261023.md)、[操作流程](standard_skeleton_workflow.md)、
+[版本化證據](dataset_selections/standard_skeleton_rollout_20261023.json)。本輪commit／push後停止。
+
+## 前段：106格續跑完成，原生座標321／321
 
 使用者續行後，已完成同一球第215–320格106次pose；前215份prediction逐值不變。
 兩段合計319次新pose＋193／194兩格cache＝321格，整格missing106→0。

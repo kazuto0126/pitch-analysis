@@ -1,0 +1,786 @@
+{
+  "schema_version": "standard-skeleton-rollout-v1",
+  "date_local": "2026-10-23",
+  "method_status": "ADOPTED_BY_HSU_AS_SHARED_SKELETON_STANDARD",
+  "adoption_ref": {
+    "path": "annotations/skeleton_reviews/HSU_20261023/ohtani_supplement_002.json",
+    "sha256": "6894a7be22e7be1e39530e8cb1bebdbcf01fd42eecdf00a64ac6f456dc123145"
+  },
+  "runtime_config_ref": {
+    "path": "config/seeded_skeleton_runtime.json",
+    "sha256": "842ede08119844684dbee3b49e3978af85e777f87b7cb785ba2a63209927ca80"
+  },
+  "cohort_config_ref": {
+    "path": "config/pilots/yamamoto_seeded_skeleton_20261023.json",
+    "sha256": "b0c4badfb679461d1943ab5afa5849fe20ba90b6ee4a19a65f6e70187e93c6b5"
+  },
+  "archived_operator_seed_refs": [
+    {
+      "path": "config/subject_seeds/yamamoto_20261023/pitch_001.json",
+      "sha256": "2bfef4c8b3436fbf83634ffa202c5d65b5eccd3e0168acc1695e4e5e252e36ec"
+    },
+    {
+      "path": "config/subject_seeds/yamamoto_20261023/pitch_002.json",
+      "sha256": "8fe4d34de6dcb22958cc08d6e199580c96660d1db9f8fc5f71d9ff526315a928"
+    },
+    {
+      "path": "config/subject_seeds/yamamoto_20261023/pitch_003.json",
+      "sha256": "6f6bbfbeb2f09bc3d51f11357481abbe07b4fecfb38c2998d988fd036ebe2a5b"
+    },
+    {
+      "path": "config/subject_seeds/yamamoto_20261023/pitch_004.json",
+      "sha256": "0622dcb2b4576f0493802385f731c10368bc09bc2761f2b710cf6891a4038cc9"
+    },
+    {
+      "path": "config/subject_seeds/yamamoto_20261023/pitch_005.json",
+      "sha256": "9c11b8241ae49ccaca7f8d42af4e0a22244c938e3de2048c87bdac6e0d4b8015"
+    }
+  ],
+  "commands": [
+    "prepare-skeleton",
+    "extract-skeleton"
+  ],
+  "source_frames": 592,
+  "firstframe_detector_calls": 5,
+  "additional_detector_calls": 587,
+  "pose_calls": 592,
+  "clips": [
+    {
+      "pitch_id": "pitch_001",
+      "role": "active",
+      "total_frames": 87,
+      "remaining_detector_calls": 86,
+      "pose_calls": 87,
+      "firstframe_detector_calls": 1,
+      "track_status_counts": {
+        "seeded": 1,
+        "linked": 86
+      },
+      "first_break_frame": null,
+      "missing_frames": [],
+      "source_sha256_changes": [],
+      "worker_payloads_verified": 173,
+      "overlay_ref": {
+        "path": "analysis_results/phase2_yamamoto_seeded_skeleton_20261023_01/pitch_001/rtmpose/pitch_001/overlay_native.mp4",
+        "sha256": "12f87f68b7b9118565a8fdd04a899a12cb6c457a0b58ea8dab39de9b101d3157"
+      },
+      "run_receipt_ref": {
+        "path": "analysis_results/phase2_yamamoto_seeded_skeleton_20261023_01/pitch_001/run_receipt.json",
+        "sha256": "9011c2f1dd1fd6893d84bec4cc80aaa5d317991d2991e0a0cac1a41d083b3cc8"
+      },
+      "human_overlay_review": "pending",
+      "quality_status": "not_calibrated",
+      "usable_for_analysis": null,
+      "sampled_frames": [
+        0,
+        12,
+        25,
+        37,
+        49,
+        61,
+        74,
+        86
+      ],
+      "contact_sheets": [
+        "visual_review/pitch_001_comparison_01.jpg",
+        "visual_review/pitch_001_comparison_02.jpg"
+      ],
+      "agent_inspection": "completed_source_old_new_samples",
+      "inspection_scope": "Codex visual samples; no new human GT, no automatic all-joint correctness claim",
+      "inspection_notes": "Inspected 8 source/old/new samples. Prior arm extensions toward background around12/25 are reduced; new body/limbs remain near pitcher. Occluded arm coordinates remain model estimates."
+    },
+    {
+      "pitch_id": "pitch_002",
+      "role": "active",
+      "total_frames": 175,
+      "remaining_detector_calls": 174,
+      "pose_calls": 175,
+      "firstframe_detector_calls": 1,
+      "track_status_counts": {
+        "seeded": 1,
+        "linked": 174
+      },
+      "first_break_frame": null,
+      "missing_frames": [],
+      "source_sha256_changes": [],
+      "worker_payloads_verified": 349,
+      "overlay_ref": {
+        "path": "analysis_results/phase2_yamamoto_seeded_skeleton_20261023_01/pitch_002/rtmpose/pitch_002/overlay_native.mp4",
+        "sha256": "94baa41dd3632695970e42e31560b80ca79a08c6a56dbd9afeb32c66483cead5"
+      },
+      "run_receipt_ref": {
+        "path": "analysis_results/phase2_yamamoto_seeded_skeleton_20261023_01/pitch_002/run_receipt.json",
+        "sha256": "8b7ba3e624c8f97e8cc7939a102c41381541d59261d9748d693367518f9e9db5"
+      },
+      "human_overlay_review": "pending",
+      "quality_status": "not_calibrated",
+      "usable_for_analysis": null,
+      "sampled_frames": [
+        0,
+        25,
+        50,
+        75,
+        99,
+        124,
+        149,
+        174
+      ],
+      "contact_sheets": [
+        "visual_review/pitch_002_comparison_01.jpg",
+        "visual_review/pitch_002_comparison_02.jpg"
+      ],
+      "agent_inspection": "completed_source_old_new_samples",
+      "inspection_scope": "Codex visual samples; no new human GT, no automatic all-joint correctness claim",
+      "inspection_notes": "Inspected 8 samples spanning preparation, leg lift, follow-through and final frame; body stays near pitcher, with no sampled cross-person displacement."
+    },
+    {
+      "pitch_id": "pitch_003",
+      "role": "historical_diagnostic_only",
+      "total_frames": 115,
+      "remaining_detector_calls": 114,
+      "pose_calls": 115,
+      "firstframe_detector_calls": 1,
+      "track_status_counts": {
+        "seeded": 1,
+        "linked": 114
+      },
+      "first_break_frame": null,
+      "missing_frames": [],
+      "source_sha256_changes": [],
+      "worker_payloads_verified": 229,
+      "overlay_ref": {
+        "path": "analysis_results/phase2_yamamoto_seeded_skeleton_20261023_01/pitch_003/rtmpose/pitch_003/overlay_native.mp4",
+        "sha256": "6bfccdb1fa798081846257967b8d5faf1c21a404c5370f810ae23e8c54bf9625"
+      },
+      "run_receipt_ref": {
+        "path": "analysis_results/phase2_yamamoto_seeded_skeleton_20261023_01/pitch_003/run_receipt.json",
+        "sha256": "3d9694956c60191eeb84bc04c8b2d85a9c7fe4611c018da85452e32772e23a04"
+      },
+      "human_overlay_review": "pending",
+      "quality_status": "not_calibrated",
+      "usable_for_analysis": null,
+      "sampled_frames": [
+        0,
+        16,
+        33,
+        49,
+        65,
+        81,
+        87,
+        98,
+        99,
+        104,
+        114
+      ],
+      "contact_sheets": [
+        "visual_review/pitch_003_comparison_01.jpg",
+        "visual_review/pitch_003_comparison_02.jpg",
+        "visual_review/pitch_003_comparison_03.jpg"
+      ],
+      "agent_inspection": "completed_source_old_new_samples",
+      "inspection_scope": "Codex visual samples; no new human GT, no automatic all-joint correctness claim",
+      "inspection_notes": "Inspected 11 samples including87/98/99/104. Prior whole-body upward displacement toward the batter is visibly reduced. This clip remains historical only; wrist error remains material in visible XY."
+    },
+    {
+      "pitch_id": "pitch_004",
+      "role": "active",
+      "total_frames": 114,
+      "remaining_detector_calls": 113,
+      "pose_calls": 114,
+      "firstframe_detector_calls": 1,
+      "track_status_counts": {
+        "seeded": 1,
+        "linked": 113
+      },
+      "first_break_frame": null,
+      "missing_frames": [],
+      "source_sha256_changes": [],
+      "worker_payloads_verified": 227,
+      "overlay_ref": {
+        "path": "analysis_results/phase2_yamamoto_seeded_skeleton_20261023_01/pitch_004/rtmpose/pitch_004/overlay_native.mp4",
+        "sha256": "055d6197750e3f56768f5befdf1cea7bb47d3a20dae375eda1229ce407718998"
+      },
+      "run_receipt_ref": {
+        "path": "analysis_results/phase2_yamamoto_seeded_skeleton_20261023_01/pitch_004/run_receipt.json",
+        "sha256": "393899933083f5767569f84a7412d549eb23eaccb6b310e0965c39017333a38e"
+      },
+      "human_overlay_review": "pending",
+      "quality_status": "not_calibrated",
+      "usable_for_analysis": null,
+      "sampled_frames": [
+        0,
+        16,
+        32,
+        48,
+        65,
+        75,
+        76,
+        81,
+        97,
+        113
+      ],
+      "contact_sheets": [
+        "visual_review/pitch_004_comparison_01.jpg",
+        "visual_review/pitch_004_comparison_02.jpg",
+        "visual_review/pitch_004_comparison_03.jpg"
+      ],
+      "agent_inspection": "completed_source_old_new_samples",
+      "inspection_scope": "Codex visual samples; no new human GT, no automatic all-joint correctness claim",
+      "inspection_notes": "Inspected 10 samples including75/76 previously missing in the old overlay. New body is present near pitcher; sampled81 prior arm-to-background extension is reduced. Hidden joint accuracy is unverified."
+    },
+    {
+      "pitch_id": "pitch_005",
+      "role": "active",
+      "total_frames": 101,
+      "remaining_detector_calls": 100,
+      "pose_calls": 101,
+      "firstframe_detector_calls": 1,
+      "track_status_counts": {
+        "seeded": 1,
+        "linked": 100
+      },
+      "first_break_frame": null,
+      "missing_frames": [],
+      "source_sha256_changes": [],
+      "worker_payloads_verified": 201,
+      "overlay_ref": {
+        "path": "analysis_results/phase2_yamamoto_seeded_skeleton_20261023_01/pitch_005/rtmpose/pitch_005/overlay_native.mp4",
+        "sha256": "85871e0279394d7cd842d1abfc0111e3ea3a965ec708b29d068251313f3fcff3"
+      },
+      "run_receipt_ref": {
+        "path": "analysis_results/phase2_yamamoto_seeded_skeleton_20261023_01/pitch_005/run_receipt.json",
+        "sha256": "def178ab38baf9815f21c068d39992a5c8d4e72f684ced3e6d9241d985ebe56d"
+      },
+      "human_overlay_review": "pending",
+      "quality_status": "not_calibrated",
+      "usable_for_analysis": null,
+      "sampled_frames": [
+        0,
+        14,
+        29,
+        43,
+        54,
+        57,
+        71,
+        86,
+        100
+      ],
+      "contact_sheets": [
+        "visual_review/pitch_005_comparison_01.jpg",
+        "visual_review/pitch_005_comparison_02.jpg",
+        "visual_review/pitch_005_comparison_03.jpg"
+      ],
+      "agent_inspection": "completed_source_old_new_samples",
+      "inspection_scope": "Codex visual samples; no new human GT, no automatic all-joint correctness claim",
+      "inspection_notes": "Inspected 9 samples including54 previously missing in old overlay. New skeleton remains near pitcher through sampled delivery/tail; blurred/occluded arm points do not become human-observed truth."
+    }
+  ],
+  "existing_visible003_xy": {
+    "source_manual_ref": {
+      "path": "annotations/manual_keypoints/HSU_TSAI_RETURN_20261005_42/pitch_003/manual_keypoints.json",
+      "sha256": "a970354b14f728d38af97336d6872900625c956e7a105f75ab9cdcff0aa77735"
+    },
+    "new_prediction_ref": {
+      "path": "analysis_results/phase2_yamamoto_seeded_skeleton_20261023_01/pitch_003/rtmpose/pitch_003/native_keypoints.jsonl",
+      "sha256": "435f14227b63ccdb1cdc5a886ec9011ba2e5251bd1c2a38b7cacbc46ad45b223"
+    },
+    "scope": "existing visible human XY only; no new GT, visibility inference, score calibration or new threshold",
+    "excluded_not_observable_or_uncertain": 175,
+    "overall": {
+      "visible_human_points": 1205,
+      "new_missing_points": 0,
+      "old_missing_points": 0,
+      "new_all_available": {
+        "n": 1205,
+        "mean_px": 10.10573368233198,
+        "median_px": 7.435571677966665,
+        "p95_px": 23.201847863728684
+      },
+      "old_all_available": {
+        "n": 1205,
+        "mean_px": 22.211292310810688,
+        "median_px": 9.715175225566574,
+        "p95_px": 102.63442651744272
+      },
+      "same_point_new": {
+        "n": 1205,
+        "mean_px": 10.10573368233198,
+        "median_px": 7.435571677966665,
+        "p95_px": 23.201847863728684
+      },
+      "same_point_old": {
+        "n": 1205,
+        "mean_px": 22.211292310810688,
+        "median_px": 9.715175225566574,
+        "p95_px": 102.63442651744272
+      }
+    },
+    "joints": {
+      "LEFT_ANKLE": {
+        "visible_human_points": 114,
+        "new_missing_points": 0,
+        "old_missing_points": 0,
+        "new_all_available": {
+          "n": 114,
+          "mean_px": 9.290513474814409,
+          "median_px": 9.828541508481296,
+          "p95_px": 17.256872556575285
+        },
+        "old_all_available": {
+          "n": 114,
+          "mean_px": 19.89100084202511,
+          "median_px": 9.858773041624552,
+          "p95_px": 107.70068935642587
+        },
+        "same_point_new": {
+          "n": 114,
+          "mean_px": 9.290513474814409,
+          "median_px": 9.828541508481296,
+          "p95_px": 17.256872556575285
+        },
+        "same_point_old": {
+          "n": 114,
+          "mean_px": 19.89100084202511,
+          "median_px": 9.858773041624552,
+          "p95_px": 107.70068935642587
+        }
+      },
+      "LEFT_ELBOW": {
+        "visible_human_points": 83,
+        "new_missing_points": 0,
+        "old_missing_points": 0,
+        "new_all_available": {
+          "n": 83,
+          "mean_px": 9.254982552491876,
+          "median_px": 6.257651729510235,
+          "p95_px": 24.401030792093366
+        },
+        "old_all_available": {
+          "n": 83,
+          "mean_px": 36.13794798381675,
+          "median_px": 15.210271989949096,
+          "p95_px": 132.13848815085504
+        },
+        "same_point_new": {
+          "n": 83,
+          "mean_px": 9.254982552491876,
+          "median_px": 6.257651729510235,
+          "p95_px": 24.401030792093366
+        },
+        "same_point_old": {
+          "n": 83,
+          "mean_px": 36.13794798381675,
+          "median_px": 15.210271989949096,
+          "p95_px": 132.13848815085504
+        }
+      },
+      "LEFT_HIP": {
+        "visible_human_points": 115,
+        "new_missing_points": 0,
+        "old_missing_points": 0,
+        "new_all_available": {
+          "n": 115,
+          "mean_px": 15.266861639033307,
+          "median_px": 15.161383741382206,
+          "p95_px": 28.65922210297666
+        },
+        "old_all_available": {
+          "n": 115,
+          "mean_px": 19.631318022570067,
+          "median_px": 10.542516369783613,
+          "p95_px": 94.33258229469423
+        },
+        "same_point_new": {
+          "n": 115,
+          "mean_px": 15.266861639033307,
+          "median_px": 15.161383741382206,
+          "p95_px": 28.65922210297666
+        },
+        "same_point_old": {
+          "n": 115,
+          "mean_px": 19.631318022570067,
+          "median_px": 10.542516369783613,
+          "p95_px": 94.33258229469423
+        }
+      },
+      "LEFT_KNEE": {
+        "visible_human_points": 115,
+        "new_missing_points": 0,
+        "old_missing_points": 0,
+        "new_all_available": {
+          "n": 115,
+          "mean_px": 6.89475695158293,
+          "median_px": 5.778857750231212,
+          "p95_px": 14.788426812444973
+        },
+        "old_all_available": {
+          "n": 115,
+          "mean_px": 15.608826375407036,
+          "median_px": 7.613461066023422,
+          "p95_px": 77.82035097597712
+        },
+        "same_point_new": {
+          "n": 115,
+          "mean_px": 6.89475695158293,
+          "median_px": 5.778857750231212,
+          "p95_px": 14.788426812444973
+        },
+        "same_point_old": {
+          "n": 115,
+          "mean_px": 15.608826375407036,
+          "median_px": 7.613461066023422,
+          "p95_px": 77.82035097597712
+        }
+      },
+      "LEFT_SHOULDER": {
+        "visible_human_points": 115,
+        "new_missing_points": 0,
+        "old_missing_points": 0,
+        "new_all_available": {
+          "n": 115,
+          "mean_px": 7.846623327011727,
+          "median_px": 6.4136727206060975,
+          "p95_px": 16.599495012506598
+        },
+        "old_all_available": {
+          "n": 115,
+          "mean_px": 23.319040421811227,
+          "median_px": 10.936598884512042,
+          "p95_px": 108.88976342871445
+        },
+        "same_point_new": {
+          "n": 115,
+          "mean_px": 7.846623327011727,
+          "median_px": 6.4136727206060975,
+          "p95_px": 16.599495012506598
+        },
+        "same_point_old": {
+          "n": 115,
+          "mean_px": 23.319040421811227,
+          "median_px": 10.936598884512042,
+          "p95_px": 108.88976342871445
+        }
+      },
+      "LEFT_WRIST": {
+        "visible_human_points": 61,
+        "new_missing_points": 0,
+        "old_missing_points": 0,
+        "new_all_available": {
+          "n": 61,
+          "mean_px": 12.082550417804129,
+          "median_px": 8.698816303346788,
+          "p95_px": 30.242220812962167
+        },
+        "old_all_available": {
+          "n": 61,
+          "mean_px": 44.566844983462076,
+          "median_px": 21.749711196159385,
+          "p95_px": 136.75508431501493
+        },
+        "same_point_new": {
+          "n": 61,
+          "mean_px": 12.082550417804129,
+          "median_px": 8.698816303346788,
+          "p95_px": 30.242220812962167
+        },
+        "same_point_old": {
+          "n": 61,
+          "mean_px": 44.566844983462076,
+          "median_px": 21.749711196159385,
+          "p95_px": 136.75508431501493
+        }
+      },
+      "RIGHT_ANKLE": {
+        "visible_human_points": 115,
+        "new_missing_points": 0,
+        "old_missing_points": 0,
+        "new_all_available": {
+          "n": 115,
+          "mean_px": 10.194405199020046,
+          "median_px": 9.12510199377352,
+          "p95_px": 20.285187987836764
+        },
+        "old_all_available": {
+          "n": 115,
+          "mean_px": 17.476580868225266,
+          "median_px": 10.156412749096228,
+          "p95_px": 72.43979443435659
+        },
+        "same_point_new": {
+          "n": 115,
+          "mean_px": 10.194405199020046,
+          "median_px": 9.12510199377352,
+          "p95_px": 20.285187987836764
+        },
+        "same_point_old": {
+          "n": 115,
+          "mean_px": 17.476580868225266,
+          "median_px": 10.156412749096228,
+          "p95_px": 72.43979443435659
+        }
+      },
+      "RIGHT_ELBOW": {
+        "visible_human_points": 93,
+        "new_missing_points": 0,
+        "old_missing_points": 0,
+        "new_all_available": {
+          "n": 93,
+          "mean_px": 8.690634528881251,
+          "median_px": 5.423746716677624,
+          "p95_px": 18.254524387168008
+        },
+        "old_all_available": {
+          "n": 93,
+          "mean_px": 27.502870194299664,
+          "median_px": 10.553801614308785,
+          "p95_px": 106.19430508908177
+        },
+        "same_point_new": {
+          "n": 93,
+          "mean_px": 8.690634528881251,
+          "median_px": 5.423746716677624,
+          "p95_px": 18.254524387168008
+        },
+        "same_point_old": {
+          "n": 93,
+          "mean_px": 27.502870194299664,
+          "median_px": 10.553801614308785,
+          "p95_px": 106.19430508908177
+        }
+      },
+      "RIGHT_HIP": {
+        "visible_human_points": 115,
+        "new_missing_points": 0,
+        "old_missing_points": 0,
+        "new_all_available": {
+          "n": 115,
+          "mean_px": 12.401371825048798,
+          "median_px": 12.39677277121984,
+          "p95_px": 20.22682480644736
+        },
+        "old_all_available": {
+          "n": 115,
+          "mean_px": 18.102427266004145,
+          "median_px": 7.997392224316012,
+          "p95_px": 86.09261578563073
+        },
+        "same_point_new": {
+          "n": 115,
+          "mean_px": 12.401371825048798,
+          "median_px": 12.39677277121984,
+          "p95_px": 20.22682480644736
+        },
+        "same_point_old": {
+          "n": 115,
+          "mean_px": 18.102427266004145,
+          "median_px": 7.997392224316012,
+          "p95_px": 86.09261578563073
+        }
+      },
+      "RIGHT_KNEE": {
+        "visible_human_points": 115,
+        "new_missing_points": 0,
+        "old_missing_points": 0,
+        "new_all_available": {
+          "n": 115,
+          "mean_px": 6.548340523253235,
+          "median_px": 5.34008531909992,
+          "p95_px": 15.390029495494021
+        },
+        "old_all_available": {
+          "n": 115,
+          "mean_px": 14.357235491539738,
+          "median_px": 7.573048288619478,
+          "p95_px": 66.36819074329662
+        },
+        "same_point_new": {
+          "n": 115,
+          "mean_px": 6.548340523253235,
+          "median_px": 5.34008531909992,
+          "p95_px": 15.390029495494021
+        },
+        "same_point_old": {
+          "n": 115,
+          "mean_px": 14.357235491539738,
+          "median_px": 7.573048288619478,
+          "p95_px": 66.36819074329662
+        }
+      },
+      "RIGHT_SHOULDER": {
+        "visible_human_points": 106,
+        "new_missing_points": 0,
+        "old_missing_points": 0,
+        "new_all_available": {
+          "n": 106,
+          "mean_px": 7.1871253767531185,
+          "median_px": 6.353085173778941,
+          "p95_px": 15.705868058209361
+        },
+        "old_all_available": {
+          "n": 106,
+          "mean_px": 20.738085593828934,
+          "median_px": 7.472575701292006,
+          "p95_px": 124.66237384491325
+        },
+        "same_point_new": {
+          "n": 106,
+          "mean_px": 7.1871253767531185,
+          "median_px": 6.353085173778941,
+          "p95_px": 15.705868058209361
+        },
+        "same_point_old": {
+          "n": 106,
+          "mean_px": 20.738085593828934,
+          "median_px": 7.472575701292006,
+          "p95_px": 124.66237384491325
+        }
+      },
+      "RIGHT_WRIST": {
+        "visible_human_points": 58,
+        "new_missing_points": 0,
+        "old_missing_points": 0,
+        "new_all_available": {
+          "n": 58,
+          "mean_px": 21.388030761159914,
+          "median_px": 9.264530796515215,
+          "p95_px": 96.65715875453581
+        },
+        "old_all_available": {
+          "n": 58,
+          "mean_px": 26.65564895919292,
+          "median_px": 14.38916227207325,
+          "p95_px": 84.57410925209847
+        },
+        "same_point_new": {
+          "n": 58,
+          "mean_px": 21.388030761159914,
+          "median_px": 9.264530796515215,
+          "p95_px": 96.65715875453581
+        },
+        "same_point_old": {
+          "n": 58,
+          "mean_px": 26.65564895919292,
+          "median_px": 14.38916227207325,
+          "p95_px": 84.57410925209847
+        }
+      }
+    },
+    "historical_major_87_104": {
+      "visible_human_points": 190,
+      "new_missing_points": 0,
+      "old_missing_points": 0,
+      "new_all_available": {
+        "n": 190,
+        "mean_px": 10.500275370429515,
+        "median_px": 8.520856931721296,
+        "p95_px": 24.94167843083137
+      },
+      "old_all_available": {
+        "n": 190,
+        "mean_px": 76.90033285780656,
+        "median_px": 78.56827196159259,
+        "p95_px": 140.81390599837889
+      },
+      "same_point_new": {
+        "n": 190,
+        "mean_px": 10.500275370429515,
+        "median_px": 8.520856931721296,
+        "p95_px": 24.94167843083137
+      },
+      "same_point_old": {
+        "n": 190,
+        "mean_px": 76.90033285780656,
+        "median_px": 78.56827196159259,
+        "p95_px": 140.81390599837889
+      }
+    },
+    "accuracy_pass_threshold": null
+  },
+  "tests": {
+    "created_at_utc": "2026-10-23T07:17:24.752037+00:00",
+    "tests_run": 1141,
+    "passed": 1139,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 2,
+    "skipped_reasons": [
+      {
+        "test": "test_dangling_snapshot_file_link_cannot_create_external_target_when_supported (test_handoff_paths.HandoffPathTests.test_dangling_snapshot_file_link_cannot_create_external_target_when_supported)",
+        "reason": "file symlink creation is unavailable"
+      },
+      {
+        "test": "test_source_symlink_outside_candidate_is_rejected_when_supported (test_handoff_review.HandoffReviewTests.test_source_symlink_outside_candidate_is_rejected_when_supported)",
+        "reason": "creating symbolic links is unavailable"
+      }
+    ],
+    "elapsed_seconds": 98.391,
+    "formal_five_video_e2e_enabled": true,
+    "real_detector_calls_in_tests": 0,
+    "real_rtmpose_calls_in_tests": 0,
+    "successful": true
+  },
+  "formal_five_e2e": [
+    {
+      "pitch_id": "pitch_001",
+      "status": "evaluated_development_evidence",
+      "source_frames": 87,
+      "review_frames_non_seed": 2
+    },
+    {
+      "pitch_id": "pitch_002",
+      "status": "evaluated_development_evidence",
+      "source_frames": 175,
+      "review_frames_non_seed": 0
+    },
+    {
+      "pitch_id": "pitch_003",
+      "status": "evaluated_development_evidence",
+      "source_frames": 115,
+      "review_frames_non_seed": 19
+    },
+    {
+      "pitch_id": "pitch_004",
+      "status": "evaluated_development_evidence",
+      "source_frames": 114,
+      "review_frames_non_seed": 5
+    },
+    {
+      "pitch_id": "pitch_005",
+      "status": "evaluated_development_evidence",
+      "source_frames": 101,
+      "review_frames_non_seed": 3
+    }
+  ],
+  "preservation": {
+    "protected_files": 727,
+    "sha256_changes": [],
+    "payloads_verified": 1179,
+    "new_inference_by_export": 0,
+    "successful": true
+  },
+  "new_ground_truth_labels": 0,
+  "raw_prediction_replacements": 0,
+  "phase3_started": false,
+  "phase2_automatic_reliability": "NOT_PASSED",
+  "sampling_canvas_policy": "each complete source image; no pitcher-specific Ohtani coordinates copied",
+  "existing_pipeline_compatibility": "legacy33feature/gates retained; new native17skeleton uses common entry",
+  "output_root": "analysis_results/phase2_yamamoto_seeded_skeleton_20261023_01",
+  "output_refs": [
+    {
+      "path": "analysis_results/phase2_yamamoto_seeded_skeleton_20261023_01/cohort_summary.json",
+      "sha256": "abf73ef7da4b0042698ce2aa6d6a79d1787cd52f216c442ee13170a309c2d0af"
+    },
+    {
+      "path": "analysis_results/phase2_yamamoto_seeded_skeleton_20261023_01/preservation_check.json",
+      "sha256": "8b4822cf9396a2617627043d486666d038d11287605f34e6c901b8d1d15e3e9b"
+    },
+    {
+      "path": "analysis_results/phase2_yamamoto_seeded_skeleton_20261023_01/pitch003_visible_xy_comparison.json",
+      "sha256": "b14e26fe82fb9195fe2d9ef34e53b917f7539954363471c742d50ee13f00aefa"
+    },
+    {
+      "path": "analysis_results/phase2_yamamoto_seeded_skeleton_20261023_01/review_all.html",
+      "sha256": "ffe51dbc8962a2be19562943ee4dcdc816fda240ab7a0234859a165c80507f51"
+    }
+  ]
+}

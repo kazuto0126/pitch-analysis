@@ -27,6 +27,16 @@ def _emit(value: object) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser(description="Quality-aware 2-D pitching analysis.")
     commands = parser.add_subparsers(dest="command", required=True)
+    skeleton_prepare = commands.add_parser("prepare-skeleton", help="Standard skeleton flow: prepare numbered first-frame people for operator selection")
+    skeleton_prepare.add_argument("mp4")
+    skeleton_prepare.add_argument("metadata_json")
+    skeleton_prepare.add_argument("--fps-fraction", required=True, help="Verified source FPS, e.g. 30 or 60000/1001")
+    skeleton_prepare.add_argument("--runtime-config", default="config/seeded_skeleton_runtime.json")
+    skeleton_prepare.add_argument("--output", required=True)
+    skeleton_run = commands.add_parser("extract-skeleton", help="Standard skeleton flow: operator-seeded person tracking and native COCO17 pose")
+    skeleton_run.add_argument("preparation_json")
+    skeleton_run.add_argument("seed_json")
+    skeleton_run.add_argument("--output", required=True)
     analyze = commands.add_parser("analyze-pitch", help="Analyze one prepared local MP4 plus pitch-input-v1 metadata")
     analyze.add_argument("mp4")
     analyze.add_argument("metadata_json")
@@ -66,7 +76,7 @@ def main() -> None:
     phases.add_argument("events_json")
     phases.add_argument("output_csv")
     phases.add_argument("--points-per-phase", type=int, default=25)
-    capture = commands.add_parser("extract-pose")
+    capture = commands.add_parser("extract-pose", help="Legacy MediaPipe feature input; use extract-skeleton for the standard skeleton workflow")
     capture.add_argument("video_path")
     capture.add_argument("output_csv")
     capture.add_argument("--model", default="models/pose_landmarker_full.task")
@@ -149,6 +159,23 @@ def main() -> None:
         command.add_argument("--min-visibility", type=float, default=0.5)
         command.add_argument("--min-presence", type=float, default=0.5)
     args = parser.parse_args()
+    if args.command in {"prepare-skeleton", "extract-skeleton"}:
+        from pathlib import Path
+        try:
+            if args.command == "prepare-skeleton":
+                from .native_skeleton_prepare import prepare_skeleton
+                result = prepare_skeleton(Path.cwd(), args.mp4, args.metadata_json, args.runtime_config,
+                                          args.output, fps_fraction=args.fps_fraction)
+                _emit({"status": result["status"], "pitch_id": result["pitch_id"],
+                       "output": args.output, "display_choices": result["display_choices"],
+                       "pose_calls": result["pose_calls_during_preparation"]})
+            else:
+                from .seeded_skeleton import run_seeded_skeleton
+                _emit(run_seeded_skeleton(Path.cwd(), args.preparation_json, args.seed_json, args.output))
+        except (ValueError, OSError, RuntimeError) as error:
+            _emit({"status": "failed", "error": str(error)})
+            raise SystemExit(1)
+        return
     if args.command in {"analyze-pitch", "validate-pitch", "validate-input-quality"}:
         try:
             if args.command == "analyze-pitch":

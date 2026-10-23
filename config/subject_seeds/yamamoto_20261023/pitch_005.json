@@ -1,0 +1,28 @@
+{
+  "schema_version": "native-subject-seed-v1",
+  "status": "operator_confirmed",
+  "ground_truth": false,
+  "pitch_id": "pitch_005",
+  "frame_index": 0,
+  "display_number": 1,
+  "selected_output_index": 0,
+  "selected_bbox_xyxy_px": [
+    135.6994055747986,
+    88.52168035507202,
+    279.30971784591674,
+    512.790520477295
+  ],
+  "source_video_ref": {
+    "path": "input/yoshinobu_yamamoto/phase1_final/pitch_005.mp4",
+    "sha256": "e289cb1159e5863583f85915214123d6afe03baa6f32ac6040040878093c873b"
+  },
+  "saved_detection_ref": {
+    "path": "analysis_results/phase2_skeleton_standard_20261023_01/yamamoto/pitch_005/first_frame_candidates.json",
+    "sha256": "f7cb2162cc5bf171b0bc5e9e5cf6acf7e5ccd58576eec9bab132954d6c9eae9f"
+  },
+  "decoded_bgr_sha256": "21a1bf4b6e976da1706afda3d31c1a0bb9f81823a0476010830a0a37524548b6",
+  "reviewer": "HSU",
+  "reviewed_at_utc": "2026-10-23T07:14:43.226736+00:00",
+  "user_reply": "五片以上框號都正確，繼續處理",
+  "scope": "First-frame subject operation only; not full-video joint GT"
+}
