@@ -1,0 +1,256 @@
+{
+  "schema_version": "native-motion-cohort-description-v1",
+  "status": "completed",
+  "pitcher_id": "shohei_ohtani",
+  "clips": [
+    {
+      "pitch_id": "supplement_001",
+      "frames": 335,
+      "curves": {
+        "throwing_elbow": {
+          "total_frames": 335,
+          "calculated": 335,
+          "missing": 0,
+          "degenerate": 0
+        },
+        "lead_knee": {
+          "total_frames": 335,
+          "calculated": 335,
+          "missing": 0,
+          "degenerate": 0
+        }
+      },
+      "summary_ref": {
+        "path": "analysis_results/phase3_ohtani_native_motion_20261024_01/supplement_001/motion_summary.json",
+        "sha256": "949a9a76299b925731ecf51a74c6196aa7a9a9ef8cb357c82555c14080f9777b"
+      },
+      "csv_ref": {
+        "path": "analysis_results/phase3_ohtani_native_motion_20261024_01/supplement_001/motion_curves.csv",
+        "sha256": "2af451bec1b1382b9c38c4a73460776fa49253916f0854f2a53d99034ce59cf1"
+      },
+      "plot_ref": {
+        "path": "analysis_results/phase3_ohtani_native_motion_20261024_01/supplement_001/motion_curves.png",
+        "sha256": "3e477c25cca4d8a241a39fc7dfa09472afa80d77f4a99c26b577596da8de98ce"
+      },
+      "human_overlay_review": "human_accepted",
+      "usable_for_analysis": null
+    },
+    {
+      "pitch_id": "supplement_002",
+      "frames": 321,
+      "curves": {
+        "throwing_elbow": {
+          "total_frames": 321,
+          "calculated": 321,
+          "missing": 0,
+          "degenerate": 0
+        },
+        "lead_knee": {
+          "total_frames": 321,
+          "calculated": 321,
+          "missing": 0,
+          "degenerate": 0
+        }
+      },
+      "summary_ref": {
+        "path": "analysis_results/phase3_ohtani_native_motion_20261024_01/supplement_002/motion_summary.json",
+        "sha256": "cc7e95e416f3c7be9e3641de9452be8d9f97dee3e4295ab3072e68aa599ddff0"
+      },
+      "csv_ref": {
+        "path": "analysis_results/phase3_ohtani_native_motion_20261024_01/supplement_002/motion_curves.csv",
+        "sha256": "f4a00186cd343c680c40dd88d8d104458e78be482a4012e458a40493b3116ba9"
+      },
+      "plot_ref": {
+        "path": "analysis_results/phase3_ohtani_native_motion_20261024_01/supplement_002/motion_curves.png",
+        "sha256": "2059aeb3fc17a021e72d92d98db13cc3f28b04c06ba103ba272f74a68d2ea754"
+      },
+      "human_overlay_review": "human_accepted",
+      "usable_for_analysis": null
+    },
+    {
+      "pitch_id": "supplement_003",
+      "frames": 369,
+      "curves": {
+        "throwing_elbow": {
+          "total_frames": 369,
+          "calculated": 369,
+          "missing": 0,
+          "degenerate": 0
+        },
+        "lead_knee": {
+          "total_frames": 369,
+          "calculated": 369,
+          "missing": 0,
+          "degenerate": 0
+        }
+      },
+      "summary_ref": {
+        "path": "analysis_results/phase3_ohtani_native_motion_20261024_01/supplement_003/motion_summary.json",
+        "sha256": "ba5bfcd85cbc21a569dc614d586a92bf18c6c98dfc8d709d57f9eb708c5ad781"
+      },
+      "csv_ref": {
+        "path": "analysis_results/phase3_ohtani_native_motion_20261024_01/supplement_003/motion_curves.csv",
+        "sha256": "0a24492e8a76de469503f6c6faf3567844a90aef9cf334cd05e265b497c97702"
+      },
+      "plot_ref": {
+        "path": "analysis_results/phase3_ohtani_native_motion_20261024_01/supplement_003/motion_curves.png",
+        "sha256": "0a27ce99f9e4da16087284d6292b19e05ac41e940f0580c565a47b2f3f530b3c"
+      },
+      "human_overlay_review": "human_accepted",
+      "usable_for_analysis": null
+    },
+    {
+      "pitch_id": "supplement_004",
+      "frames": 338,
+      "curves": {
+        "throwing_elbow": {
+          "total_frames": 338,
+          "calculated": 338,
+          "missing": 0,
+          "degenerate": 0
+        },
+        "lead_knee": {
+          "total_frames": 338,
+          "calculated": 338,
+          "missing": 0,
+          "degenerate": 0
+        }
+      },
+      "summary_ref": {
+        "path": "analysis_results/phase3_ohtani_native_motion_20261024_01/supplement_004/motion_summary.json",
+        "sha256": "c1ae51a6c92ce71fa235fc706ee588d53ca77b7d10ab3793623dfc5fec4f4360"
+      },
+      "csv_ref": {
+        "path": "analysis_results/phase3_ohtani_native_motion_20261024_01/supplement_004/motion_curves.csv",
+        "sha256": "8a93632650eef2c3cb802e395bfed6504b6ca1c427a16b7bc72f0f840b60b50e"
+      },
+      "plot_ref": {
+        "path": "analysis_results/phase3_ohtani_native_motion_20261024_01/supplement_004/motion_curves.png",
+        "sha256": "e0266d807ddc508db9c4e007f189607765c680a05d0d43e54612d32c0bddc0e8"
+      },
+      "human_overlay_review": "human_accepted",
+      "usable_for_analysis": null
+    },
+    {
+      "pitch_id": "supplement_005",
+      "frames": 321,
+      "curves": {
+        "throwing_elbow": {
+          "total_frames": 321,
+          "calculated": 321,
+          "missing": 0,
+          "degenerate": 0
+        },
+        "lead_knee": {
+          "total_frames": 321,
+          "calculated": 321,
+          "missing": 0,
+          "degenerate": 0
+        }
+      },
+      "summary_ref": {
+        "path": "analysis_results/phase3_ohtani_native_motion_20261024_01/supplement_005/motion_summary.json",
+        "sha256": "de136d8a75eb620976c5d41d457a62ba84bba91a39b7fb070083e3a003f65082"
+      },
+      "csv_ref": {
+        "path": "analysis_results/phase3_ohtani_native_motion_20261024_01/supplement_005/motion_curves.csv",
+        "sha256": "c7cfd78e10543cedb95a813d561349a5f0a3e0b284fa8298566403f44387f4ca"
+      },
+      "plot_ref": {
+        "path": "analysis_results/phase3_ohtani_native_motion_20261024_01/supplement_005/motion_curves.png",
+        "sha256": "f41f6f74815bf73d2463a1a7081c6e34114e722f5c827357793708d86e8f1617"
+      },
+      "human_overlay_review": "human_accepted",
+      "usable_for_analysis": null
+    }
+  ],
+  "total_frames": 1684,
+  "new_model_calls": 0,
+  "new_tracking_replays": 0,
+  "new_ground_truth_labels": 0,
+  "protected_files": 363,
+  "protected_sha256_changes": [],
+  "cross_pitcher_comparison": false,
+  "event_detection": false,
+  "quality_status": "not_calibrated",
+  "usable_for_analysis": null,
+  "phase2_original_status": "NOT_PASSED",
+  "phase3_first_delivery": "COMPLETE",
+  "created_at_utc": "2026-10-23T18:13:19.752900+00:00",
+  "test_suite": {
+    "created_at_utc": "2026-10-23T18:12:21.929796+00:00",
+    "tests_run": 1178,
+    "passed": 1176,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 2,
+    "skipped_reasons": [
+      {
+        "test": "test_dangling_snapshot_file_link_cannot_create_external_target_when_supported (test_handoff_paths.HandoffPathTests.test_dangling_snapshot_file_link_cannot_create_external_target_when_supported)",
+        "reason": "file symlink creation is unavailable"
+      },
+      {
+        "test": "test_source_symlink_outside_candidate_is_rejected_when_supported (test_handoff_review.HandoffReviewTests.test_source_symlink_outside_candidate_is_rejected_when_supported)",
+        "reason": "creating symbolic links is unavailable"
+      }
+    ],
+    "elapsed_seconds": 99.172,
+    "formal_five_video_e2e_enabled": true,
+    "real_rtmpose_calls": 0,
+    "real_detector_calls": 0,
+    "successful": true
+  },
+  "test_results_ref": {
+    "path": "analysis_results/phase3_ohtani_native_motion_20261024_01/verified_suite/test_results.json",
+    "sha256": "1cb165f7a8e1b40e956d6ebbd2567fa0804d131ce6fe24bd1c35f9de4bf108ff"
+  },
+  "full_suite_log_ref": {
+    "path": "analysis_results/phase3_ohtani_native_motion_20261024_01/verified_suite/full_suite.log",
+    "sha256": "374ed88cabc3803310e086d7e98693508fe84f47c964fe2aac396e639eddf1d4"
+  },
+  "scope_ref": {
+    "path": "docs/phase3_native_motion_scope_20261024.md",
+    "sha256": "4b8d375eea0c71832674dae25553cc6d139810d67e721b3574534a165459fd52"
+  },
+  "preserved_runtime_config_ref": {
+    "path": "config/seeded_skeleton_runtime.json",
+    "sha256": "842ede08119844684dbee3b49e3978af85e777f87b7cb785ba2a63209927ca80"
+  },
+  "protected_after_full_suite": {
+    "files": 363,
+    "sha256_changes": []
+  },
+  "visual_plot_inspection": {
+    "plots_viewed": 5,
+    "clip_ids": [
+      "supplement_001",
+      "supplement_002",
+      "supplement_003",
+      "supplement_004",
+      "supplement_005"
+    ],
+    "result": "axes, labels and limits readable; raw local elbow fluctuations retained; not a new joint accuracy review"
+  },
+  "implementation_refs": [
+    {
+      "path": "src/pitch_analysis/analysis/native_motion.py",
+      "sha256": "b2fa286b103393fbca58c14133b1d353622644f435ef79434e10b6aab2633b9f"
+    },
+    {
+      "path": "src/pitch_analysis/analysis/native_motion_report.py",
+      "sha256": "fef9365478423d0eb37fa32692888a72c6e1502421c40f1a20c596a02082c6f8"
+    },
+    {
+      "path": "src/pitch_analysis/cli.py",
+      "sha256": "417d81bd65211265eef2f8a4129fb198eaafc7b80da08b14db635c09b61b6700"
+    }
+  ],
+  "viewer_ref": {
+    "path": "analysis_results/phase3_ohtani_native_motion_20261024_01/review_motion.html",
+    "sha256": "01be5d822b7b8b167a2f4e552c9980f70cf5d92e4acdc3f3c700ed62cff8d824"
+  },
+  "branch": "codex/phase3-native-motion",
+  "phase2_checkpoint": "48ac5bc",
+  "phase3_overall": "NOT_EVALUATED",
+  "output_root": "analysis_results/phase3_ohtani_native_motion_20261024_01"
+}

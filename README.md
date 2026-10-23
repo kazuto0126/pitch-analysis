@@ -6,7 +6,14 @@
 本次收尾摘要見 [STATUS](docs/STATUS.md)；外部專案供片需求見
 [INPUT_REQUIREMENTS](docs/INPUT_REQUIREMENTS.md)。
 
-2026-10-24 最新：[啟用九片人工覆核與資料交付已收尾](docs/phase2_active_cohort_closeout_20261024.md)。
+2026-10-24 最新：[Phase3第一步：大谷五球2D投影角度曲線](docs/phase3_ohtani_native_motion_20261024.md)。
+依使用者授權，在獨立分支保留現有骨架模式，新增`describe-native-motion`，直接讀取已保存的原生17點。
+五球1684格的投球肘／前導膝曲線、CSV、來源JSON及簡單觀看頁已完成，新增模型推論0。
+曲線是未校準的模型XY投影，保留缺值與突變；未做事件對齊、評分或跨投手比較。
+完整suite **1176 passed／0 failed／2 skipped**。Phase2自動可靠性NOT PASSED紀錄保留。
+[使用方式](docs/native_motion.md)。
+
+前段：[啟用九片人工覆核與資料交付已收尾](docs/phase2_active_cohort_closeout_20261024.md)。
 HSU已接受山本001／002／004／005的新骨架；四片477格的資料入口與描述報告補齊，未重跑模型。
 連同大谷五片，九片2161格皆已人工接受並完成接入。003保持歷史對照。
 本輪無產品／測試碼變更；同程式碼最近完整suite1163 passed／0 failed／2 skipped。

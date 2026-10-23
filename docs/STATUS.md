@@ -1,10 +1,30 @@
 # 進度摘要
 
-更新：2026-10-24（台灣）。[完整狀態](current_status.md)；[啟用集合人工覆核收尾](phase2_active_cohort_closeout_20261024.md)。
+更新：2026-10-24（台灣）。[完整狀態](current_status.md)；[大谷2D動作曲線](phase3_ohtani_native_motion_20261024.md)。
 
 **Phase 1 = PASSED；Native interface integration = PASSED；Phase 2 自動可靠性仍 NOT PASSED。**
+**Phase3第一個描述性曲線交付 = COMPLETE；Phase3整體尚未驗收。**
 
-## 最新：山本四片接受完成，啟用九片人工輔助交付收尾
+## 最新：依使用者授權完成Phase3第一步，大谷五球2D投影曲線
+
+在確認保留大谷／山本骨架模式後，使用者授權「可以繼續下步驟」。
+新分支`codex/phase3-native-motion`，Phase2 checkpoint`48ac5bc`保留。
+新增`describe-native-motion`，讀取既有已接受原生資料，輸出投球肘及前導膝的逐格2D夾角。
+大谷五球1684格／3368個可計算投影角，CSV、PNG、來源摘要與原overlay觀看頁皆完成。
+模型推論／tracking replay／新GT皆0；363份保護檔案在完整測試後SHA不變。
+
+實看五張曲線圖，標籤及座標軸可讀；肘的局部突變保持，沒有平滑、補點或判為動作差異。
+model_xy_deg用於描述，逐點可靠性unknown、usable_deg空值；未作事件對齊／偵測或跨投手比較。
+完整suite：**1176 passed／0 failed／0 errors／2 skipped**（1178項、99.172秒，新增13項）；
+兩skip為Windows檔案symlink能力，正式五球E2E已執行。
+
+**本輪Phase3第一個交付 = COMPLETE；Phase3整體尚未驗收。**
+Phase2原自動可靠性仍NOT PASSED；這次有限前進由使用者另行授權，沒有回改舊驗收。
+輸出：`analysis_results/phase3_ohtani_native_motion_20261024_01/review_motion.html`。
+[欄位與限制](native_motion.md)、[逐球結果](phase3_ohtani_native_motion_20261024.md)。
+本輪commit／push後停止，不自動擴充下一功能。
+
+## 前段：山本四片接受完成，啟用九片人工輔助交付收尾
 
 HSU回覆「都正確」，已保存山本001／002／004／005四片的原話、reviewer、時間及來源SHA。
 四片477格／8109點的原生資料入口與報告皆由既有CLI建立並經loader逐格核對，差異0、break0。

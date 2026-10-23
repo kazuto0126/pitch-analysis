@@ -1,16 +1,52 @@
-# Current status — Active skeleton human review and assisted delivery complete
+# Current status — Phase3 first descriptive motion delivery complete
 
 Updated: 2026-10-24
 
 **Phase 1 = PASSED.**
 **Native interface integration = PASSED (cached compatibility and optional live COCO17 entry).**
 **Phase 2 evaluation = COMPLETE; Phase 2 = NOT PASSED (automatic reliability degraded).**
+**User-authorized Phase3 first descriptive motion delivery = COMPLETE; overall Phase3 NOT EVALUATED.**
 
 The baseline evaluation is complete; the current second-pitcher pilot is recorded below.
 Automatic reliability remains unaccepted. Existing acceptance thresholds, confidence
 gates, MediaPipe settings, interpolation and smoothing are unchanged. The approved
 optional subject-region constraint is described below; the default selector remains compatible.
 The original Phase 1 stable state and five formal videos remain unchanged.
+
+## 2026-10-24 user-authorized Phase3 first delivery: native 2D motion curves
+
+After explicitly confirming retention of the accepted Ohtani/Yamamoto skeleton
+workflow, HSU authorized the previously proposed minimal next step with
+「可以繼續下步驟」. Work started on codex/phase3-native-motion from48ac5bc.
+The former no-Phase3 stop was superseded for this bounded delivery; Phase2's
+automatic reliability NOT PASSED result is retained, not retroactively changed.
+
+New describe-native-motion reads accepted native analysis bundles and computes
+original-pixel shoulder/elbow/wrist and opposite hip/knee/ankle projected angles.
+Metadata determines handedness. It retains all zero-based frames and rational
+FPS timestamps, with explicit missing/degenerate/null usable fields; no score
+gate, smoothing, interpolation, event alignment or 17-to-33 conversion.
+
+All five Ohtani sources ran through the actual CLI:335/321/369/338/321frames,
+1684total,3368calculated model-XY angles. Each has CSV, PNG and source-bound
+summary, plus a small cohort viewer reusing unchanged overlays. Model/detector/
+tracking replay/newGT0;363protected prior source/core/test files SHA unchanged
+after the suite. Existing production changes are only additive CLI dispatch.
+
+Viewed all five plots: axes/labels/limits readable, local elbow fluctuations
+retained. These are uncalibrated image projections, not measured human3D angles
+or automatically reliable features. Pointwise unknown/usable null remain.
+No full profile, cross-pitcher comparison, event prediction or clinical claim.
+
+Full suite1178run/1176passed/0failed/0errors/2Windows-file-symlinkskips,
+99.172s;13new tests. FormalfiveMediaPipe E2E ran with prior major hints retained.
+**Phase3 first descriptive delivery COMPLETE; overall Phase3 NOT EVALUATED.**
+Stop after this delivery/commit/push. No further feature automatically started.
+
+Output:`analysis_results/phase3_ohtani_native_motion_20261024_01/review_motion.html`.
+[Scope](phase3_native_motion_scope_20261024.md),[usage](native_motion.md),
+[results](phase3_ohtani_native_motion_20261024.md),
+[versioned evidence](dataset_selections/phase3_ohtani_native_motion_20261024.json).
 
 ## 2026-10-24 active Yamamoto review recorded; nine-clip assisted delivery complete
 
