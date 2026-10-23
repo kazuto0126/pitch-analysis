@@ -1,5 +1,15 @@
 # Phase 2 — Pitcher tracking and pose reliability
 
+2026-10-23 latest: the adopted seeded RTMPose native17 workflow now has a saved-data
+analysis entry and downstream loader. Ohtani5/5overlay acceptance is linked to the
+actual source/track/native files;1684frames are consumed with raw/track mismatch0.
+See [current delivery](native_analysis_input_results_20261023.md) and
+[native input usage](native_analysis_input.md). Integration PASSED; automatic
+pointwise reliability and overall Phase2 remain NOT PASSED. The MediaPipe33
+baseline policies and earlier outcomes below are historical. New native17 data
+preserve native score and unknown pointwise status through their own contract.
+
+
 2026-10-13 closeout: five-clip baseline review/evaluation and the authorized bounded repair delivery
 are COMPLETE WITH KNOWN LIMITATIONS; automatic reliability remains NOT PASSED.
 See the [current closeout](phase2_closeout_20261013.md) for the latest source-bound results and use limits.

@@ -1,0 +1,183 @@
+{
+  "schema_version": "native-analysis-input-cohort-v1",
+  "scope": "phase2_native_data_access_only",
+  "pitcher_id": "shohei_ohtani",
+  "status": "human_overlay_accepted_5_of_5",
+  "source_frames": 1684,
+  "sources": [
+    {
+      "pitch_id": "supplement_001",
+      "frame_count": 335,
+      "candidate_status": "candidate",
+      "native_dir": "analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/supplement_001/rtmpose/supplement_001",
+      "native_manifest_ref": {
+        "path": "analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/supplement_001/rtmpose/supplement_001/native_pose_manifest.json",
+        "sha256": "048760d77d86014401dc7ed176e9a7cf34c8acf0fbb2ecd6f4a0f39d17fd7cf3"
+      },
+      "native_keypoints_ref": {
+        "path": "analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/supplement_001/rtmpose/supplement_001/native_keypoints.jsonl",
+        "sha256": "5d17808932b75b4a08926432af11d5d211df0f31e050e0ae8d0ec6040bb445a1"
+      },
+      "metadata_ref": {
+        "path": "input/shohei_ohtani/phase2_supplement_20261020_01/supplement_001.json",
+        "sha256": "12c1476d692d22412f992ba96d805881c4140daccd3d0f02d6e8a068e75a9644"
+      },
+      "track_ref": {
+        "path": "analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/supplement_001/subject_track.jsonl",
+        "sha256": "12cff95ebcf78df613b7b50f340805de7b76679df0fee36ae29058b7a3b7566e"
+      },
+      "review_ref": {
+        "path": "annotations/skeleton_reviews/HSU_20261023/ohtani_shared_skeleton_acceptance.json",
+        "sha256": "333137f2b06d4d9f99f8b55ab710e641b5073f666af8e7f340507b356c43ef56"
+      },
+      "overlay_ref": {
+        "path": "analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/supplement_001/rtmpose/supplement_001/overlay_native.mp4",
+        "sha256": "3c0ffef0dc8f8c4f1e072a5ba05338abce77fd11046cf7fd099fcada2f1fac81"
+      },
+      "video_ref": {
+        "path": "input/shohei_ohtani/phase2_supplement_20261020_01/supplement_001.mp4",
+        "sha256": "90a6acec9865c634bd019503d46c147647fa78df9a2827e1143c74abb852111a"
+      }
+    },
+    {
+      "pitch_id": "supplement_002",
+      "frame_count": 321,
+      "candidate_status": "candidate",
+      "native_dir": "analysis_results/phase2_seeded_resume_native_20261023_01/rtmpose/supplement_002",
+      "native_manifest_ref": {
+        "path": "analysis_results/phase2_seeded_resume_native_20261023_01/rtmpose/supplement_002/native_pose_manifest.json",
+        "sha256": "7d1166a676c0d80a9e26790fc73361c1e7223d5af1f37f9e9bc968c635f3e621"
+      },
+      "native_keypoints_ref": {
+        "path": "analysis_results/phase2_seeded_resume_native_20261023_01/rtmpose/supplement_002/native_keypoints.jsonl",
+        "sha256": "bedabb9c7d192343306cab7b47088bb5c97200ead4a99098960f25bce914e747"
+      },
+      "metadata_ref": {
+        "path": "input/shohei_ohtani/phase2_supplement_20261020_01/supplement_002.json",
+        "sha256": "73e0729328d904608b8c9d2f4359b23108017363804c1a04dcebdfcbebb523f1"
+      },
+      "track_ref": {
+        "path": "analysis_results/phase2_seeded_track_native_20261021_01/subject_track.jsonl",
+        "sha256": "7718e23bb751f621962be8ee0d29345ff1a36ae54f23d0906b4b6261a4ab18f5"
+      },
+      "review_ref": {
+        "path": "annotations/skeleton_reviews/HSU_20261023/ohtani_supplement_002.json",
+        "sha256": "6894a7be22e7be1e39530e8cb1bebdbcf01fd42eecdf00a64ac6f456dc123145"
+      },
+      "overlay_ref": {
+        "path": "analysis_results/phase2_seeded_resume_native_20261023_01/rtmpose/supplement_002/overlay_native.mp4",
+        "sha256": "9713f1053f3ea68df9a3b960806f86a448dc213a0389f404f8288b870c5e31f8"
+      },
+      "video_ref": {
+        "path": "input/shohei_ohtani/phase2_supplement_20261020_01/supplement_002.mp4",
+        "sha256": "b1586bdde9383e3b247bcc7d7974a3f15b0fed173848926d5217f261b87bab8e"
+      }
+    },
+    {
+      "pitch_id": "supplement_003",
+      "frame_count": 369,
+      "candidate_status": "candidate",
+      "native_dir": "analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/supplement_003/rtmpose/supplement_003",
+      "native_manifest_ref": {
+        "path": "analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/supplement_003/rtmpose/supplement_003/native_pose_manifest.json",
+        "sha256": "7d85a3d0c06fb0510a97faeef2f1fa65ca4505eb50b4d1304f7da8310858dbeb"
+      },
+      "native_keypoints_ref": {
+        "path": "analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/supplement_003/rtmpose/supplement_003/native_keypoints.jsonl",
+        "sha256": "645893452d7d257c01f4344b11e73e831d4d64a52bfbb71499d09d9ff34c62ad"
+      },
+      "metadata_ref": {
+        "path": "input/shohei_ohtani/phase2_supplement_20261020_01/supplement_003.json",
+        "sha256": "7dffd913114a3b9526664807d3fbd4c76e9512bc94ed2973e17e1f87ff78fa51"
+      },
+      "track_ref": {
+        "path": "analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/supplement_003/subject_track.jsonl",
+        "sha256": "204600f50b067bea86c1edcfc5da1c77a748b7c766beadd8e9f7199ef7c63767"
+      },
+      "review_ref": {
+        "path": "annotations/skeleton_reviews/HSU_20261023/ohtani_shared_skeleton_acceptance.json",
+        "sha256": "333137f2b06d4d9f99f8b55ab710e641b5073f666af8e7f340507b356c43ef56"
+      },
+      "overlay_ref": {
+        "path": "analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/supplement_003/rtmpose/supplement_003/overlay_native.mp4",
+        "sha256": "bb080e2e454dc9987ec5c90f2db83ce97f56f11579221012911fdb4b322ff963"
+      },
+      "video_ref": {
+        "path": "input/shohei_ohtani/phase2_supplement_20261020_01/supplement_003.mp4",
+        "sha256": "97a45985648af1cf20ed48bda6ce5454fe509609114ac28d8a5deb632621e8ae"
+      }
+    },
+    {
+      "pitch_id": "supplement_004",
+      "frame_count": 338,
+      "candidate_status": "candidate",
+      "native_dir": "analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/supplement_004/rtmpose/supplement_004",
+      "native_manifest_ref": {
+        "path": "analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/supplement_004/rtmpose/supplement_004/native_pose_manifest.json",
+        "sha256": "e80b4fac7e0ae68e89c5cee92535fb3c4148ef28c1b1c0face3b5ca5d9235ce9"
+      },
+      "native_keypoints_ref": {
+        "path": "analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/supplement_004/rtmpose/supplement_004/native_keypoints.jsonl",
+        "sha256": "c6371da43866cf72c0e11d75bcf7eca381dfb9821ebe812a2a4659e439e48542"
+      },
+      "metadata_ref": {
+        "path": "input/shohei_ohtani/phase2_supplement_20261020_01/supplement_004.json",
+        "sha256": "c89496dd3fdbea65a198490943ca4e7a4a5eda09bc3cde4778d0d18dc85e1c62"
+      },
+      "track_ref": {
+        "path": "analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/supplement_004/subject_track.jsonl",
+        "sha256": "72ffb94ab596470fddcfbb6ef3eec638e5121011a5a9998305bdace7ed2eb393"
+      },
+      "review_ref": {
+        "path": "annotations/skeleton_reviews/HSU_20261023/ohtani_shared_skeleton_acceptance.json",
+        "sha256": "333137f2b06d4d9f99f8b55ab710e641b5073f666af8e7f340507b356c43ef56"
+      },
+      "overlay_ref": {
+        "path": "analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/supplement_004/rtmpose/supplement_004/overlay_native.mp4",
+        "sha256": "45cce1ef66b837f561ac49c5b08936b7528a7162ed2915d485f3451062679c30"
+      },
+      "video_ref": {
+        "path": "input/shohei_ohtani/phase2_supplement_20261020_01/supplement_004.mp4",
+        "sha256": "76945ebff5dc300ee0fc7084a0e21370137ee9d91ad61cdca52ccab0e4ee9054"
+      }
+    },
+    {
+      "pitch_id": "supplement_005",
+      "frame_count": 321,
+      "candidate_status": "candidate",
+      "native_dir": "analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/supplement_005/rtmpose/supplement_005",
+      "native_manifest_ref": {
+        "path": "analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/supplement_005/rtmpose/supplement_005/native_pose_manifest.json",
+        "sha256": "0fbe8428f3c7b208c4c076895ed67833327dc7bbd84de34e70126a3dac0a6ec6"
+      },
+      "native_keypoints_ref": {
+        "path": "analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/supplement_005/rtmpose/supplement_005/native_keypoints.jsonl",
+        "sha256": "01f7c97b09aeaacb73cfecf8b16176485320f0daeb5774091f90e6db8a8ebea7"
+      },
+      "metadata_ref": {
+        "path": "input/shohei_ohtani/phase2_supplement_20261020_01/supplement_005.json",
+        "sha256": "457f0e75809300509e487c0f33cdb529638e13fecc2f5861c1448d448b7f841d"
+      },
+      "track_ref": {
+        "path": "analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/supplement_005/subject_track.jsonl",
+        "sha256": "b3c26fc56146345483a616c7f6c8baf044d1a993f78890e8792d971f6deea927"
+      },
+      "review_ref": {
+        "path": "annotations/skeleton_reviews/HSU_20261023/ohtani_shared_skeleton_acceptance.json",
+        "sha256": "333137f2b06d4d9f99f8b55ab710e641b5073f666af8e7f340507b356c43ef56"
+      },
+      "overlay_ref": {
+        "path": "analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/supplement_005/rtmpose/supplement_005/overlay_native.mp4",
+        "sha256": "98c25011ef83d9fdd4d14253e4b9ffbbb8f35ad4f81ed1cb866090a8b7bd5a8a"
+      },
+      "video_ref": {
+        "path": "input/shohei_ohtani/phase2_supplement_20261020_01/supplement_005.mp4",
+        "sha256": "1c67c058d4376ecf94a138eb08e3251eb601a365a7e8a55e251e1c136ae5d95f"
+      }
+    }
+  ],
+  "output_root": "analysis_results/phase2_native_analysis_input_20261023_01/bundles",
+  "new_inference_calls": 0,
+  "new_ground_truth_labels": 0,
+  "phase3_started": false
+}

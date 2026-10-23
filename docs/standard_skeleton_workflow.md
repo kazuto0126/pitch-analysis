@@ -68,3 +68,10 @@ HSU已確認001首格2號，002／003／004／005首格1號，各片獨立保存
 HSU隨後確認「可以都正確」，加上002，五球overlay人工接受已完成。
 方法採用與逐片人工接受分開保存；接受紀錄見
 `annotations/skeleton_reviews/HSU_20261023/ohtani_shared_skeleton_acceptance.json`。
+
+## 已保存骨架的後續資料入口
+
+已取得人工overlay接受的來源，可用`prepare-analysis-input`建立資料輸入，
+以`load_native_analysis_input`讀取原生影格、同源追蹤與人工接受證據。
+大谷五球已實際完成1684格接入，原資料差異0、推論0。
+詳見[使用方式](native_analysis_input.md)及[本輪結果／Phase2收尾判定](native_analysis_input_results_20261023.md)。

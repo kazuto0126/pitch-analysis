@@ -1,10 +1,33 @@
 # 進度摘要
 
-更新：2026-10-23（台灣）。[完整狀態](current_status.md)；[最新大谷五球骨架](ohtani_shared_skeleton_rollout_20261023.md)。
+更新：2026-10-23（台灣）。[完整狀態](current_status.md)；[最新原生資料接入](native_analysis_input_results_20261023.md)。
 
 **Phase 1 = PASSED；Native interface integration = PASSED；Phase 2 自動可靠性仍 NOT PASSED。**
 
-## 最新：大谷五球共用骨架已補齊
+## 最新：原生骨架接入完成，本輪Phase2工作收尾
+
+新增`prepare-analysis-input`與`load_native_analysis_input`，後續程式可讀取已保存的RTMPose17點、
+同源人物追蹤、metadata及人工overlay接受證據。輸出為reference-only manifest＋使用摘要，來源SHA綁定。
+大谷五球皆由實際CLI建立bundle、再由loader逐格讀取：**1684格／28628關節影格，原影格／追蹤差異0**。
+002保留原結果；新人物偵測、pose、tracking replay及GT皆0。
+
+五球影片人工接受仍為5/5；逐點可靠性與可見性均unknown，usable_for_analysis=null，
+原model_observed／missing及不支援的visibility／presence／Z保留原樣。完整分母保留，沒有靠移除資料提高分數。
+本輪**Native analysis input integration = PASSED**。
+
+完整測試：**1153 passed／0 failed／2 skipped**（1155項，98.953秒，14項新增必要測試）；
+正式山本五球舊E2E有執行，major提示仍2／0／19／5／3。初輪沙箱額外8項junction skip已由一般權限重跑補齊。
+2068個保護來源SHA不變，既有產品檔案僅CLI新增命令；模型、selector、pose／tracking核心、
+confidence gate、門檻、平滑／插值、raw及人工GT保持。
+
+**本輪授權交付 = COMPLETE WITH KNOWN LIMITATIONS；Phase2 = NOT PASSED（自動關節可靠性未驗證通過）。**
+這次接入與整片人工接受並未建立逐點正確率，也沒有新增驗收分數、標註或小規則試驗。
+本輪完成後停止，未進Phase3。使用者若要繼續，應依已保留限制另行決定工作範圍。
+輸出：`analysis_results/phase2_native_analysis_input_20261023_01/`，五球入口在`bundles/`。
+[使用方式](native_analysis_input.md)、[結果／收尾判定](native_analysis_input_results_20261023.md)、
+[版本化證據](dataset_selections/native_analysis_input_20261023.json)。
+
+## 前段：大谷五球共用骨架已補齊
 
 依HSU「後續投手沿用」授權，已將同批大谷001／003／004／005套用已採用流程。
 HSU確認起始框001＝1號、003＝1號、004＝1號、005＝2號；四片各跑一次，

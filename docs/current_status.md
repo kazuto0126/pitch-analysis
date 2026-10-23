@@ -1,4 +1,4 @@
-# Current status — Shared skeleton rollout completed for Ohtani five-clip cohort
+# Current status — Native analysis input integrated; bounded Phase2 delivery complete
 
 Updated: 2026-10-23
 
@@ -12,7 +12,40 @@ gates, MediaPipe settings, interpolation and smoothing are unchanged. The approv
 optional subject-region constraint is described below; the default selector remains compatible.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-23 Ohtani shared skeleton cohort completed
+## 2026-10-23 native skeleton analysis-input delivery completed
+
+The authorized bounded integration is complete: `prepare-analysis-input` binds saved
+native COCO17, same-source metadata/track and exact human overlay acceptance.
+`load_native_analysis_input` lets downstream Python consume immutable raw frame
+snapshots, paired tracks, clip review and explicit unknown pointwise assessments.
+Output is only native_analysis_input.json plus usage_summary.json; source raw remains
+referenced. No estimator, worker, tracking replay, coordinate conversion or old gate.
+
+All five accepted Ohtani sources ran through the real CLI and downstream loader:
+335/321/369/338/321frames=1684;28628native landmark slots retained. Raw frame and
+tracking mismatches0; new inference/replay/GT0.002uses its already accepted saved
+dataset and prior track/review directly. Whole-clip human acceptance remains5/5;
+pointwise reliability/visibility unknown and usable_for_analysis=null are preserved.
+
+Full suite1155run/1153passed/0failed/0errors/2Windows-file-symlinkskips,
+98.953s;14new necessary tests. FormalfiveMediaPipe E2E ran with major
+hints2/0/19/5/3. An initial sandbox run skipped8extra junction tests; the final
+normal-permission verified_suite completed existing coverage. Both logs are retained.
+2068protected source hashes unchanged. Only existing CLI dispatch was extended;
+production pose/tracking/selector/thresholds/gates/smoothing/raw/GT remain unchanged.
+
+**Native analysis input integration = PASSED. Bounded delivery = COMPLETE WITH KNOWN LIMITATIONS.**
+**Phase2 = NOT PASSED; automatic pointwise reliability is not established.**
+Clip acceptance/data access does not calibrate native scores or transfer old-model
+canonical labels to RTMPose. No new pass line, annotation, classifier adjustment,
+Phase3 metric/event or further experiment has started. Stop after this commit/push.
+
+Output:`analysis_results/phase2_native_analysis_input_20261023_01/`;bundles/contains
+the five data envelopes. [Usage](native_analysis_input.md),
+[delivery and acceptance decision](native_analysis_input_results_20261023.md),
+[versioned results](dataset_selections/native_analysis_input_20261023.json).
+
+## 2026-10-23 Ohtani shared skeleton cohort completed (previous)
 
 Following HSU's authorization to retain this method, the remaining Ohtani supplement
 clips001/003/004/005 were processed once with the existing common entry. HSU confirmed

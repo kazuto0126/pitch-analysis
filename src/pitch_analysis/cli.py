@@ -37,6 +37,12 @@ def main() -> None:
     skeleton_run.add_argument("preparation_json")
     skeleton_run.add_argument("seed_json")
     skeleton_run.add_argument("--output", required=True)
+    native_input = commands.add_parser("prepare-analysis-input", help="Prepare a read-only analysis input from saved native COCO17 pose, tracking and human overlay acceptance")
+    native_input.add_argument("native_dir")
+    native_input.add_argument("metadata_json")
+    native_input.add_argument("--subject-track", required=True)
+    native_input.add_argument("--human-review", required=True)
+    native_input.add_argument("--output", required=True)
     analyze = commands.add_parser("analyze-pitch", help="Analyze one prepared local MP4 plus pitch-input-v1 metadata")
     analyze.add_argument("mp4")
     analyze.add_argument("metadata_json")
@@ -159,6 +165,18 @@ def main() -> None:
         command.add_argument("--min-visibility", type=float, default=0.5)
         command.add_argument("--min-presence", type=float, default=0.5)
     args = parser.parse_args()
+    if args.command == "prepare-analysis-input":
+        from pathlib import Path
+        from .analysis.native_input import prepare_native_analysis_input
+        try:
+            result = prepare_native_analysis_input(Path.cwd(), args.native_dir, args.metadata_json,
+                                                  args.subject_track, args.human_review, args.output)
+            _emit({"status": result["status"], "pitch_id": result["pitch_id"],
+                   "output_dir": args.output, "new_inference_calls": 0})
+        except (ValueError, OSError, RuntimeError) as error:
+            _emit({"status": "failed", "error": str(error)})
+            raise SystemExit(1)
+        return
     if args.command in {"prepare-skeleton", "extract-skeleton"}:
         from pathlib import Path
         try:

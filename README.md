@@ -6,7 +6,14 @@
 本次收尾摘要見 [STATUS](docs/STATUS.md)；外部專案供片需求見
 [INPUT_REQUIREMENTS](docs/INPUT_REQUIREMENTS.md)。
 
-2026-10-23 最新：[大谷五球共用骨架已補齊](docs/ohtani_shared_skeleton_rollout_20261023.md)。
+2026-10-23 最新：[原生骨架分析資料入口已完成](docs/native_analysis_input_results_20261023.md)。
+新增`prepare-analysis-input`及Python loader，直接讀取已接受RTMPose17點、追蹤與人工紀錄。
+大谷五球1684格／28628關節影格已由實際CLI＋loader讀取，原影格／追蹤差異0、模型重跑0。
+保留原生座標、分數及missing；影片人工接受與逐點unknown分開，舊33點特徵入口保留相容。
+完整suite **1153 passed／0 failed／2 skipped**；**Native analysis input integration = PASSED，Phase2自動可靠性仍NOT PASSED**。
+[使用方式](docs/native_analysis_input.md)。本輪已收尾，未進Phase3。
+
+前段：[大谷五球共用骨架已補齊](docs/ohtani_shared_skeleton_rollout_20261023.md)。
 沿用HSU已接受的方法，001／003／004／005各處理一次，共1363格，整格missing0、幾何track break0；
 002保留已接受321格結果，未重跑。已實看35組比較，005/128舊混合骨架與003/158舊手臂偏移有改善。
 HSU已回覆「可以都正確」，連同先前002，五球overlay人工接受完成5/5；原話及來源SHA另存獨立review。

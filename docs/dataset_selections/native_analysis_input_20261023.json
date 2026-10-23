@@ -1,0 +1,415 @@
+{
+  "schema_version": "native-analysis-input-delivery-v1",
+  "status": "completed",
+  "sources": [
+    {
+      "pitch_id": "supplement_001",
+      "frames_consumed": 335,
+      "landmark_slots_consumed": 5695,
+      "raw_frame_mismatches": 0,
+      "tracking_mismatches": 0,
+      "unknown_joint_reliability_slots": 5695,
+      "missing_coordinate_slots": 0,
+      "human_overlay_review": {
+        "status": "human_accepted",
+        "scope": "whole_clip_qualitative_acceptance",
+        "reviewer": "HSU",
+        "recorded_at_utc": "2026-10-23T12:37:48.402467+00:00",
+        "source_schema": "skeleton-overlay-review-v1",
+        "review_method": "human whole-clip qualitative acceptance in conversation",
+        "source_judgment_scope": "clip-level overall visual acceptance; no new pointwise XY, visibility or calibrated-score labels",
+        "review_ref": {
+          "path": "annotations/skeleton_reviews/HSU_20261023/ohtani_shared_skeleton_acceptance.json",
+          "sha256": "333137f2b06d4d9f99f8b55ab710e641b5073f666af8e7f340507b356c43ef56"
+        },
+        "candidate_status_from_review": "candidate",
+        "pointwise_reliability_established": false,
+        "pointwise_visibility_established": false
+      },
+      "track_status_counts": {
+        "seeded": 1,
+        "linked": 334
+      },
+      "first_track_break_frame": null,
+      "bundle_manifest_ref": {
+        "path": "analysis_results/phase2_native_analysis_input_20261023_01/bundles/supplement_001/native_analysis_input.json",
+        "sha256": "15fd269365e2da347d5dd7c4914efa60e4712954b470649938d24127dc558b20"
+      },
+      "usage_summary_ref": {
+        "path": "analysis_results/phase2_native_analysis_input_20261023_01/bundles/supplement_001/usage_summary.json",
+        "sha256": "07896c2f7d2a9974c07101968bf41ee183ca13d372f258ee0d92ddcd458836bb"
+      },
+      "cli_result": {
+        "status": "ready_for_native_consumption",
+        "pitch_id": "supplement_001",
+        "output_dir": "D:\\project\\pitch-analysis\\analysis_results\\phase2_native_analysis_input_20261023_01\\bundles\\supplement_001",
+        "new_inference_calls": 0
+      },
+      "quality_status": "not_calibrated",
+      "usable_for_analysis": null
+    },
+    {
+      "pitch_id": "supplement_002",
+      "frames_consumed": 321,
+      "landmark_slots_consumed": 5457,
+      "raw_frame_mismatches": 0,
+      "tracking_mismatches": 0,
+      "unknown_joint_reliability_slots": 5457,
+      "missing_coordinate_slots": 0,
+      "human_overlay_review": {
+        "status": "human_accepted",
+        "scope": "whole_clip_qualitative_acceptance",
+        "reviewer": "HSU",
+        "recorded_at_utc": "2026-10-23T02:14:18.229791+00:00",
+        "source_schema": "skeleton-method-adoption-v1",
+        "review_method": "human whole-clip visual review in conversation",
+        "source_judgment_scope": "overall visual judgment of this complete321frame result; no new pointwise XY/visibility labels",
+        "review_ref": {
+          "path": "annotations/skeleton_reviews/HSU_20261023/ohtani_supplement_002.json",
+          "sha256": "6894a7be22e7be1e39530e8cb1bebdbcf01fd42eecdf00a64ac6f456dc123145"
+        },
+        "candidate_status_from_review": null,
+        "pointwise_reliability_established": false,
+        "pointwise_visibility_established": false
+      },
+      "track_status_counts": {
+        "seeded": 1,
+        "linked": 320
+      },
+      "first_track_break_frame": null,
+      "bundle_manifest_ref": {
+        "path": "analysis_results/phase2_native_analysis_input_20261023_01/bundles/supplement_002/native_analysis_input.json",
+        "sha256": "5b64319ca96cf241c8d3a2c883c66f2d74269ab368f790b3ceb82dfb01a0f4fd"
+      },
+      "usage_summary_ref": {
+        "path": "analysis_results/phase2_native_analysis_input_20261023_01/bundles/supplement_002/usage_summary.json",
+        "sha256": "8a4514e03c6428713e7ceb8c0123b1f30d861f10d92d9c6bc69007e434c90bb2"
+      },
+      "cli_result": {
+        "status": "ready_for_native_consumption",
+        "pitch_id": "supplement_002",
+        "output_dir": "D:\\project\\pitch-analysis\\analysis_results\\phase2_native_analysis_input_20261023_01\\bundles\\supplement_002",
+        "new_inference_calls": 0
+      },
+      "quality_status": "not_calibrated",
+      "usable_for_analysis": null
+    },
+    {
+      "pitch_id": "supplement_003",
+      "frames_consumed": 369,
+      "landmark_slots_consumed": 6273,
+      "raw_frame_mismatches": 0,
+      "tracking_mismatches": 0,
+      "unknown_joint_reliability_slots": 6273,
+      "missing_coordinate_slots": 0,
+      "human_overlay_review": {
+        "status": "human_accepted",
+        "scope": "whole_clip_qualitative_acceptance",
+        "reviewer": "HSU",
+        "recorded_at_utc": "2026-10-23T12:37:48.402467+00:00",
+        "source_schema": "skeleton-overlay-review-v1",
+        "review_method": "human whole-clip qualitative acceptance in conversation",
+        "source_judgment_scope": "clip-level overall visual acceptance; no new pointwise XY, visibility or calibrated-score labels",
+        "review_ref": {
+          "path": "annotations/skeleton_reviews/HSU_20261023/ohtani_shared_skeleton_acceptance.json",
+          "sha256": "333137f2b06d4d9f99f8b55ab710e641b5073f666af8e7f340507b356c43ef56"
+        },
+        "candidate_status_from_review": "candidate",
+        "pointwise_reliability_established": false,
+        "pointwise_visibility_established": false
+      },
+      "track_status_counts": {
+        "seeded": 1,
+        "linked": 368
+      },
+      "first_track_break_frame": null,
+      "bundle_manifest_ref": {
+        "path": "analysis_results/phase2_native_analysis_input_20261023_01/bundles/supplement_003/native_analysis_input.json",
+        "sha256": "4a3a9c4874502bde5d800230f0149483341a25b32191d9fba1f9bde1ba6cc522"
+      },
+      "usage_summary_ref": {
+        "path": "analysis_results/phase2_native_analysis_input_20261023_01/bundles/supplement_003/usage_summary.json",
+        "sha256": "b64e5e0ece393ac5093500e70302f5a22bb017dd0fe563a3aae3da26fbf911e6"
+      },
+      "cli_result": {
+        "status": "ready_for_native_consumption",
+        "pitch_id": "supplement_003",
+        "output_dir": "D:\\project\\pitch-analysis\\analysis_results\\phase2_native_analysis_input_20261023_01\\bundles\\supplement_003",
+        "new_inference_calls": 0
+      },
+      "quality_status": "not_calibrated",
+      "usable_for_analysis": null
+    },
+    {
+      "pitch_id": "supplement_004",
+      "frames_consumed": 338,
+      "landmark_slots_consumed": 5746,
+      "raw_frame_mismatches": 0,
+      "tracking_mismatches": 0,
+      "unknown_joint_reliability_slots": 5746,
+      "missing_coordinate_slots": 0,
+      "human_overlay_review": {
+        "status": "human_accepted",
+        "scope": "whole_clip_qualitative_acceptance",
+        "reviewer": "HSU",
+        "recorded_at_utc": "2026-10-23T12:37:48.402467+00:00",
+        "source_schema": "skeleton-overlay-review-v1",
+        "review_method": "human whole-clip qualitative acceptance in conversation",
+        "source_judgment_scope": "clip-level overall visual acceptance; no new pointwise XY, visibility or calibrated-score labels",
+        "review_ref": {
+          "path": "annotations/skeleton_reviews/HSU_20261023/ohtani_shared_skeleton_acceptance.json",
+          "sha256": "333137f2b06d4d9f99f8b55ab710e641b5073f666af8e7f340507b356c43ef56"
+        },
+        "candidate_status_from_review": "candidate",
+        "pointwise_reliability_established": false,
+        "pointwise_visibility_established": false
+      },
+      "track_status_counts": {
+        "seeded": 1,
+        "linked": 337
+      },
+      "first_track_break_frame": null,
+      "bundle_manifest_ref": {
+        "path": "analysis_results/phase2_native_analysis_input_20261023_01/bundles/supplement_004/native_analysis_input.json",
+        "sha256": "7530cd0e12d7ceebb763d6f63f8d1b2eb9adb556a96fb1f3dd45d1340be8b5c6"
+      },
+      "usage_summary_ref": {
+        "path": "analysis_results/phase2_native_analysis_input_20261023_01/bundles/supplement_004/usage_summary.json",
+        "sha256": "f9916c1b3eb8e9d711a56193066f6a1784b5c63ffd80571049e6dc3d7b5bc8e6"
+      },
+      "cli_result": {
+        "status": "ready_for_native_consumption",
+        "pitch_id": "supplement_004",
+        "output_dir": "D:\\project\\pitch-analysis\\analysis_results\\phase2_native_analysis_input_20261023_01\\bundles\\supplement_004",
+        "new_inference_calls": 0
+      },
+      "quality_status": "not_calibrated",
+      "usable_for_analysis": null
+    },
+    {
+      "pitch_id": "supplement_005",
+      "frames_consumed": 321,
+      "landmark_slots_consumed": 5457,
+      "raw_frame_mismatches": 0,
+      "tracking_mismatches": 0,
+      "unknown_joint_reliability_slots": 5457,
+      "missing_coordinate_slots": 0,
+      "human_overlay_review": {
+        "status": "human_accepted",
+        "scope": "whole_clip_qualitative_acceptance",
+        "reviewer": "HSU",
+        "recorded_at_utc": "2026-10-23T12:37:48.402467+00:00",
+        "source_schema": "skeleton-overlay-review-v1",
+        "review_method": "human whole-clip qualitative acceptance in conversation",
+        "source_judgment_scope": "clip-level overall visual acceptance; no new pointwise XY, visibility or calibrated-score labels",
+        "review_ref": {
+          "path": "annotations/skeleton_reviews/HSU_20261023/ohtani_shared_skeleton_acceptance.json",
+          "sha256": "333137f2b06d4d9f99f8b55ab710e641b5073f666af8e7f340507b356c43ef56"
+        },
+        "candidate_status_from_review": "candidate",
+        "pointwise_reliability_established": false,
+        "pointwise_visibility_established": false
+      },
+      "track_status_counts": {
+        "seeded": 1,
+        "linked": 320
+      },
+      "first_track_break_frame": null,
+      "bundle_manifest_ref": {
+        "path": "analysis_results/phase2_native_analysis_input_20261023_01/bundles/supplement_005/native_analysis_input.json",
+        "sha256": "066847f02604f6e36b3b827f41f5dab3f6d16787c7eec3b6e7523529165219c2"
+      },
+      "usage_summary_ref": {
+        "path": "analysis_results/phase2_native_analysis_input_20261023_01/bundles/supplement_005/usage_summary.json",
+        "sha256": "7077fa7d0c03abc3f5d79606772b10e32adb0458cbf0f027ed64087e72029bae"
+      },
+      "cli_result": {
+        "status": "ready_for_native_consumption",
+        "pitch_id": "supplement_005",
+        "output_dir": "D:\\project\\pitch-analysis\\analysis_results\\phase2_native_analysis_input_20261023_01\\bundles\\supplement_005",
+        "new_inference_calls": 0
+      },
+      "quality_status": "not_calibrated",
+      "usable_for_analysis": null
+    }
+  ],
+  "frames_consumed": 1684,
+  "landmark_slots_consumed": 28628,
+  "raw_frame_mismatches": 0,
+  "tracking_mismatches": 0,
+  "new_inference_calls": 0,
+  "new_tracking_replays": 0,
+  "new_ground_truth_labels": 0,
+  "protected_files": 2068,
+  "protected_sha256_changes": [],
+  "native_data_integration": "PASSED",
+  "human_overlay_review": "ACCEPTED_5_OF_5",
+  "phase2_automatic_reliability": "NOT_PASSED",
+  "phase3_started": false,
+  "tests": {
+    "created_at_utc": "2026-10-23T12:53:01.222789+00:00",
+    "tests_run": 1155,
+    "passed": 1153,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 2,
+    "skipped_reasons": [
+      {
+        "test": "test_dangling_snapshot_file_link_cannot_create_external_target_when_supported (test_handoff_paths.HandoffPathTests.test_dangling_snapshot_file_link_cannot_create_external_target_when_supported)",
+        "reason": "file symlink creation is unavailable"
+      },
+      {
+        "test": "test_source_symlink_outside_candidate_is_rejected_when_supported (test_handoff_review.HandoffReviewTests.test_source_symlink_outside_candidate_is_rejected_when_supported)",
+        "reason": "creating symbolic links is unavailable"
+      }
+    ],
+    "elapsed_seconds": 98.953,
+    "formal_five_video_e2e_enabled": true,
+    "real_detector_calls_in_tests": 0,
+    "real_rtmpose_calls_in_tests": 0,
+    "successful": true
+  },
+  "formal_five_e2e": [
+    {
+      "pitch_id": "pitch_001",
+      "status": "evaluated_development_evidence",
+      "source_frames": 87,
+      "review_frames_non_seed": 2
+    },
+    {
+      "pitch_id": "pitch_002",
+      "status": "evaluated_development_evidence",
+      "source_frames": 175,
+      "review_frames_non_seed": 0
+    },
+    {
+      "pitch_id": "pitch_003",
+      "status": "evaluated_development_evidence",
+      "source_frames": 115,
+      "review_frames_non_seed": 19
+    },
+    {
+      "pitch_id": "pitch_004",
+      "status": "evaluated_development_evidence",
+      "source_frames": 114,
+      "review_frames_non_seed": 5
+    },
+    {
+      "pitch_id": "pitch_005",
+      "status": "evaluated_development_evidence",
+      "source_frames": 101,
+      "review_frames_non_seed": 3
+    }
+  ],
+  "consumed_config_ref": {
+    "path": "config/analysis_inputs/ohtani_seeded_20261023.json",
+    "sha256": "1334eaab3f84dccdb5be3f40ecbce5a2d143a9274f037de2b1081f66fd1ed3fc"
+  },
+  "implementation_refs": [
+    {
+      "path": "src/pitch_analysis/analysis/native_input.py",
+      "sha256": "c00e9d82ee6e4cc89dd07a1cbadd15db7896ccb3f8083d83194bedf2bb537379"
+    },
+    {
+      "path": "src/pitch_analysis/cli.py",
+      "sha256": "65d5ab02c5a5c4623a0fb02b36778930e05a0009ccc24841f25660e017b9763c"
+    }
+  ],
+  "output_root": "analysis_results/phase2_native_analysis_input_20261023_01",
+  "execution_refs": [
+    {
+      "path": "analysis_results/phase2_native_analysis_input_20261023_01/consumer_results.json",
+      "sha256": "97c8028df8fa11a72b1cb739b8a2e7caf3e05829bb692ad3d8cb95473d113a0a"
+    },
+    {
+      "path": "analysis_results/phase2_native_analysis_input_20261023_01/execution_freeze.json",
+      "sha256": "d2bbacb2f14e41c657a96c520efed611fcc95c38918c3a7ffc022e31c7c12db5"
+    },
+    {
+      "path": "analysis_results/phase2_native_analysis_input_20261023_01/verified_suite/test_results.json",
+      "sha256": "b60b1f034748a2fb0b22d50e9821a7dcf26bff7f2c76dde20822518dd51b0e19"
+    },
+    {
+      "path": "analysis_results/phase2_native_analysis_input_20261023_01/verified_suite/full_suite.log",
+      "sha256": "b76d69e7ccf126087639b2c7ce66707ba1e09cb8d65413d26f62deb9bf51a6ad"
+    },
+    {
+      "path": "analysis_results/phase2_native_analysis_input_20261023_01/approved_cli_extension.json",
+      "sha256": "332cc6f5f5dbace0cc9c033be85557cefd957c7bd6809226ea527faf89ffc666"
+    }
+  ],
+  "initial_sandbox_suite": {
+    "result": {
+      "created_at_utc": "2026-10-23T12:50:16.643912+00:00",
+      "tests_run": 1155,
+      "passed": 1145,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 10,
+      "skipped_reasons": [
+        {
+          "test": "test_dangling_snapshot_file_link_cannot_create_external_target_when_supported (test_handoff_paths.HandoffPathTests.test_dangling_snapshot_file_link_cannot_create_external_target_when_supported)",
+          "reason": "file symlink creation is unavailable"
+        },
+        {
+          "test": "test_local_path_refuses_link_component_even_when_target_is_inside_intake (test_handoff_paths.HandoffPathTests.test_local_path_refuses_link_component_even_when_target_is_inside_intake)",
+          "reason": "directory junctions are unavailable"
+        },
+        {
+          "test": "test_project_intake_link_outside_project_is_refused_before_local_mutation (test_handoff_paths.HandoffPathTests.test_project_intake_link_outside_project_is_refused_before_local_mutation)",
+          "reason": "directory junctions are unavailable"
+        },
+        {
+          "test": "test_project_intake_link_to_code_directory_is_refused_before_local_mutation (test_handoff_paths.HandoffPathTests.test_project_intake_link_to_code_directory_is_refused_before_local_mutation)",
+          "reason": "directory junctions are unavailable"
+        },
+        {
+          "test": "test_snapshot_refuses_linked_batch_directory_without_touching_target (test_handoff_paths.HandoffPathTests.test_snapshot_refuses_linked_batch_directory_without_touching_target)",
+          "reason": "directory junctions are unavailable"
+        },
+        {
+          "test": "test_snapshot_refuses_linked_child_contract_before_skipping_existing_copy (test_handoff_paths.HandoffPathTests.test_snapshot_refuses_linked_child_contract_before_skipping_existing_copy)",
+          "reason": "directory junctions are unavailable"
+        },
+        {
+          "test": "test_source_symlink_outside_candidate_is_rejected_when_supported (test_handoff_review.HandoffReviewTests.test_source_symlink_outside_candidate_is_rejected_when_supported)",
+          "reason": "creating symbolic links is unavailable"
+        },
+        {
+          "test": "test_api_refuses_linked_higher_ancestor_before_lock_creation_or_deletion (test_handoff_review_boundary.HandoffReviewBoundaryTests.test_api_refuses_linked_higher_ancestor_before_lock_creation_or_deletion)",
+          "reason": "directory junctions are unavailable"
+        },
+        {
+          "test": "test_api_refuses_linked_parent_before_lock_creation_or_deletion (test_handoff_review_boundary.HandoffReviewBoundaryTests.test_api_refuses_linked_parent_before_lock_creation_or_deletion)",
+          "reason": "directory junctions are unavailable"
+        },
+        {
+          "test": "test_cli_refuses_linked_candidates_before_calling_review (test_handoff_review_boundary.HandoffReviewBoundaryTests.test_cli_refuses_linked_candidates_before_calling_review)",
+          "reason": "directory junctions are unavailable"
+        }
+      ],
+      "elapsed_seconds": 150.641,
+      "formal_five_video_e2e_enabled": true,
+      "real_detector_calls_in_tests": 0,
+      "real_rtmpose_calls_in_tests": 0,
+      "successful": true
+    },
+    "result_ref": {
+      "path": "analysis_results/phase2_native_analysis_input_20261023_01/test_results.json",
+      "sha256": "f503137e660cdea028ecf89de7b0cbe2b06dd9acec0cd66c26ded5ab0c96de6f"
+    },
+    "reason_for_normal_permission_repeat": "Eight extra directory-junction tests were skipped in the sandbox; verified_suite completes existing coverage."
+  },
+  "phase2_delivery_status": "COMPLETE_WITH_KNOWN_LIMITATIONS",
+  "phase2_status": "NOT_PASSED",
+  "acceptance_scope": "Data input integration passed; automatic pointwise correctness was not established by clip-level acceptance.",
+  "final_preservation": {
+    "protected_files": 2068,
+    "sha256_changes": [],
+    "after_full_suite": true
+  },
+  "final_preservation_ref": {
+    "path": "analysis_results/phase2_native_analysis_input_20261023_01/final_preservation.json",
+    "sha256": "f1e5559bd9bfce96fbd6167efc4a0c59b55ae4e1523df81b3365df72c8f6e085"
+  }
+}
