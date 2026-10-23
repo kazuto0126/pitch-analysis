@@ -19,8 +19,13 @@ HSU確認起始框001＝1號、003＝1號、004＝1號、005＝2號；四片各�
 
 本輪只新增設定／4份人工seed／文件，沒有修改產品碼或測試，未重跑完整suite；
 相同程式碼最新完整測試仍為1139 passed／0 failed／2 skipped（前輪結果）。
-大谷四片新結果的全片人工接受待HSU確認；下一步觀看四支overlay並記錄影片層接受或問題區段。
-有座標不等於遮擋點精確，**Phase2自動可靠性仍NOT PASSED**，未進Phase3。
+HSU隨後回覆「可以都正確」，001／003／004／005已記為影片層人工接受；
+加上先前002，**大谷五球overlay人工接受完成5/5，共1684格**。
+原話、reviewer、紀錄時間及四份來源／overlay／原生座標SHA保存於
+`annotations/skeleton_reviews/HSU_20261023/ohtani_shared_skeleton_acceptance.json`。
+執行時的rollout JSON保留pending歷史快照，最新人工狀態以此獨立review紀錄為準。
+這是整片目視接受，沒有新增逐點XY／可見性GT或校準分數。
+**Phase2自動可靠性仍NOT PASSED**，未進Phase3。
 [結果](ohtani_shared_skeleton_rollout_20261023.md)、[版本化證據](dataset_selections/ohtani_shared_skeleton_rollout_20261023.json)。
 
 ## 前段：共用骨架標準採用，山本五片完成

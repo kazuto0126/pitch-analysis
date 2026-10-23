@@ -9,7 +9,8 @@
 2026-10-23 最新：[大谷五球共用骨架已補齊](docs/ohtani_shared_skeleton_rollout_20261023.md)。
 沿用HSU已接受的方法，001／003／004／005各處理一次，共1363格，整格missing0、幾何track break0；
 002保留已接受321格結果，未重跑。已實看35組比較，005/128舊混合骨架與003/158舊手臂偏移有改善。
-四支完整新overlay待HSU觀看確認；原片與舊結果保留，未改模型／門檻／GT或進Phase3。
+HSU已回覆「可以都正確」，連同先前002，五球overlay人工接受完成5/5；原話及來源SHA另存獨立review。
+原片與舊結果保留，未改模型／門檻／GT或進Phase3。
 本輪僅設定／資料／文件，未重跑suite；同程式碼最新完整suite1139 passed／0 failed／2 skipped。
 本機觀看：`analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/review_all.html`。
 

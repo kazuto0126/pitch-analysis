@@ -65,4 +65,6 @@ HSU已確認001首格2號，002／003／004／005首格1號，各片獨立保存
 001／003／004／005已使用HSU確認的首格框1／1／1／2各處理一次，共1363格；
 002沿用原已接受結果，沒有重跑。新舊比較、完整五球overlay與保存紀錄見
 [大谷五球交付](ohtani_shared_skeleton_rollout_20261023.md)。
-新的四球仍待全片人工觀看，方法採用與每支影片的人工接受分開保存。
+HSU隨後確認「可以都正確」，加上002，五球overlay人工接受已完成。
+方法採用與逐片人工接受分開保存；接受紀錄見
+`annotations/skeleton_reviews/HSU_20261023/ohtani_shared_skeleton_acceptance.json`。

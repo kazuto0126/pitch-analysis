@@ -29,8 +29,14 @@ exported and inspected existing results, without repeated inference or tuning.
 
 Viewed12comparison sheets/35source-prior-new frame triples. The prior005/128mixed
 skeleton reaching the batter and003/158arm extension toward background are reduced;
-sampled skeletons remain near the pitcher. This is agent sampling; four new clips'
-whole-video human acceptance remains pending. No new per-point GT or event labels.
+sampled skeletons remain near the pitcher. HSU subsequently replied「可以都正確」
+to the review request, accepting the four new overlays at whole-clip visual level.
+Together with the previously accepted002, Ohtani overlay human acceptance is now
+5/5clips,1684frames. The exact response, reviewer, recorded UTC and source/output
+SHA are saved in
+`annotations/skeleton_reviews/HSU_20261023/ohtani_shared_skeleton_acceptance.json`.
+Execution rollout JSON keeps its original pending snapshot; this independent human
+review record provides the later acceptance. No new per-point GT or event labels.
 
 2052protected source SHA unchanged;2722new journal/binary payloads verified. Complete
 source pixels and rational timestamps were checked against saved frame records;
@@ -42,8 +48,7 @@ suite on the same production code remains1139passed/0failed/2Windows-symlinkskip
 Output:`analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/`;open`review_all.html`.
 [Report](ohtani_shared_skeleton_rollout_20261023.md),
 [versioned results](dataset_selections/ohtani_shared_skeleton_rollout_20261023.json).
-Next is HSU's whole-video review of the four new overlays and clip-level acceptance
-or reported problem spans. Phase2 automatic reliability remains NOT PASSED;
+The Ohtani whole-video visual review is complete. Phase2 automatic reliability remains NOT PASSED;
 no formal source promotion, GT changes, new model or Phase3 has started.
 
 ## 2026-10-23 shared skeleton standard adopted and applied to Yamamoto (previous)

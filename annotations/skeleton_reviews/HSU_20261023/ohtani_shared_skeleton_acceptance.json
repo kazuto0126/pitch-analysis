@@ -1,0 +1,126 @@
+{
+  "schema_version": "skeleton-overlay-review-v1",
+  "reviewer": "HSU",
+  "recorded_at_utc": "2026-10-23T12:37:48.402467+00:00",
+  "original_user_statement": "可以都正確",
+  "review_context": "Response to request to review the four new Ohtani overlays and report obvious misalignment or acceptance.",
+  "review_method": "human whole-clip qualitative acceptance in conversation",
+  "judgment_scope": "clip-level overall visual acceptance; no new pointwise XY, visibility or calibrated-score labels",
+  "source_rollout_ref": {
+    "path": "docs/dataset_selections/ohtani_shared_skeleton_rollout_20261023.json",
+    "sha256": "f00236e1d12e31686aa7f9337ce0d9d55d63990f6a420de9e20ca3e766713264"
+  },
+  "clips": [
+    {
+      "pitch_id": "supplement_001",
+      "frame_count": 335,
+      "video_ref": {
+        "path": "input/shohei_ohtani/phase2_supplement_20261020_01/supplement_001.mp4",
+        "sha256": "90a6acec9865c634bd019503d46c147647fa78df9a2827e1143c74abb852111a"
+      },
+      "overlay_ref": {
+        "path": "analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/supplement_001/rtmpose/supplement_001/overlay_native.mp4",
+        "sha256": "3c0ffef0dc8f8c4f1e072a5ba05338abce77fd11046cf7fd099fcada2f1fac81"
+      },
+      "native_manifest_ref": {
+        "path": "analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/supplement_001/rtmpose/supplement_001/native_pose_manifest.json",
+        "sha256": "048760d77d86014401dc7ed176e9a7cf34c8acf0fbb2ecd6f4a0f39d17fd7cf3"
+      },
+      "native_keypoints_ref": {
+        "path": "analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/supplement_001/rtmpose/supplement_001/native_keypoints.jsonl",
+        "sha256": "5d17808932b75b4a08926432af11d5d211df0f31e050e0ae8d0ec6040bb445a1"
+      },
+      "human_overlay_review": "accepted_by_HSU",
+      "overall_joint_alignment_review": "accepted_by_HSU",
+      "candidate_status": "candidate",
+      "quantitative_coordinate_error": null
+    },
+    {
+      "pitch_id": "supplement_003",
+      "frame_count": 369,
+      "video_ref": {
+        "path": "input/shohei_ohtani/phase2_supplement_20261020_01/supplement_003.mp4",
+        "sha256": "97a45985648af1cf20ed48bda6ce5454fe509609114ac28d8a5deb632621e8ae"
+      },
+      "overlay_ref": {
+        "path": "analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/supplement_003/rtmpose/supplement_003/overlay_native.mp4",
+        "sha256": "bb080e2e454dc9987ec5c90f2db83ce97f56f11579221012911fdb4b322ff963"
+      },
+      "native_manifest_ref": {
+        "path": "analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/supplement_003/rtmpose/supplement_003/native_pose_manifest.json",
+        "sha256": "7d85a3d0c06fb0510a97faeef2f1fa65ca4505eb50b4d1304f7da8310858dbeb"
+      },
+      "native_keypoints_ref": {
+        "path": "analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/supplement_003/rtmpose/supplement_003/native_keypoints.jsonl",
+        "sha256": "645893452d7d257c01f4344b11e73e831d4d64a52bfbb71499d09d9ff34c62ad"
+      },
+      "human_overlay_review": "accepted_by_HSU",
+      "overall_joint_alignment_review": "accepted_by_HSU",
+      "candidate_status": "candidate",
+      "quantitative_coordinate_error": null
+    },
+    {
+      "pitch_id": "supplement_004",
+      "frame_count": 338,
+      "video_ref": {
+        "path": "input/shohei_ohtani/phase2_supplement_20261020_01/supplement_004.mp4",
+        "sha256": "76945ebff5dc300ee0fc7084a0e21370137ee9d91ad61cdca52ccab0e4ee9054"
+      },
+      "overlay_ref": {
+        "path": "analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/supplement_004/rtmpose/supplement_004/overlay_native.mp4",
+        "sha256": "45cce1ef66b837f561ac49c5b08936b7528a7162ed2915d485f3451062679c30"
+      },
+      "native_manifest_ref": {
+        "path": "analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/supplement_004/rtmpose/supplement_004/native_pose_manifest.json",
+        "sha256": "e80b4fac7e0ae68e89c5cee92535fb3c4148ef28c1b1c0face3b5ca5d9235ce9"
+      },
+      "native_keypoints_ref": {
+        "path": "analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/supplement_004/rtmpose/supplement_004/native_keypoints.jsonl",
+        "sha256": "c6371da43866cf72c0e11d75bcf7eca381dfb9821ebe812a2a4659e439e48542"
+      },
+      "human_overlay_review": "accepted_by_HSU",
+      "overall_joint_alignment_review": "accepted_by_HSU",
+      "candidate_status": "candidate",
+      "quantitative_coordinate_error": null
+    },
+    {
+      "pitch_id": "supplement_005",
+      "frame_count": 321,
+      "video_ref": {
+        "path": "input/shohei_ohtani/phase2_supplement_20261020_01/supplement_005.mp4",
+        "sha256": "1c67c058d4376ecf94a138eb08e3251eb601a365a7e8a55e251e1c136ae5d95f"
+      },
+      "overlay_ref": {
+        "path": "analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/supplement_005/rtmpose/supplement_005/overlay_native.mp4",
+        "sha256": "98c25011ef83d9fdd4d14253e4b9ffbbb8f35ad4f81ed1cb866090a8b7bd5a8a"
+      },
+      "native_manifest_ref": {
+        "path": "analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/supplement_005/rtmpose/supplement_005/native_pose_manifest.json",
+        "sha256": "0fbe8428f3c7b208c4c076895ed67833327dc7bbd84de34e70126a3dac0a6ec6"
+      },
+      "native_keypoints_ref": {
+        "path": "analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/supplement_005/rtmpose/supplement_005/native_keypoints.jsonl",
+        "sha256": "01f7c97b09aeaacb73cfecf8b16176485320f0daeb5774091f90e6db8a8ebea7"
+      },
+      "human_overlay_review": "accepted_by_HSU",
+      "overall_joint_alignment_review": "accepted_by_HSU",
+      "candidate_status": "candidate",
+      "quantitative_coordinate_error": null
+    }
+  ],
+  "previously_accepted_clip": {
+    "pitch_id": "supplement_002",
+    "frame_count": 321,
+    "review_ref": {
+      "path": "annotations/skeleton_reviews/HSU_20261023/ohtani_supplement_002.json",
+      "sha256": "6894a7be22e7be1e39530e8cb1bebdbcf01fd42eecdf00a64ac6f456dc123145"
+    }
+  },
+  "cohort_human_overlay_review": "ACCEPTED_5_OF_5",
+  "cohort_frames": 1684,
+  "new_inference_calls": 0,
+  "new_ground_truth_labels": 0,
+  "formal_source_replacements": 0,
+  "phase2_automatic_reliability": "NOT_PASSED",
+  "phase3_started": false
+}

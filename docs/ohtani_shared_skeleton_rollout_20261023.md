@@ -2,6 +2,15 @@
 
 2026-10-23（台灣）。[共用流程](standard_skeleton_workflow.md)、[版本化結果](dataset_selections/ohtani_shared_skeleton_rollout_20261023.json)。
 
+## 交付後人工確認
+
+HSU在觀看請求後回覆「可以都正確」，本輪001／003／004／005已記錄為整片目視接受。
+加上先前已接受002，**五球overlay人工接受完成5/5，共1684格**。
+獨立紀錄：`annotations/skeleton_reviews/HSU_20261023/ohtani_shared_skeleton_acceptance.json`，
+包含原話、reviewer、紀錄時間及對應來源／overlay／原生manifest／座標SHA。
+原執行JSON的pending狀態保留為當時快照，最新人工狀態以追加review為準。
+這不是新的逐點XY、遮擋可見性標籤或量化100%正確率；不改寫raw及canonical GT。
+
 HSU已接受第002球的人工初始化人物追蹤＋RTMPose結果，並要求後續投手沿用。
 本輪處理同批001／003／004／005；四球首格候選已展示，HSU確認001＝1號、003＝1號、004＝1號、005＝2號。
 原話「四球框號都正確，繼續」及來源SHA保存於`config/subject_seeds/ohtani_20261023/`。
@@ -43,7 +52,7 @@ HSU已接受第002球的人工初始化人物追蹤＋RTMPose結果，並要求�
 
 2052個保護來源SHA不變，2722份新worker binary輸出與journal核對。
 原影片、舊prediction、人工GT、已接受002及山本新舊結果保留，沒有取代正式素材。
-山本003仍僅歷史對照；這次四球的全片人工接受仍待HSU確認。
+山本003仍僅歷史對照；四球後續人工接受已完成，見本文件上方追加紀錄。
 
 本輪沒有修改產品碼或測試，故未重跑完整suite。
 相同產品碼最新完整suite為**1139 passed／0 failed／0 errors／2 skipped**；兩項skip是Windows symlink權限。
