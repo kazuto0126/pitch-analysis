@@ -1,5 +1,9 @@
 # 共用骨架標準已採用，山本五片已處理
 
+2026-10-24更新：HSU已接受啟用的001／002／004／005四片新overlay，共477格。
+003保持歷史對照，不在此次接受範圍。最新獨立接受紀錄及四片資料接入見
+[啟用集合收尾](phase2_active_cohort_closeout_20261024.md)；下文保留當次執行與抽樣檢查歷史。
+
 2026-10-23（台灣）。[使用方法](standard_skeleton_workflow.md)、[版本化結果](dataset_selections/standard_skeleton_rollout_20261023.json)。
 
 ## 方法採用與人工確認

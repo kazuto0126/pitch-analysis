@@ -1,0 +1,219 @@
+{
+  "schema_version": "phase2-active-cohort-closeout-v1",
+  "created_at_utc": "2026-10-23T18:00:16.369311+00:00",
+  "review_ref": {
+    "path": "annotations/skeleton_reviews/HSU_20261024/yamamoto_active_skeleton_acceptance.json",
+    "sha256": "444d0dff1916200c7010bae82ff24c6911f4ee89f59164e69c55e0906d58699a"
+  },
+  "analysis_input_config_ref": {
+    "path": "config/analysis_inputs/yamamoto_active_seeded_20261024.json",
+    "sha256": "b1708b2e06f274802a2682c7d94b3ae11810d25393c072199eae6efb497ab93a"
+  },
+  "yamamoto": {
+    "accepted_active_clips": 4,
+    "frames": 477,
+    "landmark_slots": 8109,
+    "clips": [
+      {
+        "pitch_id": "pitch_001",
+        "source_role": "active",
+        "frames_consumed": 87,
+        "landmark_slots": 1479,
+        "human_overlay_review": "human_accepted",
+        "raw_frame_mismatches": 0,
+        "tracking_mismatches": 0,
+        "derived_point_mismatches": 0,
+        "break_frames": [],
+        "missing_coordinate_slots": 0,
+        "bundle_manifest_ref": {
+          "path": "analysis_results/phase2_active_cohort_closeout_20261024_01/bundles/pitch_001/native_analysis_input.json",
+          "sha256": "eacbc7fb6a7a4a68121f5cd4ab1743fcfda95d3c8aef6facaa9f3c52224e349b"
+        },
+        "report_refs": {
+          "pose_reliability.json": {
+            "path": "analysis_results/phase2_active_cohort_closeout_20261024_01/reports/pitch_001/pose_reliability.json",
+            "sha256": "881d03c35bc907c275cf0881e01bc51251d24e7c1756d800ef7d49580f68fb60"
+          },
+          "tracking_reliability.json": {
+            "path": "analysis_results/phase2_active_cohort_closeout_20261024_01/reports/pitch_001/tracking_reliability.json",
+            "sha256": "86a1348a6e7f6ef823df45155de8fca1ba28151d2fa170d1344f358f14c7a06f"
+          },
+          "frame_diagnostics.jsonl": {
+            "path": "analysis_results/phase2_active_cohort_closeout_20261024_01/reports/pitch_001/frame_diagnostics.jsonl",
+            "sha256": "2cf74c4e351874f7c1b97a749d3f514101df5641b3158fd6504d34af0376febd"
+          },
+          "report.md": {
+            "path": "analysis_results/phase2_active_cohort_closeout_20261024_01/reports/pitch_001/report.md",
+            "sha256": "a2953ea5806ce93b1b3a3596f6c971d42f1ac33cafc50dbb93881712dd1ecf70"
+          }
+        }
+      },
+      {
+        "pitch_id": "pitch_002",
+        "source_role": "active",
+        "frames_consumed": 175,
+        "landmark_slots": 2975,
+        "human_overlay_review": "human_accepted",
+        "raw_frame_mismatches": 0,
+        "tracking_mismatches": 0,
+        "derived_point_mismatches": 0,
+        "break_frames": [],
+        "missing_coordinate_slots": 0,
+        "bundle_manifest_ref": {
+          "path": "analysis_results/phase2_active_cohort_closeout_20261024_01/bundles/pitch_002/native_analysis_input.json",
+          "sha256": "36fc2e7111e7714fb61e142cc1d0eba56d2107c724afb0c6cc885f265cdf6f02"
+        },
+        "report_refs": {
+          "pose_reliability.json": {
+            "path": "analysis_results/phase2_active_cohort_closeout_20261024_01/reports/pitch_002/pose_reliability.json",
+            "sha256": "c8540e5cd39e20f5ac8494df999a3f92811e301b911384ef5f853a3a6af1beba"
+          },
+          "tracking_reliability.json": {
+            "path": "analysis_results/phase2_active_cohort_closeout_20261024_01/reports/pitch_002/tracking_reliability.json",
+            "sha256": "5731c07b9f300f2801054800c079ca403900c5cffb7d98feb6b3788b59cc183e"
+          },
+          "frame_diagnostics.jsonl": {
+            "path": "analysis_results/phase2_active_cohort_closeout_20261024_01/reports/pitch_002/frame_diagnostics.jsonl",
+            "sha256": "ce66731ba9b1f307f6fc2588c565b8dd1c4ef6dc341674a5132b94b0ed1c9da8"
+          },
+          "report.md": {
+            "path": "analysis_results/phase2_active_cohort_closeout_20261024_01/reports/pitch_002/report.md",
+            "sha256": "02758eeb96aa0068d4e739a4807e9072fddc5f40b3c98a7afe7bdb3d67942bbd"
+          }
+        }
+      },
+      {
+        "pitch_id": "pitch_004",
+        "source_role": "active",
+        "frames_consumed": 114,
+        "landmark_slots": 1938,
+        "human_overlay_review": "human_accepted",
+        "raw_frame_mismatches": 0,
+        "tracking_mismatches": 0,
+        "derived_point_mismatches": 0,
+        "break_frames": [],
+        "missing_coordinate_slots": 0,
+        "bundle_manifest_ref": {
+          "path": "analysis_results/phase2_active_cohort_closeout_20261024_01/bundles/pitch_004/native_analysis_input.json",
+          "sha256": "a7d653caab370b2a63c7e3dcb3a7111a481b923f7df9fbe95276e26b5e3a660b"
+        },
+        "report_refs": {
+          "pose_reliability.json": {
+            "path": "analysis_results/phase2_active_cohort_closeout_20261024_01/reports/pitch_004/pose_reliability.json",
+            "sha256": "358adf0f7ab988d5f633ed06d0cf25599a633b9ddd87d97cb32165c0da04929c"
+          },
+          "tracking_reliability.json": {
+            "path": "analysis_results/phase2_active_cohort_closeout_20261024_01/reports/pitch_004/tracking_reliability.json",
+            "sha256": "3f6e0831f17c3c6cb40034cab23d2393a5a18c928fe9aef17dc0f92001d9ecbd"
+          },
+          "frame_diagnostics.jsonl": {
+            "path": "analysis_results/phase2_active_cohort_closeout_20261024_01/reports/pitch_004/frame_diagnostics.jsonl",
+            "sha256": "e63ea5bdb3338426d6665d59cd85407a576ef28267904d101464220113d8a636"
+          },
+          "report.md": {
+            "path": "analysis_results/phase2_active_cohort_closeout_20261024_01/reports/pitch_004/report.md",
+            "sha256": "0d6a78501fa333382d43b17b6b9081258c55573f0b7c483d27e05a19ee6530f2"
+          }
+        }
+      },
+      {
+        "pitch_id": "pitch_005",
+        "source_role": "active",
+        "frames_consumed": 101,
+        "landmark_slots": 1717,
+        "human_overlay_review": "human_accepted",
+        "raw_frame_mismatches": 0,
+        "tracking_mismatches": 0,
+        "derived_point_mismatches": 0,
+        "break_frames": [],
+        "missing_coordinate_slots": 0,
+        "bundle_manifest_ref": {
+          "path": "analysis_results/phase2_active_cohort_closeout_20261024_01/bundles/pitch_005/native_analysis_input.json",
+          "sha256": "7188524eb8207194babc8ff8305f9682009eda694b206154b7eaf6be7c601bcf"
+        },
+        "report_refs": {
+          "pose_reliability.json": {
+            "path": "analysis_results/phase2_active_cohort_closeout_20261024_01/reports/pitch_005/pose_reliability.json",
+            "sha256": "ec3955b698f5964fcea31806d5fdf5458a3b444b0793c5ed425307eaa0ead5af"
+          },
+          "tracking_reliability.json": {
+            "path": "analysis_results/phase2_active_cohort_closeout_20261024_01/reports/pitch_005/tracking_reliability.json",
+            "sha256": "ada0c8786b75cce80f1e537e4cd15499391e6a45805c969c2841dc01de1708b0"
+          },
+          "frame_diagnostics.jsonl": {
+            "path": "analysis_results/phase2_active_cohort_closeout_20261024_01/reports/pitch_005/frame_diagnostics.jsonl",
+            "sha256": "59c319e9b014bb04695711dfc01e9f9d29e12795493e696a4f8e07c2d185bd19"
+          },
+          "report.md": {
+            "path": "analysis_results/phase2_active_cohort_closeout_20261024_01/reports/pitch_005/report.md",
+            "sha256": "69c8eaba0321d270f0ae5d90a322e4ab71f0b6488f9751e5d2d17f2ffc825581"
+          }
+        }
+      }
+    ],
+    "excluded_pitch_ids": [
+      "pitch_003"
+    ],
+    "inference_calls": 0
+  },
+  "ohtani": {
+    "accepted_clips": 5,
+    "frames": 1684,
+    "landmark_slots": 28628,
+    "prior_results_ref": {
+      "path": "docs/dataset_selections/native_reliability_20261024.json",
+      "sha256": "d2e23a0c7322a68b3441db1f4e272f2447d89268ab1d21feeaf259a76507f425"
+    },
+    "report_hash_changes": [],
+    "rerun": false
+  },
+  "accepted_active_clips": 9,
+  "frames": 2161,
+  "landmark_slots": 36737,
+  "protected_files": 323,
+  "protected_sha256_changes": [],
+  "new_model_inference_calls": 0,
+  "new_tracking_replays": 0,
+  "new_pointwise_ground_truth_labels": 0,
+  "new_formal_source_replacements": 0,
+  "production_code_changes": 0,
+  "phase2_assisted_skeleton_delivery": "COMPLETE",
+  "phase2_original_acceptance": "NOT_PASSED",
+  "automatic_pointwise_reliability": "NOT_ESTABLISHED",
+  "phase3_started": false,
+  "full_suite": {
+    "rerun": false,
+    "reason": "production and test code unchanged; actual four-clip CLI integration executed",
+    "created_at_utc": "2026-10-23T17:45:32.379229+00:00",
+    "tests_run": 1165,
+    "passed": 1163,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 2,
+    "skipped_reasons": [
+      {
+        "test": "test_dangling_snapshot_file_link_cannot_create_external_target_when_supported (test_handoff_paths.HandoffPathTests.test_dangling_snapshot_file_link_cannot_create_external_target_when_supported)",
+        "reason": "file symlink creation is unavailable"
+      },
+      {
+        "test": "test_source_symlink_outside_candidate_is_rejected_when_supported (test_handoff_review.HandoffReviewTests.test_source_symlink_outside_candidate_is_rejected_when_supported)",
+        "reason": "creating symbolic links is unavailable"
+      }
+    ],
+    "elapsed_seconds": 104.141,
+    "formal_five_video_e2e_enabled": true,
+    "real_detector_calls_in_tests": 0,
+    "real_rtmpose_calls_in_tests": 0,
+    "successful": true,
+    "results_ref": {
+      "path": "analysis_results/phase2_native_reliability_20261024_01/verified_suite/test_results.json",
+      "sha256": "85d4da31c3926420a959bcc9920635dc829633d2e14666246289f1c03957029b"
+    }
+  },
+  "integration_verification": {
+    "new_yamamoto_clips": 4,
+    "raw_frame_mismatches": 0,
+    "tracking_mismatches": 0,
+    "derived_point_mismatches": 0
+  }
+}

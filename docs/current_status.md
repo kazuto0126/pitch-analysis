@@ -1,4 +1,4 @@
-# Current status — Native continuity reports delivered
+# Current status — Active skeleton human review and assisted delivery complete
 
 Updated: 2026-10-24
 
@@ -12,7 +12,39 @@ gates, MediaPipe settings, interpolation and smoothing are unchanged. The approv
 optional subject-region constraint is described below; the default selector remains compatible.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-24 native joint and tracking continuity reports completed
+## 2026-10-24 active Yamamoto review recorded; nine-clip assisted delivery complete
+
+HSU replied「都正確」to the explicit request for active Yamamoto001/002/004/005.
+The independent skeleton-overlay-review-v1 record binds exact video/overlay/native
+SHA, reviewer, recorded UTC and the original response.003remains historical only.
+Original rollout pending fields remain execution snapshots; current acceptance is
+recorded separately in annotations/skeleton_reviews/HSU_20261024/.
+
+Four Yamamoto clips477frames/8109landmark slots ran through the existing actual
+prepare-analysis-input and report-native-reliability CLI, then the loader/raw/track
+comparison. Raw frame/track/derived point mismatches0, geometric track breaks0.
+The previously accepted Ohtani five reports remain byte-identical and were not rerun.
+Together the active nine clips2161frames/36737slots have complete whole-clip human
+acceptance, native data integration and descriptive reporting. Ohtani remains candidate;
+Yamamoto003is not restored and no formal source is replaced.
+
+323protected prior sources/reviews/production/test files SHA unchanged. Production
+and test code changes0; new inference/tracking replay/interpolation/pointwiseGT0.
+No full suite rerun for this data/config/document-only delivery. Latest complete
+suite on identical code remains1163passed/0failed/0errors/2Windows-symlinkskips,
+including formalfiveMediaPipe E2E. Actual four-clip integration completed this round.
+
+**Assisted skeleton delivery COMPLETE; native data integration PASSED.**
+**Original automatic reliability acceptance / Phase2 remains NOT PASSED.**
+Pointwise reliability/visibility remain unknown, usable_for_analysis=null. No new
+acceptance line or annotation requirement. Whole-clip review of the active cohort
+is fully complete; stop after this delivery/commit/push, with no Phase3/new experiment.
+
+Output:`analysis_results/phase2_active_cohort_closeout_20261024_01/`.
+[Scope, acceptance and remaining limitation](phase2_active_cohort_closeout_20261024.md),
+[versioned evidence](dataset_selections/phase2_active_cohort_closeout_20261024.json).
+
+## 2026-10-24 native joint and tracking continuity reports completed (previous)
 
 The user requested continuation. The saved accepted native analysis inputs now
 support `report-native-reliability`: descriptive joint coverage/missing spans,

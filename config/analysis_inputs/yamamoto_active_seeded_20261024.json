@@ -1,0 +1,149 @@
+{
+  "schema_version": "native-analysis-input-cohort-v1",
+  "scope": "phase2_saved_active_yamamoto_only",
+  "pitcher_id": "yoshinobu_yamamoto",
+  "status": "human_overlay_accepted_4_of_4_active",
+  "source_frames": 477,
+  "sources": [
+    {
+      "pitch_id": "pitch_001",
+      "frame_count": 87,
+      "role": "active",
+      "native_dir": "analysis_results/phase2_yamamoto_seeded_skeleton_20261023_01/pitch_001/rtmpose/pitch_001",
+      "video_ref": {
+        "path": "input/yoshinobu_yamamoto/phase1_final/pitch_001.mp4",
+        "sha256": "7c9fe20e39c1b5358aa8e13b739222aebb6bf3ebfadf3569ccb3042c64f10190"
+      },
+      "overlay_ref": {
+        "path": "analysis_results/phase2_yamamoto_seeded_skeleton_20261023_01/pitch_001/rtmpose/pitch_001/overlay_native.mp4",
+        "sha256": "12f87f68b7b9118565a8fdd04a899a12cb6c457a0b58ea8dab39de9b101d3157"
+      },
+      "native_manifest_ref": {
+        "path": "analysis_results/phase2_yamamoto_seeded_skeleton_20261023_01/pitch_001/rtmpose/pitch_001/native_pose_manifest.json",
+        "sha256": "2450ad3819b710c49c1bb6433f58f85f0e3bf429b0687cfd8765087c0d998459"
+      },
+      "native_keypoints_ref": {
+        "path": "analysis_results/phase2_yamamoto_seeded_skeleton_20261023_01/pitch_001/rtmpose/pitch_001/native_keypoints.jsonl",
+        "sha256": "7421a0d5c11f9ea0d8f2b00238cad06d9c190581d895f3d61f13fc94dbab8139"
+      },
+      "metadata_ref": {
+        "path": "input/yoshinobu_yamamoto/phase1_final/pitch_001.json",
+        "sha256": "1b50d630f777d9897fed8c579ac60ff830a666e63452dafca2ce92649634549c"
+      },
+      "track_ref": {
+        "path": "analysis_results/phase2_yamamoto_seeded_skeleton_20261023_01/pitch_001/subject_track.jsonl",
+        "sha256": "f6b2c9dd20a55c0abefd3586246c0d22523860169d6600d1ba9dc274cd19c29e"
+      },
+      "review_ref": {
+        "path": "annotations/skeleton_reviews/HSU_20261024/yamamoto_active_skeleton_acceptance.json",
+        "sha256": "444d0dff1916200c7010bae82ff24c6911f4ee89f59164e69c55e0906d58699a"
+      }
+    },
+    {
+      "pitch_id": "pitch_002",
+      "frame_count": 175,
+      "role": "active",
+      "native_dir": "analysis_results/phase2_yamamoto_seeded_skeleton_20261023_01/pitch_002/rtmpose/pitch_002",
+      "video_ref": {
+        "path": "input/yoshinobu_yamamoto/phase1_final/pitch_002.mp4",
+        "sha256": "b38258e682370349d085d0b43683f183afc632f682dc85b758604c9d1489f01a"
+      },
+      "overlay_ref": {
+        "path": "analysis_results/phase2_yamamoto_seeded_skeleton_20261023_01/pitch_002/rtmpose/pitch_002/overlay_native.mp4",
+        "sha256": "94baa41dd3632695970e42e31560b80ca79a08c6a56dbd9afeb32c66483cead5"
+      },
+      "native_manifest_ref": {
+        "path": "analysis_results/phase2_yamamoto_seeded_skeleton_20261023_01/pitch_002/rtmpose/pitch_002/native_pose_manifest.json",
+        "sha256": "96cd51d34e8adb156cd871898301e972917c535f2f5641a3151c4d6daf5efbfa"
+      },
+      "native_keypoints_ref": {
+        "path": "analysis_results/phase2_yamamoto_seeded_skeleton_20261023_01/pitch_002/rtmpose/pitch_002/native_keypoints.jsonl",
+        "sha256": "703f6dbd12ee98fedc7fb3abfa365b2c33cf203a32d4931ccacd9293f3300859"
+      },
+      "metadata_ref": {
+        "path": "input/yoshinobu_yamamoto/phase1_final/pitch_002.json",
+        "sha256": "10f453ac9733523b6a703f996411f112922b7ec25dd0766c6a88f32f23cda14d"
+      },
+      "track_ref": {
+        "path": "analysis_results/phase2_yamamoto_seeded_skeleton_20261023_01/pitch_002/subject_track.jsonl",
+        "sha256": "0c264cbfb2677f3fed6606c81f4747e5b11e79393f109ea76538fef381232cb5"
+      },
+      "review_ref": {
+        "path": "annotations/skeleton_reviews/HSU_20261024/yamamoto_active_skeleton_acceptance.json",
+        "sha256": "444d0dff1916200c7010bae82ff24c6911f4ee89f59164e69c55e0906d58699a"
+      }
+    },
+    {
+      "pitch_id": "pitch_004",
+      "frame_count": 114,
+      "role": "active",
+      "native_dir": "analysis_results/phase2_yamamoto_seeded_skeleton_20261023_01/pitch_004/rtmpose/pitch_004",
+      "video_ref": {
+        "path": "input/yoshinobu_yamamoto/phase1_final/pitch_004.mp4",
+        "sha256": "e5a57bfc2e0746bb19af2a073d94abb7265d8dfb9ad37de06cee1de29f63d11a"
+      },
+      "overlay_ref": {
+        "path": "analysis_results/phase2_yamamoto_seeded_skeleton_20261023_01/pitch_004/rtmpose/pitch_004/overlay_native.mp4",
+        "sha256": "055d6197750e3f56768f5befdf1cea7bb47d3a20dae375eda1229ce407718998"
+      },
+      "native_manifest_ref": {
+        "path": "analysis_results/phase2_yamamoto_seeded_skeleton_20261023_01/pitch_004/rtmpose/pitch_004/native_pose_manifest.json",
+        "sha256": "ae1ad256a0d240862000520675f5c5215c3bd212a72ff119049a3e66ee6f442e"
+      },
+      "native_keypoints_ref": {
+        "path": "analysis_results/phase2_yamamoto_seeded_skeleton_20261023_01/pitch_004/rtmpose/pitch_004/native_keypoints.jsonl",
+        "sha256": "ed93d307ab651f4d3f584e42e975974c3584c234df9d24542b6e0c98dd0d8a78"
+      },
+      "metadata_ref": {
+        "path": "input/yoshinobu_yamamoto/phase1_final/pitch_004.json",
+        "sha256": "3804edec77d79590f949e8b5d9e9ba17a91341a4cf00672d2053d479a064c8ec"
+      },
+      "track_ref": {
+        "path": "analysis_results/phase2_yamamoto_seeded_skeleton_20261023_01/pitch_004/subject_track.jsonl",
+        "sha256": "58f2398d48ca3768a28ba9c44a0c008bea5a4dc4fb3d097107a95aa9ce68ec6f"
+      },
+      "review_ref": {
+        "path": "annotations/skeleton_reviews/HSU_20261024/yamamoto_active_skeleton_acceptance.json",
+        "sha256": "444d0dff1916200c7010bae82ff24c6911f4ee89f59164e69c55e0906d58699a"
+      }
+    },
+    {
+      "pitch_id": "pitch_005",
+      "frame_count": 101,
+      "role": "active",
+      "native_dir": "analysis_results/phase2_yamamoto_seeded_skeleton_20261023_01/pitch_005/rtmpose/pitch_005",
+      "video_ref": {
+        "path": "input/yoshinobu_yamamoto/phase1_final/pitch_005.mp4",
+        "sha256": "e289cb1159e5863583f85915214123d6afe03baa6f32ac6040040878093c873b"
+      },
+      "overlay_ref": {
+        "path": "analysis_results/phase2_yamamoto_seeded_skeleton_20261023_01/pitch_005/rtmpose/pitch_005/overlay_native.mp4",
+        "sha256": "85871e0279394d7cd842d1abfc0111e3ea3a965ec708b29d068251313f3fcff3"
+      },
+      "native_manifest_ref": {
+        "path": "analysis_results/phase2_yamamoto_seeded_skeleton_20261023_01/pitch_005/rtmpose/pitch_005/native_pose_manifest.json",
+        "sha256": "da3c4fa786634a601c1a8d039c4f0543bfb4c8ede229c60666355f9c1dfeed13"
+      },
+      "native_keypoints_ref": {
+        "path": "analysis_results/phase2_yamamoto_seeded_skeleton_20261023_01/pitch_005/rtmpose/pitch_005/native_keypoints.jsonl",
+        "sha256": "75815edde3e732c9e77e46f887e7666fed3e4a92640c33dd5d22fa13867e92b1"
+      },
+      "metadata_ref": {
+        "path": "input/yoshinobu_yamamoto/phase1_final/pitch_005.json",
+        "sha256": "a9e9db2ccfe522159e8b771261403c31acbd7f218aadf5063fe32fc0bd89dba4"
+      },
+      "track_ref": {
+        "path": "analysis_results/phase2_yamamoto_seeded_skeleton_20261023_01/pitch_005/subject_track.jsonl",
+        "sha256": "f9a98692e3db84a79a066f475645d348b242607ea67db51bf908aba631eea91b"
+      },
+      "review_ref": {
+        "path": "annotations/skeleton_reviews/HSU_20261024/yamamoto_active_skeleton_acceptance.json",
+        "sha256": "444d0dff1916200c7010bae82ff24c6911f4ee89f59164e69c55e0906d58699a"
+      }
+    }
+  ],
+  "excluded_pitch_ids": [
+    "pitch_003"
+  ],
+  "output_root": "analysis_results/phase2_active_cohort_closeout_20261024_01/bundles"
+}

@@ -6,7 +6,13 @@
 本次收尾摘要見 [STATUS](docs/STATUS.md)；外部專案供片需求見
 [INPUT_REQUIREMENTS](docs/INPUT_REQUIREMENTS.md)。
 
-2026-10-24 最新：[原生逐關節與追蹤連續性報告已完成](docs/native_reliability_results_20261024.md)。
+2026-10-24 最新：[啟用九片人工覆核與資料交付已收尾](docs/phase2_active_cohort_closeout_20261024.md)。
+HSU已接受山本001／002／004／005的新骨架；四片477格的資料入口與描述報告補齊，未重跑模型。
+連同大谷五片，九片2161格皆已人工接受並完成接入。003保持歷史對照。
+本輪無產品／測試碼變更；同程式碼最近完整suite1163 passed／0 failed／2 skipped。
+人工輔助交付COMPLETE；原自動可靠性驗收仍NOT PASSED，未進Phase3。
+
+前段：[原生逐關節與追蹤連續性報告已完成](docs/native_reliability_results_20261024.md)。
 新增`report-native-reliability`，從已接受的資料入口產生17點缺值／相鄰位移、左右影像順序、
 人物框及雙髖／軀幹連續性，附完整格號／時間，可直接回看overlay。
 大谷五球1684格／28628關節影格報告已生成，原資料差異0、推論0。

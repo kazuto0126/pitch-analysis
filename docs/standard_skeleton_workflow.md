@@ -79,3 +79,7 @@ HSU隨後確認「可以都正確」，加上002，五球overlay人工接受已�
 已建立的原生資料入口可再執行`report-native-reliability`，輸出逐關節缺值區段、
 相鄰位移格號及人物框／雙髖／軀幹連續性描述。沒有新模型或品質門檻；
 詳見[計算定義與使用方式](native_reliability.md)。
+
+山本啟用001／002／004／005亦已獲HSU整片接受，原生入口／報告已完成。
+四片接入設定為`config/analysis_inputs/yamamoto_active_seeded_20261024.json`；
+003維持歷史對照。兩投手啟用九片的最新狀態見[本輪收尾](phase2_active_cohort_closeout_20261024.md)。

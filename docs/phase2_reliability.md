@@ -1,5 +1,12 @@
 # Phase 2 — Pitcher tracking and pose reliability
 
+2026-10-24 latest human review: HSU accepted active Yamamoto001/002/004/005.
+Four477frame native inputs/reports are complete;003remains historical only.
+Together with Ohtani5/5, all nine active skeleton overlays are human-accepted and
+have saved native data access/descriptive reports. Assisted delivery COMPLETE;
+original automatic reliability acceptance remains NOT PASSED. See
+[current closeout](phase2_active_cohort_closeout_20261024.md).
+
 2026-10-24 latest: `report-native-reliability` adds descriptive adjacent-joint,
 image-order, person-box/hip-center/torso-scale continuity for accepted native17
 analysis inputs. Five Ohtani clips/1684frames/28628landmark slots were reported

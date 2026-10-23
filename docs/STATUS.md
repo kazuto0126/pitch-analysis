@@ -1,10 +1,28 @@
 # 進度摘要
 
-更新：2026-10-24（台灣）。[完整狀態](current_status.md)；[最新原生連續性報告](native_reliability_results_20261024.md)。
+更新：2026-10-24（台灣）。[完整狀態](current_status.md)；[啟用集合人工覆核收尾](phase2_active_cohort_closeout_20261024.md)。
 
 **Phase 1 = PASSED；Native interface integration = PASSED；Phase 2 自動可靠性仍 NOT PASSED。**
 
-## 最新：原生逐關節與追蹤連續性報告完成
+## 最新：山本四片接受完成，啟用九片人工輔助交付收尾
+
+HSU回覆「都正確」，已保存山本001／002／004／005四片的原話、reviewer、時間及來源SHA。
+四片477格／8109點的原生資料入口與報告皆由既有CLI建立並經loader逐格核對，差異0、break0。
+003保持歷史對照；原rollout pending快照不覆寫，最新狀態以新獨立接受紀錄為準。
+
+連同大谷先前五片，**啟用九片2161格／36737點皆已完成人工整片接受、資料接入與描述報告**。
+大谷報告沿用，沒有重跑；323份保護來源／程式／測試SHA不變。
+本輪新增模型推論、tracking replay、插值、逐點GT與正式素材替換皆0。
+
+本輪無產品／測試碼修改，不重跑suite；相同程式碼前輪完整結果：
+**1163 passed／0 failed／2 skipped**，含正式五球E2E。
+**Phase2人工輔助骨架交付 = COMPLETE；原自動可靠性／Phase2總驗收 = NOT PASSED。**
+逐點可靠性／可見性仍unknown、usable_for_analysis=null；沒有新分類器、通過線或Phase3。
+啟用集合的整片人工覆核已全部完成，本輪commit／push後停止。
+[接受紀錄與輸出位置](phase2_active_cohort_closeout_20261024.md)、
+[版本化證據](dataset_selections/phase2_active_cohort_closeout_20261024.json)。
+
+## 前段：原生逐關節與追蹤連續性報告完成
 
 新增`report-native-reliability`，直接讀取已接受的原生資料入口，補齊17點相鄰位移、
 缺值區段、左右影像順序，以及人物框／雙髖中心／軀幹尺度連續性。
