@@ -1,0 +1,28 @@
+{
+  "schema_version": "native-subject-seed-v1",
+  "status": "operator_confirmed",
+  "ground_truth": false,
+  "pitch_id": "supplement_003",
+  "frame_index": 0,
+  "display_number": 1,
+  "selected_output_index": 0,
+  "selected_bbox_xyxy_px": [
+    415.14263916015625,
+    291.79229736328125,
+    490.52410888671875,
+    585.732421875
+  ],
+  "source_video_ref": {
+    "path": "input/shohei_ohtani/phase2_supplement_20261020_01/supplement_003.mp4",
+    "sha256": "97a45985648af1cf20ed48bda6ce5454fe509609114ac28d8a5deb632621e8ae"
+  },
+  "saved_detection_ref": {
+    "path": "analysis_results/phase2_ohtani_skeleton_preparation_20261023_01/supplement_003/first_frame_candidates.json",
+    "sha256": "1fc55af4bdb15025889ebe35e631ce180ee9772652d06b4ba608181990677804"
+  },
+  "decoded_bgr_sha256": "6fb04ac06d3b93b0e6bd4a2fdeff1fb5f702cd128f9557f429c2637fd7d5b0ea",
+  "reviewer": "HSU",
+  "reviewed_at_utc": "2026-10-23T07:40:45.149987+00:00",
+  "user_reply": "四球框號都正確，繼續",
+  "scope": "First-frame subject operation only; not full-video or pointwise ground truth"
+}

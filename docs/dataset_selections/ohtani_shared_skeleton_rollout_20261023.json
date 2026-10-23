@@ -1,0 +1,367 @@
+{
+  "schema_version": "ohtani-shared-skeleton-rollout-v1",
+  "date_local": "2026-10-23",
+  "method_status": "ADOPTED_BY_HSU",
+  "config_ref": {
+    "path": "config/pilots/ohtani_seeded_skeleton_20261023.json",
+    "sha256": "29deb9c69b9eaf164a97e6a8225bbc6acc497991c622e9cef484b77a970cf54d"
+  },
+  "runtime_config_ref": {
+    "path": "config/seeded_skeleton_runtime.json",
+    "sha256": "842ede08119844684dbee3b49e3978af85e777f87b7cb785ba2a63209927ca80"
+  },
+  "implementation_refs": [
+    {
+      "path": "src/pitch_analysis/native_skeleton_prepare.py",
+      "sha256": "d6f13af7d88c6b6c7efad35a381b4a9997b744ee8ebaf4c61d6814aa0045a794"
+    },
+    {
+      "path": "src/pitch_analysis/seeded_skeleton.py",
+      "sha256": "065aaa3d84f82995956f589933c262d28d44a104bb079f12538612e25139f594"
+    },
+    {
+      "path": "src/pitch_analysis/native_seeded_track.py",
+      "sha256": "70361da4137f7b225ebaee65f8a73e2bf380927353b0309a02aa03118d4d6eaf"
+    },
+    {
+      "path": "src/pitch_analysis/native_person_boxes.py",
+      "sha256": "99973836ce11deb8364eb91db91af50b0bd8020333d73061590a05c675c17e4e"
+    },
+    {
+      "path": "src/pitch_analysis/native_person_box_transport.py",
+      "sha256": "325b2901ee3245ea36e876c3986962df25e7ac13ab25fb3784225b72b5cb0945"
+    },
+    {
+      "path": "src/pitch_analysis/native_pose_estimator.py",
+      "sha256": "534c7ba81adaee5044a816e3eec5958787d225cc37d508e6fc3e7555d3689a49"
+    },
+    {
+      "path": "src/pitch_analysis/native_pose_transport.py",
+      "sha256": "b1cbb163e96bcd858da14c61ae5b06acd4a096cc798403551f1ee5ab98010a8d"
+    },
+    {
+      "path": "src/pitch_analysis/native_progress_log.py",
+      "sha256": "c6c0c7993ec8f9abb8ddf34fc64198b542aaad0f109529471135206919769717"
+    },
+    {
+      "path": "src/pitch_analysis/cli.py",
+      "sha256": "c44ad98fcb6fb67b15016038beaf61d8e134cd1ac76cba4e7b71f3f47e0a8be4"
+    }
+  ],
+  "clips": [
+    {
+      "pitch_id": "supplement_001",
+      "role": "candidate",
+      "total_frames": 335,
+      "remaining_detector_calls": 334,
+      "pose_calls": 335,
+      "firstframe_detector_calls": 1,
+      "track_status_counts": {
+        "seeded": 1,
+        "linked": 334
+      },
+      "first_break_frame": null,
+      "missing_frames": [],
+      "worker_payloads_verified": 669,
+      "source_sha256_changes": [],
+      "overlay_ref": {
+        "path": "analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/supplement_001/rtmpose/supplement_001/overlay_native.mp4",
+        "sha256": "3c0ffef0dc8f8c4f1e072a5ba05338abce77fd11046cf7fd099fcada2f1fac81"
+      },
+      "run_receipt_ref": {
+        "path": "analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/supplement_001/run_receipt.json",
+        "sha256": "689effbf31cf3a66eb5c6efed1dcaeb56b0b1354927badaa8952c1db874ee30c"
+      },
+      "viewing_source_ref": {
+        "path": "analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/viewing_sources/supplement_001.mp4",
+        "sha256": "90a6acec9865c634bd019503d46c147647fa78df9a2827e1143c74abb852111a"
+      },
+      "display_crop_xyxy_px": [
+        192,
+        216,
+        768,
+        720
+      ],
+      "sampled_frames": [
+        0,
+        48,
+        95,
+        143,
+        191,
+        239,
+        286,
+        334
+      ],
+      "contact_sheets": [
+        "visual_review/supplement_001_comparison_01.jpg",
+        "visual_review/supplement_001_comparison_02.jpg",
+        "visual_review/supplement_001_comparison_03.jpg"
+      ],
+      "agent_inspection": "completed_source_old_new_samples",
+      "human_overlay_review": "pending",
+      "quality_status": "not_calibrated",
+      "usable_for_analysis": null,
+      "agent_inspection_notes": "Inspected8source/prior/new samples. New skeleton stays near pitcher; arm/raised-hand alignment at239/286 differs from prior static-crop pose. Hidden-joint accuracy unverified."
+    },
+    {
+      "pitch_id": "supplement_003",
+      "role": "candidate",
+      "total_frames": 369,
+      "remaining_detector_calls": 368,
+      "pose_calls": 369,
+      "firstframe_detector_calls": 1,
+      "track_status_counts": {
+        "seeded": 1,
+        "linked": 368
+      },
+      "first_break_frame": null,
+      "missing_frames": [],
+      "worker_payloads_verified": 737,
+      "source_sha256_changes": [],
+      "overlay_ref": {
+        "path": "analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/supplement_003/rtmpose/supplement_003/overlay_native.mp4",
+        "sha256": "bb080e2e454dc9987ec5c90f2db83ce97f56f11579221012911fdb4b322ff963"
+      },
+      "run_receipt_ref": {
+        "path": "analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/supplement_003/run_receipt.json",
+        "sha256": "88d6eabcdb841095ddcf001bca58fda676628d972fb6f16209bd75ac0d5856ee"
+      },
+      "viewing_source_ref": {
+        "path": "analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/viewing_sources/supplement_003.mp4",
+        "sha256": "97a45985648af1cf20ed48bda6ce5454fe509609114ac28d8a5deb632621e8ae"
+      },
+      "display_crop_xyxy_px": [
+        192,
+        216,
+        768,
+        720
+      ],
+      "sampled_frames": [
+        0,
+        53,
+        105,
+        158,
+        185,
+        210,
+        263,
+        315,
+        368
+      ],
+      "contact_sheets": [
+        "visual_review/supplement_003_comparison_01.jpg",
+        "visual_review/supplement_003_comparison_02.jpg",
+        "visual_review/supplement_003_comparison_03.jpg"
+      ],
+      "agent_inspection": "completed_source_old_new_samples",
+      "human_overlay_review": "pending",
+      "quality_status": "not_calibrated",
+      "usable_for_analysis": null,
+      "agent_inspection_notes": "Inspected9samples including158/185. Prior158arm extension toward background is reduced. Sampled tail remains near pitcher with another player crossing foreground at315/368. No pointwise human accuracy labels added."
+    },
+    {
+      "pitch_id": "supplement_004",
+      "role": "candidate",
+      "total_frames": 338,
+      "remaining_detector_calls": 337,
+      "pose_calls": 338,
+      "firstframe_detector_calls": 1,
+      "track_status_counts": {
+        "seeded": 1,
+        "linked": 337
+      },
+      "first_break_frame": null,
+      "missing_frames": [],
+      "worker_payloads_verified": 675,
+      "source_sha256_changes": [],
+      "overlay_ref": {
+        "path": "analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/supplement_004/rtmpose/supplement_004/overlay_native.mp4",
+        "sha256": "45cce1ef66b837f561ac49c5b08936b7528a7162ed2915d485f3451062679c30"
+      },
+      "run_receipt_ref": {
+        "path": "analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/supplement_004/run_receipt.json",
+        "sha256": "635a17d2984e7bb8a083bfa9761f16f97591d786fbe61a3e3a25c40aa656042a"
+      },
+      "viewing_source_ref": {
+        "path": "analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/viewing_sources/supplement_004.mp4",
+        "sha256": "76945ebff5dc300ee0fc7084a0e21370137ee9d91ad61cdca52ccab0e4ee9054"
+      },
+      "display_crop_xyxy_px": [
+        192,
+        216,
+        768,
+        720
+      ],
+      "sampled_frames": [
+        0,
+        48,
+        96,
+        144,
+        169,
+        193,
+        241,
+        289,
+        337
+      ],
+      "contact_sheets": [
+        "visual_review/supplement_004_comparison_01.jpg",
+        "visual_review/supplement_004_comparison_02.jpg",
+        "visual_review/supplement_004_comparison_03.jpg"
+      ],
+      "agent_inspection": "completed_source_old_new_samples",
+      "human_overlay_review": "pending",
+      "quality_status": "not_calibrated",
+      "usable_for_analysis": null,
+      "agent_inspection_notes": "Inspected9samples including169. New skeleton remains near pitcher through sampled delivery and tail; glove-arm alignment at144 is closer to visible glove. Occluded arm coordinates remain estimates."
+    },
+    {
+      "pitch_id": "supplement_005",
+      "role": "candidate",
+      "total_frames": 321,
+      "remaining_detector_calls": 320,
+      "pose_calls": 321,
+      "firstframe_detector_calls": 1,
+      "track_status_counts": {
+        "seeded": 1,
+        "linked": 320
+      },
+      "first_break_frame": null,
+      "missing_frames": [],
+      "worker_payloads_verified": 641,
+      "source_sha256_changes": [],
+      "overlay_ref": {
+        "path": "analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/supplement_005/rtmpose/supplement_005/overlay_native.mp4",
+        "sha256": "98c25011ef83d9fdd4d14253e4b9ffbbb8f35ad4f81ed1cb866090a8b7bd5a8a"
+      },
+      "run_receipt_ref": {
+        "path": "analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/supplement_005/run_receipt.json",
+        "sha256": "e98bc8d3298dfce6af857f12444945b533152be1789a2714010e656092ac7d6f"
+      },
+      "viewing_source_ref": {
+        "path": "analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/viewing_sources/supplement_005.mp4",
+        "sha256": "1c67c058d4376ecf94a138eb08e3251eb601a365a7e8a55e251e1c136ae5d95f"
+      },
+      "display_crop_xyxy_px": [
+        192,
+        216,
+        768,
+        720
+      ],
+      "sampled_frames": [
+        0,
+        46,
+        91,
+        128,
+        137,
+        183,
+        229,
+        274,
+        320
+      ],
+      "contact_sheets": [
+        "visual_review/supplement_005_comparison_01.jpg",
+        "visual_review/supplement_005_comparison_02.jpg",
+        "visual_review/supplement_005_comparison_03.jpg"
+      ],
+      "agent_inspection": "completed_source_old_new_samples",
+      "human_overlay_review": "pending",
+      "quality_status": "not_calibrated",
+      "usable_for_analysis": null,
+      "agent_inspection_notes": "Inspected9samples including128. Prior128mixed skeleton reaching toward batter is reduced; new skeleton stays near pitcher. No new human acceptance of whole video or hidden-joint accuracy is inferred."
+    }
+  ],
+  "kept_accepted_clip": {
+    "pitch_id": "supplement_002",
+    "frame_count": 321,
+    "state": "accepted_by_HSU_retained_without_rerun",
+    "new_detector_calls": 0,
+    "new_pose_calls": 0,
+    "video_ref": {
+      "path": "input/shohei_ohtani/phase2_supplement_20261020_01/supplement_002.mp4",
+      "sha256": "b1586bdde9383e3b247bcc7d7974a3f15b0fed173848926d5217f261b87bab8e"
+    },
+    "overlay_ref": {
+      "path": "analysis_results/phase2_seeded_resume_native_20261023_01/rtmpose/supplement_002/overlay_native.mp4",
+      "sha256": "9713f1053f3ea68df9a3b960806f86a448dc213a0389f404f8288b870c5e31f8"
+    },
+    "native_manifest_ref": {
+      "path": "analysis_results/phase2_seeded_resume_native_20261023_01/rtmpose/supplement_002/native_pose_manifest.json",
+      "sha256": "7d1166a676c0d80a9e26790fc73361c1e7223d5af1f37f9e9bc968c635f3e621"
+    },
+    "native_keypoints_ref": {
+      "path": "analysis_results/phase2_seeded_resume_native_20261023_01/rtmpose/supplement_002/native_keypoints.jsonl",
+      "sha256": "bedabb9c7d192343306cab7b47088bb5c97200ead4a99098960f25bce914e747"
+    },
+    "review_ref": {
+      "path": "annotations/skeleton_reviews/HSU_20261023/ohtani_supplement_002.json",
+      "sha256": "6894a7be22e7be1e39530e8cb1bebdbcf01fd42eecdf00a64ac6f456dc123145"
+    }
+  },
+  "source_frames": 1363,
+  "cohort_frames_including_retained": 1684,
+  "firstframe_detector_calls": 4,
+  "remaining_detector_calls": 1359,
+  "new_pose_calls": 1363,
+  "geometric_track_breaks": 0,
+  "whole_frame_missing": 0,
+  "preservation": {
+    "protected_files": 2052,
+    "sha256_changes": [],
+    "payloads_verified": 2722,
+    "new_inference_by_export": 0,
+    "accepted002_sha256_verified": true,
+    "successful": true
+  },
+  "agent_comparison_frames_inspected": 35,
+  "agent_contact_sheets_inspected": 12,
+  "tests": {
+    "run_this_rollout": false,
+    "production_code_changed": false,
+    "reason": "Only run configuration, human seed records and documentation changed; no production/test code changes.",
+    "latest_full_suite_same_production_code": {
+      "created_at_utc": "2026-10-23T07:17:24.752037+00:00",
+      "tests_run": 1141,
+      "passed": 1139,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 2,
+      "skipped_reasons": [
+        {
+          "test": "test_dangling_snapshot_file_link_cannot_create_external_target_when_supported (test_handoff_paths.HandoffPathTests.test_dangling_snapshot_file_link_cannot_create_external_target_when_supported)",
+          "reason": "file symlink creation is unavailable"
+        },
+        {
+          "test": "test_source_symlink_outside_candidate_is_rejected_when_supported (test_handoff_review.HandoffReviewTests.test_source_symlink_outside_candidate_is_rejected_when_supported)",
+          "reason": "creating symbolic links is unavailable"
+        }
+      ],
+      "elapsed_seconds": 98.391,
+      "formal_five_video_e2e_enabled": true,
+      "real_detector_calls_in_tests": 0,
+      "real_rtmpose_calls_in_tests": 0,
+      "successful": true
+    },
+    "result_ref": {
+      "path": "analysis_results/phase2_skeleton_standard_20261023_01/test_results.json",
+      "sha256": "0708e86e97268f9dbd1aaa9771340a5093db0a1ee1c91cf003aba5f04276f5ef"
+    }
+  },
+  "new_ground_truth_labels": 0,
+  "formal_source_replacements": 0,
+  "phase3_started": false,
+  "phase2_automatic_reliability": "NOT_PASSED",
+  "output_root": "analysis_results/phase2_ohtani_seeded_skeleton_20261023_01",
+  "output_refs": [
+    {
+      "path": "analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/cohort_summary.json",
+      "sha256": "aa42c9ab84d6269c1036f950e666a03f8f956750aa2bad05e3c233157dd5b7d0"
+    },
+    {
+      "path": "analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/preservation_check.json",
+      "sha256": "d0ff7001ea36acd22959d79a425c710803f87aa21bae44bbee84b9e1e6d2698e"
+    },
+    {
+      "path": "analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/review_all.html",
+      "sha256": "f25c00e2f71fd92310ec216032068d0f7736ecfbc33caefa6e3abca9a5c29749"
+    }
+  ]
+}

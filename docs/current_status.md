@@ -1,4 +1,4 @@
-# Current status — Shared skeleton method adopted; Yamamoto rollout complete
+# Current status — Shared skeleton rollout completed for Ohtani five-clip cohort
 
 Updated: 2026-10-23
 
@@ -12,7 +12,41 @@ gates, MediaPipe settings, interpolation and smoothing are unchanged. The approv
 optional subject-region constraint is described below; the default selector remains compatible.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-23 shared skeleton standard adopted and applied to Yamamoto
+## 2026-10-23 Ohtani shared skeleton cohort completed
+
+Following HSU's authorization to retain this method, the remaining Ohtani supplement
+clips001/003/004/005 were processed once with the existing common entry. HSU confirmed
+frame0 display choices1/1/1/2; four source-bound seed records are saved in
+`config/subject_seeds/ohtani_20261023/`. The005highest-score box is the catcher;
+the confirmed2nd box selects the pitcher. Candidate status is retained.
+
+Frame counts335/369/338/321 total1363. First-frame detections4 were reused,
+remaining detector calls1359, pose1363. All four outputs include complete native17
+datasets and overlays; whole-frame missing0, geometric track breaks0. Accepted002
+retains its original321frame result with0new calls, giving1684cohort frames.
+Inference finished while the conversation was interrupted; continuation only
+exported and inspected existing results, without repeated inference or tuning.
+
+Viewed12comparison sheets/35source-prior-new frame triples. The prior005/128mixed
+skeleton reaching the batter and003/158arm extension toward background are reduced;
+sampled skeletons remain near the pitcher. This is agent sampling; four new clips'
+whole-video human acceptance remains pending. No new per-point GT or event labels.
+
+2052protected source SHA unchanged;2722new journal/binary payloads verified. Complete
+source pixels and rational timestamps were checked against saved frame records;
+all source/old/new overlays decode to their full counts. Production code, model,
+tracking policy, thresholds, gates, original predictions and human GT are unchanged.
+No full suite rerun for this configuration/data-only rollout; the latest complete
+suite on the same production code remains1139passed/0failed/2Windows-symlinkskips.
+
+Output:`analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/`;open`review_all.html`.
+[Report](ohtani_shared_skeleton_rollout_20261023.md),
+[versioned results](dataset_selections/ohtani_shared_skeleton_rollout_20261023.json).
+Next is HSU's whole-video review of the four new overlays and clip-level acceptance
+or reported problem spans. Phase2 automatic reliability remains NOT PASSED;
+no formal source promotion, GT changes, new model or Phase3 has started.
+
+## 2026-10-23 shared skeleton standard adopted and applied to Yamamoto (previous)
 
 After delivery HSU explicitly reaffirmed this as the most successful method so far
 and authorized its continued use for future pitchers. New skeleton work therefore

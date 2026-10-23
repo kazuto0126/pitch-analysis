@@ -1,10 +1,29 @@
 # 進度摘要
 
-更新：2026-10-23（台灣）。[完整狀態](current_status.md)；[最新共用骨架結果](standard_skeleton_rollout_20261023.md)。
+更新：2026-10-23（台灣）。[完整狀態](current_status.md)；[最新大谷五球骨架](ohtani_shared_skeleton_rollout_20261023.md)。
 
 **Phase 1 = PASSED；Native interface integration = PASSED；Phase 2 自動可靠性仍 NOT PASSED。**
 
-## 最新：共用骨架標準採用，山本五片完成
+## 最新：大谷五球共用骨架已補齊
+
+依HSU「後續投手沿用」授權，已將同批大谷001／003／004／005套用已採用流程。
+HSU確認起始框001＝1號、003＝1號、004＝1號、005＝2號；四片各跑一次，
+335／369／338／321格共1363格。4次首格＋1359次其餘人物偵測、1363次pose，
+整格missing0、幾何track break0；002沿用已接受321格結果，本輪0次重跑。
+對話中斷期間模型已全部完成，恢復後僅補輸出及檢查，沒有重複推論。
+
+已實看12張比較圖、35組原片／舊／新骨架：005第128格舊骨架混到打者、
+003第158格舊手臂伸向背景的問題有可見改善，取樣骨架留在投手附近。
+完整五球overlay及原片已整理在`analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/review_all.html`。
+2052個保護來源SHA不變，2722份新worker binary核對；原GT、山本素材與所有舊結果保留。
+
+本輪只新增設定／4份人工seed／文件，沒有修改產品碼或測試，未重跑完整suite；
+相同程式碼最新完整測試仍為1139 passed／0 failed／2 skipped（前輪結果）。
+大谷四片新結果的全片人工接受待HSU確認；下一步觀看四支overlay並記錄影片層接受或問題區段。
+有座標不等於遮擋點精確，**Phase2自動可靠性仍NOT PASSED**，未進Phase3。
+[結果](ohtani_shared_skeleton_rollout_20261023.md)、[版本化證據](dataset_selections/ohtani_shared_skeleton_rollout_20261023.json)。
+
+## 前段：共用骨架標準採用，山本五片完成
 
 HSU在新結果交付後再次確認這是目前最成功的方法，授權後續投手沿用。
 後續新骨架固定使用本共用流程，每片確認初始投手；確認原話與來源另存獨立方法授權紀錄。
