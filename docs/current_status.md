@@ -1,6 +1,6 @@
-# Current status — Native analysis input integrated; bounded Phase2 delivery complete
+# Current status — Native continuity reports delivered
 
-Updated: 2026-10-23
+Updated: 2026-10-24
 
 **Phase 1 = PASSED.**
 **Native interface integration = PASSED (cached compatibility and optional live COCO17 entry).**
@@ -12,7 +12,36 @@ gates, MediaPipe settings, interpolation and smoothing are unchanged. The approv
 optional subject-region constraint is described below; the default selector remains compatible.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-23 native skeleton analysis-input delivery completed
+## 2026-10-24 native joint and tracking continuity reports completed
+
+The user requested continuation. The saved accepted native analysis inputs now
+support `report-native-reliability`: descriptive joint coverage/missing spans,
+adjacent displacement and image-order changes, paired with saved track IoU/status,
+bbox geometry, raw hip-center and torso-scale continuity. Each clip has a readable
+report.md plus pose/tracking JSON and the complete frame_diagnostics.jsonl.
+
+All five Ohtani clips ran through the actual CLI:335/321/369/338/321frames,
+1684total and28628landmark slots. Original XY/state/score/missing-reason mismatches0;
+geometric track breaks0.158protected source/review/formal-material SHA unchanged
+after the full suite. New inference/tracking replay/interpolation/GT0.
+Adjacent pair denominators exclude frame0; missing/equal samples are not bridged.
+Large motion, candidate-index changes and image-order flips are not error labels.
+
+Full suite1165run/1163passed/0failed/0errors/2Windows-file-symlinkskips,
+104.141s;10new necessary tests. FormalfiveMediaPipe E2E ran with major
+hints2/0/19/5/3. Only CLI dispatch was extended in existing production code;
+model/pose/tracking/selector/gates/thresholds/raw/humanGT remain unchanged.
+
+Whole-clip human acceptance remains5/5. Pointwise reliability and visibility remain
+unknown, usable_for_analysis=null. Descriptive native reporting COMPLETE;
+Phase2 automatic reliability remains NOT PASSED. No new classifier, calibration,
+pass line or Phase3 work. Stop after this bounded delivery/commit/push.
+
+Output:`analysis_results/phase2_native_reliability_20261024_01/`.
+[Usage/formulas](native_reliability.md),[actual results](native_reliability_results_20261024.md),
+[versioned evidence](dataset_selections/native_reliability_20261024.json).
+
+## 2026-10-23 native skeleton analysis-input delivery completed (previous)
 
 The authorized bounded integration is complete: `prepare-analysis-input` binds saved
 native COCO17, same-source metadata/track and exact human overlay acceptance.

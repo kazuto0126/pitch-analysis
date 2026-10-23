@@ -63,5 +63,9 @@ for frame in pitch.iter_frames():
 `analyze-pitch`／舊CSV特徵及品質gate保留原有行為，供歷史重現。
 本次接入不產生投球角度、事件預測、跨投手比較或真實3D指標。
 
+要查看已保存原生資料的逐關節缺值、相鄰位移與人物框連續性，可接著執行
+[`report-native-reliability`](native_reliability.md)。此命令會產生定位格號／時間的描述報告，
+並保留本入口的逐點unknown與原生分數語義。
+
 資料入口交付、影片人工接受、自動關節可靠性是三項獨立狀態。
 Phase2是否通過仍依既有要求判定，不能由檔案成功讀取或模型有座標自動改為PASSED。

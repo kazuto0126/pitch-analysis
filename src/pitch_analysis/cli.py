@@ -43,6 +43,9 @@ def main() -> None:
     native_input.add_argument("--subject-track", required=True)
     native_input.add_argument("--human-review", required=True)
     native_input.add_argument("--output", required=True)
+    native_reliability = commands.add_parser("report-native-reliability", help="Describe saved native joint and tracking continuity without inference or quality thresholds")
+    native_reliability.add_argument("analysis_input_dir")
+    native_reliability.add_argument("--output", required=True)
     analyze = commands.add_parser("analyze-pitch", help="Analyze one prepared local MP4 plus pitch-input-v1 metadata")
     analyze.add_argument("mp4")
     analyze.add_argument("metadata_json")
@@ -165,6 +168,16 @@ def main() -> None:
         command.add_argument("--min-visibility", type=float, default=0.5)
         command.add_argument("--min-presence", type=float, default=0.5)
     args = parser.parse_args()
+    if args.command == "report-native-reliability":
+        from pathlib import Path
+        from .analysis.native_reliability import write_native_reliability
+        try:
+            result = write_native_reliability(Path.cwd(), args.analysis_input_dir, args.output)
+            _emit({**result, "output_dir": args.output})
+        except (ValueError, OSError, RuntimeError) as error:
+            _emit({"status": "failed", "error": str(error)})
+            raise SystemExit(1)
+        return
     if args.command == "prepare-analysis-input":
         from pathlib import Path
         from .analysis.native_input import prepare_native_analysis_input

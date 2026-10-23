@@ -1,5 +1,14 @@
 # Phase 2 — Pitcher tracking and pose reliability
 
+2026-10-24 latest: `report-native-reliability` adds descriptive adjacent-joint,
+image-order, person-box/hip-center/torso-scale continuity for accepted native17
+analysis inputs. Five Ohtani clips/1684frames/28628landmark slots were reported
+with original data mismatch0 and no new inference or tracking replay.
+Full suite1163passed/0failed/2Windows-file-symlinkskips.
+See [results](native_reliability_results_20261024.md) and
+[formulas/usage](native_reliability.md). Motion measurements are not calibrated
+quality classifications; automatic reliability and Phase2 remain NOT PASSED.
+
 2026-10-23 latest: the adopted seeded RTMPose native17 workflow now has a saved-data
 analysis entry and downstream loader. Ohtani5/5overlay acceptance is linked to the
 actual source/track/native files;1684frames are consumed with raw/track mismatch0.

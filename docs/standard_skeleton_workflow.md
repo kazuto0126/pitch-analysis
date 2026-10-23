@@ -75,3 +75,7 @@ HSU隨後確認「可以都正確」，加上002，五球overlay人工接受已�
 以`load_native_analysis_input`讀取原生影格、同源追蹤與人工接受證據。
 大谷五球已實際完成1684格接入，原資料差異0、推論0。
 詳見[使用方式](native_analysis_input.md)及[本輪結果／Phase2收尾判定](native_analysis_input_results_20261023.md)。
+
+已建立的原生資料入口可再執行`report-native-reliability`，輸出逐關節缺值區段、
+相鄰位移格號及人物框／雙髖／軀幹連續性描述。沒有新模型或品質門檻；
+詳見[計算定義與使用方式](native_reliability.md)。

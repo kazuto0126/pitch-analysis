@@ -1,10 +1,30 @@
 # 進度摘要
 
-更新：2026-10-23（台灣）。[完整狀態](current_status.md)；[最新原生資料接入](native_analysis_input_results_20261023.md)。
+更新：2026-10-24（台灣）。[完整狀態](current_status.md)；[最新原生連續性報告](native_reliability_results_20261024.md)。
 
 **Phase 1 = PASSED；Native interface integration = PASSED；Phase 2 自動可靠性仍 NOT PASSED。**
 
-## 最新：原生骨架接入完成，本輪Phase2工作收尾
+## 最新：原生逐關節與追蹤連續性報告完成
+
+新增`report-native-reliability`，直接讀取已接受的原生資料入口，補齊17點相鄰位移、
+缺值區段、左右影像順序，以及人物框／雙髖中心／軀幹尺度連續性。
+每球提供中文`report.md`、pose／tracking JSON與完整逐格JSONL，可依格號／時間回看overlay。
+
+大谷五球**1684格／28628關節影格**皆已由實際CLI產生報告；
+幾何break0，原XY／狀態／分數／缺值原因差異0，158份保護來源在完整測試後SHA不變。
+新增推論、tracking replay、插值及人工標註皆0。
+位移只比較相鄰兩格，缺值不跨越；大位移／左右順序改變沒有自動當成錯誤或identity switch。
+
+完整suite：**1163 passed／0 failed／0 errors／2 skipped**（1165項，104.141秒，新增10項）；
+兩skip為Windows檔案symlink能力。正式山本五球E2E已執行，major提示仍2／0／19／5／3。
+五球人工接受維持5/5，逐點可靠性／可見性unknown、usable_for_analysis=null。
+**本輪描述報告 = COMPLETE；Phase2自動可靠性仍NOT PASSED。**
+這次補齊資料診斷，沒有新增自動品質分類器或通過標準；本輪commit／push後停止，未進Phase3。
+輸出：`analysis_results/phase2_native_reliability_20261024_01/`。
+[使用與公式](native_reliability.md)、[逐球結果](native_reliability_results_20261024.md)、
+[版本化證據](dataset_selections/native_reliability_20261024.json)。
+
+## 前段：原生骨架接入完成
 
 新增`prepare-analysis-input`與`load_native_analysis_input`，後續程式可讀取已保存的RTMPose17點、
 同源人物追蹤、metadata及人工overlay接受證據。輸出為reference-only manifest＋使用摘要，來源SHA綁定。

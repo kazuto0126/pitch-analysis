@@ -6,7 +6,14 @@
 本次收尾摘要見 [STATUS](docs/STATUS.md)；外部專案供片需求見
 [INPUT_REQUIREMENTS](docs/INPUT_REQUIREMENTS.md)。
 
-2026-10-23 最新：[原生骨架分析資料入口已完成](docs/native_analysis_input_results_20261023.md)。
+2026-10-24 最新：[原生逐關節與追蹤連續性報告已完成](docs/native_reliability_results_20261024.md)。
+新增`report-native-reliability`，從已接受的資料入口產生17點缺值／相鄰位移、左右影像順序、
+人物框及雙髖／軀幹連續性，附完整格號／時間，可直接回看overlay。
+大谷五球1684格／28628關節影格報告已生成，原資料差異0、推論0。
+完整suite **1163 passed／0 failed／2 skipped**；自動逐點可靠性仍未通過，未進Phase3。
+[操作與計算定義](docs/native_reliability.md)。
+
+前段：[原生骨架分析資料入口已完成](docs/native_analysis_input_results_20261023.md)。
 新增`prepare-analysis-input`及Python loader，直接讀取已接受RTMPose17點、追蹤與人工紀錄。
 大谷五球1684格／28628關節影格已由實際CLI＋loader讀取，原影格／追蹤差異0、模型重跑0。
 保留原生座標、分數及missing；影片人工接受與逐點unknown分開，舊33點特徵入口保留相容。
