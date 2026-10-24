@@ -1,4 +1,4 @@
-# Current status — Ohtani001/002/005 manual events complete; review progress 3/5
+# Current status — Ohtani001/002/003/005 manual events complete; review progress 4/5
 
 Updated: 2026-10-24
 
@@ -13,7 +13,13 @@ gates, MediaPipe settings, interpolation and smoothing are unchanged. The approv
 optional subject-region constraint is described below; the default selector remains compatible.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-24 Ohtani001/002/005 manual event checkpoints
+## 2026-10-24 Ohtani001/002/003/005 manual event checkpoints
+
+HSU completed 003: preparation 105, peak lift 119, foot plant 156, approximate
+release 164, follow-through end 208. The start candidate 104 was corrected to 105;
+the end candidate 208 was confirmed with「對」after consecutive-frame review.
+The earlier「沒有」did not establish a landing or unobservable label; 156 came
+from the later direct human answer. Original answers/history remain.
 
 HSU completed 002: preparation 78, peak lift 95, foot plant 129, approximate
 release 137, follow-through end 203. Overview candidates 80 and 208 were corrected
@@ -34,16 +40,16 @@ Existing ground-truth-v1 schema, source binding, bounds and event order validate
 The GT remains in_progress, reviewer HSU, reviewed_at_utc null; all non-event
 labels remain null. A source-bound workflow checkpoint records only completion
 of the five-event scope, not completion of full pose GT or pointwise reliability.
-003/004 remain unreviewed with zero event answers: event progress 3/5.
+004 remains unreviewed with zero event answers: event progress 4/5.
 
-Next 003 now has 369 raw viewing crops, 31 consecutive sheets and uniform overview
+Final clip 004 now has 338 raw viewing crops, 29 consecutive sheets and uniform overview
 pages using the already approved fixed source rectangle. No event guesses,
 product/test changes, model replay or suite rerun. Latest same-code full suite
 remains 1201 passed / 0 failed / 2 skipped. Scoped event-only comparison is still a later
 task; no existing gate/schema is relaxed and no full-GT labels are fabricated.
 
 [Progress/source checkpoint](dataset_selections/phase3_ohtani_event_review_progress_20261024.json),
-[review workflow](phase3_ohtani_event_review_20261024.md). Await human 003 events.
+[review workflow](phase3_ohtani_event_review_20261024.md). Await human 004 events.
 
 ## 2026-10-24 Ohtani manual-event review preparation (previous)
 

@@ -1,12 +1,12 @@
 {
   "schema_version": "manual-event-review-progress-v1",
-  "recorded_at_utc": "2026-10-24T12:18:08.217569+00:00",
-  "events_review_completed_clips": 3,
+  "recorded_at_utc": "2026-10-24T12:29:25.866345+00:00",
+  "events_review_completed_clips": 4,
   "total_clips": 5,
-  "next_pitch_id": "supplement_003",
+  "next_pitch_id": "supplement_004",
   "checkpoint_ref": {
-    "path": "annotations/event_reviews/HSU_20261024/shohei_ohtani/supplement_002/event_review_checkpoint.json",
-    "sha256": "ffe831aa214b9e56555c048627c2ee277f9800fd9b474945ab1f2270b90ccd01"
+    "path": "annotations/event_reviews/HSU_20261024/shohei_ohtani/supplement_003/event_review_checkpoint.json",
+    "sha256": "47ff472624d86aaa03ac6aa2360e31b281098ba3e2e0b48f09f50b736919f855"
   },
   "clips": [
     {
@@ -35,11 +35,11 @@
       "pitch_id": "supplement_003",
       "ground_truth_ref": {
         "path": "annotations/event_reviews/HSU_20261024/shohei_ohtani/supplement_003/ground_truth.json",
-        "sha256": "9927dbd3477a6b2f2ad1c8b86b284d39dbcf6715b2c70449593bf3fe3f0cc178"
+        "sha256": "26542023685abc009de81b881af6154a80de9692b5e2ba4ff3c6ede46ac68a7d"
       },
-      "annotation_status": "unreviewed",
-      "annotated_events": 0,
-      "events_complete": false,
+      "annotation_status": "in_progress",
+      "annotated_events": 5,
+      "events_complete": true,
       "full_pose_gt_complete": false
     },
     {
@@ -82,10 +82,14 @@
     {
       "path": "annotations/event_reviews/HSU_20261024/shohei_ohtani/supplement_002/event_review_checkpoint.json",
       "sha256": "ffe831aa214b9e56555c048627c2ee277f9800fd9b474945ab1f2270b90ccd01"
+    },
+    {
+      "path": "annotations/event_reviews/HSU_20261024/shohei_ohtani/supplement_003/event_review_checkpoint.json",
+      "sha256": "47ff472624d86aaa03ac6aa2360e31b281098ba3e2e0b48f09f50b736919f855"
     }
   ],
   "next_clip_helper_ref": {
-    "path": "analysis_results/phase3_ohtani_event_review_20261024_01/supplement_003/preparation_manifest.json",
-    "sha256": "d61e942a638a5b579f8a04a8e17bd0ea0cb81ad8d5efb83884d7a41a85cf2866"
+    "path": "analysis_results/phase3_ohtani_event_review_20261024_01/supplement_004/preparation_manifest.json",
+    "sha256": "3e6e79e40bccef4d7a9c4bbd50cc293e67d46c28cbf2c028a9e0294d783b5266"
   }
 }
