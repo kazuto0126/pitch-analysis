@@ -6,7 +6,12 @@
 本次收尾摘要見 [STATUS](docs/STATUS.md)；外部專案供片需求見
 [INPUT_REQUIREMENTS](docs/INPUT_REQUIREMENTS.md)。
 
-2026-10-24 最新：[山本四球時距圖與解讀摘要](docs/phase3_yamamoto_timing_readout_20261024.md)。
+2026-10-24 最新：[大谷五球人工事件覆核準備](docs/phase3_ohtani_event_review_20261024.md)。
+先從005開始：五份同格式空白GT已綁定來源，005的321格原片圖片／27張連續格表與概覽備妥。
+只需要人工確認啟動、最高抬腿、落地、出手、收尾；所有答案仍null，不重標骨架。
+本輪無產品／測試碼變更，不重跑suite；事件收集與完整pose GT分開，不假填其他欄位。
+
+前段：[山本四球時距圖與解讀摘要](docs/phase3_yamamoto_timing_readout_20261024.md)。
 只讀前輪16筆事件時距，新增可匯出PNG與24筆逐球區間關係；保留不能比較的8筆配對。
 最高抬腿→落地的三球可用範圍相互重疊；002落地→出手範圍與001／004分開，不作優劣評分。
 本輪無產品／測試碼變更，未重跑suite；最近同程式碼結果1201 passed／0 failed／2 skipped。

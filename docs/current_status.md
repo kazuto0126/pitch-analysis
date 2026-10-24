@@ -1,4 +1,4 @@
-# Current status — Yamamoto interval timing readout exported
+# Current status — Ohtani event review prepared, human answers pending
 
 Updated: 2026-10-24
 
@@ -13,7 +13,34 @@ gates, MediaPipe settings, interpolation and smoothing are unchanged. The approv
 optional subject-region constraint is described below; the default selector remains compatible.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-24 saved interval timing readout
+## 2026-10-24 Ohtani manual-event review preparation
+
+Following「繼續」, preparation creates five blank existing ground-truth-v1 templates,
+bound to decoded source counts 335/321/369/338/321 (1684 total). All human fields,
+reviewers and completion timestamps remain null/unreviewed; no event was guessed.
+Review begins with preferred supplement_005, then 001/002/003/004.
+
+005 has all 321 raw-frame viewing crops, 27 consecutive 12-frame sheets, uniform
+every-eight-frame overviews and a static frame gallery linked to the original
+video and accepted player. The crop is the previously approved fixed rectangle,
+not model/event-driven frame selection. Source MP4s and accepted skeletons stay.
+
+This collects only five events. After a human answer, the existing GT can be
+in_progress with that reviewer's provenance while all unreviewed non-event labels
+remain null. Event completion does not establish full pose GT. Current comparison
+requires full reviewed GT; scoped event-only consumption remains a later task,
+without fabricating other labels or changing schema/validator this round.
+
+504 prior data/source/product/test files retain their SHA. No production/test code
+changes, model calls, tracking replay or new human labels. No suite rerun; latest
+same-code results remain 1201 passed / 0 failed / 2 skipped. Image labels/layout
+checked; automated browser verification is unperformed.
+
+[Workflow/templates](phase3_ohtani_event_review_20261024.md),
+[source-bound preparation](dataset_selections/phase3_ohtani_event_review_20261024.json).
+Await human event answers for005; no next feature or automatic annotation starts.
+
+## 2026-10-24 saved interval timing readout (previous)
 
 Following「繼續」, this bounded data-only delivery reads the prior source-bound
 four-clip comparison and exports a PNG plus a Chinese interpretation and all 24

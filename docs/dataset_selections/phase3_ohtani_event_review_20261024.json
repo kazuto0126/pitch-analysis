@@ -1,0 +1,198 @@
+{
+  "schema_version": "manual-event-review-preparation-v1",
+  "status": "READY_FOR_HUMAN_EVENT_REVIEW",
+  "review_scope": "five_manual_pitch_events_only",
+  "first_pitch_id": "supplement_005",
+  "template_count": 5,
+  "human_event_answers_filled": 0,
+  "clips": [
+    {
+      "pitch_id": "supplement_001",
+      "frame_count": 335,
+      "fps_fraction": "60000/1001",
+      "video_ref": {
+        "path": "input/shohei_ohtani/phase2_supplement_20261020_01/supplement_001.mp4",
+        "sha256": "90a6acec9865c634bd019503d46c147647fa78df9a2827e1143c74abb852111a"
+      },
+      "overlay_ref": {
+        "path": "analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/supplement_001/rtmpose/supplement_001/overlay_native.mp4",
+        "sha256": "3c0ffef0dc8f8c4f1e072a5ba05338abce77fd11046cf7fd099fcada2f1fac81"
+      },
+      "ground_truth_ref": {
+        "path": "annotations/event_reviews/HSU_20261024/shohei_ohtani/supplement_001/ground_truth.json",
+        "sha256": "c3df930e367547733581ca6b2576abcb3653e3bcd85abde8dbb7e2edc4bfc638"
+      },
+      "annotation_status": "unreviewed",
+      "event_answers_filled": 0
+    },
+    {
+      "pitch_id": "supplement_002",
+      "frame_count": 321,
+      "fps_fraction": "60000/1001",
+      "video_ref": {
+        "path": "input/shohei_ohtani/phase2_supplement_20261020_01/supplement_002.mp4",
+        "sha256": "b1586bdde9383e3b247bcc7d7974a3f15b0fed173848926d5217f261b87bab8e"
+      },
+      "overlay_ref": {
+        "path": "analysis_results/phase2_seeded_resume_native_20261023_01/rtmpose/supplement_002/overlay_native.mp4",
+        "sha256": "9713f1053f3ea68df9a3b960806f86a448dc213a0389f404f8288b870c5e31f8"
+      },
+      "ground_truth_ref": {
+        "path": "annotations/event_reviews/HSU_20261024/shohei_ohtani/supplement_002/ground_truth.json",
+        "sha256": "6105e1304bafbaea8082bf8f393807b7bcced869b6192c98a9faaaac71ce8535"
+      },
+      "annotation_status": "unreviewed",
+      "event_answers_filled": 0
+    },
+    {
+      "pitch_id": "supplement_003",
+      "frame_count": 369,
+      "fps_fraction": "60000/1001",
+      "video_ref": {
+        "path": "input/shohei_ohtani/phase2_supplement_20261020_01/supplement_003.mp4",
+        "sha256": "97a45985648af1cf20ed48bda6ce5454fe509609114ac28d8a5deb632621e8ae"
+      },
+      "overlay_ref": {
+        "path": "analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/supplement_003/rtmpose/supplement_003/overlay_native.mp4",
+        "sha256": "bb080e2e454dc9987ec5c90f2db83ce97f56f11579221012911fdb4b322ff963"
+      },
+      "ground_truth_ref": {
+        "path": "annotations/event_reviews/HSU_20261024/shohei_ohtani/supplement_003/ground_truth.json",
+        "sha256": "9927dbd3477a6b2f2ad1c8b86b284d39dbcf6715b2c70449593bf3fe3f0cc178"
+      },
+      "annotation_status": "unreviewed",
+      "event_answers_filled": 0
+    },
+    {
+      "pitch_id": "supplement_004",
+      "frame_count": 338,
+      "fps_fraction": "60000/1001",
+      "video_ref": {
+        "path": "input/shohei_ohtani/phase2_supplement_20261020_01/supplement_004.mp4",
+        "sha256": "76945ebff5dc300ee0fc7084a0e21370137ee9d91ad61cdca52ccab0e4ee9054"
+      },
+      "overlay_ref": {
+        "path": "analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/supplement_004/rtmpose/supplement_004/overlay_native.mp4",
+        "sha256": "45cce1ef66b837f561ac49c5b08936b7528a7162ed2915d485f3451062679c30"
+      },
+      "ground_truth_ref": {
+        "path": "annotations/event_reviews/HSU_20261024/shohei_ohtani/supplement_004/ground_truth.json",
+        "sha256": "65e04f92daacccf1658dc24ad47a719071b932b9c00b65a0dd0e7cb627b77a4c"
+      },
+      "annotation_status": "unreviewed",
+      "event_answers_filled": 0
+    },
+    {
+      "pitch_id": "supplement_005",
+      "frame_count": 321,
+      "fps_fraction": "60000/1001",
+      "video_ref": {
+        "path": "input/shohei_ohtani/phase2_supplement_20261020_01/supplement_005.mp4",
+        "sha256": "1c67c058d4376ecf94a138eb08e3251eb601a365a7e8a55e251e1c136ae5d95f"
+      },
+      "overlay_ref": {
+        "path": "analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/supplement_005/rtmpose/supplement_005/overlay_native.mp4",
+        "sha256": "98c25011ef83d9fdd4d14253e4b9ffbbb8f35ad4f81ed1cb866090a8b7bd5a8a"
+      },
+      "ground_truth_ref": {
+        "path": "annotations/event_reviews/HSU_20261024/shohei_ohtani/supplement_005/ground_truth.json",
+        "sha256": "159878b7183006b2b54afe6e0129d20e2d538623019abaead415639188912382"
+      },
+      "annotation_status": "unreviewed",
+      "event_answers_filled": 0
+    }
+  ],
+  "first_clip_images": {
+    "frames": 321,
+    "contact_sheets": 27,
+    "overview_frame_indices": [
+      0,
+      8,
+      16,
+      24,
+      32,
+      40,
+      48,
+      56,
+      64,
+      72,
+      80,
+      88,
+      96,
+      104,
+      112,
+      120,
+      128,
+      136,
+      144,
+      152,
+      160,
+      168,
+      176,
+      184,
+      192,
+      200,
+      208,
+      216,
+      224,
+      232,
+      240,
+      248,
+      256,
+      264,
+      272,
+      280,
+      288,
+      296,
+      304,
+      312,
+      320
+    ],
+    "crop_xyxy_exclusive": [
+      192,
+      216,
+      768,
+      720
+    ],
+    "frame_index_ref": {
+      "path": "analysis_results/phase3_ohtani_event_review_20261024_01/supplement_005/frame_index.csv",
+      "sha256": "443048f8cf276b52d0b8f04cf2c75fdc3166bc140e878061b12561cecf7b6644"
+    },
+    "overview_ref": {
+      "path": "analysis_results/phase3_ohtani_event_review_20261024_01/supplement_005/overview_every_8_frames.jpg",
+      "sha256": "a1de8542635a7084f7e019e39784280df8990b3f4eebec06125102e0f9565039"
+    },
+    "gallery_ref": {
+      "path": "analysis_results/phase3_ohtani_event_review_20261024_01/supplement_005/review_frames.html",
+      "sha256": "0b972b49d407d8b264d56c4736a4acf962d8f896131e604e3abfc107bb103be9"
+    },
+    "overview_pages": [
+      {
+        "path": "analysis_results/phase3_ohtani_event_review_20261024_01/supplement_005/overview_000_120.jpg",
+        "sha256": "5f81b45ca16a70ad435784c747f0735b83119e52d642a533ba201dba2f926ac7"
+      },
+      {
+        "path": "analysis_results/phase3_ohtani_event_review_20261024_01/supplement_005/overview_128_248.jpg",
+        "sha256": "e7f17d28df18271b0d0b59cc4a64480f703f0f6ba3f939b664d9ba1d11499489"
+      },
+      {
+        "path": "analysis_results/phase3_ohtani_event_review_20261024_01/supplement_005/overview_256_320.jpg",
+        "sha256": "b284cb28868399234e21752699e8e807cbaa1fe0a0a8ed1fbf1e94e16b14164c"
+      }
+    ]
+  },
+  "start_here_ref": {
+    "path": "analysis_results/phase3_ohtani_event_review_20261024_01/START_HERE.md",
+    "sha256": "6f75198cdd782e89adc54e8a8b728fe26439ecb99c7aebbaf4244551d3b48e0f"
+  },
+  "protected_files": 504,
+  "protected_sha256_changes": [],
+  "production_test_code_changes": 0,
+  "new_inference_calls": 0,
+  "new_ground_truth_labels": 0,
+  "full_suite_rerun": false,
+  "event_only_comparison_adapter_status": "not_implemented; collect manual events first",
+  "phase2_original_status": "NOT_PASSED",
+  "phase3_overall": "NOT_EVALUATED",
+  "template_scope_note": "blank ground-truth-v1 templates; event answers only; other labels remain null"
+}
