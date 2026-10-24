@@ -1,11 +1,26 @@
 # 進度摘要
 
-更新：2026-10-24（台灣）。[完整狀態](current_status.md)；[山本四片曲線與連動頁](phase3_yamamoto_native_motion_20261024.md)。
+更新：2026-10-24（台灣）。[完整狀態](current_status.md)；[山本事件／時序交付](phase3_yamamoto_event_timing_20261024.md)。
 
 **Phase 1 = PASSED；Native interface integration = PASSED；Phase 2 自動可靠性仍 NOT PASSED。**
 **Phase3第一個描述性曲線交付 = COMPLETE；Phase3整體尚未驗收。**
 
-## 最新：山本四支曲線／連動頁已獲HSU人工接受4/4
+## 最新：山本四球人工事件／曲線與時距對照完成
+
+依HSU「好進行」授權，新增`compare-native-motion-events`，只讀保存曲線及同源人工事件。
+四球477格、20筆事件逐欄保留；16筆時距13筆可界定、3筆保留空值與原因。
+曲線有精確線／範圍色帶／不確定候選虛線，附事件視窗模型角度、完整缺值分母與逐球時距表。
+005啟動及最高抬腿仍不確定；001啟動仍不可觀測，不取中點或自動補事件。
+003仍排除；大谷與山本既有九支人工接受、骨架方式、原CSV／PNG／觀看頁保持。
+新推論、tracking replay、角度重算、新GT皆0；未作精確出手對齊、跨投手比較或評分。
+新觀看頁可使用，自動瀏覽器互動未驗證；本輪不追加逐格人工標註或新通過條件。
+完整suite **1201 passed／0 failed／0 errors／2 skipped**（1203項、135.796秒，新增19項，含正式五球E2E）。
+另5項純Node時間測試與18項事件helper斷言全過；233份保護資料SHA變更0，20筆事件差異0。
+輸出：`analysis_results/phase3_yamamoto_event_timing_20261024_01/comparison/viewer/review_motion_events.html`。
+[區間公式與使用](native_motion_events.md)、[本輪結果](phase3_yamamoto_event_timing_20261024.md)。
+本輪commit／push後停止，不開始下一功能。
+
+## 前段：山本四支曲線／連動頁已獲HSU人工接受4/4
 
 沿用現有`describe-native-motion`及`review-native-motion`，直接讀取已接受的山本骨架。
 001／002／004／005共477格、954個可計算2D投影角，CSV、PNG、來源摘要與連動頁皆完成。

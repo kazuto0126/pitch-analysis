@@ -6,7 +6,14 @@
 本次收尾摘要見 [STATUS](docs/STATUS.md)；外部專案供片需求見
 [INPUT_REQUIREMENTS](docs/INPUT_REQUIREMENTS.md)。
 
-2026-10-24 最新：[山本四支啟用影片的曲線與連動頁](docs/phase3_yamamoto_native_motion_20261024.md)。
+2026-10-24 最新：[山本四球人工事件與時序對照](docs/phase3_yamamoto_event_timing_20261024.md)。
+新增`compare-native-motion-events`，沿用既有曲線與已標事件；477格、20筆事件完整保留。
+精確影格用線、範圍用色帶、不確定用虛線；16筆時距13筆可界定、3筆因人工不確定／不可觀測留空。
+來源SHA與時間軸綁定，原骨架／曲線／GT及已接受觀看頁保持，新增模型推論與標註皆0。
+[使用方式與區間定義](docs/native_motion_events.md)。未做精確出手對齊、跨投手比較或評分。
+完整suite **1201 passed／0 failed／2 skipped**，另5項純Node測試及18項事件helper斷言全過。
+
+前段：[山本四支啟用影片的曲線與連動頁](docs/phase3_yamamoto_native_motion_20261024.md)。
 沿用現有工具及已接受骨架，001／002／004／005共477格、954個模型2D投影角，003仍為歷史對照。
 四支CSV、PNG、來源摘要與連動頁已生成；新推論、tracking replay、GT及產品碼變更皆0。
 HSU回覆「都正確一樣是5表現最好」，山本四支觀看頁已獲人工整體接受4/4，005記為偏好示範。

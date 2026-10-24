@@ -58,3 +58,6 @@ Phase2自動可靠性NOT PASSED的歷史與限制保持；本入口不宣告Phas
 大谷五球與山本啟用四球的連動頁皆已獲HSU人工整體接受；兩位投手的005各記為偏好示範。
 見[大谷交付](phase3_motion_sync_20261024.md)與[山本交付](phase3_yamamoto_native_motion_20261024.md)。
 工具自動瀏覽器互動驗證未執行，沒有因此新增可靠性判定或人工GT。
+
+若同一原片已有已覆核人工事件，可用[`compare-native-motion-events`](native_motion_events.md)
+在新頁面呈現事件線／範圍／不確定候選與逐球時距。原曲線不改，不猜事件或選範圍中點。

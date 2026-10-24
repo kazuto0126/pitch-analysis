@@ -1,4 +1,4 @@
-# Current status — Yamamoto active four motion viewer accepted by HSU
+# Current status — Yamamoto manual events and interval timing delivered
 
 Updated: 2026-10-24
 
@@ -13,7 +13,43 @@ gates, MediaPipe settings, interpolation and smoothing are unchanged. The approv
 optional subject-region constraint is described below; the default selector remains compatible.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-24 active Yamamoto motion curves and synchronization viewer
+## 2026-10-24 manual-event / saved-curve timing comparison
+
+HSU approved this bounded next delivery with「好進行」. New compare-native-motion-events
+reads the four active Yamamoto saved curve exports and exact source-bound canonical
+ground-truth-v1 events. All 477 source frames and 20 manual records are retained;
+17 annotated, 2 uncertain, 1 not observable. Sixteen timing rows include 13 usable
+interval descriptions and 3 explicitly unavailable values with reasons.
+
+The viewer adds exact lines, range bands and dashed uncertain candidates to the
+unchanged saved curves and playback UI. Per-event model-XY windows retain full
+calculated/missing/degenerate counts. Annotated interval differences retain bounds;
+uncertain or unobservable endpoints never produce a guessed duration or midpoint.
+005 preparation/lift candidates and 001 unobservable preparation remain unchanged.
+
+Reviewed GT must match video SHA/name, pitch identity, full frame count and zero
+origin. Only the events are used; historical joint-reliability labels are not
+transferred to the new skeleton. The sole existing product-file change is additive
+CLI dispatch; models, selector, gates, raw, GT, saved CSV/PNG and prior viewers stay.
+New detector/pose calls, tracking replay, angle recomputation and new GT: 0.
+
+The prior nine-clip human acceptance remains valid. This event page has no automated
+browser interaction verification; no new manual annotation or acceptance gate is
+introduced. Phase2 NOT PASSED and overall Phase3 NOT EVALUATED remain. No exact
+event alignment, cross-pitcher comparison, profile, score or 3D inference is added.
+
+Full Python suite: 1203 run / 1201 passed / 0 failed / 0 errors / 2 Windows file-
+symlink skips, 135.796 seconds, including the formal five-video MediaPipe E2E.
+Nineteen new Python tests; 5 existing pure Node timing tests and 18 new event-helper
+assertions passed. No browser or DOM tests. 233 protected data files retain their
+SHA; all 20 embedded manual event records match their sources without changes.
+
+Output: `analysis_results/phase3_yamamoto_event_timing_20261024_01/comparison/`.
+[Usage/formula](native_motion_events.md), [results](phase3_yamamoto_event_timing_20261024.md).
+[Versioned delivery evidence](dataset_selections/phase3_yamamoto_event_timing_20261024.json).
+Stop after this delivery, complete suite, commit and push; no next feature starts.
+
+## 2026-10-24 active Yamamoto motion curves and synchronization viewer (previous)
 
 The existing describe-native-motion and review-native-motion commands processed
 the already accepted Yamamoto 001/002/004/005 without production/test code changes.

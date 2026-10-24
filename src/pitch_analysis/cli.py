@@ -52,6 +52,9 @@ def main() -> None:
     motion_viewer = commands.add_parser("review-native-motion", help="Build a local frame-linked viewer of saved native motion curves and overlays")
     motion_viewer.add_argument("motion_dirs", nargs="+")
     motion_viewer.add_argument("--output", required=True)
+    event_comparison = commands.add_parser("compare-native-motion-events", help="Describe saved same-pitcher curves at existing manual event frames or ranges")
+    event_comparison.add_argument("config_json")
+    event_comparison.add_argument("--output", required=True)
     analyze = commands.add_parser("analyze-pitch", help="Analyze one prepared local MP4 plus pitch-input-v1 metadata")
     analyze.add_argument("mp4")
     analyze.add_argument("metadata_json")
@@ -174,6 +177,18 @@ def main() -> None:
         command.add_argument("--min-visibility", type=float, default=0.5)
         command.add_argument("--min-presence", type=float, default=0.5)
     args = parser.parse_args()
+    if args.command == "compare-native-motion-events":
+        from pathlib import Path
+        from .analysis.native_motion_events import write_event_comparison
+        try:
+            result = write_event_comparison(Path.cwd(), args.config_json, args.output)
+            _emit({"status": result["status"], "clip_count": result["clip_count"],
+                   "source_frames": result["source_frames"], "output_dir": args.output,
+                   "new_inference_calls": 0})
+        except (ValueError, OSError, RuntimeError, KeyError, TypeError) as error:
+            _emit({"status": "failed", "error": str(error)})
+            raise SystemExit(1)
+        return
     if args.command == "review-native-motion":
         from pathlib import Path
         from .analysis.native_motion_viewer import write_motion_viewer
