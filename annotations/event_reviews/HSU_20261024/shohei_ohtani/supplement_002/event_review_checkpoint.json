@@ -1,0 +1,37 @@
+{
+  "schema_version": "manual-event-review-checkpoint-v1",
+  "reviewer": "HSU",
+  "recorded_at_utc": "2026-10-24T12:18:08.217569+00:00",
+  "pitch_id": "supplement_002",
+  "review_scope": [
+    "preparation_start",
+    "leg_lift",
+    "foot_plant",
+    "approximate_release",
+    "follow_through_end"
+  ],
+  "events_complete": true,
+  "full_pose_gt_complete": false,
+  "ground_truth_ref": {
+    "path": "annotations/event_reviews/HSU_20261024/shohei_ohtani/supplement_002/ground_truth.json",
+    "sha256": "6a662993e8126a5d623f385672b19bd5385f98833fe9fb22b85f4fbb70ef33a8"
+  },
+  "source_video_ref": {
+    "path": "input/shohei_ohtani/phase2_supplement_20261020_01/supplement_002.mp4",
+    "sha256": "b1586bdde9383e3b247bcc7d7974a3f15b0fed173848926d5217f261b87bab8e"
+  },
+  "judgment_origin": "HSU manually reviewed original frame contact sheets; Codex transcribed the human answers",
+  "confirmed_user_statements": {
+    "preparation_start": "78",
+    "leg_lift": "95",
+    "foot_plant": "129",
+    "approximate_release": "137",
+    "follow_through_end": "203"
+  },
+  "superseded_overview_candidates": {
+    "preparation_start": 80,
+    "follow_through_end": 208
+  },
+  "non_event_labels_filled": 0,
+  "scope_note": "Workflow completion metadata only; event labels remain in ground-truth-v1. This does not mark the full pose GT reviewed."
+}
