@@ -1,11 +1,24 @@
 # 進度摘要
 
-更新：2026-10-24（台灣）。[完整狀態](current_status.md)；[山本事件／時序交付](phase3_yamamoto_event_timing_20261024.md)。
+更新：2026-10-24（台灣）。[完整狀態](current_status.md)；[山本時距圖與摘要](phase3_yamamoto_timing_readout_20261024.md)。
 
 **Phase 1 = PASSED；Native interface integration = PASSED；Phase 2 自動可靠性仍 NOT PASSED。**
 **Phase3第一個描述性曲線交付 = COMPLETE；Phase3整體尚未驗收。**
 
-## 最新：山本四球人工事件／曲線與時距對照完成
+## 最新：山本時距圖與逐球解讀完成
+
+依「繼續」將前輪已算好的16筆時距整理成可匯出PNG、中文MD與24筆配對清單。
+每種時距各6組配對，合計7筆區間分開、9筆重疊／相接、8筆無法比較；不省略缺值。
+最高抬腿→落地：001／002／004三球範圍均重疊；落地→出手：002範圍與001／004分開。
+圖中的界線來自人工事件，不是統計信賴區間；沒有品質排名、顯著性推論或整體投手profile。
+圖表已實看，標籤與數值可讀；504份資料／來源／程式／測試SHA變更0。
+本輪無產品／測試碼變更，未重跑suite；相同程式碼最近1201 passed／0 failed／2 skipped。
+兩位投手的骨架方式與九支既有接受紀錄保持，003仍為歷史對照。
+下一項資料缺口是大谷五球尚無同類已確認人工事件；本輪不猜測、不建立新GT或新review工具。
+輸出：`analysis_results/phase3_yamamoto_timing_readout_20261024_01/timing_intervals.png`。
+[解讀摘要](phase3_yamamoto_timing_readout_20261024.md)。本輪commit／push後停止。
+
+## 前段：山本四球人工事件／曲線與時距對照完成
 
 依HSU「好進行」授權，新增`compare-native-motion-events`，只讀保存曲線及同源人工事件。
 四球477格、20筆事件逐欄保留；16筆時距13筆可界定、3筆保留空值與原因。

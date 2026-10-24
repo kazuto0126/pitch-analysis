@@ -1,0 +1,110 @@
+{
+  "schema_version": "yamamoto-timing-readout-v1",
+  "status": "REPORT_COMPLETE",
+  "created_at_utc": "2026-10-24T07:14:49.359115+00:00",
+  "source_delivery_ref": {
+    "path": "docs/dataset_selections/phase3_yamamoto_event_timing_20261024.json",
+    "sha256": "2cbb3ce3af977d3aa715a69afd65053dd6fa3ab89eaabb6a95dcbfe6dbfe9c88"
+  },
+  "comparison_ref": {
+    "path": "analysis_results/phase3_yamamoto_event_timing_20261024_01/comparison/event_comparison.json",
+    "sha256": "7861287c9d704ac585a31c95020be06112a2ff0f314ef63a9cd9eccd6a9f9c6a"
+  },
+  "source_frames": 477,
+  "pitch_ids": [
+    "pitch_001",
+    "pitch_002",
+    "pitch_004",
+    "pitch_005"
+  ],
+  "excluded_pitch_ids": [
+    "pitch_003"
+  ],
+  "source_fps_fraction": "30/1",
+  "timing_rows": 16,
+  "pairwise_rows": 24,
+  "counts_by_timing": {
+    "preparation_to_leg_lift": {
+      "disjoint": 1,
+      "overlap_or_touch": 0,
+      "unavailable": 5
+    },
+    "leg_lift_to_foot_plant": {
+      "disjoint": 0,
+      "overlap_or_touch": 3,
+      "unavailable": 3
+    },
+    "foot_plant_to_release": {
+      "disjoint": 2,
+      "overlap_or_touch": 4,
+      "unavailable": 0
+    },
+    "release_to_follow_through_end": {
+      "disjoint": 4,
+      "overlap_or_touch": 2,
+      "unavailable": 0
+    }
+  },
+  "artifacts": {
+    "plot_ref": {
+      "path": "analysis_results/phase3_yamamoto_timing_readout_20261024_01/timing_intervals.png",
+      "sha256": "9feedc324924bdc1e87ffa690a7d7d886a5c4e9dbd128c01e46f8935368171ff"
+    },
+    "pairwise_ref": {
+      "path": "analysis_results/phase3_yamamoto_timing_readout_20261024_01/pairwise_intervals.json",
+      "sha256": "6ceefa9d319fb1795c68a9347046a2d06bd6547f89a9c398e24fd9e7a3631dc8"
+    },
+    "report_ref": {
+      "path": "docs/phase3_yamamoto_timing_readout_20261024.md",
+      "sha256": "08f7e5c6b7ec49647cd9dc730160219b9c098811f5c19085871fd0358ae3a81e"
+    },
+    "builder_ref": {
+      "path": "analysis_results/phase3_yamamoto_timing_readout_20261024_01/build_readout.py",
+      "sha256": "6e2d79c043f193f0f9573b492436f5ae9f7fa96c286e5349ee6cac2757a53d74"
+    }
+  },
+  "protected_files": 504,
+  "protected_sha256_changes": [],
+  "production_test_code_changes": 0,
+  "new_inference_calls": 0,
+  "new_ground_truth_labels": 0,
+  "full_suite_rerun": false,
+  "last_full_suite": {
+    "created_at_utc": "2026-10-24T07:10:47.708513+00:00",
+    "tests_run": 1203,
+    "passed": 1201,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 2,
+    "skipped_reasons": [
+      {
+        "test": "test_dangling_snapshot_file_link_cannot_create_external_target_when_supported (test_handoff_paths.HandoffPathTests.test_dangling_snapshot_file_link_cannot_create_external_target_when_supported)",
+        "reason": "file symlink creation is unavailable"
+      },
+      {
+        "test": "test_source_symlink_outside_candidate_is_rejected_when_supported (test_handoff_review.HandoffReviewTests.test_source_symlink_outside_candidate_is_rejected_when_supported)",
+        "reason": "creating symbolic links is unavailable"
+      }
+    ],
+    "elapsed_seconds": 135.796,
+    "formal_five_video_e2e_enabled": true,
+    "real_rtmpose_calls": 0,
+    "real_detector_calls": 0,
+    "successful": true,
+    "results_ref": {
+      "path": "analysis_results/phase3_yamamoto_event_timing_20261024_01/verified_suite/test_results.json",
+      "sha256": "9c1d0317230dbe93c21528542f877f86216d94d4c63aec842ebd19ea181e26f7"
+    }
+  },
+  "reason_no_test_rerun": "data/report-only use of already tested output; no product/test changes",
+  "statistical_inference": false,
+  "cross_pitcher_comparison": false,
+  "phase2_original_status": "NOT_PASSED",
+  "phase3_overall": "NOT_EVALUATED",
+  "plot_visual_review": {
+    "performed": true,
+    "scope": "exported plot labels/layout/interval ranges and absent values only; not browser operation or new human event GT",
+    "result": "readable_without_clipping"
+  },
+  "independent_integer_frame_check": "all 24 pairwise relations and per-metric counts matched read-only audit"
+}

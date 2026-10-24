@@ -6,7 +6,13 @@
 本次收尾摘要見 [STATUS](docs/STATUS.md)；外部專案供片需求見
 [INPUT_REQUIREMENTS](docs/INPUT_REQUIREMENTS.md)。
 
-2026-10-24 最新：[山本四球人工事件與時序對照](docs/phase3_yamamoto_event_timing_20261024.md)。
+2026-10-24 最新：[山本四球時距圖與解讀摘要](docs/phase3_yamamoto_timing_readout_20261024.md)。
+只讀前輪16筆事件時距，新增可匯出PNG與24筆逐球區間關係；保留不能比較的8筆配對。
+最高抬腿→落地的三球可用範圍相互重疊；002落地→出手範圍與001／004分開，不作優劣評分。
+本輪無產品／測試碼變更，未重跑suite；最近同程式碼結果1201 passed／0 failed／2 skipped。
+大谷仍缺已確認人工事件，本輪沒有猜測或新增標註。
+
+前段：[山本四球人工事件與時序對照](docs/phase3_yamamoto_event_timing_20261024.md)。
 新增`compare-native-motion-events`，沿用既有曲線與已標事件；477格、20筆事件完整保留。
 精確影格用線、範圍用色帶、不確定用虛線；16筆時距13筆可界定、3筆因人工不確定／不可觀測留空。
 來源SHA與時間軸綁定，原骨架／曲線／GT及已接受觀看頁保持，新增模型推論與標註皆0。

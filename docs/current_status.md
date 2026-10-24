@@ -1,4 +1,4 @@
-# Current status — Yamamoto manual events and interval timing delivered
+# Current status — Yamamoto interval timing readout exported
 
 Updated: 2026-10-24
 
@@ -13,7 +13,35 @@ gates, MediaPipe settings, interpolation and smoothing are unchanged. The approv
 optional subject-region constraint is described below; the default selector remains compatible.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-24 manual-event / saved-curve timing comparison
+## 2026-10-24 saved interval timing readout
+
+Following「繼續」, this bounded data-only delivery reads the prior source-bound
+four-clip comparison and exports a PNG plus a Chinese interpretation and all 24
+pairwise interval relations. The 16 original timing rows are unchanged. Interval
+relations use exact integer-frame bounds; endpoint contact counts as overlap.
+Seven pairs are disjoint, nine overlap/touch, eight are unavailable. These counts
+are descriptive bookkeeping, not statistical evidence or new acceptance criteria.
+
+Peak-lift-to-plant intervals overlap for all three comparable clips. 002 plant-to-
+release is separated from 001/004 under the existing manual boundaries. Neither
+relation establishes motion identity, quality or a stable pitcher profile.
+Viewed the exported plot: labels, bounds and missing-value messages are readable.
+No midpoint is drawn for interval bars; unobservable/uncertain values remain absent.
+
+504 protected data/source/product/test files retain their SHA. Production/test
+code changes, new inference and new GT: 0. No full-suite rerun for this report-only
+update; latest same-code results remain 1201 passed / 0 failed / 2 skipped.
+Existing skeletons, raw, events, curves and prior human acceptance are unchanged.
+003 remains historical. Phase2 NOT PASSED and overall Phase3 NOT EVALUATED remain.
+
+The next data gap is confirmed human events for the five Ohtani clips. No event
+labels, guesses, new review tool or cross-pitcher feature is started this round.
+Output: `analysis_results/phase3_yamamoto_timing_readout_20261024_01/`.
+[Readout](phase3_yamamoto_timing_readout_20261024.md),
+[versioned evidence](dataset_selections/phase3_yamamoto_timing_readout_20261024.json).
+Stop after commit/push; no next feature automatically starts.
+
+## 2026-10-24 manual-event / saved-curve timing comparison (previous)
 
 HSU approved this bounded next delivery with「好進行」. New compare-native-motion-events
 reads the four active Yamamoto saved curve exports and exact source-bound canonical
