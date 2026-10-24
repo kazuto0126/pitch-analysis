@@ -6,7 +6,14 @@
 本次收尾摘要見 [STATUS](docs/STATUS.md)；外部專案供片需求見
 [INPUT_REQUIREMENTS](docs/INPUT_REQUIREMENTS.md)。
 
-2026-10-24 最新：[Phase3第一步：大谷五球2D投影角度曲線](docs/phase3_ohtani_native_motion_20261024.md)。
+2026-10-24 最新：[大谷影片／曲線連動頁](docs/phase3_motion_sync_20261024.md)。
+新增`review-native-motion`，可播放時同步游標與角度，並用逐格、格號、滑桿或點曲線跳轉。
+直接讀取五球既有角度與overlay，共1684格，骨架方式與曲線數值保持。
+來源及純時間邏輯已測試；瀏覽器工具拒絕file://觀察，實際互動仍待使用者本機確認。
+狀態為**CODE COMPLETE / UI REVIEW PENDING**。[操作方式](docs/native_motion_viewer.md)。
+完整Python suite **1182 passed／0 failed／2 skipped**；另5項純Node時間測試全過。
+
+前段：[Phase3第一步：大谷五球2D投影角度曲線](docs/phase3_ohtani_native_motion_20261024.md)。
 依使用者授權，在獨立分支保留現有骨架模式，新增`describe-native-motion`，直接讀取已保存的原生17點。
 五球1684格的投球肘／前導膝曲線、CSV、來源JSON及簡單觀看頁已完成，新增模型推論0。
 曲線是未校準的模型XY投影，保留缺值與突變；未做事件對齊、評分或跨投手比較。

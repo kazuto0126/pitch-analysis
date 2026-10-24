@@ -52,3 +52,7 @@ CSV關鍵欄位：
 因此`model_xy_deg`用於描述、回看片段與後續研究；`usable_deg`／原輸入的usable_for_analysis
 維持null，沒有新品質門檻、評分、臨床解讀、完整profile或跨投手比較。
 Phase2自動可靠性NOT PASSED的歷史與限制保持；本入口不宣告Phase3整體通過。
+
+既有輸出亦可用[`review-native-motion`](native_motion_viewer.md)建立影片／曲線連動頁，
+以逐格、格號或點曲線回看片段。這是觀看工具，原CSV／PNG與角度計算保持。
+實際瀏覽器互動尚待本機確認，沒有因此新增可靠性判定或人工GT。

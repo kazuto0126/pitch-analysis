@@ -1,4 +1,4 @@
-# Current status — Phase3 first descriptive motion delivery complete
+# Current status — Motion synchronization viewer code complete; UI review pending
 
 Updated: 2026-10-24
 
@@ -13,7 +13,39 @@ gates, MediaPipe settings, interpolation and smoothing are unchanged. The approv
 optional subject-region constraint is described below; the default selector remains compatible.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-24 user-authorized Phase3 first delivery: native 2D motion curves
+## 2026-10-24 saved-video / motion-curve synchronization viewer
+
+Following the user's continuation, review-native-motion creates a local single-
+pitcher viewer from saved motion exports, retaining all five Ohtani clips/1684frames.
+It links playback/presented-frame cursor/angle readouts and supports stepping,
+frame input, slider and curve-click seek. Source CSV values are embedded unchanged;
+no angle recomputation, pose/detector, tracking replay, GT or event alignment.
+
+requestVideoFrameCallback mediaTime identifies the presented source frame; requested
+target is separate until confirmed. Fallback uses explicitly marked currentTime
+estimates. Loading/error disable controls; rate affects only playback. Missing
+angles remain gaps. Models, raw coordinates, gates and unknown/null semantics stay.
+
+New source/CSV checks cover exact hashes, complete frames/fractional time, state/
+count consistency and single-pitcher identity. Six new Python tests and five pure
+Node numeric tests passed. Full Python suite1184run/1182passed/0failed/0errors/
+2Windows-file-symlinkskips,130.406s,including formal five-video MediaPipe E2E.
+379protected existing inputs/outputs/core/test SHA unchanged. Existing files only
+extend CLI dispatch and package-data to include the JS asset.
+
+CUA rejected file:// observation and prohibited workarounds. No alternative
+browser/headless/DOM route was used. Real playback/click/step behavior is NOT
+browser-verified; browser_interaction_verified=false. Static review and numerical
+tests do not remove this limitation. **CODE COMPLETE / UI REVIEW PENDING**.
+The user can test the local page without adding joint ground truth.
+
+Output:`analysis_results/phase3_motion_sync_20261024_01/viewer/review_motion.html`.
+[Usage](native_motion_viewer.md),[delivery/tests](phase3_motion_sync_20261024.md),
+[versioned evidence](dataset_selections/phase3_motion_sync_20261024.json).
+Phase2 automatic acceptance remains NOT PASSED; overall Phase3 NOT EVALUATED.
+Stop after this delivery/commit/push; no next feature automatically started.
+
+## 2026-10-24 user-authorized Phase3 first delivery: native 2D motion curves (previous)
 
 After explicitly confirming retention of the accepted Ohtani/Yamamoto skeleton
 workflow, HSU authorized the previously proposed minimal next step with

@@ -1,0 +1,103 @@
+{
+  "schema_version": "native-motion-sync-delivery-v1",
+  "source_results_ref": {
+    "path": "docs/dataset_selections/phase3_ohtani_native_motion_20261024.json",
+    "sha256": "eece1027fc62754b787139becb71c6140d11291e1d8fb6800b684207ac899991"
+  },
+  "viewer_manifest_ref": {
+    "path": "analysis_results/phase3_motion_sync_20261024_01/viewer/motion_viewer_manifest.json",
+    "sha256": "253d0ff09b147621e35210724d0d897f34e67d541a4f06b8363163f0f9bd7061"
+  },
+  "clip_count": 5,
+  "source_frames": 1684,
+  "new_inference_calls": 0,
+  "angle_values_recomputed": false,
+  "new_ground_truth_labels": 0,
+  "protected_files": 379,
+  "protected_sha256_changes": [],
+  "browser_interaction_verified": false,
+  "browser_verification_blocker": "CUA URL policy rejected file://; no workaround attempted",
+  "phase2_original_status": "NOT_PASSED",
+  "phase3_overall": "NOT_EVALUATED",
+  "created_at_utc": "2026-10-24T02:09:43.595136+00:00",
+  "status": "CODE_COMPLETE_UI_REVIEW_PENDING",
+  "python_suite": {
+    "created_at_utc": "2026-10-24T02:09:26.686945+00:00",
+    "tests_run": 1184,
+    "passed": 1182,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 2,
+    "skipped_reasons": [
+      {
+        "test": "test_dangling_snapshot_file_link_cannot_create_external_target_when_supported (test_handoff_paths.HandoffPathTests.test_dangling_snapshot_file_link_cannot_create_external_target_when_supported)",
+        "reason": "file symlink creation is unavailable"
+      },
+      {
+        "test": "test_source_symlink_outside_candidate_is_rejected_when_supported (test_handoff_review.HandoffReviewTests.test_source_symlink_outside_candidate_is_rejected_when_supported)",
+        "reason": "creating symbolic links is unavailable"
+      }
+    ],
+    "elapsed_seconds": 130.406,
+    "formal_five_video_e2e_enabled": true,
+    "real_rtmpose_calls": 0,
+    "real_detector_calls": 0,
+    "successful": true
+  },
+  "node_tests": {
+    "tests": 5,
+    "pass": 5,
+    "fail": 0,
+    "skipped": 0,
+    "scope": "pure numeric helpers only; no DOM/browser",
+    "exit_code": 0,
+    "log_ref": {
+      "path": "analysis_results/phase3_motion_sync_20261024_01/node_tests.log",
+      "sha256": "092fabd5826056cffaffc1b615564e244fd2ffc9277fac95bb229ba49bb93352"
+    }
+  },
+  "python_results_ref": {
+    "path": "analysis_results/phase3_motion_sync_20261024_01/verified_suite/test_results.json",
+    "sha256": "d8a84370c361c91410c5b538f51f846335dae738a2cac4f9b05d44452a5999d9"
+  },
+  "python_log_ref": {
+    "path": "analysis_results/phase3_motion_sync_20261024_01/verified_suite/full_suite.log",
+    "sha256": "b5edb1608efd7bae86d7081ee51c651c3ddfcf646f4a76cb3694b9ee46e899e1"
+  },
+  "node_results_ref": {
+    "path": "analysis_results/phase3_motion_sync_20261024_01/node_test_results.json",
+    "sha256": "aed710db81f4bf836b90b1259d45fc6724b99efa343edec3e8d9bc8918aa8c46"
+  },
+  "protected_after_full_suite": {
+    "files": 379,
+    "sha256_changes": []
+  },
+  "viewer_js_matches_source": true,
+  "html_ref": {
+    "path": "analysis_results/phase3_motion_sync_20261024_01/viewer/review_motion.html",
+    "sha256": "2f5a6757fdceb7e69cc19c10863178939ee3c77307cc968921036732d44f6f77"
+  },
+  "script_ref": {
+    "path": "analysis_results/phase3_motion_sync_20261024_01/viewer/motion_viewer.js",
+    "sha256": "094db045f8e09f6fcbd335cab06095040e926faa0179d0695fe4c9d8a3e380c4"
+  },
+  "implementation_refs": [
+    {
+      "path": "src/pitch_analysis/analysis/native_motion_viewer.py",
+      "sha256": "9e33ae3a3c67d2687528ee27116d7d32a351f53c3c25cd281878856050bf8aec"
+    },
+    {
+      "path": "src/pitch_analysis/review_assets/native_motion_viewer.js",
+      "sha256": "094db045f8e09f6fcbd335cab06095040e926faa0179d0695fe4c9d8a3e380c4"
+    },
+    {
+      "path": "src/pitch_analysis/cli.py",
+      "sha256": "89b0b4c1c8c078a8f87d65fcbc02b26bbe549d7be69bf8ac5409d2dca8726cca"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "70327e8acff36154b82f57e2337a746bc390372a36bf6af370ee4066713648d2"
+    }
+  ],
+  "output_root": "analysis_results/phase3_motion_sync_20261024_01/viewer"
+}

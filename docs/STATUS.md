@@ -1,11 +1,27 @@
 # 進度摘要
 
-更新：2026-10-24（台灣）。[完整狀態](current_status.md)；[大谷2D動作曲線](phase3_ohtani_native_motion_20261024.md)。
+更新：2026-10-24（台灣）。[完整狀態](current_status.md)；[影片／曲線連動頁](phase3_motion_sync_20261024.md)。
 
 **Phase 1 = PASSED；Native interface integration = PASSED；Phase 2 自動可靠性仍 NOT PASSED。**
 **Phase3第一個描述性曲線交付 = COMPLETE；Phase3整體尚未驗收。**
 
-## 最新：依使用者授權完成Phase3第一步，大谷五球2D投影曲線
+## 最新：影片／曲線連動頁可試用，真實瀏覽器互動尚待確認
+
+新增`review-native-motion`，只讀大谷五球既有曲線及已接受overlay，共1684格。
+可播放連動游標／格號／肘膝角、逐格、格號前往、滑桿及點曲線跳轉。
+優先使用實際呈現畫格的mediaTime；fallback明示時間估計，要求目標與實際呈現格分開顯示。
+觀看速度只影響播放器，原骨架、CSV、PNG、逐點unknown/null與Phase2 NOT PASSED保持。
+
+來源／CSV與完整時間軸檢查、6項新增Python測試及5項純Node時間測試已完成；
+完整Python suite **1182 passed／0 failed／0 errors／2 skipped**（1184項、130.406秒），
+含正式五球E2E；另5項Node測試全過。詳細來源見[交付紀錄](phase3_motion_sync_20261024.md)。
+379份受保護來源與既有結果不變，新增模型推論／角度重算／GT皆0。
+瀏覽器工具安全政策拒絕file://觀察，本輪沒有改用替代途徑繞過。
+**CODE COMPLETE / UI REVIEW PENDING**；真實播放與逐格操作需由使用者在本機頁面確認。
+輸出：`analysis_results/phase3_motion_sync_20261024_01/viewer/review_motion.html`。
+[操作與同步定義](native_motion_viewer.md)。本輪commit／push後停止，不開始新功能。
+
+## 前段：依使用者授權完成Phase3第一步，大谷五球2D投影曲線
 
 在確認保留大谷／山本骨架模式後，使用者授權「可以繼續下步驟」。
 新分支`codex/phase3-native-motion`，Phase2 checkpoint`48ac5bc`保留。
