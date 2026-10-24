@@ -1,4 +1,4 @@
-# Current status — Ohtani event review prepared, human answers pending
+# Current status — Ohtani005 manual events complete; review progress 1/5
 
 Updated: 2026-10-24
 
@@ -13,7 +13,30 @@ gates, MediaPipe settings, interpolation and smoothing are unchanged. The approv
 optional subject-region constraint is described below; the default selector remains compatible.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-24 Ohtani manual-event review preparation
+## 2026-10-24 Ohtani005 manual event checkpoint
+
+HSU reviewed consecutive original-frame sheets and supplied all five 005 events:
+preparation 81–82, peak lift 96–99, foot plant 124, approximate release 134–135,
+follow-through end 169. Exact frames and ranges are retained without midpoints.
+The preliminary overview candidates 88 and 176 are superseded by the later human
+answers, with the original statements and correction history preserved.
+
+Existing ground-truth-v1 schema, source binding, bounds and event order validate.
+The GT remains in_progress, reviewer HSU, reviewed_at_utc null; all non-event
+labels remain null. A source-bound workflow checkpoint records only completion
+of the five-event scope, not completion of full pose GT or pointwise reliability.
+Other four clips remain unreviewed with zero event answers: event progress 1/5.
+
+Next 001 now has 335 raw viewing crops, 28 consecutive sheets and uniform overview
+pages using the already approved fixed source rectangle. No event guesses,
+product/test changes, model replay or suite rerun. Latest same-code full suite
+remains 1201 passed / 0 failed / 2 skipped. Scoped event-only comparison is still a later
+task; no existing gate/schema is relaxed and no full-GT labels are fabricated.
+
+[Progress/source checkpoint](dataset_selections/phase3_ohtani_event_review_progress_20261024.json),
+[review workflow](phase3_ohtani_event_review_20261024.md). Await human 001 events.
+
+## 2026-10-24 Ohtani manual-event review preparation (previous)
 
 Following「繼續」, preparation creates five blank existing ground-truth-v1 templates,
 bound to decoded source counts 335/321/369/338/321 (1684 total). All human fields,

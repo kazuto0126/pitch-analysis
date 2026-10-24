@@ -1,6 +1,6 @@
 {
   "schema_version": "ground-truth-v1",
-  "annotation_status": "unreviewed",
+  "annotation_status": "in_progress",
   "source_video": {
     "pitch_id": "supplement_005",
     "filename": "supplement_005.mp4",
@@ -9,7 +9,7 @@
     "frame_index_base": 0
   },
   "provenance": {
-    "reviewer": null,
+    "reviewer": "HSU",
     "reviewed_at_utc": null,
     "method": "manual_video_review",
     "guidelines_version": "ground-truth-guidelines-v1"
@@ -21,11 +21,48 @@
     "throwing_elbow_reliability": null,
     "lead_knee_reliability": null,
     "events": {
-      "preparation_start": null,
-      "leg_lift": null,
-      "foot_plant": null,
-      "approximate_release": null,
-      "follow_through_end": null
+      "preparation_start": {
+        "status": "annotated",
+        "frame_index": null,
+        "frame_range": {
+          "start_frame": 81,
+          "end_frame": 82
+        },
+        "confidence": null,
+        "note": "HSU觀看第80–91格連續原片影格後回覆「81-82」，確認啟動開始範圍。先前概覽中的88格僅為候選，已依人工修正，不取範圍中點。"
+      },
+      "leg_lift": {
+        "status": "annotated",
+        "frame_index": null,
+        "frame_range": {
+          "start_frame": 96,
+          "end_frame": 99
+        },
+        "confidence": null,
+        "note": "HSU觀看第84–107格連續原片影格後回覆「96-99」，確認最高抬腿範圍；保留區間，不取中點。"
+      },
+      "foot_plant": {
+        "status": "annotated",
+        "frame_index": 124,
+        "confidence": null,
+        "note": "HSU觀看第120–143格連續原片影格後回覆「124」，確認前導左腳首次落地為第124格；Codex依人工回答轉錄。"
+      },
+      "approximate_release": {
+        "status": "annotated",
+        "frame_index": null,
+        "frame_range": {
+          "start_frame": 134,
+          "end_frame": 135
+        },
+        "confidence": null,
+        "note": "HSU觀看第132–143格連續原片影格後回覆「134-135」，確認大致出手範圍；保留區間，不取中點。"
+      },
+      "follow_through_end": {
+        "status": "annotated",
+        "frame_index": 169,
+        "confidence": null,
+        "note": "HSU觀看第168–191格連續原片影格後回覆「169」，確認收尾結束為第169格。先前概覽中的176格僅為候選，已依人工修正。"
+      }
     }
   },
   "notes": []

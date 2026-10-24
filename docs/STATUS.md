@@ -5,7 +5,17 @@
 **Phase 1 = PASSED；Native interface integration = PASSED；Phase 2 自動可靠性仍 NOT PASSED。**
 **Phase3第一個描述性曲線交付 = COMPLETE；Phase3整體尚未驗收。**
 
-## 最新：大谷五球空白事件模板與005查看圖片備妥
+## 最新：大谷005五事件已由HSU確認，進度1/5
+
+005：啟動81–82、最高抬腿96–99、前腳落地124、出手134–135、收尾169。
+範圍原樣保留，沒有取中點；概覽中的88／176已依連續影格回答修正，原話與修正歷程保留。
+格式、原片來源與事件順序檢查通過；checkpoint只保存事件範圍完成，不宣稱完整pose GT已完成。
+GT仍in_progress、reviewed_at_utc=null；未覆核的身份、關節、pose failure等欄位仍null。
+其他四片事件未填；下一支001的335格圖片／28張連續格表已準備好，等待人工回答。
+本輪無產品／測試碼變更，未重跑suite或骨架；最近相同程式碼1201 passed／0 failed／2 skipped。
+[人工進度與來源](dataset_selections/phase3_ohtani_event_review_progress_20261024.json)。
+
+## 前段：大谷五球空白事件模板與005查看圖片備妥
 
 依「繼續」準備五個事件的人工判讀，先005再001／002／003／004，不重標骨架。
 五支原片實際解碼共1684格，建立同一ground-truth-v1的五份空白模板；人工答案全null。
