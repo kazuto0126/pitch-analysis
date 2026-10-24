@@ -1,0 +1,221 @@
+{
+  "schema_version": "yamamoto-native-motion-delivery-v1",
+  "status": "GENERATED_HUMAN_VIEWER_REVIEW_PENDING",
+  "created_at_utc": "2026-10-24T02:19:49.841321+00:00",
+  "source_config_ref": {
+    "path": "config/analysis_inputs/yamamoto_active_seeded_20261024.json",
+    "sha256": "b1708b2e06f274802a2682c7d94b3ae11810d25393c072199eae6efb497ab93a"
+  },
+  "clips": [
+    {
+      "pitch_id": "pitch_001",
+      "frames": 87,
+      "fps_fraction": "30/1",
+      "curves": {
+        "throwing_elbow": {
+          "total_frames": 87,
+          "calculated": 87,
+          "missing": 0,
+          "degenerate": 0
+        },
+        "lead_knee": {
+          "total_frames": 87,
+          "calculated": 87,
+          "missing": 0,
+          "degenerate": 0
+        }
+      },
+      "source_role": "active",
+      "source_skeleton_human_review": "accepted_by_HSU",
+      "new_viewer_human_review": "pending",
+      "summary_ref": {
+        "path": "analysis_results/phase3_yamamoto_native_motion_20261024_01/pitch_001/motion_summary.json",
+        "sha256": "425b867ed38c8ef040620f236050ebc73a39dcaa139e55834667e6601ca91db2"
+      },
+      "curves_ref": {
+        "path": "analysis_results/phase3_yamamoto_native_motion_20261024_01/pitch_001/motion_curves.csv",
+        "sha256": "ab5ae5f00425eb0e190c8cdd2542b03168ef123426b9694251b95fb016028dae"
+      },
+      "plot_ref": {
+        "path": "analysis_results/phase3_yamamoto_native_motion_20261024_01/pitch_001/motion_curves.png",
+        "sha256": "f4bf93ed148e9b6e4a3d2382c3d2f597b2b9dee76aa5c34bb064163061843a9b"
+      }
+    },
+    {
+      "pitch_id": "pitch_002",
+      "frames": 175,
+      "fps_fraction": "30/1",
+      "curves": {
+        "throwing_elbow": {
+          "total_frames": 175,
+          "calculated": 175,
+          "missing": 0,
+          "degenerate": 0
+        },
+        "lead_knee": {
+          "total_frames": 175,
+          "calculated": 175,
+          "missing": 0,
+          "degenerate": 0
+        }
+      },
+      "source_role": "active",
+      "source_skeleton_human_review": "accepted_by_HSU",
+      "new_viewer_human_review": "pending",
+      "summary_ref": {
+        "path": "analysis_results/phase3_yamamoto_native_motion_20261024_01/pitch_002/motion_summary.json",
+        "sha256": "d1b600486897adb51cb0e9dfb6b89a7b1805553ed1eb1fb1b13e03947229e032"
+      },
+      "curves_ref": {
+        "path": "analysis_results/phase3_yamamoto_native_motion_20261024_01/pitch_002/motion_curves.csv",
+        "sha256": "015761178543901b7f27ef9c7a19691027c11087a04701b08c244377be3f7c75"
+      },
+      "plot_ref": {
+        "path": "analysis_results/phase3_yamamoto_native_motion_20261024_01/pitch_002/motion_curves.png",
+        "sha256": "a5d093f2857cf01bcf94e734de5e7efa6e70f4e99f9f5eda9977b78283f1db43"
+      }
+    },
+    {
+      "pitch_id": "pitch_004",
+      "frames": 114,
+      "fps_fraction": "30/1",
+      "curves": {
+        "throwing_elbow": {
+          "total_frames": 114,
+          "calculated": 114,
+          "missing": 0,
+          "degenerate": 0
+        },
+        "lead_knee": {
+          "total_frames": 114,
+          "calculated": 114,
+          "missing": 0,
+          "degenerate": 0
+        }
+      },
+      "source_role": "active",
+      "source_skeleton_human_review": "accepted_by_HSU",
+      "new_viewer_human_review": "pending",
+      "summary_ref": {
+        "path": "analysis_results/phase3_yamamoto_native_motion_20261024_01/pitch_004/motion_summary.json",
+        "sha256": "3074cbe9659d40ecb1140ffee05b683bd333388b2acb02b843ef7951ab171e71"
+      },
+      "curves_ref": {
+        "path": "analysis_results/phase3_yamamoto_native_motion_20261024_01/pitch_004/motion_curves.csv",
+        "sha256": "0ca68ca1fda2db5f626ae0d915874cc9b9f6893849899db1d28593bb93128c6b"
+      },
+      "plot_ref": {
+        "path": "analysis_results/phase3_yamamoto_native_motion_20261024_01/pitch_004/motion_curves.png",
+        "sha256": "38bad58493455c4129e5257894cdd861932b944641e94c7dca5990373529f411"
+      }
+    },
+    {
+      "pitch_id": "pitch_005",
+      "frames": 101,
+      "fps_fraction": "30/1",
+      "curves": {
+        "throwing_elbow": {
+          "total_frames": 101,
+          "calculated": 101,
+          "missing": 0,
+          "degenerate": 0
+        },
+        "lead_knee": {
+          "total_frames": 101,
+          "calculated": 101,
+          "missing": 0,
+          "degenerate": 0
+        }
+      },
+      "source_role": "active",
+      "source_skeleton_human_review": "accepted_by_HSU",
+      "new_viewer_human_review": "pending",
+      "summary_ref": {
+        "path": "analysis_results/phase3_yamamoto_native_motion_20261024_01/pitch_005/motion_summary.json",
+        "sha256": "0e87ba05f3a50930364de5596669dcb44cdbfac474faedd9736c6e3d70a1ae48"
+      },
+      "curves_ref": {
+        "path": "analysis_results/phase3_yamamoto_native_motion_20261024_01/pitch_005/motion_curves.csv",
+        "sha256": "282ec645ff635b4a3b94d39722e7f71e9744798f0b4f51375c53eda518165c2d"
+      },
+      "plot_ref": {
+        "path": "analysis_results/phase3_yamamoto_native_motion_20261024_01/pitch_005/motion_curves.png",
+        "sha256": "8631ba5eb3e3526da211b2caf28585e5f9daec30ff8e675569577d2039e9cc88"
+      }
+    }
+  ],
+  "clip_count": 4,
+  "source_frames": 477,
+  "calculated_model_xy_angles": 954,
+  "excluded_pitch_ids": [
+    "pitch_003"
+  ],
+  "new_model_calls": 0,
+  "new_tracking_replays": 0,
+  "new_ground_truth_labels": 0,
+  "production_code_changes": 0,
+  "cross_pitcher_comparison": false,
+  "protected_files": 415,
+  "protected_sha256_changes": [],
+  "viewer_manifest_ref": {
+    "path": "analysis_results/phase3_yamamoto_native_motion_20261024_01/viewer/motion_viewer_manifest.json",
+    "sha256": "ff478d0c5d4089104bb786583a0447528a63af9f947a741ab1adf86f33ce20ec"
+  },
+  "html_ref": {
+    "path": "analysis_results/phase3_yamamoto_native_motion_20261024_01/viewer/review_motion.html",
+    "sha256": "753cdf2fdaa5e0f0f92a60ebf465bf577d8bd6243c1efa1b7516593fbe1529ed"
+  },
+  "script_ref": {
+    "path": "analysis_results/phase3_yamamoto_native_motion_20261024_01/viewer/motion_viewer.js",
+    "sha256": "094db045f8e09f6fcbd335cab06095040e926faa0179d0695fe4c9d8a3e380c4"
+  },
+  "browser_interaction_verified": false,
+  "human_viewer_review": "pending",
+  "source_skeleton_human_acceptance": "ACCEPTED_4_OF_4_ACTIVE",
+  "ohtani_viewer_rerun": false,
+  "full_suite": {
+    "rerun": false,
+    "reason": "same tested production/test code; four real exports and viewer validated this round",
+    "created_at_utc": "2026-10-24T02:09:26.686945+00:00",
+    "tests_run": 1184,
+    "passed": 1182,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 2,
+    "skipped_reasons": [
+      {
+        "test": "test_dangling_snapshot_file_link_cannot_create_external_target_when_supported (test_handoff_paths.HandoffPathTests.test_dangling_snapshot_file_link_cannot_create_external_target_when_supported)",
+        "reason": "file symlink creation is unavailable"
+      },
+      {
+        "test": "test_source_symlink_outside_candidate_is_rejected_when_supported (test_handoff_review.HandoffReviewTests.test_source_symlink_outside_candidate_is_rejected_when_supported)",
+        "reason": "creating symbolic links is unavailable"
+      }
+    ],
+    "elapsed_seconds": 130.406,
+    "formal_five_video_e2e_enabled": true,
+    "real_rtmpose_calls": 0,
+    "real_detector_calls": 0,
+    "successful": true,
+    "results_ref": {
+      "path": "analysis_results/phase3_motion_sync_20261024_01/verified_suite/test_results.json",
+      "sha256": "d8a84370c361c91410c5b538f51f846335dae738a2cac4f9b05d44452a5999d9"
+    }
+  },
+  "node_tests": {
+    "tests": 5,
+    "pass": 5,
+    "fail": 0,
+    "skipped": 0,
+    "scope": "pure numeric helpers only; no DOM/browser",
+    "exit_code": 0,
+    "log_ref": {
+      "path": "analysis_results/phase3_motion_sync_20261024_01/node_tests.log",
+      "sha256": "092fabd5826056cffaffc1b615564e244fd2ffc9277fac95bb229ba49bb93352"
+    }
+  },
+  "phase2_original_status": "NOT_PASSED",
+  "phase3_overall": "NOT_EVALUATED",
+  "quality_status": "not_calibrated",
+  "usable_for_analysis": null
+}

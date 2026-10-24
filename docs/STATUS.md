@@ -1,11 +1,23 @@
 # 進度摘要
 
-更新：2026-10-24（台灣）。[完整狀態](current_status.md)；[影片／曲線連動頁](phase3_motion_sync_20261024.md)。
+更新：2026-10-24（台灣）。[完整狀態](current_status.md)；[山本四片曲線與連動頁](phase3_yamamoto_native_motion_20261024.md)。
 
 **Phase 1 = PASSED；Native interface integration = PASSED；Phase 2 自動可靠性仍 NOT PASSED。**
 **Phase3第一個描述性曲線交付 = COMPLETE；Phase3整體尚未驗收。**
 
-## 最新：影片／曲線連動頁獲HSU人工接受5/5
+## 最新：山本四支啟用影片已產生同套曲線與連動頁
+
+沿用現有`describe-native-motion`及`review-native-motion`，直接讀取已接受的山本骨架。
+001／002／004／005共477格、954個可計算2D投影角，CSV、PNG、來源摘要與連動頁皆完成。
+003保持歷史對照；大谷五球既有結果保持。兩位投手各自觀看，沒有跨投手比較。
+415份受保護來源／結果／程式SHA變更0；新模型、tracking replay、新GT及產品／測試碼變更皆0。
+實看四張曲線圖，保留局部突變、unknown及null，沒有新增自動品質判定。
+原骨架已接受4/4；新觀看頁人工操作確認待完成，工具自動瀏覽器檢查未執行。
+本輪未重跑suite；同程式碼最近結果1182 passed／0 failed／2 skipped，另5項Node測試全過。
+輸出：`analysis_results/phase3_yamamoto_native_motion_20261024_01/viewer/review_motion.html`。
+[逐球結果與限制](phase3_yamamoto_native_motion_20261024.md)。本輪提交／推送後停止。
+
+## 前段：大谷影片／曲線連動頁獲HSU人工接受5/5
 
 新增`review-native-motion`，只讀大谷五球既有曲線及已接受overlay，共1684格。
 可播放連動游標／格號／肘膝角、逐格、格號前往、滑桿及點曲線跳轉。

@@ -49,3 +49,13 @@ UI會區分「要求的目標格」與「目前實際呈現格」，等待回呼
 五球觀看頁已獲人工整體接受，005記為偏好示範。接受紀錄綁定當時頁面／JS／輸出SHA，
 保存於`annotations/motion_reviews/HSU_20261024/ohtani_motion_sync_acceptance.json`。
 這是人工操作接受，沒有逐控制項量測日誌，也沒有增加逐點GT或改變角度可靠性。
+
+## 目前已產生的觀看頁
+
+| 投手 | 影片 | 來源格數 | 人工觀看頁確認 | 本機HTML |
+|---|---|---:|---|---|
+| 大谷 | supplement_001–005 | 1684 | HSU已整體接受5/5 | `analysis_results/phase3_motion_sync_20261024_01/viewer/review_motion.html` |
+| 山本 | pitch_001／002／004／005 | 477 | 新頁待確認；原骨架已接受4/4 | `analysis_results/phase3_yamamoto_native_motion_20261024_01/viewer/review_motion.html` |
+
+在Chrome或Edge按`Ctrl+O`選取對應HTML。山本003維持歷史對照，不在啟用觀看頁中。
+兩頁分別只含一位投手，沒有事件對齊或跨投手比較；兩者沿用同一套既有程式與骨架模式。

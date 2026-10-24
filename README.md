@@ -6,7 +6,14 @@
 本次收尾摘要見 [STATUS](docs/STATUS.md)；外部專案供片需求見
 [INPUT_REQUIREMENTS](docs/INPUT_REQUIREMENTS.md)。
 
-2026-10-24 最新：[大谷影片／曲線連動頁](docs/phase3_motion_sync_20261024.md)。
+2026-10-24 最新：[山本四支啟用影片的曲線與連動頁](docs/phase3_yamamoto_native_motion_20261024.md)。
+沿用現有工具及已接受骨架，001／002／004／005共477格、954個模型2D投影角，003仍為歷史對照。
+四支CSV、PNG、來源摘要與連動頁已生成；新推論、tracking replay、GT及產品碼變更皆0。
+原骨架接受4/4；新觀看頁人工操作確認待完成。大谷既有結果與兩位投手的骨架方式保持。
+本輪未重跑suite；相同程式碼最近1182 passed／0 failed／2 skipped，另5項Node測試全過。
+2D投影、逐點unknown／usable null及Phase2自動可靠性NOT PASSED限制保留，未做跨投手比較。
+
+前段：[大谷影片／曲線連動頁](docs/phase3_motion_sync_20261024.md)。
 新增`review-native-motion`，可播放時同步游標與角度，並用逐格、格號、滑桿或點曲線跳轉。
 直接讀取五球既有角度與overlay，共1684格，骨架方式與曲線數值保持。
 HSU已回覆「都正確尤其是5最完美」，五球觀看頁已獲人工整體接受，005記為示範樣本。

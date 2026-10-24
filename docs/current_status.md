@@ -1,4 +1,4 @@
-# Current status — Motion synchronization viewer accepted by HSU
+# Current status — Yamamoto active four motion exports and viewer generated
 
 Updated: 2026-10-24
 
@@ -13,7 +13,36 @@ gates, MediaPipe settings, interpolation and smoothing are unchanged. The approv
 optional subject-region constraint is described below; the default selector remains compatible.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-24 saved-video / motion-curve synchronization viewer
+## 2026-10-24 active Yamamoto motion curves and synchronization viewer
+
+The existing describe-native-motion and review-native-motion commands processed
+the already accepted Yamamoto 001/002/004/005 without production/test code changes.
+87/175/114/101 frames, 477 total, 954 calculated model-XY angles; no missing or
+degenerate angles. Each clip has CSV/PNG/source summary, plus one four-clip viewer.
+All sources use 30/1 FPS and original pixel aspect ratios. 003 remains historical only.
+
+415 protected source/raw/review/prior output/product/test files retain their SHA.
+New detector/pose calls, tracking replay and GT: 0. Ohtani's accepted viewer is
+unchanged and was not rerun. Viewed all four plots for readable labels/layout;
+raw elbow fluctuations retained, no smoothing or accuracy claim.
+
+Source skeleton acceptance remains 4/4. This newly generated viewer has not yet
+received human operation acceptance; automated browser verification is also
+unperformed under the existing file:// policy restriction. No new annotation
+requirement or Phase3 pass condition is introduced.
+
+No suite rerun for this data/document-only reuse. Latest same-code full Python
+suite remains 1182 passed / 0 failed / 0 errors / 2 skipped, plus 5 pure Node tests passed.
+Pointwise reliability remains unknown, usable fields null; no event alignment,
+cross-pitcher comparison, profile or new quality gate. Phase2 NOT PASSED and
+overall Phase3 NOT EVALUATED remain.
+
+Output:`analysis_results/phase3_yamamoto_native_motion_20261024_01/viewer/review_motion.html`.
+[Results/usage](phase3_yamamoto_native_motion_20261024.md),
+[versioned evidence](dataset_selections/phase3_yamamoto_native_motion_20261024.json).
+Stop after this bounded delivery/commit/push; no next feature automatically started.
+
+## 2026-10-24 saved-video / motion-curve synchronization viewer (previous)
 
 Following the user's continuation, review-native-motion creates a local single-
 pitcher viewer from saved motion exports, retaining all five Ohtani clips/1684frames.
