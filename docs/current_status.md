@@ -1,6 +1,6 @@
-# Current status — Ohtani001/002/003/005 manual events complete; review progress 4/5
+# Current status — Ohtani five-clip manual event scope complete (5/5)
 
-Updated: 2026-10-24
+Updated: 2026-10-25 (Asia/Taipei)
 
 **Phase 1 = PASSED.**
 **Native interface integration = PASSED (cached compatibility and optional live COCO17 entry).**
@@ -13,7 +13,11 @@ gates, MediaPipe settings, interpolation and smoothing are unchanged. The approv
 optional subject-region constraint is described below; the default selector remains compatible.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-24 Ohtani001/002/003/005 manual event checkpoints
+## 2026-10-25 Ohtani five-clip manual event review closeout
+
+HSU completed 004: preparation 39, peak lift 71, foot plant 124, approximate
+release 129, follow-through end 180. Overview candidates 40 and 192 were corrected
+to 39 and 180 after consecutive-frame review. Original answers/history remain.
 
 HSU completed 003: preparation 105, peak lift 119, foot plant 156, approximate
 release 164, follow-through end 208. The start candidate 104 was corrected to 105;
@@ -40,16 +44,22 @@ Existing ground-truth-v1 schema, source binding, bounds and event order validate
 The GT remains in_progress, reviewer HSU, reviewed_at_utc null; all non-event
 labels remain null. A source-bound workflow checkpoint records only completion
 of the five-event scope, not completion of full pose GT or pointwise reliability.
-004 remains unreviewed with zero event answers: event progress 4/5.
+All five clips now have complete event scopes: 25 annotated events, 21 exact
+frames and four frame ranges; no event answers remain unfilled.
 
-Final clip 004 now has 338 raw viewing crops, 29 consecutive sheets and uniform overview
-pages using the already approved fixed source rectangle. No event guesses,
-product/test changes, model replay or suite rerun. Latest same-code full suite
-remains 1201 passed / 0 failed / 2 skipped. Scoped event-only comparison is still a later
-task; no existing gate/schema is relaxed and no full-GT labels are fabricated.
+The final 004 helper retains 338 raw viewing crops, 29 consecutive sheets and
+uniform overview pages using the already approved fixed source rectangle.
+All 504 protected file hashes remain unchanged. No product/test changes, model
+replay or suite rerun. Latest same-code full suite remains 1201 passed / 0 failed /
+2 skipped. Next is source-bound event-only consumption in the existing same-pitcher
+timing comparison; it is not implemented in this closeout. The existing reader
+still requires full reviewed GT; no gate/schema is relaxed and no non-event labels
+are fabricated to bypass that requirement.
 
 [Progress/source checkpoint](dataset_selections/phase3_ohtani_event_review_progress_20261024.json),
-[review workflow](phase3_ohtani_event_review_20261024.md). Await human 004 events.
+[review workflow](phase3_ohtani_event_review_20261024.md). No further human event
+answers are needed for these five clips. Stop after saving, committing and pushing
+this review closeout; the comparison adapter remains the next task.
 
 ## 2026-10-24 Ohtani manual-event review preparation (previous)
 

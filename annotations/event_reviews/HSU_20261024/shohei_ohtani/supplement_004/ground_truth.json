@@ -1,6 +1,6 @@
 {
   "schema_version": "ground-truth-v1",
-  "annotation_status": "unreviewed",
+  "annotation_status": "in_progress",
   "source_video": {
     "pitch_id": "supplement_004",
     "filename": "supplement_004.mp4",
@@ -9,7 +9,7 @@
     "frame_index_base": 0
   },
   "provenance": {
-    "reviewer": null,
+    "reviewer": "HSU",
     "reviewed_at_utc": null,
     "method": "manual_video_review",
     "guidelines_version": "ground-truth-guidelines-v1"
@@ -21,11 +21,36 @@
     "throwing_elbow_reliability": null,
     "lead_knee_reliability": null,
     "events": {
-      "preparation_start": null,
-      "leg_lift": null,
-      "foot_plant": null,
-      "approximate_release": null,
-      "follow_through_end": null
+      "preparation_start": {
+        "status": "annotated",
+        "frame_index": 39,
+        "confidence": null,
+        "note": "HSU觀看第36–47格連續原片影格後回覆「39」，確認啟動開始為第39格。先前概覽中的40格僅為候選，已依人工修正；Codex依回答轉錄。"
+      },
+      "leg_lift": {
+        "status": "annotated",
+        "frame_index": 71,
+        "confidence": null,
+        "note": "HSU觀看第60–83格連續原片影格後回覆「71」，確認最高抬腿為第71格；Codex依人工回答轉錄。"
+      },
+      "foot_plant": {
+        "status": "annotated",
+        "frame_index": 124,
+        "confidence": null,
+        "note": "HSU觀看第108–131格連續原片影格後回覆「124」，確認前導左腳首次落地為第124格；Codex依人工回答轉錄。"
+      },
+      "approximate_release": {
+        "status": "annotated",
+        "frame_index": 129,
+        "confidence": null,
+        "note": "HSU觀看第120–143格連續原片影格後回覆「129」，確認大致出手為第129格；Codex依人工回答轉錄。"
+      },
+      "follow_through_end": {
+        "status": "annotated",
+        "frame_index": 180,
+        "confidence": null,
+        "note": "HSU觀看第180–203格連續原片影格後回覆「180」，確認收尾結束為第180格。先前概覽中的192格僅為候選，已依人工修正。"
+      }
     }
   },
   "notes": []
