@@ -43,5 +43,9 @@ UI會區分「要求的目標格」與「目前實際呈現格」，等待回呼
 
 本輪完成Python來源／CSV檢查及純Node時間換算測試。
 瀏覽器工具的安全政策拒絕`file://`頁面觀察，且禁止繞過；因此未做真實瀏覽器／DOM播放驗證。
-`browser_interaction_verified=false`保留。需由使用者在本機頁面確認播放、逐格和點曲線的實際效果。
-這項限制不會被測試通過改寫成「互動已驗收」。
+原交付的`browser_interaction_verified=false`快照保留；測試本身沒有被當作真實播放的證明。
+
+2026-10-24後續：HSU在本機開啟後回覆「都正確尤其是5最完美」，
+五球觀看頁已獲人工整體接受，005記為偏好示範。接受紀錄綁定當時頁面／JS／輸出SHA，
+保存於`annotations/motion_reviews/HSU_20261024/ohtani_motion_sync_acceptance.json`。
+這是人工操作接受，沒有逐控制項量測日誌，也沒有增加逐點GT或改變角度可靠性。

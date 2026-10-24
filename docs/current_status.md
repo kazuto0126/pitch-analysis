@@ -1,4 +1,4 @@
-# Current status — Motion synchronization viewer code complete; UI review pending
+# Current status — Motion synchronization viewer accepted by HSU
 
 Updated: 2026-10-24
 
@@ -33,15 +33,22 @@ Node numeric tests passed. Full Python suite1184run/1182passed/0failed/0errors/
 379protected existing inputs/outputs/core/test SHA unchanged. Existing files only
 extend CLI dispatch and package-data to include the JS asset.
 
-CUA rejected file:// observation and prohibited workarounds. No alternative
-browser/headless/DOM route was used. Real playback/click/step behavior is NOT
-browser-verified; browser_interaction_verified=false. Static review and numerical
-tests do not remove this limitation. **CODE COMPLETE / UI REVIEW PENDING**.
-The user can test the local page without adding joint ground truth.
+CUA rejected file:// observation and prohibited workarounds, so automated browser
+verification remains unperformed. The original builder's browser_interaction_verified=false
+and delivery's UI_REVIEW_PENDING remain historical execution snapshots.
+After local opening instructions, HSU replied「都正確尤其是5最完美」,
+accepting the five-clip viewer qualitatively and highlighting supplement005 as the
+preferred demonstration. Exact response/reviewer/time/source SHA are saved in
+annotations/motion_reviews/HSU_20261024/ohtani_motion_sync_acceptance.json.
+**Current human viewer review: ACCEPTED5/5.** No instrumented per-control test log,
+new pointwise GT, calibrated accuracy or algorithm change is inferred.
+This review/document-only update reruns no models/tests; latest same-code full
+suite remains1182passed/0failed/2skipped, plus5pureNode tests passed.
 
 Output:`analysis_results/phase3_motion_sync_20261024_01/viewer/review_motion.html`.
 [Usage](native_motion_viewer.md),[delivery/tests](phase3_motion_sync_20261024.md),
 [versioned evidence](dataset_selections/phase3_motion_sync_20261024.json).
+[Latest human acceptance](dataset_selections/phase3_motion_sync_acceptance_20261024.json).
 Phase2 automatic acceptance remains NOT PASSED; overall Phase3 NOT EVALUATED.
 Stop after this delivery/commit/push; no next feature automatically started.
 

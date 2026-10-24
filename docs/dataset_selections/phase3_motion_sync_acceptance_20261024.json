@@ -1,0 +1,70 @@
+{
+  "schema_version": "native-motion-sync-human-acceptance-v1",
+  "status": "HUMAN_ACCEPTED",
+  "review_ref": {
+    "path": "annotations/motion_reviews/HSU_20261024/ohtani_motion_sync_acceptance.json",
+    "sha256": "f5781f67dda57c548c6faf5e50d552b11e4afc4c1e04b54d3090b665c6e138e3"
+  },
+  "delivery_ref": {
+    "path": "docs/dataset_selections/phase3_motion_sync_20261024.json",
+    "sha256": "1ccb7187f355f1ad0758a195c972aebc26ad50850d47d451fdae63b3f9bc44ac"
+  },
+  "viewer_manifest_ref": {
+    "path": "analysis_results/phase3_motion_sync_20261024_01/viewer/motion_viewer_manifest.json",
+    "sha256": "253d0ff09b147621e35210724d0d897f34e67d541a4f06b8363163f0f9bd7061"
+  },
+  "html_ref": {
+    "path": "analysis_results/phase3_motion_sync_20261024_01/viewer/review_motion.html",
+    "sha256": "2f5a6757fdceb7e69cc19c10863178939ee3c77307cc968921036732d44f6f77"
+  },
+  "script_ref": {
+    "path": "analysis_results/phase3_motion_sync_20261024_01/viewer/motion_viewer.js",
+    "sha256": "094db045f8e09f6fcbd335cab06095040e926faa0179d0695fe4c9d8a3e380c4"
+  },
+  "accepted_clips": 5,
+  "source_frames": 1684,
+  "preferred_demo_pitch_id": "supplement_005",
+  "automated_browser_verification": false,
+  "pointwise_accuracy_established": false,
+  "new_inference_calls": 0,
+  "new_ground_truth_labels": 0,
+  "phase2_original_status": "NOT_PASSED",
+  "phase3_overall": "NOT_EVALUATED",
+  "full_suite_rerun": false,
+  "reason": "review/document-only update; production/test code unchanged",
+  "last_full_suite": {
+    "created_at_utc": "2026-10-24T02:09:26.686945+00:00",
+    "tests_run": 1184,
+    "passed": 1182,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 2,
+    "skipped_reasons": [
+      {
+        "test": "test_dangling_snapshot_file_link_cannot_create_external_target_when_supported (test_handoff_paths.HandoffPathTests.test_dangling_snapshot_file_link_cannot_create_external_target_when_supported)",
+        "reason": "file symlink creation is unavailable"
+      },
+      {
+        "test": "test_source_symlink_outside_candidate_is_rejected_when_supported (test_handoff_review.HandoffReviewTests.test_source_symlink_outside_candidate_is_rejected_when_supported)",
+        "reason": "creating symbolic links is unavailable"
+      }
+    ],
+    "elapsed_seconds": 130.406,
+    "formal_five_video_e2e_enabled": true,
+    "real_rtmpose_calls": 0,
+    "real_detector_calls": 0,
+    "successful": true
+  },
+  "node_tests": {
+    "tests": 5,
+    "pass": 5,
+    "fail": 0,
+    "skipped": 0,
+    "scope": "pure numeric helpers only; no DOM/browser",
+    "exit_code": 0,
+    "log_ref": {
+      "path": "analysis_results/phase3_motion_sync_20261024_01/node_tests.log",
+      "sha256": "092fabd5826056cffaffc1b615564e244fd2ffc9277fac95bb229ba49bb93352"
+    }
+  }
+}

@@ -5,7 +5,7 @@
 **Phase 1 = PASSED；Native interface integration = PASSED；Phase 2 自動可靠性仍 NOT PASSED。**
 **Phase3第一個描述性曲線交付 = COMPLETE；Phase3整體尚未驗收。**
 
-## 最新：影片／曲線連動頁可試用，真實瀏覽器互動尚待確認
+## 最新：影片／曲線連動頁獲HSU人工接受5/5
 
 新增`review-native-motion`，只讀大谷五球既有曲線及已接受overlay，共1684格。
 可播放連動游標／格號／肘膝角、逐格、格號前往、滑桿及點曲線跳轉。
@@ -16,8 +16,13 @@
 完整Python suite **1182 passed／0 failed／0 errors／2 skipped**（1184項、130.406秒），
 含正式五球E2E；另5項Node測試全過。詳細來源見[交付紀錄](phase3_motion_sync_20261024.md)。
 379份受保護來源與既有結果不變，新增模型推論／角度重算／GT皆0。
-瀏覽器工具安全政策拒絕file://觀察，本輪沒有改用替代途徑繞過。
-**CODE COMPLETE / UI REVIEW PENDING**；真實播放與逐格操作需由使用者在本機頁面確認。
+HSU在本機開啟後回覆「都正確尤其是5最完美」，五球已記為人工整體接受，
+005作為使用者偏好的示範樣本；沒有因此調參、加總分或替換其他四球。
+原話、reviewer、時間及頁面／JS／五球輸出SHA另存
+`annotations/motion_reviews/HSU_20261024/ohtani_motion_sync_acceptance.json`。
+**HUMAN ACCEPTED（5/5）**；原CODE COMPLETE／UI PENDING保留為交付時快照。
+工具自動瀏覽器驗證仍未執行；整體接受未轉成逐點可靠性或精度GT。
+本次僅保存覆核與文件，無產品／測試碼變更，未重跑模型或測試。
 輸出：`analysis_results/phase3_motion_sync_20261024_01/viewer/review_motion.html`。
 [操作與同步定義](native_motion_viewer.md)。本輪commit／push後停止，不開始新功能。
 
