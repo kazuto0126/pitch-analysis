@@ -1,5 +1,12 @@
 # Phase3：山本四支啟用影片的2D曲線與連動頁
 
+2026-10-24後續人工確認：HSU回覆「都正確一樣是5表現最好」。
+**目前人工整體接受4/4**，pitch_005記為使用者偏好的示範。
+原話、reviewer、紀錄時間及頁面／JS／四支曲線與overlay SHA已另存
+`annotations/motion_reviews/HSU_20261024/yamamoto_motion_sync_acceptance.json`。
+[最新接受狀態](dataset_selections/phase3_yamamoto_motion_acceptance_20261024.json)。
+原始交付pending快照保留；本次只保存人工覆核與文件，沒有改骨架、曲線或程式，也未重跑模型／測試。
+
 2026-10-24（台灣）。依使用者「繼續呢」，將既有動作曲線與觀看工具套用到
 山本目前啟用的001／002／004／005，直接沿用已接受的原生17點骨架。
 003維持歷史診斷對照，不納入本輪，也不恢復正式使用。
@@ -36,7 +43,7 @@ D:\project\pitch-analysis\analysis_results\phase3_yamamoto_native_motion_2026102
 保留專案與原overlay的相對目錄位置，單獨複製HTML不會包含影片。
 [完整操作與同步定義](native_motion_viewer.md)。
 
-四支原骨架已獲HSU整片接受；**本輪新觀看頁已生成，人工操作確認仍待完成**。
+四支原骨架已獲HSU整片接受；新觀看頁交付時待確認，後續亦獲HSU人工整體接受4/4。
 大谷連動頁先前的人工接受5/5保留，沒有重跑或改動該結果。
 
 ## 實際執行與檢查
@@ -61,6 +68,9 @@ D:\project\pitch-analysis\analysis_results\phase3_yamamoto_native_motion_2026102
 被遮住的關節可能仍有模型座標；本輪沒有新增可見性或精度GT。
 
 **本輪曲線／觀看頁生成完成；Phase2自動可靠性仍NOT PASSED；Phase3整體NOT EVALUATED。**
+
+後續人工接受沒有變成逐點精度GT、逐控制項測試日誌或新的通過標準。
+005作為偏好示範不構成量化排名，沒有因此調整其他影片、參數或門檻。
 
 輸出根目錄：`analysis_results/phase3_yamamoto_native_motion_20261024_01/`。
 [版本化結果與來源SHA](dataset_selections/phase3_yamamoto_native_motion_20261024.json)。

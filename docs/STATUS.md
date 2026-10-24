@@ -5,14 +5,16 @@
 **Phase 1 = PASSED；Native interface integration = PASSED；Phase 2 自動可靠性仍 NOT PASSED。**
 **Phase3第一個描述性曲線交付 = COMPLETE；Phase3整體尚未驗收。**
 
-## 最新：山本四支啟用影片已產生同套曲線與連動頁
+## 最新：山本四支曲線／連動頁已獲HSU人工接受4/4
 
 沿用現有`describe-native-motion`及`review-native-motion`，直接讀取已接受的山本骨架。
 001／002／004／005共477格、954個可計算2D投影角，CSV、PNG、來源摘要與連動頁皆完成。
 003保持歷史對照；大谷五球既有結果保持。兩位投手各自觀看，沒有跨投手比較。
 415份受保護來源／結果／程式SHA變更0；新模型、tracking replay、新GT及產品／測試碼變更皆0。
 實看四張曲線圖，保留局部突變、unknown及null，沒有新增自動品質判定。
-原骨架已接受4/4；新觀看頁人工操作確認待完成，工具自動瀏覽器檢查未執行。
+HSU回覆「都正確一樣是5表現最好」，四支新觀看頁已記為人工整體接受4/4，005為偏好示範。
+原話、reviewer、時間、頁面／JS／四支輸出與overlay SHA另存獨立人工紀錄，原pending快照保留。
+連同大谷5/5，九支觀看結果皆已接受；工具自動瀏覽器檢查未執行，未新增逐點精度GT。
 本輪未重跑suite；同程式碼最近結果1182 passed／0 failed／2 skipped，另5項Node測試全過。
 輸出：`analysis_results/phase3_yamamoto_native_motion_20261024_01/viewer/review_motion.html`。
 [逐球結果與限制](phase3_yamamoto_native_motion_20261024.md)。本輪提交／推送後停止。

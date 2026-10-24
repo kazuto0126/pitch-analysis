@@ -1,4 +1,4 @@
-# Current status — Yamamoto active four motion exports and viewer generated
+# Current status — Yamamoto active four motion viewer accepted by HSU
 
 Updated: 2026-10-24
 
@@ -26,10 +26,15 @@ New detector/pose calls, tracking replay and GT: 0. Ohtani's accepted viewer is
 unchanged and was not rerun. Viewed all four plots for readable labels/layout;
 raw elbow fluctuations retained, no smoothing or accuracy claim.
 
-Source skeleton acceptance remains 4/4. This newly generated viewer has not yet
-received human operation acceptance; automated browser verification is also
-unperformed under the existing file:// policy restriction. No new annotation
-requirement or Phase3 pass condition is introduced.
+Source skeleton acceptance remains 4/4. HSU subsequently replied
+「都正確一樣是5表現最好」, accepting all four viewer results qualitatively and
+highlighting pitch_005 as the preferred demonstration. The exact statement,
+reviewer, recorded UTC and page/JS/export/overlay SHA are saved separately in
+annotations/motion_reviews/HSU_20261024/yamamoto_motion_sync_acceptance.json.
+Current human viewer review: ACCEPTED 4/4; together with Ohtani, all nine active
+viewer results have human acceptance. Original generated/pending execution
+snapshots remain unchanged. Automated browser verification is still unperformed;
+this acceptance establishes neither instrumented control tests nor pointwise GT.
 
 No suite rerun for this data/document-only reuse. Latest same-code full Python
 suite remains 1182 passed / 0 failed / 0 errors / 2 skipped, plus 5 pure Node tests passed.
@@ -40,6 +45,7 @@ overall Phase3 NOT EVALUATED remain.
 Output:`analysis_results/phase3_yamamoto_native_motion_20261024_01/viewer/review_motion.html`.
 [Results/usage](phase3_yamamoto_native_motion_20261024.md),
 [versioned evidence](dataset_selections/phase3_yamamoto_native_motion_20261024.json).
+[Latest human acceptance](dataset_selections/phase3_yamamoto_motion_acceptance_20261024.json).
 Stop after this bounded delivery/commit/push; no next feature automatically started.
 
 ## 2026-10-24 saved-video / motion-curve synchronization viewer (previous)

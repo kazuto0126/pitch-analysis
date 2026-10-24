@@ -55,6 +55,6 @@ Phase2自動可靠性NOT PASSED的歷史與限制保持；本入口不宣告Phas
 
 既有輸出亦可用[`review-native-motion`](native_motion_viewer.md)建立影片／曲線連動頁，
 以逐格、格號或點曲線回看片段。這是觀看工具，原CSV／PNG與角度計算保持。
-大谷五球連動頁已獲HSU人工整體接受；山本啟用四球也已產生同套曲線與新觀看頁，操作確認待完成。
+大谷五球與山本啟用四球的連動頁皆已獲HSU人工整體接受；兩位投手的005各記為偏好示範。
 見[大谷交付](phase3_motion_sync_20261024.md)與[山本交付](phase3_yamamoto_native_motion_20261024.md)。
 工具自動瀏覽器互動驗證未執行，沒有因此新增可靠性判定或人工GT。

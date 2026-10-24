@@ -1,0 +1,140 @@
+{
+  "schema_version": "native-motion-viewer-human-review-v1",
+  "reviewer": "HSU",
+  "recorded_at_utc": "2026-10-24T02:25:18.781487+00:00",
+  "original_user_statement": "都正確一樣是5表現最好",
+  "review_context": "User confirmation after opening the four-active-clip Yamamoto synchronized viewer.",
+  "review_method": "human qualitative review in local browser, reported in conversation",
+  "judgment_scope": "overall four-clip viewer and displayed-result acceptance; no instrumented per-control test log or pointwise accuracy ground truth",
+  "human_viewer_review": "accepted_by_HSU",
+  "accepted_clips": 4,
+  "source_frames": 477,
+  "excluded_pitch_ids": [
+    "pitch_003"
+  ],
+  "clips": [
+    {
+      "pitch_id": "pitch_001",
+      "frame_count": 87,
+      "source_export": {
+        "summary_ref": {
+          "path": "analysis_results/phase3_yamamoto_native_motion_20261024_01/pitch_001/motion_summary.json",
+          "sha256": "425b867ed38c8ef040620f236050ebc73a39dcaa139e55834667e6601ca91db2"
+        },
+        "curves_ref": {
+          "path": "analysis_results/phase3_yamamoto_native_motion_20261024_01/pitch_001/motion_curves.csv",
+          "sha256": "ab5ae5f00425eb0e190c8cdd2542b03168ef123426b9694251b95fb016028dae"
+        },
+        "plot_ref": {
+          "path": "analysis_results/phase3_yamamoto_native_motion_20261024_01/pitch_001/motion_curves.png",
+          "sha256": "f4bf93ed148e9b6e4a3d2382c3d2f597b2b9dee76aa5c34bb064163061843a9b"
+        }
+      },
+      "overlay_ref": {
+        "path": "analysis_results/phase2_yamamoto_seeded_skeleton_20261023_01/pitch_001/rtmpose/pitch_001/overlay_native.mp4",
+        "sha256": "12f87f68b7b9118565a8fdd04a899a12cb6c457a0b58ea8dab39de9b101d3157"
+      },
+      "human_review": "accepted_by_HSU"
+    },
+    {
+      "pitch_id": "pitch_002",
+      "frame_count": 175,
+      "source_export": {
+        "summary_ref": {
+          "path": "analysis_results/phase3_yamamoto_native_motion_20261024_01/pitch_002/motion_summary.json",
+          "sha256": "d1b600486897adb51cb0e9dfb6b89a7b1805553ed1eb1fb1b13e03947229e032"
+        },
+        "curves_ref": {
+          "path": "analysis_results/phase3_yamamoto_native_motion_20261024_01/pitch_002/motion_curves.csv",
+          "sha256": "015761178543901b7f27ef9c7a19691027c11087a04701b08c244377be3f7c75"
+        },
+        "plot_ref": {
+          "path": "analysis_results/phase3_yamamoto_native_motion_20261024_01/pitch_002/motion_curves.png",
+          "sha256": "a5d093f2857cf01bcf94e734de5e7efa6e70f4e99f9f5eda9977b78283f1db43"
+        }
+      },
+      "overlay_ref": {
+        "path": "analysis_results/phase2_yamamoto_seeded_skeleton_20261023_01/pitch_002/rtmpose/pitch_002/overlay_native.mp4",
+        "sha256": "94baa41dd3632695970e42e31560b80ca79a08c6a56dbd9afeb32c66483cead5"
+      },
+      "human_review": "accepted_by_HSU"
+    },
+    {
+      "pitch_id": "pitch_004",
+      "frame_count": 114,
+      "source_export": {
+        "summary_ref": {
+          "path": "analysis_results/phase3_yamamoto_native_motion_20261024_01/pitch_004/motion_summary.json",
+          "sha256": "3074cbe9659d40ecb1140ffee05b683bd333388b2acb02b843ef7951ab171e71"
+        },
+        "curves_ref": {
+          "path": "analysis_results/phase3_yamamoto_native_motion_20261024_01/pitch_004/motion_curves.csv",
+          "sha256": "0ca68ca1fda2db5f626ae0d915874cc9b9f6893849899db1d28593bb93128c6b"
+        },
+        "plot_ref": {
+          "path": "analysis_results/phase3_yamamoto_native_motion_20261024_01/pitch_004/motion_curves.png",
+          "sha256": "38bad58493455c4129e5257894cdd861932b944641e94c7dca5990373529f411"
+        }
+      },
+      "overlay_ref": {
+        "path": "analysis_results/phase2_yamamoto_seeded_skeleton_20261023_01/pitch_004/rtmpose/pitch_004/overlay_native.mp4",
+        "sha256": "055d6197750e3f56768f5befdf1cea7bb47d3a20dae375eda1229ce407718998"
+      },
+      "human_review": "accepted_by_HSU"
+    },
+    {
+      "pitch_id": "pitch_005",
+      "frame_count": 101,
+      "source_export": {
+        "summary_ref": {
+          "path": "analysis_results/phase3_yamamoto_native_motion_20261024_01/pitch_005/motion_summary.json",
+          "sha256": "0e87ba05f3a50930364de5596669dcb44cdbfac474faedd9736c6e3d70a1ae48"
+        },
+        "curves_ref": {
+          "path": "analysis_results/phase3_yamamoto_native_motion_20261024_01/pitch_005/motion_curves.csv",
+          "sha256": "282ec645ff635b4a3b94d39722e7f71e9744798f0b4f51375c53eda518165c2d"
+        },
+        "plot_ref": {
+          "path": "analysis_results/phase3_yamamoto_native_motion_20261024_01/pitch_005/motion_curves.png",
+          "sha256": "8631ba5eb3e3526da211b2caf28585e5f9daec30ff8e675569577d2039e9cc88"
+        }
+      },
+      "overlay_ref": {
+        "path": "analysis_results/phase2_yamamoto_seeded_skeleton_20261023_01/pitch_005/rtmpose/pitch_005/overlay_native.mp4",
+        "sha256": "85871e0279394d7cd842d1abfc0111e3ea3a965ec708b29d068251313f3fcff3"
+      },
+      "human_review": "accepted_by_HSU"
+    }
+  ],
+  "source_refs": {
+    "delivery_ref": {
+      "path": "docs/dataset_selections/phase3_yamamoto_native_motion_20261024.json",
+      "sha256": "8b612dd98b42a225f4f007457281d6e33c087960e6ece2ff31565e0ebe75e9a2"
+    },
+    "viewer_manifest_ref": {
+      "path": "analysis_results/phase3_yamamoto_native_motion_20261024_01/viewer/motion_viewer_manifest.json",
+      "sha256": "ff478d0c5d4089104bb786583a0447528a63af9f947a741ab1adf86f33ce20ec"
+    },
+    "html_ref": {
+      "path": "analysis_results/phase3_yamamoto_native_motion_20261024_01/viewer/review_motion.html",
+      "sha256": "753cdf2fdaa5e0f0f92a60ebf465bf577d8bd6243c1efa1b7516593fbe1529ed"
+    },
+    "script_ref": {
+      "path": "analysis_results/phase3_yamamoto_native_motion_20261024_01/viewer/motion_viewer.js",
+      "sha256": "094db045f8e09f6fcbd335cab06095040e926faa0179d0695fe4c9d8a3e380c4"
+    }
+  },
+  "highlighted_example": {
+    "pitch_id": "pitch_005",
+    "reason": "HSU explicitly described clip5 as the best example",
+    "scope": "qualitative preferred demonstration; no score/ranking or algorithm change"
+  },
+  "automated_browser_verification": false,
+  "per_control_test_results": null,
+  "new_model_calls": 0,
+  "angle_values_recomputed": false,
+  "new_pointwise_gt_labels": 0,
+  "skeleton_method_changed": false,
+  "phase2_original_status": "NOT_PASSED",
+  "phase3_overall": "NOT_EVALUATED"
+}
