@@ -70,8 +70,8 @@
 
 **五個事件完成不等於完整pose GT完成。** 未覆核的身份、identity switch、pose failure、
 逐關節可靠性欄位保持null，不以空陣列假稱「沒有問題」，也不沿用整片骨架接受來補填。
-目前事件比較入口要求整份reviewed；事件收集完成後，再處理限定事件覆核範圍的接入。
-本輪不修改schema／validator或產品碼，不為讓資料通過而假填其他欄位。
+事件收集時比較入口要求整份reviewed；後續已完成限定事件覆核範圍的接入，
+見[大谷五球事件對照](phase3_ohtani_event_timing_20261025.md)。原GT schema／validator保持，未假填其他欄位。
 
 ## 準備結果與限制
 
@@ -83,5 +83,5 @@
 
 [來源與準備紀錄](dataset_selections/phase3_ohtani_event_review_20261024.json)。
 Phase2自動可靠性仍NOT PASSED；Phase3整體NOT EVALUATED。
-下一步讓既有同投手時序比較讀取這五份已確認事件；保留來源綁定、影格範圍與完整GT的未完成狀態。
-本輪完成紀錄、文件與commit／push後停止，事件範圍接入尚未實作。
+事件收集已完成；後續已交付五球事件對照頁，保留來源綁定、影格範圍與完整GT的未完成狀態。
+不需再次標這25筆事件。

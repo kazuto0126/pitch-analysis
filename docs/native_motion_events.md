@@ -12,7 +12,23 @@ pitch-analysis compare-native-motion-events `
 
 設定列出一位投手的影片ID、既有動作輸出目錄，以及人工事件檔的path／SHA256。
 所有輸入須位於本專案內；原片SHA／檔名、影片ID、完整格數與0起算時間軸必須一致。
-事件檔須為`reviewed`；輸出須為新的`analysis_results/`目錄，不覆寫既有結果。
+事件檔須為`reviewed`，或提供下述已完成五事件的覆核紀錄。
+輸出須為新的`analysis_results/`目錄，不覆寫既有結果。
+
+## 只完成事件覆核的資料
+
+若GT仍為`in_progress`，每球設定可另提供`event_review_ref`（path／SHA256），
+指向既有`manual-event-review-checkpoint-v1`完成紀錄。原事件仍只保存在ground-truth-v1。
+讀取器核對五個事件名稱完整且無重複、完成旗標、reviewer、影片ID、有時區的紀錄時間，
+並要求紀錄綁定的GT與原片path／SHA完全符合本次輸入；過期或未完成紀錄會拒收。
+沒有這份紀錄的`in_progress`資料仍不能使用；完整`reviewed`資料的舊設定保持有效。
+
+此方式只授權讀取五事件，未覆核的其他欄位及`reviewed_at_utc=null`保持。
+輸出以`event_review_scope.kind=event_only`與`full_pose_gt_complete=false`明確記錄範圍，
+另保留checkpoint的`recorded_at_utc`，不把它當成完整GT完成時間。
+明確的uncertain／not_observable也可完成事件覆核，但相關時距仍留空。
+
+大谷五球設定：`config/analysis_inputs/ohtani_event_timing_20261025.json`。
 
 ## 圖上如何呈現
 
@@ -62,3 +78,4 @@ pitch-analysis compare-native-motion-events `
 沒有精確事件對齊、跨投手比較、評分或3D推論，不改Phase2與Phase3整體驗收狀態。
 
 [山本四球實際結果](phase3_yamamoto_event_timing_20261024.md)。
+[大谷五球實際結果](phase3_ohtani_event_timing_20261025.md)。

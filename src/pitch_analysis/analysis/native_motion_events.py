@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 from copy import deepcopy
+from datetime import datetime
 import csv
 from fractions import Fraction
 import os
@@ -115,6 +116,51 @@ def _bounds_text(bounds: list | None, *, decimals: int | None = None) -> str:
     return values[0] if values[0] == values[1] else "–".join(values)
 
 
+def _review_scope(root: Path, entry: dict, gt: dict, video_ref: dict) -> dict:
+    """Accept full GT or an explicit, source-bound completion of just its events.
+
+    The checkpoint records review scope, not a second set of event values. Its
+    recording time must never replace the GT's unfinished full-review timestamp.
+    """
+    provenance = gt["provenance"]
+    if "event_review_ref" not in entry:
+        if gt["annotation_status"] != "reviewed":
+            raise ValueError("Events require reviewed ground truth or a completed event review checkpoint")
+        return {"kind": "full_ground_truth", "events_complete": True,
+                "full_pose_gt_complete": True, "annotation_status": "reviewed",
+                "reviewer": provenance["reviewer"], "recorded_at_utc": provenance["reviewed_at_utc"]}
+
+    reader = BoundReader(root, [entry["event_review_ref"], entry["ground_truth_ref"], video_ref])
+    checkpoint = reader.json(entry["event_review_ref"])
+    scope = checkpoint.get("review_scope")
+    if (checkpoint.get("schema_version") != "manual-event-review-checkpoint-v1"
+            or gt["annotation_status"] != "in_progress"
+            or checkpoint.get("events_complete") is not True
+            or checkpoint.get("full_pose_gt_complete") is not False
+            or not isinstance(scope, list) or len(scope) != len(EVENT_NAMES)
+            or any(not isinstance(name, str) for name in scope)
+            or set(scope) != set(EVENT_NAMES)
+            or checkpoint.get("pitch_id") != entry["pitch_id"]
+            or checkpoint.get("reviewer") != provenance["reviewer"]
+            or type(checkpoint.get("non_event_labels_filled")) is not int
+            or checkpoint["non_event_labels_filled"] != 0):
+        raise ValueError("Event checkpoint must confirm only the complete five-event scope and matching reviewer")
+    if (checkpoint.get("ground_truth_ref") != entry["ground_truth_ref"]
+            or checkpoint.get("source_video_ref") != video_ref):
+        raise ValueError("Event checkpoint must bind the exact current ground truth and source video")
+    recorded = checkpoint.get("recorded_at_utc")
+    try:
+        if not isinstance(recorded, str) or datetime.fromisoformat(recorded).utcoffset() is None:
+            raise ValueError
+    except ValueError as error:
+        raise ValueError("Event checkpoint requires a timezone-aware recording timestamp") from error
+    reader.path(checkpoint["ground_truth_ref"])
+    reader.path(checkpoint["source_video_ref"])
+    return {"kind": "event_only", "events_complete": True,
+            "full_pose_gt_complete": False, "annotation_status": gt["annotation_status"],
+            "reviewer": provenance["reviewer"], "recorded_at_utc": recorded}
+
+
 def _report(clips: list[dict]) -> str:
     lines = ["# 同投手人工事件與2D曲線時序摘要", "",
              "沿用既有人工事件及保存的模型XY曲線；沒有重新推論、猜事件或修改人工標註。",
@@ -136,7 +182,11 @@ def _report(clips: list[dict]) -> str:
             note = str(event.get("note", "")).replace("\n", " ")
             if note:
                 lines.append(f"- {EVENT_LABELS[name]}：{note}")
-        lines += ["", f"人工來源：`{clip['source_refs']['ground_truth_ref']['path']}`。", ""]
+        lines += ["", f"人工來源：`{clip['source_refs']['ground_truth_ref']['path']}`。"]
+        if clip["event_review_scope"]["kind"] == "event_only":
+            lines += ["本球只完成五事件覆核；完整pose GT仍為in_progress，其他欄位沒有補填。",
+                      f"事件完成紀錄：`{clip['source_refs']['event_review_ref']['path']}`。"]
+        lines.append("")
     lines += ["## 解讀限制", "",
               "事件取自同一原片的ground-truth-v1，只讀事件，不把舊模型關節品質標籤套到新骨架。",
               "事件區間的角度最小／最大值包含所有可計算模型樣本；缺值與退化樣本另計，沒有品質篩選。",
@@ -164,7 +214,8 @@ def write_event_comparison(root: str | Path, config_path: str | Path, output: st
         raise FileExistsError("Event comparison output already exists")
     clips, identities, source_refs = [], set(), [request_ref]
     for entry in config["clips"]:
-        if not isinstance(entry, dict) or set(entry) != {"pitch_id", "motion_dir", "ground_truth_ref"}:
+        required = {"pitch_id", "motion_dir", "ground_truth_ref"}
+        if not isinstance(entry, dict) or set(entry) not in (required, required | {"event_review_ref"}):
             raise ValueError("Each clip requires exact motion and ground truth references")
         summary, rows, motion_refs = _load_export(root, _path(root, entry["motion_dir"]))
         pid = summary["pitch_id"]
@@ -178,20 +229,24 @@ def write_event_comparison(root: str | Path, config_path: str | Path, output: st
         video = root / summary["source_refs"]["video_ref"]["path"]
         validate_ground_truth(gt, source_video_path=video)
         source = gt["source_video"]
-        if (gt["annotation_status"] != "reviewed" or source["pitch_id"] != pid
+        if (source["pitch_id"] != pid
                 or source["total_frames"] != len(rows) or source["frame_index_base"] != 0
                 or source["sha256"] != summary["source_refs"]["video_ref"]["sha256"]):
-            raise ValueError("Events require reviewed ground truth for the exact saved source timeline")
+            raise ValueError("Events require ground truth for the exact saved source timeline")
+        scope = _review_scope(root, entry, gt, summary["source_refs"]["video_ref"])
         info = describe_events(gt["labels"]["events"], Fraction(summary["timebase"]["fps_fraction"]), rows)
         overlay = root / summary["source_refs"]["overlay_ref"]["path"]
         refs = {**motion_refs, "ground_truth_ref": entry["ground_truth_ref"],
                 "video_ref": summary["source_refs"]["video_ref"],
                 "overlay_ref": summary["source_refs"]["overlay_ref"]}
+        if "event_review_ref" in entry:
+            refs["event_review_ref"] = entry["event_review_ref"]
         source_refs.extend(refs.values())
         clips.append({"pitch_id": pid, "frame_count": len(rows),
                       "fps_fraction": summary["timebase"]["fps_fraction"], "rows": rows,
                       "overlay_url": quote(os.path.relpath(overlay, output / "viewer").replace("\\", "/"), safe="/."),
                       **info, "source_refs": refs, "event_reviewer": deepcopy(gt["provenance"]),
+                      "event_review_scope": scope,
                       "pointwise_reliability": "unknown", "usable_for_analysis": None})
     reader = BoundReader(root, source_refs)
     for ref in source_refs:

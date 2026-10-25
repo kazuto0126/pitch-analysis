@@ -1,4 +1,4 @@
-# Current status — Ohtani five-clip manual event scope complete (5/5)
+# Current status — Ohtani five-clip manual events and saved-motion comparison delivered
 
 Updated: 2026-10-25 (Asia/Taipei)
 
@@ -13,7 +13,38 @@ gates, MediaPipe settings, interpolation and smoothing are unchanged. The approv
 optional subject-region constraint is described below; the default selector remains compatible.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-25 Ohtani five-clip manual event review closeout
+## 2026-10-25 Ohtani event-only comparison delivery
+
+The existing comparison now accepts an optional source-bound event-review checkpoint,
+without promoting in-progress GT to a full review. It checks exact five-event scope,
+completion flags, reviewer, recording time, pitch identity and GT/video path+SHA.
+The old fully-reviewed GT path remains valid; in-progress GT without a checkpoint
+is still rejected. No schema/validator, pose/tracking core or acceptance gate changed.
+
+Actual Ohtani delivery: five clips, 1684 saved curve rows, 25 unchanged manual events
+(21 exact / four ranges), and 20 available timing intervals (14 exact / six bounded).
+Outputs include event_comparison.json, event_timing.csv, report.md, the existing
+event viewer with the accepted playback scripts, and a static timing_intervals.png.
+No event midpoints, angle recomputation, new pose calls, tracking replay or GT labels.
+All 512 protected hashes are unchanged. GT remains in_progress with non-event labels
+and reviewed_at_utc null; pointwise reliability unknown and usable_for_analysis null.
+
+Full suite: 1214 run, 1204 passed / 0 failed / 0 errors / 10 skipped, including formal
+five-video MediaPipe E2E. Eight directory-junction cases skipped because of sandbox
+limitations were retried alone with appropriate permissions: 8 passed / 0 skipped.
+Combined unique outcomes: **1212 passed / 0 failed / 0 errors / 2 skipped**; the remaining
+two require unavailable Windows file-symlink support. Eleven new Python tests added.
+Original playback Node tests (5) and event helper assertions (18) pass. No browser/DOM
+automation performed; the static timing plot was visually inspected.
+
+Output: `analysis_results/phase3_ohtani_event_timing_20261025_01/`.
+[Delivery and viewing instructions](phase3_ohtani_event_timing_20261025.md),
+[source and test receipt](dataset_selections/phase3_ohtani_event_timing_20261025.json).
+Next: view the event/curve page; human acceptance of this new page is not yet recorded.
+Stop after this delivery, commit and origin push. No new pitcher, ranking, cross-pitcher
+comparison or change to overall Phase2/Phase3 acceptance follows automatically.
+
+## 2026-10-25 Ohtani five-clip manual event review closeout (previous)
 
 HSU completed 004: preparation 39, peak lift 71, foot plant 124, approximate
 release 129, follow-through end 180. Overview candidates 40 and 192 were corrected
@@ -51,15 +82,13 @@ The final 004 helper retains 338 raw viewing crops, 29 consecutive sheets and
 uniform overview pages using the already approved fixed source rectangle.
 All 504 protected file hashes remain unchanged. No product/test changes, model
 replay or suite rerun. Latest same-code full suite remains 1201 passed / 0 failed /
-2 skipped. Next is source-bound event-only consumption in the existing same-pitcher
-timing comparison; it is not implemented in this closeout. The existing reader
-still requires full reviewed GT; no gate/schema is relaxed and no non-event labels
-are fabricated to bypass that requirement.
+2 skipped at this review checkpoint. Event-only consumption was deferred here;
+the subsequent bounded integration is recorded above, without fabricating non-event labels.
 
 [Progress/source checkpoint](dataset_selections/phase3_ohtani_event_review_progress_20261024.json),
 [review workflow](phase3_ohtani_event_review_20261024.md). No further human event
 answers are needed for these five clips. Stop after saving, committing and pushing
-this review closeout; the comparison adapter remains the next task.
+this review closeout; the subsequent comparison adapter is recorded above.
 
 ## 2026-10-24 Ohtani manual-event review preparation (previous)
 

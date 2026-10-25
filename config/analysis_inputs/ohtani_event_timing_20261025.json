@@ -1,0 +1,66 @@
+{
+  "schema_version": "native-motion-events-request-v1",
+  "pitcher_id": "shohei_ohtani",
+  "clips": [
+    {
+      "pitch_id": "supplement_001",
+      "motion_dir": "analysis_results/phase3_ohtani_native_motion_20261024_01/supplement_001",
+      "ground_truth_ref": {
+        "path": "annotations/event_reviews/HSU_20261024/shohei_ohtani/supplement_001/ground_truth.json",
+        "sha256": "28c3c053cf912dc475972acd04df42c0c3698df13c04719ea16bee4986c2fe74"
+      },
+      "event_review_ref": {
+        "path": "annotations/event_reviews/HSU_20261024/shohei_ohtani/supplement_001/event_review_checkpoint.json",
+        "sha256": "229fe8870f4b3a54ccf92afdbc2092c381ad5d0d155f23709afa223e29102df2"
+      }
+    },
+    {
+      "pitch_id": "supplement_002",
+      "motion_dir": "analysis_results/phase3_ohtani_native_motion_20261024_01/supplement_002",
+      "ground_truth_ref": {
+        "path": "annotations/event_reviews/HSU_20261024/shohei_ohtani/supplement_002/ground_truth.json",
+        "sha256": "6a662993e8126a5d623f385672b19bd5385f98833fe9fb22b85f4fbb70ef33a8"
+      },
+      "event_review_ref": {
+        "path": "annotations/event_reviews/HSU_20261024/shohei_ohtani/supplement_002/event_review_checkpoint.json",
+        "sha256": "ffe831aa214b9e56555c048627c2ee277f9800fd9b474945ab1f2270b90ccd01"
+      }
+    },
+    {
+      "pitch_id": "supplement_003",
+      "motion_dir": "analysis_results/phase3_ohtani_native_motion_20261024_01/supplement_003",
+      "ground_truth_ref": {
+        "path": "annotations/event_reviews/HSU_20261024/shohei_ohtani/supplement_003/ground_truth.json",
+        "sha256": "26542023685abc009de81b881af6154a80de9692b5e2ba4ff3c6ede46ac68a7d"
+      },
+      "event_review_ref": {
+        "path": "annotations/event_reviews/HSU_20261024/shohei_ohtani/supplement_003/event_review_checkpoint.json",
+        "sha256": "47ff472624d86aaa03ac6aa2360e31b281098ba3e2e0b48f09f50b736919f855"
+      }
+    },
+    {
+      "pitch_id": "supplement_004",
+      "motion_dir": "analysis_results/phase3_ohtani_native_motion_20261024_01/supplement_004",
+      "ground_truth_ref": {
+        "path": "annotations/event_reviews/HSU_20261024/shohei_ohtani/supplement_004/ground_truth.json",
+        "sha256": "ea37d1f851ea092d5dea147e3c441baedaf61d34b8f9dbd18f6c850ea37fdacc"
+      },
+      "event_review_ref": {
+        "path": "annotations/event_reviews/HSU_20261024/shohei_ohtani/supplement_004/event_review_checkpoint.json",
+        "sha256": "6965d9a5d60bbe175d37456b7f1a5837a22fc748dbd9103bc65b489b056117f8"
+      }
+    },
+    {
+      "pitch_id": "supplement_005",
+      "motion_dir": "analysis_results/phase3_ohtani_native_motion_20261024_01/supplement_005",
+      "ground_truth_ref": {
+        "path": "annotations/event_reviews/HSU_20261024/shohei_ohtani/supplement_005/ground_truth.json",
+        "sha256": "55beb32a3bbece5355c2a2266d46dd21e1682149b52b282068a76ced511e98aa"
+      },
+      "event_review_ref": {
+        "path": "annotations/event_reviews/HSU_20261024/shohei_ohtani/supplement_005/event_review_checkpoint.json",
+        "sha256": "7fc3f8866d55f514f0dcc9862bd27791defedb0e16ca576e4c405ac41445e0d9"
+      }
+    }
+  ]
+}

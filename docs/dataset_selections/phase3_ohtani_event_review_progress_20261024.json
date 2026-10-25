@@ -69,7 +69,7 @@
   "full_suite_rerun": false,
   "source_raw_predictions_changed": false,
   "full_pose_gt_completed": false,
-  "event_only_comparison_adapter_status": "not_implemented; five-clip event review complete, scoped consumption is next",
+  "event_only_comparison_adapter_status": "implemented; five-clip event comparison delivered 2026-10-25",
   "completed_checkpoint_refs": [
     {
       "path": "annotations/event_reviews/HSU_20261024/shohei_ohtani/supplement_005/event_review_checkpoint.json",
@@ -104,5 +104,10 @@
     "protected_files": 504,
     "protected_sha256_changes": []
   },
-  "next_action": "connect source-bound event-only review scope to existing same-pitcher timing comparison; do not fabricate full pose GT"
+  "next_action": "view completed Ohtani five-clip event and saved-motion comparison",
+  "comparison_delivery_ref": {
+    "path": "docs/dataset_selections/phase3_ohtani_event_timing_20261025.json",
+    "sha256": "5f2df60a40627a3e62a4ec37b049c9247dc7d695952899594ad44f5734e0d5a3"
+  },
+  "scope_note": "Code/test counters above describe the manual event collection; subsequent integration checks are in comparison_delivery_ref."
 }

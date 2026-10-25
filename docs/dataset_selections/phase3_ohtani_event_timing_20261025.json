@@ -1,0 +1,1754 @@
+{
+  "schema_version": "phase3-ohtani-event-timing-delivery-v1",
+  "recorded_at_utc": "2026-10-25T04:50:33.697144+00:00",
+  "status": "comparison_delivered; new event page human viewing not yet recorded",
+  "pitcher_id": "shohei_ohtani",
+  "clip_count": 5,
+  "source_frames": 1684,
+  "manual_events": {
+    "exact": 21,
+    "range": 4
+  },
+  "timing_rows": {
+    "exact": 14,
+    "bounded": 6
+  },
+  "angle_window_joint_frames": {
+    "total_frames": 62,
+    "calculated_frames": 62,
+    "missing_frames": 0,
+    "degenerate_frames": 0
+  },
+  "clips": [
+    {
+      "pitch_id": "supplement_001",
+      "frame_count": 335,
+      "fps_fraction": "60000/1001",
+      "events": {
+        "preparation_start": {
+          "status": "annotated",
+          "frame_index": 28,
+          "confidence": null,
+          "note": "HSU觀看第24–35格連續原片影格後回覆「28」，確認啟動開始為第28格。先前概覽中的32格僅為候選，已依人工修正；Codex依回答轉錄。",
+          "frame_range": null,
+          "frame_bounds": [
+            28,
+            28
+          ],
+          "marker_kind": "exact",
+          "time_bounds_sec": [
+            0.46713333333333334,
+            0.46713333333333334
+          ],
+          "angle_windows": {
+            "throwing_elbow": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 96.11550356628548,
+              "max_deg": 96.11550356628548,
+              "usable_deg": null
+            },
+            "lead_knee": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 153.69266957785516,
+              "max_deg": 153.69266957785516,
+              "usable_deg": null
+            }
+          }
+        },
+        "leg_lift": {
+          "status": "annotated",
+          "frame_index": 59,
+          "confidence": null,
+          "note": "HSU觀看第48–71格連續原片影格後回覆「59」，確認最高抬腿為第59格；Codex依人工回答轉錄。",
+          "frame_range": null,
+          "frame_bounds": [
+            59,
+            59
+          ],
+          "marker_kind": "exact",
+          "time_bounds_sec": [
+            0.9843166666666666,
+            0.9843166666666666
+          ],
+          "angle_windows": {
+            "throwing_elbow": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 95.78120078272102,
+              "max_deg": 95.78120078272102,
+              "usable_deg": null
+            },
+            "lead_knee": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 65.5748987166039,
+              "max_deg": 65.5748987166039,
+              "usable_deg": null
+            }
+          }
+        },
+        "foot_plant": {
+          "status": "annotated",
+          "frame_index": 110,
+          "confidence": null,
+          "note": "HSU觀看第96–119格連續原片影格後回覆「110」，確認前導左腳首次落地為第110格；Codex依人工回答轉錄。",
+          "frame_range": null,
+          "frame_bounds": [
+            110,
+            110
+          ],
+          "marker_kind": "exact",
+          "time_bounds_sec": [
+            1.8351666666666666,
+            1.8351666666666666
+          ],
+          "angle_windows": {
+            "throwing_elbow": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 0.9975868849030267,
+              "max_deg": 0.9975868849030267,
+              "usable_deg": null
+            },
+            "lead_knee": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 146.58707760186493,
+              "max_deg": 146.58707760186493,
+              "usable_deg": null
+            }
+          }
+        },
+        "approximate_release": {
+          "status": "annotated",
+          "frame_index": null,
+          "frame_range": {
+            "start_frame": 119,
+            "end_frame": 120
+          },
+          "confidence": null,
+          "note": "HSU觀看第108–131格連續原片影格後回覆「119-120」，確認大致出手範圍；保留區間，不取中點。",
+          "frame_bounds": [
+            119,
+            120
+          ],
+          "marker_kind": "range",
+          "time_bounds_sec": [
+            1.9853166666666666,
+            2.002
+          ],
+          "angle_windows": {
+            "throwing_elbow": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 2,
+              "calculated_frames": 2,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 153.4025722321811,
+              "max_deg": 158.38347460738603,
+              "usable_deg": null
+            },
+            "lead_knee": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 2,
+              "calculated_frames": 2,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 174.44396157687495,
+              "max_deg": 179.95052179164142,
+              "usable_deg": null
+            }
+          }
+        },
+        "follow_through_end": {
+          "status": "annotated",
+          "frame_index": 160,
+          "confidence": null,
+          "note": "HSU觀看第156–179格連續原片影格後回覆「對]」，確認收尾結束為第160格；Codex依人工確認轉錄。",
+          "frame_range": null,
+          "frame_bounds": [
+            160,
+            160
+          ],
+          "marker_kind": "exact",
+          "time_bounds_sec": [
+            2.6693333333333333,
+            2.6693333333333333
+          ],
+          "angle_windows": {
+            "throwing_elbow": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 90.71064687794949,
+              "max_deg": 90.71064687794949,
+              "usable_deg": null
+            },
+            "lead_knee": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 137.61527228448338,
+              "max_deg": 137.61527228448338,
+              "usable_deg": null
+            }
+          }
+        }
+      },
+      "timing": {
+        "preparation_to_leg_lift": {
+          "start_event": "preparation_start",
+          "end_event": "leg_lift",
+          "status": "exact",
+          "frame_bounds": [
+            31,
+            31
+          ],
+          "seconds_bounds": [
+            0.5171833333333333,
+            0.5171833333333333
+          ],
+          "seconds_bounds_fraction": [
+            "31031/60000",
+            "31031/60000"
+          ],
+          "reason": "依人工事件上下界計算；未取中點或推測事件"
+        },
+        "leg_lift_to_foot_plant": {
+          "start_event": "leg_lift",
+          "end_event": "foot_plant",
+          "status": "exact",
+          "frame_bounds": [
+            51,
+            51
+          ],
+          "seconds_bounds": [
+            0.85085,
+            0.85085
+          ],
+          "seconds_bounds_fraction": [
+            "17017/20000",
+            "17017/20000"
+          ],
+          "reason": "依人工事件上下界計算；未取中點或推測事件"
+        },
+        "foot_plant_to_release": {
+          "start_event": "foot_plant",
+          "end_event": "approximate_release",
+          "status": "bounded",
+          "frame_bounds": [
+            9,
+            10
+          ],
+          "seconds_bounds": [
+            0.15015,
+            0.16683333333333333
+          ],
+          "seconds_bounds_fraction": [
+            "3003/20000",
+            "1001/6000"
+          ],
+          "reason": "依人工事件上下界計算；未取中點或推測事件"
+        },
+        "release_to_follow_through_end": {
+          "start_event": "approximate_release",
+          "end_event": "follow_through_end",
+          "status": "bounded",
+          "frame_bounds": [
+            40,
+            41
+          ],
+          "seconds_bounds": [
+            0.6673333333333333,
+            0.6840166666666667
+          ],
+          "seconds_bounds_fraction": [
+            "1001/1500",
+            "41041/60000"
+          ],
+          "reason": "依人工事件上下界計算；未取中點或推測事件"
+        }
+      },
+      "source_refs": {
+        "summary_ref": {
+          "path": "analysis_results/phase3_ohtani_native_motion_20261024_01/supplement_001/motion_summary.json",
+          "sha256": "949a9a76299b925731ecf51a74c6196aa7a9a9ef8cb357c82555c14080f9777b"
+        },
+        "curves_ref": {
+          "path": "analysis_results/phase3_ohtani_native_motion_20261024_01/supplement_001/motion_curves.csv",
+          "sha256": "2af451bec1b1382b9c38c4a73460776fa49253916f0854f2a53d99034ce59cf1"
+        },
+        "plot_ref": {
+          "path": "analysis_results/phase3_ohtani_native_motion_20261024_01/supplement_001/motion_curves.png",
+          "sha256": "3e477c25cca4d8a241a39fc7dfa09472afa80d77f4a99c26b577596da8de98ce"
+        },
+        "ground_truth_ref": {
+          "path": "annotations/event_reviews/HSU_20261024/shohei_ohtani/supplement_001/ground_truth.json",
+          "sha256": "28c3c053cf912dc475972acd04df42c0c3698df13c04719ea16bee4986c2fe74"
+        },
+        "video_ref": {
+          "path": "input/shohei_ohtani/phase2_supplement_20261020_01/supplement_001.mp4",
+          "sha256": "90a6acec9865c634bd019503d46c147647fa78df9a2827e1143c74abb852111a"
+        },
+        "overlay_ref": {
+          "path": "analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/supplement_001/rtmpose/supplement_001/overlay_native.mp4",
+          "sha256": "3c0ffef0dc8f8c4f1e072a5ba05338abce77fd11046cf7fd099fcada2f1fac81"
+        },
+        "event_review_ref": {
+          "path": "annotations/event_reviews/HSU_20261024/shohei_ohtani/supplement_001/event_review_checkpoint.json",
+          "sha256": "229fe8870f4b3a54ccf92afdbc2092c381ad5d0d155f23709afa223e29102df2"
+        }
+      },
+      "event_reviewer": {
+        "reviewer": "HSU",
+        "reviewed_at_utc": null,
+        "method": "manual_video_review",
+        "guidelines_version": "ground-truth-guidelines-v1"
+      },
+      "event_review_scope": {
+        "kind": "event_only",
+        "events_complete": true,
+        "full_pose_gt_complete": false,
+        "annotation_status": "in_progress",
+        "reviewer": "HSU",
+        "recorded_at_utc": "2026-10-24T07:39:26.390986+00:00"
+      },
+      "pointwise_reliability": "unknown",
+      "usable_for_analysis": null
+    },
+    {
+      "pitch_id": "supplement_002",
+      "frame_count": 321,
+      "fps_fraction": "60000/1001",
+      "events": {
+        "preparation_start": {
+          "status": "annotated",
+          "frame_index": 78,
+          "confidence": null,
+          "note": "HSU觀看第72–95格連續原片影格後回覆「78」，確認啟動開始為第78格。先前概覽中的80格僅為候選，已依人工修正；Codex依回答轉錄。",
+          "frame_range": null,
+          "frame_bounds": [
+            78,
+            78
+          ],
+          "marker_kind": "exact",
+          "time_bounds_sec": [
+            1.3013,
+            1.3013
+          ],
+          "angle_windows": {
+            "throwing_elbow": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 70.82099197418928,
+              "max_deg": 70.82099197418928,
+              "usable_deg": null
+            },
+            "lead_knee": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 155.632116245519,
+              "max_deg": 155.632116245519,
+              "usable_deg": null
+            }
+          }
+        },
+        "leg_lift": {
+          "status": "annotated",
+          "frame_index": 95,
+          "confidence": null,
+          "note": "HSU觀看第84–107格連續原片影格後回覆「95」，確認最高抬腿為第95格；Codex依人工回答轉錄。",
+          "frame_range": null,
+          "frame_bounds": [
+            95,
+            95
+          ],
+          "marker_kind": "exact",
+          "time_bounds_sec": [
+            1.5849166666666668,
+            1.5849166666666668
+          ],
+          "angle_windows": {
+            "throwing_elbow": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 84.56594145845953,
+              "max_deg": 84.56594145845953,
+              "usable_deg": null
+            },
+            "lead_knee": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 128.71365960169103,
+              "max_deg": 128.71365960169103,
+              "usable_deg": null
+            }
+          }
+        },
+        "foot_plant": {
+          "status": "annotated",
+          "frame_index": 129,
+          "confidence": null,
+          "note": "HSU觀看第120–143格連續原片影格後回覆「129」，確認前導左腳首次落地為第129格；Codex依人工回答轉錄。",
+          "frame_range": null,
+          "frame_bounds": [
+            129,
+            129
+          ],
+          "marker_kind": "exact",
+          "time_bounds_sec": [
+            2.15215,
+            2.15215
+          ],
+          "angle_windows": {
+            "throwing_elbow": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 0.31130647600355593,
+              "max_deg": 0.31130647600355593,
+              "usable_deg": null
+            },
+            "lead_knee": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 165.04277114561287,
+              "max_deg": 165.04277114561287,
+              "usable_deg": null
+            }
+          }
+        },
+        "approximate_release": {
+          "status": "annotated",
+          "frame_index": 137,
+          "confidence": null,
+          "note": "HSU觀看第132–143格連續原片影格後回覆「137」，確認大致出手為第137格；Codex依人工回答轉錄。",
+          "frame_range": null,
+          "frame_bounds": [
+            137,
+            137
+          ],
+          "marker_kind": "exact",
+          "time_bounds_sec": [
+            2.285616666666667,
+            2.285616666666667
+          ],
+          "angle_windows": {
+            "throwing_elbow": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 150.57393013165773,
+              "max_deg": 150.57393013165773,
+              "usable_deg": null
+            },
+            "lead_knee": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 169.1911101893063,
+              "max_deg": 169.1911101893063,
+              "usable_deg": null
+            }
+          }
+        },
+        "follow_through_end": {
+          "status": "annotated",
+          "frame_index": 203,
+          "confidence": null,
+          "note": "HSU觀看第192–215格連續原片影格後回覆「203」，確認收尾結束為第203格。先前概覽中的208格僅為候選，已依人工修正。",
+          "frame_range": null,
+          "frame_bounds": [
+            203,
+            203
+          ],
+          "marker_kind": "exact",
+          "time_bounds_sec": [
+            3.3867166666666666,
+            3.3867166666666666
+          ],
+          "angle_windows": {
+            "throwing_elbow": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 145.94566079542653,
+              "max_deg": 145.94566079542653,
+              "usable_deg": null
+            },
+            "lead_knee": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 151.80187259990376,
+              "max_deg": 151.80187259990376,
+              "usable_deg": null
+            }
+          }
+        }
+      },
+      "timing": {
+        "preparation_to_leg_lift": {
+          "start_event": "preparation_start",
+          "end_event": "leg_lift",
+          "status": "exact",
+          "frame_bounds": [
+            17,
+            17
+          ],
+          "seconds_bounds": [
+            0.2836166666666667,
+            0.2836166666666667
+          ],
+          "seconds_bounds_fraction": [
+            "17017/60000",
+            "17017/60000"
+          ],
+          "reason": "依人工事件上下界計算；未取中點或推測事件"
+        },
+        "leg_lift_to_foot_plant": {
+          "start_event": "leg_lift",
+          "end_event": "foot_plant",
+          "status": "exact",
+          "frame_bounds": [
+            34,
+            34
+          ],
+          "seconds_bounds": [
+            0.5672333333333334,
+            0.5672333333333334
+          ],
+          "seconds_bounds_fraction": [
+            "17017/30000",
+            "17017/30000"
+          ],
+          "reason": "依人工事件上下界計算；未取中點或推測事件"
+        },
+        "foot_plant_to_release": {
+          "start_event": "foot_plant",
+          "end_event": "approximate_release",
+          "status": "exact",
+          "frame_bounds": [
+            8,
+            8
+          ],
+          "seconds_bounds": [
+            0.13346666666666668,
+            0.13346666666666668
+          ],
+          "seconds_bounds_fraction": [
+            "1001/7500",
+            "1001/7500"
+          ],
+          "reason": "依人工事件上下界計算；未取中點或推測事件"
+        },
+        "release_to_follow_through_end": {
+          "start_event": "approximate_release",
+          "end_event": "follow_through_end",
+          "status": "exact",
+          "frame_bounds": [
+            66,
+            66
+          ],
+          "seconds_bounds": [
+            1.1011,
+            1.1011
+          ],
+          "seconds_bounds_fraction": [
+            "11011/10000",
+            "11011/10000"
+          ],
+          "reason": "依人工事件上下界計算；未取中點或推測事件"
+        }
+      },
+      "source_refs": {
+        "summary_ref": {
+          "path": "analysis_results/phase3_ohtani_native_motion_20261024_01/supplement_002/motion_summary.json",
+          "sha256": "cc7e95e416f3c7be9e3641de9452be8d9f97dee3e4295ab3072e68aa599ddff0"
+        },
+        "curves_ref": {
+          "path": "analysis_results/phase3_ohtani_native_motion_20261024_01/supplement_002/motion_curves.csv",
+          "sha256": "f4a00186cd343c680c40dd88d8d104458e78be482a4012e458a40493b3116ba9"
+        },
+        "plot_ref": {
+          "path": "analysis_results/phase3_ohtani_native_motion_20261024_01/supplement_002/motion_curves.png",
+          "sha256": "2059aeb3fc17a021e72d92d98db13cc3f28b04c06ba103ba272f74a68d2ea754"
+        },
+        "ground_truth_ref": {
+          "path": "annotations/event_reviews/HSU_20261024/shohei_ohtani/supplement_002/ground_truth.json",
+          "sha256": "6a662993e8126a5d623f385672b19bd5385f98833fe9fb22b85f4fbb70ef33a8"
+        },
+        "video_ref": {
+          "path": "input/shohei_ohtani/phase2_supplement_20261020_01/supplement_002.mp4",
+          "sha256": "b1586bdde9383e3b247bcc7d7974a3f15b0fed173848926d5217f261b87bab8e"
+        },
+        "overlay_ref": {
+          "path": "analysis_results/phase2_seeded_resume_native_20261023_01/rtmpose/supplement_002/overlay_native.mp4",
+          "sha256": "9713f1053f3ea68df9a3b960806f86a448dc213a0389f404f8288b870c5e31f8"
+        },
+        "event_review_ref": {
+          "path": "annotations/event_reviews/HSU_20261024/shohei_ohtani/supplement_002/event_review_checkpoint.json",
+          "sha256": "ffe831aa214b9e56555c048627c2ee277f9800fd9b474945ab1f2270b90ccd01"
+        }
+      },
+      "event_reviewer": {
+        "reviewer": "HSU",
+        "reviewed_at_utc": null,
+        "method": "manual_video_review",
+        "guidelines_version": "ground-truth-guidelines-v1"
+      },
+      "event_review_scope": {
+        "kind": "event_only",
+        "events_complete": true,
+        "full_pose_gt_complete": false,
+        "annotation_status": "in_progress",
+        "reviewer": "HSU",
+        "recorded_at_utc": "2026-10-24T12:18:08.217569+00:00"
+      },
+      "pointwise_reliability": "unknown",
+      "usable_for_analysis": null
+    },
+    {
+      "pitch_id": "supplement_003",
+      "frame_count": 369,
+      "fps_fraction": "60000/1001",
+      "events": {
+        "preparation_start": {
+          "status": "annotated",
+          "frame_index": 105,
+          "confidence": null,
+          "note": "HSU觀看第96–119格連續原片影格後回覆「105」，確認啟動開始為第105格。先前概覽中的104格僅為候選，已依人工修正；Codex依回答轉錄。",
+          "frame_range": null,
+          "frame_bounds": [
+            105,
+            105
+          ],
+          "marker_kind": "exact",
+          "time_bounds_sec": [
+            1.75175,
+            1.75175
+          ],
+          "angle_windows": {
+            "throwing_elbow": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 81.70285503016316,
+              "max_deg": 81.70285503016316,
+              "usable_deg": null
+            },
+            "lead_knee": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 144.41562639154034,
+              "max_deg": 144.41562639154034,
+              "usable_deg": null
+            }
+          }
+        },
+        "leg_lift": {
+          "status": "annotated",
+          "frame_index": 119,
+          "confidence": null,
+          "note": "HSU觀看第108–131格連續原片影格後回覆「119」，確認最高抬腿為第119格；Codex依人工回答轉錄。",
+          "frame_range": null,
+          "frame_bounds": [
+            119,
+            119
+          ],
+          "marker_kind": "exact",
+          "time_bounds_sec": [
+            1.9853166666666666,
+            1.9853166666666666
+          ],
+          "angle_windows": {
+            "throwing_elbow": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 80.57074576416642,
+              "max_deg": 80.57074576416642,
+              "usable_deg": null
+            },
+            "lead_knee": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 118.38036447907662,
+              "max_deg": 118.38036447907662,
+              "usable_deg": null
+            }
+          }
+        },
+        "foot_plant": {
+          "status": "annotated",
+          "frame_index": 156,
+          "confidence": null,
+          "note": "HSU觀看第156–179格連續原片影格後回覆「156」，確認前導左腳首次落地為第156格；前一段第132–155格的「沒有」未被填成不可觀測，Codex依本次人工回答轉錄。",
+          "frame_range": null,
+          "frame_bounds": [
+            156,
+            156
+          ],
+          "marker_kind": "exact",
+          "time_bounds_sec": [
+            2.6026,
+            2.6026
+          ],
+          "angle_windows": {
+            "throwing_elbow": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 24.158176090208734,
+              "max_deg": 24.158176090208734,
+              "usable_deg": null
+            },
+            "lead_knee": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 166.4587920527331,
+              "max_deg": 166.4587920527331,
+              "usable_deg": null
+            }
+          }
+        },
+        "approximate_release": {
+          "status": "annotated",
+          "frame_index": 164,
+          "confidence": null,
+          "note": "HSU觀看第156–179格連續原片影格後回覆「164」，確認大致出手為第164格；Codex依人工回答轉錄。",
+          "frame_range": null,
+          "frame_bounds": [
+            164,
+            164
+          ],
+          "marker_kind": "exact",
+          "time_bounds_sec": [
+            2.736066666666667,
+            2.736066666666667
+          ],
+          "angle_windows": {
+            "throwing_elbow": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 154.04860946080854,
+              "max_deg": 154.04860946080854,
+              "usable_deg": null
+            },
+            "lead_knee": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 159.15190713654758,
+              "max_deg": 159.15190713654758,
+              "usable_deg": null
+            }
+          }
+        },
+        "follow_through_end": {
+          "status": "annotated",
+          "frame_index": 208,
+          "confidence": null,
+          "note": "HSU觀看第192–215格連續原片影格後回覆「對」，確認收尾結束為第208格；Codex依人工確認轉錄。",
+          "frame_range": null,
+          "frame_bounds": [
+            208,
+            208
+          ],
+          "marker_kind": "exact",
+          "time_bounds_sec": [
+            3.4701333333333335,
+            3.4701333333333335
+          ],
+          "angle_windows": {
+            "throwing_elbow": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 176.1679149073514,
+              "max_deg": 176.1679149073514,
+              "usable_deg": null
+            },
+            "lead_knee": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 168.06561509097983,
+              "max_deg": 168.06561509097983,
+              "usable_deg": null
+            }
+          }
+        }
+      },
+      "timing": {
+        "preparation_to_leg_lift": {
+          "start_event": "preparation_start",
+          "end_event": "leg_lift",
+          "status": "exact",
+          "frame_bounds": [
+            14,
+            14
+          ],
+          "seconds_bounds": [
+            0.23356666666666667,
+            0.23356666666666667
+          ],
+          "seconds_bounds_fraction": [
+            "7007/30000",
+            "7007/30000"
+          ],
+          "reason": "依人工事件上下界計算；未取中點或推測事件"
+        },
+        "leg_lift_to_foot_plant": {
+          "start_event": "leg_lift",
+          "end_event": "foot_plant",
+          "status": "exact",
+          "frame_bounds": [
+            37,
+            37
+          ],
+          "seconds_bounds": [
+            0.6172833333333333,
+            0.6172833333333333
+          ],
+          "seconds_bounds_fraction": [
+            "37037/60000",
+            "37037/60000"
+          ],
+          "reason": "依人工事件上下界計算；未取中點或推測事件"
+        },
+        "foot_plant_to_release": {
+          "start_event": "foot_plant",
+          "end_event": "approximate_release",
+          "status": "exact",
+          "frame_bounds": [
+            8,
+            8
+          ],
+          "seconds_bounds": [
+            0.13346666666666668,
+            0.13346666666666668
+          ],
+          "seconds_bounds_fraction": [
+            "1001/7500",
+            "1001/7500"
+          ],
+          "reason": "依人工事件上下界計算；未取中點或推測事件"
+        },
+        "release_to_follow_through_end": {
+          "start_event": "approximate_release",
+          "end_event": "follow_through_end",
+          "status": "exact",
+          "frame_bounds": [
+            44,
+            44
+          ],
+          "seconds_bounds": [
+            0.7340666666666666,
+            0.7340666666666666
+          ],
+          "seconds_bounds_fraction": [
+            "11011/15000",
+            "11011/15000"
+          ],
+          "reason": "依人工事件上下界計算；未取中點或推測事件"
+        }
+      },
+      "source_refs": {
+        "summary_ref": {
+          "path": "analysis_results/phase3_ohtani_native_motion_20261024_01/supplement_003/motion_summary.json",
+          "sha256": "ba5bfcd85cbc21a569dc614d586a92bf18c6c98dfc8d709d57f9eb708c5ad781"
+        },
+        "curves_ref": {
+          "path": "analysis_results/phase3_ohtani_native_motion_20261024_01/supplement_003/motion_curves.csv",
+          "sha256": "0a24492e8a76de469503f6c6faf3567844a90aef9cf334cd05e265b497c97702"
+        },
+        "plot_ref": {
+          "path": "analysis_results/phase3_ohtani_native_motion_20261024_01/supplement_003/motion_curves.png",
+          "sha256": "0a27ce99f9e4da16087284d6292b19e05ac41e940f0580c565a47b2f3f530b3c"
+        },
+        "ground_truth_ref": {
+          "path": "annotations/event_reviews/HSU_20261024/shohei_ohtani/supplement_003/ground_truth.json",
+          "sha256": "26542023685abc009de81b881af6154a80de9692b5e2ba4ff3c6ede46ac68a7d"
+        },
+        "video_ref": {
+          "path": "input/shohei_ohtani/phase2_supplement_20261020_01/supplement_003.mp4",
+          "sha256": "97a45985648af1cf20ed48bda6ce5454fe509609114ac28d8a5deb632621e8ae"
+        },
+        "overlay_ref": {
+          "path": "analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/supplement_003/rtmpose/supplement_003/overlay_native.mp4",
+          "sha256": "bb080e2e454dc9987ec5c90f2db83ce97f56f11579221012911fdb4b322ff963"
+        },
+        "event_review_ref": {
+          "path": "annotations/event_reviews/HSU_20261024/shohei_ohtani/supplement_003/event_review_checkpoint.json",
+          "sha256": "47ff472624d86aaa03ac6aa2360e31b281098ba3e2e0b48f09f50b736919f855"
+        }
+      },
+      "event_reviewer": {
+        "reviewer": "HSU",
+        "reviewed_at_utc": null,
+        "method": "manual_video_review",
+        "guidelines_version": "ground-truth-guidelines-v1"
+      },
+      "event_review_scope": {
+        "kind": "event_only",
+        "events_complete": true,
+        "full_pose_gt_complete": false,
+        "annotation_status": "in_progress",
+        "reviewer": "HSU",
+        "recorded_at_utc": "2026-10-24T12:29:25.866345+00:00"
+      },
+      "pointwise_reliability": "unknown",
+      "usable_for_analysis": null
+    },
+    {
+      "pitch_id": "supplement_004",
+      "frame_count": 338,
+      "fps_fraction": "60000/1001",
+      "events": {
+        "preparation_start": {
+          "status": "annotated",
+          "frame_index": 39,
+          "confidence": null,
+          "note": "HSU觀看第36–47格連續原片影格後回覆「39」，確認啟動開始為第39格。先前概覽中的40格僅為候選，已依人工修正；Codex依回答轉錄。",
+          "frame_range": null,
+          "frame_bounds": [
+            39,
+            39
+          ],
+          "marker_kind": "exact",
+          "time_bounds_sec": [
+            0.65065,
+            0.65065
+          ],
+          "angle_windows": {
+            "throwing_elbow": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 89.58721334146702,
+              "max_deg": 89.58721334146702,
+              "usable_deg": null
+            },
+            "lead_knee": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 157.97902870263044,
+              "max_deg": 157.97902870263044,
+              "usable_deg": null
+            }
+          }
+        },
+        "leg_lift": {
+          "status": "annotated",
+          "frame_index": 71,
+          "confidence": null,
+          "note": "HSU觀看第60–83格連續原片影格後回覆「71」，確認最高抬腿為第71格；Codex依人工回答轉錄。",
+          "frame_range": null,
+          "frame_bounds": [
+            71,
+            71
+          ],
+          "marker_kind": "exact",
+          "time_bounds_sec": [
+            1.1845166666666667,
+            1.1845166666666667
+          ],
+          "angle_windows": {
+            "throwing_elbow": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 91.6846843178963,
+              "max_deg": 91.6846843178963,
+              "usable_deg": null
+            },
+            "lead_knee": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 64.71490509497778,
+              "max_deg": 64.71490509497778,
+              "usable_deg": null
+            }
+          }
+        },
+        "foot_plant": {
+          "status": "annotated",
+          "frame_index": 124,
+          "confidence": null,
+          "note": "HSU觀看第108–131格連續原片影格後回覆「124」，確認前導左腳首次落地為第124格；Codex依人工回答轉錄。",
+          "frame_range": null,
+          "frame_bounds": [
+            124,
+            124
+          ],
+          "marker_kind": "exact",
+          "time_bounds_sec": [
+            2.0687333333333333,
+            2.0687333333333333
+          ],
+          "angle_windows": {
+            "throwing_elbow": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 55.99250758026772,
+              "max_deg": 55.99250758026772,
+              "usable_deg": null
+            },
+            "lead_knee": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 162.23817441735312,
+              "max_deg": 162.23817441735312,
+              "usable_deg": null
+            }
+          }
+        },
+        "approximate_release": {
+          "status": "annotated",
+          "frame_index": 129,
+          "confidence": null,
+          "note": "HSU觀看第120–143格連續原片影格後回覆「129」，確認大致出手為第129格；Codex依人工回答轉錄。",
+          "frame_range": null,
+          "frame_bounds": [
+            129,
+            129
+          ],
+          "marker_kind": "exact",
+          "time_bounds_sec": [
+            2.15215,
+            2.15215
+          ],
+          "angle_windows": {
+            "throwing_elbow": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 162.3433388970963,
+              "max_deg": 162.3433388970963,
+              "usable_deg": null
+            },
+            "lead_knee": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 166.24503482059055,
+              "max_deg": 166.24503482059055,
+              "usable_deg": null
+            }
+          }
+        },
+        "follow_through_end": {
+          "status": "annotated",
+          "frame_index": 180,
+          "confidence": null,
+          "note": "HSU觀看第180–203格連續原片影格後回覆「180」，確認收尾結束為第180格。先前概覽中的192格僅為候選，已依人工修正。",
+          "frame_range": null,
+          "frame_bounds": [
+            180,
+            180
+          ],
+          "marker_kind": "exact",
+          "time_bounds_sec": [
+            3.003,
+            3.003
+          ],
+          "angle_windows": {
+            "throwing_elbow": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 145.79063177017662,
+              "max_deg": 145.79063177017662,
+              "usable_deg": null
+            },
+            "lead_knee": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 140.05974771598906,
+              "max_deg": 140.05974771598906,
+              "usable_deg": null
+            }
+          }
+        }
+      },
+      "timing": {
+        "preparation_to_leg_lift": {
+          "start_event": "preparation_start",
+          "end_event": "leg_lift",
+          "status": "exact",
+          "frame_bounds": [
+            32,
+            32
+          ],
+          "seconds_bounds": [
+            0.5338666666666667,
+            0.5338666666666667
+          ],
+          "seconds_bounds_fraction": [
+            "1001/1875",
+            "1001/1875"
+          ],
+          "reason": "依人工事件上下界計算；未取中點或推測事件"
+        },
+        "leg_lift_to_foot_plant": {
+          "start_event": "leg_lift",
+          "end_event": "foot_plant",
+          "status": "exact",
+          "frame_bounds": [
+            53,
+            53
+          ],
+          "seconds_bounds": [
+            0.8842166666666667,
+            0.8842166666666667
+          ],
+          "seconds_bounds_fraction": [
+            "53053/60000",
+            "53053/60000"
+          ],
+          "reason": "依人工事件上下界計算；未取中點或推測事件"
+        },
+        "foot_plant_to_release": {
+          "start_event": "foot_plant",
+          "end_event": "approximate_release",
+          "status": "exact",
+          "frame_bounds": [
+            5,
+            5
+          ],
+          "seconds_bounds": [
+            0.08341666666666667,
+            0.08341666666666667
+          ],
+          "seconds_bounds_fraction": [
+            "1001/12000",
+            "1001/12000"
+          ],
+          "reason": "依人工事件上下界計算；未取中點或推測事件"
+        },
+        "release_to_follow_through_end": {
+          "start_event": "approximate_release",
+          "end_event": "follow_through_end",
+          "status": "exact",
+          "frame_bounds": [
+            51,
+            51
+          ],
+          "seconds_bounds": [
+            0.85085,
+            0.85085
+          ],
+          "seconds_bounds_fraction": [
+            "17017/20000",
+            "17017/20000"
+          ],
+          "reason": "依人工事件上下界計算；未取中點或推測事件"
+        }
+      },
+      "source_refs": {
+        "summary_ref": {
+          "path": "analysis_results/phase3_ohtani_native_motion_20261024_01/supplement_004/motion_summary.json",
+          "sha256": "c1ae51a6c92ce71fa235fc706ee588d53ca77b7d10ab3793623dfc5fec4f4360"
+        },
+        "curves_ref": {
+          "path": "analysis_results/phase3_ohtani_native_motion_20261024_01/supplement_004/motion_curves.csv",
+          "sha256": "8a93632650eef2c3cb802e395bfed6504b6ca1c427a16b7bc72f0f840b60b50e"
+        },
+        "plot_ref": {
+          "path": "analysis_results/phase3_ohtani_native_motion_20261024_01/supplement_004/motion_curves.png",
+          "sha256": "e0266d807ddc508db9c4e007f189607765c680a05d0d43e54612d32c0bddc0e8"
+        },
+        "ground_truth_ref": {
+          "path": "annotations/event_reviews/HSU_20261024/shohei_ohtani/supplement_004/ground_truth.json",
+          "sha256": "ea37d1f851ea092d5dea147e3c441baedaf61d34b8f9dbd18f6c850ea37fdacc"
+        },
+        "video_ref": {
+          "path": "input/shohei_ohtani/phase2_supplement_20261020_01/supplement_004.mp4",
+          "sha256": "76945ebff5dc300ee0fc7084a0e21370137ee9d91ad61cdca52ccab0e4ee9054"
+        },
+        "overlay_ref": {
+          "path": "analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/supplement_004/rtmpose/supplement_004/overlay_native.mp4",
+          "sha256": "45cce1ef66b837f561ac49c5b08936b7528a7162ed2915d485f3451062679c30"
+        },
+        "event_review_ref": {
+          "path": "annotations/event_reviews/HSU_20261024/shohei_ohtani/supplement_004/event_review_checkpoint.json",
+          "sha256": "6965d9a5d60bbe175d37456b7f1a5837a22fc748dbd9103bc65b489b056117f8"
+        }
+      },
+      "event_reviewer": {
+        "reviewer": "HSU",
+        "reviewed_at_utc": null,
+        "method": "manual_video_review",
+        "guidelines_version": "ground-truth-guidelines-v1"
+      },
+      "event_review_scope": {
+        "kind": "event_only",
+        "events_complete": true,
+        "full_pose_gt_complete": false,
+        "annotation_status": "in_progress",
+        "reviewer": "HSU",
+        "recorded_at_utc": "2026-10-24T12:41:20.330312+00:00"
+      },
+      "pointwise_reliability": "unknown",
+      "usable_for_analysis": null
+    },
+    {
+      "pitch_id": "supplement_005",
+      "frame_count": 321,
+      "fps_fraction": "60000/1001",
+      "events": {
+        "preparation_start": {
+          "status": "annotated",
+          "frame_index": null,
+          "frame_range": {
+            "start_frame": 81,
+            "end_frame": 82
+          },
+          "confidence": null,
+          "note": "HSU觀看第80–91格連續原片影格後回覆「81-82」，確認啟動開始範圍。先前概覽中的88格僅為候選，已依人工修正，不取範圍中點。",
+          "frame_bounds": [
+            81,
+            82
+          ],
+          "marker_kind": "range",
+          "time_bounds_sec": [
+            1.35135,
+            1.3680333333333334
+          ],
+          "angle_windows": {
+            "throwing_elbow": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 2,
+              "calculated_frames": 2,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 77.82989766384944,
+              "max_deg": 77.9885216136345,
+              "usable_deg": null
+            },
+            "lead_knee": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 2,
+              "calculated_frames": 2,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 142.447444881467,
+              "max_deg": 145.86845705628286,
+              "usable_deg": null
+            }
+          }
+        },
+        "leg_lift": {
+          "status": "annotated",
+          "frame_index": null,
+          "frame_range": {
+            "start_frame": 96,
+            "end_frame": 99
+          },
+          "confidence": null,
+          "note": "HSU觀看第84–107格連續原片影格後回覆「96-99」，確認最高抬腿範圍；保留區間，不取中點。",
+          "frame_bounds": [
+            96,
+            99
+          ],
+          "marker_kind": "range",
+          "time_bounds_sec": [
+            1.6016,
+            1.65165
+          ],
+          "angle_windows": {
+            "throwing_elbow": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 4,
+              "calculated_frames": 4,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 91.0291548043059,
+              "max_deg": 100.23224243962152,
+              "usable_deg": null
+            },
+            "lead_knee": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 4,
+              "calculated_frames": 4,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 122.11001301061488,
+              "max_deg": 140.12016863888687,
+              "usable_deg": null
+            }
+          }
+        },
+        "foot_plant": {
+          "status": "annotated",
+          "frame_index": 124,
+          "confidence": null,
+          "note": "HSU觀看第120–143格連續原片影格後回覆「124」，確認前導左腳首次落地為第124格；Codex依人工回答轉錄。",
+          "frame_range": null,
+          "frame_bounds": [
+            124,
+            124
+          ],
+          "marker_kind": "exact",
+          "time_bounds_sec": [
+            2.0687333333333333,
+            2.0687333333333333
+          ],
+          "angle_windows": {
+            "throwing_elbow": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 18.470825950050784,
+              "max_deg": 18.470825950050784,
+              "usable_deg": null
+            },
+            "lead_knee": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 130.5695869672712,
+              "max_deg": 130.5695869672712,
+              "usable_deg": null
+            }
+          }
+        },
+        "approximate_release": {
+          "status": "annotated",
+          "frame_index": null,
+          "frame_range": {
+            "start_frame": 134,
+            "end_frame": 135
+          },
+          "confidence": null,
+          "note": "HSU觀看第132–143格連續原片影格後回覆「134-135」，確認大致出手範圍；保留區間，不取中點。",
+          "frame_bounds": [
+            134,
+            135
+          ],
+          "marker_kind": "range",
+          "time_bounds_sec": [
+            2.2355666666666667,
+            2.25225
+          ],
+          "angle_windows": {
+            "throwing_elbow": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 2,
+              "calculated_frames": 2,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 161.08934158766212,
+              "max_deg": 163.24947351991395,
+              "usable_deg": null
+            },
+            "lead_knee": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 2,
+              "calculated_frames": 2,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 169.1500157115509,
+              "max_deg": 175.22588184577504,
+              "usable_deg": null
+            }
+          }
+        },
+        "follow_through_end": {
+          "status": "annotated",
+          "frame_index": 169,
+          "confidence": null,
+          "note": "HSU觀看第168–191格連續原片影格後回覆「169」，確認收尾結束為第169格。先前概覽中的176格僅為候選，已依人工修正。",
+          "frame_range": null,
+          "frame_bounds": [
+            169,
+            169
+          ],
+          "marker_kind": "exact",
+          "time_bounds_sec": [
+            2.8194833333333333,
+            2.8194833333333333
+          ],
+          "angle_windows": {
+            "throwing_elbow": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 127.33442806979795,
+              "max_deg": 127.33442806979795,
+              "usable_deg": null
+            },
+            "lead_knee": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 157.0473441844318,
+              "max_deg": 157.0473441844318,
+              "usable_deg": null
+            }
+          }
+        }
+      },
+      "timing": {
+        "preparation_to_leg_lift": {
+          "start_event": "preparation_start",
+          "end_event": "leg_lift",
+          "status": "bounded",
+          "frame_bounds": [
+            14,
+            18
+          ],
+          "seconds_bounds": [
+            0.23356666666666667,
+            0.3003
+          ],
+          "seconds_bounds_fraction": [
+            "7007/30000",
+            "3003/10000"
+          ],
+          "reason": "依人工事件上下界計算；未取中點或推測事件"
+        },
+        "leg_lift_to_foot_plant": {
+          "start_event": "leg_lift",
+          "end_event": "foot_plant",
+          "status": "bounded",
+          "frame_bounds": [
+            25,
+            28
+          ],
+          "seconds_bounds": [
+            0.4170833333333333,
+            0.46713333333333334
+          ],
+          "seconds_bounds_fraction": [
+            "1001/2400",
+            "7007/15000"
+          ],
+          "reason": "依人工事件上下界計算；未取中點或推測事件"
+        },
+        "foot_plant_to_release": {
+          "start_event": "foot_plant",
+          "end_event": "approximate_release",
+          "status": "bounded",
+          "frame_bounds": [
+            10,
+            11
+          ],
+          "seconds_bounds": [
+            0.16683333333333333,
+            0.18351666666666666
+          ],
+          "seconds_bounds_fraction": [
+            "1001/6000",
+            "11011/60000"
+          ],
+          "reason": "依人工事件上下界計算；未取中點或推測事件"
+        },
+        "release_to_follow_through_end": {
+          "start_event": "approximate_release",
+          "end_event": "follow_through_end",
+          "status": "bounded",
+          "frame_bounds": [
+            34,
+            35
+          ],
+          "seconds_bounds": [
+            0.5672333333333334,
+            0.5839166666666666
+          ],
+          "seconds_bounds_fraction": [
+            "17017/30000",
+            "7007/12000"
+          ],
+          "reason": "依人工事件上下界計算；未取中點或推測事件"
+        }
+      },
+      "source_refs": {
+        "summary_ref": {
+          "path": "analysis_results/phase3_ohtani_native_motion_20261024_01/supplement_005/motion_summary.json",
+          "sha256": "de136d8a75eb620976c5d41d457a62ba84bba91a39b7fb070083e3a003f65082"
+        },
+        "curves_ref": {
+          "path": "analysis_results/phase3_ohtani_native_motion_20261024_01/supplement_005/motion_curves.csv",
+          "sha256": "c7cfd78e10543cedb95a813d561349a5f0a3e0b284fa8298566403f44387f4ca"
+        },
+        "plot_ref": {
+          "path": "analysis_results/phase3_ohtani_native_motion_20261024_01/supplement_005/motion_curves.png",
+          "sha256": "f41f6f74815bf73d2463a1a7081c6e34114e722f5c827357793708d86e8f1617"
+        },
+        "ground_truth_ref": {
+          "path": "annotations/event_reviews/HSU_20261024/shohei_ohtani/supplement_005/ground_truth.json",
+          "sha256": "55beb32a3bbece5355c2a2266d46dd21e1682149b52b282068a76ced511e98aa"
+        },
+        "video_ref": {
+          "path": "input/shohei_ohtani/phase2_supplement_20261020_01/supplement_005.mp4",
+          "sha256": "1c67c058d4376ecf94a138eb08e3251eb601a365a7e8a55e251e1c136ae5d95f"
+        },
+        "overlay_ref": {
+          "path": "analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/supplement_005/rtmpose/supplement_005/overlay_native.mp4",
+          "sha256": "98c25011ef83d9fdd4d14253e4b9ffbbb8f35ad4f81ed1cb866090a8b7bd5a8a"
+        },
+        "event_review_ref": {
+          "path": "annotations/event_reviews/HSU_20261024/shohei_ohtani/supplement_005/event_review_checkpoint.json",
+          "sha256": "7fc3f8866d55f514f0dcc9862bd27791defedb0e16ca576e4c405ac41445e0d9"
+        }
+      },
+      "event_reviewer": {
+        "reviewer": "HSU",
+        "reviewed_at_utc": null,
+        "method": "manual_video_review",
+        "guidelines_version": "ground-truth-guidelines-v1"
+      },
+      "event_review_scope": {
+        "kind": "event_only",
+        "events_complete": true,
+        "full_pose_gt_complete": false,
+        "annotation_status": "in_progress",
+        "reviewer": "HSU",
+        "recorded_at_utc": "2026-10-24T07:30:16.432327+00:00"
+      },
+      "pointwise_reliability": "unknown",
+      "usable_for_analysis": null
+    }
+  ],
+  "request_ref": {
+    "path": "config/analysis_inputs/ohtani_event_timing_20261025.json",
+    "sha256": "1a1b0893a761aea488e17613207a47578ee96d77e5e2b4be3543cb4dec73ddae"
+  },
+  "comparison_ref": {
+    "path": "analysis_results/phase3_ohtani_event_timing_20261025_01/comparison/event_comparison.json",
+    "sha256": "28ff8553692b1b6851ffffaeacda855a7109e3dcbc5dcf36935b4e2699c656cc"
+  },
+  "viewer_manifest_ref": {
+    "path": "analysis_results/phase3_ohtani_event_timing_20261025_01/comparison/viewer/event_viewer_manifest.json",
+    "sha256": "2d722691e6e0fd6589d543752bafffc52851bd7fca8ec388ad29a7d9fbca0ee5"
+  },
+  "html_ref": {
+    "path": "analysis_results/phase3_ohtani_event_timing_20261025_01/comparison/viewer/review_motion_events.html",
+    "sha256": "b27bd59fee99cf3eaef99dd8935ea2d86cc3bfedaf5cb8d30dc1fcd71a661796"
+  },
+  "timing_csv_ref": {
+    "path": "analysis_results/phase3_ohtani_event_timing_20261025_01/comparison/event_timing.csv",
+    "sha256": "8d177a07405577430d52bb133bea31ec69e63698e94d7c97486206c64d30a251"
+  },
+  "report_ref": {
+    "path": "analysis_results/phase3_ohtani_event_timing_20261025_01/comparison/report.md",
+    "sha256": "16056a5c01781780c0cab587e431afc55bc1f73a5526aa48ac376920b7ecf2b2"
+  },
+  "timing_plot_ref": {
+    "path": "analysis_results/phase3_ohtani_event_timing_20261025_01/timing_intervals.png",
+    "sha256": "95a0581a6ff2370f88fc0c98ec2891a56f267555b05e8fde74a9676dfa876d3b"
+  },
+  "new_inference_calls": 0,
+  "new_tracking_replays": 0,
+  "new_ground_truth_labels": 0,
+  "angle_values_recomputed": false,
+  "event_midpoints_selected": false,
+  "ground_truth_status_changed": false,
+  "full_pose_gt_completed": false,
+  "protected_files": 512,
+  "protected_sha256_changes": [],
+  "full_suite": {
+    "created_at_utc": "2026-10-24T17:31:11.543126+00:00",
+    "tests_run": 1214,
+    "passed": 1204,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 10,
+    "skipped_reasons": [
+      {
+        "test": "test_dangling_snapshot_file_link_cannot_create_external_target_when_supported (test_handoff_paths.HandoffPathTests.test_dangling_snapshot_file_link_cannot_create_external_target_when_supported)",
+        "reason": "file symlink creation is unavailable"
+      },
+      {
+        "test": "test_local_path_refuses_link_component_even_when_target_is_inside_intake (test_handoff_paths.HandoffPathTests.test_local_path_refuses_link_component_even_when_target_is_inside_intake)",
+        "reason": "directory junctions are unavailable"
+      },
+      {
+        "test": "test_project_intake_link_outside_project_is_refused_before_local_mutation (test_handoff_paths.HandoffPathTests.test_project_intake_link_outside_project_is_refused_before_local_mutation)",
+        "reason": "directory junctions are unavailable"
+      },
+      {
+        "test": "test_project_intake_link_to_code_directory_is_refused_before_local_mutation (test_handoff_paths.HandoffPathTests.test_project_intake_link_to_code_directory_is_refused_before_local_mutation)",
+        "reason": "directory junctions are unavailable"
+      },
+      {
+        "test": "test_snapshot_refuses_linked_batch_directory_without_touching_target (test_handoff_paths.HandoffPathTests.test_snapshot_refuses_linked_batch_directory_without_touching_target)",
+        "reason": "directory junctions are unavailable"
+      },
+      {
+        "test": "test_snapshot_refuses_linked_child_contract_before_skipping_existing_copy (test_handoff_paths.HandoffPathTests.test_snapshot_refuses_linked_child_contract_before_skipping_existing_copy)",
+        "reason": "directory junctions are unavailable"
+      },
+      {
+        "test": "test_source_symlink_outside_candidate_is_rejected_when_supported (test_handoff_review.HandoffReviewTests.test_source_symlink_outside_candidate_is_rejected_when_supported)",
+        "reason": "creating symbolic links is unavailable"
+      },
+      {
+        "test": "test_api_refuses_linked_higher_ancestor_before_lock_creation_or_deletion (test_handoff_review_boundary.HandoffReviewBoundaryTests.test_api_refuses_linked_higher_ancestor_before_lock_creation_or_deletion)",
+        "reason": "directory junctions are unavailable"
+      },
+      {
+        "test": "test_api_refuses_linked_parent_before_lock_creation_or_deletion (test_handoff_review_boundary.HandoffReviewBoundaryTests.test_api_refuses_linked_parent_before_lock_creation_or_deletion)",
+        "reason": "directory junctions are unavailable"
+      },
+      {
+        "test": "test_cli_refuses_linked_candidates_before_calling_review (test_handoff_review_boundary.HandoffReviewBoundaryTests.test_cli_refuses_linked_candidates_before_calling_review)",
+        "reason": "directory junctions are unavailable"
+      }
+    ],
+    "elapsed_seconds": 163.969,
+    "formal_five_video_e2e_enabled": true,
+    "real_rtmpose_calls": 0,
+    "real_detector_calls": 0,
+    "successful": true
+  },
+  "test_results_combined": {
+    "unique_tests": 1214,
+    "passed": 1212,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 2,
+    "skipped_reasons": [
+      {
+        "test": "test_dangling_snapshot_file_link_cannot_create_external_target_when_supported (test_handoff_paths.HandoffPathTests.test_dangling_snapshot_file_link_cannot_create_external_target_when_supported)",
+        "reason": "file symlink creation is unavailable"
+      },
+      {
+        "test": "test_source_symlink_outside_candidate_is_rejected_when_supported (test_handoff_review.HandoffReviewTests.test_source_symlink_outside_candidate_is_rejected_when_supported)",
+        "reason": "creating symbolic links is unavailable"
+      }
+    ],
+    "method": "full suite plus retry of only eight sandbox-skipped junction cases",
+    "full_suite_ref": {
+      "path": "analysis_results/phase3_ohtani_event_timing_20261025_01/verified_suite/test_results.json",
+      "sha256": "f196510aeaafdfe80acd151f6d5c2c266cb94ccb6805882eaad7cbca586bd54a"
+    },
+    "junction_retry_ref": {
+      "path": "analysis_results/phase3_ohtani_event_timing_20261025_01/verified_suite/junction_retry_results.json",
+      "sha256": "44aef5a1c7e19467493612d7c8a63b72d8d1f10abbc9bafdb57b512423e4f8ef"
+    }
+  },
+  "new_python_tests": 11,
+  "node_checks": {
+    "command": "node --test tests/test_native_motion_viewer.js tests/test_native_motion_events.js",
+    "node_test_runner_passed": 6,
+    "playback_numeric_tests_passed": 5,
+    "event_helper_assertions_passed": 18,
+    "failed": 0,
+    "browser_or_DOM_used": false
+  },
+  "browser_interaction_verified": false,
+  "plot_visually_inspected": true,
+  "pointwise_reliability": "unknown",
+  "usable_for_analysis": null,
+  "phase2_automatic_reliability": "NOT_PASSED",
+  "phase3_overall": "NOT_EVALUATED"
+}

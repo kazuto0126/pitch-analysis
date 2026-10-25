@@ -1,11 +1,22 @@
 # 進度摘要
 
-更新：2026-10-25（台灣）。[完整狀態](current_status.md)；[大谷人工事件覆核](phase3_ohtani_event_review_20261024.md)。
+更新：2026-10-25（台灣）。[完整狀態](current_status.md)；[大谷事件與曲線對照](phase3_ohtani_event_timing_20261025.md)。
 
 **Phase 1 = PASSED；Native interface integration = PASSED；Phase 2 自動可靠性仍 NOT PASSED。**
 **Phase3第一個描述性曲線交付 = COMPLETE；Phase3整體尚未驗收。**
 
-## 最新：大谷五球事件已由HSU確認，進度5/5
+## 最新：大谷五球事件與曲線對照交付
+
+五球1684格，25筆人工事件（21精確／4範圍），20筆時距（14精確／6上下界）全部可計算。
+新增可選事件完成紀錄的讀取，核對原片與GT來源；完整GT仍in_progress，未覆核欄位不填。
+原骨架、曲線、播放器、模型與門檻保持；512份保護檔案SHA無變更，新推論／追蹤／標註皆0。
+完整suite為1204 passed／0 failed／10 skipped；8項junction測試因sandbox限制跳過，補跑8/8通過。
+合併不重複結果 **1212 passed／0 failed／2 skipped**，另原播放器5項Node測試與事件helper18項斷言全過。
+輸出：`analysis_results/phase3_ohtani_event_timing_20261025_01/`，含對照頁、CSV、JSON、摘要及時距圖。
+下一步查看對照頁；新頁人工觀看尚未記錄。本輪交付後停止，不擴增功能或改變Phase2／Phase3整體結論。
+[結果與操作](phase3_ohtani_event_timing_20261025.md)；[來源與測試紀錄](dataset_selections/phase3_ohtani_event_timing_20261025.json)。
+
+## 前段：大谷五球事件已由HSU確認，進度5/5
 
 005：啟動81–82、最高抬腿96–99、前腳落地124、出手134–135、收尾169。
 001：啟動28、最高抬腿59、前腳落地110、出手119–120、收尾160；收尾經連續影格確認。
@@ -17,7 +28,7 @@
 GT仍in_progress、reviewed_at_utc=null；未覆核的身份、關節、pose failure等欄位仍null。
 五球共25筆事件：21筆精確影格、4筆影格範圍、未填0筆；504份保護檔案SHA無變更。
 本輪無產品／測試碼變更，未重跑suite或骨架；最近相同程式碼1201 passed／0 failed／2 skipped。
-下一步讓既有同投手時序比較讀取已確認的事件範圍；目前尚未實作，不假填完整pose GT。
+該輪預定的事件範圍接入已於上方最新交付完成，未假填完整pose GT。
 [人工進度與來源](dataset_selections/phase3_ohtani_event_review_progress_20261024.json)。
 
 ## 前段：大谷五球空白事件模板與005查看圖片備妥
