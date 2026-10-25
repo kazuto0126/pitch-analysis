@@ -8,6 +8,8 @@ ROLES = ("throwing_elbow", "lead_knee")
 START_EVENT = "foot_plant"
 END_EVENT = "approximate_release"
 CALCULATED = "calculated_from_model_xy"
+EVENT_LABELS = {"preparation_start": "啟動", "leg_lift": "最高抬腿", "foot_plant": "落地",
+                "approximate_release": "出手", "follow_through_end": "收尾"}
 
 
 def describe_event_transition(clip: dict) -> dict:
@@ -17,13 +19,28 @@ def describe_event_transition(clip: dict) -> dict:
     existing event loader. Differences describe model projections, not anatomical
     motion or reliability. Missing and degenerate endpoint counts can overlap.
     """
-    start, end = (clip["events"][name] for name in (START_EVENT, END_EVENT))
+    return _describe_transition(clip, "foot_plant_to_release")
+
+
+def describe_manual_event_transitions(clip: dict) -> list[dict]:
+    """Describe each existing manual interval independently, preserving its bounds.
+
+    Adjacent intervals share an event. Their independently computed extrema must
+    not be summed into a candidate trajectory with inconsistent shared frames.
+    """
+    return [{"transition_key": key, **_describe_transition(clip, key)} for key in clip["timing"]]
+
+
+def _describe_transition(clip: dict, timing_key: str) -> dict:
+    timing = clip["timing"][timing_key]
+    start_name, end_name = timing["start_event"], timing["end_event"]
+    start, end = (clip["events"][name] for name in (start_name, end_name))
     result = {
-        "start_event": START_EVENT, "end_event": END_EVENT,
+        "start_event": start_name, "end_event": end_name,
         "status": "unavailable", "reason": "人工事件未確認；未取候選影格計算",
         "start_frame_bounds": deepcopy(start["frame_bounds"]),
         "end_frame_bounds": deepcopy(end["frame_bounds"]),
-        "timing": deepcopy(clip["timing"]["foot_plant_to_release"]),
+        "timing": deepcopy(timing),
         "all_endpoint_pairs": None, "chronological_pairs": None,
         "excluded_nonchronological_pairs": None,
         "joints": {role: {
@@ -41,7 +58,7 @@ def describe_event_transition(clip: dict) -> dict:
     ordered = [(first, last) for first, last in endpoints if first <= last]
     fps = Fraction(clip["fps_fraction"])
     result.update(status="descriptive_model_xy_transition",
-                  reason="出手模型XY角減落地模型XY角；保留全部合法影格配對，未選中點",
+                  reason=f"{EVENT_LABELS[end_name]}模型XY角減{EVENT_LABELS[start_name]}模型XY角；保留全部合法影格配對，未選中點",
                   all_endpoint_pairs=len(endpoints), chronological_pairs=len(ordered),
                   excluded_nonchronological_pairs=len(endpoints) - len(ordered))
     for role, joint in result["joints"].items():

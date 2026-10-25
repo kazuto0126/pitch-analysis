@@ -6,7 +6,13 @@
 本次收尾摘要見 [STATUS](docs/STATUS.md)；外部專案供片需求見
 [INPUT_REQUIREMENTS](docs/INPUT_REQUIREMENTS.md)。
 
-2026-10-26 最新：[落地→大致出手的模型角度變化](docs/phase3_event_transition_20261026.md)。
+2026-10-26 最新：[人工四段動作摘要](docs/phase3_manual_stages_20261026.md)。
+同一報告已補齊啟動→最高抬腿→落地→大致出手→收尾的四段時距與肘／膝端點差。
+九球共36段、72筆關節摘要：33段可描述、3段事件未定保持空值，附154筆配對讀值。
+原單段API及八份舊CSV保持；相鄰段的候選上下界不直接相加。[來源與測試紀錄](docs/dataset_selections/phase3_manual_stages_20261026.json)。
+完整suite **1268 passed／0 failed／2 skipped**，包含正式五球E2E；原骨架、GT與門檻保持。
+
+前段：[落地→大致出手的模型角度變化](docs/phase3_event_transition_20261026.md)。
 原事件報告新增肘／前導膝端點差；保留人工事件範圍內全部合法配對，不選中點。
 大谷5球、山本啟用4球共18摘要、20事件配對／40關節差值；原90視窗、36時距及四份CSV保持。
 新增11項Python測試，完整suite **1260 passed／0 failed／2 skipped**（含正式五球E2E）；[來源紀錄](docs/dataset_selections/phase3_event_transition_20261026.json)。

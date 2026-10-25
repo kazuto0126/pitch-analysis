@@ -1,0 +1,213 @@
+{
+  "schema_version": "phase3-manual-stages-delivery-v1",
+  "created_at_utc": "2026-10-25T22:11:52.051317+00:00",
+  "scope": "Four existing manual-event intervals; saved model-XY endpoint differences and original timing",
+  "cohorts": {
+    "ohtani": {
+      "pitcher_id": "shohei_ohtani",
+      "clip_count": 5,
+      "source_frames": 1684,
+      "stages": 20,
+      "stage_status_counts": {
+        "descriptive_model_xy_transition": 20
+      },
+      "joint_summaries": 40,
+      "event_pairs": 34,
+      "joint_pair_rows": 68,
+      "joint_delta_directions": {
+        "negative": 21,
+        "positive": 18,
+        "includes_zero": 1
+      },
+      "old_clip_records_unchanged": true,
+      "old_single_transition_readouts_unchanged": true,
+      "old_csv_files_byte_equal": [
+        "event_timing.csv",
+        "event_angle_readouts.csv",
+        "event_transition_readouts.csv",
+        "event_transition_pairs.csv"
+      ],
+      "original_comparison_ref": {
+        "path": "analysis_results/phase3_event_transition_20261026_01/ohtani/event_comparison.json",
+        "sha256": "cc4ca413048263aec6d63d748be42204734668ff3372064ccda9014a39e25979"
+      },
+      "comparison_ref": {
+        "path": "analysis_results/phase3_manual_stages_20261026_01/ohtani/event_comparison.json",
+        "sha256": "112720be28bfd166c0a8d3d4dd8eb283e90ba6091f2564275732608cd59c86af"
+      },
+      "report_ref": {
+        "path": "analysis_results/phase3_manual_stages_20261026_01/ohtani/report.md",
+        "sha256": "c506136604eddd6bdc242f7263beadcfa1d0e01ef4b3b9ce0b8e7634b3cf6fc8"
+      },
+      "summary_csv_ref": {
+        "path": "analysis_results/phase3_manual_stages_20261026_01/ohtani/manual_stage_readouts.csv",
+        "sha256": "e01d80a5c81acdd53cce3d1ad08f86b6a3dece5b8b79df1df7cdabecad959fd0"
+      },
+      "pairs_csv_ref": {
+        "path": "analysis_results/phase3_manual_stages_20261026_01/ohtani/manual_stage_pairs.csv",
+        "sha256": "38a204badff8a504b1acc4787bdca80b34034263a387862f7a14266b3a189cbe"
+      }
+    },
+    "yamamoto": {
+      "pitcher_id": "yoshinobu_yamamoto",
+      "clip_count": 4,
+      "source_frames": 477,
+      "stages": 16,
+      "stage_status_counts": {
+        "unavailable": 3,
+        "descriptive_model_xy_transition": 13
+      },
+      "joint_summaries": 32,
+      "event_pairs": 43,
+      "joint_pair_rows": 86,
+      "joint_delta_directions": {
+        "unavailable": 6,
+        "negative": 11,
+        "includes_zero": 2,
+        "positive": 13
+      },
+      "old_clip_records_unchanged": true,
+      "old_single_transition_readouts_unchanged": true,
+      "old_csv_files_byte_equal": [
+        "event_timing.csv",
+        "event_angle_readouts.csv",
+        "event_transition_readouts.csv",
+        "event_transition_pairs.csv"
+      ],
+      "original_comparison_ref": {
+        "path": "analysis_results/phase3_event_transition_20261026_01/yamamoto/event_comparison.json",
+        "sha256": "82bb52cb028a3b4857ac7cd3a57930e5c0e837faa8335375eeb1ebac6f9e0a45"
+      },
+      "comparison_ref": {
+        "path": "analysis_results/phase3_manual_stages_20261026_01/yamamoto/event_comparison.json",
+        "sha256": "406f4c3d2f969ba1b2cb15758ba80a38b1cd69b8a078b8e7529818bb4c5ded96"
+      },
+      "report_ref": {
+        "path": "analysis_results/phase3_manual_stages_20261026_01/yamamoto/report.md",
+        "sha256": "abfecc858aab2848ed2b6569d5e1832265dad73e8379e8a5554d96d3ef302afc"
+      },
+      "summary_csv_ref": {
+        "path": "analysis_results/phase3_manual_stages_20261026_01/yamamoto/manual_stage_readouts.csv",
+        "sha256": "8f94e68c4c33cd34d5916f75c125cd6fd0a841cd598b7d2addf42ca1e3b9ee51"
+      },
+      "pairs_csv_ref": {
+        "path": "analysis_results/phase3_manual_stages_20261026_01/yamamoto/manual_stage_pairs.csv",
+        "sha256": "e5d5fde52ce7e6605eb5fab293a8c6077764888172a107d1a9497cadf69989b4"
+      }
+    }
+  },
+  "source_frames": 2161,
+  "manual_stages": 36,
+  "descriptive_stages": 33,
+  "unresolved_stages": [
+    {
+      "pitcher_id": "yoshinobu_yamamoto",
+      "pitch_id": "pitch_001",
+      "transition_key": "preparation_to_leg_lift"
+    },
+    {
+      "pitcher_id": "yoshinobu_yamamoto",
+      "pitch_id": "pitch_005",
+      "transition_key": "preparation_to_leg_lift"
+    },
+    {
+      "pitcher_id": "yoshinobu_yamamoto",
+      "pitch_id": "pitch_005",
+      "transition_key": "leg_lift_to_foot_plant"
+    }
+  ],
+  "joint_summaries": 72,
+  "unresolved_joint_summaries": 6,
+  "chronological_event_pairs": 77,
+  "joint_pair_rows": 154,
+  "independent_read_only_audit": {
+    "issues": 0,
+    "source_curve_csv_and_manual_event_bounds_checked": true,
+    "summaries": 72,
+    "joint_pairs": 154,
+    "event_pairs": 77,
+    "unresolved_summaries": 6,
+    "delta_directions": {
+      "positive": 31,
+      "negative": 32,
+      "includes_zero": 3,
+      "unavailable": 6
+    },
+    "original_clips_unchanged": 9,
+    "original_windows_unchanged": 90,
+    "original_timings_unchanged": 36,
+    "original_single_transition_summaries_unchanged": 18,
+    "original_single_transition_pairs_unchanged": 40,
+    "original_csv_files_byte_equal": 8,
+    "protected_hashes_unchanged": 585
+  },
+  "protected_files": 585,
+  "protected_sha_changes": [],
+  "protected_snapshot_ref": {
+    "path": "analysis_results/phase3_manual_stages_20261026_01/protected_before.json",
+    "sha256": "f87b64b202925409a93cde2a486c0f93494928ae022afa0a52677c13c58d4b51"
+  },
+  "python_suite": {
+    "created_at_utc": "2026-10-25T22:11:26.277485+00:00",
+    "tests_run": 1270,
+    "passed": 1268,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 2,
+    "skipped_reasons": [
+      {
+        "test": "test_dangling_snapshot_file_link_cannot_create_external_target_when_supported (test_handoff_paths.HandoffPathTests.test_dangling_snapshot_file_link_cannot_create_external_target_when_supported)",
+        "reason": "file symlink creation is unavailable"
+      },
+      {
+        "test": "test_source_symlink_outside_candidate_is_rejected_when_supported (test_handoff_review.HandoffReviewTests.test_source_symlink_outside_candidate_is_rejected_when_supported)",
+        "reason": "creating symbolic links is unavailable"
+      }
+    ],
+    "elapsed_seconds": 128.813,
+    "formal_five_video_e2e_enabled": true,
+    "real_rtmpose_calls": 0,
+    "real_detector_calls": 0,
+    "successful": true
+  },
+  "new_python_tests": 8,
+  "targeted_suite": {
+    "passed": 43,
+    "failed": 0,
+    "skipped": 0
+  },
+  "python_suite_results_ref": {
+    "path": "analysis_results/phase3_manual_stages_20261026_01/verified_suite/test_results.json",
+    "sha256": "a10e18244531f24820091ef8fb548a840ebb4e02f62fc40e55adcfc49bbb1d90"
+  },
+  "javascript_changed": false,
+  "node_suite_rerun": false,
+  "prior_same_js_node_suite": {
+    "passed": 11,
+    "failed": 0,
+    "skipped": 0,
+    "event_helper_assertions": 34
+  },
+  "new_inference_calls": 0,
+  "new_tracking_replays": 0,
+  "new_ground_truth_labels": 0,
+  "existing_model_angles_recomputed": false,
+  "pose_tracking_core_changed": false,
+  "threshold_changed": false,
+  "legacy_single_transition_api_preserved": true,
+  "event_midpoints_selected": false,
+  "cross_pitcher_comparison": false,
+  "new_human_acceptance": false,
+  "browser_interaction_verified": false,
+  "pointwise_reliability": "unknown",
+  "usable_for_analysis": null,
+  "phase1_status": "PASSED",
+  "phase2_automatic_reliability": "NOT_PASSED",
+  "phase3_overall_status": "NOT_EVALUATED",
+  "limitations": [
+    "Independent adjacent-stage extrema cannot be summed because they share uncertain event frames",
+    "Endpoint differences are model image-plane projections, not anatomical flexion or movement quality",
+    "Candidate pairs are not independent samples or probabilities; extrema are not confidence intervals",
+    "Unresolved event candidates and missing/degenerate endpoints retain nulls, without imputation"
+  ]
+}

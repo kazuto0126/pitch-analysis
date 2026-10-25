@@ -1,4 +1,4 @@
-# Current status — Foot-plant to release model-XY endpoint changes
+# Current status — Four manual-event intervals with model-XY endpoint readouts
 
 Updated: 2026-10-26 (Asia/Taipei)
 
@@ -13,7 +13,34 @@ gates, MediaPipe settings, interpolation and smoothing are unchanged. The approv
 optional subject-region constraint is described below; the default selector remains compatible.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-26 Foot-plant to approximate-release endpoint changes
+## 2026-10-26 Four manual-event interval readouts
+
+The existing event report now includes all four intervals between the five existing
+manual events, with original timing and throwing-elbow/lead-knee model-XY endpoint
+differences. Ohtani5 and active Yamamoto4 cover36 intervals and72 joint summaries:
+33 descriptive intervals,3 unresolved intervals (6 null joint summaries),77 legal
+event-frame pairs and154 joint-pair rows. No new events or phases are inferred.
+
+All candidate pairs retain source frames, fractional-FPS elapsed time, endpoint
+states and nulls. Adjacent intervals share events; independent extrema must not be
+summed into a candidate trajectory with inconsistent intermediate frames. No whole
+trajectory, phase normalization, motion score or anatomy inference is introduced.
+
+Independent saved-CSV/manual-bound audit found no differences across72 summaries
+and154 joint-pair rows. All9 original clip records,90 windows,36 timings,18 legacy
+single-interval summaries and40 pair rows remain identical. All8 old CSVs are byte-
+identical, and585 protected source hashes are unchanged. Legacy single-interval API
+and CSV remain compatible. Added8 Python tests; the43-test targeted collection passes.
+Full suite:1270 run,1268 passed/0 failed/2 skipped, including the formal five-video
+MediaPipe E2E. Both skips are unavailable Windows file-symlink capabilities; no unresolved
+test failures. Full evidence is in the receipt. JavaScript/player unchanged; no Node rerun or
+new browser/human acceptance. Pose/tracking, thresholds, raw/GT and unknown/null remain.
+Output: `analysis_results/phase3_manual_stages_20261026_01/`.
+[Results and usage](phase3_manual_stages_20261026.md),
+[source and test receipt](dataset_selections/phase3_manual_stages_20261026.json).
+Stop after full tests, documentation, commit and origin push; phase-wide states remain.
+
+## 2026-10-26 Foot-plant to approximate-release endpoint changes (previous)
 
 The normal event report now describes release-angle minus foot-plant-angle for the
 throwing elbow and lead knee. All chronological pairs within the existing manual

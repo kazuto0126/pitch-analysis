@@ -97,6 +97,20 @@ delta_model_xy_deg = 出手影格的model_xy_deg − 落地影格的model_xy_deg
 沒有品質門檻或可靠性評級。配對數不是獨立樣本數，範圍也不是統計信賴區間。
 不能據此推論人體真實伸屈、角速度、動作好壞或投手整體穩定度；unknown/null保持。
 
+## 人工事件之間的四段摘要
+
+同一指令另產生啟動→最高抬腿、最高抬腿→落地、落地→大致出手、
+大致出手→收尾四段讀值。它們沿用既有五個人工事件與原時距，並非自動判定投球階段。
+每段同樣保留所有合法端點配對、缺失／退化狀態及分數FPS時間；未確認事件使相鄰段保持未定。
+
+`manual_stage_readouts`的每筆以`transition_key`對應既有時距名稱，包含原時距與兩關節端點差。
+摘要CSV每球8列，包括未定段；配對CSV只列已確認事件之間的合法候選配對。
+同一配對內共享的兩端格號清楚保留，沒有把範圍中點當成事件。
+
+相鄰兩段共用中間事件，因此各段獨立的min/max**不能直接相加**成一條候選動作，
+也不能據此求總活動幅度。只有使用相同中間事件影格的配對才可能屬於同一條候選路徑；
+目前沒有組合整段路徑或賦予機率。原落地→出手單段API及兩份CSV保持相容。
+
 ## 輸出
 
 - `event_comparison.json`：逐球事件、時距、事件角度視窗、reviewer與來源／產物SHA。
@@ -104,6 +118,8 @@ delta_model_xy_deg = 出手影格的model_xy_deg − 落地影格的model_xy_deg
 - `event_angle_readouts.csv`：每球五事件×兩關節共10列，含影格範圍、原人工status／confidence／note、min/max、完整格數與缺值／退化數，以及上述三個新增讀值欄位。null在CSV中為空白；可靠性維持unknown、usable_for_analysis為空白。
 - `event_transition_readouts.csv`：每球兩列落地→大致出手的端點變化摘要，含事件界線、合法／倒序配對分母、計算／缺點／退化數量及差值極值。
 - `event_transition_pairs.csv`：每個合法配對的兩個關節各一列，包含不可計算的配對；附原格號、分數時距與兩端狀態。
+- `manual_stage_readouts.csv`：四段摘要，每球8列，新增最前方的transition_key，其餘欄位沿用單段CSV。
+- `manual_stage_pairs.csv`：四段的逐配對關節讀值，包含transition_key、原格號、時距、兩端狀態及差值。
 - `report.md`：逐球時序與事件角度讀值表，說明單格、多格及未確認事件。
 - `viewer/review_motion_events.html`：影片、原始曲線、事件線／色帶與同投手時距表。
 - `viewer/event_viewer_manifest.json`：觀看頁、原播放JS與事件JS的SHA及檢查範圍。
@@ -119,6 +135,7 @@ delta_model_xy_deg = 出手影格的model_xy_deg − 落地影格的model_xy_deg
 [大谷五球實際結果](phase3_ohtani_event_timing_20261025.md)。
 [正式報告讀值整合與新版輸出](phase3_event_readout_integration_20261026.md)。
 [落地→大致出手的模型變化結果](phase3_event_transition_20261026.md)。
+[人工四段動作摘要](phase3_manual_stages_20261026.md)。
 
 ## 以前腳落地對齊曲線
 

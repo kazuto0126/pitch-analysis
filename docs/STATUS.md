@@ -1,11 +1,23 @@
 # 進度摘要
 
-更新：2026-10-26（台灣）。[完整狀態](current_status.md)；[落地→出手模型變化](phase3_event_transition_20261026.md)。
+更新：2026-10-26（台灣）。[完整狀態](current_status.md)；[人工四段摘要](phase3_manual_stages_20261026.md)。
 
 **Phase 1 = PASSED；Native interface integration = PASSED；Phase 2 自動可靠性仍 NOT PASSED。**
 **Phase3第一個描述性曲線交付 = COMPLETE；Phase3整體尚未驗收。**
 
-## 最新：落地到大致出手的模型角度變化
+## 最新：四段人工事件讀值已補齊
+
+同一報告依啟動→最高抬腿→落地→大致出手→收尾分四段，附原時距與肘／膝模型XY端點差。
+九球36段共72摘要；33段可描述、3段事件未定（六筆關節摘要null），保留77合法事件配對／154關節讀值。
+相鄰段共用事件，不把獨立上下界相加成一條動作；無自動事件判定、重標或品質評分。
+舊落地→出手單段API、18摘要與40配對保持，八份舊CSV逐bytes相同；585份保護來源SHA未變。
+新增八項測試，相關43項全部通過；完整suite **1268 passed／0 failed／2 skipped**，含正式五球E2E。
+兩項跳過為Windows檔案符號連結能力不足；[來源與測試紀錄](dataset_selections/phase3_manual_stages_20261026.json)。
+骨架、raw／GT、門檻與播放器保持，逐點unknown／usable null不變。
+輸出：`analysis_results/phase3_manual_stages_20261026_01/`；[兩位投手分開的報告與CSV](phase3_manual_stages_20261026.md)。
+本輪人工四段描述性交付收尾後停止，不改Phase整體驗收結論。
+
+## 前段：落地到大致出手的模型角度變化
 
 正式事件報告新增「出手角度−落地角度」；兩關節各保留全部合法端點配對，不取事件中點。
 九球共18摘要、20事件配對／40關節差值；附原格號、分數時距與兩端狀態，unknown/null保持。
