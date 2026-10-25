@@ -1,11 +1,21 @@
 # 進度摘要
 
-更新：2026-10-25（台灣）。[完整狀態](current_status.md)；[大谷事件與曲線對照](phase3_ohtani_event_timing_20261025.md)。
+更新：2026-10-25（台灣）。[完整狀態](current_status.md)；[大谷事件畫面摘要](phase3_ohtani_event_readout_20261025.md)。
 
 **Phase 1 = PASSED；Native interface integration = PASSED；Phase 2 自動可靠性仍 NOT PASSED。**
 **Phase3第一個描述性曲線交付 = COMPLETE；Phase3整體尚未驗收。**
 
-## 最新：大谷五球事件與曲線對照交付
+## 最新：大谷五事件原片／骨架對照與角度解讀
+
+25筆事件包含31個影格，全部匯出原片／既有骨架共62張圖，整理為5張事件圖與模型角度表。
+已實看5張圖的配對、格號與排版；不取範圍中點，不新增人工判斷或標註任務。
+摘要保留逐球節奏與姿勢差異，並說明001／002落地時約1.0°／0.3°的肘XY角不可直接當作人體屈曲角。
+515份保護檔案SHA未變；無產品／測試碼變更、模型推論或追蹤重跑。
+本輪未重跑suite；相同程式碼最近1212 passed／0 failed／2 skipped。
+輸出：`analysis_results/phase3_ohtani_event_readout_20261025_01/`。
+[圖表與解讀](phase3_ohtani_event_readout_20261025.md)；[來源紀錄](dataset_selections/phase3_ohtani_event_readout_20261025.json)。
+
+## 前段：大谷五球事件與曲線對照交付
 
 五球1684格，25筆人工事件（21精確／4範圍），20筆時距（14精確／6上下界）全部可計算。
 新增可選事件完成紀錄的讀取，核對原片與GT來源；完整GT仍in_progress，未覆核欄位不填。

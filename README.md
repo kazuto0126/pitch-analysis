@@ -6,7 +6,12 @@
 本次收尾摘要見 [STATUS](docs/STATUS.md)；外部專案供片需求見
 [INPUT_REQUIREMENTS](docs/INPUT_REQUIREMENTS.md)。
 
-2026-10-25 最新：[大谷五球事件與曲線對照已交付](docs/phase3_ohtani_event_timing_20261025.md)。
+2026-10-25 最新：[大谷五球事件畫面與角度解讀](docs/phase3_ohtani_event_readout_20261025.md)。
+25筆事件內的31格全部匯出，原片／既有骨架共62張圖、5張事件對照圖，附肘／膝模型角度表。
+保留範圍與逐球差異，說明落地近0°的XY肘角不能當作人體屈曲角；原資料與算法不變。
+本輪無產品／測試碼變更，未重跑suite；最近相同程式碼1212 passed／0 failed／2 skipped。
+
+前段：[大谷五球事件與曲線對照已交付](docs/phase3_ohtani_event_timing_20261025.md)。
 沿用已接受骨架與1684格曲線，25筆人工事件產生20筆時距（14精確／6範圍），附觀看頁、CSV與總覽圖。
 新增對已完成事件覆核紀錄的讀取；完整GT仍in_progress，不補填其他欄位、不重跑骨架。
 完整測試加8項環境跳過案例補跑，合計 **1212 passed／0 failed／2 skipped**；512份保護檔案未變。

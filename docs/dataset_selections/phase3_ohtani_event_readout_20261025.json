@@ -1,0 +1,810 @@
+{
+  "schema_version": "phase3-saved-event-readout-delivery-v1",
+  "created_at_utc": "2026-10-25T06:15:14.931849+00:00",
+  "clip_count": 5,
+  "event_count": 25,
+  "event_frame_count": 31,
+  "image_count": 62,
+  "contact_sheet_count": 5,
+  "frame_selection": "every source frame within the confirmed event bounds; no midpoint",
+  "source_comparison_ref": {
+    "path": "analysis_results/phase3_ohtani_event_timing_20261025_01/comparison/event_comparison.json",
+    "sha256": "28ff8553692b1b6851ffffaeacda855a7109e3dcbc5dcf36935b4e2699c656cc"
+  },
+  "crop_config_ref": {
+    "path": "config/pilots/ohtani_supplement_regions_20261020.json",
+    "sha256": "687d64f0e5790633057c0b10724d8c420e1e67ab464d0b7f2dc1e069664231df"
+  },
+  "report_ref": {
+    "path": "analysis_results/phase3_ohtani_event_readout_20261025_01/report.md",
+    "sha256": "351f82417d26e6b11bbad84984d4786e70b8f8400e25a7a9c02f5c163d2d7a28"
+  },
+  "gallery_ref": {
+    "path": "analysis_results/phase3_ohtani_event_readout_20261025_01/review_event_frames.html",
+    "sha256": "81214735e262a733f05e6abd037df5e06179539c764e6805373ad1466faee504"
+  },
+  "contact_sheet_refs": {
+    "preparation_start": {
+      "path": "analysis_results/phase3_ohtani_event_readout_20261025_01/contact_sheets/preparation_start.jpg",
+      "sha256": "ff81fd37ff39e4a586aa44c4c00c98e1da77efb7d3a9f4afd1be1016c9a9cbdb"
+    },
+    "leg_lift": {
+      "path": "analysis_results/phase3_ohtani_event_readout_20261025_01/contact_sheets/leg_lift.jpg",
+      "sha256": "7f8b22c7f4ebd167cfe626b90f67bda74aaa12e470a26dbf930f9932b9cb5f47"
+    },
+    "foot_plant": {
+      "path": "analysis_results/phase3_ohtani_event_readout_20261025_01/contact_sheets/foot_plant.jpg",
+      "sha256": "7ee3cc488061887fa65b01d68f2a08f143f79d4d8c869a6133f6cb43f8263376"
+    },
+    "approximate_release": {
+      "path": "analysis_results/phase3_ohtani_event_readout_20261025_01/contact_sheets/approximate_release.jpg",
+      "sha256": "6ecb7732125d6d4e340e3526d961d506103d2510b08c618c547a7c1248bb85e0"
+    },
+    "follow_through_end": {
+      "path": "analysis_results/phase3_ohtani_event_readout_20261025_01/contact_sheets/follow_through_end.jpg",
+      "sha256": "6d92034b80b24d92c4c1eab2150d8d426bcf3c754da307c531068a3bf80bbf07"
+    }
+  },
+  "new_inference_calls": 0,
+  "new_tracking_replays": 0,
+  "new_ground_truth_labels": 0,
+  "production_test_code_changes": 0,
+  "full_suite_rerun": false,
+  "protected_files": 515,
+  "protected_sha256_changes": [],
+  "pointwise_reliability": "unknown",
+  "usable_for_analysis": null,
+  "browser_interaction_verified": false,
+  "manifest_ref": {
+    "path": "analysis_results/phase3_ohtani_event_readout_20261025_01/readout_manifest.json",
+    "sha256": "c3d579a507875e41a9bca3b09c45278c389de4fabc2dffb502d140284ee36562"
+  },
+  "image_layout_inspected": [
+    "preparation_start",
+    "leg_lift",
+    "foot_plant",
+    "approximate_release",
+    "follow_through_end"
+  ],
+  "inspection_scope": "Source-frame pairing, labels and layout only; not new human keypoint or event GT.",
+  "event_angle_windows": [
+    {
+      "pitch_id": "supplement_001",
+      "events": {
+        "preparation_start": {
+          "frame_bounds": [
+            28,
+            28
+          ],
+          "angle_windows": {
+            "throwing_elbow": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 96.11550356628548,
+              "max_deg": 96.11550356628548,
+              "usable_deg": null
+            },
+            "lead_knee": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 153.69266957785516,
+              "max_deg": 153.69266957785516,
+              "usable_deg": null
+            }
+          }
+        },
+        "leg_lift": {
+          "frame_bounds": [
+            59,
+            59
+          ],
+          "angle_windows": {
+            "throwing_elbow": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 95.78120078272102,
+              "max_deg": 95.78120078272102,
+              "usable_deg": null
+            },
+            "lead_knee": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 65.5748987166039,
+              "max_deg": 65.5748987166039,
+              "usable_deg": null
+            }
+          }
+        },
+        "foot_plant": {
+          "frame_bounds": [
+            110,
+            110
+          ],
+          "angle_windows": {
+            "throwing_elbow": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 0.9975868849030267,
+              "max_deg": 0.9975868849030267,
+              "usable_deg": null
+            },
+            "lead_knee": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 146.58707760186493,
+              "max_deg": 146.58707760186493,
+              "usable_deg": null
+            }
+          }
+        },
+        "approximate_release": {
+          "frame_bounds": [
+            119,
+            120
+          ],
+          "angle_windows": {
+            "throwing_elbow": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 2,
+              "calculated_frames": 2,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 153.4025722321811,
+              "max_deg": 158.38347460738603,
+              "usable_deg": null
+            },
+            "lead_knee": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 2,
+              "calculated_frames": 2,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 174.44396157687495,
+              "max_deg": 179.95052179164142,
+              "usable_deg": null
+            }
+          }
+        },
+        "follow_through_end": {
+          "frame_bounds": [
+            160,
+            160
+          ],
+          "angle_windows": {
+            "throwing_elbow": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 90.71064687794949,
+              "max_deg": 90.71064687794949,
+              "usable_deg": null
+            },
+            "lead_knee": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 137.61527228448338,
+              "max_deg": 137.61527228448338,
+              "usable_deg": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "pitch_id": "supplement_002",
+      "events": {
+        "preparation_start": {
+          "frame_bounds": [
+            78,
+            78
+          ],
+          "angle_windows": {
+            "throwing_elbow": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 70.82099197418928,
+              "max_deg": 70.82099197418928,
+              "usable_deg": null
+            },
+            "lead_knee": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 155.632116245519,
+              "max_deg": 155.632116245519,
+              "usable_deg": null
+            }
+          }
+        },
+        "leg_lift": {
+          "frame_bounds": [
+            95,
+            95
+          ],
+          "angle_windows": {
+            "throwing_elbow": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 84.56594145845953,
+              "max_deg": 84.56594145845953,
+              "usable_deg": null
+            },
+            "lead_knee": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 128.71365960169103,
+              "max_deg": 128.71365960169103,
+              "usable_deg": null
+            }
+          }
+        },
+        "foot_plant": {
+          "frame_bounds": [
+            129,
+            129
+          ],
+          "angle_windows": {
+            "throwing_elbow": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 0.31130647600355593,
+              "max_deg": 0.31130647600355593,
+              "usable_deg": null
+            },
+            "lead_knee": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 165.04277114561287,
+              "max_deg": 165.04277114561287,
+              "usable_deg": null
+            }
+          }
+        },
+        "approximate_release": {
+          "frame_bounds": [
+            137,
+            137
+          ],
+          "angle_windows": {
+            "throwing_elbow": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 150.57393013165773,
+              "max_deg": 150.57393013165773,
+              "usable_deg": null
+            },
+            "lead_knee": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 169.1911101893063,
+              "max_deg": 169.1911101893063,
+              "usable_deg": null
+            }
+          }
+        },
+        "follow_through_end": {
+          "frame_bounds": [
+            203,
+            203
+          ],
+          "angle_windows": {
+            "throwing_elbow": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 145.94566079542653,
+              "max_deg": 145.94566079542653,
+              "usable_deg": null
+            },
+            "lead_knee": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 151.80187259990376,
+              "max_deg": 151.80187259990376,
+              "usable_deg": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "pitch_id": "supplement_003",
+      "events": {
+        "preparation_start": {
+          "frame_bounds": [
+            105,
+            105
+          ],
+          "angle_windows": {
+            "throwing_elbow": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 81.70285503016316,
+              "max_deg": 81.70285503016316,
+              "usable_deg": null
+            },
+            "lead_knee": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 144.41562639154034,
+              "max_deg": 144.41562639154034,
+              "usable_deg": null
+            }
+          }
+        },
+        "leg_lift": {
+          "frame_bounds": [
+            119,
+            119
+          ],
+          "angle_windows": {
+            "throwing_elbow": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 80.57074576416642,
+              "max_deg": 80.57074576416642,
+              "usable_deg": null
+            },
+            "lead_knee": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 118.38036447907662,
+              "max_deg": 118.38036447907662,
+              "usable_deg": null
+            }
+          }
+        },
+        "foot_plant": {
+          "frame_bounds": [
+            156,
+            156
+          ],
+          "angle_windows": {
+            "throwing_elbow": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 24.158176090208734,
+              "max_deg": 24.158176090208734,
+              "usable_deg": null
+            },
+            "lead_knee": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 166.4587920527331,
+              "max_deg": 166.4587920527331,
+              "usable_deg": null
+            }
+          }
+        },
+        "approximate_release": {
+          "frame_bounds": [
+            164,
+            164
+          ],
+          "angle_windows": {
+            "throwing_elbow": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 154.04860946080854,
+              "max_deg": 154.04860946080854,
+              "usable_deg": null
+            },
+            "lead_knee": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 159.15190713654758,
+              "max_deg": 159.15190713654758,
+              "usable_deg": null
+            }
+          }
+        },
+        "follow_through_end": {
+          "frame_bounds": [
+            208,
+            208
+          ],
+          "angle_windows": {
+            "throwing_elbow": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 176.1679149073514,
+              "max_deg": 176.1679149073514,
+              "usable_deg": null
+            },
+            "lead_knee": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 168.06561509097983,
+              "max_deg": 168.06561509097983,
+              "usable_deg": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "pitch_id": "supplement_004",
+      "events": {
+        "preparation_start": {
+          "frame_bounds": [
+            39,
+            39
+          ],
+          "angle_windows": {
+            "throwing_elbow": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 89.58721334146702,
+              "max_deg": 89.58721334146702,
+              "usable_deg": null
+            },
+            "lead_knee": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 157.97902870263044,
+              "max_deg": 157.97902870263044,
+              "usable_deg": null
+            }
+          }
+        },
+        "leg_lift": {
+          "frame_bounds": [
+            71,
+            71
+          ],
+          "angle_windows": {
+            "throwing_elbow": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 91.6846843178963,
+              "max_deg": 91.6846843178963,
+              "usable_deg": null
+            },
+            "lead_knee": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 64.71490509497778,
+              "max_deg": 64.71490509497778,
+              "usable_deg": null
+            }
+          }
+        },
+        "foot_plant": {
+          "frame_bounds": [
+            124,
+            124
+          ],
+          "angle_windows": {
+            "throwing_elbow": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 55.99250758026772,
+              "max_deg": 55.99250758026772,
+              "usable_deg": null
+            },
+            "lead_knee": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 162.23817441735312,
+              "max_deg": 162.23817441735312,
+              "usable_deg": null
+            }
+          }
+        },
+        "approximate_release": {
+          "frame_bounds": [
+            129,
+            129
+          ],
+          "angle_windows": {
+            "throwing_elbow": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 162.3433388970963,
+              "max_deg": 162.3433388970963,
+              "usable_deg": null
+            },
+            "lead_knee": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 166.24503482059055,
+              "max_deg": 166.24503482059055,
+              "usable_deg": null
+            }
+          }
+        },
+        "follow_through_end": {
+          "frame_bounds": [
+            180,
+            180
+          ],
+          "angle_windows": {
+            "throwing_elbow": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 145.79063177017662,
+              "max_deg": 145.79063177017662,
+              "usable_deg": null
+            },
+            "lead_knee": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 140.05974771598906,
+              "max_deg": 140.05974771598906,
+              "usable_deg": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "pitch_id": "supplement_005",
+      "events": {
+        "preparation_start": {
+          "frame_bounds": [
+            81,
+            82
+          ],
+          "angle_windows": {
+            "throwing_elbow": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 2,
+              "calculated_frames": 2,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 77.82989766384944,
+              "max_deg": 77.9885216136345,
+              "usable_deg": null
+            },
+            "lead_knee": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 2,
+              "calculated_frames": 2,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 142.447444881467,
+              "max_deg": 145.86845705628286,
+              "usable_deg": null
+            }
+          }
+        },
+        "leg_lift": {
+          "frame_bounds": [
+            96,
+            99
+          ],
+          "angle_windows": {
+            "throwing_elbow": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 4,
+              "calculated_frames": 4,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 91.0291548043059,
+              "max_deg": 100.23224243962152,
+              "usable_deg": null
+            },
+            "lead_knee": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 4,
+              "calculated_frames": 4,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 122.11001301061488,
+              "max_deg": 140.12016863888687,
+              "usable_deg": null
+            }
+          }
+        },
+        "foot_plant": {
+          "frame_bounds": [
+            124,
+            124
+          ],
+          "angle_windows": {
+            "throwing_elbow": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 18.470825950050784,
+              "max_deg": 18.470825950050784,
+              "usable_deg": null
+            },
+            "lead_knee": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 130.5695869672712,
+              "max_deg": 130.5695869672712,
+              "usable_deg": null
+            }
+          }
+        },
+        "approximate_release": {
+          "frame_bounds": [
+            134,
+            135
+          ],
+          "angle_windows": {
+            "throwing_elbow": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 2,
+              "calculated_frames": 2,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 161.08934158766212,
+              "max_deg": 163.24947351991395,
+              "usable_deg": null
+            },
+            "lead_knee": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 2,
+              "calculated_frames": 2,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 169.1500157115509,
+              "max_deg": 175.22588184577504,
+              "usable_deg": null
+            }
+          }
+        },
+        "follow_through_end": {
+          "frame_bounds": [
+            169,
+            169
+          ],
+          "angle_windows": {
+            "throwing_elbow": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 127.33442806979795,
+              "max_deg": 127.33442806979795,
+              "usable_deg": null
+            },
+            "lead_knee": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 157.0473441844318,
+              "max_deg": 157.0473441844318,
+              "usable_deg": null
+            }
+          }
+        }
+      }
+    }
+  ],
+  "last_same_code_test_result_ref": {
+    "path": "analysis_results/phase3_ohtani_event_timing_20261025_01/verified_suite/combined_results.json",
+    "sha256": "426684658a1550745f12b38f2512cecb8af0370d9e14d6190c880a0fcd750160"
+  },
+  "same_code_test_result": {
+    "passed": 1212,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 2,
+    "rerun_this_delivery": false
+  },
+  "automatic_phase2_status": "NOT_PASSED",
+  "phase3_overall": "NOT_EVALUATED"
+}

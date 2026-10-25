@@ -1,4 +1,4 @@
-# Current status — Ohtani five-clip manual events and saved-motion comparison delivered
+# Current status — Ohtani event-frame evidence and descriptive angle readout delivered
 
 Updated: 2026-10-25 (Asia/Taipei)
 
@@ -13,7 +13,31 @@ gates, MediaPipe settings, interpolation and smoothing are unchanged. The approv
 optional subject-region constraint is described below; the default selector remains compatible.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-25 Ohtani event-only comparison delivery
+## 2026-10-25 Ohtani event-frame readout delivery
+
+Read-only reuse of the completed event comparison: all 31 source frames inside the
+25 confirmed event windows are exported as original/accepted-overlay pairs (62 images),
+five event contact sheets, a static gallery and angle tables. Every frame in a human
+range is retained, including005/96–99; no event midpoint or new label is introduced.
+Viewing crops reuse the previously approved rectangles; uncut source links remain.
+
+The report describes timing differences and saved elbow/knee model-XY windows, and
+highlights that near-zero elbow XY angles at001/110 and002/129 cannot be interpreted
+as true anatomical flexion. No automatic error labels, corrected coordinates, ranking,
+standard motion profile, cross-pitcher comparison or new annotation task is introduced.
+
+All five contact sheets were visually checked for pairing, frame labels and layout;
+this is not human pointwise GT or browser/DOM validation. All515 protected file hashes
+remain unchanged. Product/test code changes0, new inference0, tracking replay0, GT labels0.
+No suite rerun for this data/document-only step; latest same-code combined test result
+remains1212 passed /0 failed /2 skipped. Existing unknown/null and overall phase states remain.
+
+Output: `analysis_results/phase3_ohtani_event_readout_20261025_01/`.
+[Readout and image guide](phase3_ohtani_event_readout_20261025.md),
+[source receipt](dataset_selections/phase3_ohtani_event_readout_20261025.json).
+This bounded readout ends after saving, commit and origin push; it adds no new model or feature.
+
+## 2026-10-25 Ohtani event-only comparison delivery (previous)
 
 The existing comparison now accepts an optional source-bound event-review checkpoint,
 without promoting in-progress GT to a full review. It checks exact five-event scope,
