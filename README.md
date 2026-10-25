@@ -6,7 +6,12 @@
 本次收尾摘要見 [STATUS](docs/STATUS.md)；外部專案供片需求見
 [INPUT_REQUIREMENTS](docs/INPUT_REQUIREMENTS.md)。
 
-2026-10-26 最新：[可攜式成果包](docs/phase3_portable_review_20261026.md)。
+2026-10-26 最新：[人工事件範圍與模型角度讀值](docs/phase3_event_angle_readout_20261026.md)。
+45筆事件形成90個關節視窗：60個單格敏感度留空、24個多格保留min–max／跨度、6個事件未確認保持空值。
+附來源格號、完整CSV與分投手圖表；跨度只描述模型XY讀值，沒有轉成可靠性分數。
+本輪無產品／測試碼變更，未重跑suite；最近相同程式碼1241 passed／0 failed／2 skipped。
+
+前段：[可攜式成果包](docs/phase3_portable_review_20261026.md)。
 大谷5球、山本啟用4球共2161格的原片／overlay、曲線、人工事件與觀看頁已整理為約32.4 MiB ZIP。
 完整解壓後以Chrome／Edge開啟`START_HERE.html`即可使用；原檔與標註保持，沒有新增分析或模型。
 包內136檔、79個本機連結已檢查；無產品／測試碼變更，未重跑suite。

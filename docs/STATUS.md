@@ -1,11 +1,20 @@
 # 進度摘要
 
-更新：2026-10-26（台灣）。[完整狀態](current_status.md)；[可攜式成果包](phase3_portable_review_20261026.md)。
+更新：2026-10-26（台灣）。[完整狀態](current_status.md)；[事件角度讀值](phase3_event_angle_readout_20261026.md)。
 
 **Phase 1 = PASSED；Native interface integration = PASSED；Phase 2 自動可靠性仍 NOT PASSED。**
 **Phase3第一個描述性曲線交付 = COMPLETE；Phase3整體尚未驗收。**
 
-## 最新：成果包可完整解壓後離線觀看
+## 最新：事件角度讀值保留影格選擇的不確定性
+
+45事件×2關節共90窗：60單格只顯示當格值、敏感度留空；24多格保留min–max與跨度；6未確認事件不取候選角度。
+例：山本005出手58–59的肘模型XY角73.2–133.9°，窗內跨度60.7°；不據此判定真實動作、定位誤差或可靠性。
+84窗min/max與全部90列均經原CSV及獨立唯讀核對；65份使用來源、9份GT及原ZIP保持。
+附兩位投手分開的圖與完整CSV。無產品／測試碼變更、新推論或GT，本輪未重跑suite；最近1241 passed／0 failed／2 skipped。
+入口：`analysis_results/phase3_event_angle_readout_20261026_01/index.html`。
+[解讀](phase3_event_angle_readout_20261026.md)；[來源紀錄](dataset_selections/phase3_event_angle_readout_20261026.json)。
+
+## 前段：成果包可完整解壓後離線觀看
 
 9支2161格（大谷5／山本啟用4）的原片、overlay、原生預測、追蹤、曲線、GT與頁面已打包。
 ZIP約32.4 MiB、136檔；完整解壓後開START_HERE.html，兩位投手分別觀看，003不恢復。

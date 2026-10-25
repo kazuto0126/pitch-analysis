@@ -1,4 +1,4 @@
-# Current status — Portable review bundle prepared from existing nine-clip outputs
+# Current status — Event-window angle readout retains frame-selection uncertainty
 
 Updated: 2026-10-26 (Asia/Taipei)
 
@@ -13,7 +13,31 @@ gates, MediaPipe settings, interpolation and smoothing are unchanged. The approv
 optional subject-region constraint is described below; the default selector remains compatible.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-26 Portable review bundle
+## 2026-10-26 Event-window angle readout
+
+Read saved curves at the45 existing events, two joints each:90 joint windows.60 single-frame
+windows retain the model value with sensitivity span null,24 confirmed multiframe windows
+retain min/max and max-minus-min, and6 unresolved windows do not consume candidate angles.
+The unresolved entries are Yamamoto001 preparation and005 preparation/peak lift, each
+for two joints; this does not claim the underlying model curves are absent.
+
+All84 readable min/max windows were checked against original CSV values; an independent
+read-only audit confirmed all90 rows,24 spans, nullable fields and9 unchanged GT files.
+Example: Yamamoto005 release58–59 elbow model-XY73.2–133.9degrees spans60.7degrees.
+This describes saved numerical variation only, without identifying real motion, projection
+or localization error. No reliability rating or threshold is inferred from the span.
+
+Separate-pitcher figures were visually inspected; CSV retains all event statuses, model
+sample/missing/degenerate counts and source path/SHA. All65 used source hashes unchanged.
+The prior portable ZIP is unchanged. No product/test code change, new pose calls or GT;
+latest same-code suite remains1241 passed/0 failed/2 skipped and is not rerun here.
+Unknown/null and phase-wide acceptance states remain.
+Output: `analysis_results/phase3_event_angle_readout_20261026_01/`.
+[Readout and figures](phase3_event_angle_readout_20261026.md),
+[source receipt](dataset_selections/phase3_event_angle_readout_20261026.json).
+Stop after saving, commit and origin push.
+
+## 2026-10-26 Portable review bundle (previous)
 
 Packaged existing nine accepted skeleton clips: Ohtani5/1684frames and active
 Yamamoto4/477frames,2161 total. Yamamoto003 remains historical and is excluded.
