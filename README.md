@@ -6,7 +6,12 @@
 本次收尾摘要見 [STATUS](docs/STATUS.md)；外部專案供片需求見
 [INPUT_REQUIREMENTS](docs/INPUT_REQUIREMENTS.md)。
 
-2026-10-25 最新：[大谷五球事件畫面與角度解讀](docs/phase3_ohtani_event_readout_20261025.md)。
+2026-10-25 最新：[大谷五球落地對齊曲線](docs/phase3_ohtani_foot_plant_alignment_20261025.md)。
+五球皆以人工確認落地格為0秒，投球肘／前導膝各一張疊圖，附落地附近放大與人工出手區間。
+新增`align-native-motion`；1684列原欄位逐格比對差異0，只增加分數FPS換算的相對格號與時間。
+新入口沿用既有來源校驗，完整保留原樣本、角度、缺值與人工範圍；完整suite **1223 passed／0 failed／2 skipped**。
+
+前段：[大谷五球事件畫面與角度解讀](docs/phase3_ohtani_event_readout_20261025.md)。
 25筆事件內的31格全部匯出，原片／既有骨架共62張圖、5張事件對照圖，附肘／膝模型角度表。
 保留範圍與逐球差異，說明落地近0°的XY肘角不能當作人體屈曲角；原資料與算法不變。
 本輪無產品／測試碼變更，未重跑suite；最近相同程式碼1212 passed／0 failed／2 skipped。

@@ -195,8 +195,8 @@ def _report(clips: list[dict]) -> str:
     return "\n".join(lines)
 
 
-def write_event_comparison(root: str | Path, config_path: str | Path, output: str | Path) -> dict:
-    """Read bound saved curves and existing manual events into a fresh comparison."""
+def load_event_clips(root: str | Path, config_path: str | Path, output: str | Path) -> dict:
+    """Validate saved curves and manual event scope without writing or inference."""
     root = Path(root).resolve(strict=True)
     request_path = _path(root, config_path)
     request_ref = reference(root, request_path)
@@ -251,6 +251,16 @@ def write_event_comparison(root: str | Path, config_path: str | Path, output: st
     reader = BoundReader(root, source_refs)
     for ref in source_refs:
         reader.path(ref)
+    return {"root": root, "output": output, "clips": clips, "source_refs": source_refs,
+            "pitcher_id": config["pitcher_id"], "request_ref": request_ref}
+
+
+def write_event_comparison(root: str | Path, config_path: str | Path, output: str | Path) -> dict:
+    """Read bound saved curves and existing manual events into a fresh comparison."""
+    loaded = load_event_clips(root, config_path, output)
+    root, output, clips = loaded["root"], loaded["output"], loaded["clips"]
+    source_refs = loaded["source_refs"]
+    reader = BoundReader(root, source_refs)
     output.mkdir(parents=True, exist_ok=False)
     from .native_motion_event_viewer import write_event_viewer
     viewer = write_event_viewer(root, clips, output / "viewer")
@@ -269,11 +279,11 @@ def write_event_comparison(root: str | Path, config_path: str | Path, output: st
     for ref in source_refs:
         reader.path(ref)
     result = {"schema_version": "native-motion-event-comparison-v1", "status": "event_comparison_created",
-              "pitcher_id": config["pitcher_id"], "clip_count": len(clips),
+              "pitcher_id": loaded["pitcher_id"], "clip_count": len(clips),
               "source_frames": sum(clip["frame_count"] for clip in clips),
               "clips": [{key: value for key, value in clip.items() if key not in {"rows", "overlay_url"}}
                         for clip in clips],
-              "source_refs": {"request_ref": request_ref}, "viewer": viewer,
+              "source_refs": {"request_ref": loaded["request_ref"]}, "viewer": viewer,
               "artifacts": {"timing_csv_ref": reference(root, output / "event_timing.csv"),
                             "report_ref": reference(root, output / "report.md")},
               "angle_values_recomputed": False, "event_midpoints_selected": False,

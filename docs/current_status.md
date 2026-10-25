@@ -1,4 +1,4 @@
-# Current status — Ohtani event-frame evidence and descriptive angle readout delivered
+# Current status — Ohtani foot-plant-aligned model-XY curves delivered
 
 Updated: 2026-10-25 (Asia/Taipei)
 
@@ -13,7 +13,35 @@ gates, MediaPipe settings, interpolation and smoothing are unchanged. The approv
 optional subject-region constraint is described below; the default selector remains compatible.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-25 Ohtani event-frame readout delivery
+## 2026-10-25 Ohtani foot-plant alignment delivery
+
+HSU authorized the proposed next step with「繼續」: shift each saved curve to the
+exact human foot plant, preserving release ranges. New align-native-motion reuses
+the existing same-pitcher event/source loader; the default event comparison remains
+compatible. The loader was factored out without changing its source or GT checks.
+
+All1684 original CSV rows and fields compare equal. Only relative frame/time fields
+are added, using (frame_index - foot_plant_frame) / Fraction(fps). Anchors001–005 are
+110/129/156/124/124, with exactly one zero per clip. Two plots show complete timelines,
+the same samples in a ±0.5-second display zoom, and manual release locations/ranges.
+Relative release frames remain9–10/8/8/5/10–11. No midpoint, resampling, time warping,
+smoothing, interpolation, angle recomputation, quality filtering or cohort averaging.
+
+Exact annotated single-frame anchors are required; ranged or uncertain foot plant
+cannot be silently assigned a zero. All513 protected hashes are unchanged. New pose
+calls0, tracking replay0, GT labels0; original skeleton method, gate and unknown/null
+reliability states remain. Both plots were visually inspected; an independent read-only
+audit also confirmed unchanged source fields and fractional event bounds.
+
+Eleven new tests added. Full suite:1225 run /1223 passed /0 failed /0 errors /2 skipped,
+including formal five-video E2E; skips require unavailable Windows file symlinks.
+The complete suite result is recorded in the
+[source/test receipt](dataset_selections/phase3_ohtani_foot_plant_alignment_20261025.json).
+Output: `analysis_results/phase3_ohtani_foot_plant_alignment_20261025_01/alignment/`.
+[Result and command](phase3_ohtani_foot_plant_alignment_20261025.md).
+Stop after this bounded delivery, tests, commit and origin push; overall phase states remain.
+
+## 2026-10-25 Ohtani event-frame readout delivery (previous)
 
 Read-only reuse of the completed event comparison: all 31 source frames inside the
 25 confirmed event windows are exported as original/accepted-overlay pairs (62 images),

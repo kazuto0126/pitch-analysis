@@ -1,0 +1,213 @@
+{
+  "schema_version": "phase3-foot-plant-alignment-delivery-v1",
+  "created_at_utc": "2026-10-25T11:56:40.983904+00:00",
+  "status": "alignment_delivered",
+  "pitcher_id": "shohei_ohtani",
+  "clip_count": 5,
+  "source_frames": 1684,
+  "time_formula": "(frame_index - exact_human_foot_plant_frame) / fractional_fps",
+  "clips": [
+    {
+      "pitch_id": "supplement_001",
+      "frame_count": 335,
+      "fps_fraction": "60000/1001",
+      "alignment_frame": 110,
+      "relative_first_frame": -110,
+      "relative_last_frame": 224,
+      "release_relative_frames": [
+        9,
+        10
+      ],
+      "release_relative_seconds_fraction": [
+        "3003/20000",
+        "1001/6000"
+      ],
+      "ground_truth_ref": {
+        "path": "annotations/event_reviews/HSU_20261024/shohei_ohtani/supplement_001/ground_truth.json",
+        "sha256": "28c3c053cf912dc475972acd04df42c0c3698df13c04719ea16bee4986c2fe74"
+      },
+      "curves_ref": {
+        "path": "analysis_results/phase3_ohtani_native_motion_20261024_01/supplement_001/motion_curves.csv",
+        "sha256": "2af451bec1b1382b9c38c4a73460776fa49253916f0854f2a53d99034ce59cf1"
+      }
+    },
+    {
+      "pitch_id": "supplement_002",
+      "frame_count": 321,
+      "fps_fraction": "60000/1001",
+      "alignment_frame": 129,
+      "relative_first_frame": -129,
+      "relative_last_frame": 191,
+      "release_relative_frames": [
+        8,
+        8
+      ],
+      "release_relative_seconds_fraction": [
+        "1001/7500",
+        "1001/7500"
+      ],
+      "ground_truth_ref": {
+        "path": "annotations/event_reviews/HSU_20261024/shohei_ohtani/supplement_002/ground_truth.json",
+        "sha256": "6a662993e8126a5d623f385672b19bd5385f98833fe9fb22b85f4fbb70ef33a8"
+      },
+      "curves_ref": {
+        "path": "analysis_results/phase3_ohtani_native_motion_20261024_01/supplement_002/motion_curves.csv",
+        "sha256": "f4a00186cd343c680c40dd88d8d104458e78be482a4012e458a40493b3116ba9"
+      }
+    },
+    {
+      "pitch_id": "supplement_003",
+      "frame_count": 369,
+      "fps_fraction": "60000/1001",
+      "alignment_frame": 156,
+      "relative_first_frame": -156,
+      "relative_last_frame": 212,
+      "release_relative_frames": [
+        8,
+        8
+      ],
+      "release_relative_seconds_fraction": [
+        "1001/7500",
+        "1001/7500"
+      ],
+      "ground_truth_ref": {
+        "path": "annotations/event_reviews/HSU_20261024/shohei_ohtani/supplement_003/ground_truth.json",
+        "sha256": "26542023685abc009de81b881af6154a80de9692b5e2ba4ff3c6ede46ac68a7d"
+      },
+      "curves_ref": {
+        "path": "analysis_results/phase3_ohtani_native_motion_20261024_01/supplement_003/motion_curves.csv",
+        "sha256": "0a24492e8a76de469503f6c6faf3567844a90aef9cf334cd05e265b497c97702"
+      }
+    },
+    {
+      "pitch_id": "supplement_004",
+      "frame_count": 338,
+      "fps_fraction": "60000/1001",
+      "alignment_frame": 124,
+      "relative_first_frame": -124,
+      "relative_last_frame": 213,
+      "release_relative_frames": [
+        5,
+        5
+      ],
+      "release_relative_seconds_fraction": [
+        "1001/12000",
+        "1001/12000"
+      ],
+      "ground_truth_ref": {
+        "path": "annotations/event_reviews/HSU_20261024/shohei_ohtani/supplement_004/ground_truth.json",
+        "sha256": "ea37d1f851ea092d5dea147e3c441baedaf61d34b8f9dbd18f6c850ea37fdacc"
+      },
+      "curves_ref": {
+        "path": "analysis_results/phase3_ohtani_native_motion_20261024_01/supplement_004/motion_curves.csv",
+        "sha256": "8a93632650eef2c3cb802e395bfed6504b6ca1c427a16b7bc72f0f840b60b50e"
+      }
+    },
+    {
+      "pitch_id": "supplement_005",
+      "frame_count": 321,
+      "fps_fraction": "60000/1001",
+      "alignment_frame": 124,
+      "relative_first_frame": -124,
+      "relative_last_frame": 196,
+      "release_relative_frames": [
+        10,
+        11
+      ],
+      "release_relative_seconds_fraction": [
+        "1001/6000",
+        "11011/60000"
+      ],
+      "ground_truth_ref": {
+        "path": "annotations/event_reviews/HSU_20261024/shohei_ohtani/supplement_005/ground_truth.json",
+        "sha256": "55beb32a3bbece5355c2a2266d46dd21e1682149b52b282068a76ced511e98aa"
+      },
+      "curves_ref": {
+        "path": "analysis_results/phase3_ohtani_native_motion_20261024_01/supplement_005/motion_curves.csv",
+        "sha256": "c7cfd78e10543cedb95a813d561349a5f0a3e0b284fa8298566403f44387f4ca"
+      }
+    }
+  ],
+  "sample_checks": {
+    "source_rows_preserved": 1684,
+    "throwing_elbow_calculated_from_model_xy": 1684,
+    "lead_knee_calculated_from_model_xy": 1684
+  },
+  "summary_ref": {
+    "path": "analysis_results/phase3_ohtani_foot_plant_alignment_20261025_01/alignment/alignment_summary.json",
+    "sha256": "9f51703899ae778f4587c2b6314520995846d8f13b17966a9c288586d080e4d0"
+  },
+  "artifacts": {
+    "curves_ref": {
+      "path": "analysis_results/phase3_ohtani_foot_plant_alignment_20261025_01/alignment/aligned_curves.csv",
+      "sha256": "193ac6387960f6b767fc80cace63b6978b7879cf2d38a73454368fb47dee8917"
+    },
+    "plot_refs": {
+      "throwing_elbow": {
+        "path": "analysis_results/phase3_ohtani_foot_plant_alignment_20261025_01/alignment/throwing_elbow_aligned.png",
+        "sha256": "d48c4c8fc72c0d9e531f654293dc880f0078a892b5342cd3160f1e9da0413f10"
+      },
+      "lead_knee": {
+        "path": "analysis_results/phase3_ohtani_foot_plant_alignment_20261025_01/alignment/lead_knee_aligned.png",
+        "sha256": "d0cd950421cf0c526f1594a043c91ce938263ac49a43f0b63d8b808107b1d3f1"
+      }
+    },
+    "report_ref": {
+      "path": "analysis_results/phase3_ohtani_foot_plant_alignment_20261025_01/alignment/report.md",
+      "sha256": "8c18d18a55d40543bb88ddc947cfc3b7cf395a0775a71c0a490f84058fcf953a"
+    }
+  },
+  "request_ref": {
+    "path": "config/analysis_inputs/ohtani_event_timing_20261025.json",
+    "sha256": "1a1b0893a761aea488e17613207a47578ee96d77e5e2b4be3543cb4dec73ddae"
+  },
+  "protected_files": 513,
+  "protected_sha256_changes": [],
+  "plots_visually_inspected": [
+    "throwing_elbow_aligned.png",
+    "lead_knee_aligned.png"
+  ],
+  "original_source_fields_preserved": true,
+  "source_rows_preserved": true,
+  "new_inference_calls": 0,
+  "new_tracking_replays": 0,
+  "new_ground_truth_labels": 0,
+  "angle_values_recomputed": false,
+  "samples_resampled": false,
+  "time_warped": false,
+  "smoothed": false,
+  "interpolated": false,
+  "event_midpoints_selected": false,
+  "new_python_tests": 11,
+  "full_suite": {
+    "created_at_utc": "2026-10-25T11:56:02.557776+00:00",
+    "tests_run": 1225,
+    "passed": 1223,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 2,
+    "skipped_reasons": [
+      {
+        "test": "test_dangling_snapshot_file_link_cannot_create_external_target_when_supported (test_handoff_paths.HandoffPathTests.test_dangling_snapshot_file_link_cannot_create_external_target_when_supported)",
+        "reason": "file symlink creation is unavailable"
+      },
+      {
+        "test": "test_source_symlink_outside_candidate_is_rejected_when_supported (test_handoff_review.HandoffReviewTests.test_source_symlink_outside_candidate_is_rejected_when_supported)",
+        "reason": "creating symbolic links is unavailable"
+      }
+    ],
+    "elapsed_seconds": 149.344,
+    "formal_five_video_e2e_enabled": true,
+    "real_rtmpose_calls": 0,
+    "real_detector_calls": 0,
+    "successful": true
+  },
+  "test_results_ref": {
+    "path": "analysis_results/phase3_ohtani_foot_plant_alignment_20261025_01/verified_suite/test_results.json",
+    "sha256": "b93190112cc28a032cc6a957885ed20507732d650b8366df6a9872accc41e4dd"
+  },
+  "pointwise_reliability": "unknown",
+  "usable_for_analysis": null,
+  "automatic_phase2_status": "NOT_PASSED",
+  "phase3_overall": "NOT_EVALUATED"
+}

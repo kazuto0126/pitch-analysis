@@ -1,11 +1,23 @@
 # 進度摘要
 
-更新：2026-10-25（台灣）。[完整狀態](current_status.md)；[大谷事件畫面摘要](phase3_ohtani_event_readout_20261025.md)。
+更新：2026-10-25（台灣）。[完整狀態](current_status.md)；[大谷落地對齊曲線](phase3_ohtani_foot_plant_alignment_20261025.md)。
 
 **Phase 1 = PASSED；Native interface integration = PASSED；Phase 2 自動可靠性仍 NOT PASSED。**
 **Phase3第一個描述性曲線交付 = COMPLETE；Phase3整體尚未驗收。**
 
-## 最新：大谷五事件原片／骨架對照與角度解讀
+## 最新：大谷五球落地對齊的曲線比較
+
+新增`align-native-motion`，以五球人工落地110／129／156／124／124格作顯示零點。
+肘／前導膝各一張疊圖，含完整原片範圍、±0.5秒放大與人工出手單格／區間。
+1684列所有原CSV欄位逐格比較差異0；只新增相對格號與分數時間，不重取樣、平滑、補點或重算角度。
+出手相對落地為9–10／8／8／5／10–11格，未選中點；逐點unknown／usable=null保持。
+無新推論／追蹤／GT標註；513份保護檔案SHA不變，來源校驗沿用既有工具。
+新增11項測試，完整suite **1223 passed／0 failed／2 skipped**（含正式五球E2E）。
+兩項跳過為環境不支援檔案符號連結；詳見[來源與測試紀錄](dataset_selections/phase3_ohtani_foot_plant_alignment_20261025.json)。
+輸出：`analysis_results/phase3_ohtani_foot_plant_alignment_20261025_01/alignment/`。
+[結果與操作](phase3_ohtani_foot_plant_alignment_20261025.md)。本輪交付後停止。
+
+## 前段：大谷五事件原片／骨架對照與角度解讀
 
 25筆事件包含31個影格，全部匯出原片／既有骨架共62張圖，整理為5張事件圖與模型角度表。
 已實看5張圖的配對、格號與排版；不取範圍中點，不新增人工判斷或標註任務。

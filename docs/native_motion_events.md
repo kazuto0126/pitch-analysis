@@ -79,3 +79,18 @@ pitch-analysis compare-native-motion-events `
 
 [山本四球實際結果](phase3_yamamoto_event_timing_20261024.md)。
 [大谷五球實際結果](phase3_ohtani_event_timing_20261025.md)。
+
+## 以前腳落地對齊曲線
+
+若同投手各球的落地皆為人工確認的精確單格，可使用同一設定：
+
+```powershell
+pitch-analysis align-native-motion `
+  config/analysis_inputs/ohtani_event_timing_20261025.json `
+  --output analysis_results/foot_plant_alignment_NEW
+```
+
+新增相對時間`(frame_index − foot_plant_frame) / 分數FPS`，保留全部原曲線樣本。
+輸出肘／膝疊圖、完整CSV與摘要；出手區間仍為區間。落地若為範圍或不確定則拒絕對齊，
+不選中點、不重取樣或改變時間比例。這是新增入口，原事件對照頁及時間語義保持。
+[大谷五球落地對齊結果](phase3_ohtani_foot_plant_alignment_20261025.md)。
