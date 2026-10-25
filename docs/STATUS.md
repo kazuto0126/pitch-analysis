@@ -1,11 +1,20 @@
 # 進度摘要
 
-更新：2026-10-25（台灣）。[完整狀態](current_status.md)；[山本四球範圍比較](phase3_yamamoto_anchor_bounds_20261025.md)。
+更新：2026-10-26（台灣）。[完整狀態](current_status.md)；[可攜式成果包](phase3_portable_review_20261026.md)。
 
 **Phase 1 = PASSED；Native interface integration = PASSED；Phase 2 自動可靠性仍 NOT PASSED。**
 **Phase3第一個描述性曲線交付 = COMPLETE；Phase3整體尚未驗收。**
 
-## 最新：四球都可比較，落地範圍保留
+## 最新：成果包可完整解壓後離線觀看
+
+9支2161格（大谷5／山本啟用4）的原片、overlay、原生預測、追蹤、曲線、GT與頁面已打包。
+ZIP約32.4 MiB、136檔；完整解壓後開START_HERE.html，兩位投手分別觀看，003不恢復。
+GT／raw／CSV逐bytes保持，頁面副本只重整overlay_url；原JS不改，沒有新增人工接受紀錄。
+來源SHA、79個包內連結與ZIP完整性檢查完成；無產品／測試碼變更、新推論或新GT。
+最近相同程式碼1241 passed／0 failed／2 skipped，本輪未重跑suite；新包瀏覽器操作未驗證。
+[下載與內容](phase3_portable_review_20261026.md)；[交付紀錄](dataset_selections/phase3_portable_review_20261026.json)。
+
+## 前段：四球都可比較，落地範圍保留
 
 新增可選`--retain-anchor-ranges`：001保留34／35、004保留65／66作可能原點；002／005仍為精確140／55。
 原始477列無重複、原CSV欄位差異0；候選平移不是額外觀測，也不選中點或分配機率。

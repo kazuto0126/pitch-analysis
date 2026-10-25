@@ -1,0 +1,190 @@
+{
+  "schema_version": "portable-motion-review-delivery-v1",
+  "created_at_utc": "2026-10-25T17:09:37.907176+00:00",
+  "clip_count": 9,
+  "source_frames": 2161,
+  "archive_ref": {
+    "path": "analysis_results/phase3_portable_review_20261026_01/pitch_motion_review_20261026_01.zip",
+    "sha256": "43b268594f8b984cfdfc9826615a9c095ea146d4e5519b4db7124a6c5f150f1b"
+  },
+  "archive_bytes": 33976990,
+  "entry_ref": {
+    "path": "analysis_results/phase3_portable_review_20261026_01/pitch_motion_review_20261026_01/START_HERE.html",
+    "sha256": "a5a81ee7b5a4ca9418c99b72559edb3eccf3a2a4063c91d4955b004ae612cd82"
+  },
+  "manifest_ref": {
+    "path": "analysis_results/phase3_portable_review_20261026_01/pitch_motion_review_20261026_01/bundle_manifest.json",
+    "sha256": "47db9eb0fa95946d2ea4e526c2f4e72ad7e20e6431e269df65cf245a98dfa3ac"
+  },
+  "file_count": 136,
+  "checked_local_links": 79,
+  "copied_source_sha_changes": [],
+  "zip_crc_check": "passed",
+  "zip_entries_safe_and_unique": true,
+  "original_player_modified": false,
+  "new_inference_calls": 0,
+  "new_ground_truth_labels": 0,
+  "product_test_code_changes": 0,
+  "full_suite_rerun": false,
+  "last_same_code_tests": {
+    "passed": 1241,
+    "failed": 0,
+    "skipped": 2
+  },
+  "last_same_code_test_ref": {
+    "path": "analysis_results/phase3_yamamoto_anchor_bounds_20261025_01/verified_suite/test_results.json",
+    "sha256": "c1e3c2903cd8c718ef190ddc17d9abbe2e0273434303422b879dd2115f32e198"
+  },
+  "browser_interaction_verified": false,
+  "human_page_acceptance": "not_yet_recorded",
+  "automatic_phase2_status": "NOT_PASSED",
+  "phase3_overall": "NOT_EVALUATED",
+  "source_commit": "dd253abea683833dae14fa7366a9d006044bc2b8",
+  "clips": [
+    {
+      "pitcher_id": "shohei_ohtani",
+      "group": "ohtani",
+      "pitch_id": "supplement_001",
+      "frame_count": 335,
+      "raw_video": "videos/ohtani/supplement_001/supplement_001.mp4",
+      "overlay": "videos/ohtani/supplement_001/overlay_native.mp4",
+      "metadata": "videos/ohtani/supplement_001/supplement_001.json",
+      "data_dir": "data/ohtani/supplement_001",
+      "annotation_status": "in_progress",
+      "whole_clip_skeleton_accepted": true,
+      "pointwise_reliability": "unknown",
+      "usable_for_analysis": null
+    },
+    {
+      "pitcher_id": "shohei_ohtani",
+      "group": "ohtani",
+      "pitch_id": "supplement_002",
+      "frame_count": 321,
+      "raw_video": "videos/ohtani/supplement_002/supplement_002.mp4",
+      "overlay": "videos/ohtani/supplement_002/overlay_native.mp4",
+      "metadata": "videos/ohtani/supplement_002/supplement_002.json",
+      "data_dir": "data/ohtani/supplement_002",
+      "annotation_status": "in_progress",
+      "whole_clip_skeleton_accepted": true,
+      "pointwise_reliability": "unknown",
+      "usable_for_analysis": null
+    },
+    {
+      "pitcher_id": "shohei_ohtani",
+      "group": "ohtani",
+      "pitch_id": "supplement_003",
+      "frame_count": 369,
+      "raw_video": "videos/ohtani/supplement_003/supplement_003.mp4",
+      "overlay": "videos/ohtani/supplement_003/overlay_native.mp4",
+      "metadata": "videos/ohtani/supplement_003/supplement_003.json",
+      "data_dir": "data/ohtani/supplement_003",
+      "annotation_status": "in_progress",
+      "whole_clip_skeleton_accepted": true,
+      "pointwise_reliability": "unknown",
+      "usable_for_analysis": null
+    },
+    {
+      "pitcher_id": "shohei_ohtani",
+      "group": "ohtani",
+      "pitch_id": "supplement_004",
+      "frame_count": 338,
+      "raw_video": "videos/ohtani/supplement_004/supplement_004.mp4",
+      "overlay": "videos/ohtani/supplement_004/overlay_native.mp4",
+      "metadata": "videos/ohtani/supplement_004/supplement_004.json",
+      "data_dir": "data/ohtani/supplement_004",
+      "annotation_status": "in_progress",
+      "whole_clip_skeleton_accepted": true,
+      "pointwise_reliability": "unknown",
+      "usable_for_analysis": null
+    },
+    {
+      "pitcher_id": "shohei_ohtani",
+      "group": "ohtani",
+      "pitch_id": "supplement_005",
+      "frame_count": 321,
+      "raw_video": "videos/ohtani/supplement_005/supplement_005.mp4",
+      "overlay": "videos/ohtani/supplement_005/overlay_native.mp4",
+      "metadata": "videos/ohtani/supplement_005/supplement_005.json",
+      "data_dir": "data/ohtani/supplement_005",
+      "annotation_status": "in_progress",
+      "whole_clip_skeleton_accepted": true,
+      "pointwise_reliability": "unknown",
+      "usable_for_analysis": null
+    },
+    {
+      "pitcher_id": "yoshinobu_yamamoto",
+      "group": "yamamoto",
+      "pitch_id": "pitch_001",
+      "frame_count": 87,
+      "raw_video": "videos/yamamoto/pitch_001/pitch_001.mp4",
+      "overlay": "videos/yamamoto/pitch_001/overlay_native.mp4",
+      "metadata": "videos/yamamoto/pitch_001/pitch_001.json",
+      "data_dir": "data/yamamoto/pitch_001",
+      "annotation_status": "reviewed",
+      "whole_clip_skeleton_accepted": true,
+      "pointwise_reliability": "unknown",
+      "usable_for_analysis": null
+    },
+    {
+      "pitcher_id": "yoshinobu_yamamoto",
+      "group": "yamamoto",
+      "pitch_id": "pitch_002",
+      "frame_count": 175,
+      "raw_video": "videos/yamamoto/pitch_002/pitch_002.mp4",
+      "overlay": "videos/yamamoto/pitch_002/overlay_native.mp4",
+      "metadata": "videos/yamamoto/pitch_002/pitch_002.json",
+      "data_dir": "data/yamamoto/pitch_002",
+      "annotation_status": "reviewed",
+      "whole_clip_skeleton_accepted": true,
+      "pointwise_reliability": "unknown",
+      "usable_for_analysis": null
+    },
+    {
+      "pitcher_id": "yoshinobu_yamamoto",
+      "group": "yamamoto",
+      "pitch_id": "pitch_004",
+      "frame_count": 114,
+      "raw_video": "videos/yamamoto/pitch_004/pitch_004.mp4",
+      "overlay": "videos/yamamoto/pitch_004/overlay_native.mp4",
+      "metadata": "videos/yamamoto/pitch_004/pitch_004.json",
+      "data_dir": "data/yamamoto/pitch_004",
+      "annotation_status": "reviewed",
+      "whole_clip_skeleton_accepted": true,
+      "pointwise_reliability": "unknown",
+      "usable_for_analysis": null
+    },
+    {
+      "pitcher_id": "yoshinobu_yamamoto",
+      "group": "yamamoto",
+      "pitch_id": "pitch_005",
+      "frame_count": 101,
+      "raw_video": "videos/yamamoto/pitch_005/pitch_005.mp4",
+      "overlay": "videos/yamamoto/pitch_005/overlay_native.mp4",
+      "metadata": "videos/yamamoto/pitch_005/pitch_005.json",
+      "data_dir": "data/yamamoto/pitch_005",
+      "annotation_status": "reviewed",
+      "whole_clip_skeleton_accepted": true,
+      "pointwise_reliability": "unknown",
+      "usable_for_analysis": null
+    }
+  ],
+  "unchanged_copy_files": 129,
+  "rebased_viewer_pages": 4,
+  "rebased_fields": [
+    "clips[].overlay_url"
+  ],
+  "historical_excluded": [
+    "yoshinobu_yamamoto/pitch_003"
+  ],
+  "independent_read_only_audit": {
+    "issues": 0,
+    "manifest_payload_files": 135,
+    "source_refs_checked": 133,
+    "archive_files": 136,
+    "rebased_overlay_urls": 16,
+    "unchanged_js_files": 6,
+    "checked_local_links": 79,
+    "browser_or_DOM_used": false
+  },
+  "archive_uploaded_to_github": false
+}

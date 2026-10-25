@@ -1,6 +1,6 @@
-# Current status — Yamamoto four-clip comparison retains manual foot-plant bounds
+# Current status — Portable review bundle prepared from existing nine-clip outputs
 
-Updated: 2026-10-25 (Asia/Taipei)
+Updated: 2026-10-26 (Asia/Taipei)
 
 **Phase 1 = PASSED.**
 **Native interface integration = PASSED (cached compatibility and optional live COCO17 entry).**
@@ -13,7 +13,34 @@ gates, MediaPipe settings, interpolation and smoothing are unchanged. The approv
 optional subject-region constraint is described below; the default selector remains compatible.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-25 Retained manual anchor bounds for all four Yamamoto clips
+## 2026-10-26 Portable review bundle
+
+Packaged existing nine accepted skeleton clips: Ohtani5/1684frames and active
+Yamamoto4/477frames,2161 total. Yamamoto003 remains historical and is excluded.
+The bundle includes original MP4s, overlays, metadata, raw native predictions/tracks,
+curve artifacts, original GT, Ohtani event checkpoints, four rebased viewer pages,
+same-pitcher figures, event contact sheets, a single START_HERE.html and source manifest.
+
+ZIP:33,976,990bytes (~32.4MiB),136files. Rebased pages change only clips[].overlay_url;
+all other embedded values and original JS bytes remain. Copied GT/CSV/raw assets retain
+source bytes. All79 local HTML/video links resolve inside the bundle; source hashes,
+archive CRC, entry path safety and uniqueness checks pass. Original outputs remain unchanged.
+
+Full extraction is required; open START_HERE.html with Chrome/Edge. No Python/model
+environment is required to view existing outputs. Original JSON references stay as
+provenance; bundle_manifest maps them to local copies. Ohtani GT remains event-only
+in_progress, and old Yamamoto joint-quality labels are not transferred to new skeletons.
+No new human-page acceptance or browser/DOM automation is recorded.
+
+No product/test code changes, inference, tracking replay or new GT. Latest same-code
+suite remains1241 passed/0 failed/2 skipped; full suite not rerun for packaging.
+Output: `analysis_results/phase3_portable_review_20261026_01/`.
+[Package and opening instructions](phase3_portable_review_20261026.md),
+[ZIP/source receipt](dataset_selections/phase3_portable_review_20261026.json).
+ZIP remains local; only delivery documentation is committed/pushed. No GitHub release
+upload or phase-wide acceptance change. Stop after this delivery, commit and origin push.
+
+## 2026-10-25 Retained manual anchor bounds for all four Yamamoto clips (previous)
 
 Added optional --retain-anchor-ranges to align-native-motion. The existing exact mode
 continues to reject ranged anchors. In the new mode, annotated ranges retain all integer

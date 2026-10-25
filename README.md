@@ -6,7 +6,12 @@
 本次收尾摘要見 [STATUS](docs/STATUS.md)；外部專案供片需求見
 [INPUT_REQUIREMENTS](docs/INPUT_REQUIREMENTS.md)。
 
-2026-10-25 最新：[山本四球保留落地範圍的曲線比較](docs/phase3_yamamoto_anchor_bounds_20261025.md)。
+2026-10-26 最新：[可攜式成果包](docs/phase3_portable_review_20261026.md)。
+大谷5球、山本啟用4球共2161格的原片／overlay、曲線、人工事件與觀看頁已整理為約32.4 MiB ZIP。
+完整解壓後以Chrome／Edge開啟`START_HERE.html`即可使用；原檔與標註保持，沒有新增分析或模型。
+包內136檔、79個本機連結已檢查；無產品／測試碼變更，未重跑suite。
+
+前段：[山本四球保留落地範圍的曲線比較](docs/phase3_yamamoto_anchor_bounds_20261025.md)。
 001／004的兩個可能原點全部保留，與精確原點的002／005共同查看；四球477列原資料未改。
 新增可選`--retain-anchor-ranges`，候選平移不當成新增觀測、不選中點或給機率，原精確模式保持。
 [來源與測試紀錄](docs/dataset_selections/phase3_yamamoto_anchor_bounds_20261025.json)。
