@@ -1,0 +1,284 @@
+{
+  "schema_version": "phase3-event-transition-delivery-v1",
+  "created_at_utc": "2026-10-25T22:02:47.778047+00:00",
+  "scope": "Saved model-XY endpoint difference: manually annotated foot plant to approximate release",
+  "cohorts": {
+    "ohtani": {
+      "pitcher_id": "shohei_ohtani",
+      "clip_count": 5,
+      "source_frames": 1684,
+      "transition_summaries": 10,
+      "joint_pair_rows": 14,
+      "event_pairs": 7,
+      "calculated_joint_pairs": 14,
+      "unavailable_joint_pairs": 0,
+      "original_clip_fields_unchanged": true,
+      "original_timing_csv_byte_equal": true,
+      "original_angle_readouts_csv_byte_equal": true,
+      "original_comparison_ref": {
+        "path": "analysis_results/phase3_event_readout_integration_20261026_01/ohtani/event_comparison.json",
+        "sha256": "e80b04c1a0a9922619b7d9ba4214aaeae9486e06ab65ed90d09b8ce5203fea31"
+      },
+      "comparison_ref": {
+        "path": "analysis_results/phase3_event_transition_20261026_01/ohtani/event_comparison.json",
+        "sha256": "cc4ca413048263aec6d63d748be42204734668ff3372064ccda9014a39e25979"
+      },
+      "report_ref": {
+        "path": "analysis_results/phase3_event_transition_20261026_01/ohtani/report.md",
+        "sha256": "60e05cdd106c42cbb896205d2a92879371c77fd48a75b8d9d590e4d9c05ed33d"
+      },
+      "summary_csv_ref": {
+        "path": "analysis_results/phase3_event_transition_20261026_01/ohtani/event_transition_readouts.csv",
+        "sha256": "40a75194bd91d8308016ceb7a93ed3692923300258eda0320ae662435460857b"
+      },
+      "pairs_csv_ref": {
+        "path": "analysis_results/phase3_event_transition_20261026_01/ohtani/event_transition_pairs.csv",
+        "sha256": "024f6d48faf526713f08b8874c1ca4bad7c67507d08753749de257dae6916107"
+      },
+      "values": [
+        {
+          "pitch_id": "supplement_001",
+          "joint": "throwing_elbow",
+          "min_delta_deg": 152.40498534727806,
+          "max_delta_deg": 157.385887722483,
+          "delta_direction": "positive"
+        },
+        {
+          "pitch_id": "supplement_001",
+          "joint": "lead_knee",
+          "min_delta_deg": 27.85688397501002,
+          "max_delta_deg": 33.36344418977649,
+          "delta_direction": "positive"
+        },
+        {
+          "pitch_id": "supplement_002",
+          "joint": "throwing_elbow",
+          "min_delta_deg": 150.26262365565418,
+          "max_delta_deg": 150.26262365565418,
+          "delta_direction": "positive"
+        },
+        {
+          "pitch_id": "supplement_002",
+          "joint": "lead_knee",
+          "min_delta_deg": 4.148339043693426,
+          "max_delta_deg": 4.148339043693426,
+          "delta_direction": "positive"
+        },
+        {
+          "pitch_id": "supplement_003",
+          "joint": "throwing_elbow",
+          "min_delta_deg": 129.8904333705998,
+          "max_delta_deg": 129.8904333705998,
+          "delta_direction": "positive"
+        },
+        {
+          "pitch_id": "supplement_003",
+          "joint": "lead_knee",
+          "min_delta_deg": -7.30688491618551,
+          "max_delta_deg": -7.30688491618551,
+          "delta_direction": "negative"
+        },
+        {
+          "pitch_id": "supplement_004",
+          "joint": "throwing_elbow",
+          "min_delta_deg": 106.35083131682856,
+          "max_delta_deg": 106.35083131682856,
+          "delta_direction": "positive"
+        },
+        {
+          "pitch_id": "supplement_004",
+          "joint": "lead_knee",
+          "min_delta_deg": 4.006860403237425,
+          "max_delta_deg": 4.006860403237425,
+          "delta_direction": "positive"
+        },
+        {
+          "pitch_id": "supplement_005",
+          "joint": "throwing_elbow",
+          "min_delta_deg": 142.61851563761132,
+          "max_delta_deg": 144.77864756986315,
+          "delta_direction": "positive"
+        },
+        {
+          "pitch_id": "supplement_005",
+          "joint": "lead_knee",
+          "min_delta_deg": 38.580428744279715,
+          "max_delta_deg": 44.65629487850384,
+          "delta_direction": "positive"
+        }
+      ]
+    },
+    "yamamoto": {
+      "pitcher_id": "yoshinobu_yamamoto",
+      "clip_count": 4,
+      "source_frames": 477,
+      "transition_summaries": 8,
+      "joint_pair_rows": 26,
+      "event_pairs": 13,
+      "calculated_joint_pairs": 26,
+      "unavailable_joint_pairs": 0,
+      "original_clip_fields_unchanged": true,
+      "original_timing_csv_byte_equal": true,
+      "original_angle_readouts_csv_byte_equal": true,
+      "original_comparison_ref": {
+        "path": "analysis_results/phase3_event_readout_integration_20261026_01/yamamoto/event_comparison.json",
+        "sha256": "0990b6c311904befe1e90e3c6d9ac084a07163d77133714c03cebd2ce93a9686"
+      },
+      "comparison_ref": {
+        "path": "analysis_results/phase3_event_transition_20261026_01/yamamoto/event_comparison.json",
+        "sha256": "82bb52cb028a3b4857ac7cd3a57930e5c0e837faa8335375eeb1ebac6f9e0a45"
+      },
+      "report_ref": {
+        "path": "analysis_results/phase3_event_transition_20261026_01/yamamoto/report.md",
+        "sha256": "639457c896822d401aafb44e9b00ee0d3ca374e1922592f531c7aa92e817546f"
+      },
+      "summary_csv_ref": {
+        "path": "analysis_results/phase3_event_transition_20261026_01/yamamoto/event_transition_readouts.csv",
+        "sha256": "433d4b0d92097df20fa1a68483b2220b779765b2bbec857c541c49bb109cc60c"
+      },
+      "pairs_csv_ref": {
+        "path": "analysis_results/phase3_event_transition_20261026_01/yamamoto/event_transition_pairs.csv",
+        "sha256": "f1c1684236c72f38ab2fabedd3d0016c0b978dcdddd4ea51be6cd976bb5e7f19"
+      },
+      "values": [
+        {
+          "pitch_id": "pitch_001",
+          "joint": "throwing_elbow",
+          "min_delta_deg": 60.369261939064465,
+          "max_delta_deg": 134.28515838954632,
+          "delta_direction": "positive"
+        },
+        {
+          "pitch_id": "pitch_001",
+          "joint": "lead_knee",
+          "min_delta_deg": 72.07949247931367,
+          "max_delta_deg": 86.04619871037306,
+          "delta_direction": "positive"
+        },
+        {
+          "pitch_id": "pitch_002",
+          "joint": "throwing_elbow",
+          "min_delta_deg": 1.0226982143498162,
+          "max_delta_deg": 13.579321405612092,
+          "delta_direction": "positive"
+        },
+        {
+          "pitch_id": "pitch_002",
+          "joint": "lead_knee",
+          "min_delta_deg": 1.2001270049376558,
+          "max_delta_deg": 9.063815476879796,
+          "delta_direction": "positive"
+        },
+        {
+          "pitch_id": "pitch_004",
+          "joint": "throwing_elbow",
+          "min_delta_deg": 76.70934664102536,
+          "max_delta_deg": 148.22816807200945,
+          "delta_direction": "positive"
+        },
+        {
+          "pitch_id": "pitch_004",
+          "joint": "lead_knee",
+          "min_delta_deg": 5.0991179706719265,
+          "max_delta_deg": 61.44070172816298,
+          "delta_direction": "positive"
+        },
+        {
+          "pitch_id": "pitch_005",
+          "joint": "throwing_elbow",
+          "min_delta_deg": -100.31369786264958,
+          "max_delta_deg": -39.5892715915009,
+          "delta_direction": "negative"
+        },
+        {
+          "pitch_id": "pitch_005",
+          "joint": "lead_knee",
+          "min_delta_deg": 4.8184849669200105,
+          "max_delta_deg": 9.08121142689319,
+          "delta_direction": "positive"
+        }
+      ]
+    }
+  },
+  "source_frames": 2161,
+  "transition_summaries": 18,
+  "chronological_event_pairs": 20,
+  "joint_pair_rows": 40,
+  "protected_files": 564,
+  "protected_sha_changes": [],
+  "protected_snapshot_ref": {
+    "path": "analysis_results/phase3_event_transition_20261026_01/protected_before.json",
+    "sha256": "d8c78e02978656766f7fbd2b4814ec791719c1d31e2f69876ee505ceff32e9bc"
+  },
+  "independent_read_only_audit": {
+    "issues": 0,
+    "source_csv_and_event_bounds_checked": true,
+    "summaries": 18,
+    "joint_pairs": 40,
+    "event_pairs": 20,
+    "positive_deltas": 16,
+    "negative_deltas": 2,
+    "unchanged_windows": 90,
+    "unchanged_timings": 36,
+    "unchanged_old_csv_files": 4,
+    "unchanged_protected_hashes": 564
+  },
+  "python_suite": {
+    "created_at_utc": "2026-10-25T22:02:36.760781+00:00",
+    "tests_run": 1262,
+    "passed": 1260,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 2,
+    "skipped_reasons": [
+      {
+        "test": "test_dangling_snapshot_file_link_cannot_create_external_target_when_supported (test_handoff_paths.HandoffPathTests.test_dangling_snapshot_file_link_cannot_create_external_target_when_supported)",
+        "reason": "file symlink creation is unavailable"
+      },
+      {
+        "test": "test_source_symlink_outside_candidate_is_rejected_when_supported (test_handoff_review.HandoffReviewTests.test_source_symlink_outside_candidate_is_rejected_when_supported)",
+        "reason": "creating symbolic links is unavailable"
+      }
+    ],
+    "elapsed_seconds": 138.172,
+    "formal_five_video_e2e_enabled": true,
+    "real_rtmpose_calls": 0,
+    "real_detector_calls": 0,
+    "successful": true
+  },
+  "new_python_tests": 11,
+  "python_suite_results_ref": {
+    "path": "analysis_results/phase3_event_transition_20261026_01/verified_suite/test_results.json",
+    "sha256": "13099bce653c0b95127b1523cb0d5abdcf6226f6cca0de1065ff81392a2377fd"
+  },
+  "javascript_changed": false,
+  "node_suite_rerun": false,
+  "prior_node_suite": {
+    "passed": 11,
+    "failed": 0,
+    "skipped": 0,
+    "event_helper_assertions": 34,
+    "receipt": "docs/dataset_selections/phase3_event_readout_integration_20261026.json"
+  },
+  "new_inference_calls": 0,
+  "new_tracking_replays": 0,
+  "new_ground_truth_labels": 0,
+  "existing_model_angles_recomputed": false,
+  "pose_tracking_core_changed": false,
+  "threshold_changed": false,
+  "event_midpoints_selected": false,
+  "cross_pitcher_comparison": false,
+  "new_human_acceptance": false,
+  "browser_interaction_verified": false,
+  "pointwise_reliability": "unknown",
+  "usable_for_analysis": null,
+  "phase1_status": "PASSED",
+  "phase2_automatic_reliability": "NOT_PASSED",
+  "phase3_overall_status": "NOT_EVALUATED",
+  "limitations": [
+    "Endpoint differences are model image-plane projections, not anatomical flexion or movement quality",
+    "Candidate pairs share frames and are not independent samples or probabilities",
+    "Min/max are candidate-pair extrema, not confidence intervals or within-transition range of motion",
+    "Unresolved events and missing/degenerate endpoints retain nulls; no smoothing or imputation"
+  ]
+}

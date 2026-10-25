@@ -10,6 +10,7 @@ from pathlib import Path
 from urllib.parse import quote
 
 from .native_motion_viewer import _load_export, _path
+from .native_motion_transition import describe_event_transition
 from ..ground_truth import EVENT_NAMES, validate_ground_truth
 from ..native_pose_io import BoundReader, read_json, reference, write_json
 
@@ -177,7 +178,7 @@ def _readout_text(window: dict) -> str:
     return f"{scope} {window['sample_span_deg']:.1f}°；可用性未知"
 
 
-def _report(clips: list[dict]) -> str:
+def _report(clips: list[dict], transitions: list[dict] | None = None) -> str:
     lines = ["# 同投手人工事件與2D曲線時序摘要", "",
              "沿用既有人工事件及保存的模型XY曲線；沒有重新推論、猜事件或修改人工標註。",
              "範圍保留上下界，不確定候選不參與時距計算。秒數按原片分數FPS換算。", "",
@@ -187,6 +188,26 @@ def _report(clips: list[dict]) -> str:
         for key, item in clip["timing"].items():
             lines.append(f"| {clip['pitch_id']} | {TIMING_LABELS[key]} | {item['status']} | "
                          f"{_bounds_text(item['frame_bounds'])} | {_bounds_text(item['seconds_bounds'], decimals=3)} |")
+    if transitions is not None:
+        directions = {"positive": "全為正", "negative": "全為負", "zero": "皆為0",
+                      "includes_zero": "包含0", "unavailable": "未計算"}
+        lines += ["", "## 落地→大致出手的模型XY變化", "",
+                  "變化量＝出手模型角度−落地模型角度。保留人工範圍內所有時間先後成立的影格配對，不取中點。",
+                  "這是端點差，不能當作期間最大活動範圍、真實關節伸屈或動作品質。", "",
+                  "| 影片 | 關節 | 端點變化量（度） | 符號 | 計算／合法配對 | 不可計算 | 缺點端／退化端配對 |",
+                  "|---|---|---:|---|---|---|---|"]
+        for transition in transitions:
+            for role, label in (("throwing_elbow", "投球肘"), ("lead_knee", "前導膝")):
+                joint = transition["joints"][role]
+                low, high = joint["min_delta_deg"], joint["max_delta_deg"]
+                value = "—" if low is None else (f"{low:+.1f}" if low == high else f"{low:+.1f} 至 {high:+.1f}")
+                count = "—" if joint["total_pairs"] is None else f"{joint['calculated_pairs']}/{joint['total_pairs']}"
+                unavailable = "—" if joint["unavailable_pairs"] is None else str(joint["unavailable_pairs"])
+                missing = "—" if joint["total_pairs"] is None else f"{joint['missing_endpoint_pairs']}/{joint['degenerate_endpoint_pairs']}"
+                lines.append(f"| {transition['pitch_id']} | {label} | {value} | {directions[joint['delta_direction']]} | {count} | {unavailable} | {missing} |")
+        lines += ["", "缺點端與退化端配對數可重疊；不可計算數為聯集，計算數＋不可計算數＝合法配對總數。",
+                  "同一影格可出現在多個候選配對中，配對數不是獨立樣本數或機率；各球原時距與來源仍列於本報告。",
+                  "完整配對含原格號、分數時間、兩端狀態與差值，另存event_transition_pairs.csv。"]
     lines += ["", "## 事件與來源", ""]
     for clip in clips:
         lines += [f"### {clip['pitch_id']}", "", f"來源影格：{clip['frame_count']}；FPS：{clip['fps_fraction']}。", "",
@@ -289,6 +310,7 @@ def write_event_comparison(root: str | Path, config_path: str | Path, output: st
     loaded = load_event_clips(root, config_path, output)
     root, output, clips = loaded["root"], loaded["output"], loaded["clips"]
     source_refs = loaded["source_refs"]
+    transitions = [{"pitch_id": clip["pitch_id"], **describe_event_transition(clip)} for clip in clips]
     reader = BoundReader(root, source_refs)
     output.mkdir(parents=True, exist_ok=False)
     from .native_motion_event_viewer import write_event_viewer
@@ -319,18 +341,48 @@ def write_event_comparison(root: str | Path, config_path: str | Path, output: st
                                      **{key: window[key] for key in readout_fields[6:15]},
                                      "pointwise_reliability": "unknown", "usable_for_analysis": None,
                                      "confidence": event.get("confidence"), "note": event.get("note", "")})
+    transition_fields = ("pitch_id", "joint", "start_event", "end_event", "status",
+                         "start_frame_min", "start_frame_max", "end_frame_min", "end_frame_max",
+                         "all_endpoint_pairs", "chronological_pairs", "excluded_nonchronological_pairs",
+                         "total_pairs", "calculated_pairs", "unavailable_pairs", "missing_endpoint_pairs",
+                         "degenerate_endpoint_pairs", "min_delta_deg", "max_delta_deg", "delta_direction",
+                         "pointwise_reliability", "usable_for_analysis", "reason")
+    pair_fields = ("pitch_id", "joint", "start_event", "end_event", "start_frame", "end_frame",
+                   "elapsed_frames", "elapsed_seconds", "elapsed_seconds_fraction",
+                   "start_model_xy_deg", "end_model_xy_deg", "start_coordinate_status", "end_coordinate_status",
+                   "delta_model_xy_deg", "status", "pointwise_reliability", "usable_for_analysis")
+    with (output / "event_transition_readouts.csv").open("x", encoding="utf-8-sig", newline="") as stream, \
+         (output / "event_transition_pairs.csv").open("x", encoding="utf-8-sig", newline="") as pair_stream:
+        writer, pair_writer = csv.DictWriter(stream, fieldnames=transition_fields), csv.DictWriter(pair_stream, fieldnames=pair_fields)
+        writer.writeheader()
+        pair_writer.writeheader()
+        for transition in transitions:
+            base = {key: transition[key] for key in ("pitch_id", "start_event", "end_event")}
+            first, last = transition["start_frame_bounds"] or [None, None], transition["end_frame_bounds"] or [None, None]
+            for role, joint in transition["joints"].items():
+                writer.writerow({**base, "joint": role, "status": transition["status"],
+                                 "start_frame_min": first[0], "start_frame_max": first[1],
+                                 "end_frame_min": last[0], "end_frame_max": last[1],
+                                 **{key: transition[key] for key in transition_fields[9:12]},
+                                 **{key: joint[key] for key in transition_fields[12:22]}, "reason": transition["reason"]})
+                for pair in joint["pairs"]:
+                    pair_writer.writerow({**base, "joint": role, **pair,
+                                          "pointwise_reliability": "unknown", "usable_for_analysis": None})
     with (output / "report.md").open("x", encoding="utf-8", newline="\n") as stream:
-        stream.write(_report(clips))
+        stream.write(_report(clips, transitions))
     for ref in source_refs:
         reader.path(ref)
     result = {"schema_version": "native-motion-event-comparison-v1", "status": "event_comparison_created",
               "pitcher_id": loaded["pitcher_id"], "clip_count": len(clips),
               "source_frames": sum(clip["frame_count"] for clip in clips),
+              "event_transition_readouts": transitions,
               "clips": [{key: value for key, value in clip.items() if key not in {"rows", "overlay_url"}}
                         for clip in clips],
               "source_refs": {"request_ref": loaded["request_ref"]}, "viewer": viewer,
               "artifacts": {"timing_csv_ref": reference(root, output / "event_timing.csv"),
                             "angle_readouts_csv_ref": reference(root, output / "event_angle_readouts.csv"),
+                            "transition_readouts_csv_ref": reference(root, output / "event_transition_readouts.csv"),
+                            "transition_pairs_csv_ref": reference(root, output / "event_transition_pairs.csv"),
                             "report_ref": reference(root, output / "report.md")},
               "angle_values_recomputed": False, "event_midpoints_selected": False,
               "new_inference_calls": 0, "new_tracking_replays": 0, "new_ground_truth_labels": 0,

@@ -75,11 +75,35 @@ pitch-analysis compare-native-motion-events `
 單格不填0度跨度；多格實際算得0度也只描述模型讀值，不能推定關節可靠。
 原事件status、confidence、note、min/max與可用性判定保持。
 
+## 落地到大致出手的模型角度變化
+
+同一輸出另列投球肘與前導膝的端點變化：
+
+```text
+delta_model_xy_deg = 出手影格的model_xy_deg − 落地影格的model_xy_deg
+```
+
+只使用已確認的人工foot_plant與approximate_release。兩端若是範圍，保留所有
+`落地格 <= 出手格`的配對（含同格），並列出排除的倒序配對數；不選中點或合併重複差值。
+每個配對保留原格號、兩端角度及計算狀態、分數FPS換算的時距與差值。
+摘要的min/max為全部可計算合法配對的差值極值，並非期間角度最大活動範圍。
+
+兩端都能計算才產生差值；任一端缺點或幾何退化則保留空值，不補點或丟棄配對。
+`missing_endpoint_pairs`與`degenerate_endpoint_pairs`可重疊；`unavailable_pairs`為聯集，
+與`calculated_pairs`合計等於`total_pairs`。至少一個配對可算便保留其差值；全不可算時min/max為null。
+人工事件任一未確認時，摘要計數與差值全部null，配對列表空白，候選影格不參與計算。
+
+`delta_direction`的positive／negative／zero／includes_zero只表示模型差值的正負／包含0，
+沒有品質門檻或可靠性評級。配對數不是獨立樣本數，範圍也不是統計信賴區間。
+不能據此推論人體真實伸屈、角速度、動作好壞或投手整體穩定度；unknown/null保持。
+
 ## 輸出
 
 - `event_comparison.json`：逐球事件、時距、事件角度視窗、reviewer與來源／產物SHA。
 - `event_timing.csv`：每球四筆時距，包含不可計算的項目與原因。
 - `event_angle_readouts.csv`：每球五事件×兩關節共10列，含影格範圍、原人工status／confidence／note、min/max、完整格數與缺值／退化數，以及上述三個新增讀值欄位。null在CSV中為空白；可靠性維持unknown、usable_for_analysis為空白。
+- `event_transition_readouts.csv`：每球兩列落地→大致出手的端點變化摘要，含事件界線、合法／倒序配對分母、計算／缺點／退化數量及差值極值。
+- `event_transition_pairs.csv`：每個合法配對的兩個關節各一列，包含不可計算的配對；附原格號、分數時距與兩端狀態。
 - `report.md`：逐球時序與事件角度讀值表，說明單格、多格及未確認事件。
 - `viewer/review_motion_events.html`：影片、原始曲線、事件線／色帶與同投手時距表。
 - `viewer/event_viewer_manifest.json`：觀看頁、原播放JS與事件JS的SHA及檢查範圍。
@@ -94,6 +118,7 @@ pitch-analysis compare-native-motion-events `
 [山本四球實際結果](phase3_yamamoto_event_timing_20261024.md)。
 [大谷五球實際結果](phase3_ohtani_event_timing_20261025.md)。
 [正式報告讀值整合與新版輸出](phase3_event_readout_integration_20261026.md)。
+[落地→大致出手的模型變化結果](phase3_event_transition_20261026.md)。
 
 ## 以前腳落地對齊曲線
 

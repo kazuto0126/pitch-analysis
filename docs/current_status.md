@@ -1,4 +1,4 @@
-# Current status — Event-window readouts integrated into normal reports
+# Current status — Foot-plant to release model-XY endpoint changes
 
 Updated: 2026-10-26 (Asia/Taipei)
 
@@ -13,7 +13,35 @@ gates, MediaPipe settings, interpolation and smoothing are unchanged. The approv
 optional subject-region constraint is described below; the default selector remains compatible.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-26 Event-window readout integration
+## 2026-10-26 Foot-plant to approximate-release endpoint changes
+
+The normal event report now describes release-angle minus foot-plant-angle for the
+throwing elbow and lead knee. All chronological pairs within the existing manual
+event bounds are retained, including equal-frame pairs; reversed pairs are counted
+separately. No midpoint, new phase label, new pose inference or imputation is used.
+
+Ohtani5 and active Yamamoto4 produce18 joint summaries,20 legal event pairs and40
+joint-pair records. Each preserves source frames, endpoint states and fractional-FPS
+elapsed time. All40 are numerically calculable; pointwise quality remains unknown/null.
+Candidate pairs share frames and are not independent samples. Delta extrema are model
+projection endpoint differences, not within-transition range of motion, anatomical
+flexion, calibrated accuracy or motion quality. Unresolved events do not supply candidates.
+
+Independent read-only audit checked all18 summaries/40 joint pairs against saved CSV
+and manual bounds, including exact fractional times and signs (16 positive/2 negative).
+All original9 clip records,90 event windows and36 timings remain unchanged. The four
+old timing/angle CSVs are byte-identical; all564 protected source hashes are unchanged.
+Added11 Python tests. Full suite:1262 run,1260 passed/0 failed/2 skipped, including
+the formal five-video MediaPipe E2E. Both skips are unavailable Windows file-symlink
+capabilities; no unresolved test failures. Complete evidence is in the receipt.
+JavaScript/player unchanged; no Node rerun, browser interaction or new human acceptance.
+Raw/GT, skeleton workflow, thresholds and all phase-wide acceptance states remain.
+Output: `analysis_results/phase3_event_transition_20261026_01/`.
+[Per-pitcher results and CSVs](phase3_event_transition_20261026.md),
+[source and test receipt](dataset_selections/phase3_event_transition_20261026.json).
+Stop after tests, documentation, commit and origin push.
+
+## 2026-10-26 Event-window readout integration (previous)
 
 The existing compare-native-motion-events command now emits event angle tables in
 report.md and event_angle_readouts.csv, plus explicit readout wording in the viewer.

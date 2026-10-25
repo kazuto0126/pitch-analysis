@@ -6,7 +6,13 @@
 本次收尾摘要見 [STATUS](docs/STATUS.md)；外部專案供片需求見
 [INPUT_REQUIREMENTS](docs/INPUT_REQUIREMENTS.md)。
 
-2026-10-26 最新：[事件角度讀值已接入正式報告](docs/phase3_event_readout_integration_20261026.md)。
+2026-10-26 最新：[落地→大致出手的模型角度變化](docs/phase3_event_transition_20261026.md)。
+原事件報告新增肘／前導膝端點差；保留人工事件範圍內全部合法配對，不選中點。
+大谷5球、山本啟用4球共18摘要、20事件配對／40關節差值；原90視窗、36時距及四份CSV保持。
+新增11項Python測試，完整suite **1260 passed／0 failed／2 skipped**（含正式五球E2E）；[來源紀錄](docs/dataset_selections/phase3_event_transition_20261026.json)。
+結果只描述模型XY端點變化，骨架、GT與門檻保持，沒有動作好壞評分。
+
+前段：[事件角度讀值已接入正式報告](docs/phase3_event_readout_integration_20261026.md)。
 原事件比較指令會自動輸出單格／多格／未確認讀值、窗內跨度與缺失／退化數量，另附每球10列CSV。
 大谷5球、山本啟用4球已產生新版報告；既有720個視窗欄位與36段時距保持，骨架與GT不改。
 完整suite **1249 passed／0 failed／2 skipped**（含正式五球E2E），純Node **11 passed**。

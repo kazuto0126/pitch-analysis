@@ -1,11 +1,23 @@
 # 進度摘要
 
-更新：2026-10-26（台灣）。[完整狀態](current_status.md)；[正式報告讀值整合](phase3_event_readout_integration_20261026.md)。
+更新：2026-10-26（台灣）。[完整狀態](current_status.md)；[落地→出手模型變化](phase3_event_transition_20261026.md)。
 
 **Phase 1 = PASSED；Native interface integration = PASSED；Phase 2 自動可靠性仍 NOT PASSED。**
 **Phase3第一個描述性曲線交付 = COMPLETE；Phase3整體尚未驗收。**
 
-## 最新：正式事件報告自動列出角度讀值
+## 最新：落地到大致出手的模型角度變化
+
+正式事件報告新增「出手角度−落地角度」；兩關節各保留全部合法端點配對，不取事件中點。
+九球共18摘要、20事件配對／40關節差值；附原格號、分數時距與兩端狀態，unknown/null保持。
+例：大谷前導膝002為+4.1°、003為−7.3°、005為+38.6至+44.7°，只描述模型投影讀值。
+原九球clip欄位、90視窗、36時距及四份CSV保持，564份受保護檔案SHA相同。
+新增11項測試；完整suite **1260 passed／0 failed／2 skipped**，包含正式五球E2E。
+兩項跳過為Windows檔案符號連結能力不足；[來源與測試紀錄](dataset_selections/phase3_event_transition_20261026.json)。
+沒有新推論／GT或pose、tracking、門檻、播放器改動；本輪未重跑相同JS的Node測試。
+輸出：`analysis_results/phase3_event_transition_20261026_01/`。
+[兩位投手各自結果與CSV](phase3_event_transition_20261026.md)。本輪收尾後停止，Phase整體結論保持。
+
+## 前段：正式事件報告自動列出角度讀值
 
 原指令現在輸出Markdown角度表、CSV與觀看頁讀值，明確區分單格、多格及事件未確認。
 單格跨度為null；多格若有缺值只描述可計算樣本，不當作完整視窗；完整分母與缺失／退化數量保留。
