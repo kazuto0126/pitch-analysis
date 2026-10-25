@@ -6,7 +6,13 @@
 本次收尾摘要見 [STATUS](docs/STATUS.md)；外部專案供片需求見
 [INPUT_REQUIREMENTS](docs/INPUT_REQUIREMENTS.md)。
 
-2026-10-25 最新：[大谷五球落地對齊曲線](docs/phase3_ohtani_foot_plant_alignment_20261025.md)。
+2026-10-25 最新：[大谷五球可點選對照頁](docs/phase3_ohtani_alignment_viewer_20261025.md)。
+點選落地對齊曲線即可回看該球最近的原片影格，跨球切換等待目標來源載入；原播放器JS保持。
+1684格時間映射與3368個肘／膝角度核對完成，曲線保留缺值斷線與人工出手區間。
+實際瀏覽器操作尚待確認；本輪沒有新增人工接受紀錄。
+完整suite **1231 passed／0 failed／2 skipped**；另新增5項純Node互動邏輯測試通過。
+
+前段：[大谷五球落地對齊曲線](docs/phase3_ohtani_foot_plant_alignment_20261025.md)。
 五球皆以人工確認落地格為0秒，投球肘／前導膝各一張疊圖，附落地附近放大與人工出手區間。
 新增`align-native-motion`；1684列原欄位逐格比對差異0，只增加分數FPS換算的相對格號與時間。
 新入口沿用既有來源校驗，完整保留原樣本、角度、缺值與人工範圍；完整suite **1223 passed／0 failed／2 skipped**。

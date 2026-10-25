@@ -1,0 +1,241 @@
+{
+  "schema_version": "phase3-native-alignment-viewer-delivery-v1",
+  "created_at_utc": "2026-10-25T12:07:38.306907+00:00",
+  "status": "code_and_data_checks_complete; browser interaction pending",
+  "pitcher_id": "shohei_ohtani",
+  "clip_count": 5,
+  "source_frames": 1684,
+  "manifest_ref": {
+    "path": "analysis_results/phase3_ohtani_alignment_viewer_20261025_01/viewer/alignment_viewer_manifest.json",
+    "sha256": "a124f19eb8ac66a4989e641c0810a403e4e226e9696986fcdcab69fa2a4dc0fe"
+  },
+  "html_ref": {
+    "path": "analysis_results/phase3_ohtani_alignment_viewer_20261025_01/viewer/review_alignment.html",
+    "sha256": "04d46f7c06a20004f36899e2d82fad67c2b8807a80deb850e8bd76eb538cb389"
+  },
+  "base_script_ref": {
+    "path": "analysis_results/phase3_ohtani_alignment_viewer_20261025_01/viewer/motion_viewer.js",
+    "sha256": "094db045f8e09f6fcbd335cab06095040e926faa0179d0695fe4c9d8a3e380c4"
+  },
+  "alignment_script_ref": {
+    "path": "analysis_results/phase3_ohtani_alignment_viewer_20261025_01/viewer/motion_alignment.js",
+    "sha256": "d7e1b01b1e1ac15bc799ac0fbe6ce633955c3ee6d751f423a15e98ce429629f3"
+  },
+  "request_ref": {
+    "path": "config/analysis_inputs/ohtani_event_timing_20261025.json",
+    "sha256": "1a1b0893a761aea488e17613207a47578ee96d77e5e2b4be3543cb4dec73ddae"
+  },
+  "row_values_preserved": 1684,
+  "source_exports": [
+    {
+      "summary_ref": {
+        "path": "analysis_results/phase3_ohtani_native_motion_20261024_01/supplement_001/motion_summary.json",
+        "sha256": "949a9a76299b925731ecf51a74c6196aa7a9a9ef8cb357c82555c14080f9777b"
+      },
+      "curves_ref": {
+        "path": "analysis_results/phase3_ohtani_native_motion_20261024_01/supplement_001/motion_curves.csv",
+        "sha256": "2af451bec1b1382b9c38c4a73460776fa49253916f0854f2a53d99034ce59cf1"
+      },
+      "plot_ref": {
+        "path": "analysis_results/phase3_ohtani_native_motion_20261024_01/supplement_001/motion_curves.png",
+        "sha256": "3e477c25cca4d8a241a39fc7dfa09472afa80d77f4a99c26b577596da8de98ce"
+      },
+      "ground_truth_ref": {
+        "path": "annotations/event_reviews/HSU_20261024/shohei_ohtani/supplement_001/ground_truth.json",
+        "sha256": "28c3c053cf912dc475972acd04df42c0c3698df13c04719ea16bee4986c2fe74"
+      },
+      "video_ref": {
+        "path": "input/shohei_ohtani/phase2_supplement_20261020_01/supplement_001.mp4",
+        "sha256": "90a6acec9865c634bd019503d46c147647fa78df9a2827e1143c74abb852111a"
+      },
+      "overlay_ref": {
+        "path": "analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/supplement_001/rtmpose/supplement_001/overlay_native.mp4",
+        "sha256": "3c0ffef0dc8f8c4f1e072a5ba05338abce77fd11046cf7fd099fcada2f1fac81"
+      },
+      "event_review_ref": {
+        "path": "annotations/event_reviews/HSU_20261024/shohei_ohtani/supplement_001/event_review_checkpoint.json",
+        "sha256": "229fe8870f4b3a54ccf92afdbc2092c381ad5d0d155f23709afa223e29102df2"
+      }
+    },
+    {
+      "summary_ref": {
+        "path": "analysis_results/phase3_ohtani_native_motion_20261024_01/supplement_002/motion_summary.json",
+        "sha256": "cc7e95e416f3c7be9e3641de9452be8d9f97dee3e4295ab3072e68aa599ddff0"
+      },
+      "curves_ref": {
+        "path": "analysis_results/phase3_ohtani_native_motion_20261024_01/supplement_002/motion_curves.csv",
+        "sha256": "f4a00186cd343c680c40dd88d8d104458e78be482a4012e458a40493b3116ba9"
+      },
+      "plot_ref": {
+        "path": "analysis_results/phase3_ohtani_native_motion_20261024_01/supplement_002/motion_curves.png",
+        "sha256": "2059aeb3fc17a021e72d92d98db13cc3f28b04c06ba103ba272f74a68d2ea754"
+      },
+      "ground_truth_ref": {
+        "path": "annotations/event_reviews/HSU_20261024/shohei_ohtani/supplement_002/ground_truth.json",
+        "sha256": "6a662993e8126a5d623f385672b19bd5385f98833fe9fb22b85f4fbb70ef33a8"
+      },
+      "video_ref": {
+        "path": "input/shohei_ohtani/phase2_supplement_20261020_01/supplement_002.mp4",
+        "sha256": "b1586bdde9383e3b247bcc7d7974a3f15b0fed173848926d5217f261b87bab8e"
+      },
+      "overlay_ref": {
+        "path": "analysis_results/phase2_seeded_resume_native_20261023_01/rtmpose/supplement_002/overlay_native.mp4",
+        "sha256": "9713f1053f3ea68df9a3b960806f86a448dc213a0389f404f8288b870c5e31f8"
+      },
+      "event_review_ref": {
+        "path": "annotations/event_reviews/HSU_20261024/shohei_ohtani/supplement_002/event_review_checkpoint.json",
+        "sha256": "ffe831aa214b9e56555c048627c2ee277f9800fd9b474945ab1f2270b90ccd01"
+      }
+    },
+    {
+      "summary_ref": {
+        "path": "analysis_results/phase3_ohtani_native_motion_20261024_01/supplement_003/motion_summary.json",
+        "sha256": "ba5bfcd85cbc21a569dc614d586a92bf18c6c98dfc8d709d57f9eb708c5ad781"
+      },
+      "curves_ref": {
+        "path": "analysis_results/phase3_ohtani_native_motion_20261024_01/supplement_003/motion_curves.csv",
+        "sha256": "0a24492e8a76de469503f6c6faf3567844a90aef9cf334cd05e265b497c97702"
+      },
+      "plot_ref": {
+        "path": "analysis_results/phase3_ohtani_native_motion_20261024_01/supplement_003/motion_curves.png",
+        "sha256": "0a27ce99f9e4da16087284d6292b19e05ac41e940f0580c565a47b2f3f530b3c"
+      },
+      "ground_truth_ref": {
+        "path": "annotations/event_reviews/HSU_20261024/shohei_ohtani/supplement_003/ground_truth.json",
+        "sha256": "26542023685abc009de81b881af6154a80de9692b5e2ba4ff3c6ede46ac68a7d"
+      },
+      "video_ref": {
+        "path": "input/shohei_ohtani/phase2_supplement_20261020_01/supplement_003.mp4",
+        "sha256": "97a45985648af1cf20ed48bda6ce5454fe509609114ac28d8a5deb632621e8ae"
+      },
+      "overlay_ref": {
+        "path": "analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/supplement_003/rtmpose/supplement_003/overlay_native.mp4",
+        "sha256": "bb080e2e454dc9987ec5c90f2db83ce97f56f11579221012911fdb4b322ff963"
+      },
+      "event_review_ref": {
+        "path": "annotations/event_reviews/HSU_20261024/shohei_ohtani/supplement_003/event_review_checkpoint.json",
+        "sha256": "47ff472624d86aaa03ac6aa2360e31b281098ba3e2e0b48f09f50b736919f855"
+      }
+    },
+    {
+      "summary_ref": {
+        "path": "analysis_results/phase3_ohtani_native_motion_20261024_01/supplement_004/motion_summary.json",
+        "sha256": "c1ae51a6c92ce71fa235fc706ee588d53ca77b7d10ab3793623dfc5fec4f4360"
+      },
+      "curves_ref": {
+        "path": "analysis_results/phase3_ohtani_native_motion_20261024_01/supplement_004/motion_curves.csv",
+        "sha256": "8a93632650eef2c3cb802e395bfed6504b6ca1c427a16b7bc72f0f840b60b50e"
+      },
+      "plot_ref": {
+        "path": "analysis_results/phase3_ohtani_native_motion_20261024_01/supplement_004/motion_curves.png",
+        "sha256": "e0266d807ddc508db9c4e007f189607765c680a05d0d43e54612d32c0bddc0e8"
+      },
+      "ground_truth_ref": {
+        "path": "annotations/event_reviews/HSU_20261024/shohei_ohtani/supplement_004/ground_truth.json",
+        "sha256": "ea37d1f851ea092d5dea147e3c441baedaf61d34b8f9dbd18f6c850ea37fdacc"
+      },
+      "video_ref": {
+        "path": "input/shohei_ohtani/phase2_supplement_20261020_01/supplement_004.mp4",
+        "sha256": "76945ebff5dc300ee0fc7084a0e21370137ee9d91ad61cdca52ccab0e4ee9054"
+      },
+      "overlay_ref": {
+        "path": "analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/supplement_004/rtmpose/supplement_004/overlay_native.mp4",
+        "sha256": "45cce1ef66b837f561ac49c5b08936b7528a7162ed2915d485f3451062679c30"
+      },
+      "event_review_ref": {
+        "path": "annotations/event_reviews/HSU_20261024/shohei_ohtani/supplement_004/event_review_checkpoint.json",
+        "sha256": "6965d9a5d60bbe175d37456b7f1a5837a22fc748dbd9103bc65b489b056117f8"
+      }
+    },
+    {
+      "summary_ref": {
+        "path": "analysis_results/phase3_ohtani_native_motion_20261024_01/supplement_005/motion_summary.json",
+        "sha256": "de136d8a75eb620976c5d41d457a62ba84bba91a39b7fb070083e3a003f65082"
+      },
+      "curves_ref": {
+        "path": "analysis_results/phase3_ohtani_native_motion_20261024_01/supplement_005/motion_curves.csv",
+        "sha256": "c7cfd78e10543cedb95a813d561349a5f0a3e0b284fa8298566403f44387f4ca"
+      },
+      "plot_ref": {
+        "path": "analysis_results/phase3_ohtani_native_motion_20261024_01/supplement_005/motion_curves.png",
+        "sha256": "f41f6f74815bf73d2463a1a7081c6e34114e722f5c827357793708d86e8f1617"
+      },
+      "ground_truth_ref": {
+        "path": "annotations/event_reviews/HSU_20261024/shohei_ohtani/supplement_005/ground_truth.json",
+        "sha256": "55beb32a3bbece5355c2a2266d46dd21e1682149b52b282068a76ced511e98aa"
+      },
+      "video_ref": {
+        "path": "input/shohei_ohtani/phase2_supplement_20261020_01/supplement_005.mp4",
+        "sha256": "1c67c058d4376ecf94a138eb08e3251eb601a365a7e8a55e251e1c136ae5d95f"
+      },
+      "overlay_ref": {
+        "path": "analysis_results/phase2_ohtani_seeded_skeleton_20261023_01/supplement_005/rtmpose/supplement_005/overlay_native.mp4",
+        "sha256": "98c25011ef83d9fdd4d14253e4b9ffbbb8f35ad4f81ed1cb866090a8b7bd5a8a"
+      },
+      "event_review_ref": {
+        "path": "annotations/event_reviews/HSU_20261024/shohei_ohtani/supplement_005/event_review_checkpoint.json",
+        "sha256": "7fc3f8866d55f514f0dcc9862bd27791defedb0e16ca576e4c405ac41445e0d9"
+      }
+    }
+  ],
+  "base_player_modified": false,
+  "new_inference_calls": 0,
+  "new_tracking_replays": 0,
+  "new_ground_truth_labels": 0,
+  "event_midpoints_selected": false,
+  "samples_resampled": false,
+  "angle_values_recomputed": false,
+  "protected_files": 521,
+  "protected_sha256_changes": [],
+  "new_python_tests": 8,
+  "full_suite": {
+    "created_at_utc": "2026-10-25T12:06:36.933046+00:00",
+    "tests_run": 1233,
+    "passed": 1231,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 2,
+    "skipped_reasons": [
+      {
+        "test": "test_dangling_snapshot_file_link_cannot_create_external_target_when_supported (test_handoff_paths.HandoffPathTests.test_dangling_snapshot_file_link_cannot_create_external_target_when_supported)",
+        "reason": "file symlink creation is unavailable"
+      },
+      {
+        "test": "test_source_symlink_outside_candidate_is_rejected_when_supported (test_handoff_review.HandoffReviewTests.test_source_symlink_outside_candidate_is_rejected_when_supported)",
+        "reason": "creating symbolic links is unavailable"
+      }
+    ],
+    "elapsed_seconds": 132.516,
+    "formal_five_video_e2e_enabled": true,
+    "real_rtmpose_calls": 0,
+    "real_detector_calls": 0,
+    "successful": true
+  },
+  "test_results_ref": {
+    "path": "analysis_results/phase3_ohtani_alignment_viewer_20261025_01/verified_suite/test_results.json",
+    "sha256": "027cd1b2d7dd72a9d77cd23f59430bd915002188d480f57a75449e901c14ab85"
+  },
+  "node_checks": {
+    "new_alignment_tests_passed": 5,
+    "existing_playback_tests_passed": 5,
+    "existing_event_assertions_passed": 18,
+    "browser_or_DOM_used": false,
+    "actual_mapping": {
+      "clips": 5,
+      "original_frame_roundtrips": 1684,
+      "plotted_values_preserved": 3368,
+      "source_frame_mapping_failures": 0,
+      "browser_or_DOM_used": false
+    },
+    "actual_mapping_ref": {
+      "path": "analysis_results/phase3_ohtani_alignment_viewer_20261025_01/node_actual_mapping_results.json",
+      "sha256": "13ad5c55a95b4f8d6c6b165cbea7982d4f6f26a924ee79012fc49efc8705213d"
+    }
+  },
+  "browser_interaction_verified": false,
+  "human_page_acceptance": "not_yet_recorded",
+  "pointwise_reliability": "unknown",
+  "usable_for_analysis": null,
+  "automatic_phase2_status": "NOT_PASSED",
+  "phase3_overall": "NOT_EVALUATED"
+}

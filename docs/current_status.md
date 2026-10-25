@@ -1,4 +1,4 @@
-# Current status — Ohtani foot-plant-aligned model-XY curves delivered
+# Current status — Ohtani aligned-curve source-frame viewer delivered; browser interaction pending
 
 Updated: 2026-10-25 (Asia/Taipei)
 
@@ -13,7 +13,35 @@ gates, MediaPipe settings, interpolation and smoothing are unchanged. The approv
 optional subject-region constraint is described below; the default selector remains compatible.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-25 Ohtani foot-plant alignment delivery
+## 2026-10-25 Aligned-curve source-frame viewer delivery
+
+Added review-native-motion-alignment from the existing bound event request. The page
+draws saved multi-clip curves relative to exact human foot plant; clicking a curve
+selects its clip and requests the nearest original source frame. Legend buttons return
+to each exact foot plant; full/±0.5-second views retain the same samples. The original
+player and its script bytes are unchanged; single-clip charts remain in a details panel.
+
+Cross-clip requests wait until selected source/currentSrc and loaded controls agree.
+Only the latest pending request is applied; manual selection/error cancels stale requests.
+The aligned cursor uses the base player's frame label and distinguishes presented frames
+from its explicitly labeled fallback time estimate. Release bounds remain bands/lines;
+uncertain candidates remain dashed, and missing samples keep line breaks.
+
+Actual data checks:1684 source-frame time roundtrips and3368 model-angle values preserved;
+all521 protected hashes unchanged. Source CSV times/values/states and GT remain unchanged.
+New pose calls0, tracking replay0, GT labels0; unknown/null reliability remains.
+Eight new Python packaging/source tests and five pure Node mapping/navigation tests added.
+Full suite:1233 run /1231 passed /0 failed /0 errors /2 file-symlink capability skips,
+including formal five-video E2E. Existing playback Node tests5 and event assertions18 also pass.
+Complete test receipt: [source and checks](dataset_selections/phase3_ohtani_alignment_viewer_20261025.json).
+
+Output: `analysis_results/phase3_ohtani_alignment_viewer_20261025_01/viewer/review_alignment.html`.
+[Opening and controls](phase3_ohtani_alignment_viewer_20261025.md).
+No browser/DOM automation was performed. Code/data tests do not establish real browser
+interaction; new page human acceptance is not yet recorded. Stop after this bounded
+delivery, tests, commit and origin push; no phase-wide acceptance change follows.
+
+## 2026-10-25 Ohtani foot-plant alignment delivery (previous)
 
 HSU authorized the proposed next step with「繼續」: shift each saved curve to the
 exact human foot plant, preserving release ranges. New align-native-motion reuses

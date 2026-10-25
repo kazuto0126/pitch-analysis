@@ -58,6 +58,9 @@ def main() -> None:
     motion_alignment = commands.add_parser("align-native-motion", help="Plot saved same-pitcher curves relative to exact human foot plant")
     motion_alignment.add_argument("config_json")
     motion_alignment.add_argument("--output", required=True)
+    alignment_viewer = commands.add_parser("review-native-motion-alignment", help="Build a source-frame-linked viewer of foot-plant-aligned curves")
+    alignment_viewer.add_argument("config_json")
+    alignment_viewer.add_argument("--output", required=True)
     analyze = commands.add_parser("analyze-pitch", help="Analyze one prepared local MP4 plus pitch-input-v1 metadata")
     analyze.add_argument("mp4")
     analyze.add_argument("metadata_json")
@@ -180,6 +183,18 @@ def main() -> None:
         command.add_argument("--min-visibility", type=float, default=0.5)
         command.add_argument("--min-presence", type=float, default=0.5)
     args = parser.parse_args()
+    if args.command == "review-native-motion-alignment":
+        from pathlib import Path
+        from .analysis.native_motion_alignment_viewer import write_alignment_viewer
+        try:
+            result = write_alignment_viewer(Path.cwd(), args.config_json, args.output)
+            _emit({"status": result["status"], "clip_count": result["clip_count"],
+                   "source_frames": result["source_frames"], "output_dir": args.output,
+                   "new_inference_calls": 0})
+        except (ValueError, OSError, RuntimeError, KeyError, TypeError) as error:
+            _emit({"status": "failed", "error": str(error)})
+            raise SystemExit(1)
+        return
     if args.command == "align-native-motion":
         from pathlib import Path
         from .analysis.native_motion_alignment import write_native_alignment

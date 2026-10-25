@@ -63,3 +63,10 @@ UI會區分「要求的目標格」與「目前實際呈現格」，等待回呼
 HSU確認山本「都正確一樣是5表現最好」，pitch_005亦記為偏好示範。
 接受證據另存`annotations/motion_reviews/HSU_20261024/yamamoto_motion_sync_acceptance.json`；
 原pending／自動瀏覽器未驗證快照保持，沒有因此建立逐點精度或更動原始資料。
+
+## 多球落地對齊曲線的回看
+
+`review-native-motion-alignment`可沿用已完成事件設定，建立可點選的多球對齊圖。
+點曲線會選擇該球最近原格；跨球載入後才跳格，仍由本頁相同的播放器確認呈現狀態。
+原播放器資產與單球時間軸保持，新功能只加對齊圖和跳格接點。
+見[大谷五球可點選對照頁](phase3_ohtani_alignment_viewer_20261025.md)。

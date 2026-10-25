@@ -1,11 +1,22 @@
 # 進度摘要
 
-更新：2026-10-25（台灣）。[完整狀態](current_status.md)；[大谷落地對齊曲線](phase3_ohtani_foot_plant_alignment_20261025.md)。
+更新：2026-10-25（台灣）。[完整狀態](current_status.md)；[大谷可點選對照頁](phase3_ohtani_alignment_viewer_20261025.md)。
 
 **Phase 1 = PASSED；Native interface integration = PASSED；Phase 2 自動可靠性仍 NOT PASSED。**
 **Phase3第一個描述性曲線交付 = COMPLETE；Phase3整體尚未驗收。**
 
-## 最新：大谷五球落地對齊的曲線比較
+## 最新：落地對齊曲線可點選回看影片
+
+新增`review-native-motion-alignment`，沿用原播放器與1684格曲線；點選某球曲線可回看其最近原片影格。
+新增部分處理對齊圖、選球、載入來源核對與最新跳格要求；原`native_motion_viewer.js`逐bytes不變。
+1684格映射差異0、3368角度值保持，缺值斷線與人工範圍保留；521份保護檔案SHA不變。
+新增8項Python及5項純Node測試；完整suite **1231 passed／0 failed／2 skipped**（含正式五球E2E）。
+兩項跳過仍為環境不支援檔案符號連結；詳見[來源與測試紀錄](dataset_selections/phase3_ohtani_alignment_viewer_20261025.json)。
+實際瀏覽器／DOM操作未驗證，新頁人工接受尚未記錄；沒有因此補填GT或改變Phase結論。
+輸出：`analysis_results/phase3_ohtani_alignment_viewer_20261025_01/viewer/review_alignment.html`。
+[開啟與操作](phase3_ohtani_alignment_viewer_20261025.md)。
+
+## 前段：大谷五球落地對齊的曲線比較
 
 新增`align-native-motion`，以五球人工落地110／129／156／124／124格作顯示零點。
 肘／前導膝各一張疊圖，含完整原片範圍、±0.5秒放大與人工出手單格／區間。
