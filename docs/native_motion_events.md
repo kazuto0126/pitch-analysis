@@ -94,3 +94,7 @@ pitch-analysis align-native-motion `
 輸出肘／膝疊圖、完整CSV與摘要；出手區間仍為區間。落地若為範圍或不確定則拒絕對齊，
 不選中點、不重取樣或改變時間比例。這是新增入口，原事件對照頁及時間語義保持。
 [大谷五球落地對齊結果](phase3_ohtani_foot_plant_alignment_20261025.md)。
+
+人工落地為annotated範圍時，可另加`--retain-anchor-ranges`，輸出所有候選平移與每個原始樣本的
+時間上下界；不指定單一原點。原精確模式行為保持，uncertain／不可觀測也不會因新旗標取得原點。
+見[山本四球範圍比較](phase3_yamamoto_anchor_bounds_20261025.md)。

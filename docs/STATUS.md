@@ -1,11 +1,22 @@
 # 進度摘要
 
-更新：2026-10-25（台灣）。[完整狀態](current_status.md)；[山本對齊與觀看入口](phase3_yamamoto_exact_alignment_20261025.md)。
+更新：2026-10-25（台灣）。[完整狀態](current_status.md)；[山本四球範圍比較](phase3_yamamoto_anchor_bounds_20261025.md)。
 
 **Phase 1 = PASSED；Native interface integration = PASSED；Phase 2 自動可靠性仍 NOT PASSED。**
 **Phase3第一個描述性曲線交付 = COMPLETE；Phase3整體尚未驗收。**
 
-## 最新：同套工具已套用山本兩球，觀看入口整理完成
+## 最新：四球都可比較，落地範圍保留
+
+新增可選`--retain-anchor-ranges`：001保留34／35、004保留65／66作可能原點；002／005仍為精確140／55。
+原始477列無重複、原CSV欄位差異0；候選平移不是額外觀測，也不選中點或分配機率。
+出手相對落地維持4–6／1–3／4–6／3–4格；005其他uncertain候選不升格。
+兩張圖已實際檢查，539份保護檔案SHA不變；原精確模式、播放器、骨架、門檻與GT保持。
+新增10項測試，完整suite **1241 passed／0 failed／2 skipped**（含正式五球E2E）。
+兩項跳過仍是環境不支援檔案符號連結；詳見[來源與測試紀錄](dataset_selections/phase3_yamamoto_anchor_bounds_20261025.json)。
+入口：`analysis_results/phase3_yamamoto_anchor_bounds_20261025_01/index.html`。
+[操作與結果](phase3_yamamoto_anchor_bounds_20261025.md)。
+
+## 前段：同套工具已套用山本兩球，觀看入口整理完成
 
 山本002／005精確落地140／55格，276格資料完成疊圖與回看頁，原欄位差異0、552個角度值保持。
 001落地34–35、004落地65–66仍保留範圍，留在四球事件頁；未要求重新標註或恢復歷史003。

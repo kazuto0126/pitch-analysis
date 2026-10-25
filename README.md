@@ -6,7 +6,13 @@
 本次收尾摘要見 [STATUS](docs/STATUS.md)；外部專案供片需求見
 [INPUT_REQUIREMENTS](docs/INPUT_REQUIREMENTS.md)。
 
-2026-10-25 最新：[山本精確落地對齊與共同觀看入口](docs/phase3_yamamoto_exact_alignment_20261025.md)。
+2026-10-25 最新：[山本四球保留落地範圍的曲線比較](docs/phase3_yamamoto_anchor_bounds_20261025.md)。
+001／004的兩個可能原點全部保留，與精確原點的002／005共同查看；四球477列原資料未改。
+新增可選`--retain-anchor-ranges`，候選平移不當成新增觀測、不選中點或給機率，原精確模式保持。
+[來源與測試紀錄](docs/dataset_selections/phase3_yamamoto_anchor_bounds_20261025.json)。
+完整suite **1241 passed／0 failed／2 skipped**，含正式五球E2E。
+
+前段：[山本精確落地對齊與共同觀看入口](docs/phase3_yamamoto_exact_alignment_20261025.md)。
 沿用同一套工具完成山本002／005共276格的疊圖與回看頁；001／004保留落地範圍，啟用素材仍為四球。
 共同入口可分別開啟山本兩球對齊、山本四球事件與大谷五球對齊頁；沒有跨投手比較。
 無產品／測試碼變更，未重跑suite；最近相同程式碼1231 passed／0 failed／2 skipped。

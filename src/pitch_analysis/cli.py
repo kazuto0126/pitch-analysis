@@ -58,6 +58,7 @@ def main() -> None:
     motion_alignment = commands.add_parser("align-native-motion", help="Plot saved same-pitcher curves relative to exact human foot plant")
     motion_alignment.add_argument("config_json")
     motion_alignment.add_argument("--output", required=True)
+    motion_alignment.add_argument("--retain-anchor-ranges", action="store_true", help="Retain all annotated foot-plant candidates as display-time bounds")
     alignment_viewer = commands.add_parser("review-native-motion-alignment", help="Build a source-frame-linked viewer of foot-plant-aligned curves")
     alignment_viewer.add_argument("config_json")
     alignment_viewer.add_argument("--output", required=True)
@@ -198,8 +199,12 @@ def main() -> None:
     if args.command == "align-native-motion":
         from pathlib import Path
         from .analysis.native_motion_alignment import write_native_alignment
+        writer = write_native_alignment
+        if args.retain_anchor_ranges:
+            from .analysis.native_motion_anchor_bounds import write_bounded_alignment
+            writer = write_bounded_alignment
         try:
-            result = write_native_alignment(Path.cwd(), args.config_json, args.output)
+            result = writer(Path.cwd(), args.config_json, args.output)
             _emit({"status": result["status"], "clip_count": result["clip_count"],
                    "source_frames": result["source_frames"], "output_dir": args.output,
                    "new_inference_calls": 0})

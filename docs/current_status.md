@@ -1,4 +1,4 @@
-# Current status — Same tools reused for exact Yamamoto anchors; separate-pitcher viewing index ready
+# Current status — Yamamoto four-clip comparison retains manual foot-plant bounds
 
 Updated: 2026-10-25 (Asia/Taipei)
 
@@ -13,7 +13,32 @@ gates, MediaPipe settings, interpolation and smoothing are unchanged. The approv
 optional subject-region constraint is described below; the default selector remains compatible.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-25 Yamamoto exact-anchor reuse and viewing index
+## 2026-10-25 Retained manual anchor bounds for all four Yamamoto clips
+
+Added optional --retain-anchor-ranges to align-native-motion. The existing exact mode
+continues to reject ranged anchors. In the new mode, annotated ranges retain all integer
+origin candidates; uncertain/unobservable foot plant remains unavailable. Single-frame
+ranges remain bounded rather than being promoted to an exact human event.
+
+Actual four-clip delivery retains477 unique source rows.001 uses34/35,002 uses140,
+004 uses65/66,005 uses55. Six alternative display shifts represent four source clips;
+they are not extra observations. CSV does not duplicate samples. Each row gains [(i-anchor_max)/fps,(i-anchor_min)/fps]
+and exact fractional seconds. Original fields compare equal; no midpoint or probabilities.
+Existing foot-plant-to-release timing remains4–6/1–3/4–6/3–4frames.005 preparation and
+peak-lift candidates remain uncertain. Both plots were visually inspected; an independent
+read-only check confirmed original fields, fractional bounds and preserved event states.
+
+All539 protected hashes unchanged. No new inference, tracking replay, GT labels,
+resampling, angle recomputation, smoothing or interpolation. Exact viewer/player and
+active cohort001/002/004/005 remain;003 stays historical. Unknown/null and phase states remain.
+Ten new tests added; complete result is in the [source/test receipt](dataset_selections/phase3_yamamoto_anchor_bounds_20261025.json).
+Full suite:1243 run /1241 passed /0 failed /0 errors /2 Windows file-symlink capability skips,
+including formal five-video E2E.
+Output: `analysis_results/phase3_yamamoto_anchor_bounds_20261025_01/`.
+[Entry page and interpretation](phase3_yamamoto_anchor_bounds_20261025.md).
+Stop after this bounded delivery, tests, commit and origin push.
+
+## 2026-10-25 Yamamoto exact-anchor reuse and viewing index (previous)
 
 Reused the same existing alignment/viewer commands on Yamamoto002/005:276 source rows,
 30/1 FPS, exact human foot plants140/55. Source CSV fields compare equal;276 frame-time
