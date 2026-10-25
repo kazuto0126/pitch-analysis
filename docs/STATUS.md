@@ -1,11 +1,21 @@
 # 進度摘要
 
-更新：2026-10-25（台灣）。[完整狀態](current_status.md)；[大谷可點選對照頁](phase3_ohtani_alignment_viewer_20261025.md)。
+更新：2026-10-25（台灣）。[完整狀態](current_status.md)；[山本對齊與觀看入口](phase3_yamamoto_exact_alignment_20261025.md)。
 
 **Phase 1 = PASSED；Native interface integration = PASSED；Phase 2 自動可靠性仍 NOT PASSED。**
 **Phase3第一個描述性曲線交付 = COMPLETE；Phase3整體尚未驗收。**
 
-## 最新：落地對齊曲線可點選回看影片
+## 最新：同套工具已套用山本兩球，觀看入口整理完成
+
+山本002／005精確落地140／55格，276格資料完成疊圖與回看頁，原欄位差異0、552個角度值保持。
+001落地34–35、004落地65–66仍保留範圍，留在四球事件頁；未要求重新標註或恢復歷史003。
+005啟動與最高抬腿候選仍uncertain。出手相對落地為002的+1–3格、005的+3–4格，在+3格相接。
+共同入口：`analysis_results/phase3_yamamoto_exact_alignment_20261025_01/index.html`，兩位投手分別觀看。
+524份保護檔案SHA無變更；沒有產品／測試碼變更、推論／追蹤或人工答案變更，未重跑suite。
+最近相同程式碼1231 passed／0 failed／2 skipped；新頁實際瀏覽器操作尚未確認。
+[結果與開啟方式](phase3_yamamoto_exact_alignment_20261025.md)；[來源紀錄](dataset_selections/phase3_yamamoto_exact_alignment_20261025.json)。
+
+## 前段：落地對齊曲線可點選回看影片
 
 新增`review-native-motion-alignment`，沿用原播放器與1684格曲線；點選某球曲線可回看其最近原片影格。
 新增部分處理對齊圖、選球、載入來源核對與最新跳格要求；原`native_motion_viewer.js`逐bytes不變。

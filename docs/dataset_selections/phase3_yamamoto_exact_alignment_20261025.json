@@ -1,0 +1,715 @@
+{
+  "schema_version": "phase3-yamamoto-exact-alignment-delivery-v1",
+  "created_at_utc": "2026-10-25T12:12:34.119739+00:00",
+  "status": "saved-data reuse complete; browser interaction pending",
+  "source_request_ref": {
+    "path": "config/analysis_inputs/yamamoto_event_timing_20261024.json",
+    "sha256": "ed73961fd62dc41c85aa63512d7e355c4f47e290b5c55288faf121b84c411e3f"
+  },
+  "request_ref": {
+    "path": "config/analysis_inputs/yamamoto_exact_foot_plant_20261025.json",
+    "sha256": "9581ad3b90d00be19a4cb219ef45c0e7d5097fa80cad7ee6ba055b249b4e7112"
+  },
+  "selected": [
+    "pitch_002",
+    "pitch_005"
+  ],
+  "not_exactly_aligned": [
+    {
+      "pitch_id": "pitch_001",
+      "foot_plant": {
+        "status": "annotated",
+        "frame_index": null,
+        "frame_range": {
+          "start_frame": 34,
+          "end_frame": 35
+        },
+        "confidence": null,
+        "note": "33格仍未著地，35格已著地"
+      },
+      "ground_truth_ref": {
+        "path": "analysis_results/phase2_yamamoto_20260925_01/ground_truth/pitch_001/ground_truth.json",
+        "sha256": "0efe2f4c63417e1f5744cec5fac7d375e0a0ec5060c870a36cec720a7a4b8d81"
+      },
+      "reason": "manual foot plant is a range; no single zero selected"
+    },
+    {
+      "pitch_id": "pitch_004",
+      "foot_plant": {
+        "status": "annotated",
+        "frame_index": null,
+        "frame_range": {
+          "start_frame": 65,
+          "end_frame": 66
+        },
+        "confidence": null,
+        "note": "HSU 人工判斷左腳首次接觸地面在第 65 或 66 格，保留 65–66 格範圍；Codex 依授權轉錄。"
+      },
+      "ground_truth_ref": {
+        "path": "analysis_results/phase2_yamamoto_20260925_01/ground_truth/pitch_004/ground_truth.json",
+        "sha256": "ee721b91ce340ce29899e40854712e2d5d9c770d09d154c913489f17f1b4408a"
+      },
+      "reason": "manual foot plant is a range; no single zero selected"
+    }
+  ],
+  "active_cohort_unchanged": [
+    "pitch_001",
+    "pitch_002",
+    "pitch_004",
+    "pitch_005"
+  ],
+  "historical_only": [
+    "pitch_003"
+  ],
+  "new_inference_calls": 0,
+  "new_labels": 0,
+  "product_test_code_changes": 0,
+  "full_suite_rerun": false,
+  "selected_source_frames": 276,
+  "selected_clips": [
+    {
+      "pitch_id": "pitch_002",
+      "frame_count": 175,
+      "fps_fraction": "30/1",
+      "alignment_frame": 140,
+      "aligned_events": {
+        "preparation_start": {
+          "status": "annotated",
+          "frame_index": 74,
+          "confidence": null,
+          "note": "HSU 判定第 74 格開始進入投球準備動作。",
+          "frame_range": null,
+          "frame_bounds": [
+            74,
+            74
+          ],
+          "marker_kind": "exact",
+          "time_bounds_sec": [
+            2.466666666666667,
+            2.466666666666667
+          ],
+          "angle_windows": {
+            "throwing_elbow": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 2.854632793939627,
+              "max_deg": 2.854632793939627,
+              "usable_deg": null
+            },
+            "lead_knee": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 179.96649761842937,
+              "max_deg": 179.96649761842937,
+              "usable_deg": null
+            }
+          },
+          "relative_frame_bounds": [
+            -66,
+            -66
+          ],
+          "relative_seconds_bounds": [
+            -2.2,
+            -2.2
+          ],
+          "relative_seconds_bounds_fraction": [
+            "-11/5",
+            "-11/5"
+          ]
+        },
+        "leg_lift": {
+          "status": "annotated",
+          "frame_index": 118,
+          "confidence": null,
+          "note": "HSU 判定第 118 格為最高抬腿。",
+          "frame_range": null,
+          "frame_bounds": [
+            118,
+            118
+          ],
+          "marker_kind": "exact",
+          "time_bounds_sec": [
+            3.933333333333333,
+            3.933333333333333
+          ],
+          "angle_windows": {
+            "throwing_elbow": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 99.40228694566719,
+              "max_deg": 99.40228694566719,
+              "usable_deg": null
+            },
+            "lead_knee": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 102.01831178613183,
+              "max_deg": 102.01831178613183,
+              "usable_deg": null
+            }
+          },
+          "relative_frame_bounds": [
+            -22,
+            -22
+          ],
+          "relative_seconds_bounds": [
+            -0.7333333333333333,
+            -0.7333333333333333
+          ],
+          "relative_seconds_bounds_fraction": [
+            "-11/15",
+            "-11/15"
+          ]
+        },
+        "foot_plant": {
+          "status": "annotated",
+          "frame_index": 140,
+          "confidence": null,
+          "note": "HSU 判定第 140 格左腳首次落地。",
+          "frame_range": null,
+          "frame_bounds": [
+            140,
+            140
+          ],
+          "marker_kind": "exact",
+          "time_bounds_sec": [
+            4.666666666666667,
+            4.666666666666667
+          ],
+          "angle_windows": {
+            "throwing_elbow": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 134.4201588949414,
+              "max_deg": 134.4201588949414,
+              "usable_deg": null
+            },
+            "lead_knee": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 164.2509216037279,
+              "max_deg": 164.2509216037279,
+              "usable_deg": null
+            }
+          },
+          "relative_frame_bounds": [
+            0,
+            0
+          ],
+          "relative_seconds_bounds": [
+            0.0,
+            0.0
+          ],
+          "relative_seconds_bounds_fraction": [
+            "0",
+            "0"
+          ]
+        },
+        "approximate_release": {
+          "status": "annotated",
+          "frame_index": null,
+          "frame_range": {
+            "start_frame": 141,
+            "end_frame": 143
+          },
+          "confidence": null,
+          "note": "HSU 判定球在第 141–143 格之間離手，保留範圍。",
+          "frame_bounds": [
+            141,
+            143
+          ],
+          "marker_kind": "range",
+          "time_bounds_sec": [
+            4.7,
+            4.766666666666667
+          ],
+          "angle_windows": {
+            "throwing_elbow": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 3,
+              "calculated_frames": 3,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 135.44285710929123,
+              "max_deg": 147.9994803005535,
+              "usable_deg": null
+            },
+            "lead_knee": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 3,
+              "calculated_frames": 3,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 165.45104860866556,
+              "max_deg": 173.3147370806077,
+              "usable_deg": null
+            }
+          },
+          "relative_frame_bounds": [
+            1,
+            3
+          ],
+          "relative_seconds_bounds": [
+            0.03333333333333333,
+            0.1
+          ],
+          "relative_seconds_bounds_fraction": [
+            "1/30",
+            "1/10"
+          ]
+        },
+        "follow_through_end": {
+          "status": "annotated",
+          "frame_index": 168,
+          "confidence": null,
+          "note": "HSU 判定第 168 格完成收尾、恢復穩定。",
+          "frame_range": null,
+          "frame_bounds": [
+            168,
+            168
+          ],
+          "marker_kind": "exact",
+          "time_bounds_sec": [
+            5.6,
+            5.6
+          ],
+          "angle_windows": {
+            "throwing_elbow": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 119.69016626072107,
+              "max_deg": 119.69016626072107,
+              "usable_deg": null
+            },
+            "lead_knee": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 126.56534341987702,
+              "max_deg": 126.56534341987702,
+              "usable_deg": null
+            }
+          },
+          "relative_frame_bounds": [
+            28,
+            28
+          ],
+          "relative_seconds_bounds": [
+            0.9333333333333333,
+            0.9333333333333333
+          ],
+          "relative_seconds_bounds_fraction": [
+            "14/15",
+            "14/15"
+          ]
+        }
+      },
+      "source_refs": {
+        "summary_ref": {
+          "path": "analysis_results/phase3_yamamoto_native_motion_20261024_01/pitch_002/motion_summary.json",
+          "sha256": "d1b600486897adb51cb0e9dfb6b89a7b1805553ed1eb1fb1b13e03947229e032"
+        },
+        "curves_ref": {
+          "path": "analysis_results/phase3_yamamoto_native_motion_20261024_01/pitch_002/motion_curves.csv",
+          "sha256": "015761178543901b7f27ef9c7a19691027c11087a04701b08c244377be3f7c75"
+        },
+        "plot_ref": {
+          "path": "analysis_results/phase3_yamamoto_native_motion_20261024_01/pitch_002/motion_curves.png",
+          "sha256": "a5d093f2857cf01bcf94e734de5e7efa6e70f4e99f9f5eda9977b78283f1db43"
+        },
+        "ground_truth_ref": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/ground_truth/pitch_002/ground_truth.json",
+          "sha256": "2b682738812d78ef433027b7002ed3787d022eb288453ed157d91eaca74651c7"
+        },
+        "video_ref": {
+          "path": "input/yoshinobu_yamamoto/phase1_final/pitch_002.mp4",
+          "sha256": "b38258e682370349d085d0b43683f183afc632f682dc85b758604c9d1489f01a"
+        },
+        "overlay_ref": {
+          "path": "analysis_results/phase2_yamamoto_seeded_skeleton_20261023_01/pitch_002/rtmpose/pitch_002/overlay_native.mp4",
+          "sha256": "94baa41dd3632695970e42e31560b80ca79a08c6a56dbd9afeb32c66483cead5"
+        }
+      }
+    },
+    {
+      "pitch_id": "pitch_005",
+      "frame_count": 101,
+      "fps_fraction": "30/1",
+      "alignment_frame": 55,
+      "aligned_events": {
+        "preparation_start": {
+          "status": "uncertain",
+          "frame_index": null,
+          "frame_range": {
+            "start_frame": 0,
+            "end_frame": 0
+          },
+          "confidence": null,
+          "note": "HSU 原先表示「0就開始進入投球動作了」，並補充「就是已經要啟動了」。記錄第 0 格已準備啟動的片頭狀態；實際準備起點尚未明確定位，保留 uncertain 與第 0 格候選範圍。",
+          "frame_bounds": [
+            0,
+            0
+          ],
+          "marker_kind": "uncertain",
+          "time_bounds_sec": [
+            0.0,
+            0.0
+          ],
+          "angle_windows": {
+            "throwing_elbow": {
+              "status": "unavailable",
+              "total_frames": null,
+              "calculated_frames": null,
+              "missing_frames": null,
+              "degenerate_frames": null,
+              "min_deg": null,
+              "max_deg": null,
+              "usable_deg": null
+            },
+            "lead_knee": {
+              "status": "unavailable",
+              "total_frames": null,
+              "calculated_frames": null,
+              "missing_frames": null,
+              "degenerate_frames": null,
+              "min_deg": null,
+              "max_deg": null,
+              "usable_deg": null
+            }
+          },
+          "relative_frame_bounds": [
+            -55,
+            -55
+          ],
+          "relative_seconds_bounds": [
+            -1.8333333333333333,
+            -1.8333333333333333
+          ],
+          "relative_seconds_bounds_fraction": [
+            "-11/6",
+            "-11/6"
+          ]
+        },
+        "leg_lift": {
+          "status": "uncertain",
+          "frame_index": null,
+          "frame_range": {
+            "start_frame": 33,
+            "end_frame": 33
+          },
+          "confidence": null,
+          "note": "HSU 表示「33格應該是抬腳最高點」；保留第 33 格為不確定候選，未將「應該」改成確定判斷。",
+          "frame_bounds": [
+            33,
+            33
+          ],
+          "marker_kind": "uncertain",
+          "time_bounds_sec": [
+            1.1,
+            1.1
+          ],
+          "angle_windows": {
+            "throwing_elbow": {
+              "status": "unavailable",
+              "total_frames": null,
+              "calculated_frames": null,
+              "missing_frames": null,
+              "degenerate_frames": null,
+              "min_deg": null,
+              "max_deg": null,
+              "usable_deg": null
+            },
+            "lead_knee": {
+              "status": "unavailable",
+              "total_frames": null,
+              "calculated_frames": null,
+              "missing_frames": null,
+              "degenerate_frames": null,
+              "min_deg": null,
+              "max_deg": null,
+              "usable_deg": null
+            }
+          },
+          "relative_frame_bounds": [
+            -22,
+            -22
+          ],
+          "relative_seconds_bounds": [
+            -0.7333333333333333,
+            -0.7333333333333333
+          ],
+          "relative_seconds_bounds_fraction": [
+            "-11/15",
+            "-11/15"
+          ]
+        },
+        "foot_plant": {
+          "status": "annotated",
+          "frame_index": 55,
+          "confidence": null,
+          "note": "HSU 人工確認第 55 格為左腳第一次接觸地面；Codex 依授權轉錄。",
+          "frame_range": null,
+          "frame_bounds": [
+            55,
+            55
+          ],
+          "marker_kind": "exact",
+          "time_bounds_sec": [
+            1.8333333333333333,
+            1.8333333333333333
+          ],
+          "angle_windows": {
+            "throwing_elbow": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 173.52604403132776,
+              "max_deg": 173.52604403132776,
+              "usable_deg": null
+            },
+            "lead_knee": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 169.72444138935248,
+              "max_deg": 169.72444138935248,
+              "usable_deg": null
+            }
+          },
+          "relative_frame_bounds": [
+            0,
+            0
+          ],
+          "relative_seconds_bounds": [
+            0.0,
+            0.0
+          ],
+          "relative_seconds_bounds_fraction": [
+            "0",
+            "0"
+          ]
+        },
+        "approximate_release": {
+          "status": "annotated",
+          "frame_index": null,
+          "frame_range": {
+            "start_frame": 58,
+            "end_frame": 59
+          },
+          "confidence": null,
+          "note": "HSU 人工指出球在第 58–59 格出手，保留此範圍；Codex 依授權轉錄。",
+          "frame_bounds": [
+            58,
+            59
+          ],
+          "marker_kind": "range",
+          "time_bounds_sec": [
+            1.9333333333333333,
+            1.9666666666666666
+          ],
+          "angle_windows": {
+            "throwing_elbow": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 2,
+              "calculated_frames": 2,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 73.21234616867818,
+              "max_deg": 133.93677243982685,
+              "usable_deg": null
+            },
+            "lead_knee": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 2,
+              "calculated_frames": 2,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 174.5429263562725,
+              "max_deg": 178.80565281624567,
+              "usable_deg": null
+            }
+          },
+          "relative_frame_bounds": [
+            3,
+            4
+          ],
+          "relative_seconds_bounds": [
+            0.1,
+            0.13333333333333333
+          ],
+          "relative_seconds_bounds_fraction": [
+            "1/10",
+            "2/15"
+          ]
+        },
+        "follow_through_end": {
+          "status": "annotated",
+          "frame_index": 83,
+          "confidence": null,
+          "note": "HSU 人工指出第 83 格結束投球；Codex 依授權轉錄。",
+          "frame_range": null,
+          "frame_bounds": [
+            83,
+            83
+          ],
+          "marker_kind": "exact",
+          "time_bounds_sec": [
+            2.7666666666666666,
+            2.7666666666666666
+          ],
+          "angle_windows": {
+            "throwing_elbow": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 147.85703822918748,
+              "max_deg": 147.85703822918748,
+              "usable_deg": null
+            },
+            "lead_knee": {
+              "status": "descriptive_model_xy_window",
+              "total_frames": 1,
+              "calculated_frames": 1,
+              "missing_frames": 0,
+              "degenerate_frames": 0,
+              "min_deg": 168.61056018761238,
+              "max_deg": 168.61056018761238,
+              "usable_deg": null
+            }
+          },
+          "relative_frame_bounds": [
+            28,
+            28
+          ],
+          "relative_seconds_bounds": [
+            0.9333333333333333,
+            0.9333333333333333
+          ],
+          "relative_seconds_bounds_fraction": [
+            "14/15",
+            "14/15"
+          ]
+        }
+      },
+      "source_refs": {
+        "summary_ref": {
+          "path": "analysis_results/phase3_yamamoto_native_motion_20261024_01/pitch_005/motion_summary.json",
+          "sha256": "0e87ba05f3a50930364de5596669dcb44cdbfac474faedd9736c6e3d70a1ae48"
+        },
+        "curves_ref": {
+          "path": "analysis_results/phase3_yamamoto_native_motion_20261024_01/pitch_005/motion_curves.csv",
+          "sha256": "282ec645ff635b4a3b94d39722e7f71e9744798f0b4f51375c53eda518165c2d"
+        },
+        "plot_ref": {
+          "path": "analysis_results/phase3_yamamoto_native_motion_20261024_01/pitch_005/motion_curves.png",
+          "sha256": "8631ba5eb3e3526da211b2caf28585e5f9daec30ff8e675569577d2039e9cc88"
+        },
+        "ground_truth_ref": {
+          "path": "analysis_results/phase2_yamamoto_20260925_01/ground_truth/pitch_005/ground_truth.json",
+          "sha256": "885986e1e150bd343968898899cfda5f5457b55a0c244d4c95c3f68daf33a66a"
+        },
+        "video_ref": {
+          "path": "input/yoshinobu_yamamoto/phase1_final/pitch_005.mp4",
+          "sha256": "e289cb1159e5863583f85915214123d6afe03baa6f32ac6040040878093c873b"
+        },
+        "overlay_ref": {
+          "path": "analysis_results/phase2_yamamoto_seeded_skeleton_20261023_01/pitch_005/rtmpose/pitch_005/overlay_native.mp4",
+          "sha256": "85871e0279394d7cd842d1abfc0111e3ea3a965ec708b29d068251313f3fcff3"
+        }
+      }
+    }
+  ],
+  "alignment_summary_ref": {
+    "path": "analysis_results/phase3_yamamoto_exact_alignment_20261025_01/alignment/alignment_summary.json",
+    "sha256": "e1a0487672c1617180ca82b32c28b002411e2c0ea484423014a142c769d5bfd3"
+  },
+  "viewer_manifest_ref": {
+    "path": "analysis_results/phase3_yamamoto_exact_alignment_20261025_01/viewer/alignment_viewer_manifest.json",
+    "sha256": "188a5af4d3af709d06010fbc7e9c2bd45fde7cf602f27572b498c6e36e65c1c1"
+  },
+  "html_ref": {
+    "path": "analysis_results/phase3_yamamoto_exact_alignment_20261025_01/viewer/review_alignment.html",
+    "sha256": "9a0ad962bb537e3d2a4957c1347d9cebfe9a593091955c4beaf3f0c2a212be6c"
+  },
+  "entry_page_ref": {
+    "path": "analysis_results/phase3_yamamoto_exact_alignment_20261025_01/index.html",
+    "sha256": "530befccf4ff00c0d0aa21f79f612e693b2a42a983efbc41cdbf7e6bf90e757e"
+  },
+  "plot_refs": {
+    "throwing_elbow": {
+      "path": "analysis_results/phase3_yamamoto_exact_alignment_20261025_01/alignment/throwing_elbow_aligned.png",
+      "sha256": "1b891b38b88bcaac76ae74357b95b3a71cd670fe6bb9cba2de2255ef58d0840d"
+    },
+    "lead_knee": {
+      "path": "analysis_results/phase3_yamamoto_exact_alignment_20261025_01/alignment/lead_knee_aligned.png",
+      "sha256": "03b3ee58e372ef6032186f1973a74a9eb169656621e6c058886b3944fc68f443"
+    }
+  },
+  "report_ref": {
+    "path": "analysis_results/phase3_yamamoto_exact_alignment_20261025_01/alignment/report.md",
+    "sha256": "574bcb711f4188e4e36d14ba51d17bb4f278946fd68ebdb93ad53738010d2a9c"
+  },
+  "actual_mapping": {
+    "clips": 2,
+    "original_frame_roundtrips": 276,
+    "plotted_values_preserved": 552,
+    "source_frame_mapping_failures": 0,
+    "browser_or_DOM_used": false
+  },
+  "source_rows_preserved": 276,
+  "protected_files": 524,
+  "protected_sha256_changes": [],
+  "plots_visually_inspected": [
+    "throwing_elbow_aligned.png",
+    "lead_knee_aligned.png"
+  ],
+  "same_code_test_results_ref": {
+    "path": "analysis_results/phase3_ohtani_alignment_viewer_20261025_01/verified_suite/test_results.json",
+    "sha256": "027cd1b2d7dd72a9d77cd23f59430bd915002188d480f57a75449e901c14ab85"
+  },
+  "same_code_test_results": {
+    "passed": 1231,
+    "failed": 0,
+    "skipped": 2,
+    "rerun_this_delivery": false
+  },
+  "base_player_modified": false,
+  "samples_resampled": false,
+  "angle_values_recomputed": false,
+  "event_midpoints_selected": false,
+  "browser_interaction_verified": false,
+  "human_page_acceptance": "not_yet_recorded",
+  "pointwise_reliability": "unknown",
+  "usable_for_analysis": null,
+  "automatic_phase2_status": "NOT_PASSED",
+  "phase3_overall": "NOT_EVALUATED"
+}

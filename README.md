@@ -6,7 +6,12 @@
 本次收尾摘要見 [STATUS](docs/STATUS.md)；外部專案供片需求見
 [INPUT_REQUIREMENTS](docs/INPUT_REQUIREMENTS.md)。
 
-2026-10-25 最新：[大谷五球可點選對照頁](docs/phase3_ohtani_alignment_viewer_20261025.md)。
+2026-10-25 最新：[山本精確落地對齊與共同觀看入口](docs/phase3_yamamoto_exact_alignment_20261025.md)。
+沿用同一套工具完成山本002／005共276格的疊圖與回看頁；001／004保留落地範圍，啟用素材仍為四球。
+共同入口可分別開啟山本兩球對齊、山本四球事件與大谷五球對齊頁；沒有跨投手比較。
+無產品／測試碼變更，未重跑suite；最近相同程式碼1231 passed／0 failed／2 skipped。
+
+前段：[大谷五球可點選對照頁](docs/phase3_ohtani_alignment_viewer_20261025.md)。
 點選落地對齊曲線即可回看該球最近的原片影格，跨球切換等待目標來源載入；原播放器JS保持。
 1684格時間映射與3368個肘／膝角度核對完成，曲線保留缺值斷線與人工出手區間。
 實際瀏覽器操作尚待確認；本輪沒有新增人工接受紀錄。

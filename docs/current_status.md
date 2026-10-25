@@ -1,4 +1,4 @@
-# Current status — Ohtani aligned-curve source-frame viewer delivered; browser interaction pending
+# Current status — Same tools reused for exact Yamamoto anchors; separate-pitcher viewing index ready
 
 Updated: 2026-10-25 (Asia/Taipei)
 
@@ -13,7 +13,30 @@ gates, MediaPipe settings, interpolation and smoothing are unchanged. The approv
 optional subject-region constraint is described below; the default selector remains compatible.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-25 Aligned-curve source-frame viewer delivery
+## 2026-10-25 Yamamoto exact-anchor reuse and viewing index
+
+Reused the same existing alignment/viewer commands on Yamamoto002/005:276 source rows,
+30/1 FPS, exact human foot plants140/55. Source CSV fields compare equal;276 frame-time
+roundtrips and552 model-angle values are preserved. Two static plots were visually inspected.
+No product/test code changed, model inference, tracking replay or new human labels.
+All524 protected hashes unchanged. Latest same-code suite remains1231 passed/0 failed/2 skipped;
+no full-suite rerun for this configuration/data/document-only reuse.
+
+001 foot plant34–35 and004 foot plant65–66 remain ranges in the original four-clip event page.
+Neither a midpoint nor a new label is selected. The active cohort remains001/002/004/005;
+003 stays historical.005 preparation candidate0 and peak-lift candidate33 remain uncertain.
+002 release is+1–3frames (1/30–1/10seconds),005 is+3–4 (1/10–2/15); they touch at+3frames.
+Only events are consumed from historical GT; old pose-quality labels are not transferred.
+
+Output: `analysis_results/phase3_yamamoto_exact_alignment_20261025_01/`.
+Its index.html links separately to Yamamoto exact two-clip alignment, all four original
+event/curve clips, and Ohtani five-clip alignment. No cross-pitcher metric comparison.
+[Delivery and entry page](phase3_yamamoto_exact_alignment_20261025.md),
+[source receipt](dataset_selections/phase3_yamamoto_exact_alignment_20261025.json).
+No browser/DOM automation or new human-page acceptance. Existing unknown/null and overall
+phase states remain. Stop after saving, commit and origin push.
+
+## 2026-10-25 Aligned-curve source-frame viewer delivery (previous)
 
 Added review-native-motion-alignment from the existing bound event request. The page
 draws saved multi-clip curves relative to exact human foot plant; clicking a curve

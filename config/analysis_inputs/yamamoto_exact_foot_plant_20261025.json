@@ -1,0 +1,22 @@
+{
+  "schema_version": "native-motion-events-request-v1",
+  "pitcher_id": "yoshinobu_yamamoto",
+  "clips": [
+    {
+      "pitch_id": "pitch_002",
+      "motion_dir": "analysis_results/phase3_yamamoto_native_motion_20261024_01/pitch_002",
+      "ground_truth_ref": {
+        "path": "analysis_results/phase2_yamamoto_20260925_01/ground_truth/pitch_002/ground_truth.json",
+        "sha256": "2b682738812d78ef433027b7002ed3787d022eb288453ed157d91eaca74651c7"
+      }
+    },
+    {
+      "pitch_id": "pitch_005",
+      "motion_dir": "analysis_results/phase3_yamamoto_native_motion_20261024_01/pitch_005",
+      "ground_truth_ref": {
+        "path": "analysis_results/phase2_yamamoto_20260925_01/ground_truth/pitch_005/ground_truth.json",
+        "sha256": "885986e1e150bd343968898899cfda5f5457b55a0c244d4c95c3f68daf33a66a"
+      }
+    }
+  ]
+}
