@@ -6,7 +6,12 @@
 本次收尾摘要見 [STATUS](docs/STATUS.md)；外部專案供片需求見
 [INPUT_REQUIREMENTS](docs/INPUT_REQUIREMENTS.md)。
 
-2026-10-26 最新：[人工事件範圍與模型角度讀值](docs/phase3_event_angle_readout_20261026.md)。
+2026-10-26 最新：[事件角度讀值已接入正式報告](docs/phase3_event_readout_integration_20261026.md)。
+原事件比較指令會自動輸出單格／多格／未確認讀值、窗內跨度與缺失／退化數量，另附每球10列CSV。
+大谷5球、山本啟用4球已產生新版報告；既有720個視窗欄位與36段時距保持，骨架與GT不改。
+完整suite **1249 passed／0 failed／2 skipped**（含正式五球E2E），純Node **11 passed**。
+
+前段：[人工事件範圍與模型角度讀值](docs/phase3_event_angle_readout_20261026.md)。
 45筆事件形成90個關節視窗：60個單格敏感度留空、24個多格保留min–max／跨度、6個事件未確認保持空值。
 附來源格號、完整CSV與分投手圖表；跨度只描述模型XY讀值，沒有轉成可靠性分數。
 本輪無產品／測試碼變更，未重跑suite；最近相同程式碼1241 passed／0 failed／2 skipped。

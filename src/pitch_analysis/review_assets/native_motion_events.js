@@ -44,7 +44,20 @@
     if (!window || !window.total_frames) return "事件範圍未定；不推估角度";
     var values = window.min_deg === null || window.max_deg === null ? "未算出角度" :
       pairText([window.min_deg, window.max_deg], 1) + "°（模型XY）";
-    return values + "；計算 " + window.calculated_frames + "/" + window.total_frames +
+    var reading = "單格視窗；時間敏感度未評估";
+    if (window.total_frames > 1) {
+      var span = window.sample_span_deg;
+      if (span === undefined && window.calculated_frames >= 2 &&
+          Number.isFinite(window.min_deg) && Number.isFinite(window.max_deg)) span = window.max_deg-window.min_deg;
+      reading = "多格視窗；跨度未估";
+      if (typeof span === "number" && Number.isFinite(span) && window.calculated_frames >= 2) {
+        var complete = window.sample_span_scope === undefined ? window.calculated_frames === window.total_frames :
+          window.sample_span_scope === "complete_window";
+        reading = (complete ? "窗內模型跨度 " : "可計算樣本跨度 ") + span.toFixed(1) + "°" +
+          (complete ? "" : "（視窗不完整）");
+      }
+    }
+    return values + "；" + reading + "；計算 " + window.calculated_frames + "/" + window.total_frames +
       "，缺失 " + window.missing_frames + "，退化 " + window.degenerate_frames + "；可用性未知";
   }
 

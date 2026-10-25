@@ -1,0 +1,156 @@
+{
+  "schema_version": "phase3-event-readout-integration-delivery-v1",
+  "created_at_utc": "2026-10-25T21:54:40.629030+00:00",
+  "scope": "Additive event angle readouts in normal comparison JSON/CSV/Markdown/viewer",
+  "cohorts": {
+    "ohtani": {
+      "pitcher_id": "shohei_ohtani",
+      "clip_ids": [
+        "supplement_001",
+        "supplement_002",
+        "supplement_003",
+        "supplement_004",
+        "supplement_005"
+      ],
+      "clips": 5,
+      "source_frames": 1684,
+      "csv_rows": 50,
+      "original_comparison_ref": {
+        "path": "analysis_results/phase3_ohtani_event_timing_20261025_01/comparison/event_comparison.json",
+        "sha256": "28ff8553692b1b6851ffffaeacda855a7109e3dcbc5dcf36935b4e2699c656cc"
+      },
+      "comparison_ref": {
+        "path": "analysis_results/phase3_event_readout_integration_20261026_01/ohtani/event_comparison.json",
+        "sha256": "e80b04c1a0a9922619b7d9ba4214aaeae9486e06ab65ed90d09b8ce5203fea31"
+      },
+      "readouts_csv_ref": {
+        "path": "analysis_results/phase3_event_readout_integration_20261026_01/ohtani/event_angle_readouts.csv",
+        "sha256": "63620d2e2fa129a3c79ad235a750fb16b22130087a18a7d2a62691015b593a02"
+      },
+      "report_ref": {
+        "path": "analysis_results/phase3_event_readout_integration_20261026_01/ohtani/report.md",
+        "sha256": "c204e9fc05d32b5537c8a1ee9be06044a23a8022ec69a897040f4cd28bf867f2"
+      },
+      "viewer_ref": {
+        "path": "analysis_results/phase3_event_readout_integration_20261026_01/ohtani/viewer/review_motion_events.html",
+        "sha256": "0da21ccd50997ca57afbbcfc4989282a1e3588fc9f37c92a994bc98f0e926fed"
+      },
+      "original_timing_csv_byte_equal": true
+    },
+    "yamamoto": {
+      "pitcher_id": "yoshinobu_yamamoto",
+      "clip_ids": [
+        "pitch_001",
+        "pitch_002",
+        "pitch_004",
+        "pitch_005"
+      ],
+      "clips": 4,
+      "source_frames": 477,
+      "csv_rows": 40,
+      "original_comparison_ref": {
+        "path": "analysis_results/phase3_yamamoto_event_timing_20261024_01/comparison/event_comparison.json",
+        "sha256": "7861287c9d704ac585a31c95020be06112a2ff0f314ef63a9cd9eccd6a9f9c6a"
+      },
+      "comparison_ref": {
+        "path": "analysis_results/phase3_event_readout_integration_20261026_01/yamamoto/event_comparison.json",
+        "sha256": "0990b6c311904befe1e90e3c6d9ac084a07163d77133714c03cebd2ce93a9686"
+      },
+      "readouts_csv_ref": {
+        "path": "analysis_results/phase3_event_readout_integration_20261026_01/yamamoto/event_angle_readouts.csv",
+        "sha256": "faf41e4d8032c7bbdd536ad73e693877914e09b8b4ad2dd417962d9e417010fa"
+      },
+      "report_ref": {
+        "path": "analysis_results/phase3_event_readout_integration_20261026_01/yamamoto/report.md",
+        "sha256": "5acceb6708795d19e3a74fd3d93e810f305e022bf7b7c383238fdab58bca5422"
+      },
+      "viewer_ref": {
+        "path": "analysis_results/phase3_event_readout_integration_20261026_01/yamamoto/viewer/review_motion_events.html",
+        "sha256": "e096d0e5a7a72766f70f03faa548725d9a74a3790f7a9bf81f36a01d2d7066d5"
+      },
+      "original_timing_csv_byte_equal": true
+    }
+  },
+  "source_frames": 2161,
+  "events": 45,
+  "joint_windows": 90,
+  "reading_kinds": {
+    "single_frame": 60,
+    "multiple_frames": 24,
+    "event_unresolved": 6
+  },
+  "original_window_fields_unchanged": 720,
+  "original_timings_unchanged": 36,
+  "protected_source_files": 545,
+  "protected_sha_changes": [],
+  "protected_snapshot_ref": {
+    "path": "analysis_results/phase3_event_readout_integration_20261026_01/protected_before.json",
+    "sha256": "89e76f883ada5048bf171a5d3a04d2d9d53f386161b8459924f584fcf0f1113c"
+  },
+  "tests": {
+    "python": {
+      "created_at_utc": "2026-10-25T17:51:42.665114+00:00",
+      "tests_run": 1251,
+      "passed": 1249,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 2,
+      "skipped_reasons": [
+        {
+          "test": "test_dangling_snapshot_file_link_cannot_create_external_target_when_supported (test_handoff_paths.HandoffPathTests.test_dangling_snapshot_file_link_cannot_create_external_target_when_supported)",
+          "reason": "file symlink creation is unavailable"
+        },
+        {
+          "test": "test_source_symlink_outside_candidate_is_rejected_when_supported (test_handoff_review.HandoffReviewTests.test_source_symlink_outside_candidate_is_rejected_when_supported)",
+          "reason": "creating symbolic links is unavailable"
+        }
+      ],
+      "elapsed_seconds": 135.406,
+      "formal_five_video_e2e_enabled": true,
+      "real_rtmpose_calls": 0,
+      "real_detector_calls": 0,
+      "successful": true
+    },
+    "python_results_ref": {
+      "path": "analysis_results/phase3_event_readout_integration_20261026_01/verified_suite/test_results.json",
+      "sha256": "041fcffe3bc75f3700f7d36f97102ca92c5df5c37d9b306261562abbf0ffb2a5"
+    },
+    "node_command": "node --test tests/test_native_motion_viewer.js tests/test_native_motion_events.js tests/test_native_motion_alignment.js",
+    "node_test_runner": {
+      "passed": 11,
+      "failed": 0,
+      "skipped": 0
+    },
+    "pure_event_helper_assertions": 34,
+    "new_python_tests": 8,
+    "new_event_helper_assertions": 16,
+    "browser_or_DOM_used": false
+  },
+  "independent_read_only_audit": {
+    "result": "passed",
+    "csv_rows": 90,
+    "old_window_fields": 720,
+    "old_nulls": 126,
+    "timings": 36,
+    "clip_source_refs_unchanged": 59,
+    "protected_hashes_unchanged": 545
+  },
+  "new_inference_calls": 0,
+  "new_tracking_replays": 0,
+  "new_ground_truth_labels": 0,
+  "pose_tracking_core_changed": false,
+  "base_player_js_changed": false,
+  "pointwise_reliability": "unknown",
+  "usable_for_analysis": null,
+  "browser_interaction_verified": false,
+  "new_human_page_acceptance": false,
+  "phase1_status": "PASSED",
+  "phase2_automatic_reliability": "NOT_PASSED",
+  "phase3_overall_status": "NOT_EVALUATED",
+  "limitations": [
+    "Model XY spans do not establish localization accuracy, real 3D angles or motion quality",
+    "Single-frame sensitivity is unassessed; unresolved candidates are not used",
+    "Partial windows describe calculated samples only, not the complete window",
+    "Two full-suite skips are unavailable Windows file-symlink capabilities"
+  ]
+}

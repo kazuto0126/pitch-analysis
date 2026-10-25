@@ -1,4 +1,4 @@
-# Current status — Event-window angle readout retains frame-selection uncertainty
+# Current status — Event-window readouts integrated into normal reports
 
 Updated: 2026-10-26 (Asia/Taipei)
 
@@ -13,7 +13,32 @@ gates, MediaPipe settings, interpolation and smoothing are unchanged. The approv
 optional subject-region constraint is described below; the default selector remains compatible.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-26 Event-window angle readout
+## 2026-10-26 Event-window readout integration
+
+The existing compare-native-motion-events command now emits event angle tables in
+report.md and event_angle_readouts.csv, plus explicit readout wording in the viewer.
+Single-frame windows retain null sensitivity spans. Multiframe spans require at least
+two calculated samples; partial windows describe calculated samples only and retain
+the full denominator and missing/degenerate counts. Unresolved events do not use candidates.
+
+Fresh Ohtani5 and active Yamamoto4 outputs cover2161 frames and90 joint windows:
+60 single,24 multiframe,6 unresolved. All720 original window fields and36 timings
+are unchanged, with byte-identical timing CSVs. Independent read-only audit confirmed
+the90 CSV rows and null semantics; all545 protected source hashes are unchanged.
+No new pose/tracking calls, labels, thresholds or core changes; base player JS unchanged.
+The original raw/GT, prior outputs and portable ZIP remain intact.
+
+Added8 Python tests and16 pure event-helper assertions (34 total). Full Python suite:
+1251 run,1249 passed/0 failed/2 skipped, including the formal five-video MediaPipe E2E.
+Both skips are unavailable Windows file-symlink capabilities. Pure Node runner:
+11 passed/0 failed/0 skipped, without browser or DOM. New browser interaction and
+human acceptance are not claimed. Pointwise unknown/null and phase statuses remain.
+Output: `analysis_results/phase3_event_readout_integration_20261026_01/`.
+[Result and usage](phase3_event_readout_integration_20261026.md),
+[source and test receipt](dataset_selections/phase3_event_readout_integration_20261026.json).
+Stop after documentation, commit and origin push.
+
+## 2026-10-26 Event-window angle readout (previous)
 
 Read saved curves at the45 existing events, two joints each:90 joint windows.60 single-frame
 windows retain the model value with sensitivity span null,24 confirmed multiframe windows

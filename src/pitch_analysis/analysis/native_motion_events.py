@@ -28,7 +28,8 @@ TIMING_LABELS = dict(zip(TIMING_PAIRS, ("啟動→最高抬腿", "最高抬腿�
 def _angle_window(event: dict, rows: list[dict], role: str) -> dict:
     result = {"status": "unavailable", "total_frames": None, "calculated_frames": None,
               "missing_frames": None, "degenerate_frames": None, "min_deg": None,
-              "max_deg": None, "usable_deg": None}
+              "max_deg": None, "usable_deg": None, "reading_kind": "event_unresolved",
+              "sample_span_deg": None, "sample_span_scope": "not_assessable"}
     if event["status"] != "annotated" or event["frame_bounds"] is None:
         return result
     start, end = event["frame_bounds"]
@@ -39,7 +40,11 @@ def _angle_window(event: dict, rows: list[dict], role: str) -> dict:
     result.update(status="descriptive_model_xy_window", total_frames=len(window),
                   calculated_frames=len(values), missing_frames=statuses.count("missing_coordinates"),
                   degenerate_frames=statuses.count("degenerate_geometry"),
-                  min_deg=min(values) if values else None, max_deg=max(values) if values else None)
+                  min_deg=min(values) if values else None, max_deg=max(values) if values else None,
+                  reading_kind="single_frame" if len(window) == 1 else "multiple_frames")
+    if len(window) > 1 and len(values) >= 2:
+        result.update(sample_span_deg=max(values)-min(values),
+                      sample_span_scope="complete_window" if len(values) == len(window) else "calculated_samples_only")
     return result
 
 
@@ -161,6 +166,17 @@ def _review_scope(root: Path, entry: dict, gt: dict, video_ref: dict) -> dict:
             "reviewer": provenance["reviewer"], "recorded_at_utc": recorded}
 
 
+def _readout_text(window: dict) -> str:
+    if window["total_frames"] is None:
+        return "事件未確認；未估角度"
+    if window["reading_kind"] == "single_frame":
+        return "單格視窗；時間敏感度未評估"
+    if window["sample_span_deg"] is None:
+        return "多格視窗；跨度未估"
+    scope = "窗內模型跨度" if window["sample_span_scope"] == "complete_window" else "可計算樣本跨度（視窗不完整）"
+    return f"{scope} {window['sample_span_deg']:.1f}°；可用性未知"
+
+
 def _report(clips: list[dict]) -> str:
     lines = ["# 同投手人工事件與2D曲線時序摘要", "",
              "沿用既有人工事件及保存的模型XY曲線；沒有重新推論、猜事件或修改人工標註。",
@@ -178,6 +194,18 @@ def _report(clips: list[dict]) -> str:
         for name, event in clip["events"].items():
             lines.append(f"| {EVENT_LABELS[name]} | {event['status']} | {_bounds_text(event['frame_bounds'])} | "
                          f"{_bounds_text(event['time_bounds_sec'], decimals=3)} |")
+        lines += ["", "#### 事件角度讀值（模型XY）", "",
+                  "| 事件 | 關節 | min–max（度） | 讀值範圍 | 計算／總格數 | 缺失／退化 |",
+                  "|---|---|---:|---|---|---|"]
+        for name, event in clip["events"].items():
+            for role, label in (("throwing_elbow", "投球肘"), ("lead_knee", "前導膝")):
+                window = event["angle_windows"][role]
+                values = [window["min_deg"], window["max_deg"]]
+                text = _bounds_text(values, decimals=1) if all(value is not None for value in values) else "—"
+                count = f"{window['calculated_frames']}/{window['total_frames']}" if window["total_frames"] is not None else "—"
+                missing = f"{window['missing_frames']}/{window['degenerate_frames']}" if window["total_frames"] is not None else "—"
+                lines.append(f"| {EVENT_LABELS[name]} | {label} | {text} | {_readout_text(window)} | {count} | {missing} |")
+        lines.append("")
         for name, event in clip["events"].items():
             note = str(event.get("note", "")).replace("\n", " ")
             if note:
@@ -190,6 +218,7 @@ def _report(clips: list[dict]) -> str:
     lines += ["## 解讀限制", "",
               "事件取自同一原片的ground-truth-v1，只讀事件，不把舊模型關節品質標籤套到新骨架。",
               "事件區間的角度最小／最大值包含所有可計算模型樣本；缺值與退化樣本另計，沒有品質篩選。",
+              "單格視窗不估時間敏感度；多格跨度只是模型讀值變動，部分視窗只描述可計算樣本，不視為完整範圍。",
               "這是2D模型投影與逐球節奏描述，沒有動作品質評分、3D推論、跨投手比較或精確出手對齊。",
               "逐點可靠性unknown，可用角度／usable_for_analysis仍null；不改Phase2或Phase3整體驗收。", ""]
     return "\n".join(lines)
@@ -274,6 +303,22 @@ def write_event_comparison(root: str | Path, config_path: str | Path, output: st
                 frames, seconds = item["frame_bounds"] or [None, None], item["seconds_bounds"] or [None, None]
                 writer.writerow(dict(zip(fields, (clip["pitch_id"], clip["fps_fraction"], key, item["status"],
                                                   *frames, *seconds, item["reason"]), strict=True)))
+    readout_fields = ("pitch_id", "event", "joint", "event_status", "frame_start", "frame_end",
+                      "total_frames", "calculated_frames", "missing_frames", "degenerate_frames",
+                      "min_deg", "max_deg", "reading_kind", "sample_span_deg", "sample_span_scope",
+                      "pointwise_reliability", "usable_for_analysis", "confidence", "note")
+    with (output / "event_angle_readouts.csv").open("x", encoding="utf-8-sig", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=readout_fields)
+        writer.writeheader()
+        for clip in clips:
+            for name, event in clip["events"].items():
+                for role, window in event["angle_windows"].items():
+                    bounds = event["frame_bounds"] or [None, None]
+                    writer.writerow({"pitch_id": clip["pitch_id"], "event": name, "joint": role,
+                                     "event_status": event["status"], "frame_start": bounds[0], "frame_end": bounds[1],
+                                     **{key: window[key] for key in readout_fields[6:15]},
+                                     "pointwise_reliability": "unknown", "usable_for_analysis": None,
+                                     "confidence": event.get("confidence"), "note": event.get("note", "")})
     with (output / "report.md").open("x", encoding="utf-8", newline="\n") as stream:
         stream.write(_report(clips))
     for ref in source_refs:
@@ -285,6 +330,7 @@ def write_event_comparison(root: str | Path, config_path: str | Path, output: st
                         for clip in clips],
               "source_refs": {"request_ref": loaded["request_ref"]}, "viewer": viewer,
               "artifacts": {"timing_csv_ref": reference(root, output / "event_timing.csv"),
+                            "angle_readouts_csv_ref": reference(root, output / "event_angle_readouts.csv"),
                             "report_ref": reference(root, output / "report.md")},
               "angle_values_recomputed": False, "event_midpoints_selected": False,
               "new_inference_calls": 0, "new_tracking_replays": 0, "new_ground_truth_labels": 0,

@@ -62,11 +62,25 @@ pitch-analysis compare-native-motion-events `
 完整視窗分母保留，不補點、不平滑、不依模型分數刪除樣本；不可計算時角度仍空值。
 這些是模型2D投影的視窗描述，不是人體角度真值、校準精度或動作品質分數。
 
+事件報告、觀看頁與CSV會區分以下讀值：
+
+| `reading_kind` | 讀值方式 | `sample_span_deg`／`sample_span_scope` |
+|---|---|---|
+| `single_frame` | 已確認的單格視窗，保留當格角度；時間敏感度未評估 | null／`not_assessable` |
+| `multiple_frames` | 多格視窗，至少兩個可計算樣本才列max−min | 全部可算為`complete_window`；有缺值為`calculated_samples_only` |
+| `event_unresolved` | 人工不確定或不可觀測，候選影格不參與角度計算 | null／`not_assessable` |
+
+多格只有零或一個可計算樣本時，跨度同樣為null／`not_assessable`。
+部分視窗顯示「可計算樣本跨度」，不能當成完整事件範圍；缺失／退化格數與完整分母仍列出。
+單格不填0度跨度；多格實際算得0度也只描述模型讀值，不能推定關節可靠。
+原事件status、confidence、note、min/max與可用性判定保持。
+
 ## 輸出
 
 - `event_comparison.json`：逐球事件、時距、事件角度視窗、reviewer與來源／產物SHA。
 - `event_timing.csv`：每球四筆時距，包含不可計算的項目與原因。
-- `report.md`：可閱讀的逐球時序摘要。
+- `event_angle_readouts.csv`：每球五事件×兩關節共10列，含影格範圍、原人工status／confidence／note、min/max、完整格數與缺值／退化數，以及上述三個新增讀值欄位。null在CSV中為空白；可靠性維持unknown、usable_for_analysis為空白。
+- `report.md`：逐球時序與事件角度讀值表，說明單格、多格及未確認事件。
 - `viewer/review_motion_events.html`：影片、原始曲線、事件線／色帶與同投手時距表。
 - `viewer/event_viewer_manifest.json`：觀看頁、原播放JS與事件JS的SHA及檢查範圍。
 
@@ -79,6 +93,7 @@ pitch-analysis compare-native-motion-events `
 
 [山本四球實際結果](phase3_yamamoto_event_timing_20261024.md)。
 [大谷五球實際結果](phase3_ohtani_event_timing_20261025.md)。
+[正式報告讀值整合與新版輸出](phase3_event_readout_integration_20261026.md)。
 
 ## 以前腳落地對齊曲線
 

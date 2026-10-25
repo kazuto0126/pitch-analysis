@@ -1,11 +1,23 @@
 # 進度摘要
 
-更新：2026-10-26（台灣）。[完整狀態](current_status.md)；[事件角度讀值](phase3_event_angle_readout_20261026.md)。
+更新：2026-10-26（台灣）。[完整狀態](current_status.md)；[正式報告讀值整合](phase3_event_readout_integration_20261026.md)。
 
 **Phase 1 = PASSED；Native interface integration = PASSED；Phase 2 自動可靠性仍 NOT PASSED。**
 **Phase3第一個描述性曲線交付 = COMPLETE；Phase3整體尚未驗收。**
 
-## 最新：事件角度讀值保留影格選擇的不確定性
+## 最新：正式事件報告自動列出角度讀值
+
+原指令現在輸出Markdown角度表、CSV與觀看頁讀值，明確區分單格、多格及事件未確認。
+單格跨度為null；多格若有缺值只描述可計算樣本，不當作完整視窗；完整分母與缺失／退化數量保留。
+大谷5／山本啟用4球共90窗：60單格、24多格、6未確認；舊720個視窗欄位及36段時距保持。
+545份受保護來源SHA未變；沒有新推論／GT或pose、tracking、門檻改動，可靠性仍unknown／usable null。
+新增8項Python測試與16項事件helper斷言；完整suite **1249 passed／0 failed／2 skipped**，含正式五球E2E。
+兩項跳過為Windows檔案符號連結能力不足；另純Node **11 passed／0 failed／0 skipped**。
+輸出：`analysis_results/phase3_event_readout_integration_20261026_01/`，新頁實際瀏覽器操作尚未驗證。
+[結果與輸出連結](phase3_event_readout_integration_20261026.md)；[來源與測試紀錄](dataset_selections/phase3_event_readout_integration_20261026.json)。
+本輪收尾後停止，不追加功能或更改Phase整體結論。
+
+## 前段：事件角度讀值保留影格選擇的不確定性
 
 45事件×2關節共90窗：60單格只顯示當格值、敏感度留空；24多格保留min–max與跨度；6未確認事件不取候選角度。
 例：山本005出手58–59的肘模型XY角73.2–133.9°，窗內跨度60.7°；不據此判定真實動作、定位誤差或可靠性。
