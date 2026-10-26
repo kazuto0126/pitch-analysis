@@ -14,6 +14,7 @@ Phase 1 PASSED；原生資料介面接入PASSED；**Phase 2自動可靠性NOT PA
 
 | 要做的事 | 入口 |
 |---|---|
+| 看第一份單投手動作特徵草案 | [大谷五球：可描述差異、選格影響與資料限制](docs/profiles/shohei_ohtani_descriptive_v1.md) |
 | 查看目前結果、解讀限制與下一步 | [動作描述第一版](docs/MOTION_ANALYSIS_V1.md) |
 | 對照目前狀態與歷史進度 | [STATUS](docs/STATUS.md)／[詳細歷史紀錄](docs/current_status.md) |
 | 準備新影片或交付素材 | [輸入需求](docs/INPUT_REQUIREMENTS.md)／[交付資料夾讀取器](docs/handoff_reader.md) |
@@ -142,7 +143,7 @@ provisional references；它不是目前已接受原生骨架九球的資料集�
 
 ## 接續開發
 
-目前九球的描述性第一版已收束。下一個工作單位是使用現有大谷五球的單投手motion profile草案：
-說明哪些階段差異在合法人工事件選格下仍成立、哪些受選格影響，附原片查核位置。
-具體完成條件與限制集中於[第一版與下一步](docs/MOTION_ANALYSIS_V1.md)。
-Phase 2自動可靠性仍NOT PASSED，Phase 3整體尚未驗收；本次文件整理未開始新功能。
+目前九球的描述性第一版已收束；[大谷五球motion profile草案](docs/profiles/shohei_ohtani_descriptive_v1.md)
+已說明哪些階段差異在合法人工事件選格下仍成立、哪些受選格影響，並附原片查核位置。
+先查看草案能否回答分析問題，再決定山本套用及後續比較範圍；不再把相同讀值拆成新的報表交付。
+Phase 2自動可靠性仍NOT PASSED，Phase 3整體尚未驗收。範圍見[第一版與後續工作](docs/MOTION_ANALYSIS_V1.md)。

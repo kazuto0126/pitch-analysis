@@ -1,4 +1,4 @@
-# Current status — Descriptive motion v1 delivery consolidated
+# Current status — Ohtani same-pitcher descriptive profile draft delivered
 
 Updated: 2026-10-26 (Asia/Taipei)
 
@@ -7,15 +7,40 @@ Updated: 2026-10-26 (Asia/Taipei)
 **Phase 2 evaluation = COMPLETE; Phase 2 = NOT PASSED (automatic reliability degraded).**
 **User-authorized Phase3 first descriptive motion delivery = COMPLETE; overall Phase3 NOT EVALUATED.**
 
-The current deliverable is the descriptive motion v1 described in
-[MOTION_ANALYSIS_V1](MOTION_ANALYSIS_V1.md). It covers the accepted native skeletons
+The current deliverable includes the first [Ohtani descriptive profile draft](profiles/shohei_ohtani_descriptive_v1.md)
+and the descriptive motion v1 described in [MOTION_ANALYSIS_V1](MOTION_ANALYSIS_V1.md).
+The underlying delivery covers the accepted native skeletons
 for Ohtani5 and active Yamamoto4; dated sections below preserve prior scope and results.
 Automatic reliability remains unaccepted. Existing acceptance thresholds, confidence
 gates, MediaPipe settings, interpolation and smoothing are unchanged. The approved
 optional subject-region constraint is described below; the default selector remains compatible.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-26 Descriptive v1 review and main-route documentation
+## 2026-10-26 Ohtani same-pitcher descriptive profile draft
+
+The draft answers the planned question using the existing five clips: which stage
+differences survive all legal manual-event frame choices, and which depend on those
+choices? It combines all20 timings, the40 elbow/knee endpoint summaries, existing aligned
+curves and source-frame review links. No new numeric feature, inference or manual label.
+
+The document identifies the longer preparation-to-leg-lift intervals in001/004, the
+shorter leg-lift-to-foot-plant interval in005, and the overlapping/touching intervals
+that do not establish strict ordering. It retains common model endpoint signs and
+exceptions, including005 knee sign ambiguity and003 negative plant-to-release knee
+change. Relations are checked in integer frame bounds, not rounded display seconds.
+
+It explicitly distinguishes this sample's descriptive observations, frame-choice
+sensitivity and insufficient information. Pitch type/session metadata is missing;
+pointwise quality and 3D interpretation remain unestablished. This is a readable draft,
+not a formal pitcher-profile-v1 reference or phase-wide acceptance. Read the draft
+before deciding Yamamoto rollout or cross-pitcher scope; neither is started here.
+
+Documentation and interpretation only: unchanged product code, pose/tracking, raw/GT,
+gates and unknown/null states. Local links and source-backed tables are checked; no
+rerun of unchanged pipeline/full suite. Latest code suite remains1268 passed/0 failed/
+2 skipped, including formal five-video E2E. Commit and push this bounded delivery.
+
+## 2026-10-26 Descriptive v1 review and main-route documentation (previous)
 
 Reviewed the nine saved curve plots, both current four-interval reports, saved summaries
 and release-frame CSV readouts. All2161 frames have calculable elbow/knee model angles,
