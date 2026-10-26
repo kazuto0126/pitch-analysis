@@ -1,4 +1,4 @@
-# Current status — Ohtani same-pitcher descriptive profile draft delivered
+# Current status — Two same-pitcher descriptive profile drafts delivered
 
 Updated: 2026-10-26 (Asia/Taipei)
 
@@ -7,7 +7,8 @@ Updated: 2026-10-26 (Asia/Taipei)
 **Phase 2 evaluation = COMPLETE; Phase 2 = NOT PASSED (automatic reliability degraded).**
 **User-authorized Phase3 first descriptive motion delivery = COMPLETE; overall Phase3 NOT EVALUATED.**
 
-The current deliverable includes the first [Ohtani descriptive profile draft](profiles/shohei_ohtani_descriptive_v1.md)
+The current deliverable includes separate [Ohtani](profiles/shohei_ohtani_descriptive_v1.md)
+and [Yamamoto](profiles/yoshinobu_yamamoto_descriptive_v1.md) descriptive profile drafts,
 and the descriptive motion v1 described in [MOTION_ANALYSIS_V1](MOTION_ANALYSIS_V1.md).
 The underlying delivery covers the accepted native skeletons
 for Ohtani5 and active Yamamoto4; dated sections below preserve prior scope and results.
@@ -16,7 +17,30 @@ gates, MediaPipe settings, interpolation and smoothing are unchanged. The approv
 optional subject-region constraint is described below; the default selector remains compatible.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-26 Ohtani same-pitcher descriptive profile draft
+## 2026-10-26 Yamamoto same-pitcher descriptive profile draft
+
+Applied the same bounded narrative scope to active Yamamoto001/002/004/005:477 frames,
+20 existing events,16 stage timings and32 joint summaries. Of these,17 events have
+annotated bounds,13 timings are descriptive and26 joint summaries are calculable;
+3 timings/6 joint summaries retain unresolved events. Historical003 remains excluded.
+
+The draft preserves the shorter plant-to-release timing in002 compared with001/004,
+and the shorter release-to-follow-through timing in001/004 compared with002/005.
+All available leg-lift-to-plant ranges overlap/touch, so no strict ordering is asserted.
+005 candidate preparation0/leg-lift33 remain uncertain and are not used for timing.
+The001 knee release-to-follow-through interval crosses zero at full precision
+(-0.04060588 to+6.27883484 degrees), despite the former rounded display of-0.0.
+005 elbow endpoint signs are opposite to the other clips in the last two intervals;
+no anatomical reversal or model-error conclusion is inferred from that observation.
+
+The two same-pitcher descriptive drafts are delivered with original-frame review
+links, known limitations and separate source lists. No cross-pitcher comparison,
+new features, inference, labels, thresholds or core changes. Local links and
+source-backed tables are checked; unchanged product suite is not rerun. Latest
+code suite remains1268 passed/0 failed/2 skipped, including formal five-video E2E.
+Phase-wide acceptance and original raw/GT states remain unchanged.
+
+## 2026-10-26 Ohtani same-pitcher descriptive profile draft (previous)
 
 The draft answers the planned question using the existing five clips: which stage
 differences survive all legal manual-event frame choices, and which depend on those

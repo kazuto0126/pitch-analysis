@@ -5,7 +5,19 @@
 **Phase 1 = PASSED；Native interface integration = PASSED；Phase 2 自動可靠性仍 NOT PASSED。**
 **Phase3第一個描述性曲線交付 = COMPLETE；Phase3整體尚未驗收。**
 
-## 目前：大谷五球motion profile草案已交付
+## 目前：兩份單投手motion profile草案已交付
+
+[山本四球草案](profiles/yoshinobu_yamamoto_descriptive_v1.md)已完成，與
+[大谷五球草案](profiles/shohei_ohtani_descriptive_v1.md)分開呈現各自的時序關係與模型端點變化。
+山本002落地→出手短於001／004；001／004出手→收尾短於002／005，均在既有人工範圍下成立。
+最高抬腿→落地的三球已確認範圍互相重疊，不能嚴格排序；005前段兩事件仍未確認，三段時距及六筆關節摘要保留空值。
+001膝出手→收尾的原界線−0.0406°至+6.2788°跨0，沒有因顯示為−0.0而改判方向；005肘的例外也不解讀成人體反向或標錯。
+
+本批兩份單投手描述草案已交付，附事件格、原片／曲線與人工來源。
+本輪僅解讀既有資料及更新文件，沒有改產品程式、重跑模型／suite、新增GT或跨投手評分。
+最新產品程式測試仍為**1268 passed／0 failed／2 skipped**；Phase整體狀態保持。
+
+## 前段：大谷五球motion profile草案
 
 [單投手草案](profiles/shohei_ohtani_descriptive_v1.md)已整合現有四段時距、兩關節模型端點變化、
 落地對齊曲線、事件格號及原片回看入口。001／004前段時距較長、005抬腿→落地較短的關係，
@@ -13,7 +25,7 @@
 未依模型讀值宣稱人體角度真值、整體穩定度或動作品質；metadata球種未提供，不能按球種解釋差異。
 這是本批可閱讀的分析草案，不是正式reference／`pitcher-profile-v1`輸出，也不是Phase整體通過。
 本輪只有文件與既有結果解讀，未改產品程式、重跑模型／suite或新增標註。
-最新產品程式測試仍為**1268 passed／0 failed／2 skipped**。先閱讀此草案，再決定後續工作。
+最新產品程式測試仍為**1268 passed／0 failed／2 skipped**；後續山本套用已於上列交付完成。
 
 ## 前段：投球動作描述第一版已收束
 
