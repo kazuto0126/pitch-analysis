@@ -1,4 +1,4 @@
-# Current status — Reusable two-pitcher manual-event timing comparison
+# Current status — Source-frame-linked two-player timing review
 
 Updated: 2026-10-26 (Asia/Taipei)
 
@@ -7,7 +7,7 @@ Updated: 2026-10-26 (Asia/Taipei)
 **Phase 2 evaluation = COMPLETE; Phase 2 = NOT PASSED (automatic reliability degraded).**
 **User-authorized Phase3 first descriptive motion delivery = COMPLETE; overall Phase3 NOT EVALUATED.**
 
-The current deliverable includes [manual-event timing comparison](native_timing_comparison.md),
+The current deliverable includes [manual-event timing comparison and two-player source review](native_timing_comparison.md),
 separate [Ohtani](profiles/shohei_ohtani_descriptive_v1.md)
 and [Yamamoto](profiles/yoshinobu_yamamoto_descriptive_v1.md) descriptive profile drafts,
 and the descriptive motion v1 described in [MOTION_ANALYSIS_V1](MOTION_ANALYSIS_V1.md).
@@ -18,7 +18,37 @@ gates, MediaPipe settings, interpolation and smoothing are unchanged. The approv
 optional subject-region constraint is described below; the default selector remains compatible.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-26 Reusable two-pitcher manual timing comparison
+## 2026-10-26 Two-player source-frame review for saved timing pairs
+
+Added review-native-timing and a separate viewer builder. The existing comparison
+and bound source reports are verified again; altered pairs/cohorts or existing
+outputs are rejected. Four stage choices and the two clip selectors expose the
+same80 saved pairs (65 descriptive,15 unresolved), without modifying timing data.
+
+Each clip uses its own page and the unchanged native_motion_viewer.js. Two iframes
+play independently at their native FPS. Confirmed event lower/upper bounds become
+explicit source-frame buttons; uncertain/unobservable events do not acquire seek
+buttons. A thin hash adapter waits for loaded metadata, keeps the latest request,
+supports repeated requests to the same frame and refuses out-of-range hashes.
+It invokes the old seek control and does not claim that a requested frame has
+already been presented. No time warp, joint interpolation, new inference or GT.
+
+Actual delivery:9 source pages/2161 rows,80 identical saved comparisons,15 null
+pair differences and3 unresolved events retained. Original player JS is byte-
+identical. Entry:`analysis_results/phase3_manual_timing_viewer_20261026_01/review_timing.html`.
+Browser playback/interaction was not inspected; simulated-DOM and pure Node tests
+are software checks, not human overlay acceptance or new ground truth.
+
+Added6 Python tests and7 Node tests. Full Python1291 tests:1281 passed/0 failed/
+10 skipped initially;8 junction capability cases rerun outside the sandbox all
+passed. Unique aggregate1289 passed/0 failed/2 skipped, including formal five-video
+E2E. Remaining skips are Windows file-symlink limits. Node18 passed/0 failed, plus
+34 existing event-helper assertions. Raw/GT, adopted skeleton method, thresholds
+and phase-wide acceptance remain unchanged.
+[Usage](native_timing_comparison.md),
+[versioned source/test evidence](dataset_selections/phase3_manual_timing_viewer_20261026.json).
+
+## 2026-10-26 Reusable two-pitcher manual timing comparison (previous)
 
 Added the independent compare-native-timing CLI and native_timing_comparison module.
 Two saved single-pitcher reports are rechecked through their bound request, source

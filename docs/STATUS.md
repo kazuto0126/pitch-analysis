@@ -5,7 +5,20 @@
 **Phase 1 = PASSED；Native interface integration = PASSED；Phase 2 自動可靠性仍 NOT PASSED。**
 **Phase3第一個描述性曲線交付 = COMPLETE；Phase3整體尚未驗收。**
 
-## 目前：可重跑的兩投手人工事件時距對照
+## 目前：時距差值已接上雙側原片影格回看
+
+新增[review-native-timing](native_timing_comparison.md#直接從差值回看兩側影片)，可選區段、A／B球，
+查看原差值後用已確認事件界線定位。兩側各用獨立原播放器，保留原FPS／格號；範圍分下界／上界，未知事件不自動定位。
+原播放器JS逐bytes沿用，九球2161格、80組對照（65可比／15未定）及三個未確認事件保持。
+零新推論／GT；既有骨架、時距比較、門檻與原始資料保持。
+
+新增六項Python與七項Node測試。完整Python suite1291項，含八項junction環境案例補跑後，
+不重複計數為**1289 passed／0 failed／2 skipped**，含正式五球E2E；另Node18項及34項既有事件helper斷言通過。
+兩項跳過仍為Windows檔案符號連結能力限制。載入等待、最新要求、重複同格與越界處理已測；實際瀏覽器播放未覆核，不新增人工接受紀錄。
+本機入口：`analysis_results/phase3_manual_timing_viewer_20261026_01/review_timing.html`；
+[交付與測試紀錄](dataset_selections/phase3_manual_timing_viewer_20261026.json)。Phase整體狀態保持。
+
+## 前段：可重跑的兩投手人工事件時距對照
 
 新增[compare-native-timing](native_timing_comparison.md)，讀取兩份既有單投手報告，沿用原來源／人工事件驗證。
 不同FPS各用分數秒計算區段差值，保留原格號、時距範圍、來源與未定原因，不使用顯示小數判斷。

@@ -17,6 +17,40 @@
 要求報告的影片、事件／時距及覆核紀錄與原來源一致；篡改或過期報告會拒絕。
 原生資料介面只讀既有結果，不執行模型或推定新事件。
 
+## 直接從差值回看兩側影片
+
+本機[雙側回看入口](../analysis_results/phase3_manual_timing_viewer_20261026_01/review_timing.html)
+已使用現有九球、80組時距對照產生。開啟後：
+
+1. 選人工事件區段、A影片、B影片；預設顯示落地→出手。
+2. 查看兩側時距、A−B差值、範圍關係與未定原因。
+3. 按任一側的起點／終點按鈕，定位到該片原格號。範圍分別提供下界與上界，沒有取中點。
+4. 用各播放器原有逐格、播放速度與曲線功能查看鄰近畫面；「開啟原片」另連到未畫骨架的MP4。
+
+未確認或不可觀測事件不提供自動定位按鈕，即使有uncertain單格候選也不升為確認事件。
+已確認第0格仍可定位。播放器尚未就緒時保留最新要求，載入失敗則取消；重複點同一事件也會重新定位。
+兩側是獨立播放器，使用各自FPS，不做同步播放或時間拉伸。送出要求不等於目標格已呈現，實際格號以播放器讀值為準。
+
+可重建新觀看目錄：
+
+```powershell
+.\.venv-analysis\Scripts\pitch-analysis.exe review-native-timing `
+  analysis_results/phase3_manual_timing_comparison_20261026_02/timing_comparison.json `
+  --output analysis_results/timing_viewer_NEW
+```
+
+入口會核對原比較與來源，拒絕被改動的差值、球號、重複／遺漏配對或既有輸出。
+每片使用原播放器的獨立頁，原`native_motion_viewer.js`逐bytes沿用；附加腳本只控制事件定位與顯示。
+新產物為`review_timing.html`、九份單片播放器頁、三份JS及`timing_viewer_manifest.json`。
+原比較JSON／CSV、骨架及GT保持，新增推論與人工標註皆0。
+
+已完成六項新增Python測試；Node共18項通過（含七項新增測試），另保留既有34項事件helper斷言。
+完整Python suite1291項，含八項junction環境案例補跑後，不重複計數為**1289 passed／0 failed／2 skipped**；
+兩項跳過為既有檔案符號連結能力限制，包含正式山本五球E2E，沒有未修復失敗。
+JavaScript載入等待／最新要求／越界與錯誤處理以純邏輯及模擬DOM測試，**未執行實際瀏覽器播放覆核**，不新增人工接受紀錄。
+完整測試與交付來源見[目前狀態](STATUS.md)及[觀看入口交付紀錄](dataset_selections/phase3_manual_timing_viewer_20261026.json)。
+本機影片與觀看頁不隨GitHub原始碼提供，現有較早可攜ZIP也不因本次改動而更新。
+
 ## 比較方式
 
 每個區段比較A組每球與B組每球，不先算平均、不丟棄事件不足的配對。
@@ -74,8 +108,8 @@ A為大谷5球、B為山本啟用4球，共9球2161格。每段20組，共80組�
 其餘區段出現雙向差異及重疊，不能概括成某位投手整個動作一定較快；前段未確認的山本球也不能推廣此結論。
 上述數量只描述本批配對，並非正式投手profile比較、優劣或泛化結果。
 
-新增15項測試涵蓋分數FPS、微小分數差、區間關係、未知原因／空值、來源與覆寫拒絕，以及CLI。
-完整suite1285項：初跑1275 passed／0 failed／10 skipped；其中八項junction環境案例已單獨補跑全部通過，
+前一輪時距計算新增15項測試，涵蓋分數FPS、微小分數差、區間關係、未知原因／空值、來源與覆寫拒絕，以及CLI。
+該輪完整suite1285項：初跑1275 passed／0 failed／10 skipped；其中八項junction環境案例已單獨補跑全部通過，
 按不重複測試計為**1283 passed／0 failed／2 skipped**，含正式山本五球E2E。
 剩餘兩項為Windows檔案符號連結能力限制；沒有未修復失敗。重跑既有輸出會拒絕覆寫。
 [版本化交付與測試紀錄](dataset_selections/phase3_manual_timing_comparison_20261026.json)；

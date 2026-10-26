@@ -1,0 +1,133 @@
+{
+  "schema_version": "native-manual-timing-viewer-delivery-v1",
+  "recorded_at_utc": "2026-10-26T15:24:33.901679+00:00",
+  "date_local": "2026-10-26",
+  "base_commit": "0b9c28aee2e080fa003e9f4b21f192e7266efa03",
+  "command": "pitch-analysis review-native-timing analysis_results/phase3_manual_timing_comparison_20261026_02/timing_comparison.json --output analysis_results/phase3_manual_timing_viewer_20261026_01",
+  "output_dir": "analysis_results/phase3_manual_timing_viewer_20261026_01",
+  "comparison_ref": {
+    "path": "analysis_results/phase3_manual_timing_comparison_20261026_02/timing_comparison.json",
+    "sha256": "0ddd6f235420ee91fc2edea1deb4a7683e80ef20bdcd7ed43f91b3c649cb87be"
+  },
+  "results": {
+    "clip_count": 9,
+    "source_frames": 2161,
+    "total_pairs": 80,
+    "comparable_pairs": 65,
+    "unavailable_pairs": 15,
+    "unresolved_events_retained": 3,
+    "independent_playback": true,
+    "base_player_modified": false,
+    "browser_interaction_verified": false,
+    "new_inference_calls": 0,
+    "new_tracking_replays": 0,
+    "new_ground_truth_labels": 0
+  },
+  "source_code": [
+    {
+      "path": "src/pitch_analysis/analysis/native_timing_viewer.py",
+      "sha256": "fc7042d3370926c99493c8e4dd22e620132647a8c4866d6cd832a0e153bcf4a7"
+    },
+    {
+      "path": "src/pitch_analysis/review_assets/native_motion_frame_link.js",
+      "sha256": "f53127e8ca8fdeed587c44692535e7086be30f833bac897d6cda34e886ae4d3b"
+    },
+    {
+      "path": "src/pitch_analysis/review_assets/native_timing_viewer.js",
+      "sha256": "d8896da063acccacded5862e77057256ad67bee6cb5cd0aea70a2ee8923a8425"
+    },
+    {
+      "path": "src/pitch_analysis/cli.py",
+      "sha256": "d695e472cf9cf0edee5eee1583d7273cd7b9b7946280c904bad0f25129811b95"
+    },
+    {
+      "path": "tests/test_native_timing_viewer.py",
+      "sha256": "e6647b60d5481259f018bbec6429cb8a2a57827814336fda7be039685491badb"
+    },
+    {
+      "path": "tests/test_native_timing_viewer.js",
+      "sha256": "11a8d747b3d730a1378efd8d59e0e5a7540c92200509bd6724f536fef0e1d280"
+    }
+  ],
+  "base_player_ref": {
+    "path": "src/pitch_analysis/review_assets/native_motion_viewer.js",
+    "sha256": "094db045f8e09f6fcbd335cab06095040e926faa0179d0695fe4c9d8a3e380c4"
+  },
+  "artifact_refs": {
+    "review_timing.html": {
+      "path": "analysis_results/phase3_manual_timing_viewer_20261026_01/review_timing.html",
+      "sha256": "f765301df07df75f803edbf2fa8a62e33d166a09a8999aef5194904746e7546e"
+    },
+    "a_000.html": {
+      "path": "analysis_results/phase3_manual_timing_viewer_20261026_01/a_000.html",
+      "sha256": "876ea5db2cd56cb911ec68a2da56f526857e365705472ad040aeb7b505716a3a"
+    },
+    "a_001.html": {
+      "path": "analysis_results/phase3_manual_timing_viewer_20261026_01/a_001.html",
+      "sha256": "bf33a95ecbe68d3e7add28eb8daebf5b6a2d434752038eb5040a53375f52eb5c"
+    },
+    "a_002.html": {
+      "path": "analysis_results/phase3_manual_timing_viewer_20261026_01/a_002.html",
+      "sha256": "8d50bd132da10e81ffd9edf8c0853d0b0ac6a5cd01c1f46ef9cf43349f00f5cf"
+    },
+    "a_003.html": {
+      "path": "analysis_results/phase3_manual_timing_viewer_20261026_01/a_003.html",
+      "sha256": "a64a861d13c44ec1753e2b0a88fc852749f8ea6ff80e5829e3a379f6af055707"
+    },
+    "a_004.html": {
+      "path": "analysis_results/phase3_manual_timing_viewer_20261026_01/a_004.html",
+      "sha256": "12f282f8f43341a9b5db5f1841af28f6c861072b13558fad5dece633728dc798"
+    },
+    "b_000.html": {
+      "path": "analysis_results/phase3_manual_timing_viewer_20261026_01/b_000.html",
+      "sha256": "bc7781f5bfc3bdfd18d8ed27df28f908bea9825227bf90fc7a29f943bbf91d45"
+    },
+    "b_001.html": {
+      "path": "analysis_results/phase3_manual_timing_viewer_20261026_01/b_001.html",
+      "sha256": "a85cb4e2392f58490a3618d1bc1755a52cc3356e8b0b0bdc188475454bfa3f64"
+    },
+    "b_002.html": {
+      "path": "analysis_results/phase3_manual_timing_viewer_20261026_01/b_002.html",
+      "sha256": "33677b824da8ab033b881623b36a9418168eb0467444c19f8bd49d7b6b1542ca"
+    },
+    "b_003.html": {
+      "path": "analysis_results/phase3_manual_timing_viewer_20261026_01/b_003.html",
+      "sha256": "0c78d02f952710a7b37dea4a8cbd8d5f6b65ae278ef8415222daa5c947066896"
+    },
+    "motion_viewer.js": {
+      "path": "analysis_results/phase3_manual_timing_viewer_20261026_01/motion_viewer.js",
+      "sha256": "094db045f8e09f6fcbd335cab06095040e926faa0179d0695fe4c9d8a3e380c4"
+    },
+    "frame_link.js": {
+      "path": "analysis_results/phase3_manual_timing_viewer_20261026_01/frame_link.js",
+      "sha256": "f53127e8ca8fdeed587c44692535e7086be30f833bac897d6cda34e886ae4d3b"
+    },
+    "timing_viewer.js": {
+      "path": "analysis_results/phase3_manual_timing_viewer_20261026_01/timing_viewer.js",
+      "sha256": "d8896da063acccacded5862e77057256ad67bee6cb5cd0aea70a2ee8923a8425"
+    }
+  },
+  "manifest_ref": {
+    "path": "analysis_results/phase3_manual_timing_viewer_20261026_01/timing_viewer_manifest.json",
+    "sha256": "0b51c2ad8c573507f928afbd9ca22895102611bf8f3c1f9b5e96b41c39f84862"
+  },
+  "tests": {
+    "unique_tests_run": 1291,
+    "passed": 1289,
+    "failed": 0,
+    "skipped": 2,
+    "initial_passed": 1281,
+    "initial_skipped": 10,
+    "junction_retry_passed": 8,
+    "node_passed": 18,
+    "node_failed": 0,
+    "existing_event_helper_assertions": 34,
+    "summary_ref": {
+      "path": "analysis_results/phase3_manual_timing_viewer_20261026_01/validation_summary.json",
+      "sha256": "e0c2ef183fb83912d1b3a091adb103a419648512153f7dca974e406c37c1968f"
+    }
+  },
+  "phase2_automatic_reliability": "NOT PASSED",
+  "phase3_overall": "NOT EVALUATED",
+  "new_human_acceptance": false
+}

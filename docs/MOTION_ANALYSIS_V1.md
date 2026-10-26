@@ -9,6 +9,7 @@
 目前已完成本文件所列的**描述性第一版交付**：既有骨架、影片／曲線回看、人工事件時距及兩關節投影讀值。
 它支援查看同一投手各球的差異，尚未交付完整profile、跨投手動作相似度或動作品質評分。
 後續已新增[人工事件時距對照](native_timing_comparison.md)，僅比較原事件界線下的分數秒時距。
+亦已接上[雙側回看入口](native_timing_comparison.md#直接從差值回看兩側影片)，可從差值選兩球並定位到人工事件原格號。
 
 狀態各自保留：Phase 1 PASSED；原生資料介面接入PASSED；Phase 2自動可靠性NOT PASSED；
 本批描述性交付COMPLETE；Phase 3整體尚未驗收。此整理不改寫原驗收標準。
@@ -20,6 +21,7 @@
 | 看大谷五球最新數字 | [完整報告](../analysis_results/phase3_manual_stages_20261026_01/ohtani/report.md)／[四段CSV](../analysis_results/phase3_manual_stages_20261026_01/ohtani/manual_stage_readouts.csv) | 最新四段時距、肘／膝模型XY端點差、人工事件與來源 |
 | 看山本四球最新數字 | [完整報告](../analysis_results/phase3_manual_stages_20261026_01/yamamoto/report.md)／[四段CSV](../analysis_results/phase3_manual_stages_20261026_01/yamamoto/manual_stage_readouts.csv) | 最新四段讀值；001／005未確認事件保留空值 |
 | 回看片段與事件 | [大谷觀看頁](../analysis_results/phase3_manual_stages_20261026_01/ohtani/viewer/review_motion_events.html)／[山本觀看頁](../analysis_results/phase3_manual_stages_20261026_01/yamamoto/viewer/review_motion_events.html) | 原影片／骨架、曲線及事件對照；四段端點差完整表在上列報告／CSV |
+| 從時距對照回看兩側影片 | [雙側回看頁](../analysis_results/phase3_manual_timing_viewer_20261026_01/review_timing.html) | 既有80組差值與事件界線定位；原FPS獨立播放，瀏覽器實際播放尚未覆核 |
 | 在另一台電腦看既有成果 | [可攜ZIP說明](phase3_portable_review_20261026.md)／[本機START_HERE](../analysis_results/phase3_portable_review_20261026_01/pitch_motion_review_20261026_01/START_HERE.html) | 較早的影片／曲線／事件觀看快照，不含後來新增的四段摘要 |
 
 先看逐球時距，再開觀看頁回到該事件格與原曲線。需要檢查數字時，報告列有原事件格號，
@@ -80,8 +82,8 @@
 現有相同讀值不再拆成新的報表交付。第一版收束時的產品程式完整suite為2026-10-26的
 **1268 passed／0 failed／2 skipped**，含正式山本五球E2E；兩項跳過為Windows檔案符號連結能力不足。
 [原測試與來源紀錄](dataset_selections/phase3_manual_stages_20261026.json)。本次只整理文件，不重跑模型或相同suite。
-後續新增可重跑時距對照入口的最新測試為1283 passed／0 failed／2 skipped，
-見[時距對照交付](native_timing_comparison.md)。
+後續時距對照／雙側回看入口的最新測試為1289 passed／0 failed／2 skipped，
+另Node18項及34項既有事件helper斷言通過，見[時距對照交付](native_timing_comparison.md)。
 
 ## 已交付的下一工作單位：單一投手motion profile草案
 

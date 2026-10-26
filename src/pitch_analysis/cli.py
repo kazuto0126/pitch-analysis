@@ -59,6 +59,9 @@ def main() -> None:
     timing_comparison.add_argument("report_a")
     timing_comparison.add_argument("report_b")
     timing_comparison.add_argument("--output", required=True)
+    timing_viewer = commands.add_parser("review-native-timing", help="Build two independent source-frame players for a saved manual timing comparison")
+    timing_viewer.add_argument("comparison_json")
+    timing_viewer.add_argument("--output", required=True)
     motion_alignment = commands.add_parser("align-native-motion", help="Plot saved same-pitcher curves relative to exact human foot plant")
     motion_alignment.add_argument("config_json")
     motion_alignment.add_argument("--output", required=True)
@@ -213,6 +216,18 @@ def main() -> None:
                    "source_frames": result["source_frames"], "output_dir": args.output,
                    "new_inference_calls": 0})
         except (ValueError, OSError, RuntimeError, KeyError, TypeError) as error:
+            _emit({"status": "failed", "error": str(error)})
+            raise SystemExit(1)
+        return
+    if args.command == "review-native-timing":
+        from pathlib import Path
+        from .analysis.native_timing_viewer import write_timing_viewer
+        try:
+            result = write_timing_viewer(Path.cwd(), args.comparison_json, args.output)
+            _emit({"status": result["status"], "clip_count": result["clip_count"],
+                   "total_pairs": result["total_pairs"], "output_dir": args.output,
+                   "new_inference_calls": 0})
+        except (ValueError, OSError, RuntimeError, KeyError, TypeError, ZeroDivisionError) as error:
             _emit({"status": "failed", "error": str(error)})
             raise SystemExit(1)
         return

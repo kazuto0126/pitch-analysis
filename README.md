@@ -17,6 +17,7 @@ Phase 1 PASSED；原生資料介面接入PASSED；**Phase 2自動可靠性NOT PA
 |---|---|
 | 看單投手動作特徵草案 | [大谷五球](docs/profiles/shohei_ohtani_descriptive_v1.md)／[山本四球](docs/profiles/yoshinobu_yamamoto_descriptive_v1.md)：各自的可描述差異、選格影響與資料限制 |
 | 重跑兩位投手的人工時距對照 | [compare-native-timing](docs/native_timing_comparison.md)：分數秒、全部配對與缺值 |
+| 從時距差值回看兩側影片 | [review-native-timing](docs/native_timing_comparison.md#直接從差值回看兩側影片)：選球／區段、人工事件界線定位與兩側獨立播放器 |
 | 查看目前結果、解讀限制與下一步 | [動作描述第一版](docs/MOTION_ANALYSIS_V1.md) |
 | 對照目前狀態與歷史進度 | [STATUS](docs/STATUS.md)／[詳細歷史紀錄](docs/current_status.md) |
 | 準備新影片或交付素材 | [輸入需求](docs/INPUT_REQUIREMENTS.md)／[交付資料夾讀取器](docs/handoff_reader.md) |
@@ -140,8 +141,9 @@ provisional references；它不是目前已接受原生骨架九球的資料集�
 ```
 
 測試使用本機合成MP4、確定性pose fixture及既有本機素材；完整suite包含正式山本五球E2E。
-最新產品程式紀錄為2026-10-26：**1283 passed／0 failed／2 skipped**，
-包含15項新增時距對照測試及正式五球E2E；八項junction環境案例已補跑，剩餘兩項為檔案符號連結能力限制。
+最新產品程式紀錄為2026-10-26：**1289 passed／0 failed／2 skipped**，
+包含六項新增雙側回看測試及正式五球E2E；八項junction環境案例已補跑，剩餘兩項為檔案符號連結能力限制。
+另Node **18 passed／0 failed**及34項既有事件helper斷言通過；新頁尚未作實際瀏覽器播放覆核。
 
 ## 接續開發
 
