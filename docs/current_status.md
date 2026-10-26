@@ -1,4 +1,4 @@
-# Current status — Two same-pitcher descriptive profile drafts delivered
+# Current status — Reusable two-pitcher manual-event timing comparison
 
 Updated: 2026-10-26 (Asia/Taipei)
 
@@ -7,7 +7,8 @@ Updated: 2026-10-26 (Asia/Taipei)
 **Phase 2 evaluation = COMPLETE; Phase 2 = NOT PASSED (automatic reliability degraded).**
 **User-authorized Phase3 first descriptive motion delivery = COMPLETE; overall Phase3 NOT EVALUATED.**
 
-The current deliverable includes separate [Ohtani](profiles/shohei_ohtani_descriptive_v1.md)
+The current deliverable includes [manual-event timing comparison](native_timing_comparison.md),
+separate [Ohtani](profiles/shohei_ohtani_descriptive_v1.md)
 and [Yamamoto](profiles/yoshinobu_yamamoto_descriptive_v1.md) descriptive profile drafts,
 and the descriptive motion v1 described in [MOTION_ANALYSIS_V1](MOTION_ANALYSIS_V1.md).
 The underlying delivery covers the accepted native skeletons
@@ -17,7 +18,39 @@ gates, MediaPipe settings, interpolation and smoothing are unchanged. The approv
 optional subject-region constraint is described below; the default selector remains compatible.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-26 Yamamoto same-pitcher descriptive profile draft
+## 2026-10-26 Reusable two-pitcher manual timing comparison
+
+Added the independent compare-native-timing CLI and native_timing_comparison module.
+Two saved single-pitcher reports are rechecked through their bound request, source
+curves and existing manual-event review scope. Saved clip records must match current
+bound sources; altered reports and existing output directories are refused. Existing
+same-pitcher modules and Phase2 core/gates remain unchanged.
+
+Each stage compares all cross-cohort clip pairs using per-clip Fraction FPS. Delta
+is[A_min-B_max,A_max-B_min] in exact fractional seconds, retaining overlap/touch/equal
+relations and unavailable reasons. A1/7500-second arithmetic difference is not rounded
+into equality, and is not asserted as physiological timing accuracy. No pose-angle
+comparison, normalization, quality score, ranking, new inference/tracking or GT.
+
+Ohtani5 and active Yamamoto4:9 clips/2161 frames,36 original timings,80 cross-cohort
+pairs.65 are descriptive and15 retain unresolved manual events; per-stage comparable
+counts are10/15/20/20. Historical003 stays excluded; Ohtani stays candidate. Source
+frames/FPS, event bounds and paths/SHA remain traceable in JSON and the two CSVs.
+Actual80 fractional deltas/unknowns and15 blank CSV deltas are verified; overwrite
+rejection is exercised. Phase-wide acceptance and original raw/GT states are unchanged.
+
+Added15 tests. Full1285-test suite:1275 passed/0 failed/10 skipped in the sandbox;
+the8 directory-junction capability skips were rerun outside the sandbox in bounded
+local temporary directories and all passed. Unique aggregate:1283 passed/0 failed/
+2 skipped, including formal five-video E2E. Remaining skips are file-symlink capability
+limits. Full/retry logs and validation_summary.json retain both actual runs.
+Output:`analysis_results/phase3_manual_timing_comparison_20261026_02/`.
+[Usage and limits](native_timing_comparison.md),
+[versioned delivery evidence](dataset_selections/phase3_manual_timing_comparison_20261026.json).
+Generated tracked bytecode from the CLI invocation is restored; only the new timing
+module/test, CLI registration and documentation are committed.
+
+## 2026-10-26 Yamamoto same-pitcher descriptive profile draft (previous)
 
 Applied the same bounded narrative scope to active Yamamoto001/002/004/005:477 frames,
 20 existing events,16 stage timings and32 joint summaries. Of these,17 events have

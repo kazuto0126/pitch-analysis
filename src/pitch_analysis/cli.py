@@ -55,6 +55,10 @@ def main() -> None:
     event_comparison = commands.add_parser("compare-native-motion-events", help="Describe saved same-pitcher curves at existing manual event frames or ranges")
     event_comparison.add_argument("config_json")
     event_comparison.add_argument("--output", required=True)
+    timing_comparison = commands.add_parser("compare-native-timing", help="Compare source-bound manual event durations for two pitchers using exact fractional seconds")
+    timing_comparison.add_argument("report_a")
+    timing_comparison.add_argument("report_b")
+    timing_comparison.add_argument("--output", required=True)
     motion_alignment = commands.add_parser("align-native-motion", help="Plot saved same-pitcher curves relative to exact human foot plant")
     motion_alignment.add_argument("config_json")
     motion_alignment.add_argument("--output", required=True)
@@ -209,6 +213,18 @@ def main() -> None:
                    "source_frames": result["source_frames"], "output_dir": args.output,
                    "new_inference_calls": 0})
         except (ValueError, OSError, RuntimeError, KeyError, TypeError) as error:
+            _emit({"status": "failed", "error": str(error)})
+            raise SystemExit(1)
+        return
+    if args.command == "compare-native-timing":
+        from pathlib import Path
+        from .analysis.native_timing_comparison import write_timing_comparison
+        try:
+            result = write_timing_comparison(Path.cwd(), [args.report_a, args.report_b], args.output)
+            _emit({"status": result["status"], "total_pairs": result["total_pairs"],
+                   "comparable_pairs": result["comparable_pairs"], "unavailable_pairs": result["unavailable_pairs"],
+                   "output_dir": args.output, "new_inference_calls": 0})
+        except (ValueError, OSError, RuntimeError, KeyError, TypeError, ZeroDivisionError) as error:
             _emit({"status": "failed", "error": str(error)})
             raise SystemExit(1)
         return

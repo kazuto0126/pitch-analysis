@@ -1,0 +1,160 @@
+{
+  "schema_version": "native-manual-timing-delivery-v1",
+  "recorded_at_utc": "2026-10-26T10:39:52.106742+00:00",
+  "date_local": "2026-10-26",
+  "base_commit": "92f660f609b7525f2eed25f4d494e39070887ed5",
+  "scope": "source-bound manual event durations only; no pose-angle comparison or ranking",
+  "command": "pitch-analysis compare-native-timing analysis_results/phase3_manual_stages_20261026_01/ohtani/event_comparison.json analysis_results/phase3_manual_stages_20261026_01/yamamoto/event_comparison.json --output analysis_results/phase3_manual_timing_comparison_20261026_02",
+  "output_dir": "analysis_results/phase3_manual_timing_comparison_20261026_02",
+  "input_reports": [
+    {
+      "path": "analysis_results/phase3_manual_stages_20261026_01/ohtani/event_comparison.json",
+      "sha256": "112720be28bfd166c0a8d3d4dd8eb283e90ba6091f2564275732608cd59c86af"
+    },
+    {
+      "path": "analysis_results/phase3_manual_stages_20261026_01/yamamoto/event_comparison.json",
+      "sha256": "406f4c3d2f969ba1b2cb15758ba80a38b1cd69b8a078b8e7529818bb4c5ded96"
+    }
+  ],
+  "cohorts": [
+    {
+      "side": "a",
+      "pitcher_id": "shohei_ohtani",
+      "clip_count": 5,
+      "source_frames": 1684,
+      "report_ref": {
+        "path": "analysis_results/phase3_manual_stages_20261026_01/ohtani/event_comparison.json",
+        "sha256": "112720be28bfd166c0a8d3d4dd8eb283e90ba6091f2564275732608cd59c86af"
+      },
+      "request_ref": {
+        "path": "config/analysis_inputs/ohtani_event_timing_20261025.json",
+        "sha256": "1a1b0893a761aea488e17613207a47578ee96d77e5e2b4be3543cb4dec73ddae"
+      }
+    },
+    {
+      "side": "b",
+      "pitcher_id": "yoshinobu_yamamoto",
+      "clip_count": 4,
+      "source_frames": 477,
+      "report_ref": {
+        "path": "analysis_results/phase3_manual_stages_20261026_01/yamamoto/event_comparison.json",
+        "sha256": "406f4c3d2f969ba1b2cb15758ba80a38b1cd69b8a078b8e7529818bb4c5ded96"
+      },
+      "request_ref": {
+        "path": "config/analysis_inputs/yamamoto_event_timing_20261024.json",
+        "sha256": "ed73961fd62dc41c85aa63512d7e355c4f47e290b5c55288faf121b84c411e3f"
+      }
+    }
+  ],
+  "clip_ids": {
+    "shohei_ohtani": [
+      "supplement_001",
+      "supplement_002",
+      "supplement_003",
+      "supplement_004",
+      "supplement_005"
+    ],
+    "yoshinobu_yamamoto": [
+      "pitch_001",
+      "pitch_002",
+      "pitch_004",
+      "pitch_005"
+    ]
+  },
+  "pairs": {
+    "total": 80,
+    "comparable": 65,
+    "unavailable": 15,
+    "by_stage": {
+      "preparation_to_leg_lift": {
+        "unavailable": 10,
+        "a_shorter": 10
+      },
+      "leg_lift_to_foot_plant": {
+        "a_longer": 6,
+        "unavailable": 5,
+        "overlapping": 2,
+        "a_shorter": 7
+      },
+      "foot_plant_to_release": {
+        "overlapping": 9,
+        "a_longer": 8,
+        "a_shorter": 3
+      },
+      "release_to_follow_through_end": {
+        "a_longer": 11,
+        "a_shorter": 8,
+        "overlapping": 1
+      }
+    }
+  },
+  "new_inference_calls": 0,
+  "new_tracking_replays": 0,
+  "new_ground_truth_labels": 0,
+  "source_code": [
+    {
+      "path": "src/pitch_analysis/analysis/native_timing_comparison.py",
+      "sha256": "a8eb8f9619028dd5f43040707021d0b5099677e90e2c5a4d0e58c567ca24bed8"
+    },
+    {
+      "path": "src/pitch_analysis/cli.py",
+      "sha256": "4e1aede7da0712660b3f482fc6b3d6d1ebf10817357da432b4f1572fd23dbd6a"
+    },
+    {
+      "path": "tests/test_native_timing_comparison.py",
+      "sha256": "2c475a13812462ea640298304a3f388378c86286ce186ef9b46b03a61b873549"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "analysis_results/phase3_manual_timing_comparison_20261026_02/timing_comparison.json",
+      "sha256": "0ddd6f235420ee91fc2edea1deb4a7683e80ef20bdcd7ed43f91b3c649cb87be"
+    },
+    {
+      "path": "analysis_results/phase3_manual_timing_comparison_20261026_02/pitch_timings.csv",
+      "sha256": "63c07e759ca6098dd5b74e6ac5834e040e37a87fcec3dc4b44f12bf92d0c9b79"
+    },
+    {
+      "path": "analysis_results/phase3_manual_timing_comparison_20261026_02/timing_pairs.csv",
+      "sha256": "43da5ee22936459d00623b8764a0590f882cdd4e9576a75c2d7ef843abce298b"
+    },
+    {
+      "path": "analysis_results/phase3_manual_timing_comparison_20261026_02/report.md",
+      "sha256": "5987a16763e0ac62dc008cb9e3430fe2d31f4b5f79ff068d30a620637bd63900"
+    },
+    {
+      "path": "analysis_results/phase3_manual_timing_comparison_20261026_02/validation_summary.json",
+      "sha256": "a54b4d4c4db3e0521cd71692e0edb3ed9bf89d11b36b9ac6b2409530a00df1aa"
+    }
+  ],
+  "verification": {
+    "exact_fraction_differences_checked": 80,
+    "blank_csv_deltas": 15,
+    "existing_output_rejected": true
+  },
+  "tests": {
+    "unique_tests_run": 1285,
+    "passed": 1283,
+    "failed": 0,
+    "skipped": 2,
+    "added_tests": 15,
+    "initial_run": {
+      "passed": 1275,
+      "failed": 0,
+      "skipped": 10
+    },
+    "junction_retry": {
+      "passed": 8,
+      "failed": 0,
+      "skipped": 0
+    },
+    "formal_five_video_e2e_enabled": true,
+    "summary_ref": {
+      "path": "analysis_results/phase3_manual_timing_comparison_20261026_02/validation_summary.json",
+      "sha256": "a54b4d4c4db3e0521cd71692e0edb3ed9bf89d11b36b9ac6b2409530a00df1aa"
+    }
+  },
+  "phase2_automatic_reliability": "NOT PASSED",
+  "phase3_overall": "NOT EVALUATED",
+  "formal_reference_promotion": false
+}

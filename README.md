@@ -10,11 +10,13 @@
 36段中33段可描述、3段事件未確認；逐點可靠性仍unknown，不能把座標完整當成精確度通過。
 
 Phase 1 PASSED；原生資料介面接入PASSED；**Phase 2自動可靠性NOT PASSED**；
-本批描述性交付COMPLETE，Phase 3整體尚未驗收。完整profile及跨投手比較仍是後續目標。
+本批描述性交付COMPLETE，Phase 3整體尚未驗收。完整profile及跨投手動作相似度仍是後續目標；
+現已提供獨立的[兩位投手人工事件時距對照](docs/native_timing_comparison.md)，保留來源與未知範圍。
 
 | 要做的事 | 入口 |
 |---|---|
 | 看單投手動作特徵草案 | [大谷五球](docs/profiles/shohei_ohtani_descriptive_v1.md)／[山本四球](docs/profiles/yoshinobu_yamamoto_descriptive_v1.md)：各自的可描述差異、選格影響與資料限制 |
+| 重跑兩位投手的人工時距對照 | [compare-native-timing](docs/native_timing_comparison.md)：分數秒、全部配對與缺值 |
 | 查看目前結果、解讀限制與下一步 | [動作描述第一版](docs/MOTION_ANALYSIS_V1.md) |
 | 對照目前狀態與歷史進度 | [STATUS](docs/STATUS.md)／[詳細歷史紀錄](docs/current_status.md) |
 | 準備新影片或交付素材 | [輸入需求](docs/INPUT_REQUIREMENTS.md)／[交付資料夾讀取器](docs/handoff_reader.md) |
@@ -138,12 +140,13 @@ provisional references；它不是目前已接受原生骨架九球的資料集�
 ```
 
 測試使用本機合成MP4、確定性pose fixture及既有本機素材；完整suite包含正式山本五球E2E。
-最新產品程式紀錄為2026-10-26：**1268 passed／0 failed／2 skipped**；
-兩項跳過為Windows檔案符號連結能力不足。本次文件整理未重跑相同suite。
+最新產品程式紀錄為2026-10-26：**1283 passed／0 failed／2 skipped**，
+包含15項新增時距對照測試及正式五球E2E；八項junction環境案例已補跑，剩餘兩項為檔案符號連結能力限制。
 
 ## 接續開發
 
 目前九球的描述性第一版已收束；[大谷五球草案](docs/profiles/shohei_ohtani_descriptive_v1.md)
 及[山本四球草案](docs/profiles/yoshinobu_yamamoto_descriptive_v1.md)均已說明各自哪些階段差異在合法人工選格下仍成立、哪些受選格影響，附原片查核位置。
-兩份單投手草案已完成本批交付，可據此決定後續比較所需的特徵與資料；不再把相同讀值拆成新的報表交付。
+兩份單投手草案已完成本批交付；新增的`compare-native-timing`可從原事件報告重跑有限時距對照，
+本批80組中65可比較、15事件不足。完整動作比較所需的可靠特徵仍須另行界定。
 Phase 2自動可靠性仍NOT PASSED，Phase 3整體尚未驗收。範圍見[第一版與後續工作](docs/MOTION_ANALYSIS_V1.md)。

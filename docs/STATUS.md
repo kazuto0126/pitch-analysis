@@ -5,7 +5,21 @@
 **Phase 1 = PASSED；Native interface integration = PASSED；Phase 2 自動可靠性仍 NOT PASSED。**
 **Phase3第一個描述性曲線交付 = COMPLETE；Phase3整體尚未驗收。**
 
-## 目前：兩份單投手motion profile草案已交付
+## 目前：可重跑的兩投手人工事件時距對照
+
+新增[compare-native-timing](native_timing_comparison.md)，讀取兩份既有單投手報告，沿用原來源／人工事件驗證。
+不同FPS各用分數秒計算區段差值，保留原格號、時距範圍、來源與未定原因，不使用顯示小數判斷。
+大谷5／山本啟用4共9球2161格，四段產生80組對照：65可比較、15事件不足且保留空值，003仍排除。
+沒有骨架角度比較、相似度／品質分數或排名，不提升候選資格；原pose／tracking、門檻及GT保持。
+
+新增15項測試。完整suite1285項初跑1275 passed／0 failed／10 skipped，八項junction環境案例已補跑全部通過；
+合併不重複測試結果為**1283 passed／0 failed／2 skipped**，含正式五球E2E，剩餘兩項為檔案符號連結限制。
+實際80組分數差值及15筆CSV空值已核對，既有輸出重跑拒絕覆寫。
+輸出：`analysis_results/phase3_manual_timing_comparison_20261026_02/`；
+[交付與測試紀錄](dataset_selections/phase3_manual_timing_comparison_20261026.json)。
+這是有限的人工時距描述功能，Phase 2自動可靠性及Phase 3整體驗收結論保持。
+
+## 前段：兩份單投手motion profile草案已交付
 
 [山本四球草案](profiles/yoshinobu_yamamoto_descriptive_v1.md)已完成，與
 [大谷五球草案](profiles/shohei_ohtani_descriptive_v1.md)分開呈現各自的時序關係與模型端點變化。
