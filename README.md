@@ -15,6 +15,7 @@ Phase 1 PASSED；原生資料介面接入PASSED；**Phase 2自動可靠性NOT PA
 
 | 要做的事 | 入口 |
 |---|---|
+| 在單一入口看最新完整成果，或帶到另一台電腦 | [新版可攜成果包](docs/phase3_portable_review_20261026.md#最新完整描述性交付02)：九球影片、兩份草案、最新四段／時距資料與雙側回看頁 |
 | 看單投手動作特徵草案 | [大谷五球](docs/profiles/shohei_ohtani_descriptive_v1.md)／[山本四球](docs/profiles/yoshinobu_yamamoto_descriptive_v1.md)：各自的可描述差異、選格影響與資料限制 |
 | 重跑兩位投手的人工時距對照 | [compare-native-timing](docs/native_timing_comparison.md)：分數秒、全部配對與缺值 |
 | 從時距差值回看兩側影片 | [review-native-timing](docs/native_timing_comparison.md#直接從差值回看兩側影片)：選球／區段、人工事件界線定位與兩側獨立播放器 |
@@ -32,7 +33,7 @@ Phase 1 PASSED；原生資料介面接入PASSED；**Phase 2自動可靠性NOT PA
 本專案只接收已整理的影片；供片端搜尋、下載與剪輯不在本repo內。
 交付資料夾唯讀，新匯入先列候選；現有大谷五球也不因骨架接受而自動升為正式reference。
 `analysis_results/`影片與報告保存在本機，不包含在GitHub原始碼中。
-既有觀看ZIP是較早快照，最新四段讀值請從第一版文件開啟。
+最新可攜02包已包含四段讀值、兩份草案與雙側回看頁；舊01包作歷史快照保留。
 
 ## 安裝（Windows x64 / Python 3.12）
 

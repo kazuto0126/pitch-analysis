@@ -1,0 +1,65 @@
+{
+  "schema_version": "portable-motion-review-delivery-v2",
+  "recorded_at_utc": "2026-10-26T15:34:52.714344+00:00",
+  "source_commit": "b17213ecd81abb9ce349a351edd750ee93573458",
+  "archive_ref": {
+    "path": "analysis_results/phase3_portable_review_20261026_02/pitch_motion_review_20261026_02.zip",
+    "sha256": "f272ebbfbd6e9d8a89d994c4e8981b51d19604a1e7ed1e45ae4623d2e248946c"
+  },
+  "archive_bytes": 34261702,
+  "entry_ref": {
+    "path": "analysis_results/phase3_portable_review_20261026_02/pitch_motion_review_20261026_02/START_HERE.html",
+    "sha256": "bf7d82f50204b74aa38e7afbd972f0f316329e1e9e7e34e6a77ae63051a30718"
+  },
+  "manifest_ref": {
+    "path": "analysis_results/phase3_portable_review_20261026_02/pitch_motion_review_20261026_02/bundle_manifest.json",
+    "sha256": "dc46e0973721f62e6eba8090544e0c5f8659cc2da3763f0bd7303ba89f92d7c7"
+  },
+  "builder_ref": {
+    "path": "analysis_results/phase3_portable_review_20261026_02/build_bundle.py",
+    "sha256": "ea02241b58976237b73dccbd5e85739b4c75b0bc65828bae4f232774e76b499d"
+  },
+  "file_count": 183,
+  "checked_local_links": 169,
+  "source_file_count": 171,
+  "url_fields_rebased": 43,
+  "clip_count": 9,
+  "source_frames": 2161,
+  "timing_pairs": 80,
+  "comparable_pairs": 65,
+  "unavailable_pairs": 15,
+  "zip_crc_check": "passed",
+  "zip_entries_safe_and_unique": true,
+  "full_suite_rerun": false,
+  "last_same_code_tests": {
+    "passed": 1289,
+    "failed": 0,
+    "skipped": 2,
+    "node_passed": 18
+  },
+  "last_same_code_test_ref": {
+    "path": "analysis_results/phase3_manual_timing_viewer_20261026_01/validation_summary.json",
+    "sha256": "e0c2ef183fb83912d1b3a091adb103a419648512153f7dca974e406c37c1968f"
+  },
+  "new_inference_calls": 0,
+  "new_ground_truth_labels": 0,
+  "browser_interaction_verified": false,
+  "automatic_phase2_status": "NOT PASSED",
+  "phase3_overall": "NOT EVALUATED",
+  "product_test_code_changes": 0,
+  "independent_audit": {
+    "zip_file_count": 183,
+    "manifest_content_files": 182,
+    "unchanged_copy_files": 156,
+    "source_sha_checked": 171,
+    "viewer_pages_checked": 16,
+    "only_json_url_fields_rebased": 43,
+    "static_html_links": 118,
+    "embedded_json_urls": 52,
+    "total_local_links_including_manifest": 170,
+    "all_links_package_contained": true,
+    "all_file_hashes_match": true,
+    "browser_interaction_verified": false,
+    "note": "Builder checked_local_links=169 excludes the manifest link before manifest creation; independent count includes it."
+  }
+}

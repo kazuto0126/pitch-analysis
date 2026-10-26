@@ -5,7 +5,16 @@
 **Phase 1 = PASSED；Native interface integration = PASSED；Phase 2 自動可靠性仍 NOT PASSED。**
 **Phase3第一個描述性曲線交付 = COMPLETE；Phase3整體尚未驗收。**
 
-## 目前：時距差值已接上雙側原片影格回看
+## 目前：最新成果已整合為可攜02包
+
+[新版單一入口與ZIP](phase3_portable_review_20261026.md)已整合兩份可閱讀草案、最新四段資料、80組人工時距對照及雙側回看頁，
+附九球原片／overlay與原GT／預測。約32.7 MiB、183檔，169個HTML／媒體連結均在包內；171份來源SHA及ZIP CRC已核對。
+只改寫包內副本連結，數值／標籤／未知狀態保持；原影片、GT、CSV及JS逐bytes複製，舊01包保持原樣。
+本輪無產品／測試碼變更、新推論或GT；未重跑相同suite，最近仍為Python1289 passed／0 failed／2 skipped、Node18 passed。
+新包實際瀏覽器播放尚未覆核，沒有新增人工接受或Phase通過結論。
+[交付與ZIP SHA](dataset_selections/phase3_portable_review_20261026_02.json)。
+
+## 前段：時距差值已接上雙側原片影格回看
 
 新增[review-native-timing](native_timing_comparison.md#直接從差值回看兩側影片)，可選區段、A／B球，
 查看原差值後用已確認事件界線定位。兩側各用獨立原播放器，保留原FPS／格號；範圍分下界／上界，未知事件不自動定位。

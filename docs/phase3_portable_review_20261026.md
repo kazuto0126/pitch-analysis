@@ -2,7 +2,32 @@
 
 2026-10-26（台灣）。將既有成果整理為可離線觀看的資料夾與ZIP，沒有新增模型、分析或人工標註。
 
-## 下載與開啟
+## 最新完整描述性交付：02
+
+[下載ZIP](../analysis_results/phase3_portable_review_20261026_02/pitch_motion_review_20261026_02.zip)
+（34,261,702 bytes，約32.7 MiB）；[本機入口](../analysis_results/phase3_portable_review_20261026_02/pitch_motion_review_20261026_02/START_HERE.html)。
+請先完整解壓縮、保留資料夾結構，再以Chrome／Edge開啟`START_HERE.html`。無須Python、模型或原專案目錄。
+
+新版已把後來的成果一起收進單一入口：
+
+- 大谷五球與山本啟用四球，共9支原片、9支overlay、2161格，及原metadata／GT／原生預測／追蹤。
+- 兩份動作特徵草案，提供可直接閱讀的HTML與對應Markdown副本。
+- 兩組最新四段報告、完整CSV／JSON；13段山本可描述時距及三段未定均保留。
+- 80組人工時距對照（65可比較、15事件不足），含完整報告與CSV。
+- 最新雙側回看頁、九個單片播放器頁，以及草案引用的既有事件頁／對齊圖與回看入口。
+
+183個包內檔案，169個HTML／媒體連結均指向包內有效目標；171份來源SHA已核對，ZIP CRC、唯一檔名與安全路徑檢查完成。
+只在副本中改寫文件連結、`clips[].overlay_url`及父頁影片URL；共43個內嵌URL欄位改寫，數值、標籤與未知狀態保持。
+原片、GT、raw prediction、CSV及JS逐bytes複製。JSON內原專案path／SHA仍作來源證據，manifest另列包內映射；本包不是重跑原CLI的執行環境。
+
+大谷仍為候選，山本003仍排除；本次封裝不增加人工接受或逐點GT。原九球的骨架接受不代表新包已驗證播放。
+**新版實際瀏覽器播放尚未覆核**；Phase 2自動可靠性仍NOT PASSED，Phase 3整體尚未驗收。
+
+本輪僅封裝／文件，產品及測試程式未變、未重跑相同suite；最近同程式碼結果為Python **1289 passed／0 failed／2 skipped**、Node **18 passed**，另34項事件helper斷言。
+[新版交付與ZIP SHA](dataset_selections/phase3_portable_review_20261026_02.json)。ZIP保存在本機，未自動上傳GitHub release。
+舊01包保持原樣；下方保留其歷史內容與檢查紀錄。
+
+## 舊01包：下載與開啟
 
 ZIP：`analysis_results/phase3_portable_review_20261026_01/pitch_motion_review_20261026_01.zip`
 

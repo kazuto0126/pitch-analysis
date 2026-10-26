@@ -22,13 +22,13 @@
 | 看山本四球最新數字 | [完整報告](../analysis_results/phase3_manual_stages_20261026_01/yamamoto/report.md)／[四段CSV](../analysis_results/phase3_manual_stages_20261026_01/yamamoto/manual_stage_readouts.csv) | 最新四段讀值；001／005未確認事件保留空值 |
 | 回看片段與事件 | [大谷觀看頁](../analysis_results/phase3_manual_stages_20261026_01/ohtani/viewer/review_motion_events.html)／[山本觀看頁](../analysis_results/phase3_manual_stages_20261026_01/yamamoto/viewer/review_motion_events.html) | 原影片／骨架、曲線及事件對照；四段端點差完整表在上列報告／CSV |
 | 從時距對照回看兩側影片 | [雙側回看頁](../analysis_results/phase3_manual_timing_viewer_20261026_01/review_timing.html) | 既有80組差值與事件界線定位；原FPS獨立播放，瀏覽器實際播放尚未覆核 |
-| 在另一台電腦看既有成果 | [可攜ZIP說明](phase3_portable_review_20261026.md)／[本機START_HERE](../analysis_results/phase3_portable_review_20261026_01/pitch_motion_review_20261026_01/START_HERE.html) | 較早的影片／曲線／事件觀看快照，不含後來新增的四段摘要 |
+| 在另一台電腦看完整最新描述性成果 | [可攜02包](phase3_portable_review_20261026.md)／[本機START_HERE](../analysis_results/phase3_portable_review_20261026_02/pitch_motion_review_20261026_02/START_HERE.html) | 九球、兩份草案、最新四段與時距資料、雙側回看頁；舊01快照保留 |
 
 先看逐球時距，再開觀看頁回到該事件格與原曲線。需要檢查數字時，報告列有原事件格號，
 每段的合法影格配對另存同目錄`manual_stage_pairs.csv`；不要把事件範圍自行縮成中點。
 
 `analysis_results/`是本機產物，不隨GitHub原始碼下載。分享既有ZIP時先完整解壓縮、保留結構，
-以Chrome／Edge開啟START_HERE；該ZIP及原觀看頁不因本次文件整理而更新或新增人工播放接受紀錄。
+以Chrome／Edge開啟START_HERE；後續可攜02包已整合最新結果，但不新增人工播放接受紀錄，舊01包保持原樣。
 
 ## 目前資料與結果
 

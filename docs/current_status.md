@@ -1,4 +1,4 @@
-# Current status — Source-frame-linked two-player timing review
+# Current status — Current descriptive delivery packaged for offline review
 
 Updated: 2026-10-26 (Asia/Taipei)
 
@@ -7,7 +7,8 @@ Updated: 2026-10-26 (Asia/Taipei)
 **Phase 2 evaluation = COMPLETE; Phase 2 = NOT PASSED (automatic reliability degraded).**
 **User-authorized Phase3 first descriptive motion delivery = COMPLETE; overall Phase3 NOT EVALUATED.**
 
-The current deliverable includes [manual-event timing comparison and two-player source review](native_timing_comparison.md),
+The [current portable02 delivery](phase3_portable_review_20261026.md) combines
+[manual-event timing comparison and two-player source review](native_timing_comparison.md),
 separate [Ohtani](profiles/shohei_ohtani_descriptive_v1.md)
 and [Yamamoto](profiles/yoshinobu_yamamoto_descriptive_v1.md) descriptive profile drafts,
 and the descriptive motion v1 described in [MOTION_ANALYSIS_V1](MOTION_ANALYSIS_V1.md).
@@ -18,7 +19,32 @@ gates, MediaPipe settings, interpolation and smoothing are unchanged. The approv
 optional subject-region constraint is described below; the default selector remains compatible.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-26 Two-player source-frame review for saved timing pairs
+## 2026-10-26 Current descriptive delivery packaged as portable02
+
+Created a new offline review package without changing product/test code or analyses.
+It combines9 raw videos/9 overlays and2161 frames, original metadata/GT/native output,
+two readable HTML profile drafts with Markdown copies, both latest four-stage reports
+and CSV/JSON, the80-pair timing comparison and latest two-player review pages. Existing
+event/alignment dependencies referenced by the profiles are included; original JSON
+paths/SHA stay as provenance, with a package source mapping for review copies.
+
+Package183 files/34,261,702 bytes (~32.7 MiB).169 HTML/media links are package-contained;
+171 source SHA references remain unchanged.43 embedded viewer URL fields are rebased,
+while all other embedded labels/numbers/unknowns remain identical. Raw media, GT,
+predictions, CSVs and JavaScript are unchanged copies. ZIP CRC and safe unique paths
+are checked. Old portable01 output remains unchanged; the02 entry is
+`analysis_results/phase3_portable_review_20261026_02/pitch_motion_review_20261026_02/START_HERE.html`.
+
+This is a viewing/data-check copy, not a complete model/runtime or a directly
+rerunnable CLI environment. Ohtani remains candidate and historical Yamamoto003 is
+excluded. No new inference, GT, human page acceptance or phase-wide acceptance.
+Browser playback remains unverified. No full-suite rerun for this packaging-only
+change; same-code results remain1289 passed/0 failed/2 skipped, Node18 passed plus34
+existing event-helper assertions.
+[Download/usage](phase3_portable_review_20261026.md),
+[versioned delivery receipt](dataset_selections/phase3_portable_review_20261026_02.json).
+
+## 2026-10-26 Two-player source-frame review for saved timing pairs (previous)
 
 Added review-native-timing and a separate viewer builder. The existing comparison
 and bound source reports are verified again; altered pairs/cohorts or existing
