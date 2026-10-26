@@ -1,4 +1,4 @@
-# Current status — Four manual-event intervals with model-XY endpoint readouts
+# Current status — Descriptive motion v1 delivery consolidated
 
 Updated: 2026-10-26 (Asia/Taipei)
 
@@ -7,13 +7,42 @@ Updated: 2026-10-26 (Asia/Taipei)
 **Phase 2 evaluation = COMPLETE; Phase 2 = NOT PASSED (automatic reliability degraded).**
 **User-authorized Phase3 first descriptive motion delivery = COMPLETE; overall Phase3 NOT EVALUATED.**
 
-The baseline evaluation is complete; the current second-pitcher pilot is recorded below.
+The current deliverable is the descriptive motion v1 described in
+[MOTION_ANALYSIS_V1](MOTION_ANALYSIS_V1.md). It covers the accepted native skeletons
+for Ohtani5 and active Yamamoto4; dated sections below preserve prior scope and results.
 Automatic reliability remains unaccepted. Existing acceptance thresholds, confidence
 gates, MediaPipe settings, interpolation and smoothing are unchanged. The approved
 optional subject-region constraint is described below; the default selector remains compatible.
 The original Phase 1 stable state and five formal videos remain unchanged.
 
-## 2026-10-26 Four manual-event interval readouts
+## 2026-10-26 Descriptive v1 review and main-route documentation
+
+Reviewed the nine saved curve plots, both current four-interval reports, saved summaries
+and release-frame CSV readouts. All2161 frames have calculable elbow/knee model angles,
+but pointwise reliability remains unknown and usable_for_analysis remains null. Of36
+manual-event intervals,33 are descriptive and3 retain unresolved events. This is a bounded
+descriptive delivery, not calibrated biomechanics or a full native motion profile.
+
+The v1 guide gives one route to the latest reports, existing video/curve/event pages
+and the earlier portable viewing snapshot. The existing ZIP has no manual_stage files;
+it is not represented as the latest four-interval report bundle. No assets were repacked.
+README now leads with the adopted native17 workflow and labels the retained MediaPipe33
+path as historical compatibility; the stale Phase2-only continuation text is replaced.
+Detailed development history and prior source/test records remain available.
+
+The next planned unit is one same-pitcher profile draft using existing Ohtani5 data:
+identify which stage differences survive all legal manual-event frame choices and which
+depend on those choices, with original-frame review links and explicit insufficient-data
+conclusions. Completion scope is written in the v1 guide. It is not implemented by this
+documentation change. No new features, inference, GT, core changes or quality gates.
+
+Documentation-only change; do not rerun the unchanged model pipeline or full test suite.
+Latest product-code suite remains1268 passed/0 failed/2 skipped (Windows file-symlink
+capabilities), including the formal five-video E2E. Phase-wide acceptance states above
+are unchanged. Local documentation links and Git whitespace/diff checks are verified
+before this checkpoint is committed.
+
+## 2026-10-26 Four manual-event interval readouts (previous delivery)
 
 The existing event report now includes all four intervals between the five existing
 manual events, with original timing and throwing-elbow/lead-knee model-XY endpoint
