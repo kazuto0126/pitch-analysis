@@ -3,7 +3,7 @@
 接收已整理好的 **單次投球 MP4 + metadata**，分析 MLB 投手的姿勢、動作時序與特徵。
 長期目標包括單一投手 motion profile，以及不同投手的完整時序比較。
 
-## 目前主線（2026-10-26）
+## 目前主線（2026-10-27）
 
 **[投球動作描述第一版](docs/MOTION_ANALYSIS_V1.md)已交付**：大谷五球、山本啟用四球，
 共2161格。沿用已接受的原生骨架，提供影片／曲線回看、人工五事件、四段時距與肘／膝模型XY讀值。
@@ -17,6 +17,7 @@ Phase 1 PASSED；原生資料介面接入PASSED；**Phase 2自動可靠性NOT PA
 |---|---|
 | 在單一入口看最新完整成果，或帶到另一台電腦 | [新版可攜成果包](docs/phase3_portable_review_20261026.md#最新完整描述性交付02)：九球影片、兩份草案、最新四段／時距資料與雙側回看頁 |
 | 看單投手動作特徵草案 | [大谷五球](docs/profiles/shohei_ohtani_descriptive_v1.md)／[山本四球](docs/profiles/yoshinobu_yamamoto_descriptive_v1.md)：各自的可描述差異、選格影響與資料限制 |
+| 自動產生單投手動作摘要 | [describe-native-profile](docs/native_descriptive_profile.md)：沿用原事件報告，輸出全部同投手時距配對及肘／膝端點差分組，適用後續投手 |
 | 重跑兩位投手的人工時距對照 | [compare-native-timing](docs/native_timing_comparison.md)：分數秒、全部配對與缺值 |
 | 從時距差值回看兩側影片 | [review-native-timing](docs/native_timing_comparison.md#直接從差值回看兩側影片)：選球／區段、人工事件界線定位與兩側獨立播放器 |
 | 查看目前結果、解讀限制與下一步 | [動作描述第一版](docs/MOTION_ANALYSIS_V1.md) |
@@ -142,14 +143,15 @@ provisional references；它不是目前已接受原生骨架九球的資料集�
 ```
 
 測試使用本機合成MP4、確定性pose fixture及既有本機素材；完整suite包含正式山本五球E2E。
-最新產品程式紀錄為2026-10-26：**1289 passed／0 failed／2 skipped**，
-包含六項新增雙側回看測試及正式五球E2E；八項junction環境案例已補跑，剩餘兩項為檔案符號連結能力限制。
+最新產品程式紀錄為2026-10-27：**1301 passed／0 failed／2 skipped**，
+包含十二項新增單投手摘要測試及正式五球E2E；八項junction環境案例已補跑，剩餘兩項為檔案符號連結能力限制。
 另Node **18 passed／0 failed**及34項既有事件helper斷言通過；新頁尚未作實際瀏覽器播放覆核。
 
 ## 接續開發
 
 目前九球的描述性第一版已收束；[大谷五球草案](docs/profiles/shohei_ohtani_descriptive_v1.md)
 及[山本四球草案](docs/profiles/yoshinobu_yamamoto_descriptive_v1.md)均已說明各自哪些階段差異在合法人工選格下仍成立、哪些受選格影響，附原片查核位置。
-兩份單投手草案已完成本批交付；新增的`compare-native-timing`可從原事件報告重跑有限時距對照，
-本批80組中65可比較、15事件不足。完整動作比較所需的可靠特徵仍須另行界定。
+兩份單投手草案已完成本批交付；`describe-native-profile`可從原事件報告重現單投手摘要，
+九球共64組同投手時距配對，56可比、8未定；肘／膝72筆摘要中66筆有可算端點、6筆事件未定。
+`compare-native-timing`另提供跨投手80組時距對照（65可比／15未定）。完整動作比較所需的可靠特徵仍須另行界定。
 Phase 2自動可靠性仍NOT PASSED，Phase 3整體尚未驗收。範圍見[第一版與後續工作](docs/MOTION_ANALYSIS_V1.md)。

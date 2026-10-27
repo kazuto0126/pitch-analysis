@@ -1,6 +1,6 @@
 # 投球動作描述第一版
 
-更新：2026-10-26（台灣）。本文件集中目前可用成果、解讀方式與下一步；詳細開發紀錄見
+更新：2026-10-27（台灣）。本文件集中目前可用成果、解讀方式與下一步；詳細開發紀錄見
 [current_status](current_status.md)，計算定義見[人工事件與曲線對照](native_motion_events.md)。
 
 ## 目前交付與專案目標
@@ -10,6 +10,7 @@
 它支援查看同一投手各球的差異，尚未交付完整profile、跨投手動作相似度或動作品質評分。
 後續已新增[人工事件時距對照](native_timing_comparison.md)，僅比較原事件界線下的分數秒時距。
 亦已接上[雙側回看入口](native_timing_comparison.md#直接從差值回看兩側影片)，可從差值選兩球並定位到人工事件原格號。
+另提供可重跑的[單投手摘要入口](native_descriptive_profile.md)，讓相同時距關係與肘／膝端點方向可由原事件報告自動產生，沿用於後續投手。
 
 狀態各自保留：Phase 1 PASSED；原生資料介面接入PASSED；Phase 2自動可靠性NOT PASSED；
 本批描述性交付COMPLETE；Phase 3整體尚未驗收。此整理不改寫原驗收標準。
@@ -18,6 +19,7 @@
 
 | 目的 | 現有入口 | 內容與版本 |
 |---|---|---|
+| 自動整理單投手動作描述 | [describe-native-profile](native_descriptive_profile.md) | 大谷5／山本4：64組同投手時距配對（56可比／8未定），72筆肘／膝摘要（66有可算端點／6未定）；保留全部事件選格 |
 | 看大谷五球最新數字 | [完整報告](../analysis_results/phase3_manual_stages_20261026_01/ohtani/report.md)／[四段CSV](../analysis_results/phase3_manual_stages_20261026_01/ohtani/manual_stage_readouts.csv) | 最新四段時距、肘／膝模型XY端點差、人工事件與來源 |
 | 看山本四球最新數字 | [完整報告](../analysis_results/phase3_manual_stages_20261026_01/yamamoto/report.md)／[四段CSV](../analysis_results/phase3_manual_stages_20261026_01/yamamoto/manual_stage_readouts.csv) | 最新四段讀值；001／005未確認事件保留空值 |
 | 回看片段與事件 | [大谷觀看頁](../analysis_results/phase3_manual_stages_20261026_01/ohtani/viewer/review_motion_events.html)／[山本觀看頁](../analysis_results/phase3_manual_stages_20261026_01/yamamoto/viewer/review_motion_events.html) | 原影片／骨架、曲線及事件對照；四段端點差完整表在上列報告／CSV |
@@ -103,3 +105,7 @@
 可重跑兩位投手四段時距的球對關係，不使用未校準投影角產生相似度、分數或排名。
 既有骨架方式、原資料／GT與門檻保持，沒有重新推論或重開Phase 2試驗。
 這不是正式`pitcher-profile-v1`契約輸出，也不提升素材資格或Phase整體狀態。
+
+上述單投手統計現可用[describe-native-profile](native_descriptive_profile.md)由保存報告重跑，
+不必為下一位投手重寫統計；原兩份人工整理草案保留。此輪完整Python suite為
+1301 passed／0 failed／2 skipped（含八項junction補跑及正式五球E2E），Node18項通過。

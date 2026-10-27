@@ -55,6 +55,9 @@ def main() -> None:
     event_comparison = commands.add_parser("compare-native-motion-events", help="Describe saved same-pitcher curves at existing manual event frames or ranges")
     event_comparison.add_argument("config_json")
     event_comparison.add_argument("--output", required=True)
+    descriptive_profile = commands.add_parser("describe-native-profile", help="Summarize one pitcher's source-bound manual timings and model-XY endpoints")
+    descriptive_profile.add_argument("event_report_json")
+    descriptive_profile.add_argument("--output", required=True)
     timing_comparison = commands.add_parser("compare-native-timing", help="Compare source-bound manual event durations for two pitchers using exact fractional seconds")
     timing_comparison.add_argument("report_a")
     timing_comparison.add_argument("report_b")
@@ -216,6 +219,18 @@ def main() -> None:
                    "source_frames": result["source_frames"], "output_dir": args.output,
                    "new_inference_calls": 0})
         except (ValueError, OSError, RuntimeError, KeyError, TypeError) as error:
+            _emit({"status": "failed", "error": str(error)})
+            raise SystemExit(1)
+        return
+    if args.command == "describe-native-profile":
+        from pathlib import Path
+        from .analysis.native_descriptive_profile import write_descriptive_profile
+        try:
+            result = write_descriptive_profile(Path.cwd(), args.event_report_json, args.output)
+            _emit({"status": result["status"], "pitcher_id": result["pitcher_id"],
+                   "clip_count": result["summary"]["clip_count"], "output_dir": args.output,
+                   "new_inference_calls": 0})
+        except (ValueError, OSError, RuntimeError, KeyError, TypeError, ZeroDivisionError) as error:
             _emit({"status": "failed", "error": str(error)})
             raise SystemExit(1)
         return

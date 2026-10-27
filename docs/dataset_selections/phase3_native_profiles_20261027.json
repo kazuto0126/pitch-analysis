@@ -1,0 +1,189 @@
+{
+  "schema_version": "native-descriptive-profile-delivery-v1",
+  "recorded_at_utc": "2026-10-27T01:26:56.093830+00:00",
+  "date_local": "2026-10-27",
+  "base_commit": "d6bd786a657fb4138cf1138653d2d61e2609caea",
+  "command": "pitch-analysis describe-native-profile <saved-single-pitcher-event-report.json> --output <fresh-analysis_results-directory>",
+  "output_dir": "analysis_results/phase3_native_profiles_20261027_01",
+  "cohorts": [
+    {
+      "pitcher_id": "shohei_ohtani",
+      "summary": {
+        "clip_count": 5,
+        "source_frames": 1684,
+        "timing_pair_count": 40,
+        "timing_comparable_pairs": 40,
+        "timing_unavailable_pairs": 0,
+        "joint_summary_count": 40,
+        "joint_calculable_summaries": 40,
+        "joint_unavailable_summaries": 0
+      },
+      "profile_ref": {
+        "path": "analysis_results/phase3_native_profiles_20261027_01/ohtani/profile.json",
+        "sha256": "32c565156c906c90c65bb30c25055e9b6abc6de96f1e252b60f0d3c234f696df"
+      },
+      "source_ref": {
+        "path": "analysis_results/phase3_manual_stages_20261026_01/ohtani/event_comparison.json",
+        "sha256": "112720be28bfd166c0a8d3d4dd8eb283e90ba6091f2564275732608cd59c86af"
+      },
+      "artifacts": {
+        "report.md": {
+          "path": "analysis_results/phase3_native_profiles_20261027_01/ohtani/report.md",
+          "sha256": "e534627be1f90c36aa95478e87cb8f05d1c7cfdc9023d0e68a62e05936e92591"
+        },
+        "timing_relations.csv": {
+          "path": "analysis_results/phase3_native_profiles_20261027_01/ohtani/timing_relations.csv",
+          "sha256": "5b4185c5ce6c74203e57dae5b0c347e73d6060b1ec3ad4433e6d5e855cbcc9b8"
+        },
+        "joint_direction_summary.csv": {
+          "path": "analysis_results/phase3_native_profiles_20261027_01/ohtani/joint_direction_summary.csv",
+          "sha256": "ef51106e6b55ae6cb5d6b96fdac5f40f0f606d8a39f923f650750bb89fee9ba5"
+        }
+      },
+      "pitch_ids": [
+        "supplement_001",
+        "supplement_002",
+        "supplement_003",
+        "supplement_004",
+        "supplement_005"
+      ],
+      "unresolved_events": []
+    },
+    {
+      "pitcher_id": "yoshinobu_yamamoto",
+      "summary": {
+        "clip_count": 4,
+        "source_frames": 477,
+        "timing_pair_count": 24,
+        "timing_comparable_pairs": 16,
+        "timing_unavailable_pairs": 8,
+        "joint_summary_count": 32,
+        "joint_calculable_summaries": 26,
+        "joint_unavailable_summaries": 6
+      },
+      "profile_ref": {
+        "path": "analysis_results/phase3_native_profiles_20261027_01/yamamoto/profile.json",
+        "sha256": "479a2e161d5f841c737f9b93085c695a70acdda44ec516b92ace22fab99a9b93"
+      },
+      "source_ref": {
+        "path": "analysis_results/phase3_manual_stages_20261026_01/yamamoto/event_comparison.json",
+        "sha256": "406f4c3d2f969ba1b2cb15758ba80a38b1cd69b8a078b8e7529818bb4c5ded96"
+      },
+      "artifacts": {
+        "report.md": {
+          "path": "analysis_results/phase3_native_profiles_20261027_01/yamamoto/report.md",
+          "sha256": "ac740ed13762dc46daeac341717a00818cbc991e5f675e1f2b5381546b8c353f"
+        },
+        "timing_relations.csv": {
+          "path": "analysis_results/phase3_native_profiles_20261027_01/yamamoto/timing_relations.csv",
+          "sha256": "080b841e012a5e7cc1177bd690c46059dfa2b38466ded8001b5202a2e5e52ca0"
+        },
+        "joint_direction_summary.csv": {
+          "path": "analysis_results/phase3_native_profiles_20261027_01/yamamoto/joint_direction_summary.csv",
+          "sha256": "4d4a46664141b0c5a257e1dadc8175ceaa8c0466e91b5215a64523053681b982"
+        }
+      },
+      "pitch_ids": [
+        "pitch_001",
+        "pitch_002",
+        "pitch_004",
+        "pitch_005"
+      ],
+      "unresolved_events": [
+        {
+          "pitch_id": "pitch_001",
+          "event": "preparation_start",
+          "status": "not_observable",
+          "candidate_bounds": null
+        },
+        {
+          "pitch_id": "pitch_005",
+          "event": "preparation_start",
+          "status": "uncertain",
+          "candidate_bounds": [
+            0,
+            0
+          ]
+        },
+        {
+          "pitch_id": "pitch_005",
+          "event": "leg_lift",
+          "status": "uncertain",
+          "candidate_bounds": [
+            33,
+            33
+          ]
+        }
+      ]
+    }
+  ],
+  "source_code": [
+    {
+      "path": "src/pitch_analysis/analysis/native_descriptive_profile.py",
+      "sha256": "88e372a562d753194e060f444d43e796f73f3a8010a6fa99d06cbd4d3d30da70"
+    },
+    {
+      "path": "src/pitch_analysis/cli.py",
+      "sha256": "86e60691d9b0428d103612f25cdd03ee1418a61ebc80eb9c89b4ff756d351d08"
+    },
+    {
+      "path": "tests/test_native_descriptive_profile.py",
+      "sha256": "637866748c0f43d380ba376610b646cc0789e43f5ffa35e1498eca71608a5e3a"
+    }
+  ],
+  "tests": {
+    "unique_tests_run": 1303,
+    "passed": 1301,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 2,
+    "initial_passed": 1293,
+    "initial_skipped": 10,
+    "junction_retry_passed": 8,
+    "new_tests": 12,
+    "remaining_skips": [
+      {
+        "test": "test_dangling_snapshot_file_link_cannot_create_external_target_when_supported (test_handoff_paths.HandoffPathTests.test_dangling_snapshot_file_link_cannot_create_external_target_when_supported)",
+        "reason": "file symlink creation is unavailable"
+      },
+      {
+        "test": "test_source_symlink_outside_candidate_is_rejected_when_supported (test_handoff_review.HandoffReviewTests.test_source_symlink_outside_candidate_is_rejected_when_supported)",
+        "reason": "creating symbolic links is unavailable"
+      }
+    ],
+    "formal_five_video_e2e_enabled": true,
+    "node_passed": 18,
+    "node_failed": 0,
+    "existing_event_helper_assertions": 34,
+    "node_command": "node --test tests/test_native_motion_alignment.js tests/test_native_motion_events.js tests/test_native_motion_viewer.js tests/test_native_timing_viewer.js",
+    "full_suite_ref": {
+      "path": "analysis_results/phase3_native_profiles_20261027_01/verified_suite/test_results.json",
+      "sha256": "38192e7369f737a511d8e24dae1a491273780e3936f709cb0f4a35cbf4064f36"
+    },
+    "junction_retry_ref": {
+      "path": "analysis_results/phase3_native_profiles_20261027_01/verified_suite/junction_retry/test_results.json",
+      "sha256": "822f78fb842daf4f9d13f15440cb033b9b5df161d357b049c2eb784d178a6f4c"
+    },
+    "summary_ref": {
+      "path": "analysis_results/phase3_native_profiles_20261027_01/validation_summary.json",
+      "sha256": "b7e6dd499edaabb3667d69afb9c6156d697346d8837546441f43d17a92cb4574"
+    }
+  },
+  "source_comparison": {
+    "joint_summaries_matching_saved_stages": 72,
+    "timing_csv_rows_matching_json": 64,
+    "direction_csv_rows_matching_json": 16,
+    "yamamoto001_follow_through_knee_min_delta_deg": -0.040605879997031025,
+    "yamamoto001_follow_through_knee_direction": "includes_zero"
+  },
+  "new_inference_calls": 0,
+  "new_tracking_replays": 0,
+  "new_ground_truth_labels": 0,
+  "pointwise_reliability": "unknown",
+  "usable_for_analysis": null,
+  "formal_reference_promotion": false,
+  "new_human_acceptance": false,
+  "phase2_automatic_reliability": "NOT PASSED",
+  "phase3_overall": "NOT EVALUATED",
+  "portable02_rebuilt": false
+}

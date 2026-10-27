@@ -1,13 +1,15 @@
-# Current status — Current descriptive delivery packaged for offline review
+# Current status — Reproducible single-pitcher descriptive profiles
 
-Updated: 2026-10-26 (Asia/Taipei)
+Updated: 2026-10-27 (Asia/Taipei)
 
 **Phase 1 = PASSED.**
 **Native interface integration = PASSED (cached compatibility and optional live COCO17 entry).**
 **Phase 2 evaluation = COMPLETE; Phase 2 = NOT PASSED (automatic reliability degraded).**
 **User-authorized Phase3 first descriptive motion delivery = COMPLETE; overall Phase3 NOT EVALUATED.**
 
-The [current portable02 delivery](phase3_portable_review_20261026.md) combines
+The new [single-pitcher summary command](native_descriptive_profile.md) reproduces
+within-pitcher timing relations and model-XY elbow/knee endpoint descriptions from
+bound saved event reports. The [portable02 viewing snapshot](phase3_portable_review_20261026.md) combines
 [manual-event timing comparison and two-player source review](native_timing_comparison.md),
 separate [Ohtani](profiles/shohei_ohtani_descriptive_v1.md)
 and [Yamamoto](profiles/yoshinobu_yamamoto_descriptive_v1.md) descriptive profile drafts,
@@ -18,6 +20,40 @@ Automatic reliability remains unaccepted. Existing acceptance thresholds, confid
 gates, MediaPipe settings, interpolation and smoothing are unchanged. The approved
 optional subject-region constraint is described below; the default selector remains compatible.
 The original Phase 1 stable state and five formal videos remain unchanged.
+
+## 2026-10-27 Reproducible single-pitcher descriptive profiles
+
+Added describe-native-profile, accepting one existing source-bound event report
+and a fresh analysis_results output. It verifies original inputs and saved manual
+stage readouts, then exports profile.json, report.md, timing_relations.csv and
+joint_direction_summary.csv. Arbitrary pitcher identities and one-clip input are
+supported; one clip has no between-clip comparisons or repeatability inference.
+
+Ohtani5/1684 frames:40 within-pitcher timing pairs, all comparable;40 joint stage
+summaries with calculable endpoints. Active Yamamoto4/477 frames:24 timing pairs,
+16 comparable/8 unresolved;32 joint stage summaries,26 calculable/6 unresolved.
+All72 joint summaries match original stage readouts;64 timing CSV rows and16
+direction rows match JSON. Source and artifact hashes are verified. Unresolved
+events keep null counts, known events with missing endpoints retain zero counts;
+partially missing endpoint pairs remain in the output, without filtering.
+
+Timing uses exact fractional seconds. Every admitted within-pitcher pair is kept;
+joint signs are classified before display rounding. Yamamoto001 follow-through
+knee retains the small negative bound (-0.040605879997...) and includes_zero.
+Yamamoto005 preparation0 and leg-lift33 remain uncertain candidates. Historical003
+remains excluded. No new inference, tracking, GT, gates, model/core edits, reference
+promotion or phase-wide acceptance. Pointwise reliability remains unknown and
+usable_for_analysis null. This is not the formal pitcher-profile-v1 contract.
+
+Outputs: `analysis_results/phase3_native_profiles_20261027_01/{ohtani,yamamoto}/`.
+Portable02 remains the prior viewing snapshot; this command does not rebuild it.
+
+Added12 tests. Full Python suite1303: initial1293 passed/0 failed/10 skipped;
+the8 junction capability cases passed on a bounded host-permission retry. Unique
+totals1301 passed/0 failed/2 skipped, including formal five-video E2E. Remaining
+skips are file-symlink capability limitations. Node18 passed/0 failed, plus34
+existing event-helper assertions. No RTMPose/detector inference in the feature or
+test run. [Delivery/test receipt](dataset_selections/phase3_native_profiles_20261027.json).
 
 ## 2026-10-26 Current descriptive delivery packaged as portable02
 

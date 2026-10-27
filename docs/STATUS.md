@@ -1,11 +1,26 @@
 # 進度摘要
 
-更新：2026-10-26（台灣）。[目前成果與下一步](MOTION_ANALYSIS_V1.md)；[完整歷史紀錄](current_status.md)。
+更新：2026-10-27（台灣）。[目前成果與下一步](MOTION_ANALYSIS_V1.md)；[完整歷史紀錄](current_status.md)。
 
 **Phase 1 = PASSED；Native interface integration = PASSED；Phase 2 自動可靠性仍 NOT PASSED。**
 **Phase3第一個描述性曲線交付 = COMPLETE；Phase3整體尚未驗收。**
 
-## 目前：最新成果已整合為可攜02包
+## 目前：單投手動作摘要可自動重跑
+
+新增[describe-native-profile](native_descriptive_profile.md)，直接讀取來源綁定的原事件報告，
+自動整理四段同投手時距球對、肘／膝模型端點差方向及逐球例外，後續投手可沿用相同入口。
+大谷5球1684格：40組時距全部可比、40筆關節摘要有可算端點；
+山本啟用4球477格：24組時距中16可比／8未定，32筆關節摘要中26可算／6未定。
+全部72筆關節摘要與原四段讀值一致，CSV共64列時距、16列方向分組；未定原因與來源SHA保留。
+山本003仍排除，005前兩事件保持uncertain，001膝收尾微小負值仍列含零。
+零新推論／追蹤／GT；可算不是可信，逐點unknown與可用性null保持，沒有品質分數或reference提升。
+本機輸出：`analysis_results/phase3_native_profiles_20261027_01/{ohtani,yamamoto}/`。
+
+新增12項測試。完整Python suite1303項，含八項junction補跑後，不重複計為
+**1301 passed／0 failed／2 skipped**，含正式五球E2E；兩項跳過為檔案符號連結能力限制。
+Node18項及既有34項事件helper斷言通過。[交付／測試紀錄](dataset_selections/phase3_native_profiles_20261027.json)。
+
+## 前段：最新觀看成果已整合為可攜02包
 
 [新版單一入口與ZIP](phase3_portable_review_20261026.md)已整合兩份可閱讀草案、最新四段資料、80組人工時距對照及雙側回看頁，
 附九球原片／overlay與原GT／預測。約32.7 MiB、183檔，169個HTML／媒體連結均在包內；171份來源SHA及ZIP CRC已核對。
