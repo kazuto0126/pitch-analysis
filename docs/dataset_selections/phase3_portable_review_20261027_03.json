@@ -1,0 +1,74 @@
+{
+  "schema_version": "portable-motion-review-delivery-v3",
+  "recorded_at_utc": "2026-10-27T11:36:51.796796+00:00",
+  "source_commit": "7a46c1aca1f30068a67b34e2d6ed6d4478bab8d9",
+  "archive_ref": {
+    "path": "analysis_results/phase3_portable_review_20261027_03/pitch_motion_review_20261027_03.zip",
+    "sha256": "f96d816c983e65a0b261c370e58e99840d9026c531cc32e3ec83240c0b23630b"
+  },
+  "archive_bytes": 36798530,
+  "entry_ref": {
+    "path": "analysis_results/phase3_portable_review_20261027_03/pitch_motion_review_20261027_03/START_HERE.html",
+    "sha256": "5424560b2e704e2127ffd9479311b2cc2d53e50ecd0eabf0f4ad98721ee7f9f4"
+  },
+  "manifest_ref": {
+    "path": "analysis_results/phase3_portable_review_20261027_03/pitch_motion_review_20261027_03/bundle_manifest.json",
+    "sha256": "ad0c4380d8f68af18af20f52531a265c43c7638bacc1e89548e4fec04db60a12"
+  },
+  "builder_ref": {
+    "path": "analysis_results/phase3_portable_review_20261027_03/build_bundle.py",
+    "sha256": "61da42a52d3248d1d3201b97af45aff8c9788d9184d55f5952fbdb06b528e117"
+  },
+  "file_count": 281,
+  "checked_local_links": 6673,
+  "source_file_count": 265,
+  "url_fields_rebased": 97,
+  "clip_count": 9,
+  "source_frames": 2161,
+  "timing_pairs": 80,
+  "comparable_pairs": 65,
+  "unavailable_pairs": 15,
+  "zip_crc_check": "passed",
+  "zip_entries_safe_and_unique": true,
+  "stage_count": 36,
+  "confirmed_stages": 33,
+  "unresolved_stages": 3,
+  "stage_window_rows": 144,
+  "stage_interval_joint_rows": 154,
+  "cohort_curve_source_rows": 2161,
+  "cohort_display_origins": 11,
+  "cohort_svg_sample_links": 5686,
+  "product_code_changed": false,
+  "full_suite_rerun": false,
+  "last_same_code_tests": {
+    "passed": 1341,
+    "failed": 0,
+    "skipped": 2,
+    "node_passed": 23
+  },
+  "last_same_code_test_ref": {
+    "path": "analysis_results/phase3_cohort_curve_review_20261027_01/validation_summary.json",
+    "sha256": "0aa4ccb6348a6c9a88fddfc25d85dcb48fb3ad4c29b003d784d4bfb9eaaa29c1"
+  },
+  "new_inference_calls": 0,
+  "new_ground_truth_labels": 0,
+  "browser_interaction_verified": false,
+  "automatic_phase2_status": "NOT PASSED",
+  "phase3_overall": "NOT EVALUATED",
+  "independent_verification": {
+    "zip_files_verified": 281,
+    "file_bytes_and_hashes_match_manifest": true,
+    "unchanged_source_copies": 208,
+    "zip_contained_presentation_links": 6673,
+    "standalone_presentation_paths": true,
+    "original_project_paths_kept_only_as_provenance": true,
+    "archive_sha256": "f96d816c983e65a0b261c370e58e99840d9026c531cc32e3ec83240c0b23630b",
+    "browser_interaction_verified": false,
+    "product_code_changed": false,
+    "analysis_or_full_suite_rerun": false
+  },
+  "independent_verification_ref": {
+    "path": "analysis_results/phase3_portable_review_20261027_03/independent_verification.json",
+    "sha256": "fbad746741795654589ac146b163f04cca243cee8ade5349430dae251434df94"
+  }
+}

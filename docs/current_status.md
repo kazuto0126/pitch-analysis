@@ -1,4 +1,4 @@
-# Current status — Two-cohort model curves at shared foot-plant-relative scales
+# Current status — Current descriptive delivery consolidated as portable03
 
 Updated: 2026-10-27 (Asia/Taipei)
 
@@ -7,7 +7,9 @@ Updated: 2026-10-27 (Asia/Taipei)
 **Phase 2 evaluation = COMPLETE; Phase 2 = NOT PASSED (automatic reliability degraded).**
 **User-authorized Phase3 first descriptive motion delivery = COMPLETE; overall Phase3 NOT EVALUATED.**
 
-The new [two-cohort curve review](native_cohort_curves.md) puts complete source
+The [portable03 delivery](phase3_portable_review_20261026.md#最新整合交付03) now consolidates
+all current descriptive outputs, source media and review pages in one standalone
+viewing entry. The [two-cohort curve review](native_cohort_curves.md) puts complete source
 curves on shared foot-plant-relative display axes and links each SVG sample back
 to its source frame. The [interior stage-curve description](native_stage_curves.md) exposes saved
 sample extrema, source frames and missing denominators under all legal manual
@@ -28,6 +30,32 @@ Automatic reliability remains unaccepted. Existing acceptance thresholds, confid
 gates, MediaPipe settings, interpolation and smoothing are unchanged. The approved
 optional subject-region constraint is described below; the default selector remains compatible.
 The original Phase 1 stable state and five formal videos remain unchanged.
+
+## 2026-10-27 Current descriptive delivery consolidated as portable03
+
+Created a new35.1 MiB/281-file snapshot with9 raw videos/9 overlays and2161 frames,
+integrated single-pitcher reports/profiles/review, stage interiors, two-cohort curves,
+manual timing comparison and historical readable profile drafts. Existing01/02
+packages and source outputs remain unchanged. No new product code, inference,
+analysis, GT, human acceptance, reference promotion or phase-wide acceptance.
+
+Verified ZIP bytes/sizes/hashes against the manifest and6673 presentation targets
+directly against ZIP membership.208 source copies remain byte-identical;265 source
+hashes are retained.97 embedded URL fields are rebased with all other values equal;
+SVG geometry/metadata/text stay unchanged apart from href presentation paths.
+Original JSON paths remain provenance, with a package source mapping; this is a
+viewing/data-check bundle, not a directly rerunnable model/runtime environment.
+
+Current bounded descriptive tools and viewing delivery are complete. Quantitative
+motion similarity still needs an explicit feature, normalization and evaluation
+scope; this packaging does not add those rules. Automatic Phase2 reliability
+remains NOT PASSED and overall Phase3 NOT EVALUATED. Browser playback remains
+unverified. Same-code tests remain1341 passed/0 failed/2 skipped, prior Node23
+passed; no identical suite rerun for a packaging/docs-only change.
+
+Entry: `analysis_results/phase3_portable_review_20261027_03/pitch_motion_review_20261027_03/START_HERE.html`.
+ZIP remains local, not uploaded to GitHub releases.
+[Delivery, archive SHA and independent verification](dataset_selections/phase3_portable_review_20261027_03.json).
 
 ## 2026-10-27 Complete two-cohort model curves on shared display scales
 

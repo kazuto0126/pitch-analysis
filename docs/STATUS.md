@@ -5,7 +5,17 @@
 **Phase 1 = PASSED；Native interface integration = PASSED；Phase 2 自動可靠性仍 NOT PASSED。**
 **Phase3第一個描述性曲線交付 = COMPLETE；Phase3整體尚未驗收。**
 
-## 目前：兩投手完整曲線可同刻度並列回看
+## 目前：描述性交付已收束為可攜03包
+
+[03單一入口與ZIP](phase3_portable_review_20261026.md#最新整合交付03)包含九球原片／overlay、
+單投手整合報告／摘要、區段內讀值、兩投手並列曲線、時距對照與全部回看頁。
+約35.1 MiB、281檔；從ZIP內核對檔案雜湊／大小與6673個呈現路徑，原片／GT／預測／CSV／JS保持。
+只有副本呈現路徑重定向，數字、人工標籤、未知與素材資格不變；01／02包及原分析結果保留。
+本輪無產品碼修改、新分析／GT或完整suite重跑，最近仍1341 passed／0 failed／2 skipped，Node23 passed。
+實際播放未覆核、Phase狀態保持；[交付／ZIP SHA紀錄](dataset_selections/phase3_portable_review_20261027_03.json)。
+目前描述性第一版的功能與觀看交付已完成；相似度的特徵、正規化與驗收規則仍待下一階段定義。
+
+## 前段：兩投手完整曲線可同刻度並列回看
 
 新增[review-native-cohort-curves](native_cohort_curves.md)，把大谷5／山本啟用4球的完整肘／膝模型曲線，
 依人工落地候選作顯示平移，兩組共用秒數與0–180°刻度；另有±0.5秒放大。

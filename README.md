@@ -19,7 +19,7 @@ Phase 1 PASSED；原生資料介面接入PASSED；**Phase 2自動可靠性NOT PA
 | 一個指令產生單投手報告與觀看入口 | [build-native-motion-report](docs/native_descriptive_profile.md#建議入口一個指令整合三步)：由已保存曲線＋人工事件產生事件報告、摘要、回看頁與START_HERE |
 | 查看每段內部曲線的極值與發生格號 | [區段內模型讀值](docs/native_stage_curves.md)：所有合法事件選格、可能／共同影格、缺值分母及原格回看；整合指令可選加入 |
 | 並列回看兩位投手的完整模型曲線 | [review-native-cohort-curves](docs/native_cohort_curves.md)：共用落地相對秒數／顯示刻度，保留全部人工原點與可點原樣本 |
-| 帶到另一台電腦看既有成果 | [可攜02觀看快照](docs/phase3_portable_review_20261026.md#最新完整描述性交付02)：九球影片、兩份草案、四段／時距資料與雙側回看頁；後續新指令與觀看頁不在該快照內 |
+| 一次開啟或分享目前全部描述性成果 | [可攜03整合包](docs/phase3_portable_review_20261026.md#最新整合交付03)：九球影片、整合報告、區段讀值、並列曲線、時距與全部回看頁；完整解壓後開START_HERE |
 | 看單投手動作特徵草案 | [大谷五球](docs/profiles/shohei_ohtani_descriptive_v1.md)／[山本四球](docs/profiles/yoshinobu_yamamoto_descriptive_v1.md)：各自的可描述差異、選格影響與資料限制 |
 | 自動產生單投手動作摘要 | [describe-native-profile](docs/native_descriptive_profile.md)：沿用原事件報告，輸出全部同投手時距配對及肘／膝端點差分組，適用後續投手 |
 | 從單投手摘要回看影片證據 | [review-native-profile](docs/native_descriptive_profile.md#從摘要直接回看影片證據)：選區段與原球對，查看肘／膝端點差並跳回原事件界線 |
@@ -39,7 +39,7 @@ Phase 1 PASSED；原生資料介面接入PASSED；**Phase 2自動可靠性NOT PA
 本專案只接收已整理的影片；供片端搜尋、下載與剪輯不在本repo內。
 交付資料夾唯讀，新匯入先列候選；現有大谷五球也不因骨架接受而自動升為正式reference。
 `analysis_results/`影片與報告保存在本機，不包含在GitHub原始碼中。
-最新可攜02包已包含四段讀值、兩份草案與雙側回看頁；舊01包作歷史快照保留。
+最新可攜03包已整合當前單投手報告、區段讀值、並列曲線、時距與回看頁；01／02包作歷史快照保留。
 
 ## 安裝（Windows x64 / Python 3.12）
 

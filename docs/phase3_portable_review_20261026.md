@@ -1,8 +1,38 @@
 # 可攜式投球動作成果包
 
-2026-10-26（台灣）。將既有成果整理為可離線觀看的資料夾與ZIP，沒有新增模型、分析或人工標註。
+更新：2026-10-27（台灣）。將既有成果整理為可離線觀看的資料夾與ZIP，沒有新增模型、分析或人工標註。
 
-## 最新完整描述性交付：02
+## 最新整合交付：03
+
+[下載ZIP](../analysis_results/phase3_portable_review_20261027_03/pitch_motion_review_20261027_03.zip)
+（36,798,530 bytes，約35.1 MiB）；[本機入口](../analysis_results/phase3_portable_review_20261027_03/pitch_motion_review_20261027_03/START_HERE.html)。
+請完整解壓縮、保留目錄，再以Chrome／Edge開啟`START_HERE.html`。觀看頁不依賴原專案目錄、Python或模型。
+
+03把目前已完成的描述性成果收束在同一入口：
+
+- 大谷五球、山本啟用四球；9支原片、9支overlay、2161來源格，及原metadata／GT／原生預測／追蹤。
+- 兩位投手的整合報告、自動單投手摘要與球對回看；完整事件表及原四段資料。
+- 區段內模型讀值：36段中33已確認／3未定，144筆窗口、154筆合法區間關節讀值與原格連結。
+- 兩位投手完整模型曲線並列圖版、可點SVG與PNG；11個人工顯示原點仍代表9球2161來源格。
+- 原80組人工時距對照（65可比／15未定）、雙側回看及兩份人工整理草案。
+
+281個檔案，6,673個觀看／媒體／SVG樣本連結都在ZIP內有對應目標；265份來源SHA保持。
+208份原片、GT、raw prediction、CSV、PNG與JS等檔案逐bytes複製；只在觀看頁／SVG／文件副本改寫呈現路徑。
+97個內嵌URL欄位改寫後，數字、標籤與未知狀態逐值保持；SVG除了href外的座標、metadata與標籤保持。
+另從ZIP內逐檔核對281檔雜湊／大小與全部6,673個路徑，不需依靠原專案檔案才能找到呈現目標。
+ZIP CRC、安全唯一檔名及manifest核對完成。原JSON路徑／SHA仍是來源證據，可用manifest查包內映射；本包不是CLI重跑環境。
+
+本輪只有封裝與文件，沒有產品碼修改、新推論、新GT或重跑相同suite。
+最近同程式碼結果仍為Python **1341 passed／0 failed／2 skipped**；原JS最近Node **23 passed**。
+實際瀏覽器播放尚未覆核，不新增人工接受；大谷仍為候選、山本003仍排除，Phase 2自動可靠性NOT PASSED及Phase 3整體未驗收保持。
+
+[03交付／ZIP SHA與獨立核對](dataset_selections/phase3_portable_review_20261027_03.json)。ZIP保存在本機，未上傳GitHub release。
+01／02包與所有原分析結果保持原樣。
+
+目前描述性第一版的功能與觀看交付已收束。後續若要建立動作相似度，需先界定可比較特徵、
+投影／時間正規化及驗收方式；此封裝不提前產生相似度或新的品質規則。
+
+## 歷史完整描述性交付：02
 
 [下載ZIP](../analysis_results/phase3_portable_review_20261026_02/pitch_motion_review_20261026_02.zip)
 （34,261,702 bytes，約32.7 MiB）；[本機入口](../analysis_results/phase3_portable_review_20261026_02/pitch_motion_review_20261026_02/START_HERE.html)。
