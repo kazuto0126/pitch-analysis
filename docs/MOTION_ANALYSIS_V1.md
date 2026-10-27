@@ -11,6 +11,7 @@
 後續已新增[人工事件時距對照](native_timing_comparison.md)，僅比較原事件界線下的分數秒時距。
 亦已接上[雙側回看入口](native_timing_comparison.md#直接從差值回看兩側影片)，可從差值選兩球並定位到人工事件原格號。
 另提供可重跑的[單投手摘要入口](native_descriptive_profile.md)，讓相同時距關係與肘／膝端點方向可由原事件報告自動產生，沿用於後續投手。
+亦可查看[人工區段內的模型讀值範圍](native_stage_curves.md)，列出所有合法事件選格下的內部極值、原格號與缺值分母，連回原片查核。
 
 狀態各自保留：Phase 1 PASSED；原生資料介面接入PASSED；Phase 2自動可靠性NOT PASSED；
 本批描述性交付COMPLETE；Phase 3整體尚未驗收。此整理不改寫原驗收標準。
@@ -19,6 +20,7 @@
 
 | 目的 | 現有入口 | 內容與版本 |
 |---|---|---|
+| 查看人工區段內的模型極值 | [區段內模型讀值](native_stage_curves.md) | 可能／共同影格與全部合法區間、肘／膝原格號、缺值分母；未知事件不使用候選 |
 | 一個指令建立單投手交付 | [build-native-motion-report](native_descriptive_profile.md#建議入口一個指令整合三步) | 讀取既有曲線＋人工事件設定，串接事件報告、單投手摘要、回看頁與START_HERE；未加入新推論 |
 | 自動整理單投手動作描述 | [describe-native-profile](native_descriptive_profile.md) | 大谷5／山本4：64組同投手時距配對（56可比／8未定），72筆肘／膝摘要（66有可算端點／6未定）；保留全部事件選格 |
 | 從單投手摘要回看證據 | [review-native-profile](native_descriptive_profile.md#從摘要直接回看影片證據) | 選原區段／球對，查看時距與肘／膝讀值後，用已確認事件界線定位各自原片；單球不補自比 |
@@ -117,3 +119,6 @@
 
 現已提供[單一交付指令](native_descriptive_profile.md#建議入口一個指令整合三步)，把原三步串成
 同一份START_HERE交付；摘要與原資料一致，最新完整Python suite1316 passed／0 failed／2 skipped。
+
+後續[區段內模型讀值](native_stage_curves.md)已補上中間極值與原格回看，保留合法選格、完整分母及未定事件。
+此輪完整Python suite1331 passed／0 failed／2 skipped；原JS保持，未重跑相同Node suite。

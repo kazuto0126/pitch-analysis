@@ -1,4 +1,4 @@
-# Current status — One command for the saved-motion descriptive delivery
+# Current status — Interior model-XY ranges under all manual interval choices
 
 Updated: 2026-10-27 (Asia/Taipei)
 
@@ -7,7 +7,9 @@ Updated: 2026-10-27 (Asia/Taipei)
 **Phase 2 evaluation = COMPLETE; Phase 2 = NOT PASSED (automatic reliability degraded).**
 **User-authorized Phase3 first descriptive motion delivery = COMPLETE; overall Phase3 NOT EVALUATED.**
 
-The new [single delivery command](native_descriptive_profile.md#建議入口一個指令整合三步)
+The new [interior stage-curve description](native_stage_curves.md) exposes saved
+sample extrema, source frames and missing denominators under all legal manual
+event choices. It is an optional supplement to the [single delivery command](native_descriptive_profile.md#建議入口一個指令整合三步), which
 connects the existing event report, profile and evidence-viewer writers, with one
 START_HERE entry for each pitcher. The [profile review entry](native_descriptive_profile.md#從摘要直接回看影片證據)
 links within-pitcher summaries and saved pairs to independent source-frame players.
@@ -24,6 +26,44 @@ Automatic reliability remains unaccepted. Existing acceptance thresholds, confid
 gates, MediaPipe settings, interpolation and smoothing are unchanged. The approved
 optional subject-region constraint is described below; the default selector remains compatible.
 The original Phase 1 stable state and five formal videos remain unchanged.
+
+## 2026-10-27 Interior sample ranges with original-frame evidence
+
+Added describe-native-stage-curves. It reuses saved curves and completed manual
+events, retains every chronological inclusive interval and reports possible-frame
+union, all-interval common intersection and per-interval elbow/knee samples.
+Extrema use unrounded values and retain every tied original frame/fractional time.
+Missing/degenerate counts and full denominators remain; fewer than two calculated
+samples have null span. Known empty intersection has zero denominator, whereas
+unresolved events keep null counts and never use candidate frames.
+
+Ohtani20 stages are confirmed; active Yamamoto16 include13 confirmed/3 unresolved.
+Yamamoto001 preparation and005 preparation/leg-lift remain unchanged;003 excluded.
+Ohtani001 preparation28-to-leg-lift59 has elbow model minimum76.568971 degrees at
+frame32 and maximum102.270107 at45, exposing interior readings for source review.
+These are model sample extrema, not new event labels, true motion range, turning
+point detection, reliability classification or quality scores.
+
+build-native-motion-report optionally adds this fourth component with
+--include-stage-curves; default three-step delivery stays unchanged. The true four-
+writer integration uses a small fixture. Actual nine-clip outputs use the standalone
+entry on existing reports, avoiding regeneration of prior full deliveries. Original
+frame player/adapter, pose/tracking, gates, predictions and GT remain unchanged.
+No new inference/GT/reference or phase promotion. Browser playback remains unverified.
+
+Local reports: `analysis_results/phase3_stage_curves_20261027_01/{ohtani,yamamoto}/report.html`.
+
+Nine source pages retain2161 frames. CSVs contain144 window rows and154 interval
+joint rows;600 contained report links exist and585 extrema-frame links are inside
+their respective original timelines. These are static checks, not browser playback.
+Added15 Python tests (11 stage-curves,4 optional orchestration including true four-
+writer fixture). Full suite1333: initial1323 passed/0 failed/10 skipped; bounded
+retry passed8 junction cases. Unique totals1331 passed/0 failed/2 skipped, including
+formal five-video E2E; remaining skips are file-symlink capability limitations.
+The shell wrapper returned1 while the full log was OK and runner successful=true;
+the exact host anomaly is retained in the test receipt. JS is unchanged, so the
+same Node suite was not rerun; prior23 passing cases remain applicable.
+[Delivery and exact test records](dataset_selections/phase3_stage_curves_20261027.json).
 
 ## 2026-10-27 One command for existing descriptive writers
 

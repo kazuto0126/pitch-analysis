@@ -32,6 +32,9 @@ my_ohtani_delivery/
 這只是把既有三個產生器串起來，不新增pose／tracking、人工標註、品質規則或reference升格。
 原影片仍由專案內來源讀取，這個目錄不是可攜影片包。
 
+可選`--include-stage-curves`加入[人工區段內模型讀值範圍](native_stage_curves.md)：
+保留所有合法事件區間、內部極值／原格號與缺值分母，從同一入口回看；預設仍維持原三步。
+
 本機完整交付入口：
 [大谷五球](../analysis_results/phase3_native_motion_delivery_20261027_01/ohtani/START_HERE.html)／
 [山本四球](../analysis_results/phase3_native_motion_delivery_20261027_01/yamamoto/START_HERE.html)。

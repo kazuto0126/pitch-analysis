@@ -5,13 +5,15 @@ from html import escape
 from pathlib import Path
 
 from .native_descriptive_profile import write_descriptive_profile
-from .native_motion_events import load_event_clips, write_event_comparison
+from .native_motion_events import TIMING_PAIRS, load_event_clips, write_event_comparison
+from .native_motion_transition import ROLES
 from .native_profile_viewer import write_profile_viewer
+from .native_stage_curves import write_stage_curves
 from ..native_pose_io import BoundReader, reference, write_json
 
 
-def _entry(pitcher_id: str, summary: dict) -> str:
-    return f'''<!doctype html><html lang="zh-Hant"><meta charset="utf-8">
+def _entry(pitcher_id: str, summary: dict, stage_curve_summary: dict | None = None) -> str:
+    html = f'''<!doctype html><html lang="zh-Hant"><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{escape(pitcher_id)}：投球動作描述</title>
 <style>body{{font:18px system-ui;line-height:1.8;max-width:900px;margin:35px auto;padding:0 20px;color:#203147;background:#f3f6fa}}
@@ -40,11 +42,20 @@ table{{border-collapse:collapse;width:100%}}th,td{{padding:8px;text-align:left;b
 <a href="events/event_comparison.json">人工事件與讀值 JSON</a></p></details></section>
 <p>此入口仍讀取專案內的原影片；不是可攜影片包。實際播放尚未由工具覆核。
 Phase 2自動可靠性與Phase 3整體驗收狀態維持原紀錄。</p></html>'''
+    if stage_curve_summary is not None:
+        section = f'''<section><h2>區段內模型讀值範圍</h2>
+<p><a href="stage_curves/report.html">查看區段內模型讀值範圍與來源影格</a></p>
+<p>事件已確認區段 {stage_curve_summary['event_confirmed_stages']} 個；事件未定區段 {stage_curve_summary['event_unresolved_stages']} 個。
+最小／最大值只描述窗口內已保存的模型讀值，不是新的事件或人體真實活動幅度。
+已確認區段仍可能包含缺值／退化影格；請同時查看可算／全部影格與缺失區段。</p></section>
+'''
+        html = html.replace('<section><h2>下載資料</h2>', section + '<section><h2>下載資料</h2>')
+    return html
 
 
 def write_motion_report(root: str | Path, config_json: str | Path,
-                         output: str | Path) -> dict:
-    """Preflight saved inputs, claim a fresh folder, then run three old writers.
+                         output: str | Path, *, include_stage_curves: bool = False) -> dict:
+    """Preflight saved inputs and run existing writers, with optional stage curves.
 
     Component contracts and algorithms remain unchanged. A partial delivery is
     preserved with an incomplete marker; it is never presented as a finished
@@ -86,6 +97,13 @@ def write_motion_report(root: str | Path, config_json: str | Path,
         review = write_profile_viewer(root, output / 'profile/profile.json', output / 'review')
         stages['review'] = {'status': review['status'],
                             'manifest_ref': reference(root, output / 'review/profile_viewer_manifest.json')}
+        stage_curves = None
+        stage_curve_summary = None
+        if include_stage_curves:
+            failed_stage = 'stage_curves'
+            stage_curves = write_stage_curves(root, output / 'events/event_comparison.json', output / 'stage_curves')
+            stages['stage_curves'] = {'status': stage_curves['status'],
+                                      'manifest_ref': reference(root, output / 'stage_curves/stage_curves.json')}
         failed_stage = 'finalize'
         for ref in refs:
             reader.path(ref)
@@ -97,6 +115,24 @@ def write_motion_report(root: str | Path, config_json: str | Path,
                 or any(value != common['source_frames'] for value in
                        (events['source_frames'], summary['source_frames'], review['source_frames']))):
             raise ValueError('Component cohort differs from the preflighted source cohort')
+        if stage_curves is not None:
+            stage_curve_summary = {key: stage_curves['summary'][key] for key in (
+                'clip_count', 'source_frames', 'stage_count', 'event_confirmed_stages',
+                'event_unresolved_stages', 'joint_summary_count')}
+            expected_count = common['clip_count'] * len(TIMING_PAIRS)
+            expected_confirmed = sum(
+                all(clip['events'][name]['status'] == 'annotated' for name in bounds)
+                for clip in loaded['clips'] for bounds in TIMING_PAIRS.values())
+            expected = {
+                'clip_count': common['clip_count'], 'source_frames': common['source_frames'],
+                'stage_count': expected_count, 'event_confirmed_stages': expected_confirmed,
+                'event_unresolved_stages': expected_count - expected_confirmed,
+                'joint_summary_count': expected_count * len(ROLES),
+            }
+            if (stage_curves['pitcher_id'] != common['pitcher_id']
+                    or stage_curve_summary != expected
+                    or any(type(value) is not int for value in stage_curve_summary.values())):
+                raise ValueError('Stage-curve component cohort differs from the preflighted source cohort')
         result = {
             **common, 'status': 'motion_report_created', 'completed_stages': list(stages),
             'stages': stages, 'timing_pairs': summary['timing_pair_count'],
@@ -107,9 +143,11 @@ def write_motion_report(root: str | Path, config_json: str | Path,
             'joint_unavailable_summaries': summary['joint_unavailable_summaries'],
             'artifacts': {},
         }
+        if stage_curve_summary is not None:
+            result['stage_curve_summary'] = stage_curve_summary
         # All component validations finish before creating the success entry.
         with (output / 'START_HERE.html').open('x', encoding='utf-8', newline='\n') as stream:
-            stream.write(_entry(common['pitcher_id'], summary))
+            stream.write(_entry(common['pitcher_id'], summary, stage_curve_summary))
         result['artifacts']['START_HERE.html'] = reference(root, output / 'START_HERE.html')
         write_json(output / 'delivery_manifest.json', result)
     except Exception as error:

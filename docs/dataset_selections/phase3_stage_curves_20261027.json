@@ -1,0 +1,139 @@
+{
+  "schema_version": "native-stage-curves-delivery-v1",
+  "recorded_at_utc": "2026-10-27T06:33:18.060597+00:00",
+  "date_local": "2026-10-27",
+  "base_commit": "eb59d736491478402c9371323d5f97daa19a9d70",
+  "command": "pitch-analysis describe-native-stage-curves <existing-event-report.json> --output <fresh-analysis_results-directory>",
+  "optional_workflow_flag": "--include-stage-curves",
+  "workflow_default_changed": false,
+  "actual_nine_clip_execution": "standalone_on_existing_reports",
+  "four_writer_integration_test": "small_fixture_real_writers_source_loaders_mocked",
+  "output_dir": "analysis_results/phase3_stage_curves_20261027_01",
+  "cohorts": [
+    {
+      "pitcher_id": "shohei_ohtani",
+      "clip_count": 5,
+      "source_frames": 1684,
+      "stage_count": 20,
+      "event_confirmed_stages": 20,
+      "event_unresolved_stages": 0,
+      "joint_summary_count": 40,
+      "window_csv_rows": 80,
+      "interval_csv_rows": 68,
+      "source_pages": 5,
+      "contained_report_links": 304,
+      "valid_original_frame_links": 296,
+      "result_ref": {
+        "path": "analysis_results/phase3_stage_curves_20261027_01/ohtani/stage_curves.json",
+        "sha256": "d69e800d3834c721278ca0cfcfc5dc505ea6ecd2ecf3dccfc1060eb4658832cd"
+      },
+      "source_ref": {
+        "path": "analysis_results/phase3_native_motion_delivery_20261027_01/ohtani/events/event_comparison.json",
+        "sha256": "f34681a2d6a1f19cb6b2ac5630fc1da2beadab780883d9d97f58f5c512b17486"
+      },
+      "report_ref": {
+        "path": "analysis_results/phase3_stage_curves_20261027_01/ohtani/report.html",
+        "sha256": "76966a9740ef47bfe18b8b1a927164043fdd6ad2c2fce17f80846bd9a2814009"
+      }
+    },
+    {
+      "pitcher_id": "yoshinobu_yamamoto",
+      "clip_count": 4,
+      "source_frames": 477,
+      "stage_count": 16,
+      "event_confirmed_stages": 13,
+      "event_unresolved_stages": 3,
+      "joint_summary_count": 32,
+      "window_csv_rows": 64,
+      "interval_csv_rows": 86,
+      "source_pages": 4,
+      "contained_report_links": 296,
+      "valid_original_frame_links": 289,
+      "result_ref": {
+        "path": "analysis_results/phase3_stage_curves_20261027_01/yamamoto/stage_curves.json",
+        "sha256": "9e75c8b579e7f66295da3e5eae2410a810b5a31af9f3a40d52a69e39f2976d38"
+      },
+      "source_ref": {
+        "path": "analysis_results/phase3_native_motion_delivery_20261027_01/yamamoto/events/event_comparison.json",
+        "sha256": "c9e9822af3ba1bc2ea2d9976f76aafb45429a7ffc2b6f0cd7776531ef7eb70d8"
+      },
+      "report_ref": {
+        "path": "analysis_results/phase3_stage_curves_20261027_01/yamamoto/report.html",
+        "sha256": "61c95011fd81f8f30a94536597ece103858dda9a4d910913b5e6352c5740cef1"
+      }
+    }
+  ],
+  "source_code": [
+    {
+      "path": "src/pitch_analysis/analysis/native_stage_curves.py",
+      "sha256": "668e28e8e3fb05c102d49fa3dd2a2d34e61e3282fbba6ee0d6d78b7b70f2e0a2"
+    },
+    {
+      "path": "src/pitch_analysis/analysis/native_motion_delivery.py",
+      "sha256": "64dcd268407133a980d71415cc24cb367dc1fd41a9cb0c4ea2f7c7636bafeba8"
+    },
+    {
+      "path": "src/pitch_analysis/cli.py",
+      "sha256": "59fa414a7dbc2cb72ac88961e1af331816a922e85ba5b19ce8fb2e5f09d6493d"
+    },
+    {
+      "path": "tests/test_native_stage_curves.py",
+      "sha256": "69d122fe22b970f34049ca42bf51eb2217a15a983e7d4abe190c74a83a38a412"
+    },
+    {
+      "path": "tests/test_native_motion_delivery.py",
+      "sha256": "c0cb5c0290d5d9440500ffc1e67445aaa42bb042fbe5f6da361a932a31faf925"
+    }
+  ],
+  "tests": {
+    "unique_tests_run": 1333,
+    "passed": 1331,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 2,
+    "new_python_tests": 15,
+    "initial_passed": 1323,
+    "initial_skipped": 10,
+    "junction_retry_passed": 8,
+    "remaining_skips": [
+      {
+        "test": "test_dangling_snapshot_file_link_cannot_create_external_target_when_supported (test_handoff_paths.HandoffPathTests.test_dangling_snapshot_file_link_cannot_create_external_target_when_supported)",
+        "reason": "file symlink creation is unavailable"
+      },
+      {
+        "test": "test_source_symlink_outside_candidate_is_rejected_when_supported (test_handoff_review.HandoffReviewTests.test_source_symlink_outside_candidate_is_rejected_when_supported)",
+        "reason": "creating symbolic links is unavailable"
+      }
+    ],
+    "formal_five_video_e2e_enabled": true,
+    "full_suite_ref": {
+      "path": "analysis_results/phase3_stage_curves_20261027_01/verified_suite/test_results.json",
+      "sha256": "ff7e912f5c105e77ba83122fe0b817f29b98c3f7e8f838fb2e05b36a074e1364"
+    },
+    "junction_retry_ref": {
+      "path": "analysis_results/phase3_stage_curves_20261027_01/verified_suite/junction_retry/test_results.json",
+      "sha256": "24f76125a0f503723018fe8a076fab0de66013d3a645adfdcbf920e7ffe11a0f"
+    },
+    "shell_wrapper_exit_code": 1,
+    "full_log_status": "OK (skipped=10)",
+    "javascript_changed": false,
+    "node_suite_rerun": false,
+    "summary_ref": {
+      "path": "analysis_results/phase3_stage_curves_20261027_01/validation_summary.json",
+      "sha256": "95b4a8378219275b042d32bb21769cee720dbfc46eb77a40817071c2c2a1b214"
+    }
+  },
+  "new_inference_calls": 0,
+  "new_tracking_replays": 0,
+  "new_ground_truth_labels": 0,
+  "base_player_modified": false,
+  "frame_link_adapter_modified": false,
+  "portable_media_copy": false,
+  "browser_interaction_verified": false,
+  "new_human_acceptance": false,
+  "pointwise_reliability": "unknown",
+  "usable_for_analysis": null,
+  "formal_reference_promotion": false,
+  "phase2_automatic_reliability": "NOT PASSED",
+  "phase3_overall": "NOT EVALUATED"
+}

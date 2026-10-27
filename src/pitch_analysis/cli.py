@@ -64,6 +64,10 @@ def main() -> None:
     motion_report = commands.add_parser("build-native-motion-report", help="Build events, a single-pitcher profile and source review from saved curves with one entry")
     motion_report.add_argument("config_json")
     motion_report.add_argument("--output", required=True)
+    motion_report.add_argument("--include-stage-curves", action="store_true", help="Add interior model-XY sample ranges under all legal manual event choices")
+    stage_curves = commands.add_parser("describe-native-stage-curves", help="Describe saved interior model-XY samples for all legal manual event intervals")
+    stage_curves.add_argument("event_report_json")
+    stage_curves.add_argument("--output", required=True)
     timing_comparison = commands.add_parser("compare-native-timing", help="Compare source-bound manual event durations for two pitchers using exact fractional seconds")
     timing_comparison.add_argument("report_a")
     timing_comparison.add_argument("report_b")
@@ -228,11 +232,24 @@ def main() -> None:
             _emit({"status": "failed", "error": str(error)})
             raise SystemExit(1)
         return
+    if args.command == "describe-native-stage-curves":
+        from pathlib import Path
+        from .analysis.native_stage_curves import write_stage_curves
+        try:
+            result = write_stage_curves(Path.cwd(), args.event_report_json, args.output)
+            _emit({"status": result["status"], "pitcher_id": result["pitcher_id"],
+                   "clip_count": result["summary"]["clip_count"], "stage_count": result["summary"]["stage_count"],
+                   "output_dir": args.output, "new_inference_calls": 0})
+        except (ValueError, OSError, RuntimeError, KeyError, TypeError, ZeroDivisionError) as error:
+            _emit({"status": "failed", "error": str(error)})
+            raise SystemExit(1)
+        return
     if args.command == "build-native-motion-report":
         from pathlib import Path
         from .analysis.native_motion_delivery import write_motion_report
         try:
-            result = write_motion_report(Path.cwd(), args.config_json, args.output)
+            options = {"include_stage_curves": True} if args.include_stage_curves else {}
+            result = write_motion_report(Path.cwd(), args.config_json, args.output, **options)
             _emit({"status": result["status"], "pitcher_id": result["pitcher_id"],
                    "clip_count": result["clip_count"], "source_frames": result["source_frames"],
                    "output_dir": args.output, "entry": str(Path(args.output) / "START_HERE.html"),

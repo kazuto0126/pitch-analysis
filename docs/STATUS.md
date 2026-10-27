@@ -5,7 +5,23 @@
 **Phase 1 = PASSED；Native interface integration = PASSED；Phase 2 自動可靠性仍 NOT PASSED。**
 **Phase3第一個描述性曲線交付 = COMPLETE；Phase3整體尚未驗收。**
 
-## 目前：三個描述性入口整合為一個交付指令
+## 目前：可回看人工區段內的模型極值
+
+新增[區段內模型讀值](native_stage_curves.md)，保留所有合法起終事件選格，列出可能／共同影格、
+肘／膝內部極值、全部並列原格號、缺值分母與逐區間樣本跨度，直接連到既有影格播放器。
+大谷20段皆已確認；山本16段中13段已確認／3段未定，原候選事件不參與計算，003仍排除。
+大谷001啟動→抬腿的肘模型極值在32／45格，提供端點之外可查核的保存讀值，不把極值當成新事件。
+`build-native-motion-report --include-stage-curves`可選加入；預設三步、既有數據／GT與門檻保持。
+本輪九球只新增區段曲線輸出，四產生器串接使用小型端到端資料驗證，未重做整批原報告。
+輸出：`analysis_results/phase3_stage_curves_20261027_01/{ohtani,yamamoto}/report.html`。
+
+九球2161格，144筆窗口／154筆區間讀值；600個本地連結存在，585個極值原格號均有效。
+新增15項測試；完整Python suite1333項，含八項junction補跑後為
+**1331 passed／0 failed／2 skipped**，含正式五球E2E。兩項跳過仍為檔案符號連結能力限制。
+JS未改；最近Node23項通過。播放未覆核、逐點unknown及Phase狀態保持。
+[交付／測試紀錄](dataset_selections/phase3_stage_curves_20261027.json)。
+
+## 前段：三個描述性入口整合為一個交付指令
 
 新增[build-native-motion-report](native_descriptive_profile.md#建議入口一個指令整合三步)，
 從已保存曲線＋已覆核人工事件設定，串接事件報告、單投手摘要、回看頁，產生單一START_HERE入口。
