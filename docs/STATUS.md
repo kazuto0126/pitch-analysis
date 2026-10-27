@@ -5,7 +5,20 @@
 **Phase 1 = PASSED；Native interface integration = PASSED；Phase 2 自動可靠性仍 NOT PASSED。**
 **Phase3第一個描述性曲線交付 = COMPLETE；Phase3整體尚未驗收。**
 
-## 目前：單投手動作摘要可自動重跑
+## 目前：單投手摘要可直接回看影片證據
+
+新增[review-native-profile](native_descriptive_profile.md#從摘要直接回看影片證據)，可選原區段與球對，
+查看時距、肘／膝端點讀值，再從已確認事件界線跳回兩側獨立原片／曲線播放器。
+大谷5球40組、山本啟用4球24組原球對保持，未加入反向或自比；單球改為單播放器且無跨球比較。
+未確認事件不提供定位按鈕；原影格播放器與跳格adapter保持，來源／摘要改動時拒收。
+本機入口：`analysis_results/phase3_native_profile_review_20261027_01/{ohtani,yamamoto}/review_profile.html`。
+零新推論／追蹤／GT，逐點可靠性及Phase驗收狀態保持；瀏覽器實際播放尚未覆核。
+
+新增8項Python與5項Node測試。完整Python suite1311項，含八項junction補跑後，不重複計為
+**1309 passed／0 failed／2 skipped**，含正式五球E2E；兩項跳過仍為檔案符號連結能力限制。
+Node23項及既有34項事件helper斷言通過。[交付／測試紀錄](dataset_selections/phase3_native_profile_review_20261027.json)。
+
+## 前段：單投手動作摘要可自動重跑
 
 新增[describe-native-profile](native_descriptive_profile.md)，直接讀取來源綁定的原事件報告，
 自動整理四段同投手時距球對、肘／膝模型端點差方向及逐球例外，後續投手可沿用相同入口。

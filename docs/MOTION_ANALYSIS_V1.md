@@ -20,6 +20,7 @@
 | 目的 | 現有入口 | 內容與版本 |
 |---|---|---|
 | 自動整理單投手動作描述 | [describe-native-profile](native_descriptive_profile.md) | 大谷5／山本4：64組同投手時距配對（56可比／8未定），72筆肘／膝摘要（66有可算端點／6未定）；保留全部事件選格 |
+| 從單投手摘要回看證據 | [review-native-profile](native_descriptive_profile.md#從摘要直接回看影片證據) | 選原區段／球對，查看時距與肘／膝讀值後，用已確認事件界線定位各自原片；單球不補自比 |
 | 看大谷五球最新數字 | [完整報告](../analysis_results/phase3_manual_stages_20261026_01/ohtani/report.md)／[四段CSV](../analysis_results/phase3_manual_stages_20261026_01/ohtani/manual_stage_readouts.csv) | 最新四段時距、肘／膝模型XY端點差、人工事件與來源 |
 | 看山本四球最新數字 | [完整報告](../analysis_results/phase3_manual_stages_20261026_01/yamamoto/report.md)／[四段CSV](../analysis_results/phase3_manual_stages_20261026_01/yamamoto/manual_stage_readouts.csv) | 最新四段讀值；001／005未確認事件保留空值 |
 | 回看片段與事件 | [大谷觀看頁](../analysis_results/phase3_manual_stages_20261026_01/ohtani/viewer/review_motion_events.html)／[山本觀看頁](../analysis_results/phase3_manual_stages_20261026_01/yamamoto/viewer/review_motion_events.html) | 原影片／骨架、曲線及事件對照；四段端點差完整表在上列報告／CSV |
@@ -109,3 +110,6 @@
 上述單投手統計現可用[describe-native-profile](native_descriptive_profile.md)由保存報告重跑，
 不必為下一位投手重寫統計；原兩份人工整理草案保留。此輪完整Python suite為
 1301 passed／0 failed／2 skipped（含八項junction補跑及正式五球E2E），Node18項通過。
+
+後續[摘要回看入口](native_descriptive_profile.md#從摘要直接回看影片證據)已把原球對、端點差與
+事件影格接到兩側播放器；完整Python suite1309 passed／0 failed／2 skipped、Node23項通過。

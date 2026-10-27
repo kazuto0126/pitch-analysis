@@ -1,0 +1,148 @@
+{
+  "schema_version": "native-descriptive-profile-viewer-delivery-v1",
+  "recorded_at_utc": "2026-10-27T01:35:47.449500+00:00",
+  "date_local": "2026-10-27",
+  "base_commit": "94d63a992b2791d1b4d9c927125644633ff38fb1",
+  "command": "pitch-analysis review-native-profile <profile.json> --output <fresh-analysis_results-directory>",
+  "output_dir": "analysis_results/phase3_native_profile_review_20261027_01",
+  "cohorts": [
+    {
+      "pitcher_id": "shohei_ohtani",
+      "clip_count": 5,
+      "source_frames": 1684,
+      "total_pairs": 40,
+      "comparable_pairs": 40,
+      "unavailable_pairs": 0,
+      "manifest_ref": {
+        "path": "analysis_results/phase3_native_profile_review_20261027_01/ohtani/profile_viewer_manifest.json",
+        "sha256": "e48dec5a708b3bb39e8506b7c0eb73456bf659b00c12f85c62c718b481e7a1d4"
+      },
+      "profile_ref": {
+        "path": "analysis_results/phase3_native_profiles_20261027_01/ohtani/profile.json",
+        "sha256": "32c565156c906c90c65bb30c25055e9b6abc6de96f1e252b60f0d3c234f696df"
+      },
+      "entry_ref": {
+        "path": "analysis_results/phase3_native_profile_review_20261027_01/ohtani/review_profile.html",
+        "sha256": "95df399c172b9dacb4b473f3c26cca3fe9caf296c20af17072a21fe0a2d817da"
+      },
+      "source_pages": 5,
+      "embedded_rows": 1684
+    },
+    {
+      "pitcher_id": "yoshinobu_yamamoto",
+      "clip_count": 4,
+      "source_frames": 477,
+      "total_pairs": 24,
+      "comparable_pairs": 16,
+      "unavailable_pairs": 8,
+      "manifest_ref": {
+        "path": "analysis_results/phase3_native_profile_review_20261027_01/yamamoto/profile_viewer_manifest.json",
+        "sha256": "ff84a7e74bba4e8e72c3adc9c8ea67444e40db3274b1e2f0d29543154810e222"
+      },
+      "profile_ref": {
+        "path": "analysis_results/phase3_native_profiles_20261027_01/yamamoto/profile.json",
+        "sha256": "479a2e161d5f841c737f9b93085c695a70acdda44ec516b92ace22fab99a9b93"
+      },
+      "entry_ref": {
+        "path": "analysis_results/phase3_native_profile_review_20261027_01/yamamoto/review_profile.html",
+        "sha256": "ae87db6256fb805acb045e4480b78186404e07fd9334a1ac0112305b241cac64"
+      },
+      "source_pages": 4,
+      "embedded_rows": 477
+    }
+  ],
+  "source_code": [
+    {
+      "path": "src/pitch_analysis/analysis/native_profile_viewer.py",
+      "sha256": "0e40fccb17ac2a675581c821c5ad541ed3c38104531bdb588d2bebbc142e9327"
+    },
+    {
+      "path": "src/pitch_analysis/analysis/native_timing_viewer.py",
+      "sha256": "3b6cc6fbfcfb4e77a0a7c515736582d278221bf04670dd73770174b4cf991e9c"
+    },
+    {
+      "path": "src/pitch_analysis/cli.py",
+      "sha256": "f923c3245da37e4a5b68e436e8fae60004a56683f71314ed83cb1c1847c67fc4"
+    },
+    {
+      "path": "src/pitch_analysis/review_assets/native_timing_viewer.js",
+      "sha256": "ffa87c93634bbb78b4f99df0686e1735491dbf7a31e120b4c1a88b6eb3e5040b"
+    },
+    {
+      "path": "tests/test_native_profile_viewer.py",
+      "sha256": "455e0cfd61cb91d2241af7006e1b68fc9b40d1cb36d6d7e666384d6a6711cc3d"
+    },
+    {
+      "path": "tests/test_native_timing_viewer.js",
+      "sha256": "b07f3bb83c54b92c7dc75c1353de98ee30c4cd46fa9e2678a5eb7ed6e78ec11e"
+    }
+  ],
+  "tests": {
+    "unique_tests_run": 1311,
+    "passed": 1309,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 2,
+    "initial_passed": 1301,
+    "initial_skipped": 10,
+    "junction_retry_passed": 8,
+    "new_python_tests": 8,
+    "new_node_tests": 5,
+    "remaining_skips": [
+      {
+        "test": "test_dangling_snapshot_file_link_cannot_create_external_target_when_supported (test_handoff_paths.HandoffPathTests.test_dangling_snapshot_file_link_cannot_create_external_target_when_supported)",
+        "reason": "file symlink creation is unavailable"
+      },
+      {
+        "test": "test_source_symlink_outside_candidate_is_rejected_when_supported (test_handoff_review.HandoffReviewTests.test_source_symlink_outside_candidate_is_rejected_when_supported)",
+        "reason": "creating symbolic links is unavailable"
+      }
+    ],
+    "formal_five_video_e2e_enabled": true,
+    "full_suite_ref": {
+      "path": "analysis_results/phase3_native_profile_review_20261027_01/verified_suite/test_results.json",
+      "sha256": "791fa2a7ffdd203c0a0193468047a700f8cf7395e123773912d991e74a726e46"
+    },
+    "junction_retry_ref": {
+      "path": "analysis_results/phase3_native_profile_review_20261027_01/verified_suite/junction_retry/test_results.json",
+      "sha256": "d76fb02edc03e7d12b2d436ef3d2b8a7aeebde51f27a005283f858f052711f39"
+    },
+    "node": {
+      "command": [
+        "C:/Program Files/nodejs/node.exe",
+        "--test",
+        "tests/test_native_motion_alignment.js",
+        "tests/test_native_motion_events.js",
+        "tests/test_native_motion_viewer.js",
+        "tests/test_native_timing_viewer.js"
+      ],
+      "exit_code": 0,
+      "passed": 23,
+      "failed": 0,
+      "existing_event_helper_assertions": 34
+    },
+    "node_log_ref": {
+      "path": "analysis_results/phase3_native_profile_review_20261027_01/node_suite.log",
+      "sha256": "0df08094b152efc0bdb279d59e17cd3ea38cfed1282cae572a057992b33d6fdf"
+    },
+    "summary_ref": {
+      "path": "analysis_results/phase3_native_profile_review_20261027_01/validation_summary.json",
+      "sha256": "a2a013328569e4c7e0e97b05124b3bd4ccfa17dcfa7af5fc7d71a60e44ba63e0"
+    }
+  },
+  "canonical_pairs_preserved": true,
+  "reverse_or_self_pairs_added": false,
+  "new_inference_calls": 0,
+  "new_tracking_replays": 0,
+  "new_ground_truth_labels": 0,
+  "base_player_modified": false,
+  "frame_link_adapter_modified": false,
+  "browser_interaction_verified": false,
+  "new_human_acceptance": false,
+  "pointwise_reliability": "unknown",
+  "usable_for_analysis": null,
+  "formal_reference_promotion": false,
+  "portable02_rebuilt": false,
+  "phase2_automatic_reliability": "NOT PASSED",
+  "phase3_overall": "NOT EVALUATED"
+}

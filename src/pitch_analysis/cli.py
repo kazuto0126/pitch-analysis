@@ -58,6 +58,9 @@ def main() -> None:
     descriptive_profile = commands.add_parser("describe-native-profile", help="Summarize one pitcher's source-bound manual timings and model-XY endpoints")
     descriptive_profile.add_argument("event_report_json")
     descriptive_profile.add_argument("--output", required=True)
+    profile_viewer = commands.add_parser("review-native-profile", help="Link a saved single-pitcher profile to independent source-frame players")
+    profile_viewer.add_argument("profile_json")
+    profile_viewer.add_argument("--output", required=True)
     timing_comparison = commands.add_parser("compare-native-timing", help="Compare source-bound manual event durations for two pitchers using exact fractional seconds")
     timing_comparison.add_argument("report_a")
     timing_comparison.add_argument("report_b")
@@ -219,6 +222,18 @@ def main() -> None:
                    "source_frames": result["source_frames"], "output_dir": args.output,
                    "new_inference_calls": 0})
         except (ValueError, OSError, RuntimeError, KeyError, TypeError) as error:
+            _emit({"status": "failed", "error": str(error)})
+            raise SystemExit(1)
+        return
+    if args.command == "review-native-profile":
+        from pathlib import Path
+        from .analysis.native_profile_viewer import write_profile_viewer
+        try:
+            result = write_profile_viewer(Path.cwd(), args.profile_json, args.output)
+            _emit({"status": result["status"], "clip_count": result["clip_count"],
+                   "total_pairs": result["total_pairs"], "output_dir": args.output,
+                   "new_inference_calls": 0})
+        except (ValueError, OSError, RuntimeError, KeyError, TypeError, ZeroDivisionError) as error:
             _emit({"status": "failed", "error": str(error)})
             raise SystemExit(1)
         return

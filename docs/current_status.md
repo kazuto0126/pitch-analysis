@@ -1,4 +1,4 @@
-# Current status — Reproducible single-pitcher descriptive profiles
+# Current status — Single-pitcher profiles linked to source-frame evidence
 
 Updated: 2026-10-27 (Asia/Taipei)
 
@@ -7,7 +7,9 @@ Updated: 2026-10-27 (Asia/Taipei)
 **Phase 2 evaluation = COMPLETE; Phase 2 = NOT PASSED (automatic reliability degraded).**
 **User-authorized Phase3 first descriptive motion delivery = COMPLETE; overall Phase3 NOT EVALUATED.**
 
-The new [single-pitcher summary command](native_descriptive_profile.md) reproduces
+The new [profile review entry](native_descriptive_profile.md#從摘要直接回看影片證據)
+links within-pitcher summaries and saved pairs to independent source-frame players.
+The [single-pitcher summary command](native_descriptive_profile.md) reproduces
 within-pitcher timing relations and model-XY elbow/knee endpoint descriptions from
 bound saved event reports. The [portable02 viewing snapshot](phase3_portable_review_20261026.md) combines
 [manual-event timing comparison and two-player source review](native_timing_comparison.md),
@@ -20,6 +22,38 @@ Automatic reliability remains unaccepted. Existing acceptance thresholds, confid
 gates, MediaPipe settings, interpolation and smoothing are unchanged. The approved
 optional subject-region constraint is described below; the default selector remains compatible.
 The original Phase 1 stable state and five formal videos remain unchanged.
+
+## 2026-10-27 Single-pitcher summaries linked to source-frame evidence
+
+Added review-native-profile. A stage selector and a single canonical-pair selector
+show the saved timing relation, cohort direction groups and selected clips'
+elbow/knee endpoints, including missing/unresolved counts. Confirmed event lower
+and upper bounds navigate the two independent source-frame players. Pair identity
+is retained across stage changes; no reverse or self comparisons are generated.
+One-clip input uses one player and its saved duration, without a comparison.
+
+The profile, original stage readouts, bound sources and artifact hashes are checked
+before fresh output. A small shared helper packages source pages; the original
+native motion player and frame-link adapter remain unchanged. Existing two-pitcher
+timing mode remains available. Raw curves, events, predictions, gates and model
+logic are unchanged. No new inference/tracking/GT/reference promotion or human
+acceptance. Pointwise reliability remains unknown, usable_for_analysis null, and
+browser playback unverified. Portable02 remains its prior snapshot.
+
+Local pages: `analysis_results/phase3_native_profile_review_20261027_01/{ohtani,yamamoto}/review_profile.html`.
+
+Ohtani5/1684 frames and40 original pairs (all comparable); Yamamoto4/477 frames
+and24 pairs (16 comparable/8 unresolved). Nine source pages retain2161 rows,
+and all72 joint summaries/pair data match the saved profiles. No reverse/self
+pairs are added. Shared page URLs remain separate iframe documents.
+
+Added8 Python/5 Node tests. Full Python suite1311: initial1301 passed/0 failed/
+10 skipped; bounded retry passed the8 junction capability cases. Unique totals
+1309 passed/0 failed/2 skipped, including formal five-video E2E. Remaining skips
+are file-symlink capability limitations. Node23 passed/0 failed plus34 existing
+event-helper assertions. Full log reports OK; the shell wrapper returned1 despite
+the runner's successful=true/zero-failure result, matching the prior host anomaly.
+[Delivery and exact test records](dataset_selections/phase3_native_profile_review_20261027.json).
 
 ## 2026-10-27 Reproducible single-pitcher descriptive profiles
 

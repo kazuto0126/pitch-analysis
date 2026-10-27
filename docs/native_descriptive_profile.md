@@ -54,7 +54,45 @@
 Phase 2自動可靠性仍NOT PASSED，Phase 3整體尚未驗收；不新增人工標註或重開模型試驗。
 現有可攜02 ZIP仍是前次觀看快照，不包含這個後續CLI與新生成檔案。
 
-## 驗證
+## 從摘要直接回看影片證據
+
+`review-native-profile`把保存的摘要接上既有原片／骨架與曲線播放器。
+它讀取已產生的`profile.json`，不重跑骨架或更動人工事件：
+
+```powershell
+.\.venv-analysis\Scripts\pitch-analysis.exe review-native-profile analysis_results/phase3_native_profiles_20261027_01/ohtani/profile.json --output analysis_results/my_ohtani_profile_review
+```
+
+開啟新目錄的`review_profile.html`：
+
+1. 選人工事件區段，再選一組已保存的球對。
+2. 查看這一段的本批時距涵蓋、肘／膝方向分組，以及當前兩球各自的端點差、可算／全部配對數。
+3. 按A或B的事件影格按鈕回看證據。精確事件只有一格；範圍分下界與上界，兩側各自獨立播放。
+
+球對只使用原摘要的單向組合，不加入反向或自比；切換區段保留所選球對。
+單球摘要顯示單一播放器與該球時距，不製造跨球比較。
+未確認／不可觀測事件沒有定位按鈕，其他已確認事件仍可回看。
+影片跳格實際呈現以播放器格號為準；這不是同步對齊或時間拉伸。
+完整逐片事件表仍使用原[事件觀看頁](native_motion_events.md)，本入口只顯示當前區段。
+
+本機入口：
+[大谷五球](../analysis_results/phase3_native_profile_review_20261027_01/ohtani/review_profile.html)／
+[山本四球](../analysis_results/phase3_native_profile_review_20261027_01/yamamoto/review_profile.html)。
+各自沿用40／24組原球對，沒有新增推論、GT、品質分數或素材升格。
+來源或摘要被改動時拒收；輸出須為新目錄。
+原影格播放器與跳格adapter保持；瀏覽器實際播放仍未確認，不新增人工接受紀錄。
+
+## 回看入口驗證
+
+新增8項Python與5項Node測試，涵蓋來源／摘要拒收、原時間軸／腳本保留、canonical球對、
+換區段保留球對、未知事件無定位、單球無自比、既有兩投手模式與CLI。
+完整Python suite1311項：初跑1301 passed／0 failed／10 skipped，八項junction案例補跑全過；
+不重複計為**1309 passed／0 failed／2 skipped**，含正式五球E2E。
+兩項跳過仍為Windows檔案符號連結能力限制。Node **23 passed／0 failed**，另含34項既有事件helper斷言。
+實際輸出九個來源頁保留2161格、64組原球對及全部72筆關節摘要，未定事件不改寫。
+[回看交付與測試紀錄](dataset_selections/phase3_native_profile_review_20261027.json)。
+
+### 摘要產生器驗證（前段）
 
 新增12項測試，涵蓋分數FPS、未知事件、缺座標、微小負值跨零、任意投手ID、單球、
 來源SHA／過期摘要拒收、防覆寫及CLI。完整Python suite1303項：初跑1293 passed／0 failed／10 skipped，

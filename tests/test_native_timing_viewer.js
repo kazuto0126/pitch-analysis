@@ -5,7 +5,7 @@ const fs = require("node:fs");
 const vm = require("node:vm");
 const path = require("node:path");
 const {frameFromHash} = require("../src/pitch_analysis/review_assets/native_motion_frame_link.js");
-const {selectedPair, eventTargets, eventUrl, durationText} = require("../src/pitch_analysis/review_assets/native_timing_viewer.js");
+const {selectedPair, eventTargets, eventUrl, durationText, profilePairs, profileStageText, profileJointTexts} = require("../src/pitch_analysis/review_assets/native_timing_viewer.js");
 
 test("duration labels preserve unavailable and exact zero while displaying fractional seconds", () => {
   assert.equal(durationText(null),"未定");
@@ -93,4 +93,140 @@ test("invalid hashes and video errors discard pending requests without clamping"
   failed.error();failed.ready();
   assert.deepEqual(failed.clicked,[]);
   assert.match(failed.status.textContent,/取消/);
+});
+
+function profileFixture() {
+  const names=["preparation_start","leg_lift","foot_plant","approximate_release","follow_through_end"];
+  const clips=["p1","p2","p3"].map((id,index)=>({pitch_id:id,frame_count:8,fps_fraction:index===2?"60000/1001":"30/1",
+    page_url:id+".html",video_url:id+".mp4",events:Object.fromEntries(names.map((name,i)=>[name,{status:"annotated",frame_bounds:[[0,0],[1,1],[3,3],[5,5],[7,7]][i]}])),
+    timing:{foot_plant_to_release:{status:"exact",seconds_bounds_fraction:["1/15","1/15"],reason:"Known"},
+      release_to_follow_through_end:{status:"exact",seconds_bounds_fraction:["1/15","1/15"],reason:"Known"}}}));
+  clips[1].events.approximate_release={status:"uncertain",frame_bounds:[5,5]};
+  clips[2].events.approximate_release={status:"annotated",frame_bounds:[4,5]};
+  const stages=[
+    {key:"foot_plant_to_release",label:"落地至出手",start:"foot_plant",end:"approximate_release"},
+    {key:"release_to_follow_through_end",label:"出手至收尾",start:"approximate_release",end:"follow_through_end"}
+  ].map(stage=>({...stage,timing_envelope_seconds_fraction:["1/30","1/10"],
+    timing_available_clip_ids:["p1","p3"],timing_unavailable_clip_ids:["p2"],
+    joints:Object.fromEntries(["throwing_elbow","lead_knee"].map(role=>[role,{
+      direction_counts:{positive:1,negative:0,zero:0,includes_zero:1,unavailable:1},
+      clip_ids_by_direction:{positive:["p1"],negative:[],zero:[],includes_zero:["p3"],unavailable:["p2"]},common_direction:null,
+      clip_summaries:clips.map((c,i)=>({pitch_id:c.pitch_id,transition_status:i===1?"unavailable":"descriptive_model_xy_transition",
+        transition_reason:i===1?"Manual event uncertain":"Known endpoints",total_pairs:i===1?null:i===2?2:1,
+        calculated_pairs:i===1?null:i===2?2:1,missing_endpoint_pairs:i===1?null:0,degenerate_endpoint_pairs:i===1?null:0,
+        min_delta_deg:i===1?null:i===2?-.040605879997:2,max_delta_deg:i===1?null:6,
+        delta_direction:i===1?"unavailable":i===2?"includes_zero":"positive"}))
+    }]))}));
+  const pairs=stages.flatMap((stage,index)=>{
+    const order=index===0?[["p1","p2"],["p1","p3"],["p2","p3"]]:[["p1","p3"],["p1","p2"],["p2","p3"]];
+    return order.map(([a,b])=>{
+      const missing=a==="p2"||b==="p2";
+      return {timing_key:stage.key,a_pitch_id:a,b_pitch_id:b,status:missing?"unavailable":"descriptive_manual_timing",
+        relation:missing?"unavailable":"a_shorter",a_seconds_bounds_fraction:a==="p2"?null:["1/30","1/30"],
+        b_seconds_bounds_fraction:b==="p2"?null:["1/15","1/10"],
+        delta_seconds_bounds_fraction:missing?null:["-1/15","-1/30"],delta_seconds_bounds:missing?null:[-1/15,-1/30],
+        unavailable_reasons:{a:a==="p2"?"Uncertain release":null,b:b==="p2"?"Uncertain release":null}};
+    });
+  });
+  return {mode:"same_pitcher_profile",pitcher_id:"custom_pitcher",stages,pairs,
+    cohorts:[{side:"a",pitcher_id:"custom_pitcher",clips},{side:"b",pitcher_id:"custom_pitcher",clips}]};
+}
+
+class Element {
+  constructor(tag) {this.tagName=tag;this.value="";this.textContent="";this.children=[];this.listeners={};this.attributes={};this.hidden=false;this.disabled=false;}
+  appendChild(child) {this.children.push(child);if(this.tagName==="select"&&this.value==="")this.value=child.value;return child;}
+  replaceChildren() {this.children=[];if(this.tagName==="select")this.value="";}
+  addEventListener(name,fn) {this.listeners[name]=fn;}
+  getAttribute(name) {return this.attributes[name]===undefined?null:this.attributes[name];}
+  setAttribute(name,value) {this.attributes[name]=value;}
+  fire(name) {assert.ok(this.listeners[name],"Expected "+name+" listener");this.listeners[name]();}
+}
+
+function parentViewer(data) {
+  const elements={"timing-data":{textContent:JSON.stringify(data)}};
+  ["timing-select","a-select","b-select","profile-pair-select"].forEach(id=>{
+    elements[id]=new Element("select");elements[id].parentElement=new Element("label");
+  });
+  ["pair-durations","pair-result","pair-reasons","profile-stage-summary","b-panel"].forEach(id=>elements[id]=new Element("p"));
+  for(const side of ["a","b"])for(const part of ["heading","fps","raw","events","player","joints"])elements[side+"-"+part]=new Element(part==="player"?"iframe":"div");
+  if(data.mode!=="same_pitcher_profile")for(const id of ["profile-pair-select","profile-stage-summary","a-joints","b-joints","b-panel"])delete elements[id];
+  const document={readyState:"complete",getElementById(id){return elements[id];},createElement(tag){return new Element(tag);}};
+  vm.runInNewContext(fs.readFileSync(path.join(__dirname,"../src/pitch_analysis/review_assets/native_timing_viewer.js"),"utf8"),{window:{},document});
+  return {elements,change(id,value){elements[id].value=value;elements[id].fire("change");},
+    buttons(side){return elements[side+"-events"].children.flatMap(line=>line.children);}};
+}
+
+test("profile helpers retain canonical pairs, unknowns and tiny negative endpoint classification", () => {
+  const data=profileFixture(),before=JSON.stringify(data),stage=data.stages[0];
+  assert.equal(profilePairs(data,stage.key).length,3);
+  assert.throws(()=>selectedPair(data,stage.key,"p2","p1"),RangeError);
+  assert.throws(()=>selectedPair(data,stage.key,"p1","p1"),RangeError);
+  assert.match(profileStageText(stage),/已確認球：p1、p3/);
+  assert.match(profileStageText(stage),/事件未定球：p2/);
+  assert.match(profileStageText(stage),/unknown.*null/);
+  assert.match(profileJointTexts(stage,"p3")[0],/-0\.040606.*原分類：含零/);
+  assert.match(profileJointTexts(stage,"p2")[0],/未定.*未定／未定.*Manual event uncertain/);
+  assert.equal(JSON.stringify(data),before);
+});
+
+test("profile pair and stage selection preserve canonical identity and refresh both endpoints", () => {
+  const data=profileFixture(),x=parentViewer(data),e=x.elements;
+  assert.equal(e["profile-pair-select"].children.length,3);
+  assert.equal(e["a-select"].value,"p1");assert.equal(e["b-select"].value,"p2");
+  assert.equal(e["a-select"].parentElement.hidden,true);assert.equal(e["b-select"].parentElement.hidden,true);
+  assert.match(e["pair-result"].textContent,/事件不足/);
+  assert.match(e["b-joints"].children[0].textContent,/Manual event uncertain/);
+  x.change("profile-pair-select","1");
+  assert.equal(e["a-select"].value,"p1");assert.equal(e["b-select"].value,"p3");
+  assert.match(e["pair-result"].textContent,/A時距較短/);
+  assert.match(e["b-fps"].textContent,/60000\/1001/);
+  assert.equal(e["b-player"].src,"p3.html");
+  assert.match(e["b-joints"].children[0].textContent,/原分類：含零/);
+  x.change("timing-select","release_to_follow_through_end");
+  assert.equal(e["profile-pair-select"].value,"0");
+  assert.equal(e["a-select"].value,"p1");assert.equal(e["b-select"].value,"p3");
+  assert.deepEqual(x.buttons("b").map(button=>button.textContent),["範圍下界 4 格","範圍上界 5 格","已確認格 7 格"]);
+});
+
+test("profile event buttons skip uncertain candidates and repeat exact source-frame requests", () => {
+  const x=parentViewer(profileFixture()),e=x.elements;
+  assert.deepEqual(x.buttons("b").map(button=>button.textContent),["已確認格 3 格"]);
+  const button=x.buttons("a")[0];button.fire("click");const first=e["a-player"].src;
+  button.fire("click");
+  assert.match(first,/p1\.html#frame=3&request=1$/);
+  assert.match(e["a-player"].src,/p1\.html#frame=3&request=2$/);
+  assert.equal(e["b-player"].src,"p2.html");
+});
+
+test("single-clip profile keeps recorded timing and one player without inventing a self-pair", () => {
+  const data=profileFixture(),clip=data.cohorts[0].clips[0];
+  data.cohorts=[{side:"a",pitcher_id:data.pitcher_id,clips:[clip]}];data.pairs=[];
+  data.stages.forEach(stage=>{
+    stage.timing_available_clip_ids=["p1"];stage.timing_unavailable_clip_ids=[];
+    for(const joint of Object.values(stage.joints)){
+      joint.clip_summaries=joint.clip_summaries.filter(row=>row.pitch_id==="p1");
+      joint.clip_ids_by_direction={positive:["p1"],negative:[],zero:[],includes_zero:[],unavailable:[]};joint.common_direction="positive";
+    }
+  });
+  const x=parentViewer(data),e=x.elements;
+  assert.equal(e["profile-pair-select"].children.length,0);assert.equal(e["profile-pair-select"].disabled,true);
+  assert.equal(e["b-panel"].hidden,true);assert.equal(e["b-player"].src,undefined);
+  assert.equal(e["a-player"].src,"p1.html");assert.match(e["pair-result"].textContent,/單球.*沒有跨球比較/);
+  assert.match(e["pair-durations"].textContent,/0\.066667/);
+  x.change("timing-select","release_to_follow_through_end");
+  assert.equal(e["profile-pair-select"].children.length,0);
+  assert.deepEqual(x.buttons("a").map(button=>button.textContent),["已確認格 5 格","已確認格 7 格"]);
+});
+
+test("default two-pitcher parent retains independent clip selectors and needs no profile DOM", () => {
+  const profile=profileFixture(),a=profile.cohorts[0].clips[0],b={...a,pitch_id:"other",page_url:"other.html",video_url:"other.mp4"};
+  const pair={...profile.pairs[1],b_pitch_id:"other"};
+  const data={stages:[profile.stages[0]],pairs:[pair],cohorts:[{side:"a",pitcher_id:"pitcher_a",clips:[a]},
+    {side:"b",pitcher_id:"pitcher_b",clips:[b]}]};
+  const x=parentViewer(data),e=x.elements;
+  assert.equal(e["a-select"].parentElement.hidden,false);assert.equal(e["b-select"].parentElement.hidden,false);
+  assert.equal(e["a-player"].src,"p1.html");assert.equal(e["b-player"].src,"other.html");
+  assert.match(e["pair-result"].textContent,/A時距較短/);
+  x.change("a-select","p1");assert.equal(e["a-player"].src,"p1.html");
+  assert.equal(e["a-heading"].textContent,"A：pitcher_a");assert.equal(e["b-heading"].textContent,"B：pitcher_b");
 });

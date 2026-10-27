@@ -46,6 +46,21 @@ def _url(root: Path, output: Path, ref: dict) -> str:
     return quote(os.path.relpath(root / ref["path"], output).replace("\\", "/"), safe="/.")
 
 
+def _source_player(root: Path, output: Path, clip: dict, name: str) -> tuple[str, dict]:
+    """Package one source for an independent, unchanged frame/curve player."""
+    player = deepcopy(clip)
+    player["overlay_url"] = _url(root, output, clip["source_refs"]["overlay_ref"])
+    _validate_clips([player])
+    html = _HTML.replace("<title>影片與2D曲線連動</title>", "<title>來源影格回看</title>")
+    html = html.replace('<script id="motion-data"', '<p id="frame-link-status" aria-live="polite"></p><script id="motion-data"')
+    html = html.replace('</script></html>', '</script><script src="frame_link.js" defer></script></html>')
+    packaged = {"pitch_id": clip["pitch_id"], "frame_count": clip["frame_count"],
+                "fps_fraction": clip["fps_fraction"], "page_url": name,
+                "video_url": _url(root, output, clip["source_refs"]["video_ref"]),
+                "events": deepcopy(clip["events"])}
+    return html.replace("__DATA__", _embedded({"clips": [player]})), packaged
+
+
 def write_timing_viewer(root: str | Path, comparison_json: str | Path,
                         output: str | Path) -> dict:
     """Reuse the unchanged source player in isolated pages; never seek a candidate."""
@@ -104,18 +119,9 @@ def write_timing_viewer(root: str | Path, comparison_json: str | Path,
     for side, loaded in zip(("a", "b"), sources, strict=True):
         packaged = []
         for index, clip in enumerate(loaded["clips"]):
-            player = deepcopy(clip)
-            player["overlay_url"] = _url(root, output, clip["source_refs"]["overlay_ref"])
-            _validate_clips([player])
             name = f"{side}_{index:03d}.html"
-            html = _HTML.replace("<title>影片與2D曲線連動</title>", "<title>來源影格回看</title>")
-            html = html.replace('<script id="motion-data"', '<p id="frame-link-status" aria-live="polite"></p><script id="motion-data"')
-            html = html.replace('</script></html>', '</script><script src="frame_link.js" defer></script></html>')
-            pages[name] = html.replace("__DATA__", _embedded({"clips": [player]}))
-            packaged.append({"pitch_id": clip["pitch_id"], "frame_count": clip["frame_count"],
-                             "fps_fraction": clip["fps_fraction"], "page_url": name,
-                             "video_url": _url(root, output, clip["source_refs"]["video_ref"]),
-                             "events": deepcopy(clip["events"])})
+            pages[name], item = _source_player(root, output, clip, name)
+            packaged.append(item)
         cohorts.append({"side": side, "pitcher_id": loaded["pitcher_id"], "clips": packaged})
     # Each page owns one source and reads only its own frame hash. Old loads
     # cannot seek a newly selected clip; no iframe DOM bridge is required.
