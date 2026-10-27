@@ -68,6 +68,10 @@ def main() -> None:
     stage_curves = commands.add_parser("describe-native-stage-curves", help="Describe saved interior model-XY samples for all legal manual event intervals")
     stage_curves.add_argument("event_report_json")
     stage_curves.add_argument("--output", required=True)
+    cohort_curves = commands.add_parser("review-native-cohort-curves", help="View two source cohorts on shared human-foot-plant-relative axes without resampling")
+    cohort_curves.add_argument("report_a")
+    cohort_curves.add_argument("report_b")
+    cohort_curves.add_argument("--output", required=True)
     timing_comparison = commands.add_parser("compare-native-timing", help="Compare source-bound manual event durations for two pitchers using exact fractional seconds")
     timing_comparison.add_argument("report_a")
     timing_comparison.add_argument("report_b")
@@ -229,6 +233,18 @@ def main() -> None:
                    "source_frames": result["source_frames"], "output_dir": args.output,
                    "new_inference_calls": 0})
         except (ValueError, OSError, RuntimeError, KeyError, TypeError) as error:
+            _emit({"status": "failed", "error": str(error)})
+            raise SystemExit(1)
+        return
+    if args.command == "review-native-cohort-curves":
+        from pathlib import Path
+        from .analysis.native_cohort_curves import write_cohort_curve_review
+        try:
+            result = write_cohort_curve_review(Path.cwd(), [args.report_a, args.report_b], args.output)
+            _emit({"status": result["status"], "clip_count": result["clip_count"],
+                   "source_frames": result["source_frames"], "origin_candidate_paths": result["origin_candidate_paths"],
+                   "output_dir": args.output, "new_inference_calls": 0})
+        except (ValueError, OSError, RuntimeError, KeyError, TypeError, ZeroDivisionError) as error:
             _emit({"status": "failed", "error": str(error)})
             raise SystemExit(1)
         return

@@ -12,11 +12,13 @@
 Phase 1 PASSED；原生資料介面接入PASSED；**Phase 2自動可靠性NOT PASSED**；
 本批描述性交付COMPLETE，Phase 3整體尚未驗收。完整profile及跨投手動作相似度仍是後續目標；
 現已提供獨立的[兩位投手人工事件時距對照](docs/native_timing_comparison.md)，保留來源與未知範圍。
+兩組[完整模型曲線亦可同刻度並列回看](docs/native_cohort_curves.md)，以原樣本點連回影片；尚未計算動作相似度。
 
 | 要做的事 | 入口 |
 |---|---|
 | 一個指令產生單投手報告與觀看入口 | [build-native-motion-report](docs/native_descriptive_profile.md#建議入口一個指令整合三步)：由已保存曲線＋人工事件產生事件報告、摘要、回看頁與START_HERE |
 | 查看每段內部曲線的極值與發生格號 | [區段內模型讀值](docs/native_stage_curves.md)：所有合法事件選格、可能／共同影格、缺值分母及原格回看；整合指令可選加入 |
+| 並列回看兩位投手的完整模型曲線 | [review-native-cohort-curves](docs/native_cohort_curves.md)：共用落地相對秒數／顯示刻度，保留全部人工原點與可點原樣本 |
 | 帶到另一台電腦看既有成果 | [可攜02觀看快照](docs/phase3_portable_review_20261026.md#最新完整描述性交付02)：九球影片、兩份草案、四段／時距資料與雙側回看頁；後續新指令與觀看頁不在該快照內 |
 | 看單投手動作特徵草案 | [大谷五球](docs/profiles/shohei_ohtani_descriptive_v1.md)／[山本四球](docs/profiles/yoshinobu_yamamoto_descriptive_v1.md)：各自的可描述差異、選格影響與資料限制 |
 | 自動產生單投手動作摘要 | [describe-native-profile](docs/native_descriptive_profile.md)：沿用原事件報告，輸出全部同投手時距配對及肘／膝端點差分組，適用後續投手 |
@@ -146,8 +148,8 @@ provisional references；它不是目前已接受原生骨架九球的資料集�
 ```
 
 測試使用本機合成MP4、確定性pose fixture及既有本機素材；完整suite包含正式山本五球E2E。
-最新產品程式紀錄為2026-10-27：**1331 passed／0 failed／2 skipped**，
-包含十五項新增區段曲線／可選串接測試及正式五球E2E；八項junction環境案例已補跑，剩餘兩項為檔案符號連結能力限制。
+最新產品程式紀錄為2026-10-27：**1341 passed／0 failed／2 skipped**，
+包含十項新增並列曲線測試及正式五球E2E；八項junction環境案例已補跑，剩餘兩項為檔案符號連結能力限制。
 原JS本輪未更動，最近Node **23 passed／0 failed**及34項既有事件helper斷言通過；新頁尚未作實際瀏覽器播放覆核。
 
 ## 接續開發

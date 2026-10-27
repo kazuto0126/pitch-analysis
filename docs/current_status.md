@@ -1,4 +1,4 @@
-# Current status — Interior model-XY ranges under all manual interval choices
+# Current status — Two-cohort model curves at shared foot-plant-relative scales
 
 Updated: 2026-10-27 (Asia/Taipei)
 
@@ -7,7 +7,9 @@ Updated: 2026-10-27 (Asia/Taipei)
 **Phase 2 evaluation = COMPLETE; Phase 2 = NOT PASSED (automatic reliability degraded).**
 **User-authorized Phase3 first descriptive motion delivery = COMPLETE; overall Phase3 NOT EVALUATED.**
 
-The new [interior stage-curve description](native_stage_curves.md) exposes saved
+The new [two-cohort curve review](native_cohort_curves.md) puts complete source
+curves on shared foot-plant-relative display axes and links each SVG sample back
+to its source frame. The [interior stage-curve description](native_stage_curves.md) exposes saved
 sample extrema, source frames and missing denominators under all legal manual
 event choices. It is an optional supplement to the [single delivery command](native_descriptive_profile.md#建議入口一個指令整合三步), which
 connects the existing event report, profile and evidence-viewer writers, with one
@@ -26,6 +28,40 @@ Automatic reliability remains unaccepted. Existing acceptance thresholds, confid
 gates, MediaPipe settings, interpolation and smoothing are unchanged. The approved
 optional subject-region constraint is described below; the default selector remains compatible.
 The original Phase 1 stable state and five formal videos remain unchanged.
+
+## 2026-10-27 Complete two-cohort model curves on shared display scales
+
+Added review-native-cohort-curves, binding two different pitchers' saved event
+reports and reusing describe_anchor_bounds. Both joint figures have A/B rows,
+complete-timeline/zoom columns, common full x bounds and0–180 degree y bounds.
+Exact and every annotated range origin are shown; unknown origins never gain a
+shifted curve. Missing/degenerate samples break lines. No means, interpolation,
+resampling, time warping, similarity, ranking or formal reference comparison.
+
+Ohtani5/1684 and active Yamamoto4/477 retain2161 source frames. Seven clips have
+exact origins and two have bounded origins, for11 alternative display origins.
+CSV remains one row per source frame; each SVG point binds side, pitch, origin
+and original frame. Links open the unchanged source-frame player in another tab.
+Original prediction/GT/gates/pose/tracking remain. Pointwise reliability is unknown,
+usable_for_analysis null, and no reference or phase promotion is performed.
+
+Both PNGs were visually inspected for plots/labels; actual browser interaction
+and video playback remain unverified. Different projection or clip padding cannot
+be interpreted as anatomical or delivery-duration differences.
+Entry: `analysis_results/phase3_cohort_curve_review_20261027_01/review/report.html`.
+
+Full display bounds are -14/3 to7007/1875 seconds for both roles/cohorts, with
+shared zoom bounds [-0.5,0.5]. CSV2161 unique source rows preserve original angles,
+states and timestamps. Each SVG has2843 bound sample links,5686 total including
+alternative origins/zoom copies; all map to valid source frames and candidate
+origins. This display-link count is not a new observation denominator.
+
+Added10 tests. Full Python suite1343: initial1333 passed/0 failed/10 skipped;
+bounded retry passed8 junction cases. Unique totals1341 passed/0 failed/2 skipped,
+including formal five-video E2E; remaining skips are file-symlink limitations.
+Full log is OK/successful=true despite the host shell wrapper returning1, retained
+in the exact receipt. JS remains unchanged, so prior23 passing Node cases apply
+without another identical run. [Delivery/test receipt](dataset_selections/phase3_cohort_curve_review_20261027.json).
 
 ## 2026-10-27 Interior sample ranges with original-frame evidence
 

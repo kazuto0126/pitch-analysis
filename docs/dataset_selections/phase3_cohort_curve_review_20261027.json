@@ -1,0 +1,114 @@
+{
+  "schema_version": "native-cohort-curve-review-delivery-v1",
+  "recorded_at_utc": "2026-10-27T06:51:18.255141+00:00",
+  "date_local": "2026-10-27",
+  "base_commit": "97aaedf555e8cccf5fd08a215666d4cb52644a3c",
+  "command": "pitch-analysis review-native-cohort-curves <report-a> <report-b> --output <fresh-directory>",
+  "output_dir": "analysis_results/phase3_cohort_curve_review_20261027_01/review",
+  "result_ref": {
+    "path": "analysis_results/phase3_cohort_curve_review_20261027_01/review/cohort_curves.json",
+    "sha256": "b261b6cc3f7d52e7c73bee4ff447362558db31177a2efec4d95f39e946e166ac"
+  },
+  "source_frames": 2161,
+  "clips": 9,
+  "origin_counts": {
+    "exact": 7,
+    "bounded": 2,
+    "unavailable": 0
+  },
+  "display_origins": 11,
+  "source_time_bounds_fraction": [
+    "-14/3",
+    "7007/1875"
+  ],
+  "full_display_seconds_bounds": [
+    -4.666666666666667,
+    3.7370666666666668
+  ],
+  "zoom_display_seconds_bounds": [
+    -0.5,
+    0.5
+  ],
+  "angle_display_bounds": [
+    0,
+    180
+  ],
+  "csv_unique_source_rows": 2161,
+  "svg_source_links_verified": {
+    "throwing_elbow": 2843,
+    "lead_knee": 2843
+  },
+  "source_rows_and_model_values_preserved": true,
+  "png_visual_inspection": {
+    "performed": true,
+    "scope": "rendered axes and labels; not pose correctness"
+  },
+  "source_code": [
+    {
+      "path": "src/pitch_analysis/analysis/native_cohort_curves.py",
+      "sha256": "05f1debfbc31673e20ce3c52bf93de2684277ba981446097e23eb859e6554d34"
+    },
+    {
+      "path": "src/pitch_analysis/cli.py",
+      "sha256": "42ea7653bc5d37849d5782f1502bf66037e356b3e4be71147fce27d659ae79c5"
+    },
+    {
+      "path": "tests/test_native_cohort_curves.py",
+      "sha256": "97c93573308dc2eedc9d32a90f197f49f712275466d91f4ffb7ebe95c49341a1"
+    }
+  ],
+  "tests": {
+    "unique_tests_run": 1343,
+    "passed": 1341,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 2,
+    "new_python_tests": 10,
+    "initial_passed": 1333,
+    "initial_skipped": 10,
+    "junction_retry_passed": 8,
+    "remaining_skips": [
+      {
+        "test": "test_dangling_snapshot_file_link_cannot_create_external_target_when_supported (test_handoff_paths.HandoffPathTests.test_dangling_snapshot_file_link_cannot_create_external_target_when_supported)",
+        "reason": "file symlink creation is unavailable"
+      },
+      {
+        "test": "test_source_symlink_outside_candidate_is_rejected_when_supported (test_handoff_review.HandoffReviewTests.test_source_symlink_outside_candidate_is_rejected_when_supported)",
+        "reason": "creating symbolic links is unavailable"
+      }
+    ],
+    "formal_five_video_e2e_enabled": true,
+    "full_suite_ref": {
+      "path": "analysis_results/phase3_cohort_curve_review_20261027_01/verified_suite/test_results.json",
+      "sha256": "69bb2f81818c491b7b225f24bb9c29689d4306760724d582ed602cc9cce1be41"
+    },
+    "junction_retry_ref": {
+      "path": "analysis_results/phase3_cohort_curve_review_20261027_01/verified_suite/junction_retry/test_results.json",
+      "sha256": "0eda66fee4f63dae4ff3048f2e8fbdcfd1c46f28bff4fb27584c26cb9b517e2e"
+    },
+    "shell_wrapper_exit_code": 1,
+    "full_log_status": "OK (skipped=10)",
+    "javascript_changed": false,
+    "node_suite_rerun": false,
+    "summary_ref": {
+      "path": "analysis_results/phase3_cohort_curve_review_20261027_01/validation_summary.json",
+      "sha256": "0aa4ccb6348a6c9a88fddfc25d85dcb48fb3ad4c29b003d784d4bfb9eaaa29c1"
+    }
+  },
+  "new_inference_calls": 0,
+  "new_tracking_replays": 0,
+  "new_ground_truth_labels": 0,
+  "base_player_modified": false,
+  "frame_link_adapter_modified": false,
+  "samples_resampled": false,
+  "smoothed": false,
+  "interpolated": false,
+  "similarity_computed": false,
+  "browser_interaction_verified": false,
+  "new_human_acceptance": false,
+  "pointwise_reliability": "unknown",
+  "usable_for_analysis": null,
+  "formal_reference_promotion": false,
+  "phase2_automatic_reliability": "NOT PASSED",
+  "phase3_overall": "NOT EVALUATED"
+}

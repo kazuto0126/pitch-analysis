@@ -5,7 +5,21 @@
 **Phase 1 = PASSED；Native interface integration = PASSED；Phase 2 自動可靠性仍 NOT PASSED。**
 **Phase3第一個描述性曲線交付 = COMPLETE；Phase3整體尚未驗收。**
 
-## 目前：可回看人工區段內的模型極值
+## 目前：兩投手完整曲線可同刻度並列回看
+
+新增[review-native-cohort-curves](native_cohort_curves.md)，把大谷5／山本啟用4球的完整肘／膝模型曲線，
+依人工落地候選作顯示平移，兩組共用秒數與0–180°刻度；另有±0.5秒放大。
+九球2161來源格保持，7片exact／2片bounded共11個原點，不當成新增觀測；CSV每來源格仍只有一列。
+每張SVG的原樣本圓點連回自己的球號、原點與原格；原影格播放器／adapter保持，PNG已檢視，瀏覽器互動仍未覆核。
+沒有跨球平均、插值、重取樣、時間拉伸、相似度或排名，逐點unknown與Phase狀態保持。
+入口：`analysis_results/phase3_cohort_curve_review_20261027_01/review/report.html`。
+
+兩圖5686個樣本連結核對正確，CSV2161列唯一來源樣本及原值保留。
+新增10項測試；完整Python suite1343項，含八項junction補跑後為
+**1341 passed／0 failed／2 skipped**，含正式五球E2E。兩項跳過仍為檔案符號連結能力限制。
+原JS未改，最近Node23項通過；[交付／測試紀錄](dataset_selections/phase3_cohort_curve_review_20261027.json)。
+
+## 前段：可回看人工區段內的模型極值
 
 新增[區段內模型讀值](native_stage_curves.md)，保留所有合法起終事件選格，列出可能／共同影格、
 肘／膝內部極值、全部並列原格號、缺值分母與逐區間樣本跨度，直接連到既有影格播放器。
