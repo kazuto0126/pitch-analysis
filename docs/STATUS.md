@@ -5,7 +5,20 @@
 **Phase 1 = PASSED；Native interface integration = PASSED；Phase 2 自動可靠性仍 NOT PASSED。**
 **Phase3第一個描述性曲線交付 = COMPLETE；Phase3整體尚未驗收。**
 
-## 目前：單投手摘要可直接回看影片證據
+## 目前：三個描述性入口整合為一個交付指令
+
+新增[build-native-motion-report](native_descriptive_profile.md#建議入口一個指令整合三步)，
+從已保存曲線＋已覆核人工事件設定，串接事件報告、單投手摘要、回看頁，產生單一START_HERE入口。
+三個原指令與既有算法保持；預檢失敗不建立目錄，中途失敗停止後續並保留incomplete紀錄，既有目錄不覆寫。
+本機：`analysis_results/phase3_native_motion_delivery_20261027_01/{ohtani,yamamoto}/START_HERE.html`。
+沒有新推論／追蹤／GT或素材升格，原媒體仍在專案來源，並非新的可攜包；Phase狀態保持。
+
+兩位投手的摘要與逐球紀錄和前次逐值一致；各10個入口連結均在交付目錄內。
+新增7項測試；完整Python suite1318項，含八項junction補跑後為
+**1316 passed／0 failed／2 skipped**，含正式五球E2E。兩項跳過為檔案符號連結能力限制。
+JS未更動，沿用前次Node23項通過。[交付／測試紀錄](dataset_selections/phase3_native_motion_delivery_20261027.json)。
+
+## 前段：單投手摘要可直接回看影片證據
 
 新增[review-native-profile](native_descriptive_profile.md#從摘要直接回看影片證據)，可選原區段與球對，
 查看時距、肘／膝端點讀值，再從已確認事件界線跳回兩側獨立原片／曲線播放器。

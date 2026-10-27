@@ -15,7 +15,8 @@ Phase 1 PASSED；原生資料介面接入PASSED；**Phase 2自動可靠性NOT PA
 
 | 要做的事 | 入口 |
 |---|---|
-| 在單一入口看最新完整成果，或帶到另一台電腦 | [新版可攜成果包](docs/phase3_portable_review_20261026.md#最新完整描述性交付02)：九球影片、兩份草案、最新四段／時距資料與雙側回看頁 |
+| 一個指令產生單投手報告與觀看入口 | [build-native-motion-report](docs/native_descriptive_profile.md#建議入口一個指令整合三步)：由已保存曲線＋人工事件產生事件報告、摘要、回看頁與START_HERE |
+| 帶到另一台電腦看既有成果 | [可攜02觀看快照](docs/phase3_portable_review_20261026.md#最新完整描述性交付02)：九球影片、兩份草案、四段／時距資料與雙側回看頁；後續新指令與觀看頁不在該快照內 |
 | 看單投手動作特徵草案 | [大谷五球](docs/profiles/shohei_ohtani_descriptive_v1.md)／[山本四球](docs/profiles/yoshinobu_yamamoto_descriptive_v1.md)：各自的可描述差異、選格影響與資料限制 |
 | 自動產生單投手動作摘要 | [describe-native-profile](docs/native_descriptive_profile.md)：沿用原事件報告，輸出全部同投手時距配對及肘／膝端點差分組，適用後續投手 |
 | 從單投手摘要回看影片證據 | [review-native-profile](docs/native_descriptive_profile.md#從摘要直接回看影片證據)：選區段與原球對，查看肘／膝端點差並跳回原事件界線 |
@@ -144,9 +145,9 @@ provisional references；它不是目前已接受原生骨架九球的資料集�
 ```
 
 測試使用本機合成MP4、確定性pose fixture及既有本機素材；完整suite包含正式山本五球E2E。
-最新產品程式紀錄為2026-10-27：**1309 passed／0 failed／2 skipped**，
-包含八項新增摘要回看測試及正式五球E2E；八項junction環境案例已補跑，剩餘兩項為檔案符號連結能力限制。
-另Node **23 passed／0 failed**及34項既有事件helper斷言通過；新頁尚未作實際瀏覽器播放覆核。
+最新產品程式紀錄為2026-10-27：**1316 passed／0 failed／2 skipped**，
+包含七項新增交付串接測試及正式五球E2E；八項junction環境案例已補跑，剩餘兩項為檔案符號連結能力限制。
+原JS本輪未更動，最近Node **23 passed／0 failed**及34項既有事件helper斷言通過；新頁尚未作實際瀏覽器播放覆核。
 
 ## 接續開發
 

@@ -4,6 +4,44 @@
 自動整理同投手各球的時距關係與肘／膝模型XY端點差，避免為每位投手手寫相同統計。
 它不執行新pose／tracking，也不把描述性摘要升為正式reference。
 
+## 建議入口：一個指令整合三步
+
+已有動作曲線及已覆核人工事件的設定檔時，使用`build-native-motion-report`，
+一次產生事件報告、單投手摘要、摘要回看頁和`START_HERE.html`：
+
+```powershell
+.\.venv-analysis\Scripts\pitch-analysis.exe build-native-motion-report config/analysis_inputs/ohtani_event_timing_20261025.json --output analysis_results/my_ohtani_delivery
+```
+
+完成後開啟輸出目錄的`START_HERE.html`，從同一入口看摘要、影片證據、逐球事件表與下載CSV。
+來源仍是專案內已保存的曲線與人工事件，不是直接從新MP4開始分析；新片先完成既有骨架、
+曲線與人工事件流程。以下三個獨立指令也繼續保留。
+
+```text
+my_ohtani_delivery/
+  START_HERE.html
+  delivery_manifest.json
+  events/    # compare-native-motion-events 的原輸出
+  profile/   # describe-native-profile 的原輸出
+  review/    # review-native-profile 的原輸出
+```
+
+輸入先經既有讀取器預檢，通過後才建立新目錄；既有目錄一律拒絕覆寫。
+中途失敗會停止後續步驟，保留已產生資料及`status=incomplete`的交付紀錄，不建立成功入口。
+修正輸入後需選新的輸出目錄，不會默默續跑或覆寫部分結果。
+這只是把既有三個產生器串起來，不新增pose／tracking、人工標註、品質規則或reference升格。
+原影片仍由專案內來源讀取，這個目錄不是可攜影片包。
+
+本機完整交付入口：
+[大谷五球](../analysis_results/phase3_native_motion_delivery_20261027_01/ohtani/START_HERE.html)／
+[山本四球](../analysis_results/phase3_native_motion_delivery_20261027_01/yamamoto/START_HERE.html)。
+
+兩份整合交付的摘要與逐球紀錄和之前輸出逐值一致；各10個入口連結均指向本交付目錄內檔案。
+新增7項串接／失敗處理測試，完整Python suite1318項，含八項junction補跑後不重複計為
+**1316 passed／0 failed／2 skipped**，含正式五球E2E；兩項跳過仍為Windows檔案符號連結能力限制。
+本輪沒有修改JS或重跑相同Node suite，上一輪23項結果繼續適用。
+[整合交付與測試紀錄](dataset_selections/phase3_native_motion_delivery_20261027.json)。
+
 ## 執行
 
 在專案根目錄，以已產生的`event_comparison.json`作為輸入，指定未存在的新輸出目錄：

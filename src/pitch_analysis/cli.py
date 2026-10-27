@@ -61,6 +61,9 @@ def main() -> None:
     profile_viewer = commands.add_parser("review-native-profile", help="Link a saved single-pitcher profile to independent source-frame players")
     profile_viewer.add_argument("profile_json")
     profile_viewer.add_argument("--output", required=True)
+    motion_report = commands.add_parser("build-native-motion-report", help="Build events, a single-pitcher profile and source review from saved curves with one entry")
+    motion_report.add_argument("config_json")
+    motion_report.add_argument("--output", required=True)
     timing_comparison = commands.add_parser("compare-native-timing", help="Compare source-bound manual event durations for two pitchers using exact fractional seconds")
     timing_comparison.add_argument("report_a")
     timing_comparison.add_argument("report_b")
@@ -222,6 +225,19 @@ def main() -> None:
                    "source_frames": result["source_frames"], "output_dir": args.output,
                    "new_inference_calls": 0})
         except (ValueError, OSError, RuntimeError, KeyError, TypeError) as error:
+            _emit({"status": "failed", "error": str(error)})
+            raise SystemExit(1)
+        return
+    if args.command == "build-native-motion-report":
+        from pathlib import Path
+        from .analysis.native_motion_delivery import write_motion_report
+        try:
+            result = write_motion_report(Path.cwd(), args.config_json, args.output)
+            _emit({"status": result["status"], "pitcher_id": result["pitcher_id"],
+                   "clip_count": result["clip_count"], "source_frames": result["source_frames"],
+                   "output_dir": args.output, "entry": str(Path(args.output) / "START_HERE.html"),
+                   "new_inference_calls": 0})
+        except (ValueError, OSError, RuntimeError, KeyError, TypeError, ZeroDivisionError) as error:
             _emit({"status": "failed", "error": str(error)})
             raise SystemExit(1)
         return

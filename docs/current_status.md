@@ -1,4 +1,4 @@
-# Current status — Single-pitcher profiles linked to source-frame evidence
+# Current status — One command for the saved-motion descriptive delivery
 
 Updated: 2026-10-27 (Asia/Taipei)
 
@@ -7,7 +7,9 @@ Updated: 2026-10-27 (Asia/Taipei)
 **Phase 2 evaluation = COMPLETE; Phase 2 = NOT PASSED (automatic reliability degraded).**
 **User-authorized Phase3 first descriptive motion delivery = COMPLETE; overall Phase3 NOT EVALUATED.**
 
-The new [profile review entry](native_descriptive_profile.md#從摘要直接回看影片證據)
+The new [single delivery command](native_descriptive_profile.md#建議入口一個指令整合三步)
+connects the existing event report, profile and evidence-viewer writers, with one
+START_HERE entry for each pitcher. The [profile review entry](native_descriptive_profile.md#從摘要直接回看影片證據)
 links within-pitcher summaries and saved pairs to independent source-frame players.
 The [single-pitcher summary command](native_descriptive_profile.md) reproduces
 within-pitcher timing relations and model-XY elbow/knee endpoint descriptions from
@@ -22,6 +24,35 @@ Automatic reliability remains unaccepted. Existing acceptance thresholds, confid
 gates, MediaPipe settings, interpolation and smoothing are unchanged. The approved
 optional subject-region constraint is described below; the default selector remains compatible.
 The original Phase 1 stable state and five formal videos remain unchanged.
+
+## 2026-10-27 One command for existing descriptive writers
+
+Added build-native-motion-report. It preflights the existing saved-curve/manual-
+event request and then claims a fresh output directory, runs the unmodified event,
+profile and review writers in order, and publishes START_HERE.html only when all
+components succeed. delivery_manifest.json binds original sources and component
+artifacts. Errors stop subsequent writers and preserve partial output with an
+incomplete marker; existing output is never silently resumed or overwritten.
+
+This is orchestration after saved skeletons/curves and reviewed events exist,
+not an inference entry for a new MP4. No model, pose/tracking, gates, smoothing,
+interpolation, raw predictions, GT or reference status changes. Original media
+remain in project source locations; this is not a new portable package. Overall
+Phase statuses and browser-playback verification remain unchanged.
+
+Local entries: `analysis_results/phase3_native_motion_delivery_20261027_01/{ohtani,yamamoto}/START_HERE.html`.
+
+Ohtani5/1684 frames:40 timing pairs, all comparable;40 calculable joint summaries.
+Yamamoto4/477 frames:24 timing pairs (16 comparable/8 unresolved),32 joint
+summaries (26 calculable/6 unresolved). Both summaries and clip records match
+the previous separate outputs exactly. Each entry has10 contained file links.
+
+Added7 integration/orchestration tests. Full Python suite1318: initial1308 passed/
+0 failed/10 skipped; the8 junction capability cases passed a bounded retry.
+Unique totals1316 passed/0 failed/2 skipped, including formal five-video E2E;
+remaining skips are file-symlink capability limitations. JS is unchanged, so the
+same Node suite was not rerun; the prior23 passing cases remain applicable.
+[Delivery and exact test records](dataset_selections/phase3_native_motion_delivery_20261027.json).
 
 ## 2026-10-27 Single-pitcher summaries linked to source-frame evidence
 

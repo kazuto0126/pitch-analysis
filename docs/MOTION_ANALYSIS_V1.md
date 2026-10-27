@@ -19,6 +19,7 @@
 
 | 目的 | 現有入口 | 內容與版本 |
 |---|---|---|
+| 一個指令建立單投手交付 | [build-native-motion-report](native_descriptive_profile.md#建議入口一個指令整合三步) | 讀取既有曲線＋人工事件設定，串接事件報告、單投手摘要、回看頁與START_HERE；未加入新推論 |
 | 自動整理單投手動作描述 | [describe-native-profile](native_descriptive_profile.md) | 大谷5／山本4：64組同投手時距配對（56可比／8未定），72筆肘／膝摘要（66有可算端點／6未定）；保留全部事件選格 |
 | 從單投手摘要回看證據 | [review-native-profile](native_descriptive_profile.md#從摘要直接回看影片證據) | 選原區段／球對，查看時距與肘／膝讀值後，用已確認事件界線定位各自原片；單球不補自比 |
 | 看大谷五球最新數字 | [完整報告](../analysis_results/phase3_manual_stages_20261026_01/ohtani/report.md)／[四段CSV](../analysis_results/phase3_manual_stages_20261026_01/ohtani/manual_stage_readouts.csv) | 最新四段時距、肘／膝模型XY端點差、人工事件與來源 |
@@ -113,3 +114,6 @@
 
 後續[摘要回看入口](native_descriptive_profile.md#從摘要直接回看影片證據)已把原球對、端點差與
 事件影格接到兩側播放器；完整Python suite1309 passed／0 failed／2 skipped、Node23項通過。
+
+現已提供[單一交付指令](native_descriptive_profile.md#建議入口一個指令整合三步)，把原三步串成
+同一份START_HERE交付；摘要與原資料一致，最新完整Python suite1316 passed／0 failed／2 skipped。
